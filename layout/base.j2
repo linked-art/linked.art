@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="http://fonts.googleapis.com/css?family=Anton"
+            rel="stylesheet" type="text/css">
+            <title>{{ resource.meta.title }}</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+    </head>
+    <body>
+        <nav>
+            {% import "macros.j2" as macros with context %}
+            {{ macros.render_basic_menu() }}
+        </nav>
+        <article id="content">
+            {% filter markdown -%}
+            {% block content %}{% endblock %}
+            {%- endfilter %}
+        </article>
+
+        <footer>
+        Contact: rsanderson@getty.edu
+        </footer>
+        {% if site.config.mode == "production" -%}
+            {% include "ga.j2" %}
+        {%- endif %}
+    </body>
+</html>
