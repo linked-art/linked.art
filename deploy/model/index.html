@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="http://fonts.googleapis.com/css?family=Anton"
+            rel="stylesheet" type="text/css">
+            <title></title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/media/css/style.css">
+    </head>
+    <body>
+        <nav>
+                        <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/intro/index.html">Introduction</a></li>
+    <li><a class="selected" href="/model/index.html">Model</a></li>
+    <li><a href="/api/index.html">Interactions</a></li>
+</ul>
+        </nav>
+        <article id="content">
+            <h1>Museum Data Model</h1>
+<p>The desired target model for Linked Open Data in the museum domain is one with the following properties:</p>
+<ul>
+<li>Captures as much of the information that we know about the resources as possible</li>
+<li>Can be easily and predictably transformed to a <a href="/api/">simpler and more usable representation</a> that is still Linked Open Data</li>
+<li>Provides interoperability with other related data sets</li>
+<li>Solves actual challenges, which are documented as use cases</li>
+</ul>
+<p>Successful models are developed:</p>
+<ul>
+<li>iteratively (we will not get it right the first time)</li>
+<li>responsively (we will change the model in response to feedback and concerns)</li>
+<li>responsibly (we will consider changes and features carefully with respect to complexity and value)</li>
+<li>collaboratively (we will engage with the community and partners early and often)</li>
+</ul>
+<h2>Model Fundamentals</h2>
+<p>Following the existing norms of the community, our starting point consists of:</p>
+<ul>
+<li><a href="http://www.cidoc-crm.org/">CIDOC-CRM</a> as the core ontology, giving an event-based paradigm</li>
+<li>The <a href="http://vocab.getty.edu/">Getty Vocabularies</a> as core sources of identity</li>
+<li><a href="https://www.w3.org/TR/json-ld/">JSON-LD</a> as the primary target serialization</li>
+</ul>
+<h2>Model Components</h2>
+<p>The model can be treated as interlinking components that describe aspects of the events of interest:</p>
+<ul>
+<li><a href="base/">Baseline Patterns</a></li>
+<li><a href="provenance/">Object Provenance</a></li>
+<li><a href="object/">Object Description</a></li>
+<li><a href="actor/">Actors</a> (People, Organizations)</li>
+<li><a href="place/">Places</a></li>
+<li><a href="exhibition/">Exhibitions</a></li>
+</ul>
+<h2>Sources of Identity</h2>
+<p>Re-list in terms of what is being identified</p>
+<ul>
+<li><a href="identity/aat/">AAT</a></li>
+<li><a href="identity/ulan/">ULAN</a></li>
+<li><a href="identity/tgn/">TGN</a></li>
+<li><a href="identity/iconclass/">IconClass</a></li>
+</ul>
+<h2>Scope Limitations</h2>
+<ul>
+<li>Complex Bibliography<ul>
+<li>The description of bibliographic resources in Linked Data is the subject of several ongoing discussions in the Library domain. We feel that the Museum community should adopt whatever solution is devised by the experts in that field.</li>
+</ul>
+</li>
+<li>Data Provenance <ul>
+<li>Recording the events in which the data itself is created, modified and managed is out of scope of this work. The global Linked Data community has various approaches to this problem, with varying degrees of complexity and accuracy. Given the relative infancy of the work in the Museum domain, we feel that adding this is an unnecessary burden at this stage. </li>
+</ul>
+</li>
+<li>Quantification of Uncertainty<ul>
+<li>Similarly, the degree of certainty about the data being expressed is valuable and of interest to researchers, but requires a significantly more complex environment. This would also prove an unsustainable burden at this stage.</li>
+</ul>
+</li>
+</ul>        </article>
+
+        <footer>
+        Contact: rsanderson@getty.edu
+        </footer>
+            </body>
+</html>

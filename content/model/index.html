@@ -1,3 +1,53 @@
-# Model
+# Museum Data Model
 
-This is the model directory
+The desired target model for Linked Open Data in the museum domain is one with the following properties:
+
+* Captures as much of the information that we know about the resources as possible
+* Can be easily and predictably transformed to a [simpler and more usable representation](/api/) that is still Linked Open Data
+* Provides interoperability with other related data sets
+* Solves actual challenges, which are documented as use cases
+
+Successful models are developed:
+
+* iteratively (we will not get it right the first time)
+* responsively (we will change the model in response to feedback and concerns)
+* responsibly (we will consider changes and features carefully with respect to complexity and value)
+* collaboratively (we will engage with the community and partners early and often)
+
+## Model Fundamentals
+
+Following the existing norms of the community, our starting point consists of:
+
+* [CIDOC-CRM](http://www.cidoc-crm.org/) as the core ontology, giving an event-based paradigm
+* The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity
+* [JSON-LD](https://www.w3.org/TR/json-ld/) as the primary target serialization
+
+## Model Components
+
+The model can be treated as interlinking components that describe aspects of the events of interest:
+
+* [Baseline Patterns](base/)
+* [Object Provenance](provenance/)
+* [Object Description](object/)
+* [Actors](actor/) (People, Organizations)
+* [Places](place/)
+* [Exhibitions](exhibition/)
+
+## Sources of Identity
+
+Re-list in terms of what is being identified
+
+* [AAT](identity/aat/)
+* [ULAN](identity/ulan/)
+* [TGN](identity/tgn/)
+* [IconClass](identity/iconclass/)
+
+## Scope Limitations
+
+* Complex Bibliography
+    * The description of bibliographic resources in Linked Data is the subject of several ongoing discussions in the Library domain. We feel that the Museum community should adopt whatever solution is devised by the experts in that field.
+* Data Provenance 
+    * Recording the events in which the data itself is created, modified and managed is out of scope of this work. The global Linked Data community has various approaches to this problem, with varying degrees of complexity and accuracy. Given the relative infancy of the work in the Museum domain, we feel that adding this is an unnecessary burden at this stage. 
+* Quantification of Uncertainty
+    * Similarly, the degree of certainty about the data being expressed is valuable and of interest to researchers, but requires a significantly more complex environment. This would also prove an unsustainable burden at this stage.
+

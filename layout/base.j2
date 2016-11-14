@@ -12,6 +12,10 @@
             {% import "macros.j2" as macros with context %}
             {{ macros.render_basic_menu() }}
         </nav>
+
+        <h1>{{ resource.meta.title }}</h1>
+        <hr/>
+
         <article id="content">
             {% filter markdown -%}
             {% block content %}{% endblock %}

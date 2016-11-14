@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="http://fonts.googleapis.com/css?family=Anton"
+            rel="stylesheet" type="text/css">
+            <title>Baseline Patterns</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/media/css/style.css">
+    </head>
+    <body>
+        <nav>
+                        <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/intro/index.html">Introduction</a></li>
+    <li><a href="/model/index.html">Model</a></li>
+    <li><a href="/api/index.html">Interactions</a></li>
+</ul>
+        </nav>
+
+        <h1>Baseline Patterns</h1>
+        <hr/>
+
+        <article id="content">
+            <p><strong>Table of Contents</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#1-parts">1. Parts</a><ul>
+<li><a href="#11-objects">1.1. Objects</a></li>
+<li><a href="#12-time-periods-and-events">1.2. Time Periods and Events</a></li>
+<li><a href="#13-locations">1.3. Locations</a></li>
+<li><a href="#14-information-objects-and-physical-carriers">1.4. Information Objects and Physical Carriers</a></li>
+</ul>
+</li>
+<li><a href="#2-statements">2. Statements</a></li>
+<li><a href="#3-types">3. Types</a></li>
+</ul>
+</div>
+<hr />
+<p>It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with the datasets of almost 20 museums, the following patterns have been agreed on as useful ways to think about our data.</p>
+<h2 id="1-parts"><a name="user-content-1-parts" href="#1-parts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Parts</h2>
+<p>The CRM allows the partitioning of many sorts of object, including those that are of most interest to the community. In particular,</p>
+<h3 id="11-objects"><a name="user-content-11-objects" href="#11-objects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.1. Objects</h3>
+<p>Objects can be partitioned into separate pieces, with more specific information provided about each piece.  The individual pieces do not need to be physically separated or even separable from the whole, just objectively defined.</p>
+<p>Use cases for this pattern include:</p>
+<ul>
+<li>Different measurements of the size of the parts of the object</li>
+<li>Different materials for parts of the object</li>
+<li>Specific descriptions of parts of the object</li>
+<li>Recombining a physically distributed object into a single description</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://azaroth42.github.io/context/1/minimal.jsonld&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;consists_of&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="12-time-periods-and-events"><a name="user-content-12-time-periods-and-events" href="#12-time-periods-and-events" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.2. Time Periods and Events</h3>
+<p>In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.</p>
+<h3 id="13-locations"><a name="user-content-13-locations" href="#13-locations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.3. Locations</h3>
+<h3 id="14-information-objects-and-physical-carriers"><a name="user-content-14-information-objects-and-physical-carriers" href="#14-information-objects-and-physical-carriers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.4. Information Objects and Physical Carriers</h3>
+<h2 id="2-statements"><a name="user-content-2-statements" href="#2-statements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Statements</h2>
+<h2 id="3-types"><a name="user-content-3-types" href="#3-types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Types</h2>        </article>
+
+        <footer>
+        Contact: rsanderson@getty.edu
+        </footer>
+            </body>
+</html>

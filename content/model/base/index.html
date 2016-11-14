@@ -1,0 +1,60 @@
+---
+title: Baseline Patterns
+---
+
+{% include "toc.html" %}
+
+It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with the datasets of almost 20 museums, the following patterns have been agreed on as useful ways to think about our data.
+
+## 1. Parts
+
+The CRM allows the partitioning of many sorts of object, including those that are of most interest to the community. In particular,
+
+### 1.1. Objects
+
+Objects can be partitioned into separate pieces, with more specific information provided about each piece.  The individual pieces do not need to be physically separated or even separable from the whole, just objectively defined.
+
+Use cases for this pattern include:
+
+* Different measurements of the size of the parts of the object
+* Different materials for parts of the object
+* Specific descriptions of parts of the object
+* Recombining a physically distributed object into a single description
+
+__Example:__
+
+```json
+{
+	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/minimal.jsonld",
+	"id": "",
+	"type": "",
+	"consists_of": {
+		"id": "",
+		"type": ""
+
+	}
+}
+```
+
+
+### 1.2. Time Periods and Events
+
+In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.
+
+
+### 1.3. Locations
+
+
+
+### 1.4. Information Objects and Physical Carriers
+
+
+
+
+
+## 2. Statements
+
+## 3. Types
+
+
+
