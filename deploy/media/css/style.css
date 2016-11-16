@@ -87,6 +87,7 @@ footer {
     font-family: monospace;
     border: 1px dashed #777;
     padding: 3px;
+    margin-bottom: 10px;
 }
 
 .codehilite pre { margin: 2px; }
@@ -94,6 +95,23 @@ footer {
 .codehilite .p { color: #555555; }
 .codehilite .s2 { color: #995555; }
 
+.admonition {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 24px;    
+}
+
+.note {
+      border-left: 4px solid #52E052;
+      background: #D0FCD0;    
+}
+
+.note .admonition-title {
+        font-weight: bold;
+        color: #32C032;
+        margin-right: 10px;    
+}
 
 
 /* Header Anchors */

@@ -50,7 +50,14 @@ context:
 var:
     hostname: azaroth42.github.io
     version: 1
+    example_hostname: example.museum
 
+publisher:
+    github:
+        type: hyde.ext.publishers.dvcs.Git
+        path: deploy
+        url: https://github.com/azaroth42/temp-museum-lod.git
+        branch: gh-pages
 
 ### Advanced part ###
 

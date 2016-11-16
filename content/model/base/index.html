@@ -20,18 +20,34 @@ Use cases for this pattern include:
 * Different materials for parts of the object
 * Specific descriptions of parts of the object
 * Recombining a physically distributed object into a single description
+* The physical pages of a manuscript
 
 __Example:__
 
+A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a support _(aat:300014844)_ made of canvas _(aat:300014078)_:
+
 ```json
 {
-	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/minimal.jsonld",
-	"id": "",
-	"type": "",
-	"consists_of": {
-		"id": "",
-		"type": ""
-
+	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
+	"id": "http://{{ site.config.var.example_hostname }}/objects/1",
+	"type": "ManMadeObject",
+	"has_type": "aat:300033618",
+	"label": "Example Painting",
+	"made_of": {
+      "id": "aat:300015045", 
+      "type": "Material", 
+      "label": "watercolor"
+    },
+	"is_composed_of": {
+		"id": "http://{{ site.config.var.example_hostname }}/object/1/part/1",
+		"type": "PhysicalObject",
+		"has_type": "aat:300014844",
+		"label": "Canvas Support",
+		"made_of": {
+        	"id": "aat:300014078", 
+        	"type": "Material", 
+        	"label": "canvas"
+      	}
 	}
 }
 ```
@@ -41,20 +57,146 @@ __Example:__
 
 In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.
 
+Use cases for this pattern include:
+
+* The display of an exhibition at a specific venue, as part of the exhibition as a whole
+* The auctioning of a specific lot, as part of the auction as a whole
+* The activity of taking inventory, as part of the actions taken over the period of curation of the collection
+* The payment of a cost, as part of a purchase activity
+
+__Example:__
+
+An auction _(aat:300054751)_ consists of many activities in which a particular lot is auctioned:
+
+```json
+{
+	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
+	"id": "http://{{ site.config.var.example_hostname }}/activity/1",
+	"type": "Activity",
+	"has_type": "aat:300054751",
+	"label": "Example Auction",
+	"consists_of": [
+		{
+			"id": "http://{{ site.config.var.example_hostname }}/activity/1/part/1",
+			"type": "Activity",
+			"label": "Example Auction of Lot"
+		}
+	]
+}
+```
+
 
 ### 1.3. Locations
 
+Locations can be made more specific by saying that the smaller region is part of the larger region.
+
+Use cases for this pattern include:
+
+* A city (where an event takes place, for example) is part of a country
+* A gallery (where an object is on display, for example) is part of the museum premises
+* A region (where an artist was born, for example) is part of a country
+
+__Example:__
+
+The city of Leiden _(tgn:7006809-place)_ where Rembrandt was born is part of the Netherlands _(tgn:7016845-place)_:
+
+```json
+{
+	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
+	"id": "http://{{ site.config.var.example_hostname }}/place/1",
+	"type": "Place",
+	"label": "Netherlands",
+	"exactMatch": "tgn:7016845-place",
+	"spatially_contains": {
+		"id": "http://{{ site.config.var.example_hostname }}/place/1/part/1",
+		"type": "Place",
+		"exactMatch": "tgn:7006809-place",
+		"label": "Leiden"
+	}
+}
+```
+
+!!! note "Note: ExactMatch? Not Has Type?"
+    For why we use exactMatch instead of has_type, please see Section 4.
 
 
-### 1.4. Information Objects and Physical Carriers
+### 1.4. Information Objects
 
+CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
 
+Use cases for this pattern include:
 
+* The content of the sales ledger is divided into rows (which refer to objects)
+* The content of the tryptych is divided into three scenes (which are depicted on the panels)
+* The content of the manuscript is divided into chapters
 
+__Example:__
 
-## 2. Statements
+```json
+{
+	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
+	"id": "http://{{ site.config.var.example_hostname }}/infoObject/1",
+	"type":	"InformationObject",
+	"label": "Content of Ledger 1",
+	"has_fragment": [
+		{
+			"id": "http://{{ site.config.var.example_hostname }}/infoObject/1/part/1",
+			"type": "InformationObject",
+			"label": "Row 1"
+		}
+	]
+}
+```
+
+### 1.5 Organizations
+
+Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.
+
+Use cases for this pattern include:
+
+* Departments as part of an Organization
+
+__Example:__
+
+```json
+{
+	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
+	"id": "http://{{ site.config.var.example_hostname }}/group/1",
+	"type":	"Group",
+	"label": "Example Museum",
+	"has_current_or_former_member": {
+		"id": "http://{{ site.config.var.example_hostname }}/group/1/part/1",
+		"type": "Group",
+		"label": "Example Department"
+	}	
+}
+```
+
+## 2. Statements about a Resource
+
+In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
+
+The pattern makes use of the Linguistic Object class -- a class for resources that identify a particular piece of textual content.  These Linguistic Objects can then refer to any other resource to state what the content is about.
+
+Example use cases for this pattern include:
+
+* Materials statement for an object
+* Attribution statement for an image
+* Biography for a person
+* Dimensions statement for a part of an object
+
+__Example:__
+
+```json
+{
+
+}
+```
+
 
 ## 3. Types
+
+## 4. Vocabulary References
 
 
 
