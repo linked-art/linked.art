@@ -17,15 +17,15 @@ port = site['var'].get('port', '')
 host = site['var']['hostname']
 if port:
 	port = ":%s" % port
-egdir = site['var']['exampleDir']
 
-baseUrl = "%s://%s%s/%s/" % (scheme, host, port, egdir)
-contextUrl = "%s://%s%s/ns/context/1/full.jsonld" % (scheme, host, port)
+basedir = site['base_url']
+egdir = site['var']['exampleDir']
+baseUrl = "%s://%s%s%s%s/" % (scheme, host, port, basedir, egdir)
+contextUrl = "%s://%s%s%s/ns/context/1/full.jsonld" % (scheme, host, port, basedir)
 
 factory.base_url = baseUrl
 factory.base_dir = "../content/%s" % egdir
 factory.context_uri = contextUrl
-
 
 # Example 1
 mmo = Painting("1")
