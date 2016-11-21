@@ -21,7 +21,7 @@ if port:
 basedir = site['base_url']
 egdir = site['var']['exampleDir']
 baseUrl = "%s://%s%s%s%s/" % (scheme, host, port, basedir, egdir)
-contextUrl = "%s://%s%s%s/ns/context/1/full.jsonld" % (scheme, host, port, basedir)
+contextUrl = "%s://%s%s%sns/context/1/full.jsonld" % (scheme, host, port, basedir)
 
 factory.base_url = baseUrl
 factory.base_dir = "../content/%s" % egdir
