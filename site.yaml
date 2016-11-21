@@ -4,12 +4,8 @@ media_url: /museum-lod/media
 base_url: /museum-lod/
 deploy_root: ../museum-lod-pages
 
-# If your site is nested inside of a bigger one, you can use media_url and
-# base_url to properly generate links on your site. For example, if your URL
-# will be some.domain.com/starter/, use:
-#   media_url: /starter/media
-#   base_url: /starter/
 template: hyde.ext.templates.jinja.Jinja2Template
+
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
     - hyde.ext.plugins.meta.AutoExtendPlugin
@@ -30,14 +26,14 @@ markdown:
         - pymdownx.headeranchor
         - pymdownx.smartsymbols
         - pymdownx.tasklist
+
 context:
     data:
         author:
             name: Rob Sanderson
-            url: "http://..."
         project:
             name: Museum Linked Open Data
-            url: "http://.../"
+            url: "http://azaroth42.github.io/museum-lod/"
             install: "https://github.com/azaroth42/museum-lod"
         menu:
           - title: Home
@@ -50,9 +46,10 @@ context:
             url: api/index.html
 
 var:
+    scheme: http
     hostname: azaroth42.github.io
     version: 1
-    example_hostname: example.museum
+    exampleDir: example
 
 publisher:
     github:
