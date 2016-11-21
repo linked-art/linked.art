@@ -26,31 +26,8 @@ __Example:__
 
 A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a support _(aat:300014844)_ made of canvas _(aat:300014078)_:
 
-```json
-{
-	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
-	"id": "http://{{ site.config.var.example_hostname }}/objects/1",
-	"type": "ManMadeObject",
-	"has_type": "aat:300033618",
-	"label": "Example Painting",
-	"made_of": {
-      "id": "aat:300015045", 
-      "type": "Material", 
-      "label": "watercolor"
-    },
-	"is_composed_of": {
-		"id": "http://{{ site.config.var.example_hostname }}/object/1/part/1",
-		"type": "PhysicalObject",
-		"has_type": "aat:300014844",
-		"label": "Canvas Support",
-		"made_of": {
-        	"id": "aat:300014078", 
-        	"type": "Material", 
-        	"label": "canvas"
-      	}
-	}
-}
-```
+{{ macros.include_example("example/object/1.json") }}
+
 
 
 ### 1.2. Time Periods and Events
@@ -69,21 +46,10 @@ __Example:__
 An auction _(aat:300054751)_ consists of many activities in which a particular lot is auctioned:
 
 ```json
-{
-	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
-	"id": "http://{{ site.config.var.example_hostname }}/activity/1",
-	"type": "Activity",
-	"has_type": "aat:300054751",
-	"label": "Example Auction",
-	"consists_of": [
-		{
-			"id": "http://{{ site.config.var.example_hostname }}/activity/1/part/1",
-			"type": "Activity",
-			"label": "Example Auction of Lot"
-		}
-	]
-}
+{% include "example/activity/1.json" %}
+
 ```
+
 
 
 ### 1.3. Locations

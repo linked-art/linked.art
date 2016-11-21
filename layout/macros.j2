@@ -1,4 +1,11 @@
 
+{% macro include_example(link) -%}
+
+```json
+{% include link %}
+
+```
+{%- endmacro %}
 
 {% macro render_basic_menu() -%}
 <ul>
@@ -8,7 +15,6 @@
 {% endfor %}
 </ul>
 {%- endmacro %}
-
 
 {% macro render_bottom_article_nav() %}
 <div class="bottom_article_nav">
