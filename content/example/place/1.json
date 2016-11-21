@@ -1,0 +1,19 @@
+{
+  "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
+  "id": "http://azaroth42.github.io/museum-lod/example/place/1", 
+  "type": "Place", 
+  "label": "The Netherlands", 
+  "spatially_contains": {
+    "id": "http://azaroth42.github.io/museum-lod/example/place/1/part/1", 
+    "type": "Place", 
+    "label": "Leiden", 
+    "exactMatch": {
+      "id": "http://azaroth42.github.io/museum-lod/example/place/tgn:7006809-place", 
+      "type": "Place"
+    }
+  }, 
+  "exactMatch": {
+    "id": "http://azaroth42.github.io/museum-lod/example/place/tgn:7016845-place", 
+    "type": "Place"
+  }
+}

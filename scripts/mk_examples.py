@@ -1,11 +1,12 @@
 
 import json
 from cidoc_orm import factory
-from vocab_mapping import Painting, SupportPart, Auction, Activity, materialTypes
+from vocab_mapping import Painting, SupportPart, Type, Auction, Place, Activity, materialTypes
 import yaml
 
 Painting._uri_segment = "object"
 Auction._uri_segment = "activity"
+Place._uri_segment = "place"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -45,5 +46,14 @@ lot.label = "Example Auction of Lot"
 auc.consists_of = lot
 factory.toFile(auc, compact=False)
 
+# Example 3
 
+country = Place("1")
+country.label = "The Netherlands"
+country.exactMatch = Place("tgn:7016845-place")
+city = Place(country.id + '/part/1')
+city.label = "Leiden"
+city.exactMatch = Place("tgn:7006809-place")
+country.spatially_contains = city
+factory.toFile(country, compact=False)
 

@@ -5,6 +5,11 @@
 {% include link %}
 
 ```
+[View Raw]({{ make_example_link(link) }})
+{%- endmacro %}
+
+{% macro make_example_link(link) -%}
+/{{ link }}
 {%- endmacro %}
 
 {% macro render_basic_menu() -%}

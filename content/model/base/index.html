@@ -28,8 +28,6 @@ A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a 
 
 {{ macros.include_example("example/object/1.json") }}
 
-
-
 ### 1.2. Time Periods and Events
 
 In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.
@@ -45,12 +43,7 @@ __Example:__
 
 An auction _(aat:300054751)_ consists of many activities in which a particular lot is auctioned:
 
-```json
-{% include "example/activity/1.json" %}
-
-```
-
-
+{{ macros.include_example("example/activity/1.json") }}
 
 ### 1.3. Locations
 
@@ -64,7 +57,9 @@ Use cases for this pattern include:
 
 __Example:__
 
-The city of Leiden _(tgn:7006809-place)_ where Rembrandt was born is part of the Netherlands _(tgn:7016845-place)_:
+The city of Leiden _(tgn:7006809-place)_ (where Rembrandt was born) is part of the Netherlands _(tgn:7016845-place)_:
+
+{{ macros.include_example("example/place/1.json") }}
 
 ```json
 {
