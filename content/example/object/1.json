@@ -2,7 +2,7 @@
   "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
   "id": "http://azaroth42.github.io/museum-lod/example/object/1", 
   "type": "ManMadeObject", 
-  "has_type": "http://vocab.getty.edu/aat/300033618", 
+  "has_type": "aat:300033618", 
   "label": "Example Painting", 
   "made_of": {
     "id": "http://vocab.getty.edu/aat/300015045", 
@@ -12,7 +12,7 @@
   "is_composed_of": {
     "id": "http://azaroth42.github.io/museum-lod/example/object/1/part/1", 
     "type": "PhysicalThing", 
-    "has_type": "http://vocab.getty.edu/aat/300014844", 
+    "has_type": "aat:300014844", 
     "label": "Canvas Support", 
     "made_of": {
       "id": "http://vocab.getty.edu/aat/300014078", 

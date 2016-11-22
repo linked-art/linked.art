@@ -5,12 +5,10 @@
 {% include link %}
 
 ```
-[View Raw]({{ make_example_link(link) }})
+[View Raw]({{ "/" + link }})
+[JSON-LD Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ "http://azaroth42.github.io/musuem-lod/" + link|urlencode }})
 {%- endmacro %}
 
-{% macro make_example_link(link) -%}
-/{{ link }}
-{%- endmacro %}
 
 {% macro render_basic_menu() -%}
 <ul>

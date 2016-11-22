@@ -11,7 +11,7 @@
   "spatially_contains": {
     "id": "http://azaroth42.github.io/museum-lod/example/place/1/part/1", 
     "type": "Place", 
-    "has_type": "http://vocab.getty.edu/aat/300240057", 
+    "has_type": "aat:300240057", 
     "label": "Gallery W204"
   }
 }
