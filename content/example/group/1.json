@@ -1,0 +1,13 @@
+{
+  "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
+  "id": "http://azaroth42.github.io/museum-lod/example/group/1", 
+  "type": "Group", 
+  "has_type": "http://vocab.getty.edu/aat/300312281", 
+  "label": "Example Museum Institution", 
+  "has_current_or_former_member": {
+    "id": "http://azaroth42.github.io/museum-lod/example/group/1/part/1", 
+    "type": "Group", 
+    "has_type": "http://vocab.getty.edu/aat/300263534", 
+    "label": "Example Department"
+  }
+}

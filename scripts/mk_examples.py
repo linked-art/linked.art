@@ -1,12 +1,15 @@
 
 import json
 from cidoc_orm import factory
-from vocab_mapping import Painting, SupportPart, Type, Auction, Place, Activity, materialTypes
+from vocab_mapping import Painting, InformationObject, Department, SupportPart, Type, \
+	Auction, Museum, Place, Gallery, Activity, Group, materialTypes
 import yaml
 
 Painting._uri_segment = "object"
 Auction._uri_segment = "activity"
 Place._uri_segment = "place"
+InformationObject._uri_segment = "infoObject"
+Group._uri_segment = "group"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -48,12 +51,30 @@ factory.toFile(auc, compact=False)
 
 # Example 3
 
-country = Place("1")
-country.label = "The Netherlands"
-country.exactMatch = Place("tgn:7016845-place")
-city = Place(country.id + '/part/1')
-city.label = "Leiden"
-city.exactMatch = Place("tgn:7006809-place")
-country.spatially_contains = city
-factory.toFile(country, compact=False)
+museum = Place("1")
+museum.label = "Example Museum Building"
+gallery = Gallery(museum.id + '/part/1')
+gallery.label = "Gallery W204"
+city = Place("http://vocab.getty.edu/tgn/7023900-place")
+city.label = "Los Angeles"
+museum.spatially_contains = gallery
+museum.spatially_within = city
+factory.toFile(museum, compact=False)
 
+# Example 4
+
+ledger = InformationObject("1")
+ledger.label = "Content of Ledger 1"
+row = InformationObject(ledger.id + "/part/1")
+row.label = "Content of Row 1"
+ledger.has_section = row
+factory.toFile(ledger, compact=False)
+
+# Example 5
+
+museum = Museum("1")
+museum.label = "Example Museum Institution"
+dept = Department(museum.id + "/part/1")
+dept.label = "Example Department"
+museum.has_current_or_former_member = dept
+factory.toFile(museum, compact=False)

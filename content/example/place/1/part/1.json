@@ -1,0 +1,17 @@
+{
+  "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
+  "id": "http://azaroth42.github.io/museum-lod/example/place/1/part/1", 
+  "type": "Place", 
+  "has_type": "http://vocab.getty.edu/aat/300240057", 
+  "label": "Gallery W204", 
+  "spatially_within": {
+    "id": "http://azaroth42.github.io/museum-lod/example/place/1", 
+    "type": "Place", 
+    "label": "Example Museum", 
+    "spatially_within": {
+      "id": "http://vocab.getty.edu/tgn/7023900-place", 
+      "type": "Place", 
+      "label": "Los Angeles"
+    }
+  }
+}

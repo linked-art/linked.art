@@ -2,18 +2,16 @@
   "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
   "id": "http://azaroth42.github.io/museum-lod/example/place/1", 
   "type": "Place", 
-  "label": "The Netherlands", 
+  "label": "Example Museum Building", 
+  "spatially_within": {
+    "id": "http://vocab.getty.edu/tgn/7023900-place", 
+    "type": "Place", 
+    "label": "Los Angeles"
+  }, 
   "spatially_contains": {
     "id": "http://azaroth42.github.io/museum-lod/example/place/1/part/1", 
     "type": "Place", 
-    "label": "Leiden", 
-    "exactMatch": {
-      "id": "http://azaroth42.github.io/museum-lod/example/place/tgn:7006809-place", 
-      "type": "Place"
-    }
-  }, 
-  "exactMatch": {
-    "id": "http://azaroth42.github.io/museum-lod/example/place/tgn:7016845-place", 
-    "type": "Place"
+    "has_type": "http://vocab.getty.edu/aat/300240057", 
+    "label": "Gallery W204"
   }
 }

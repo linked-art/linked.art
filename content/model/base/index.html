@@ -57,29 +57,9 @@ Use cases for this pattern include:
 
 __Example:__
 
-The city of Leiden _(tgn:7006809-place)_ (where Rembrandt was born) is part of the Netherlands _(tgn:7016845-place)_:
+The "W02" gallery is part of the museum, which is in Los Angeles (tgn:7023900-place):
 
 {{ macros.include_example("example/place/1.json") }}
-
-```json
-{
-	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
-	"id": "http://{{ site.config.var.example_hostname }}/place/1",
-	"type": "Place",
-	"label": "Netherlands",
-	"exactMatch": "tgn:7016845-place",
-	"spatially_contains": {
-		"id": "http://{{ site.config.var.example_hostname }}/place/1/part/1",
-		"type": "Place",
-		"exactMatch": "tgn:7006809-place",
-		"label": "Leiden"
-	}
-}
-```
-
-!!! note "Note: ExactMatch? Not Has Type?"
-    For why we use exactMatch instead of has_type, please see Section 4.
-
 
 ### 1.4. Information Objects
 
@@ -93,21 +73,7 @@ Use cases for this pattern include:
 
 __Example:__
 
-```json
-{
-	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
-	"id": "http://{{ site.config.var.example_hostname }}/infoObject/1",
-	"type":	"InformationObject",
-	"label": "Content of Ledger 1",
-	"has_fragment": [
-		{
-			"id": "http://{{ site.config.var.example_hostname }}/infoObject/1/part/1",
-			"type": "InformationObject",
-			"label": "Row 1"
-		}
-	]
-}
-```
+{{ macros.include_example("example/infoObject/1.json") }}
 
 ### 1.5 Organizations
 
@@ -119,19 +85,8 @@ Use cases for this pattern include:
 
 __Example:__
 
-```json
-{
-	"@context": "http://{{ site.config.var.hostname }}/context/{{ site.config.var.version }}/full.jsonld",
-	"id": "http://{{ site.config.var.example_hostname }}/group/1",
-	"type":	"Group",
-	"label": "Example Museum",
-	"has_current_or_former_member": {
-		"id": "http://{{ site.config.var.example_hostname }}/group/1/part/1",
-		"type": "Group",
-		"label": "Example Department"
-	}	
-}
-```
+{{ macros.include_example("example/museum/1.json") }}
+
 
 ## 2. Statements about a Resource
 
