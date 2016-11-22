@@ -33,7 +33,7 @@ context:
             name: Rob Sanderson
         project:
             name: Museum Linked Open Data
-            url: "http://azaroth42.github.io/museum-lod/"
+            url: "https://azaroth42.github.io/museum-lod/"
             install: "https://github.com/azaroth42/museum-lod"
         menu:
           - title: Home
@@ -46,10 +46,10 @@ context:
             url: api/index.html
 
 var:
-    scheme: http
+    scheme: https
     hostname: azaroth42.github.io
-    version: 1
     exampleDir: example
+    version: 1
 
 publisher:
     github:

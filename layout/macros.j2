@@ -6,7 +6,7 @@
 
 ```
 [View Raw]({{ "/" + link }})
-[JSON-LD Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ "http://azaroth42.github.io/musuem-lod/" + link|urlencode }})
+[JSON-LD Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + link|urlencode }})
 {%- endmacro %}
 
 
