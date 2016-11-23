@@ -2,7 +2,7 @@
 import json
 from cidoc_orm import factory
 from vocab_mapping import Painting, InformationObject, Department, SupportPart, Type, \
-	Auction, Museum, Place, Gallery, Activity, Group, materialTypes
+	Auction, Museum, Place, Gallery, Activity, Group, MaterialStatement, materialTypes
 import yaml
 
 Painting._uri_segment = "object"
@@ -31,7 +31,7 @@ factory.base_url = baseUrl
 factory.base_dir = "../content/%s" % egdir
 factory.context_uri = contextUrl
 
-# Example 1
+# Base - Parts - Example 1
 mmo = Painting("1")
 mmo.label = "Example Painting"
 mmo.made_of = materialTypes['watercolor']
@@ -73,8 +73,21 @@ factory.toFile(ledger, compact=False)
 # Example 5
 
 museum = Museum("1")
-museum.label = "Example Museum Institution"
+museum.label = "Example Museum"
 dept = Department(museum.id + "/part/1")
-dept.label = "Example Department"
+dept.label = "Paintings Department"
 museum.has_current_or_former_member = dept
 factory.toFile(museum, compact=False)
+
+# Base - Statements
+
+obj2 = Painting("2")
+obj2.label = "Example Painting on Canvas"
+lo = MaterialStatement("1")
+lo.value = "Oil on Canvas"
+obj2.is_referred_to_by = lo
+factory.toFile(obj2, compact=False)
+
+
+
+

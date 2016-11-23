@@ -1,14 +1,15 @@
 
 {% macro include_example(link) -%}
 
+__Example:__
+
 ```json
-{% include link %}
+{% include site.config.var.exampleDir + "/" + link %}
 
 ```
-[View Raw]({{ "/" + link }})
-[JSON-LD Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + link|urlencode }})
+[Raw]({{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + site.config.var.exampleDir + "/" + link }}) | 
+[Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + site.config.var.exampleDir + "/" + link|urlencode }})
 {%- endmacro %}
-
 
 {% macro render_basic_menu() -%}
 <ul>

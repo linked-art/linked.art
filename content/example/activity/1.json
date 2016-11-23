@@ -1,11 +1,11 @@
 {
-  "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
-  "id": "http://azaroth42.github.io/museum-lod/example/activity/1", 
+  "@context": "https://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
+  "id": "https://azaroth42.github.io/museum-lod/example/activity/1", 
   "type": "Activity", 
   "has_type": "aat:300054751", 
   "label": "Example Auction", 
   "consists_of": {
-    "id": "http://azaroth42.github.io/museum-lod/example/activity/1/part/1", 
+    "id": "https://azaroth42.github.io/museum-lod/example/activity/1/part/1", 
     "type": "Activity", 
     "label": "Example Auction of Lot"
   }

@@ -1,10 +1,10 @@
 {
-  "@context": "http://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
-  "id": "http://azaroth42.github.io/museum-lod/example/infoObject/1", 
+  "@context": "https://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
+  "id": "https://azaroth42.github.io/museum-lod/example/infoObject/1", 
   "type": "InformationObject", 
   "label": "Content of Ledger 1", 
   "has_section": {
-    "id": "http://azaroth42.github.io/museum-lod/example/infoObject/1/part/1", 
+    "id": "https://azaroth42.github.io/museum-lod/example/infoObject/1/part/1", 
     "type": "InformationObject", 
     "label": "Content of Row 1"
   }
