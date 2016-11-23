@@ -1,0 +1,4 @@
+/example/*
+  Access-Control-Allow-Origin: *
+*.jsonld
+  Content-Type: application/ld+json

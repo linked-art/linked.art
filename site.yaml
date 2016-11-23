@@ -1,7 +1,7 @@
 mode: development
 media_root: media
-media_url: /museum-lod/media
-base_url: /museum-lod/
+media_url: /media
+base_url: /
 deploy_root: ../museum-lod-pages
 
 template: hyde.ext.templates.jinja.Jinja2Template
@@ -47,7 +47,7 @@ context:
 
 var:
     scheme: https
-    hostname: azaroth42.github.io
+    hostname: lod.shared-canvas.org
     exampleDir: example
     version: 1
 
