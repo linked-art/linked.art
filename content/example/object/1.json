@@ -1,6 +1,6 @@
 {
-  "@context": "https://azaroth42.github.io/museum-lod/ns/context/1/full.jsonld", 
-  "id": "https://azaroth42.github.io/museum-lod/example/object/1", 
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/object/1", 
   "type": "ManMadeObject", 
   "has_type": "aat:300033618", 
   "label": "Example Painting", 
@@ -10,7 +10,7 @@
     "label": "watercolor"
   }, 
   "is_composed_of": {
-    "id": "https://azaroth42.github.io/museum-lod/example/object/1/part/1", 
+    "id": "https://lod.shared-canvas.org/example/object/1/part/1", 
     "type": "PhysicalThing", 
     "has_type": "aat:300014844", 
     "label": "Canvas Support", 
