@@ -1,4 +1,8 @@
+/example/object/1.json
+  Access-Control-Allow-Origin: *
+
 /example/*
   Access-Control-Allow-Origin: *
-*.jsonld
+
+/*.jsonld
   Content-Type: application/ld+json
