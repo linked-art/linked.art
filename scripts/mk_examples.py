@@ -83,11 +83,13 @@ factory.toFile(museum, compact=False)
 
 obj2 = Painting("2")
 obj2.label = "Example Painting on Canvas"
-lo = MaterialStatement("1")
+lo = MaterialStatement(obj2.id + "/statement/1")
 lo.value = "Oil on Canvas"
 obj2.is_referred_to_by = lo
 factory.toFile(obj2, compact=False)
 
-
+obj2 = Painting("3")
+obj2.label = "Example Painting"
+factory.toFile(obj2, compact=False)
 
 

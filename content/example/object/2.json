@@ -5,7 +5,7 @@
   "has_type": "aat:300033618", 
   "label": "Example Painting on Canvas", 
   "is_referred_to_by": {
-    "id": "https://azaroth42.github.io/museum-lod/example/LinguisticObject/1", 
+    "id": "https://azaroth42.github.io/museum-lod/example/object/2/statement/1", 
     "type": "LinguisticObject", 
     "has_type": "aat:300264237", 
     "value": "Oil on Canvas"

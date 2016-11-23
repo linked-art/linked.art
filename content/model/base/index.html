@@ -6,11 +6,35 @@ title: Baseline Patterns
 
 It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with the datasets of almost 20 museums, the following patterns have been agreed on as useful ways to think about our data.
 
-## 1. Parts
+These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
+
+## 1. Types
+
+The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate `crm:P2_has_type`, or `has_type` in the JSON-LD representation. This is used to refer to an externally managed controlled vocabulary of terms. The semantics of `has_type` can be understood as "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".
+
+It is useful to distinguish the predicate `rdf:type`, or `type` in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.
+
+While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms used in the model is listed [here](/model/vocabs/). 
+
+Use cases for this pattern are in almost every example, but include:
+ * The type of an art object being a painting
+ * The type of a description being a materials statement
+ * The type of an identifier being an accession number
+ * The type of an organization being a museum
+ * The type of a place being a gallery
+
+__Example:__
+
+The type of the object (an instance of CRM's ManMadeObject class) is a painting _(aat:300033618)_:
+
+{{ macros.include_example("object/3.json") }}
+
+
+## 2. Parts
 
 The CRM allows the partitioning of many sorts of object, including those that are of most interest to the community. In particular,
 
-### 1.1. Objects
+### 2.1. Objects
 
 Objects can be partitioned into separate pieces, with more specific information provided about each piece.  The individual pieces do not need to be physically separated or even separable from the whole, just objectively defined.
 
@@ -28,7 +52,7 @@ A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a 
 
 {{ macros.include_example("object/1.json") }}
 
-### 1.2. Time Periods and Events
+### 2.2. Time Periods and Events
 
 In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.
 
@@ -45,7 +69,7 @@ An auction _(aat:300054751)_ consists of many activities in which a particular l
 
 {{ macros.include_example("activity/1.json") }}
 
-### 1.3. Locations
+### 2.3. Locations
 
 Locations can be made more specific by saying that the smaller region is part of the larger region.
 
@@ -61,7 +85,7 @@ The "W02" gallery is part of the museum, which is in Los Angeles _(tgn:7023900-p
 
 {{ macros.include_example("place/1.json") }}
 
-### 1.4. Information Objects
+### 2.4. Information Objects
 
 CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
 
@@ -77,7 +101,7 @@ The content of the first ledger from a dealer's records contains the content of 
 
 {{ macros.include_example("infoObject/1.json") }}
 
-### 1.5 Organizations
+### 2.5 Organizations
 
 Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.
 
@@ -92,7 +116,7 @@ The Paintings Department _(aat:300263534)_ is part of the Example Museum _(aat:3
 {{ macros.include_example("group/1.json") }}
 
 
-## 2. Statements about a Resource
+## 3. Statements about a Resource
 
 In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
 
@@ -107,12 +131,11 @@ Example use cases for this pattern include:
 
 __Example:__
 
+Having only a textual description of the materials, the value `"Oil on Canvas"` is recorded as referring to the painting as a "material components" _(aat:300264237)_ statement:
+
 {{ macros.include_example("object/2.json") }}
 
 
-## 3. Types
-
-## 4. Vocabulary References
 
 
 
