@@ -2,6 +2,6 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/object/3", 
   "type": "ManMadeObject", 
-  "has_type": "aat:300033618", 
+  "classified_as": "aat:300033618", 
   "label": "Example Painting"
 }

@@ -2,17 +2,17 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/object/1", 
   "type": "ManMadeObject", 
-  "has_type": "aat:300033618", 
+  "classified_as": "aat:300033618", 
   "label": "Example Painting", 
   "made_of": {
     "id": "http://vocab.getty.edu/aat/300015045", 
     "type": "Material", 
     "label": "watercolor"
   }, 
-  "is_composed_of": {
+  "part": {
     "id": "https://lod.shared-canvas.org/example/object/1/part/1", 
     "type": "PhysicalThing", 
-    "has_type": "aat:300014844", 
+    "classified_as": "aat:300014844", 
     "label": "Canvas Support", 
     "made_of": {
       "id": "http://vocab.getty.edu/aat/300014078", 

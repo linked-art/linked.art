@@ -8,11 +8,11 @@ It is useful to have some common baseline patterns to follow when using a very o
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
 
-## 1. Types
+## 1. Types / Classifications
 
-The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate `crm:P2_has_type`, or `has_type` in the JSON-LD representation. This is used to refer to an externally managed controlled vocabulary of terms. The semantics of `has_type` can be understood as "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".
+The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate `crm:P2_has_type`, referred to as `classified_as` in the JSON-LD representation. The semantics of `crm:P2_has_type` are thus closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".
 
-It is useful to distinguish the predicate `rdf:type`, or `type` in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.
+It is useful to compare this with the predicate `rdf:type`, or `type` in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.
 
 While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms used in the model is listed [here](/model/vocabs/). 
 
@@ -102,7 +102,7 @@ The content of the first ledger from a dealer's records contains the content of 
 
 {{ macros.include_example("infoObject/1.json") }}
 
-### 2.5 Organizations
+### 2.5. Organizations
 
 Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.
 

@@ -1,0 +1,78 @@
+---
+title: Object Provenance
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+The general model for describing the provenance of an object is to track the events in which the object of interest is created or discovered, transferred between owners or custodians, until it is lost, destroyed or in its present location.  For example a painting's provenance starts when the artist paints it, and then there are events in which it ownership of the painting is transferred from the artist to its first owner, and then on to subsequent owners. The details of those transfers are the primary data to be collected in the provenance model.
+
+The key participants in those different types of events are:
+
+  * the [Object](../object/) itself
+  * the [Actors](../actor/) (people or organizations) that own the object or facilitate the transfer
+  * the [Locations](../place) at which the events occur
+  * and the Times at which the events occur
+
+In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody (the painting is loaned out for an [exhibition](../exhibition/)) or [taking inventory](inventory.html) of the dealer's stock confirming that the painting is still in good condition and available for sale.
+
+Finally, there is documentary evidence of these events, such as sales catalogs or stock books, from which we can piece together the path of the object through history.
+
+## General Event Model 
+
+The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail below.
+
+{{ macros.include_example("activity/2.json") }}
+
+## Object Creation
+
+The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
+
+{{ macros.include_example("activity/3.json") }}
+
+## Object Acquisition
+
+Subsequent activities in the provenance of an object are the transfer of ownership from (`transferred_title_from`) one owner to (`transferred_title_to`) the next, starting with the artist as defacto first owner to the person or organization who owns it next. The object itself is the value of the `transferred_title_of` relationship. The ownership chain can then be expressed by repeating this same pattern of transferring title from the current owner to the next.
+
+If the previous or next owner is unknown, then the respective relationship can be omitted from the event. For example, if it is known that the object was sold between 1806 and 1809, but not to whom it was sold, this can be expresed by omitting `transferred_title_to` from the description.
+
+This pattern does not express any further detail about how the acquisition took place, just that the object's ownership was transferred.  For more detailed models of acquisition, the following sections include additional information.
+
+{{ macros.include_example("activity/4.json") }}
+
+### Purchase
+
+A purchase is a common type of acquisition in which money is exchanged for the object.  The main activity is the transfer of the title for the object from the seller to the buyer, exactly as for any Acquisition.  The activity then consists of one or more related payments, without which the purchase would not be concluded.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include payments to or from others such as for shared ownership or payment of debts owed.
+
+The Payment activity has equivalent relationships for from (`paid_from`) and to (`paid_to`), as well as the amount of money paid.  The amount has a value (`value`) and a currency (`has_currency`).  In the simple case, where the amount the object was offered for sale at (`offering_price`) is the same as it was sold for (`sales_price`) and there was a single transfer of money, for that amount (`paid_amount`).  However, these values might be different if in certain circumstances and are hence modeled separately.
+
+{{ macros.include_example('activity/5.json') }}
+
+### Auctions
+
+The individual purchase that is the result of auctioning an object is the same as the above Purchase model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions/). 
+
+## Object Loss or Destruction
+
+The end of the provenance chain of an object is where it passes from recorded history or is known to have been destroyed.
+
+### Loss
+
+The loss of an object is simply the transfer of ownership away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient of the transfer might be able to be filled in.
+
+{{ macros.include_example('activity/6.json') }}
+
+### Destruction
+
+Objects are destroyed by `Destruction` events. These events may have a time and/or place, but currently cannot be `carried_out_by` actors.
+
+{{ macros.include_example('activity/7.json') }}
+
+## Ownership
+
+curating activity in AAT:  300054277
+
+
+
+## Documentation

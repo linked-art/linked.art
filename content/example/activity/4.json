@@ -1,0 +1,33 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/activity/4", 
+  "type": "Acquisition", 
+  "timespan": {
+    "id": "https://lod.shared-canvas.org/example/time/1", 
+    "type": "TimeSpan", 
+    "label": "When", 
+    "begin_of_the_begin": "1890-01-04T00:00:00Z", 
+    "end_of_the_end": "1890-01-05T00:00:00Z"
+  }, 
+  "transferred_title_of": {
+    "id": "https://lod.shared-canvas.org/example/object/1", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618", 
+    "label": "Example Painting"
+  }, 
+  "transferred_title_from": {
+    "id": "https://lod.shared-canvas.org/example/actor/1", 
+    "type": "Actor", 
+    "label": "Seller"
+  }, 
+  "transferred_title_to": {
+    "id": "https://lod.shared-canvas.org/example/actor/2", 
+    "type": "Actor", 
+    "label": "Buyer"
+  }, 
+  "took_place_at": {
+    "id": "https://lod.shared-canvas.org/example/place/1", 
+    "type": "Place", 
+    "label": "Art Gallery"
+  }
+}

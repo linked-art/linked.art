@@ -2,12 +2,12 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/object/2", 
   "type": "ManMadeObject", 
-  "has_type": "aat:300033618", 
+  "classified_as": "aat:300033618", 
   "label": "Example Painting on Canvas", 
-  "is_referred_to_by": {
+  "referred_to_by": {
     "id": "https://lod.shared-canvas.org/example/object/2/statement/1", 
     "type": "LinguisticObject", 
-    "has_type": "aat:300264237", 
+    "classified_as": "aat:300264237", 
     "value": "Oil on Canvas"
   }
 }

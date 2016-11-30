@@ -11,7 +11,7 @@
   "spatially_contains": {
     "id": "https://lod.shared-canvas.org/example/place/1/part/1", 
     "type": "Place", 
-    "has_type": "aat:300240057", 
+    "classified_as": "aat:300240057", 
     "label": "Gallery W204"
   }
 }

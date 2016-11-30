@@ -1,4 +1,6 @@
-# Museum Data Model
+---
+title: Museum Data Model
+---
 
 The desired target model for Linked Open Data in the museum domain is one with the following properties:
 
@@ -20,27 +22,20 @@ Following the existing norms of the community, our starting point consists of:
 
 * [CIDOC-CRM](http://www.cidoc-crm.org/) as the core ontology, giving an event-based paradigm
 * The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity
-* [JSON-LD](https://www.w3.org/TR/json-ld/) as the primary target serialization
+* [JSON-LD](jsonld/) as the primary target serialization
 
 ## Model Components
 
-The model can be treated as interlinking components that describe aspects of the events of interest:
+The model can be treated as interlinking components that describe aspects of the events of interest. The target context for JSON-LD is described first, as the examples within the other documentation use it for readability.
 
+* [Target Serialization](jsonld/)
 * [Baseline Patterns](base/)
 * [Object Provenance](provenance/)
 * [Object Description](object/)
 * [Actors](actor/) (People, Organizations)
 * [Places](place/)
 * [Exhibitions](exhibition/)
-
-## Sources of Identity
-
-Re-list in terms of what is being identified
-
-* [AAT](identity/aat/)
-* [ULAN](identity/ulan/)
-* [TGN](identity/tgn/)
-* [IconClass](identity/iconclass/)
+* [Sources of Identity](vocab/)
 
 ## Scope Limitations
 

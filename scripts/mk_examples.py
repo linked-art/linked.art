@@ -1,15 +1,25 @@
 
 import json
-from cidoc_orm import factory
+from cidoc_orm import factory, Production, Acquisition, Purchase, Currency, Destruction
 from vocab_mapping import Painting, InformationObject, Department, SupportPart, Type, \
-	Auction, Museum, Place, Gallery, Activity, Group, MaterialStatement, materialTypes
+	Auction, Museum, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
+	TimeSpan, ManMadeObject, Payment, MonetaryAmount, materialTypes
 import yaml
 
-Painting._uri_segment = "object"
-Auction._uri_segment = "activity"
+ManMadeObject._uri_segment = "object"
+Activity._uri_segment = "activity"
 Place._uri_segment = "place"
 InformationObject._uri_segment = "infoObject"
 Group._uri_segment = "group"
+Actor._uri_segment = "actor"
+TimeSpan._uri_segment = "time"
+Production._uri_segment = "activity"
+Acquisition._uri_segment = "activity"
+Purchase._uri_segment = "activity"
+Payment._uri_segment = "activity"
+MonetaryAmount._uri_segment = "money"
+Currency._uri_segment = "money"
+Destruction._uri_segment = "activity"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -31,6 +41,10 @@ factory.base_url = baseUrl
 factory.base_dir = "../content/%s" % egdir
 factory.context_uri = contextUrl
 
+### Make the identities auto-increment based on _uri_segment of the class
+### Then expose all of the resources, not just the top level.
+
+
 # Base - Parts - Example 1
 mmo = Painting("1")
 mmo.label = "Example Painting"
@@ -38,7 +52,7 @@ mmo.made_of = materialTypes['watercolor']
 part = SupportPart(mmo.id + "/part/1")
 part.label = "Canvas Support"
 part.made_of = materialTypes['canvas']
-mmo.is_composed_of = part
+mmo.part = part
 factory.toFile(mmo, compact=False)
 
 # Example 2
@@ -67,7 +81,7 @@ ledger = InformationObject("1")
 ledger.label = "Content of Ledger 1"
 row = InformationObject(ledger.id + "/part/1")
 row.label = "Content of Row 1"
-ledger.has_section = row
+ledger.composed_of = row
 factory.toFile(ledger, compact=False)
 
 # Example 5
@@ -76,7 +90,7 @@ museum = Museum("1")
 museum.label = "Example Museum"
 dept = Department(museum.id + "/part/1")
 dept.label = "Paintings Department"
-museum.has_current_or_former_member = dept
+museum.current_or_former_member = dept
 factory.toFile(museum, compact=False)
 
 # Base - Statements
@@ -85,11 +99,106 @@ obj2 = Painting("2")
 obj2.label = "Example Painting on Canvas"
 lo = MaterialStatement(obj2.id + "/statement/1")
 lo.value = "Oil on Canvas"
-obj2.is_referred_to_by = lo
+obj2.referred_to_by = lo
 factory.toFile(obj2, compact=False)
 
 obj2 = Painting("3")
 obj2.label = "Example Painting"
 factory.toFile(obj2, compact=False)
+
+# Provenance - General Activity
+
+act = Activity("2")
+who = Actor("1")
+who.label = "Who"
+when = TimeSpan("1")
+when.label = "When"
+when.begin_of_the_begin = "earliest-start-datetime"
+when.end_of_the_end = "latest-end-datetime"
+where = Place("1")
+where.label = "Where"
+act.carried_out_by = who
+act.took_place_at = where
+act.timespan = when
+factory.toFile(act, compact=False)
+
+# Prov - Object Creation
+
+act = Production("3")
+who = Actor("1")
+who.label = "Example Artist"
+what = Painting("1")
+what.label = "Example Painting"
+when = TimeSpan("1")
+where = Place("1")
+where.label = "Example Artist's Studio"
+when.begin_of_the_begin = "1780-03-05T00:00:00Z"
+when.end_of_the_end = "1780-03-06T00:00:00Z"
+act.carried_out_by = who
+act.timespan = when
+act.produced = what
+act.took_place_at = where
+factory.toFile(act, compact=False)
+
+# Prov - Acquisition
+
+act = Acquisition("4")
+seller = Actor("1")
+seller.label = "Seller"
+buyer = Actor("2")
+buyer.label = "Buyer"
+when = TimeSpan("1")
+when.label = "When"
+when.begin_of_the_begin = "1890-01-04T00:00:00Z"
+when.end_of_the_end = "1890-01-05T00:00:00Z"
+act.timespan = when
+where = Place("1")
+where.label = "Art Gallery"
+act.took_place_at = where
+act.transferred_title_of = what
+act.transferred_title_from = seller
+act.transferred_title_to = buyer
+factory.toFile(act, compact=False)
+
+# Prov - Purchase
+
+act = Purchase("5")
+act.transferred_title_of = what
+act.transferred_title_from = seller
+act.transferred_title_to = buyer
+paymt = Payment("6")
+paymt.paid_from = buyer
+paymt.paid_to = seller
+amt = MonetaryAmount("1")
+amt.value = 100
+curr = Currency("2")
+curr.label = "dollars"
+amt.currency = curr
+paymt.paid_amount = amt
+act.consists_of = paymt
+act.sales_price = amt
+act.offering_price = amt
+factory.toFile(act, compact=False)
+
+# Prov - Loss
+
+act = Acquisition("6")
+what.label = "Example Lost Painting"
+act.transferred_title_of = what
+seller.label = "Previous Owner"
+act.transferred_title_from = seller
+when.label = None
+act.timespan = when
+factory.toFile(act, compact=False)
+
+# Prov - Destruction
+
+dest = Destruction("7")
+what.label = "Example Destroyed Painting"
+dest.destroyed = what
+dest.timespan = when
+factory.toFile(dest, compact=False)
+# Auction - 
+
 
 

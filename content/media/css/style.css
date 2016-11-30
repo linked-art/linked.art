@@ -113,6 +113,41 @@ footer {
         margin-right: 10px;    
 }
 
+code {
+  border-radius: 5px;
+  background-color: #eee ;
+  border: 1px solid #ccc ;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr {
+  border: 1px solid #666;
+}
+
+td {
+  border: 1px solid #666;
+  padding: 3px;
+}
+
+th {
+  background-color: #ccc;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.indent {
+  margin-left: 25px;
+}
 
 /* Header Anchors */
 article {
