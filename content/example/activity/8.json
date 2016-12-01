@@ -1,0 +1,37 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/activity/8", 
+  "type": "Activity", 
+  "classified_as": "aat:300054277", 
+  "label": "Looking After of the Painting", 
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/actor/5", 
+    "type": "Actor", 
+    "label": "Owner"
+  }, 
+  "used_specific_object": {
+    "id": "https://lod.shared-canvas.org/example/object/3", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618", 
+    "label": "Painting"
+  }, 
+  "started_by": {
+    "id": "https://lod.shared-canvas.org/example/activity/9", 
+    "type": "Acquisition", 
+    "transferred_title_of": "https://lod.shared-canvas.org/example/object/3", 
+    "transferred_title_to": "https://lod.shared-canvas.org/example/actor/5"
+  }, 
+  "finished_by": {
+    "id": "https://lod.shared-canvas.org/example/activity/10", 
+    "type": "Acquisition", 
+    "transferred_title_of": "https://lod.shared-canvas.org/example/object/3", 
+    "transferred_title_from": "https://lod.shared-canvas.org/example/actor/5", 
+    "occurs_after": "https://lod.shared-canvas.org/example/activity/9"
+  }, 
+  "consists_of": {
+    "id": "https://lod.shared-canvas.org/example/activity/11", 
+    "type": "Activity", 
+    "classified_as": "aat:300077506", 
+    "label": "Inventory Taking"
+  }
+}

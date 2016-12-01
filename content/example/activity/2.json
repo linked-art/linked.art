@@ -2,6 +2,11 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/2", 
   "type": "Activity", 
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/actor/1", 
+    "type": "Actor", 
+    "label": "Who"
+  }, 
   "timespan": {
     "id": "https://lod.shared-canvas.org/example/time/1", 
     "type": "TimeSpan", 
@@ -13,10 +18,5 @@
     "id": "https://lod.shared-canvas.org/example/place/1", 
     "type": "Place", 
     "label": "Where"
-  }, 
-  "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/actor/1", 
-    "type": "Actor", 
-    "label": "Who"
   }
 }

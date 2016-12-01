@@ -65,14 +65,15 @@ The loss of an object is simply the transfer of ownership away from its current 
 
 ### Destruction
 
-Objects are destroyed by `Destruction` events. These events may have a time and/or place, but currently cannot be `carried_out_by` actors.
+Objects are destroyed by during `Destruction` events that are not carried out by any actor, or by an `Activity` that is at the same time a `Destruction`.  This is a different model from `Production` which is always an activity.
 
 {{ macros.include_example('activity/7.json') }}
 
 ## Ownership
 
-curating activity in AAT:  300054277
+Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object is also included separately from the very short lived activities in which ownership is transferred.  This is to allow for additional information to be associated with that period, such as where it was held or when other activities took place. For art dealers, collectors or museums, one such activity that occurs during this period is taking inventory of the objects that are owned.
 
+{{ macros.include_example('activity/8.json') }}
 
 
 ## Documentation

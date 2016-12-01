@@ -1,9 +1,10 @@
 
 import json
-from cidoc_orm import factory, Production, Acquisition, Purchase, Currency, Destruction
+from cidoc_orm import factory, Production, Acquisition, Purchase, Currency
 from vocab_mapping import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, Museum, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
-	TimeSpan, ManMadeObject, Payment, MonetaryAmount, materialTypes
+	TimeSpan, ManMadeObject, Payment, MonetaryAmount, DestructionActivity, \
+	Curating, Inventorying, materialTypes
 import yaml
 
 ManMadeObject._uri_segment = "object"
@@ -19,7 +20,7 @@ Purchase._uri_segment = "activity"
 Payment._uri_segment = "activity"
 MonetaryAmount._uri_segment = "money"
 Currency._uri_segment = "money"
-Destruction._uri_segment = "activity"
+DestructionActivity._uri_segment = "activity"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -193,11 +194,44 @@ factory.toFile(act, compact=False)
 
 # Prov - Destruction
 
-dest = Destruction("7")
+dest = DestructionActivity("7")
 what.label = "Example Destroyed Painting"
 dest.destroyed = what
 dest.timespan = when
+buyer.label = "Painting Destroyer"
+dest.carried_out_by = buyer
 factory.toFile(dest, compact=False)
+
+# Prov - Curating and Inventorying
+
+act = Curating("8")
+act.label = "Looking After of the Painting"
+start = Acquisition("9")
+end = Acquisition("10")
+inv = Inventorying("11")
+inv.label = "Inventory Taking"
+what = Painting("3")
+what.label = "Painting"
+owner = Actor("5")
+owner.label = "Owner"
+
+start.transferred_title_of = what
+start.transferred_title_to = owner
+end.transferred_title_of = what
+end.transferred_title_from = owner
+act.carried_out_by = owner
+act.used_specific_object = what
+
+end.occurs_after = start
+act.started_by = start
+act.finished_by = end
+act.consists_of = inv
+factory.toFile(act, compact=False)
+
+
+
+
+
 # Auction - 
 
 

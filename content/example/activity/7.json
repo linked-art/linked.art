@@ -1,7 +1,15 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/7", 
-  "type": "Destruction", 
+  "type": [
+    "Destruction", 
+    "Activity"
+  ], 
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/actor/2", 
+    "type": "Actor", 
+    "label": "Painting Destroyer"
+  }, 
   "timespan": {
     "id": "https://lod.shared-canvas.org/example/time/1", 
     "type": "TimeSpan", 
