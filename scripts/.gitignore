@@ -1,0 +1,4 @@
+crm_vocab.tsv
+cidoc_orm.py
+vocab_mapping.py
+*.pyc
