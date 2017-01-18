@@ -1,3 +1,21 @@
 extends: base.j2
 default_block: content
 level: top
+
+example:
+    auction_base: activity/17.json
+    base_parts_activity: activity/0.json
+    base_parts_info: infoObject/0.json
+    base_parts_org: group/0.json
+    base_parts_place: place/0.json
+    base_parts_thing: object/1.json
+    base_stmt: object/2.json
+    base_type: object/0.json
+    prov_acq: activity/3.json
+    prov_create: activity/2.json
+    prov_curate: activity/8.json
+    prov_dest: activity/7.json
+    prov_event: activity/1.json
+    prov_lifetime: activity/12.json
+    prov_loss: activity/6.json
+    prov_purchase: activity/4.json

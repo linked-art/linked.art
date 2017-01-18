@@ -1,10 +1,10 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/infoObject/1", 
+  "id": "https://lod.shared-canvas.org/example/infoObject/0", 
   "type": "InformationObject", 
   "label": "Content of Ledger 1", 
   "composed_of": {
-    "id": "https://lod.shared-canvas.org/example/infoObject/1/part/1", 
+    "id": "https://lod.shared-canvas.org/example/infoObject/0/part/1", 
     "type": "InformationObject", 
     "label": "Content of Row 1"
   }

@@ -11,6 +11,11 @@ plugins:
     - hyde.ext.plugins.meta.AutoExtendPlugin
     - hyde.ext.plugins.meta.TaggerPlugin
     - hyde.ext.plugins.text.SyntextPlugin
+
+jinja2:
+    filters:
+        regex_replace: extensions.text.regex_replace
+
 markdown:
     extensions:
         - fenced_code

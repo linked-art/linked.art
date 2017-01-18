@@ -99,7 +99,9 @@ footer {
       padding-top: 10px;
       padding-bottom: 20px;
       padding-left: 20px;
-      padding-right: 24px;    
+      padding-right: 24px; 
+      border-left: 4px solid black;   
+      background: #c0c0c0;
 }
 
 .note {
@@ -111,6 +113,18 @@ footer {
         font-weight: bold;
         color: #32C032;
         margin-right: 10px;    
+}
+
+.warning {
+      border-left: 4px solid #E25252;
+      background: #FCD0D0; 
+      margin-bottom: 8px;
+}
+
+.warning .admonition-title {
+        font-weight: bold;
+        color: #C03232;
+        margin-right: 10px;  
 }
 
 code {

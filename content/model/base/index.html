@@ -28,7 +28,7 @@ __Example:__
 
 The type of the object (an instance of CRM's ManMadeObject class) is a painting _(aat:300033618)_:
 
-{{ macros.include_example("object/3.json") }}
+{{ macros.include_example( "base_type" ) }}
 
 
 ## 2. Parts
@@ -51,7 +51,7 @@ __Example:__
 
 A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a support _(aat:300014844)_ made of canvas _(aat:300014078)_:
 
-{{ macros.include_example("object/1.json") }}
+{{ macros.include_example("base_parts_thing") }}
 
 ### 2.2. Time Periods and Events
 
@@ -68,7 +68,7 @@ __Example:__
 
 An auction _(aat:300054751)_ consists of many activities in which a particular lot is auctioned:
 
-{{ macros.include_example("activity/1.json") }}
+{{ macros.include_example("base_parts_activity") }}
 
 ### 2.3. Locations
 
@@ -84,7 +84,7 @@ __Example:__
 
 The "W02" gallery is part of the museum, which is in Los Angeles _(tgn:7023900-place)_:
 
-{{ macros.include_example("place/1.json") }}
+{{ macros.include_example("base_parts_place") }}
 
 ### 2.4. Information Objects
 
@@ -100,7 +100,7 @@ __Example:__
 
 The content of the first ledger from a dealer's records contains the content of the first row of that ledger.
 
-{{ macros.include_example("infoObject/1.json") }}
+{{ macros.include_example("base_parts_info") }}
 
 ### 2.5. Organizations
 
@@ -114,7 +114,7 @@ __Example:__
 
 The Paintings Department _(aat:300263534)_ is part of the Example Museum _(aat:300312281)_
 
-{{ macros.include_example("group/1.json") }}
+{{ macros.include_example("base_parts_org") }}
 
 
 ## 3. Statements about a Resource
@@ -134,7 +134,7 @@ __Example:__
 
 Having only a textual description of the materials, the value `"Oil on Canvas"` is recorded as referring to the painting as a "material components" _(aat:300264237)_ statement:
 
-{{ macros.include_example("object/2.json") }}
+{{ macros.include_example("base_stmt") }}
 
 
 

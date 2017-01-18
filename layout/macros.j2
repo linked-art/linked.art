@@ -1,12 +1,13 @@
 
 {% macro include_example(link) -%}
+{% set link2 = resource.meta.example[link] %}
 
 ```json
-{% include site.config.var.exampleDir + "/" + link %}
+{% include site.config.var.exampleDir + "/" + link2 %}
 
 ```
-[Raw]({{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + site.config.var.exampleDir + "/" + link }}) | 
-[Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + site.config.var.exampleDir + "/" + link|urlencode }})
+[Raw]({{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + site.config.var.exampleDir + "/" + link2 }}) | 
+[Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + site.config.var.exampleDir + "/" + link2|urlencode }})
 {%- endmacro %}
 
 {% macro render_basic_menu() -%}

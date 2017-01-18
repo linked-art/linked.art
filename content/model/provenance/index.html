@@ -23,13 +23,13 @@ Finally, there is documentary evidence of these events, such as sales catalogs o
 
 The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail below.
 
-{{ macros.include_example("activity/2.json") }}
+{{ macros.include_example("prov_event") }}
 
 ## Object Creation
 
 The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
 
-{{ macros.include_example("activity/3.json") }}
+{{ macros.include_example("prov_create") }}
 
 ## Object Acquisition
 
@@ -39,7 +39,7 @@ If the previous or next owner is unknown, then the respective relationship can b
 
 This pattern does not express any further detail about how the acquisition took place, just that the object's ownership was transferred.  For more detailed models of acquisition, the following sections include additional information.
 
-{{ macros.include_example("activity/4.json") }}
+{{ macros.include_example("prov_acq") }}
 
 ### Purchase
 
@@ -47,7 +47,10 @@ A purchase is a common type of acquisition in which money is exchanged for the o
 
 The Payment activity has equivalent relationships for from (`paid_from`) and to (`paid_to`), as well as the amount of money paid.  The amount has a value (`value`) and a currency (`has_currency`).  In the simple case, where the amount the object was offered for sale at (`offering_price`) is the same as it was sold for (`sales_price`) and there was a single transfer of money, for that amount (`paid_amount`).  However, these values might be different if in certain circumstances and are hence modeled separately.
 
-{{ macros.include_example('activity/5.json') }}
+!!! warning "Diachronic Comparison of Monetary Amounts"
+    The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
+
+{{ macros.include_example("prov_purchase") }}
 
 ### Auctions
 
@@ -61,19 +64,24 @@ The end of the provenance chain of an object is where it passes from recorded hi
 
 The loss of an object is simply the transfer of ownership away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient of the transfer might be able to be filled in.
 
-{{ macros.include_example('activity/6.json') }}
+{{ macros.include_example("prov_loss") }}
 
 ### Destruction
 
 Objects are destroyed by during `Destruction` events that are not carried out by any actor, or by an `Activity` that is at the same time a `Destruction`.  This is a different model from `Production` which is always an activity.
 
-{{ macros.include_example('activity/7.json') }}
+{{ macros.include_example("prov_dest") }}
 
 ## Ownership
 
-Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object is also included separately from the very short lived activities in which ownership is transferred.  This is to allow for additional information to be associated with that period, such as where it was held or when other activities took place. For art dealers, collectors or museums, one such activity that occurs during this period is taking inventory of the objects that are owned.
+Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object _(aat:300054277)_ is also included separately from the very short lived activities in which ownership is transferred.  This is to allow for additional information to be associated with that period, such as where it was held or when other activities took place. For art dealers, collectors or museums, one such activity that occurs during this period is taking inventory of the objects _(aat:300077506)_ that are owned.
 
-{{ macros.include_example('activity/8.json') }}
+{{ macros.include_example("prov_curate") }}
+
+The entire provenance of an object _(aat:300055863)_ is also an activity, that consists of the curation activities.
+
+{{ macros.include_example("prov_lifetime") }}
 
 
-## Documentation
+
+

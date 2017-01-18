@@ -1,33 +1,39 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/4", 
-  "type": "Acquisition", 
-  "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/1", 
-    "type": "TimeSpan", 
-    "label": "When", 
-    "begin_of_the_begin": "1890-01-04T00:00:00Z", 
-    "end_of_the_end": "1890-01-05T00:00:00Z"
+  "type": "Purchase", 
+  "sales_price": {
+    "id": "https://lod.shared-canvas.org/example/money/0", 
+    "type": "MonetaryAmount", 
+    "value": 100, 
+    "currency": {
+      "id": "https://lod.shared-canvas.org/example/money/1", 
+      "type": "Currency", 
+      "label": "dollars"
+    }
   }, 
   "transferred_title_of": {
-    "id": "https://lod.shared-canvas.org/example/object/1", 
+    "id": "https://lod.shared-canvas.org/example/object/3", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Painting"
   }, 
   "transferred_title_from": {
-    "id": "https://lod.shared-canvas.org/example/actor/1", 
+    "id": "https://lod.shared-canvas.org/example/actor/2", 
     "type": "Actor", 
     "label": "Seller"
   }, 
   "transferred_title_to": {
-    "id": "https://lod.shared-canvas.org/example/actor/2", 
+    "id": "https://lod.shared-canvas.org/example/actor/3", 
     "type": "Actor", 
     "label": "Buyer"
   }, 
-  "took_place_at": {
-    "id": "https://lod.shared-canvas.org/example/place/1", 
-    "type": "Place", 
-    "label": "Art Gallery"
-  }
+  "consists_of": {
+    "id": "https://lod.shared-canvas.org/example/activity/5", 
+    "type": "Payment", 
+    "paid_amount": "https://lod.shared-canvas.org/example/money/0", 
+    "paid_from": "https://lod.shared-canvas.org/example/actor/3", 
+    "paid_to": "https://lod.shared-canvas.org/example/actor/2"
+  }, 
+  "offering_price": "https://lod.shared-canvas.org/example/money/0"
 }
