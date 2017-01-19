@@ -11,7 +11,7 @@
   }, 
   "part": {
     "id": "https://lod.shared-canvas.org/example/object/1/part/1", 
-    "type": "PhysicalThing", 
+    "type": "PhysicalObject", 
     "classified_as": "aat:300014844", 
     "label": "Canvas Support", 
     "made_of": {
