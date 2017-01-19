@@ -3,16 +3,23 @@
   "id": "https://lod.shared-canvas.org/example/activity/17", 
   "type": "Activity", 
   "classified_as": "aat:300054751", 
-  "label": "Auction in London 1875-03-12,13", 
+  "label": "Example Auction in London 1875-03-12,13", 
   "carried_out_by": {
     "id": "https://lod.shared-canvas.org/example/group/1", 
-    "type": "Group"
+    "type": "Group", 
+    "label": "Auction Company"
   }, 
   "timespan": {
     "id": "https://lod.shared-canvas.org/example/time/3", 
     "type": "TimeSpan", 
+    "label": "12th and 13th of March, 1875", 
     "begin_of_the_begin": "1875-03-12T00:00:00Z", 
     "end_of_the_end": "1875-03-14T00:00:00Z"
+  }, 
+  "consists_of": {
+    "id": "https://lod.shared-canvas.org/example/activity/18", 
+    "type": "Activity", 
+    "label": "Auction of Lot 1"
   }, 
   "took_place_at": {
     "id": "https://lod.shared-canvas.org/example/place/4", 

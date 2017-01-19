@@ -1,13 +1,14 @@
 
 import json
-from cromulent.model import factory, Production, Acquisition, Purchase, Currency
+from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
+	Identifier, Person 
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
-	LotNumber, \
+	LotNumber, Auctioneer, \
 	materialTypes
-from cromulent.extra import Payment, DestructionActivity, add_rdf_value
+from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 import yaml
 
 ManMadeObject._uri_segment = "object"
@@ -16,6 +17,7 @@ Place._uri_segment = "place"
 InformationObject._uri_segment = "infoObject"
 Group._uri_segment = "group"
 Actor._uri_segment = "actor"
+Person._uri_segment = "person"
 TimeSpan._uri_segment = "time"
 Production._uri_segment = "activity"
 Acquisition._uri_segment = "activity"
@@ -24,6 +26,8 @@ Payment._uri_segment = "activity"
 MonetaryAmount._uri_segment = "money"
 Currency._uri_segment = "money"
 DestructionActivity._uri_segment = "activity"
+PhysicalObject._uri_segment = "object"
+Identifier._uri_segment = "identifier"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -272,18 +276,58 @@ id_uri_hash['prov_lifetime'] = act.id.replace(baseUrl, '')
 # Auction - Auction
 
 auc = Auction()
-auc.label = "Auction in London 1875-03-12,13"
+auc.label = "Example Auction in London 1875-03-12,13"
 h = AuctionHouse()
 h.label = "Auction House, London"
 auc.took_place_at = h
 org = Group()
+org.label = "Auction Company"
 auc.carried_out_by = org
 t = TimeSpan()
+t.label = "12th and 13th of March, 1875"
 t.begin_of_the_begin = "1875-03-12T00:00:00Z"
 t.end_of_the_end = "1875-03-14T00:00:00Z"
 auc.timespan = t
+lot = Activity()
+lot.label = "Auction of Lot 1"
+auc.consists_of = lot
 factory.toFile(auc, compact=False)
 id_uri_hash["auction_base"] = auc.id.replace(baseUrl, '')
+
+# Auction - Lot
+
+lot = Activity()
+lot.label = "Auction of Lot J-1823-5"
+who = Auctioneer()
+who.label = "Example Auctioneer"
+lot.carried_out_by = who
+lotset = PhysicalObject()
+lotset.label = "Set of Objects for Lot J-1823-5"
+lot.used_specific_object = lotset
+factory.toFile(lot, compact=False)
+id_uri_hash["auction_lot"] = lot.id.replace(baseUrl, '')
+
+# Auction - LotSet
+
+lotset = PhysicalObject()
+lotset.label = "Set of Objects for Lot 812"
+ln = LotNumber()
+ln.value = "812"
+lotset.identified_by = ln
+obj = Painting()
+obj.label = "Example Painting"
+lotset.part = obj
+amnt = MonetaryAmount()
+amnt.value = 500
+amnt.currency = curr
+amnt2 = MonetaryAmount()
+amnt.value = 4000
+amnt.currency = curr
+lotset.starting_price = amnt
+lotset.estimated_price = amnt2
+factory.toFile(lotset, compact=False)
+id_uri_hash["auction_lotset"] = lotset.id.replace(baseUrl, '')
+
 
 
 ym = []
@@ -307,42 +351,42 @@ fh.close()
 # ---------
 
 # Attribute Assignment
-a1 = Curating("1")
-a2 = Inventorying("2")
-a3 = Attribution("3")
-a4 = Dating("4")
-a5 = Appraising("6")
+# a1 = Curating("1")
+# a2 = Inventorying("2")
+# a3 = Attribution("3")
+# a4 = Dating("4")
+# a5 = Appraising("6")
 
-what = Painting("1")
-what.label = "A Painting"
-who = Group("1")
-who.label = "Knoedler"
+# what = Painting("1")
+# what.label = "A Painting"
+# who = Group("1")
+# who.label = "Knoedler"
 
-a1.carried_out_by = who
-a1.used_specific_object = what
-a1.consists_of = a2
-a2.consists_of = a3
-a2.consists_of = a4
-a2.consists_of = a5
+# a1.carried_out_by = who
+# a1.used_specific_object = what
+# a1.consists_of = a2
+# a2.consists_of = a3
+# a2.consists_of = a4
+# a2.consists_of = a5
 
-a3.assigned_attribute_to = what
-a4.assigned_attribute_to = what
-a5.assigned_attribute_to = what
+# a3.assigned_attribute_to = what
+# a4.assigned_attribute_to = what
+# a5.assigned_attribute_to = what
 
-artist = Actor("2")
-artist.label = "Artist"
-a3.assigned = artist
+# artist = Actor("2")
+# artist.label = "Artist"
+# a3.assigned = artist
 
-ts = TimeSpan("1")
-ts.begin_of_the_begin = "1870-01-02"
-ts.end_of_the_end = "1870-01-04"
-a4.assigned = ts
+# ts = TimeSpan("1")
+# ts.begin_of_the_begin = "1870-01-02"
+# ts.end_of_the_end = "1870-01-04"
+# a4.assigned = ts
 
-ma = MonetaryAmount("1")
-curr = Currency("2")
-curr.label = "dollars"
-ma.currency = curr
-ma.value = 1000
-a5.assigned = ma
+# ma = MonetaryAmount("1")
+# curr = Currency("2")
+# curr.label = "dollars"
+# ma.currency = curr
+# ma.value = 1000
+# a5.assigned = ma
 
 #print factory.toString(a1, compact=False)

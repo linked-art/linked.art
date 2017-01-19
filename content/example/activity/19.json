@@ -1,0 +1,17 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/activity/19", 
+  "type": "Activity", 
+  "label": "Auction of Lot J-1823-5", 
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/person/0", 
+    "type": "Person", 
+    "classified_as": "aat:300025208", 
+    "label": "Example Auctioneer"
+  }, 
+  "used_specific_object": {
+    "id": "https://lod.shared-canvas.org/example/object/4", 
+    "type": "PhysicalObject", 
+    "label": "Set of Objects for Lot J-1823-5"
+  }
+}

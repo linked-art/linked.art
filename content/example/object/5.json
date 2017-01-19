@@ -1,0 +1,32 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/object/5", 
+  "type": "PhysicalObject", 
+  "label": "Set of Objects for Lot 812", 
+  "identified_by": {
+    "id": "https://lod.shared-canvas.org/example/identifier/0", 
+    "type": "Identifier", 
+    "classified_as": "aat:300404628", 
+    "value": "812"
+  }, 
+  "starting_price": {
+    "id": "https://lod.shared-canvas.org/example/money/2", 
+    "type": "MonetaryAmount", 
+    "value": 4000, 
+    "currency": {
+      "id": "https://lod.shared-canvas.org/example/money/1", 
+      "type": "Currency", 
+      "label": "dollars"
+    }
+  }, 
+  "part": {
+    "id": "https://lod.shared-canvas.org/example/object/6", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618", 
+    "label": "Example Painting"
+  }, 
+  "estimated_price": {
+    "id": "https://lod.shared-canvas.org/example/money/3", 
+    "type": "MonetaryAmount"
+  }
+}
