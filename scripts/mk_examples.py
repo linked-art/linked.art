@@ -305,13 +305,13 @@ lotset = PhysicalObject()
 lotset.label = "Set of Objects for Lot J-1823-5"
 lot.used_specific_object = lotset
 
-bidset = Activity()
-bidset.label = "Bids made on Lot"
-lot.consists_of = bidset
-
 txn = Purchase()
 txn.label = "Purchase of Lot"
 lot.consists_of = txn
+
+bidset = Activity()
+bidset.label = "Bids made on Lot"
+lot.consists_of = bidset
 bidset.occurs_before = txn
 
 factory.toFile(lot, compact=False)
@@ -331,18 +331,12 @@ amnt = MonetaryAmount()
 amnt.value = 500
 amnt.currency = curr
 amnt2 = MonetaryAmount()
-amnt.value = 4000
-amnt.currency = curr
+amnt2.value = 4000
+amnt2.currency = curr
 lotset.starting_price = amnt
 lotset.estimated_price = amnt2
 factory.toFile(lotset, compact=False)
 id_uri_hash["auction_lotset"] = lotset.id.replace(baseUrl, '')
-
-
-
-
-factory.toFile(bidset, compact=False)
-id_uri_hash["auction_bidset"] = bidset.id.replace(baseUrl, '')
 
 
 ym = []

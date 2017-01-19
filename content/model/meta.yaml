@@ -4,7 +4,6 @@ level: top
 
 example:
     auction_base: activity/17.json
-    auction_bidset: activity/20.json
     auction_lot: activity/19.json
     auction_lotset: object/5.json
     base_parts_activity: activity/0.json

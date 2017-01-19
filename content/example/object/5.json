@@ -12,7 +12,7 @@
   "starting_price": {
     "id": "https://lod.shared-canvas.org/example/money/2", 
     "type": "MonetaryAmount", 
-    "value": 4000, 
+    "value": 500, 
     "currency": {
       "id": "https://lod.shared-canvas.org/example/money/1", 
       "type": "Currency", 
@@ -27,6 +27,8 @@
   }, 
   "estimated_price": {
     "id": "https://lod.shared-canvas.org/example/money/3", 
-    "type": "MonetaryAmount"
+    "type": "MonetaryAmount", 
+    "value": 4000, 
+    "currency": "https://lod.shared-canvas.org/example/money/1"
   }
 }

@@ -17,14 +17,14 @@
   "consists_of": [
     {
       "id": "https://lod.shared-canvas.org/example/activity/20", 
+      "type": "Purchase", 
+      "label": "Purchase of Lot"
+    }, 
+    {
+      "id": "https://lod.shared-canvas.org/example/activity/21", 
       "type": "Activity", 
       "label": "Bids made on Lot", 
-      "occurs_before": {
-        "id": "https://lod.shared-canvas.org/example/activity/21", 
-        "type": "Purchase", 
-        "label": "Purchase of Lot"
-      }
-    }, 
-    "https://lod.shared-canvas.org/example/activity/21"
+      "occurs_before": "https://lod.shared-canvas.org/example/activity/20"
+    }
   ]
 }
