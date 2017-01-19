@@ -6,7 +6,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
-	LotNumber, Auctioneer, \
+	LotNumber, Auctioneer, Bidding, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 import yaml
@@ -304,6 +304,16 @@ lot.carried_out_by = who
 lotset = PhysicalObject()
 lotset.label = "Set of Objects for Lot J-1823-5"
 lot.used_specific_object = lotset
+
+bidset = Activity()
+bidset.label = "Bids made on Lot"
+lot.consists_of = bidset
+
+txn = Purchase()
+txn.label = "Purchase of Lot"
+lot.consists_of = txn
+bidset.occurs_before = txn
+
 factory.toFile(lot, compact=False)
 id_uri_hash["auction_lot"] = lot.id.replace(baseUrl, '')
 
@@ -328,6 +338,11 @@ lotset.estimated_price = amnt2
 factory.toFile(lotset, compact=False)
 id_uri_hash["auction_lotset"] = lotset.id.replace(baseUrl, '')
 
+
+
+
+factory.toFile(bidset, compact=False)
+id_uri_hash["auction_bidset"] = bidset.id.replace(baseUrl, '')
 
 
 ym = []

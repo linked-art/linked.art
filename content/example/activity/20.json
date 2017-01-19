@@ -1,0 +1,11 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/activity/20", 
+  "type": "Activity", 
+  "label": "Bids made on Lot", 
+  "occurs_before": {
+    "id": "https://lod.shared-canvas.org/example/activity/21", 
+    "type": "Purchase", 
+    "label": "Purchase of Lot"
+  }
+}
