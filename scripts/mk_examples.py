@@ -53,6 +53,10 @@ add_rdf_value()
 
 id_uri_hash = {}
 
+page_hash = {"base": "model/base/index.html",
+	"prov": "model/provenance/index.html",
+	"auction": "model/provenance/auctions/index.html"}
+
 ### Make the identities auto-increment based on _uri_segment of the class
 ### Then expose all of the resources, not just the top level.
 
@@ -335,15 +339,89 @@ act.sales_price = amt
 act.offering_price = amt
 id_uri_hash['auction_purchase'] = purch
 
+
+
+
+
+
+
+
 prop_hash = {}
 class_hash = {}
+aat_hash = {}
+
+def traverse(what, eg):
+	for (k,v) in what.items():
+		if k == 'type':
+			if type(v) == list:
+				for t in v:
+					try:
+						class_hash[t][eg] = 1
+					except:
+						class_hash[t] = {eg:1}
+			else:
+				try:
+					class_hash[v][eg] = 1
+				except:
+					class_hash[v] = {eg:1}
+		elif k == 'classified_as':
+			if type(v) == list:
+				for t in v:
+					try:
+						aat_hash[t][eg] = 1
+					except:
+						aat_hash[t] = {eg:1}
+			else:
+				try:
+					aat_hash[v][eg] = 1
+				except:
+					aat_hash[v] = {eg:1}
+		elif k in ['@context', 'id']:
+			# Not actually properties
+			pass
+		else:		
+			try:
+				prop_hash[k][eg] = 1
+			except:
+				prop_hash[k] = {eg:1}
+			# And now recurse
+			if type(v) == dict:
+				traverse(v, eg)
 
 ym = []
-for (v,what) in sorted(id_uri_hash.items()):
+for (k,what) in sorted(id_uri_hash.items()):
 	factory.toFile(what, compact=False)
 	ym.append("%s: %s" % (k, what.id.replace(baseUrl, '')))
 	# Now walk the json of the objects and build an index
+	js = factory.toJSON(what)
+	traverse(js, k)
 
+for d in [class_hash, prop_hash, aat_hash]:
+	for (k,v) in d.items():
+		n = []
+		for nk in v.keys():
+			what = id_uri_hash[nk]
+			pg = page_hash[nk[:nk.find("_")]]
+			n.append([pg, str(what.id.replace(baseUrl, '')), nk])
+		d[k] = n
+
+# Now build an index yaml structure, and iter through in the template
+# Need to map page to the example id, and in page build <a name="eg"/> to #link to
+
+idx = {'class_idx': sorted([list(x) for x in class_hash.items()]),
+	'prop_idx': sorted([list(x) for x in prop_hash.items()]),
+	'auth_idx': sorted([list(x) for x in aat_hash.items()])}
+
+top = """---
+extends: base.j2
+default_block: content
+
+"""
+fh = file('../content/model/example_index.html', 'w')
+fh.write(top)
+fh.write(yaml.dump(idx))
+fh.write('\n---\n\n{% include "example/_index_renderer.html" %}\n')
+fh.close()
 
 top = """extends: base.j2
 default_block: content

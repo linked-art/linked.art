@@ -10,7 +10,7 @@
     "label": "Auction Company"
   }, 
   "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/3", 
+    "id": "https://lod.shared-canvas.org/example/time/5", 
     "type": "TimeSpan", 
     "label": "12th and 13th of March, 1875", 
     "begin_of_the_begin": "1875-03-12T00:00:00Z", 

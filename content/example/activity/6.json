@@ -3,20 +3,21 @@
   "id": "https://lod.shared-canvas.org/example/activity/6", 
   "type": "Acquisition", 
   "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/2", 
+    "id": "https://lod.shared-canvas.org/example/time/3", 
     "type": "TimeSpan", 
-    "begin_of_the_begin": "1890-01-04T00:00:00Z", 
-    "end_of_the_end": "1890-01-05T00:00:00Z"
+    "label": "Time noticed as Lost", 
+    "begin_of_the_begin": "1790-12-04T00:00:00Z", 
+    "end_of_the_end": "1790-12-05T00:00:00Z"
   }, 
   "transferred_title_of": {
-    "id": "https://lod.shared-canvas.org/example/object/3", 
+    "id": "https://lod.shared-canvas.org/example/object/4", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Lost Painting"
   }, 
   "transferred_title_from": {
-    "id": "https://lod.shared-canvas.org/example/actor/2", 
-    "type": "Actor", 
+    "id": "https://lod.shared-canvas.org/example/person/0", 
+    "type": "Person", 
     "label": "Previous Owner"
   }
 }

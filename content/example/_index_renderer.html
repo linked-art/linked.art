@@ -1,0 +1,27 @@
+
+<!-- uses nested lists for order preservation -->
+<!-- structure:  [[name, [ref, ref, ref, ...]], [name2, [...]]] -->
+
+## Class Index
+
+{% for key in resource.meta.class_idx %}
+  * __{{ key[0] }}__  
+{% for val in key[1] %}[{{ val[1] }}](/{{ val[0] }}#{{ val[2] }}) ([raw](/example/{{ val[1] }}.json))
+{% endfor %}
+{% endfor %}
+
+## Property Index
+
+{% for key in resource.meta.prop_idx %}
+  * __{{ key[0] }}__  
+{% for val in key[1] %}[{{ val[1] }}](/{{ val[0] }}#{{ val[2] }}) ([raw](/example/{{ val[1] }}.json))
+{% endfor %}
+{% endfor %}
+
+## Authority Index
+
+{% for key in resource.meta.auth_idx %}
+  * __{{ key[0] }}__  
+{% for val in key[1] %}[{{ val[1] }}](/{{ val[0] }}#{{ val[2] }}) ([raw](/example/{{ val[1] }}.json))
+{% endfor %}
+{% endfor %}

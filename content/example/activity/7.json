@@ -6,18 +6,18 @@
     "Activity"
   ], 
   "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/person/0", 
+    "id": "https://lod.shared-canvas.org/example/person/1", 
     "type": "Person", 
     "label": "Painting Destroyer"
   }, 
   "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/2", 
+    "id": "https://lod.shared-canvas.org/example/time/4", 
     "type": "TimeSpan", 
-    "begin_of_the_begin": "1890-01-04T00:00:00Z", 
-    "end_of_the_end": "1890-01-05T00:00:00Z"
+    "begin_of_the_begin": "1823-03-01T00:00:00Z", 
+    "end_of_the_end": "1823-03-31T00:00:00Z"
   }, 
   "destroyed": {
-    "id": "https://lod.shared-canvas.org/example/object/3", 
+    "id": "https://lod.shared-canvas.org/example/object/5", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Destroyed Painting"
