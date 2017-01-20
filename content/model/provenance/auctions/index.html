@@ -10,29 +10,27 @@ Auctions are a very common way for objects to change ownership.  The description
 
 ## Auction
 
-An auction (_aat:300054751_) is an activity which is performed by an organization, and for art objects typically takes place at an auction house (_aat:300005234_).  It consists of many `Lot`s, which are the individual activities where the auctioneer auctions off a particular object or set of objects.  That activity further consists of bidding and, if successful, is finished by a transaction where the winner of the lot pays for and takes ownership of their newly acquired object(s).
-
-
+An auction (_aat:300054751_) is an activity which is performed by an organization, and for art objects typically takes place at an auction house (_aat:300005234_).  It (typically) consists of many sets of objects being sold in separate sales to the highest bidder. The activity of selling the lot is finished by a transaction where the winner of the lot pays for and takes ownership of their newly acquired object(s). The Auction description contains the information about the overall event (who, where, when) and references the sub-events in which the sales of the lots take place.
 
 {{ macros.include_example("auction_base") }}
 
 ## Lot
 
-Mostly not known, but sometimes we do have more details, particularly the high bid that did not meet the reserve.
-Also, it could be important to distinguish that there was bidding, versus an auction that occured with no bids.
+The sale of the Lot is an activity that can be carried out by one or more Auctioneers (_aat:300025208_), though if the individual is not known, the company that performs the parent Auction can be inferred. The sale is for a specific object of the Lot, which is always a collection even if there is only one object being sold.  This is for consistency, but also to associate the Lot Number (_aat:300404628_) with the set.  The activity is further subdivided into two major sections -- the activity of the crowd of bidding, and the purchase of the Lot by the winner.  Typically the details of individual bids are not known, but often whether any bids occured or not is known.  Bidding without a Purchase might occur if the reserve price was not met.
 
 {{ macros.include_example("auction_lot") }}
 
 ### Set of Objects 
 
-Including Lot Number identifier, starting price, estimated price
+The Lot is a set of objects (_aat:300411307_) grouped together for the purposes of the sale, and may have come from different owners.  Information that is frequently known about the lot includes an identifying Lot Number assigned by the organization performing the auction and the objects that are part of it.  Other Lot specific information includes a starting price for the auction, and sometimes an estimated price for what it will sell for.  
 
 {{ macros.include_example("auction_lotset") }}
 
-
-
 ## Purchase
 
+The purchase of the Lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. 
+
+{{ macros.include_example("auction_purchase") }}
 
 
 ## Related Objects

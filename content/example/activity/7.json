@@ -6,8 +6,8 @@
     "Activity"
   ], 
   "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/actor/3", 
-    "type": "Actor", 
+    "id": "https://lod.shared-canvas.org/example/person/0", 
+    "type": "Person", 
     "label": "Painting Destroyer"
   }, 
   "timespan": {

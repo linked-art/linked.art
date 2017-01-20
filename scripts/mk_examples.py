@@ -6,7 +6,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
-	LotNumber, Auctioneer, Bidding, \
+	LotNumber, Auctioneer, Bidding, AuctionLotSet, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 import yaml
@@ -59,8 +59,7 @@ id_uri_hash = {}
 # Base - Type
 eg = Painting()
 eg.label = "Simple Example Painting"
-factory.toFile(eg, compact=False)
-id_uri_hash['base_type'] = eg.id.replace(baseUrl, '')
+id_uri_hash['base_type'] = eg
 
 # Base - Parts - Example 1
 mmo = Painting()
@@ -70,9 +69,7 @@ part = SupportPart(mmo.id + "/part/1")
 part.label = "Canvas Support"
 part.made_of = materialTypes['canvas']
 mmo.part = part
-factory.toFile(mmo, compact=False)
-id_uri_hash['base_parts_thing'] = mmo.id.replace(baseUrl, '')
-
+id_uri_hash['base_parts_thing'] = mmo
 
 # Example 2
 auc = Auction()
@@ -80,11 +77,9 @@ auc.label = "Example Auction"
 lot = Activity(auc.id + "/part/1")
 lot.label = "Example Auction of Lot"
 auc.consists_of = lot
-factory.toFile(auc, compact=False)
-id_uri_hash['base_parts_activity'] = auc.id.replace(baseUrl, '')
+id_uri_hash['base_parts_activity'] = auc
 
 # Example 3
-
 museum = Place()
 museum.label = "Example Museum Building"
 gallery = Gallery(museum.id + '/part/1')
@@ -93,41 +88,33 @@ city = Place("http://vocab.getty.edu/tgn/7023900-place")
 city.label = "Los Angeles"
 museum.spatially_contains = gallery
 museum.spatially_within = city
-factory.toFile(museum, compact=False)
-id_uri_hash['base_parts_place'] = museum.id.replace(baseUrl, '')
+id_uri_hash['base_parts_place'] = museum
 
 # Example 4
-
 ledger = InformationObject()
 ledger.label = "Content of Ledger 1"
 row = InformationObject(ledger.id + "/part/1")
 row.label = "Content of Row 1"
 ledger.composed_of = row
-factory.toFile(ledger, compact=False)
-id_uri_hash['base_parts_info'] = ledger.id.replace(baseUrl, '')
+id_uri_hash['base_parts_info'] = ledger
 
 # Example 5
-
 museum = MuseumOrg()
 museum.label = "Example Museum Organization"
 dept = Department(museum.id + "/part/1")
 dept.label = "Paintings Department"
 museum.current_or_former_member = dept
-factory.toFile(museum, compact=False)
-id_uri_hash['base_parts_org'] = museum.id.replace(baseUrl, '')
+id_uri_hash['base_parts_org'] = museum
 
 # Base - Statements
-
 obj2 = Painting()
 obj2.label = "Example Painting on Canvas"
 lo = MaterialStatement(obj2.id + "/statement/1")
 lo.value = "Oil on Canvas"
 obj2.referred_to_by = lo
-factory.toFile(obj2, compact=False)
-id_uri_hash['base_stmt'] = obj2.id.replace(baseUrl, '')
+id_uri_hash['base_stmt'] = obj2
 
 # Provenance - General Activity
-
 act = Activity()
 who = Actor()
 who.label = "Who"
@@ -140,8 +127,7 @@ where.label = "Where"
 act.carried_out_by = who
 act.took_place_at = where
 act.timespan = when
-factory.toFile(act, compact=False)
-id_uri_hash['prov_event'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_event'] = act
 
 # Prov - Object Creation
 
@@ -159,11 +145,9 @@ act.carried_out_by = who
 act.timespan = when
 act.produced = what
 act.took_place_at = where
-factory.toFile(act, compact=False)
-id_uri_hash['prov_create'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_create'] = act
 
 # Prov - Acquisition
-
 act = Acquisition()
 seller = Actor()
 seller.label = "Seller"
@@ -180,11 +164,9 @@ act.took_place_at = where
 act.transferred_title_of = what
 act.transferred_title_from = seller
 act.transferred_title_to = buyer
-factory.toFile(act, compact=False)
-id_uri_hash['prov_acq'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_acq'] = act
 
 # Prov - Purchase
-
 act = Purchase()
 act.transferred_title_of = what
 act.transferred_title_from = seller
@@ -201,31 +183,36 @@ paymt.paid_amount = amt
 act.consists_of = paymt
 act.sales_price = amt
 act.offering_price = amt
-factory.toFile(act, compact=False)
-id_uri_hash['prov_purchase'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_purchase'] = act
 
 # Prov - Loss
-
 act = Acquisition()
+what = Painting()
 what.label = "Example Lost Painting"
 act.transferred_title_of = what
-seller.label = "Previous Owner"
-act.transferred_title_from = seller
-when.label = None
+who = Person()
+who.label = "Previous Owner"
+act.transferred_title_from = who
+when = TimeSpan()
+when.label = "Time noticed as Lost"
+when.begin_of_the_begin = "1790-12-04T00:00:00Z"
+when.end_of_the_end = "1790-12-05T00:00:00Z"
 act.timespan = when
-factory.toFile(act, compact=False)
-id_uri_hash['prov_loss'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_loss'] = act
 
 # Prov - Destruction
-
 dest = DestructionActivity()
+what = Painting()
 what.label = "Example Destroyed Painting"
 dest.destroyed = what
+when = TimeSpan()
+when.begin_of_the_begin = "1823-03-01T00:00:00Z"
+when.end_of_the_end = "1823-03-31T00:00:00Z"
 dest.timespan = when
-buyer.label = "Painting Destroyer"
-dest.carried_out_by = buyer
-factory.toFile(dest, compact=False)
-id_uri_hash['prov_dest'] = dest.id.replace(baseUrl, '')
+who = Person()
+who.label = "Painting Destroyer"
+dest.carried_out_by = who
+id_uri_hash['prov_dest'] = dest
 
 # Prov - Curating and Inventorying
 
@@ -239,23 +226,23 @@ inv = Inventorying()
 inv.label = "Inventory Taking by Owner"
 owner = Actor()
 owner.label = "Owner"
-
+what = Painting()
+who = Person()
 start.transferred_title_of = what
-start.transferred_title_to = owner
+start.transferred_title_to = who
 end.transferred_title_of = what
-end.transferred_title_from = owner
-act.carried_out_by = owner
+end.transferred_title_from = who
+act.carried_out_by = who
 act.used_specific_object = what
-
 end.occurs_after = start
 act.started_by = start
 act.finished_by = end
 act.consists_of = inv
-factory.toFile(act, compact=False)
-id_uri_hash['prov_curate'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_curate'] = act
 
 # Full life time
 act = Provenance()
+what = Painting()
 act.label = "Provenance of Painting"
 act.used_specific_object = what
 prod = Production()
@@ -270,11 +257,9 @@ act.consists_of = prod
 act.consists_of = c1
 act.consists_of = c2
 act.consists_of = dest
-factory.toFile(act, compact=False)
-id_uri_hash['prov_lifetime'] = act.id.replace(baseUrl, '')
+id_uri_hash['prov_lifetime'] = act
 
 # Auction - Auction
-
 auc = Auction()
 auc.label = "Example Auction in London 1875-03-12,13"
 h = AuctionHouse()
@@ -291,35 +276,28 @@ auc.timespan = t
 lot = Activity()
 lot.label = "Auction of Lot 1"
 auc.consists_of = lot
-factory.toFile(auc, compact=False)
-id_uri_hash["auction_base"] = auc.id.replace(baseUrl, '')
+id_uri_hash["auction_base"] = auc
 
 # Auction - Lot
-
 lot = Activity()
 lot.label = "Auction of Lot J-1823-5"
 who = Auctioneer()
 who.label = "Example Auctioneer"
 lot.carried_out_by = who
-lotset = PhysicalObject()
+lotset = AuctionLotSet()
 lotset.label = "Set of Objects for Lot J-1823-5"
 lot.used_specific_object = lotset
-
 txn = Purchase()
 txn.label = "Purchase of Lot"
 lot.consists_of = txn
-
 bidset = Activity()
 bidset.label = "Bids made on Lot"
 lot.consists_of = bidset
 bidset.occurs_before = txn
-
-factory.toFile(lot, compact=False)
-id_uri_hash["auction_lot"] = lot.id.replace(baseUrl, '')
+id_uri_hash["auction_lot"] = lot
 
 # Auction - LotSet
-
-lotset = PhysicalObject()
+lotset = AuctionLotSet()
 lotset.label = "Set of Objects for Lot 812"
 ln = LotNumber()
 ln.value = "812"
@@ -335,13 +313,36 @@ amnt2.value = 4000
 amnt2.currency = curr
 lotset.starting_price = amnt
 lotset.estimated_price = amnt2
-factory.toFile(lotset, compact=False)
-id_uri_hash["auction_lotset"] = lotset.id.replace(baseUrl, '')
+id_uri_hash["auction_lotset"] = lotset
 
+# Auction - Purchase
+purch = Purchase()
+purch.transferred_title_of = AuctionLotSet()
+act = Purchase()
+purch.consists_of = act
+act.transferred_title_of = obj
+act.transferred_title_from = seller
+act.transferred_title_to = buyer
+paymt = Payment()
+paymt.paid_from = buyer
+paymt.paid_to = seller
+amt = MonetaryAmount()
+amt.value = 4500
+amt.currency = curr
+paymt.paid_amount = amt
+act.consists_of = paymt
+act.sales_price = amt
+act.offering_price = amt
+id_uri_hash['auction_purchase'] = purch
+
+prop_hash = {}
+class_hash = {}
 
 ym = []
-for (k,v) in sorted(id_uri_hash.items()):
-	ym.append("%s: %s" % (k,v))
+for (v,what) in sorted(id_uri_hash.items()):
+	factory.toFile(what, compact=False)
+	ym.append("%s: %s" % (k, what.id.replace(baseUrl, '')))
+	# Now walk the json of the objects and build an index
 
 
 top = """extends: base.j2

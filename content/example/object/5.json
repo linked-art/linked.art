@@ -2,6 +2,7 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/object/5", 
   "type": "PhysicalObject", 
+  "classified_as": "aat:300411307", 
   "label": "Set of Objects for Lot 812", 
   "identified_by": {
     "id": "https://lod.shared-canvas.org/example/identifier/0", 
