@@ -1,25 +1,18 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/7", 
-  "type": [
-    "Destruction", 
-    "Activity"
-  ], 
-  "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/person/1", 
-    "type": "Person", 
-    "label": "Painting Destroyer"
-  }, 
-  "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/4", 
-    "type": "TimeSpan", 
-    "begin_of_the_begin": "1823-03-01T00:00:00Z", 
-    "end_of_the_end": "1823-03-31T00:00:00Z"
-  }, 
-  "destroyed": {
+  "type": "Acquisition", 
+  "classified_as": "aat:300055292", 
+  "label": "Theft of Painting", 
+  "transferred_title_of": {
     "id": "https://lod.shared-canvas.org/example/object/5", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
-    "label": "Example Destroyed Painting"
+    "label": "Example Stolen Painting"
+  }, 
+  "transferred_title_from": {
+    "id": "https://lod.shared-canvas.org/example/person/1", 
+    "type": "Person", 
+    "label": "Owner"
   }
 }

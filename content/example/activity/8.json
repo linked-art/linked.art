@@ -1,37 +1,25 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/8", 
-  "type": "Activity", 
-  "classified_as": "aat:300054277", 
-  "label": "Looking After of the Painting", 
+  "type": [
+    "Destruction", 
+    "Activity"
+  ], 
   "carried_out_by": {
     "id": "https://lod.shared-canvas.org/example/person/2", 
-    "type": "Person"
+    "type": "Person", 
+    "label": "Painting Destroyer"
   }, 
-  "used_specific_object": {
+  "timespan": {
+    "id": "https://lod.shared-canvas.org/example/time/5", 
+    "type": "TimeSpan", 
+    "begin_of_the_begin": "1823-03-01T00:00:00Z", 
+    "end_of_the_end": "1823-03-31T00:00:00Z"
+  }, 
+  "destroyed": {
     "id": "https://lod.shared-canvas.org/example/object/6", 
     "type": "ManMadeObject", 
-    "classified_as": "aat:300033618"
-  }, 
-  "started_by": {
-    "id": "https://lod.shared-canvas.org/example/activity/9", 
-    "type": "Acquisition", 
-    "label": "Acquisition of Painting by Owner", 
-    "transferred_title_of": "https://lod.shared-canvas.org/example/object/6", 
-    "transferred_title_to": "https://lod.shared-canvas.org/example/person/2"
-  }, 
-  "finished_by": {
-    "id": "https://lod.shared-canvas.org/example/activity/10", 
-    "type": "Acquisition", 
-    "label": "Owner gives Painting to someone else", 
-    "transferred_title_of": "https://lod.shared-canvas.org/example/object/6", 
-    "transferred_title_from": "https://lod.shared-canvas.org/example/person/2", 
-    "occurs_after": "https://lod.shared-canvas.org/example/activity/9"
-  }, 
-  "consists_of": {
-    "id": "https://lod.shared-canvas.org/example/activity/11", 
-    "type": "Activity", 
-    "classified_as": "aat:300077506", 
-    "label": "Inventory Taking by Owner"
+    "classified_as": "aat:300033618", 
+    "label": "Example Destroyed Painting"
   }
 }

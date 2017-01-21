@@ -14,13 +14,13 @@ An auction (_aat:300054751_) is an activity which is performed by an organizatio
 
 {{ macros.include_example("auction_base") }}
 
-## Lot
+## Sale of Lot
 
 The sale of the Lot is an activity that can be carried out by one or more Auctioneers (_aat:300025208_), though if the individual is not known, the company that performs the parent Auction can be inferred. The sale is for a specific object of the Lot, which is always a collection even if there is only one object being sold.  This is for consistency, but also to associate the Lot Number (_aat:300404628_) with the set.  The activity is further subdivided into two major sections -- the activity of the crowd of bidding, and the purchase of the Lot by the winner.  Typically the details of individual bids are not known, but often whether any bids occured or not is known.  Bidding without a Purchase might occur if the reserve price was not met.
 
 {{ macros.include_example("auction_lot") }}
 
-### Set of Objects 
+## Set of Objects 
 
 The Lot is a set of objects (_aat:300411307_) grouped together for the purposes of the sale, and may have come from different owners.  Information that is frequently known about the lot includes an identifying Lot Number assigned by the organization performing the auction and the objects that are part of it.  Other Lot specific information includes a starting price for the auction, and sometimes an estimated price for what it will sell for.  
 
@@ -28,16 +28,15 @@ The Lot is a set of objects (_aat:300411307_) grouped together for the purposes 
 
 ## Purchase
 
-The purchase of the Lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. 
+The purchase of the lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. As the Lot is just the grouping of the objects together for the purposes of the auction, it doesn't make sense to transfer ownership of it, as the new owner does not have this grouping as a concept.
+
+There is typically a single price for the lot, rather than each object having an individual value, and as such the Payment is associated with the purchase of the Lot resource.  Thus, if the interest is calculating the value of the individual objects over time, the number of objects in the Lot should be taken into account.  This information might be duplicated on the purchase of the object, which should take precedence. 
 
 {{ macros.include_example("auction_purchase") }}
 
+## Auction Catalog
 
-## Related Objects
+Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.
 
-### Auction House
-
-### Auction Catalog
-
-
+{{ macros.include_example("auction_catalog") }}
 

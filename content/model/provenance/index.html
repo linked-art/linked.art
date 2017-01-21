@@ -56,9 +56,9 @@ The Payment activity has equivalent relationships for from (`paid_from`) and to 
 
 The individual purchase that is the result of auctioning an object is the same as the above Purchase model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions/). 
 
-## Object Loss or Destruction
+### Theft
 
-The end of the provenance chain of an object is where it passes from recorded history or is known to have been destroyed.
+{{ macros.include_example("prov_theft") }}
 
 ### Loss
 
@@ -66,7 +66,10 @@ The loss of an object is simply the transfer of ownership away from its current 
 
 {{ macros.include_example("prov_loss") }}
 
-### Destruction
+
+## Destruction
+
+The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object, as above, leaves the chain open ended as it might be recovered in the future, however if the object is destroyed there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
 
 Objects are destroyed by during `Destruction` events that are not carried out by any actor, or by an `Activity` that is at the same time a `Destruction`.  This is a different model from `Production` which is always an activity.
 

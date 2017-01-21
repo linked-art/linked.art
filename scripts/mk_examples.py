@@ -6,7 +6,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
-	LotNumber, Auctioneer, Bidding, AuctionLotSet, \
+	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 import yaml
@@ -204,6 +204,21 @@ when.end_of_the_end = "1790-12-05T00:00:00Z"
 act.timespan = when
 id_uri_hash['prov_loss'] = act
 
+# Prov - Theft
+act = Theft()
+act.label = "Theft of Painting"
+what = Painting()
+what.label = "Example Stolen Painting"
+act.transferred_title_of = what
+who = Person()
+who.label = "Owner"
+act.transferred_title_from = who
+when = TimeSpan()
+when.label = "Time of Theft"
+when.begin_of_the_begin = "1940-07-10T00:00:00Z"
+when.end_of_the_end = "1940-07-11T00:00:00Z"
+id_uri_hash['prov_theft'] = act
+
 # Prov - Destruction
 dest = DestructionActivity()
 what = Painting()
@@ -321,7 +336,7 @@ id_uri_hash["auction_lotset"] = lotset
 
 # Auction - Purchase
 purch = Purchase()
-purch.transferred_title_of = AuctionLotSet()
+purch.used_specific_object = AuctionLotSet()
 act = Purchase()
 purch.consists_of = act
 act.transferred_title_of = obj
@@ -334,17 +349,31 @@ amt = MonetaryAmount()
 amt.value = 4500
 amt.currency = curr
 paymt.paid_amount = amt
-act.consists_of = paymt
+purch.consists_of = paymt
 act.sales_price = amt
 act.offering_price = amt
 id_uri_hash['auction_purchase'] = purch
 
+# Auction - Catalog
+catalog = AuctionCatalog()
+catalog.label = "Auction Catalog of Example Auction"
+entry = InformationObject()
+entry.label = "Description of Lot 16"
+catalog.composed_of = entry
+auc = Auction()
+auc.label = "Example Auction, 1924"
+catalog.refers_to = auc
+lot = Activity()
+lot.label = "Auction of Lot 16"
+entry.refers_to = lot
+lotset = AuctionLotSet()
+lotset.label = "Lot 16"
+entry.refers_to = lotset
+id_uri_hash['auction_catalog'] = catalog
 
 
 
-
-
-
+# ------ Build out the examples -------
 
 prop_hash = {}
 class_hash = {}
@@ -395,6 +424,8 @@ for (k,what) in sorted(id_uri_hash.items()):
 	# Now walk the json of the objects and build an index
 	js = factory.toJSON(what)
 	traverse(js, k)
+	# XXX: Now turn JSON-LD into TTL
+
 
 for d in [class_hash, prop_hash, aat_hash]:
 	for (k,v) in d.items():
@@ -415,6 +446,7 @@ idx = {'class_idx': sorted([list(x) for x in class_hash.items()]),
 top = """---
 extends: base.j2
 default_block: content
+title: Index of Classes, Properties, Authorities
 
 """
 fh = file('../content/model/example_index.html', 'w')
@@ -436,45 +468,3 @@ for y in ym:
 fh.close()
 
 
-# ---------
-
-# Attribute Assignment
-# a1 = Curating("1")
-# a2 = Inventorying("2")
-# a3 = Attribution("3")
-# a4 = Dating("4")
-# a5 = Appraising("6")
-
-# what = Painting("1")
-# what.label = "A Painting"
-# who = Group("1")
-# who.label = "Knoedler"
-
-# a1.carried_out_by = who
-# a1.used_specific_object = what
-# a1.consists_of = a2
-# a2.consists_of = a3
-# a2.consists_of = a4
-# a2.consists_of = a5
-
-# a3.assigned_attribute_to = what
-# a4.assigned_attribute_to = what
-# a5.assigned_attribute_to = what
-
-# artist = Actor("2")
-# artist.label = "Artist"
-# a3.assigned = artist
-
-# ts = TimeSpan("1")
-# ts.begin_of_the_begin = "1870-01-02"
-# ts.end_of_the_end = "1870-01-04"
-# a4.assigned = ts
-
-# ma = MonetaryAmount("1")
-# curr = Currency("2")
-# curr.label = "dollars"
-# ma.currency = curr
-# ma.value = 1000
-# a5.assigned = ma
-
-#print factory.toString(a1, compact=False)
