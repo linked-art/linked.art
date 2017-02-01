@@ -6,7 +6,8 @@
 
 {% for key in resource.meta.class_idx %}
   * __{{ key[0] }}__  
-{% for val in key[1] %}[{{ val[1] }}](/{{ val[0] }}#{{ val[2] }}) ([raw](/example/{{ val[1] }}.json))
+{% for val in key[1] %}[{{ val[1] }}](/{{ val[0] }}#{{ val[2] }}) ([raw](/example/{{ val[1] }}.json)){% if loop.last != True %}, {% endif %}
+
 {% endfor %}
 {% endfor %}
 

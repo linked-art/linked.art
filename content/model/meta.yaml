@@ -3,13 +3,13 @@ default_block: content
 level: top
 
 example:
-    auction_base: activity/18.json
-    auction_catalog: infoObject/1.json
-    auction_lot: activity/20.json
-    auction_lotset: object/10.json
-    auction_purchase: activity/23.json
+    auction_base: activity/20.json
+    auction_catalog: info/1.json
+    auction_lot: activity/22.json
+    auction_lotset: object/11.json
+    auction_purchase: activity/25.json
     base_parts_activity: activity/0.json
-    base_parts_info: infoObject/0.json
+    base_parts_info: info/0.json
     base_parts_org: group/0.json
     base_parts_place: place/0.json
     base_parts_thing: object/1.json
@@ -17,10 +17,11 @@ example:
     base_type: object/0.json
     prov_acq: activity/3.json
     prov_create: activity/2.json
-    prov_curate: activity/9.json
-    prov_dest: activity/8.json
+    prov_curate: activity/11.json
+    prov_dest: activity/10.json
     prov_event: activity/1.json
-    prov_lifetime: activity/13.json
+    prov_lifetime: activity/15.json
     prov_loss: activity/6.json
     prov_purchase: activity/4.json
     prov_theft: activity/7.json
+    prov_theft_sale: activity/8.json

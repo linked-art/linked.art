@@ -1,7 +1,7 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/6", 
-  "type": "Acquisition", 
+  "type": "TransferOfCustody", 
   "timespan": {
     "id": "https://lod.shared-canvas.org/example/time/3", 
     "type": "TimeSpan", 
@@ -9,13 +9,13 @@
     "begin_of_the_begin": "1790-12-04T00:00:00Z", 
     "end_of_the_end": "1790-12-05T00:00:00Z"
   }, 
-  "transferred_title_of": {
+  "transferred_custody_of": {
     "id": "https://lod.shared-canvas.org/example/object/4", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Lost Painting"
   }, 
-  "transferred_title_from": {
+  "transferred_custody_from": {
     "id": "https://lod.shared-canvas.org/example/person/0", 
     "type": "Person", 
     "label": "Previous Owner"

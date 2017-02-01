@@ -4,13 +4,13 @@
   "type": "Activity", 
   "label": "Auction of Lot J-1823-5", 
   "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/person/3", 
+    "id": "https://lod.shared-canvas.org/example/person/5", 
     "type": "Person", 
     "classified_as": "aat:300025208", 
     "label": "Example Auctioneer"
   }, 
   "used_specific_object": {
-    "id": "https://lod.shared-canvas.org/example/object/8", 
+    "id": "https://lod.shared-canvas.org/example/object/9", 
     "type": "PhysicalObject", 
     "classified_as": "aat:300411307", 
     "label": "Set of Objects for Lot J-1823-5"

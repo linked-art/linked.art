@@ -5,7 +5,7 @@
   "classified_as": "aat:300055863", 
   "label": "Provenance of Painting", 
   "used_specific_object": {
-    "id": "https://lod.shared-canvas.org/example/object/7", 
+    "id": "https://lod.shared-canvas.org/example/object/8", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618"
   }, 
@@ -13,17 +13,17 @@
     {
       "id": "https://lod.shared-canvas.org/example/activity/13", 
       "type": "Production", 
-      "produced": "https://lod.shared-canvas.org/example/object/7"
+      "produced": "https://lod.shared-canvas.org/example/object/8"
     }, 
     {
       "id": "https://lod.shared-canvas.org/example/activity/14", 
       "type": "Acquisition", 
-      "transferred_title_of": "https://lod.shared-canvas.org/example/object/7"
+      "transferred_title_of": "https://lod.shared-canvas.org/example/object/8"
     }, 
     {
       "id": "https://lod.shared-canvas.org/example/activity/15", 
       "type": "Purchase", 
-      "transferred_title_of": "https://lod.shared-canvas.org/example/object/7"
+      "transferred_title_of": "https://lod.shared-canvas.org/example/object/8"
     }, 
     {
       "id": "https://lod.shared-canvas.org/example/activity/16", 
@@ -31,7 +31,7 @@
         "Destruction", 
         "Activity"
       ], 
-      "destroyed": "https://lod.shared-canvas.org/example/object/7"
+      "destroyed": "https://lod.shared-canvas.org/example/object/8"
     }
   ]
 }

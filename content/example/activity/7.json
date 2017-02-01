@@ -1,18 +1,23 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/7", 
-  "type": "Acquisition", 
+  "type": "TransferOfCustody", 
   "classified_as": "aat:300055292", 
   "label": "Theft of Painting", 
-  "transferred_title_of": {
+  "transferred_custody_of": {
     "id": "https://lod.shared-canvas.org/example/object/5", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Stolen Painting"
   }, 
-  "transferred_title_from": {
+  "transferred_custody_from": {
     "id": "https://lod.shared-canvas.org/example/person/1", 
     "type": "Person", 
     "label": "Owner"
+  }, 
+  "transferred_custody_to": {
+    "id": "https://lod.shared-canvas.org/example/person/2", 
+    "type": "Person", 
+    "label": "Unknown Thief"
   }
 }

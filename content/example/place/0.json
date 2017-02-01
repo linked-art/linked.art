@@ -3,15 +3,15 @@
   "id": "https://lod.shared-canvas.org/example/place/0", 
   "type": "Place", 
   "label": "Example Museum Building", 
-  "spatially_within": {
-    "id": "http://vocab.getty.edu/tgn/7023900-place", 
-    "type": "Place", 
-    "label": "Los Angeles"
-  }, 
   "spatially_contains": {
     "id": "https://lod.shared-canvas.org/example/place/0/part/1", 
     "type": "Place", 
     "classified_as": "aat:300240057", 
     "label": "Gallery W204"
+  }, 
+  "spatially_within": {
+    "id": "http://vocab.getty.edu/tgn/7023900-place", 
+    "type": "Place", 
+    "label": "Los Angeles"
   }
 }

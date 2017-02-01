@@ -4,11 +4,6 @@
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
   "label": "Example Painting", 
-  "made_of": {
-    "id": "http://vocab.getty.edu/aat/300015045", 
-    "type": "Material", 
-    "label": "watercolor"
-  }, 
   "part": {
     "id": "https://lod.shared-canvas.org/example/object/1/part/1", 
     "type": "PhysicalObject", 
@@ -19,5 +14,10 @@
       "type": "Material", 
       "label": "canvas"
     }
+  }, 
+  "made_of": {
+    "id": "http://vocab.getty.edu/aat/300015045", 
+    "type": "Material", 
+    "label": "watercolor"
   }
 }

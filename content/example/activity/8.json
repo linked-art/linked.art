@@ -1,25 +1,38 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/8", 
-  "type": [
-    "Destruction", 
-    "Activity"
-  ], 
-  "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/person/2", 
-    "type": "Person", 
-    "label": "Painting Destroyer"
-  }, 
-  "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/5", 
-    "type": "TimeSpan", 
-    "begin_of_the_begin": "1823-03-01T00:00:00Z", 
-    "end_of_the_end": "1823-03-31T00:00:00Z"
-  }, 
-  "destroyed": {
+  "type": "TransferOfCustody", 
+  "label": "Sale of Stolen Object", 
+  "transferred_custody_of": {
     "id": "https://lod.shared-canvas.org/example/object/6", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
-    "label": "Example Destroyed Painting"
+    "label": "Example Stolen Painting"
+  }, 
+  "transferred_custody_from": {
+    "id": "https://lod.shared-canvas.org/example/person/3", 
+    "type": "Person", 
+    "label": "Thief"
+  }, 
+  "transferred_custody_to": {
+    "id": "https://lod.shared-canvas.org/example/person/4", 
+    "type": "Person", 
+    "label": "Recipient"
+  }, 
+  "consists_of": {
+    "id": "https://lod.shared-canvas.org/example/activity/9", 
+    "type": "Payment", 
+    "paid_amount": {
+      "id": "https://lod.shared-canvas.org/example/money/2", 
+      "type": "MonetaryAmount", 
+      "value": 1000, 
+      "currency": {
+        "id": "https://lod.shared-canvas.org/example/money/3", 
+        "type": "Currency", 
+        "label": "dollars"
+      }
+    }, 
+    "paid_from": "https://lod.shared-canvas.org/example/person/4", 
+    "paid_to": "https://lod.shared-canvas.org/example/person/3"
   }
 }

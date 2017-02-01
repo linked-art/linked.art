@@ -2,26 +2,26 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/2", 
   "type": "Production", 
-  "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/actor/1", 
-    "type": "Actor", 
-    "label": "Example Artist"
-  }, 
   "timespan": {
     "id": "https://lod.shared-canvas.org/example/time/1", 
     "type": "TimeSpan", 
     "begin_of_the_begin": "1780-03-05T00:00:00Z", 
     "end_of_the_end": "1780-03-06T00:00:00Z"
   }, 
+  "took_place_at": {
+    "id": "https://lod.shared-canvas.org/example/place/2", 
+    "type": "Place", 
+    "label": "Example Artist's Studio"
+  }, 
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/actor/1", 
+    "type": "Actor", 
+    "label": "Example Artist"
+  }, 
   "produced": {
     "id": "https://lod.shared-canvas.org/example/object/3", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Painting"
-  }, 
-  "took_place_at": {
-    "id": "https://lod.shared-canvas.org/example/place/2", 
-    "type": "Place", 
-    "label": "Example Artist's Studio"
   }
 }

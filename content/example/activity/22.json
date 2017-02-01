@@ -1,50 +1,31 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/22", 
-  "type": "Purchase", 
+  "type": "Activity", 
+  "label": "Auction of Lot J-1823-5", 
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/person/7", 
+    "type": "Person", 
+    "classified_as": "aat:300025208", 
+    "label": "Example Auctioneer"
+  }, 
   "used_specific_object": {
-    "id": "https://lod.shared-canvas.org/example/object/11", 
+    "id": "https://lod.shared-canvas.org/example/object/10", 
     "type": "PhysicalObject", 
-    "classified_as": "aat:300411307"
+    "classified_as": "aat:300411307", 
+    "label": "Set of Objects for Lot J-1823-5"
   }, 
   "consists_of": [
     {
       "id": "https://lod.shared-canvas.org/example/activity/23", 
       "type": "Purchase", 
-      "sales_price": {
-        "id": "https://lod.shared-canvas.org/example/money/4", 
-        "type": "MonetaryAmount", 
-        "value": 4500, 
-        "currency": {
-          "id": "https://lod.shared-canvas.org/example/money/1", 
-          "type": "Currency", 
-          "label": "dollars"
-        }
-      }, 
-      "transferred_title_of": {
-        "id": "https://lod.shared-canvas.org/example/object/10", 
-        "type": "ManMadeObject", 
-        "classified_as": "aat:300033618", 
-        "label": "Example Painting"
-      }, 
-      "transferred_title_from": {
-        "id": "https://lod.shared-canvas.org/example/actor/2", 
-        "type": "Actor", 
-        "label": "Seller"
-      }, 
-      "transferred_title_to": {
-        "id": "https://lod.shared-canvas.org/example/actor/3", 
-        "type": "Actor", 
-        "label": "Buyer"
-      }, 
-      "offering_price": "https://lod.shared-canvas.org/example/money/4"
+      "label": "Purchase of Lot"
     }, 
     {
       "id": "https://lod.shared-canvas.org/example/activity/24", 
-      "type": "Payment", 
-      "paid_amount": "https://lod.shared-canvas.org/example/money/4", 
-      "paid_from": "https://lod.shared-canvas.org/example/actor/3", 
-      "paid_to": "https://lod.shared-canvas.org/example/actor/2"
+      "type": "Activity", 
+      "label": "Bids made on Lot", 
+      "occurs_before": "https://lod.shared-canvas.org/example/activity/23"
     }
   ]
 }

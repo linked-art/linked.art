@@ -1,21 +1,21 @@
 {
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/infoObject/1", 
+  "id": "https://lod.shared-canvas.org/example/info/1", 
   "type": "InformationObject", 
   "classified_as": "aat:300026068", 
   "label": "Auction Catalog of Example Auction", 
   "composed_of": {
-    "id": "https://lod.shared-canvas.org/example/infoObject/2", 
+    "id": "https://lod.shared-canvas.org/example/info/2", 
     "type": "InformationObject", 
     "label": "Description of Lot 16", 
     "refers_to": [
       {
-        "id": "https://lod.shared-canvas.org/example/activity/26", 
+        "id": "https://lod.shared-canvas.org/example/activity/29", 
         "type": "Activity", 
         "label": "Auction of Lot 16"
       }, 
       {
-        "id": "https://lod.shared-canvas.org/example/object/13", 
+        "id": "https://lod.shared-canvas.org/example/object/14", 
         "type": "PhysicalObject", 
         "classified_as": "aat:300411307", 
         "label": "Lot 16"
@@ -23,7 +23,7 @@
     ]
   }, 
   "refers_to": {
-    "id": "https://lod.shared-canvas.org/example/activity/25", 
+    "id": "https://lod.shared-canvas.org/example/activity/28", 
     "type": "Activity", 
     "classified_as": "aat:300054751", 
     "label": "Example Auction, 1924"

@@ -1,7 +1,7 @@
 
 import json
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
-	Identifier, Person 
+	Identifier, Person, TransferOfCustody 
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -14,7 +14,7 @@ import yaml
 ManMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
 Place._uri_segment = "place"
-InformationObject._uri_segment = "infoObject"
+InformationObject._uri_segment = "info"
 Group._uri_segment = "group"
 Actor._uri_segment = "actor"
 Person._uri_segment = "person"
@@ -28,6 +28,7 @@ Currency._uri_segment = "money"
 DestructionActivity._uri_segment = "activity"
 PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
+TransferOfCustody._uri_segment = "activity"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -48,7 +49,8 @@ contextUrl = "%s://%s%s%sns/context/1/full.jsonld" % (scheme, host, port, basedi
 factory.base_url = baseUrl
 factory.base_dir = "../content/%s" % egdir
 factory.context_uri = contextUrl
-
+# Ensure it's still int per segment
+factory.auto_id_type = "int-per-segment"
 add_rdf_value()
 
 id_uri_hash = {}
@@ -56,9 +58,6 @@ id_uri_hash = {}
 page_hash = {"base": "model/base/index.html",
 	"prov": "model/provenance/index.html",
 	"auction": "model/provenance/auctions/index.html"}
-
-### Make the identities auto-increment based on _uri_segment of the class
-### Then expose all of the resources, not just the top level.
 
 # Base - Type
 eg = Painting()
@@ -186,17 +185,16 @@ amt.currency = curr
 paymt.paid_amount = amt
 act.consists_of = paymt
 act.sales_price = amt
-act.offering_price = amt
 id_uri_hash['prov_purchase'] = act
 
 # Prov - Loss
-act = Acquisition()
+act = TransferOfCustody()
 what = Painting()
 what.label = "Example Lost Painting"
-act.transferred_title_of = what
+act.transferred_custody_of = what
 who = Person()
 who.label = "Previous Owner"
-act.transferred_title_from = who
+act.transferred_custody_from = who
 when = TimeSpan()
 when.label = "Time noticed as Lost"
 when.begin_of_the_begin = "1790-12-04T00:00:00Z"
@@ -209,15 +207,43 @@ act = Theft()
 act.label = "Theft of Painting"
 what = Painting()
 what.label = "Example Stolen Painting"
-act.transferred_title_of = what
+act.transferred_custody_of = what
 who = Person()
 who.label = "Owner"
-act.transferred_title_from = who
+act.transferred_custody_from = who
+who = Person()
+who.label = "Unknown Thief"
+act.transferred_custody_to = who
 when = TimeSpan()
 when.label = "Time of Theft"
 when.begin_of_the_begin = "1940-07-10T00:00:00Z"
 when.end_of_the_end = "1940-07-11T00:00:00Z"
 id_uri_hash['prov_theft'] = act
+
+# Prov - Sale of Stolen Object
+
+act = TransferOfCustody()
+act.label = "Sale of Stolen Object"
+what = Painting()
+what.label = "Example Stolen Painting"
+act.transferred_custody_of = what
+thief = Person()
+thief.label = "Thief"
+act.transferred_custody_from = thief
+buyer = Person()
+buyer.label = "Recipient"
+act.transferred_custody_to = buyer
+pay = Payment()
+pay.paid_from = buyer
+pay.paid_to = thief
+amt = MonetaryAmount()
+amt.value = 1000
+curr = Currency()
+curr.label = "dollars"
+amt.currency = curr
+pay.paid_amount = amt
+act.consists_of = pay
+id_uri_hash['prov_theft_sale'] = act
 
 # Prov - Destruction
 dest = DestructionActivity()
@@ -426,11 +452,18 @@ for (k,what) in sorted(id_uri_hash.items()):
 	traverse(js, k)
 	# XXX: Now turn JSON-LD into TTL
 
+def sorter(x):
+	y = id_uri_hash[x].id
+	return int(y[y.rfind('/')+1:])
 
+
+# Consider using label of the top resource as label in index?
 for d in [class_hash, prop_hash, aat_hash]:
 	for (k,v) in d.items():
 		n = []
-		for nk in v.keys():
+		nks = v.keys()
+		nks.sort(key=sorter)
+		for nk in nks:
 			what = id_uri_hash[nk]
 			pg = page_hash[nk[:nk.find("_")]]
 			n.append([pg, str(what.id.replace(baseUrl, '')), nk])

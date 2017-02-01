@@ -34,6 +34,5 @@
     "paid_amount": "https://lod.shared-canvas.org/example/money/0", 
     "paid_from": "https://lod.shared-canvas.org/example/actor/3", 
     "paid_to": "https://lod.shared-canvas.org/example/actor/2"
-  }, 
-  "offering_price": "https://lod.shared-canvas.org/example/money/0"
+  }
 }

@@ -9,6 +9,11 @@
     "begin_of_the_begin": "1890-01-04T00:00:00Z", 
     "end_of_the_end": "1890-01-05T00:00:00Z"
   }, 
+  "took_place_at": {
+    "id": "https://lod.shared-canvas.org/example/place/3", 
+    "type": "Place", 
+    "label": "Art Gallery"
+  }, 
   "transferred_title_of": {
     "id": "https://lod.shared-canvas.org/example/object/3", 
     "type": "ManMadeObject", 
@@ -24,10 +29,5 @@
     "id": "https://lod.shared-canvas.org/example/actor/3", 
     "type": "Actor", 
     "label": "Buyer"
-  }, 
-  "took_place_at": {
-    "id": "https://lod.shared-canvas.org/example/place/3", 
-    "type": "Place", 
-    "label": "Art Gallery"
   }
 }

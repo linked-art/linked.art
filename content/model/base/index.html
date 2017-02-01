@@ -82,9 +82,12 @@ Use cases for this pattern include:
 
 __Example:__
 
-The "W02" gallery is part of the museum, which is in Los Angeles _(tgn:7023900-place)_:
+The "W02" gallery _(aat:300240057)_ is part of the museum, which is in Los Angeles _(tgn:7023900-place)_:
 
 {{ macros.include_example("base_parts_place") }}
+
+!!! note "Use of Gazeteers"
+    It is preferable to rely on linked controlled vocabulary systems that include hierarchies whenever possible, rather than duplicating the information into the metadata of other resources.
 
 ### 2.4. Information Objects
 
@@ -132,7 +135,7 @@ Example use cases for this pattern include:
 
 __Example:__
 
-Having only a textual description of the materials, the value `"Oil on Canvas"` is recorded as referring to the painting as a "material components" _(aat:300264237)_ statement:
+Having only a textual description of the materials, the value `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300010358)_ statement:
 
 {{ macros.include_example("base_stmt") }}
 
