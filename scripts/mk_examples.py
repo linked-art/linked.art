@@ -259,8 +259,11 @@ who.label = "Painting Destroyer"
 dest.carried_out_by = who
 id_uri_hash['prov_dest'] = dest
 
-# Prov - Curating and Inventorying
+# Joint Ownership
 
+
+
+# Prov - Curating and Inventorying
 act = Curating()
 act.label = "Looking After of the Painting"
 start = Acquisition()

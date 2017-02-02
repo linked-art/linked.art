@@ -70,8 +70,7 @@ Objects can change hands illegally with the activity being performed by the reci
 {{ macros.include_example("prov_theft") }}
 
 !!! warning "Sale of Stolen Items"
-	A concern with this model (which strictly follows CIDOC-CRM) is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody for payment.  If the stolen and fenced object were recovered, it would still go back to the real owner.
-
+	A concern with this model (which strictly follows CIDOC-CRM) is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody in exchange for payment.  If the stolen and fenced object were recovered, it would still go back to the real owner.  Which is okay, if it is known that the object was stolen.  If not, then the data would incorrectly record it as a sale, which is an Acquisition (a transfer of ownership, not custody).  In a distributed environment, where different data sources contribute to the overall provenance record, aggregating systems should be aware of this possibility and not accept the custody/ownership distinction without consideration of prior events.
 
 
 ### Loss
