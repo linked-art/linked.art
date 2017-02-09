@@ -28,9 +28,7 @@ The Lot is a set of objects (_aat:300411307_) grouped together for the purposes 
 
 ## Purchase
 
-The purchase of the lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. As the Lot is just the grouping of the objects together for the purposes of the auction, it doesn't make sense to transfer ownership of it, as the grouping is only for the purpose of the auction.
-
-There is typically a single price for the lot, rather than each object having an individual value, and as such the Payment is associated with the purchase of the Lot resource.  Thus, if the interest is calculating the value of the individual objects over time, the number of objects in the Lot should be taken into account.  This information might be duplicated on the purchase of the object, which should take precedence. 
+The purchase of the lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. As the Lot is just the grouping of the objects together for the purposes of the auction, it doesn't make sense to transfer ownership of it, as the grouping is only for the purpose of the auction.  See on for information about prices.
 
 {{ macros.include_example("auction_purchase") }}
 
@@ -54,14 +52,12 @@ For example, a lot with a starting price of $500, a reserve price of $3000 and a
 
 ### Purchase / Hammer Price
 
-The purchase price follows the same pattern as for purchases outside of auctions.  It is the amount paid as part of the Purchase.  There are some additional considerations however for auctions, in that there is the purchase of the Set of Objects, and the transfer of ownership of the individual objects within the set.  Typically it is not known how that payment is thought to be divided between the individual object, and thus the payment must be associated with the purchase of the set, not the individuals.  This is still true for the common, but special, case of the lot consisting of a single object.  Care must be taken to not associate the same value with all of the individuals, when there are more than one.
+The purchase price follows the same pattern as for purchases outside of auctions.  It is the amount paid as part of the Purchase.  There is typically a single purchase price for the lot, rather than each object having an individual value, and as such the Payment is associated with the purchase of the Lot resource.  Thus, if the interest is calculating the value of the individual objects over time, the number of objects in the Lot should be taken into account.  This information might be duplicated on the purchase of the object, in the situation where there is per-object price information, which should take precedence. 
 
 {{ macros.include_example("auction_purchase_price") }}
 
-
 ## Auction Catalog
 
-Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.
+Much of the information we have about historical auctions comes from Auction Catalogs _(aat:300026068)_.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/) with the added AAT concept for being an auction catalog.
 
 {{ macros.include_example("auction_catalog") }}
-
