@@ -7,6 +7,7 @@ example:
     auction_catalog: info/1.json
     auction_lot: activity/26.json
     auction_lotset: object/11.json
+    auction_prices: object/14.json
     auction_purchase: activity/29.json
     base_parts_activity: activity/0.json
     base_parts_info: info/0.json

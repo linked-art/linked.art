@@ -291,8 +291,6 @@ inv.label = "Inventory Taking by Owner"
 act.consists_of = inv
 id_uri_hash['prov_inventory'] = act
 
-
-
 # Full life time
 act = Provenance()
 what = Painting()
@@ -320,12 +318,6 @@ act.consists_of = c2
 act.consists_of = own3
 act.consists_of = dest
 id_uri_hash['prov_lifetime'] = act
-
-
-
-
-
-
 
 # Auction - Auction
 auc = Auction()
@@ -418,15 +410,10 @@ amnt3 = MonetaryAmount()
 amnt3.value = 3000
 amnt3.currency = curr
 amnt3.classified_as = Type("http://data.getty.edu/ns/prov/reservePrice")
-amnt4 = MonetaryAmount()
-amnt4.value = 4500
-amnt4.currency = curr
-amnt4.classified_as = Type("http://data.getty.edu/ns/prov/finalPrice")
 lotset.dimension = amnt
 lotset.dimension = amnt2
 lotset.dimension = amnt3
-lotset.dimension = amnt4
-
+id_uri_hash['auction_prices'] = lotset
 # print factory.toString(lotset, compact=False)
 
 # Auction - Catalog

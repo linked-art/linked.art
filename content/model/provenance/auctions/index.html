@@ -34,15 +34,25 @@ There is typically a single price for the lot, rather than each object having an
 
 {{ macros.include_example("auction_purchase") }}
 
-## Prices
+## Monetary Values
 
-### Starting Price
+In Auctions, there are several types of monetary values that are useful and interesting to record.  There is a significant distinction, however, between the starting price or reserve price for an auction and the regular purchase price of an object, in that even if the auction never takes place, these other prices are still known as they are set in advance.
 
-### Reserve Price
+### Pre-set Prices
 
-### Estimated Price
+There are three preset prices of interest:
 
-### Hammer / Final Bid Price
+  * __Starting Price:__  The price at which the auction will start.
+  * __Reserve Price:__  The price that must be exceeded for the auction to result in a sale.
+  * __Estimated Price:__  The price that the auction house estimates will be the final sale price.
+
+These prices are associated with the Set of Objects that the Lot is intended to sell.  In this way, even if the auction never takes place, there is still the set of objects to associate the prices with.  In order to associate a monetary value with an object, it is treated as an observed dimension.
+
+{{ macros.include_example("auction_prices") }}
+
+### Purchase / Hammer Price
+
+
 
 
 ## Auction Catalog
