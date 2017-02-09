@@ -88,6 +88,7 @@
 !!python/unicode 'model/index.html': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/jsonld/index.html': [macros.j2, ga.j2, base.j2, toc.html]
 !!python/unicode 'model/object/.keep': [macros.j2, ga.j2, base.j2]
+!!python/unicode 'model/object/index.html': [macros.j2, ga.j2, base.j2, toc.html]
 !!python/unicode 'model/place/.keep': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/provenance/.keep': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/provenance/auctions/index.html': [macros.j2, ga.j2, base.j2,

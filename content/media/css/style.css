@@ -14,8 +14,12 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
-p, ul, ol {
+p {
     margin-bottom: 10px;
+}
+
+p ul, ol {
+    margin-bottom: 10px;  
 }
 
 ul, ol {
