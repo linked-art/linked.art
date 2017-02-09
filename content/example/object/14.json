@@ -18,9 +18,9 @@
   }, 
   "dimension": [
     {
-      "id": "https://lod.shared-canvas.org/example/money/5", 
+      "id": "https://lod.shared-canvas.org/example/money/4", 
       "type": "MonetaryAmount", 
-      "classified_as": "http://data.getty.edu/ns/prov/startingPrice", 
+      "classified_as": "http://data.getty.edu/money/type/startingPrice", 
       "value": 500, 
       "currency": {
         "id": "https://lod.shared-canvas.org/example/money/3", 
@@ -29,16 +29,16 @@
       }
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/money/6", 
+      "id": "https://lod.shared-canvas.org/example/money/5", 
       "type": "MonetaryAmount", 
-      "classified_as": "http://data.getty.edu/ns/prov/estimatedPrice", 
+      "classified_as": "http://data.getty.edu/money/type/estimatedPrice", 
       "value": 4000, 
       "currency": "https://lod.shared-canvas.org/example/money/3"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/money/7", 
+      "id": "https://lod.shared-canvas.org/example/money/6", 
       "type": "MonetaryAmount", 
-      "classified_as": "http://data.getty.edu/ns/prov/reservePrice", 
+      "classified_as": "http://data.getty.edu/money/type/reservePrice", 
       "value": 3000, 
       "currency": "https://lod.shared-canvas.org/example/money/3"
     }

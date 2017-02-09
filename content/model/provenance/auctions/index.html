@@ -48,11 +48,15 @@ There are three preset prices of interest:
 
 These prices are associated with the Set of Objects that the Lot is intended to sell.  In this way, even if the auction never takes place, there is still the set of objects to associate the prices with.  In order to associate a monetary value with an object, it is treated as an observed dimension.
 
+For example, a lot with a starting price of $500, a reserve price of $3000 and an estimated price of $4000:
+
 {{ macros.include_example("auction_prices") }}
 
 ### Purchase / Hammer Price
 
+The purchase price follows the same pattern as for purchases outside of auctions.  It is the amount paid as part of the Purchase.  There are some additional considerations however for auctions, in that there is the purchase of the Set of Objects, and the transfer of ownership of the individual objects within the set.  Typically it is not known how that payment is thought to be divided between the individual object, and thus the payment must be associated with the purchase of the set, not the individuals.  This is still true for the common, but special, case of the lot consisting of a single object.  Care must be taken to not associate the same value with all of the individuals, when there are more than one.
 
+{{ macros.include_example("auction_purchase_price") }}
 
 
 ## Auction Catalog

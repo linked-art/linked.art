@@ -377,14 +377,6 @@ purch.consists_of = act
 act.transferred_title_of = obj
 act.transferred_title_from = seller
 act.transferred_title_to = buyer
-paymt = Payment()
-paymt.paid_from = buyer
-paymt.paid_to = seller
-amt = MonetaryAmount()
-amt.value = 4500
-amt.currency = curr
-paymt.paid_amount = amt
-purch.consists_of = paymt
 id_uri_hash['auction_purchase'] = purch
 
 
@@ -401,20 +393,41 @@ lotset.part = obj
 amnt = MonetaryAmount()
 amnt.value = 500
 amnt.currency = curr
-amnt.classified_as = Type("http://data.getty.edu/ns/prov/startingPrice")
+amnt.classified_as = Type("http://data.getty.edu/money/type/startingPrice")
 amnt2 = MonetaryAmount()
 amnt2.value = 4000
 amnt2.currency = curr
-amnt2.classified_as = Type("http://data.getty.edu/ns/prov/estimatedPrice")
+amnt2.classified_as = Type("http://data.getty.edu/money/type/estimatedPrice")
 amnt3 = MonetaryAmount()
 amnt3.value = 3000
 amnt3.currency = curr
-amnt3.classified_as = Type("http://data.getty.edu/ns/prov/reservePrice")
+amnt3.classified_as = Type("http://data.getty.edu/money/type/reservePrice")
 lotset.dimension = amnt
 lotset.dimension = amnt2
 lotset.dimension = amnt3
 id_uri_hash['auction_prices'] = lotset
-# print factory.toString(lotset, compact=False)
+
+
+# Auction - Purchase
+purch = Purchase()
+als = AuctionLotSet()
+als.label = "Set of Objects"
+purch.used_specific_object = als 
+act = Purchase()
+purch.consists_of = act
+act.transferred_title_of = obj
+act.transferred_title_from = seller
+act.transferred_title_to = buyer
+paymt = Payment()
+paymt.paid_from = buyer
+paymt.paid_to = seller
+amt = MonetaryAmount()
+amt.value = 4500
+amt.currency = curr
+paymt.paid_amount = amt
+purch.consists_of = paymt
+id_uri_hash['auction_purchase_price'] = purch
+
 
 # Auction - Catalog
 catalog = AuctionCatalog()
