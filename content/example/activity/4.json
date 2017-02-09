@@ -2,16 +2,6 @@
   "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
   "id": "https://lod.shared-canvas.org/example/activity/4", 
   "type": "Purchase", 
-  "sales_price": {
-    "id": "https://lod.shared-canvas.org/example/money/0", 
-    "type": "MonetaryAmount", 
-    "value": 100, 
-    "currency": {
-      "id": "https://lod.shared-canvas.org/example/money/1", 
-      "type": "Currency", 
-      "label": "dollars"
-    }
-  }, 
   "transferred_title_of": {
     "id": "https://lod.shared-canvas.org/example/object/3", 
     "type": "ManMadeObject", 
@@ -31,7 +21,16 @@
   "consists_of": {
     "id": "https://lod.shared-canvas.org/example/activity/5", 
     "type": "Payment", 
-    "paid_amount": "https://lod.shared-canvas.org/example/money/0", 
+    "paid_amount": {
+      "id": "https://lod.shared-canvas.org/example/money/0", 
+      "type": "MonetaryAmount", 
+      "value": 100, 
+      "currency": {
+        "id": "https://lod.shared-canvas.org/example/money/1", 
+        "type": "Currency", 
+        "label": "dollars"
+      }
+    }, 
     "paid_from": "https://lod.shared-canvas.org/example/actor/3", 
     "paid_to": "https://lod.shared-canvas.org/example/actor/2"
   }

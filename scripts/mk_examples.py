@@ -184,7 +184,6 @@ curr.label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
 act.consists_of = paymt
-act.sales_price = amt
 id_uri_hash['prov_purchase'] = act
 
 # Prov - Loss
@@ -282,30 +281,45 @@ end.transferred_title_of = what
 end.transferred_title_from = who
 act.carried_out_by = who
 act.used_specific_object = what
-end.occurs_after = start
-act.started_by = start
-act.finished_by = end
+start.occurs_before = end
+act.continued = start
+act.continued_by = end
 act.consists_of = inv
 id_uri_hash['prov_curate'] = act
 
 # Full life time
 act = Provenance()
 what = Painting()
-act.label = "Provenance of Painting"
+act.label = "Lifetime of Painting"
 act.used_specific_object = what
 prod = Production()
 prod.produced = what
+own1 = Curating()
+own1.label = "Ownership by Artist"
 c1 = Acquisition()
 c1.transferred_title_of = what
+own2 = Curating()
+own2.label = "Ownership by first owner"
 c2 = Purchase()
 c2.transferred_title_of = what
+own3 = Curating()
+own3.label = "Ownership by second and final owner"
 dest = DestructionActivity()
 dest.destroyed = what
 act.consists_of = prod
+act.consists_of = own1
 act.consists_of = c1
+act.consists_of = own2
 act.consists_of = c2
+act.consists_of = own3
 act.consists_of = dest
 id_uri_hash['prov_lifetime'] = act
+
+
+
+
+
+
 
 # Auction - Auction
 auc = Auction()
@@ -353,19 +367,13 @@ lotset.identified_by = ln
 obj = Painting()
 obj.label = "Example Painting"
 lotset.part = obj
-amnt = MonetaryAmount()
-amnt.value = 500
-amnt.currency = curr
-amnt2 = MonetaryAmount()
-amnt2.value = 4000
-amnt2.currency = curr
-lotset.starting_price = amnt
-lotset.estimated_price = amnt2
 id_uri_hash["auction_lotset"] = lotset
 
 # Auction - Purchase
 purch = Purchase()
-purch.used_specific_object = AuctionLotSet()
+als = AuctionLotSet()
+als.label = "Set of Objects"
+purch.used_specific_object = als 
 act = Purchase()
 purch.consists_of = act
 act.transferred_title_of = obj
@@ -379,9 +387,41 @@ amt.value = 4500
 amt.currency = curr
 paymt.paid_amount = amt
 purch.consists_of = paymt
-act.sales_price = amt
-act.offering_price = amt
 id_uri_hash['auction_purchase'] = purch
+
+
+# Auction - Price - Starting Price
+
+lotset = AuctionLotSet()
+lotset.label = "Set of Objects for Lot 812"
+ln = LotNumber()
+ln.value = "812"
+lotset.identified_by = ln
+obj = Painting()
+obj.label = "Example Painting"
+lotset.part = obj
+amnt = MonetaryAmount()
+amnt.value = 500
+amnt.currency = curr
+amnt.classified_as = Type("http://data.getty.edu/ns/prov/startingPrice")
+amnt2 = MonetaryAmount()
+amnt2.value = 4000
+amnt2.currency = curr
+amnt2.classified_as = Type("http://data.getty.edu/ns/prov/estimatedPrice")
+amnt3 = MonetaryAmount()
+amnt3.value = 3000
+amnt3.currency = curr
+amnt3.classified_as = Type("http://data.getty.edu/ns/prov/reservePrice")
+amnt4 = MonetaryAmount()
+amnt4.value = 4500
+amnt4.currency = curr
+amnt4.classified_as = Type("http://data.getty.edu/ns/prov/finalPrice")
+lotset.dimension = amnt
+lotset.dimension = amnt2
+lotset.dimension = amnt3
+lotset.dimension = amnt4
+
+# print factory.toString(lotset, compact=False)
 
 # Auction - Catalog
 catalog = AuctionCatalog()

@@ -4,34 +4,34 @@
   "type": "Activity", 
   "classified_as": "aat:300054277", 
   "label": "Looking After of the Painting", 
-  "started_by": {
-    "id": "https://lod.shared-canvas.org/example/activity/12", 
-    "type": "Acquisition", 
-    "label": "Acquisition of Painting by Owner", 
-    "transferred_title_of": {
-      "id": "https://lod.shared-canvas.org/example/object/8", 
-      "type": "ManMadeObject", 
-      "classified_as": "aat:300033618"
-    }, 
-    "transferred_title_to": {
-      "id": "https://lod.shared-canvas.org/example/person/6", 
-      "type": "Person"
-    }
+  "carried_out_by": {
+    "id": "https://lod.shared-canvas.org/example/person/6", 
+    "type": "Person"
   }, 
-  "finished_by": {
-    "id": "https://lod.shared-canvas.org/example/activity/13", 
-    "type": "Acquisition", 
-    "label": "Owner gives Painting to someone else", 
-    "transferred_title_of": "https://lod.shared-canvas.org/example/object/8", 
-    "transferred_title_from": "https://lod.shared-canvas.org/example/person/6", 
-    "occurs_after": "https://lod.shared-canvas.org/example/activity/12"
+  "used_specific_object": {
+    "id": "https://lod.shared-canvas.org/example/object/8", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618"
   }, 
-  "carried_out_by": "https://lod.shared-canvas.org/example/person/6", 
-  "used_specific_object": "https://lod.shared-canvas.org/example/object/8", 
   "consists_of": {
     "id": "https://lod.shared-canvas.org/example/activity/14", 
     "type": "Activity", 
     "classified_as": "aat:300077506", 
     "label": "Inventory Taking by Owner"
+  }, 
+  "continued_by": {
+    "id": "https://lod.shared-canvas.org/example/activity/13", 
+    "type": "Acquisition", 
+    "label": "Owner gives Painting to someone else", 
+    "transferred_title_of": "https://lod.shared-canvas.org/example/object/8", 
+    "transferred_title_from": "https://lod.shared-canvas.org/example/person/6"
+  }, 
+  "continued": {
+    "id": "https://lod.shared-canvas.org/example/activity/12", 
+    "type": "Acquisition", 
+    "label": "Acquisition of Painting by Owner", 
+    "transferred_title_of": "https://lod.shared-canvas.org/example/object/8", 
+    "transferred_title_to": "https://lod.shared-canvas.org/example/person/6", 
+    "occurs_before": "https://lod.shared-canvas.org/example/activity/13"
   }
 }

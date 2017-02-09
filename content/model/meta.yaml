@@ -3,11 +3,11 @@ default_block: content
 level: top
 
 example:
-    auction_base: activity/20.json
+    auction_base: activity/23.json
     auction_catalog: info/1.json
-    auction_lot: activity/22.json
+    auction_lot: activity/25.json
     auction_lotset: object/11.json
-    auction_purchase: activity/25.json
+    auction_purchase: activity/28.json
     base_parts_activity: activity/0.json
     base_parts_info: info/0.json
     base_parts_org: group/0.json

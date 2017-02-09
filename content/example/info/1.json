@@ -10,12 +10,12 @@
     "label": "Description of Lot 16", 
     "refers_to": [
       {
-        "id": "https://lod.shared-canvas.org/example/activity/29", 
+        "id": "https://lod.shared-canvas.org/example/activity/32", 
         "type": "Activity", 
         "label": "Auction of Lot 16"
       }, 
       {
-        "id": "https://lod.shared-canvas.org/example/object/14", 
+        "id": "https://lod.shared-canvas.org/example/object/16", 
         "type": "PhysicalObject", 
         "classified_as": "aat:300411307", 
         "label": "Lot 16"
@@ -23,7 +23,7 @@
     ]
   }, 
   "refers_to": {
-    "id": "https://lod.shared-canvas.org/example/activity/28", 
+    "id": "https://lod.shared-canvas.org/example/activity/31", 
     "type": "Activity", 
     "classified_as": "aat:300054751", 
     "label": "Example Auction, 1924"

@@ -15,21 +15,5 @@
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Painting"
-  }, 
-  "starting_price": {
-    "id": "https://lod.shared-canvas.org/example/money/4", 
-    "type": "MonetaryAmount", 
-    "value": 500, 
-    "currency": {
-      "id": "https://lod.shared-canvas.org/example/money/3", 
-      "type": "Currency", 
-      "label": "dollars"
-    }
-  }, 
-  "estimated_price": {
-    "id": "https://lod.shared-canvas.org/example/money/5", 
-    "type": "MonetaryAmount", 
-    "value": 4000, 
-    "currency": "https://lod.shared-canvas.org/example/money/3"
   }
 }

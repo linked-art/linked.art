@@ -3,7 +3,7 @@
   "id": "https://lod.shared-canvas.org/example/activity/15", 
   "type": "Activity", 
   "classified_as": "aat:300055863", 
-  "label": "Provenance of Painting", 
+  "label": "Lifetime of Painting", 
   "used_specific_object": {
     "id": "https://lod.shared-canvas.org/example/object/9", 
     "type": "ManMadeObject", 
@@ -17,16 +17,34 @@
     }, 
     {
       "id": "https://lod.shared-canvas.org/example/activity/17", 
+      "type": "Activity", 
+      "classified_as": "aat:300054277", 
+      "label": "Ownership by Artist"
+    }, 
+    {
+      "id": "https://lod.shared-canvas.org/example/activity/18", 
       "type": "Acquisition", 
       "transferred_title_of": "https://lod.shared-canvas.org/example/object/9"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/18", 
+      "id": "https://lod.shared-canvas.org/example/activity/19", 
+      "type": "Activity", 
+      "classified_as": "aat:300054277", 
+      "label": "Ownership by first owner"
+    }, 
+    {
+      "id": "https://lod.shared-canvas.org/example/activity/20", 
       "type": "Purchase", 
       "transferred_title_of": "https://lod.shared-canvas.org/example/object/9"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/19", 
+      "id": "https://lod.shared-canvas.org/example/activity/21", 
+      "type": "Activity", 
+      "classified_as": "aat:300054277", 
+      "label": "Ownership by second and final owner"
+    }, 
+    {
+      "id": "https://lod.shared-canvas.org/example/activity/22", 
       "type": [
         "Destruction", 
         "Activity"
