@@ -1,7 +1,0 @@
-#!/bin/bash
-
-rm -rf ../museum-lod-pages/*
-cd scripts
-python ./mk_examples.py
-cd ..
-hyde gen
