@@ -264,13 +264,11 @@ id_uri_hash['prov_dest'] = dest
 
 # Prov - Curating and Inventorying
 act = Curating()
-act.label = "Looking After of the Painting"
+act.label = "Ownership of the Painting"
 start = Acquisition()
 start.label = "Acquisition of Painting by Owner"
 end = Acquisition()
 end.label = "Owner gives Painting to someone else"
-inv = Inventorying()
-inv.label = "Inventory Taking by Owner"
 owner = Actor()
 owner.label = "Owner"
 what = Painting()
@@ -284,8 +282,16 @@ act.used_specific_object = what
 start.occurs_before = end
 act.continued = start
 act.continued_by = end
-act.consists_of = inv
 id_uri_hash['prov_curate'] = act
+
+act = Curating()
+act.label = "Ownership of the Painting"
+inv = Inventorying()
+inv.label = "Inventory Taking by Owner"
+act.consists_of = inv
+id_uri_hash['prov_inventory'] = act
+
+
 
 # Full life time
 act = Provenance()

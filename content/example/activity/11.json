@@ -3,7 +3,7 @@
   "id": "https://lod.shared-canvas.org/example/activity/11", 
   "type": "Activity", 
   "classified_as": "aat:300054277", 
-  "label": "Looking After of the Painting", 
+  "label": "Ownership of the Painting", 
   "carried_out_by": {
     "id": "https://lod.shared-canvas.org/example/person/6", 
     "type": "Person"
@@ -12,12 +12,6 @@
     "id": "https://lod.shared-canvas.org/example/object/8", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618"
-  }, 
-  "consists_of": {
-    "id": "https://lod.shared-canvas.org/example/activity/14", 
-    "type": "Activity", 
-    "classified_as": "aat:300077506", 
-    "label": "Inventory Taking by Owner"
   }, 
   "continued_by": {
     "id": "https://lod.shared-canvas.org/example/activity/13", 

@@ -1,0 +1,13 @@
+{
+  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
+  "id": "https://lod.shared-canvas.org/example/activity/14", 
+  "type": "Activity", 
+  "classified_as": "aat:300054277", 
+  "label": "Ownership of the Painting", 
+  "consists_of": {
+    "id": "https://lod.shared-canvas.org/example/activity/15", 
+    "type": "Activity", 
+    "classified_as": "aat:300077506", 
+    "label": "Inventory Taking by Owner"
+  }
+}

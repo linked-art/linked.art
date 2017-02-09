@@ -91,16 +91,25 @@ Objects are destroyed by during `Destruction` events that are not carried out by
 
 {{ macros.include_example("prov_dest") }}
 
-## Ownership Period
+## Ownership 
 
-Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object _(aat:300054277)_ is also included separately from the very short lived activities in which ownership is transferred.  This is to allow for additional information to be associated with that period, such as where it was held or when other activities took place. For art dealers, collectors or museums, one such activity that occurs during this period is taking inventory of the objects _(aat:300077506)_ that are owned.
+The above events are often the only things recorded, however they exist in a larger context -- the ownership of the object by individuals, and the set of all owners.  Some events may only be linked to the owner, and hence be part of the ownership period with no further information available as to who carried them out or when they took place.
 
+## Individual Owners
+
+Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object _(aat:300054277)_ is modeled as a continuation of the ownership chain which is punctuated by the acquisition activities.
+ 
 {{ macros.include_example("prov_curate") }}
 
-The entire provenance of an object _(aat:300055863)_ is also an activity, that consists of the curation activities.
+### Taking Inventory
+
+One such activity is taking inventory _(aat:300077506)_ by the owner of all their objects, including the one being described. This is routinely carried out by art dealers, collectors or museums, in order to ensure that they still have custody of all of the objects that they believe they do.  This establishes the existence and presence of the object at a certain place and time, and is thus useful in tracking the object through history.
+
+{{ macros.include_example("prov_inventory") }}
+
+## Lifetime of Object
+
+The entire provenance of an object _(aat:300055863)_ is also an activity, that consists of all of all of the above events, from production through to destruction or the present day ownership.  All of the transfers of ownership and the resulting ownership periods are included, giving a single place to associate and thereby discover the events.
 
 {{ macros.include_example("prov_lifetime") }}
-
-
-
 
