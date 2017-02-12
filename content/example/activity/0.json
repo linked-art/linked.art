@@ -1,11 +1,11 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/0", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/0", 
   "type": "Activity", 
   "classified_as": "aat:300054751", 
   "label": "Example Auction", 
   "consists_of": {
-    "id": "https://lod.shared-canvas.org/example/activity/0/part/1", 
+    "id": "https://linked.art/example/activity/0/part/1", 
     "type": "Activity", 
     "label": "Example Auction of Lot"
   }

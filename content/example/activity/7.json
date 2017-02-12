@@ -1,22 +1,22 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/7", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/7", 
   "type": "TransferOfCustody", 
   "classified_as": "aat:300055292", 
   "label": "Theft of Painting", 
   "transferred_custody_of": {
-    "id": "https://lod.shared-canvas.org/example/object/5", 
+    "id": "https://linked.art/example/object/5", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Stolen Painting"
   }, 
   "transferred_custody_from": {
-    "id": "https://lod.shared-canvas.org/example/person/1", 
+    "id": "https://linked.art/example/person/1", 
     "type": "Person", 
     "label": "Owner"
   }, 
   "transferred_custody_to": {
-    "id": "https://lod.shared-canvas.org/example/person/2", 
+    "id": "https://linked.art/example/person/2", 
     "type": "Person", 
     "label": "Unknown Thief"
   }

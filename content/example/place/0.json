@@ -1,10 +1,10 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/place/0", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/place/0", 
   "type": "Place", 
   "label": "Example Museum Building", 
   "spatially_contains": {
-    "id": "https://lod.shared-canvas.org/example/place/0/part/1", 
+    "id": "https://linked.art/example/place/0/part/1", 
     "type": "Place", 
     "classified_as": "aat:300240057", 
     "label": "Gallery W204"

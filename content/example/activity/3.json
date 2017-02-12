@@ -1,32 +1,32 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/3", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/3", 
   "type": "Acquisition", 
   "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/2", 
+    "id": "https://linked.art/example/time/2", 
     "type": "TimeSpan", 
     "label": "When", 
     "begin_of_the_begin": "1890-01-04T00:00:00Z", 
     "end_of_the_end": "1890-01-05T00:00:00Z"
   }, 
   "took_place_at": {
-    "id": "https://lod.shared-canvas.org/example/place/3", 
+    "id": "https://linked.art/example/place/3", 
     "type": "Place", 
     "label": "Art Gallery"
   }, 
   "transferred_title_of": {
-    "id": "https://lod.shared-canvas.org/example/object/3", 
+    "id": "https://linked.art/example/object/3", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Painting"
   }, 
   "transferred_title_from": {
-    "id": "https://lod.shared-canvas.org/example/actor/2", 
+    "id": "https://linked.art/example/actor/2", 
     "type": "Actor", 
     "label": "Seller"
   }, 
   "transferred_title_to": {
-    "id": "https://lod.shared-canvas.org/example/actor/3", 
+    "id": "https://linked.art/example/actor/3", 
     "type": "Actor", 
     "label": "Buyer"
   }

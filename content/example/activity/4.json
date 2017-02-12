@@ -1,37 +1,37 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/4", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/4", 
   "type": "Purchase", 
   "transferred_title_of": {
-    "id": "https://lod.shared-canvas.org/example/object/3", 
+    "id": "https://linked.art/example/object/3", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Example Painting"
   }, 
   "transferred_title_from": {
-    "id": "https://lod.shared-canvas.org/example/actor/2", 
+    "id": "https://linked.art/example/actor/2", 
     "type": "Actor", 
     "label": "Seller"
   }, 
   "transferred_title_to": {
-    "id": "https://lod.shared-canvas.org/example/actor/3", 
+    "id": "https://linked.art/example/actor/3", 
     "type": "Actor", 
     "label": "Buyer"
   }, 
   "consists_of": {
-    "id": "https://lod.shared-canvas.org/example/activity/5", 
+    "id": "https://linked.art/example/activity/5", 
     "type": "Payment", 
     "paid_amount": {
-      "id": "https://lod.shared-canvas.org/example/money/0", 
+      "id": "https://linked.art/example/money/0", 
       "type": "MonetaryAmount", 
       "value": 100, 
       "currency": {
-        "id": "https://lod.shared-canvas.org/example/money/1", 
+        "id": "https://linked.art/example/money/1", 
         "type": "Currency", 
         "label": "dollars"
       }
     }, 
-    "paid_from": "https://lod.shared-canvas.org/example/actor/3", 
-    "paid_to": "https://lod.shared-canvas.org/example/actor/2"
+    "paid_from": "https://linked.art/example/actor/3", 
+    "paid_to": "https://linked.art/example/actor/2"
   }
 }

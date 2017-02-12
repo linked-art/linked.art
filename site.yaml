@@ -38,7 +38,7 @@ context:
             name: Rob Sanderson
         project:
             name: Museum Linked Open Data
-            url: "https://azaroth42.github.io/museum-lod/"
+            url: "https://linked.art/"
             install: "https://github.com/azaroth42/museum-lod"
         menu:
           - title: Home
@@ -52,7 +52,7 @@ context:
 
 var:
     scheme: https
-    hostname: lod.shared-canvas.org
+    hostname: linked.art
     exampleDir: example
     version: 1
 
@@ -73,4 +73,3 @@ meta:
     # number of files.
     nodemeta: meta.yaml
     ga_tracking_code: XX-XXXXXXXX-X
-

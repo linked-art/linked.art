@@ -1,6 +1,6 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/object/0", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/0", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
   "label": "Simple Example Painting"

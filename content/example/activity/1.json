@@ -1,21 +1,21 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/1", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/1", 
   "type": "Activity", 
   "timespan": {
-    "id": "https://lod.shared-canvas.org/example/time/0", 
+    "id": "https://linked.art/example/time/0", 
     "type": "TimeSpan", 
     "label": "When", 
     "begin_of_the_begin": "earliest-start-datetime", 
     "end_of_the_end": "latest-end-datetime"
   }, 
   "took_place_at": {
-    "id": "https://lod.shared-canvas.org/example/place/1", 
+    "id": "https://linked.art/example/place/1", 
     "type": "Place", 
     "label": "Where"
   }, 
   "carried_out_by": {
-    "id": "https://lod.shared-canvas.org/example/actor/0", 
+    "id": "https://linked.art/example/actor/0", 
     "type": "Actor", 
     "label": "Who"
   }

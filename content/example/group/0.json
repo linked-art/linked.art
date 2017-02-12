@@ -1,11 +1,11 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/group/0", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/group/0", 
   "type": "Group", 
   "classified_as": "aat:300312281", 
   "label": "Example Museum Organization", 
   "current_or_former_member": {
-    "id": "https://lod.shared-canvas.org/example/group/0/part/1", 
+    "id": "https://linked.art/example/group/0/part/1", 
     "type": "Group", 
     "classified_as": "aat:300263534", 
     "label": "Paintings Department"

@@ -1,55 +1,55 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/16", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/16", 
   "type": "Activity", 
   "classified_as": "aat:300055863", 
   "label": "Lifetime of Painting", 
   "used_specific_object": {
-    "id": "https://lod.shared-canvas.org/example/object/9", 
+    "id": "https://linked.art/example/object/9", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618"
   }, 
   "consists_of": [
     {
-      "id": "https://lod.shared-canvas.org/example/activity/17", 
+      "id": "https://linked.art/example/activity/17", 
       "type": "Production", 
-      "produced": "https://lod.shared-canvas.org/example/object/9"
+      "produced": "https://linked.art/example/object/9"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/18", 
+      "id": "https://linked.art/example/activity/18", 
       "type": "Activity", 
       "classified_as": "aat:300054277", 
       "label": "Ownership by Artist"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/19", 
+      "id": "https://linked.art/example/activity/19", 
       "type": "Acquisition", 
-      "transferred_title_of": "https://lod.shared-canvas.org/example/object/9"
+      "transferred_title_of": "https://linked.art/example/object/9"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/20", 
+      "id": "https://linked.art/example/activity/20", 
       "type": "Activity", 
       "classified_as": "aat:300054277", 
       "label": "Ownership by first owner"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/21", 
+      "id": "https://linked.art/example/activity/21", 
       "type": "Purchase", 
-      "transferred_title_of": "https://lod.shared-canvas.org/example/object/9"
+      "transferred_title_of": "https://linked.art/example/object/9"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/22", 
+      "id": "https://linked.art/example/activity/22", 
       "type": "Activity", 
       "classified_as": "aat:300054277", 
       "label": "Ownership by second and final owner"
     }, 
     {
-      "id": "https://lod.shared-canvas.org/example/activity/23", 
+      "id": "https://linked.art/example/activity/23", 
       "type": [
         "Destruction", 
         "Activity"
       ], 
-      "destroyed": "https://lod.shared-canvas.org/example/object/9"
+      "destroyed": "https://linked.art/example/object/9"
     }
   ]
 }
