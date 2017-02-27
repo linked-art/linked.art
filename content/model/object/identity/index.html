@@ -19,17 +19,21 @@ The URI of the resource, as given in `id`, is the primary identifier for the obj
 
 ### Non-URI / Legacy Identifiers
 
-There are often other identifiers available for the object, including local numbers provided by a database or collection management system, accession numbers, or stock numbers.  These are recorded as separate objects, with a `value` and a type, and referenced from the object via the `identified_by` relationship.  This also allows them to be linked to the [documentation](/model/document/) that asserts the identifier.  The different types of identifier can be given via the `classified_as` property.
+There are often other identifiers available for the object, including local numbers provided by a database or collection management system, accession numbers, or stock numbers.  These are recorded as separate resources, with a `value` and a type, and referenced from the object via the `identified_by` relationship.  This also allows them to be linked to the [documentation](/model/document/) that asserts the identifier.  The different types of identifier can be given via the `classified_as` property.
 
-The example below expresses two legacy identifiers, an Accession Number _(aat:300312355)_ and a Local Number _(aat:300404621)_.
+The example below expresses two legacy identifiers, an Accession Number _(aat:300312355)_ and a Local Number _(aat:300404621)_ provided by a database system.
 
 {{ macros.include_example("objid_legacy") }}
 
 ## Titles
 
-
+Although the `label` of the resource should always be included, it is valuable to have more information about the title or titles of the work. Similarly to identifiers, titles are given their own resource with a type and `value`. It could, again like identifiers, also refer to the documentation where that title was assigned.  Unlike books, artworks often change titles or have many different versions assigned to them over time.
 
 ### Primary
+
+The primary title should be given as the `label` of the object, and also as a `Title` resource with a `value` containing the same information.  The Primary title should be `classified_as` the preferred one via _aat:300404670_. 
+
+{{ macros.include_example("objid_title") }}
 
 ### Alternate
 

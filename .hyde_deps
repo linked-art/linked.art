@@ -94,7 +94,7 @@
 !!python/unicode 'model/object/.keep': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/object/aboutness/index.html': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/object/digital/index.html': [macros.j2, ga.j2, base.j2]
-!!python/unicode 'model/object/identity/index.html': [macros.j2, ga.j2, base.j2]
+!!python/unicode 'model/object/identity/index.html': [macros.j2, ga.j2, base.j2, toc.html]
 !!python/unicode 'model/object/index.html': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/object/physical/index.html': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/object/rights/index.html': [macros.j2, ga.j2, base.j2]

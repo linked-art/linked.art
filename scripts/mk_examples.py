@@ -495,6 +495,14 @@ id2.label = "Local Repository Number"
 what.identified_by = id2
 id_uri_hash['objid_legacy'] = what
 
+what = Painting()
+what.label = "Peasant and Sheep"
+ttl = Title()
+ttl.value = "Peasant and Sheep"
+ttl.classified_as = "aat:300404670"
+what.title = ttl
+id_uri_hash['objid_title'] = what
+
 
 # ------ Build out the examples -------
 
