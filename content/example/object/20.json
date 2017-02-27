@@ -11,6 +11,9 @@
       "classified_as": "aat:300404670", 
       "value": "Portrait of the Artist"
     }, 
-    "https://linked.art/example/Title/1"
+    {
+      "id": "https://linked.art/example/Title/2", 
+      "type": "Title"
+    }
   ]
 }

@@ -11,7 +11,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
-	PrimaryTitle, \
+	PrimaryTitle, Sculpture, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 
@@ -510,8 +510,12 @@ ttl.value = "Self Portrait"
 what.title = ttl
 ttl2 = Title()
 ttl.value = "Portrait of the Artist"
-what.title = ttl
+what.title = ttl2
 id_uri_hash['objid_title_alt'] = what
+
+what = Sculpture()
+what.label = "Scupture of a Dragon"
+id_uri_hash['objid_types'] = what
 
 
 # ------ Build out the examples -------
