@@ -5,7 +5,7 @@ import os
 
 import cromulent
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
-	Identifier, Person, TransferOfCustody, Identifier 
+	Identifier, Person, TransferOfCustody, Identifier, Title 
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -499,10 +499,9 @@ what = Painting()
 what.label = "Peasant and Sheep"
 ttl = Title()
 ttl.value = "Peasant and Sheep"
-ttl.classified_as = "aat:300404670"
+ttl.classified_as = Type("aat:300404670")
 what.title = ttl
 id_uri_hash['objid_title'] = what
-
 
 # ------ Build out the examples -------
 
