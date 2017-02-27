@@ -16,7 +16,8 @@
       "id": "https://linked.art/example/identifier/3", 
       "type": "Identifier", 
       "classified_as": "aat:300404621", 
-      "value": "Local Repository Number"
+      "label": "Local Repository Number", 
+      "value": 677
     }
   ]
 }

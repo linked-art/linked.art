@@ -2,6 +2,9 @@
 title: "Objects: Core Identity Information"
 ---
 
+{% include "toc.html" %}
+
+
 # Core Identity Information
 
 The core information that conveys the object's identity includes identifiers and titles/labels assigned to it, along with primary and more domain specific types.  
@@ -16,14 +19,15 @@ The URI of the resource, as given in `id`, is the primary identifier for the obj
 
 ### Non-URI / Legacy Identifiers
 
-There are often other identifiers available for the object, including local numbers provided by a database or collection management system, accession numbers, or stock numbers.  These are recorded as separate objects, with a value and a type.  This also allows them to be linked to the [documentation](/model/document/) that asserts the identifier.  The different types of identifier can be given via the `classified_as` property.
+There are often other identifiers available for the object, including local numbers provided by a database or collection management system, accession numbers, or stock numbers.  These are recorded as separate objects, with a `value` and a type, and referenced from the object via the `identified_by` relationship.  This also allows them to be linked to the [documentation](/model/document/) that asserts the identifier.  The different types of identifier can be given via the `classified_as` property.
+
+The example below expresses two legacy identifiers, an Accession Number _(aat:300312355)_ and a Local Number _(aat:300404621)_.
 
 {{ macros.include_example("objid_legacy") }}
 
-
-
-
 ## Titles
+
+
 
 ### Primary
 

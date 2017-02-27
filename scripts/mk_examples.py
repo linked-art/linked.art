@@ -491,7 +491,7 @@ id1.value = "X198-093"
 what.identified_by = id1
 id2 = LocalNumber()
 id2.value = 677
-id2.value = "Local Repository Number"
+id2.label = "Local Repository Number"
 what.identified_by = id2
 id_uri_hash['objid_legacy'] = what
 
