@@ -499,7 +499,7 @@ what = Painting()
 what.label = "Peasant and Sheep"
 ttl = Title()
 ttl.value = "Peasant and Sheep"
-ttl.classified_as = Type("aat:300404670")
+ttl.classified_as = Type("http://vocab.getty.edu/aat/300404670")
 what.title = ttl
 id_uri_hash['objid_title'] = what
 

@@ -7,7 +7,7 @@
   "title": {
     "id": "https://linked.art/example/Title/0", 
     "type": "Title", 
-    "classified_as": "https://linked.art/example/Type/aat:300404670", 
+    "classified_as": "aat:300404670", 
     "value": "Peasant and Sheep"
   }
 }
