@@ -4,8 +4,7 @@ title: "Objects: Core Identity Information"
 
 {% include "toc.html" %}
 
-
-# Core Identity Information
+## Introduction
 
 The core information that conveys the object's identity includes identifiers and titles/labels assigned to it, along with primary and more domain specific types.  
 
@@ -29,15 +28,21 @@ The example below expresses two legacy identifiers, an Accession Number _(aat:30
 
 Although the `label` of the resource should always be included, it is valuable to have more information about the title or titles of the work. Similarly to identifiers, titles are given their own resource with a type and `value`. It could, again like identifiers, also refer to the documentation where that title was assigned.  Unlike books, artworks often change titles or have many different versions assigned to them over time.
 
-### Primary
+### Primary Title
 
-The primary title should be given as the `label` of the object, and also as a `Title` resource with a `value` containing the same information.  The Primary title should be `classified_as` the preferred one via _aat:300404670_. 
+The primary title should be given as the `label` of the object, and also as a `Title` resource with a `value` containing the same information.  The Primary title should be `classified_as` the preferred one via _aat:300404670_. There should be exactly one primary title given per language.
 
 {{ macros.include_example("objid_title") }}
 
-### Alternate
+### Alternate Titles
+
+Further titles may also be given in the same way, just without the classification as preferred.
+
+{{ macros.include_example("objid_title_alt") }}
 
 ## Types
+
+
 
 ### Main
 

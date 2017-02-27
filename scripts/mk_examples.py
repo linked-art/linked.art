@@ -11,6 +11,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
+	PrimaryTitle, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 
@@ -497,11 +498,21 @@ id_uri_hash['objid_legacy'] = what
 
 what = Painting()
 what.label = "Peasant and Sheep"
-ttl = Title()
+ttl = PrimaryTitle()
 ttl.value = "Peasant and Sheep"
-ttl.classified_as = Type("http://vocab.getty.edu/aat/300404670")
 what.title = ttl
 id_uri_hash['objid_title'] = what
+
+what = Painting()
+what.label = "Self Portrait"
+ttl = PrimaryTitle()
+ttl.value = "Self Portrait"
+what.title = ttl
+ttl2 = Title()
+ttl.value = "Portrait of the Artist"
+what.title = ttl
+id_uri_hash['objid_title_alt'] = what
+
 
 # ------ Build out the examples -------
 
