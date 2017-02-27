@@ -1,5 +1,9 @@
 
 import json
+import yaml
+import os
+
+import cromulent
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
 	Identifier, Person, TransferOfCustody 
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
@@ -9,7 +13,6 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
-import yaml
 
 ManMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
@@ -57,7 +60,41 @@ id_uri_hash = {}
 
 page_hash = {"base": "model/base/index.html",
 	"prov": "model/provenance/index.html",
-	"auction": "model/provenance/auctions/index.html"}
+	"auction": "model/provenance/auctions/index.html",
+	"objid": "model/object/identity/index.html",
+	"objabout": "model/object/aboutness/index.html",
+	"objphys": "model/object/physical/index.html",
+	"objrights": "model/object/rights/index.html",
+	"objdig": "model/object/digital/index.html"
+	}
+
+### First make the override table
+
+lines = ["Property | Key", "-------- | ---"]
+fn = os.path.join(cromulent.__path__[0], 'data', 'overrides.json')
+fh = file(fn)
+data = fh.read()
+fh.close()
+overs = json.loads(data)
+its = overs.items()
+
+def sorter(x):
+	x = x[0]
+	if x[-1] == "i":
+		return int(x[1:-1]) + 0.5
+	else:
+		return int(x[1:])
+
+its.sort(key=sorter)
+for (k,v) in its:
+	lines.append("%s | %s" % (k, v))
+
+table = '\n'.join(lines)
+fh = file('../content/_include/prop_key_map.md', 'w')
+fh.write(table)
+fh.close()
+
+### Now make all the examples
 
 # Base - Type
 eg = Painting()
@@ -500,6 +537,7 @@ for (k,what) in sorted(id_uri_hash.items()):
 	js = factory.toJSON(what)
 	traverse(js, k)
 	# XXX: Now turn JSON-LD into TTL
+	# XXX: And link in the macro
 
 def sorter(x):
 	y = id_uri_hash[x].id
@@ -534,7 +572,7 @@ title: Index of Classes, Properties, Authorities
 fh = file('../content/model/example_index.html', 'w')
 fh.write(top)
 fh.write(yaml.dump(idx))
-fh.write('\n---\n\n{% include "example/_index_renderer.html" %}\n')
+fh.write('\n---\n\n{% include "_include/index_renderer.html" %}\n')
 fh.close()
 
 top = """extends: base.j2

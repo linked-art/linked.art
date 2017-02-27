@@ -1,11 +1,11 @@
 ---
-title: Museum Data Model
+title: Linked Art Data Model
 ---
 
-The desired target model for Linked Open Data in the museum domain is one with the following properties:
+The desired target model for Linked Open Data in the Art domain is one with the following properties:
 
 * Captures as much of the information that we know about the resources as possible
-* Can be easily and predictably transformed to a [simpler and more usable representation](/api/) that is still Linked Open Data
+* Can be productively used via easy to implement [services]](/api/)
 * Provides interoperability with other related data sets
 * Solves actual challenges, which are documented as use cases
 
@@ -14,7 +14,7 @@ Successful models are developed:
 * iteratively (we will not get it right the first time)
 * responsively (we will change the model in response to feedback and concerns)
 * responsibly (we will consider changes and features carefully with respect to complexity and value)
-* collaboratively (we will engage with the community and partners early and often)
+* collaboratively (we will engage with the community, projects and individuals early and often)
 
 ## Model Fundamentals
 
@@ -24,26 +24,29 @@ Following the existing norms of the community, our starting point consists of:
 * The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity
 * [JSON-LD](jsonld/) as the primary target serialization
 
+These are then expanded from if necessary in order to fulfil shared use cases and common requirements.
+
 ## Model Components
 
 The model can be treated as interlinking components that describe aspects of the events of interest. The target context for JSON-LD is described first, as the examples within the other documentation use it for readability.
 
 * [Target Serialization](jsonld/)
-* [Baseline Patterns](base/)
-* [Object Provenance](provenance/)
+* [Shared Patterns](base/)
 * [Object Description](object/)
+* [Object Provenance](provenance/)
 * [Actors](actor/) (People, Organizations)
 * [Places](place/)
+* [Collections](collection/)
 * [Exhibitions](exhibition/)
-* [Documentation](documents/) of information
+* [Primary Sources](documents/) of information
+* [Dataset Description](dataset/)
 * [Sources of Identity](vocab/)
 
 ## Scope Limitations
 
 * Complex Bibliography
-    * The description of bibliographic resources in Linked Data is the subject of several ongoing discussions in the Library domain. We feel that the Museum community should adopt whatever solution is devised by the experts in that field.
+    * The description of bibliographic resources in Linked Data is the subject of several ongoing discussions in the Library domain. We feel that the Art and Museum community should adopt whatever solution is devised by the experts in that field.
 * Data Provenance 
-    * Recording the events in which the data itself is created, modified and managed is out of scope of this work. The global Linked Data community has various approaches to this problem, with varying degrees of complexity and accuracy. Given the relative infancy of the work in the Museum domain, we feel that adding this is an unnecessary burden at this stage. 
+    * Recording the individual events in which the data itself is created, modified and managed is out of scope of this work. The global Linked Open Data community has various approaches to this problem, with varying degrees of complexity and accuracy. Given the relative infancy of the work in the Art domain, we feel that adding this is an unnecessary burden at this stage at any level below the entire dataset. 
 * Quantification of Uncertainty
-    * Similarly, the degree of certainty about the data being expressed is valuable and of interest to researchers, but requires a significantly more complex environment. This would also prove an unsustainable burden at this stage.
-
+    * Similarly, the degree of certainty about the data being expressed is valuable and of interest to researchers, but requires a significantly more complex environment. This would also prove an unsustainable burden, and is impractical to use even if it were provided.

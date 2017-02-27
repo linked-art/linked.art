@@ -7,7 +7,7 @@
     "dcterms": "http://purl.org/dc/terms/", 
     "schema": "http://schema.org/", 
     "skos": "http://www.w3.org/2004/02/skos/core#", 
-    "pi": "http://lod.getty.edu/prov/", 
+    "pi": "http://linked.art/ns/prov/", 
     "aat": "http://vocab.getty.edu/aat/", 
     "ulan": "http://vocab.getty.edu/ulan/", 
     "tgn": "http://vocab.getty.edu/tgn/", 
@@ -302,7 +302,7 @@
       "@id": "crm:P27i_was_origin_of", 
       "@type": "@id"
     }, 
-    "custody_surrendered_by": {
+    "transferred_custody_from": {
       "@id": "crm:P28_custody_surrendered_by", 
       "@type": "@id"
     }, 
@@ -310,11 +310,11 @@
       "@id": "crm:P28i_surrendered_custody_through", 
       "@type": "@id"
     }, 
-    "custody_received_by": {
+    "transferred_custody_to": {
       "@id": "crm:P29_custody_received_by", 
       "@type": "@id"
     }, 
-    "received_custody_through": {
+    "acquired_custody_through": {
       "@id": "crm:P29i_received_custody_through", 
       "@type": "@id"
     }, 
@@ -1307,10 +1307,6 @@
     }, 
     "paid_amount": {
       "@id": "pi:paid_amount", 
-      "@type": "@id"
-    }, 
-    "offering_price": {
-      "@id": "pi:had_offering_price", 
       "@type": "@id"
     }
   }
