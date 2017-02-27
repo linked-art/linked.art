@@ -5,12 +5,12 @@ import os
 
 import cromulent
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
-	Identifier, Person, TransferOfCustody 
+	Identifier, Person, TransferOfCustody, Identifier 
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
-	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, \
+	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 
@@ -483,6 +483,17 @@ lotset.label = "Lot 16"
 entry.refers_to = lotset
 id_uri_hash['auction_catalog'] = catalog
 
+what = Painting()
+what.label = "Example Painting"
+id1 = AccessionNumber()
+id1.label = "Accession Number for Painting"
+id1.value = "X198-093"
+what.identified_by = id1
+id2 = LocalNumber()
+id2.value = 677
+id2.value = "Local Repository Number"
+what.identified_by = id2
+id_uri_hash['objid_legacy'] = what
 
 
 # ------ Build out the examples -------

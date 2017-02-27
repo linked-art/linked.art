@@ -1,0 +1,22 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/18", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
+  "label": "Example Painting", 
+  "identified_by": [
+    {
+      "id": "https://linked.art/example/identifier/2", 
+      "type": "Identifier", 
+      "classified_as": "aat:300312355", 
+      "label": "Accession Number for Painting", 
+      "value": "X198-093"
+    }, 
+    {
+      "id": "https://linked.art/example/identifier/3", 
+      "type": "Identifier", 
+      "classified_as": "aat:300404621", 
+      "value": "Local Repository Number"
+    }
+  ]
+}
