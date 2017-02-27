@@ -19,6 +19,7 @@ example:
     base_type: object/0.json
     objid_legacy: object/18.json
     objid_title: object/19.json
+    objid_title_alt: object/20.json
     prov_acq: activity/3.json
     prov_create: activity/2.json
     prov_curate: activity/11.json
