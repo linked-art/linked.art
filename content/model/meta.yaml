@@ -29,7 +29,6 @@ example:
     objphys_dims_stmt: object/27.json
     objphys_materials: object/28.json
     objphys_materials_stmt: object/29.json
-    objphys_parts: object/30.json
     prov_acq: activity/3.json
     prov_create: activity/2.json
     prov_curate: activity/11.json

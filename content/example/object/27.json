@@ -5,7 +5,7 @@
   "classified_as": "aat:300033618", 
   "label": "Example Painting", 
   "referred_to_by": {
-    "id": "https://linked.art/example/LinguisticObject/1", 
+    "id": "https://linked.art/example/text/1", 
     "type": "LinguisticObject", 
     "classified_as": "aat:", 
     "value": "The painting is approximated 16 inches wide, by 20 inches high"

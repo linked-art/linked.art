@@ -6,7 +6,7 @@
   "label": "Example Painting", 
   "description": "The Example Painting is a great example of exampleness.", 
   "referred_to_by": {
-    "id": "https://linked.art/example/LinguisticObject/0", 
+    "id": "https://linked.art/example/text/0", 
     "type": "LinguisticObject", 
     "classified_as": "aat:300080091", 
     "value": "The Example Painting is a great example of exampleness."

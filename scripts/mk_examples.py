@@ -5,7 +5,7 @@ import os
 
 import cromulent
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
-	Identifier, Person, TransferOfCustody, Identifier, Title 
+	Identifier, Person, TransferOfCustody, Identifier, Title, LinguisticObject 
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \

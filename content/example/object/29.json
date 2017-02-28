@@ -2,5 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/29", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618"
+  "classified_as": "aat:300033618", 
+  "label": "Example Multi-Media Painting", 
+  "referred_to_by": {
+    "id": "https://linked.art/example/text/2", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:300010358", 
+    "value": "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
+  }
 }
