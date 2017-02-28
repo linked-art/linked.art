@@ -17,8 +17,13 @@ auth_idx:
     - [model/object/aboutness/index.html, object/23, objabout_depicts]
     - [model/object/aboutness/index.html, object/24, objabout_subject]
     - [model/object/aboutness/index.html, object/25, objabout_style]
+    - [model/object/physical/index.html, object/26, objphys_dims]
+    - [model/object/physical/index.html, object/27, objphys_dims_stmt]
+    - [model/object/physical/index.html, object/29, objphys_materials_stmt]
+    - [model/object/physical/index.html, object/30, objphys_parts]
 - - aat:300047090
   - - [model/object/identity/index.html, object/21, objid_types]
+    - [model/object/physical/index.html, object/28, objphys_materials]
 - - aat:300054277
   - - [model/provenance/index.html, activity/11, prov_curate]
     - [model/provenance/index.html, activity/14, prov_inventory]
@@ -65,6 +70,11 @@ class_idx:
     - [model/object/aboutness/index.html, object/23, objabout_depicts]
     - [model/object/aboutness/index.html, object/24, objabout_subject]
     - [model/object/aboutness/index.html, object/25, objabout_style]
+    - [model/object/physical/index.html, object/26, objphys_dims]
+    - [model/object/physical/index.html, object/27, objphys_dims_stmt]
+    - [model/object/physical/index.html, object/28, objphys_materials]
+    - [model/object/physical/index.html, object/29, objphys_materials_stmt]
+    - [model/object/physical/index.html, object/30, objphys_parts]
 - - PhysicalObject
   - - [model/provenance/auctions/index.html, object/11, auction_lotset]
     - [model/provenance/auctions/index.html, object/14, auction_prices]
@@ -117,6 +127,7 @@ prop_idx:
   - - [model/provenance/index.html, activity/10, prov_dest]
 - - dimension
   - - [model/provenance/auctions/index.html, object/14, auction_prices]
+    - [model/object/physical/index.html, object/26, objphys_dims]
 - - genre
   - - [model/object/aboutness/index.html, object/25, objabout_style]
 - - identified_by
@@ -148,9 +159,13 @@ prop_idx:
     - [model/provenance/auctions/index.html, activity/24, auction_base]
     - [model/object/aboutness/index.html, object/24, objabout_subject]
     - [model/object/aboutness/index.html, object/25, objabout_style]
+    - [model/object/physical/index.html, object/26, objphys_dims]
     - [model/provenance/auctions/index.html, activity/26, auction_lot]
+    - [model/object/physical/index.html, object/27, objphys_dims_stmt]
+    - [model/object/physical/index.html, object/28, objphys_materials]
 - - made_of
   - - [model/base/index.html, object/1, base_parts_thing]
+    - [model/object/physical/index.html, object/28, objphys_materials]
 - - part
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/provenance/auctions/index.html, object/11, auction_lotset]
@@ -162,6 +177,7 @@ prop_idx:
 - - referred_to_by
   - - [model/base/index.html, object/2, base_stmt]
     - [model/object/aboutness/index.html, object/22, objabout_description]
+    - [model/object/physical/index.html, object/27, objphys_dims_stmt]
 - - refers_to
   - - [model/provenance/auctions/index.html, info/1, auction_catalog]
 - - spatially_contains

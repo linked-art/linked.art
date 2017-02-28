@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/27", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
+  "label": "Example Painting", 
+  "referred_to_by": {
+    "id": "https://linked.art/example/LinguisticObject/1", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:", 
+    "value": "The painting is approximated 16 inches wide, by 20 inches high"
+  }
+}

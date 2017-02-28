@@ -11,8 +11,8 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
-	PrimaryTitle, Sculpture, Description, \
-	materialTypes
+	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
+	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
 
@@ -551,6 +551,43 @@ what = Painting()
 what.label = "Example Impressionist Painting"
 what.genre = Type("http://vocab.getty.edu/aat/300021503")
 id_uri_hash['objabout_style'] = what
+
+what = Painting()
+what.label = "Example 16x20 Painting"
+w = Width()
+w.value = 16
+w.unit = dimensionUnits['inches']
+what.dimension = w
+h = Height()
+h.value = 20
+h.unit = dimensionUnits['inches']
+what.dimension = h
+id_uri_hash['objphys_dims'] = what
+
+what = Painting()
+what.label = "Example Painting"
+dims = DimensionStatement()
+dims.value = "The painting is approximated 16 inches wide, by 20 inches high"
+what.referred_to_by = dims
+id_uri_hash['objphys_dims_stmt'] = what
+
+what = Sculpture()
+what.label = "Example Marble Sculpture"
+what.made_of = materialTypes['marble']
+id_uri_hash['objphys_materials'] = what
+
+what = Painting()
+what.label = ""
+id_uri_hash['objphys_materials_stmt'] = what
+
+what = Painting()
+what.label = ""
+id_uri_hash['objphys_parts'] = what
+
+
+
+
+
 
 
 # ------ Build out the examples -------
