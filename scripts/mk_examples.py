@@ -34,6 +34,7 @@ DestructionActivity._uri_segment = "activity"
 PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
+LinguisticObject._uri_segment = "text"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -577,13 +578,11 @@ what.made_of = materialTypes['marble']
 id_uri_hash['objphys_materials'] = what
 
 what = Painting()
-what.label = ""
+what.label = "Example Multi-Media Painting"
+mats = MaterialStatement()
+mats.value = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
+what.referred_to_by = mats
 id_uri_hash['objphys_materials_stmt'] = what
-
-what = Painting()
-what.label = ""
-id_uri_hash['objphys_parts'] = what
-
 
 
 
