@@ -13,7 +13,8 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, \
 	materialTypes
-from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
+from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
+	add_schema_properties
 
 ManMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
@@ -56,6 +57,7 @@ factory.context_uri = contextUrl
 # Ensure it's still int per segment
 factory.auto_id_type = "int-per-segment"
 add_rdf_value()
+add_schema_properties()
 
 id_uri_hash = {}
 

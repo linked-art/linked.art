@@ -9,11 +9,12 @@
       "id": "https://linked.art/example/Title/1", 
       "type": "Title", 
       "classified_as": "aat:300404670", 
-      "value": "Portrait of the Artist"
+      "value": "Self Portrait"
     }, 
     {
       "id": "https://linked.art/example/Title/2", 
-      "type": "Title"
+      "type": "Title", 
+      "value": "Portrait of the Artist"
     }
   ]
 }

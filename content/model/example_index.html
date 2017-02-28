@@ -13,6 +13,10 @@ auth_idx:
     - [model/object/identity/index.html, object/18, objid_legacy]
     - [model/object/identity/index.html, object/19, objid_title]
     - [model/object/identity/index.html, object/20, objid_title_alt]
+    - [model/object/aboutness/index.html, object/22, objabout_description]
+    - [model/object/aboutness/index.html, object/23, objabout_depicts]
+    - [model/object/aboutness/index.html, object/24, objabout_subject]
+    - [model/object/aboutness/index.html, object/25, objabout_genre]
 - - aat:300047090
   - - [model/object/identity/index.html, object/21, objid_types]
 - - aat:300054277
@@ -57,6 +61,10 @@ class_idx:
     - [model/object/identity/index.html, object/19, objid_title]
     - [model/object/identity/index.html, object/20, objid_title_alt]
     - [model/object/identity/index.html, object/21, objid_types]
+    - [model/object/aboutness/index.html, object/22, objabout_description]
+    - [model/object/aboutness/index.html, object/23, objabout_depicts]
+    - [model/object/aboutness/index.html, object/24, objabout_subject]
+    - [model/object/aboutness/index.html, object/25, objabout_genre]
 - - PhysicalObject
   - - [model/provenance/auctions/index.html, object/11, auction_lotset]
     - [model/provenance/auctions/index.html, object/14, auction_prices]
@@ -80,6 +88,8 @@ prop_idx:
     - [model/provenance/index.html, activity/11, prov_curate]
     - [model/provenance/auctions/index.html, activity/24, auction_base]
     - [model/provenance/auctions/index.html, activity/26, auction_lot]
+- - carries
+  - - [model/object/aboutness/index.html, object/24, objabout_subject]
 - - composed_of
   - - [model/base/index.html, info/0, base_parts_info]
     - [model/provenance/auctions/index.html, info/1, auction_catalog]
@@ -99,20 +109,26 @@ prop_idx:
   - - [model/provenance/index.html, activity/11, prov_curate]
 - - current_or_former_member
   - - [model/base/index.html, group/0, base_parts_org]
+- - depicts
+  - - [model/object/aboutness/index.html, object/23, objabout_depicts]
+- - description
+  - - [model/object/aboutness/index.html, object/22, objabout_description]
 - - destroyed
   - - [model/provenance/index.html, activity/10, prov_dest]
 - - dimension
   - - [model/provenance/auctions/index.html, object/14, auction_prices]
+- - genre
+  - - [model/object/aboutness/index.html, object/25, objabout_genre]
 - - identified_by
   - - [model/provenance/auctions/index.html, object/11, auction_lotset]
     - [model/provenance/auctions/index.html, object/14, auction_prices]
     - [model/object/identity/index.html, object/18, objid_legacy]
 - - label
-  - - [model/base/index.html, activity/0, base_parts_activity]
+  - - [model/base/index.html, place/0, base_parts_place]
+    - [model/base/index.html, group/0, base_parts_org]
+    - [model/base/index.html, activity/0, base_parts_activity]
     - [model/base/index.html, object/0, base_type]
     - [model/base/index.html, info/0, base_parts_info]
-    - [model/base/index.html, place/0, base_parts_place]
-    - [model/base/index.html, group/0, base_parts_org]
     - [model/provenance/auctions/index.html, info/1, auction_catalog]
     - [model/base/index.html, object/1, base_parts_thing]
     - [model/base/index.html, object/2, base_stmt]
@@ -120,14 +136,18 @@ prop_idx:
     - [model/provenance/index.html, activity/8, prov_theft_sale]
     - [model/provenance/index.html, activity/11, prov_curate]
     - [model/provenance/auctions/index.html, object/11, auction_lotset]
-    - [model/provenance/index.html, activity/14, prov_inventory]
     - [model/provenance/auctions/index.html, object/14, auction_prices]
+    - [model/provenance/index.html, activity/14, prov_inventory]
     - [model/provenance/index.html, activity/16, prov_lifetime]
     - [model/object/identity/index.html, object/18, objid_legacy]
     - [model/object/identity/index.html, object/19, objid_title]
     - [model/object/identity/index.html, object/20, objid_title_alt]
     - [model/object/identity/index.html, object/21, objid_types]
+    - [model/object/aboutness/index.html, object/22, objabout_description]
+    - [model/object/aboutness/index.html, object/23, objabout_depicts]
     - [model/provenance/auctions/index.html, activity/24, auction_base]
+    - [model/object/aboutness/index.html, object/24, objabout_subject]
+    - [model/object/aboutness/index.html, object/25, objabout_genre]
     - [model/provenance/auctions/index.html, activity/26, auction_lot]
 - - made_of
   - - [model/base/index.html, object/1, base_parts_thing]
@@ -137,14 +157,19 @@ prop_idx:
     - [model/provenance/auctions/index.html, object/14, auction_prices]
 - - produced
   - - [model/provenance/index.html, activity/2, prov_create]
+- - produced_by
+  - - [model/object/aboutness/index.html, object/23, objabout_depicts]
 - - referred_to_by
   - - [model/base/index.html, object/2, base_stmt]
+    - [model/object/aboutness/index.html, object/22, objabout_description]
 - - refers_to
   - - [model/provenance/auctions/index.html, info/1, auction_catalog]
 - - spatially_contains
   - - [model/base/index.html, place/0, base_parts_place]
 - - spatially_within
   - - [model/base/index.html, place/0, base_parts_place]
+- - subject
+  - - [model/object/aboutness/index.html, object/24, objabout_subject]
 - - timespan
   - - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]

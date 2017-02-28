@@ -1,0 +1,14 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/22", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
+  "label": "Example Painting", 
+  "description": "The Example Painting is a great example of exampleness.", 
+  "referred_to_by": {
+    "id": "https://linked.art/example/LinguisticObject/0", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:300080091", 
+    "value": "The Example Painting is a great example of exampleness."
+  }
+}
