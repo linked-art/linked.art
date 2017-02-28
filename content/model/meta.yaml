@@ -19,7 +19,7 @@ example:
     base_type: object/0.json
     objabout_depicts: object/23.json
     objabout_description: object/22.json
-    objabout_genre: object/25.json
+    objabout_style: object/25.json
     objabout_subject: object/24.json
     objid_legacy: object/18.json
     objid_title: object/19.json
