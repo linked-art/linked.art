@@ -5,13 +5,14 @@ import os
 
 import cromulent
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
-	Identifier, Person, TransferOfCustody, Identifier, Title, LinguisticObject 
+	Identifier, Person, TransferOfCustody, Identifier, Title, LinguisticObject, Right  
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
+	CreditStatement, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -584,8 +585,42 @@ mats.value = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with
 what.referred_to_by = mats
 id_uri_hash['objphys_materials_stmt'] = what
 
+what = Painting()
+what.label = "Example Painting"
+crdt = CreditStatement()
+crdt.value = "Donation of Ms J. Smith; Example Organization"
+what.referred_to_by = crdt
+id_uri_hash['objrights_credit'] = what
+
+#what = Painting()
+#what.label = "Example Painting"
+#crdt = RightsStatement()
+#crdt.value = "Copyright of object has not been assessed"
+#what.referred_to_by = crdt
+#id_uri_hash['objrights_rights'] = what
 
 
+# NOTE WELL:  This is an example of CRM being FUBAR
+
+what = ManMadeObject()
+what.label = "Object"
+ownership = Right()
+ownership.classified_as = Type("http://vocab.getty.edu/aat/300055603")
+ownership.label = "Ownership Right by Owner of Object"
+copyright = Right()
+copyright.classified_as = Type("http://vocab.getty.edu/aat/300055598")
+copyright.label = "Copyright by Holder of Object['s information object]"
+what.subject_to = ownership
+what.subject_to = copyright
+owner = Actor()
+owner.label = "Owner"
+cholder = Actor()
+cholder.label = "Holder"
+what.right_held_by = owner
+what.right_held_by = cholder
+cholder.possesses = copyright
+owner.possesses = ownership
+id_uri_hash['objrights_rights'] = what
 
 
 
