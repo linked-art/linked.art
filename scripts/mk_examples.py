@@ -523,7 +523,7 @@ what.description = "The Example Painting is a great example of exampleness."
 desc = Description()
 desc.value = "The Example Painting is a great example of exampleness."
 what.referred_to_by = desc
-id_uri_hash['objabout_description']
+id_uri_hash['objabout_description'] = what
 
 what = Painting()
 what.label = "Self Portrait"
