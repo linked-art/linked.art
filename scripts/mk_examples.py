@@ -11,7 +11,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
-	PrimaryTitle, Sculpture, \
+	PrimaryTitle, Sculpture, Description, \
 	materialTypes
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value
 
@@ -509,13 +509,46 @@ ttl = PrimaryTitle()
 ttl.value = "Self Portrait"
 what.title = ttl
 ttl2 = Title()
-ttl.value = "Portrait of the Artist"
+ttl2.value = "Portrait of the Artist"
 what.title = ttl2
 id_uri_hash['objid_title_alt'] = what
 
 what = Sculpture()
 what.label = "Scupture of a Dragon"
 id_uri_hash['objid_types'] = what
+
+what = Painting()
+what.label = "Example Painting"
+what.description = "The Example Painting is a great example of exampleness."
+desc = Description()
+desc.value = "The Example Painting is a great example of exampleness."
+what.referred_to_by = desc
+id_uri_hash['objabout_description']
+
+what = Painting()
+what.label = "Self Portrait"
+who = Actor()
+who.label = "Artist"
+what.depicts = who 
+prd = Production()
+prd.carried_out_by = who
+what.produced_by = prd
+id_uri_hash['objabout_depicts'] = what
+
+what = Painting()
+what.label = "Portrait of Lord Nelson"
+info = InformationObject()
+concept = Type("http://vocab.getty.edu/aat/300055314")
+concept.label = "War"
+info.about = concept
+what.carries = info
+what.subject = concept  # dct:subject
+id_uri_hash['objabout_subject'] = what
+
+what = Painting()
+what.label = "Example Impressionist Painting"
+what.genre = Type("http://vocab.getty.edu/aat/300021503")
+id_uri_hash['objabout_genre'] = what
 
 
 # ------ Build out the examples -------
