@@ -1,0 +1,34 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/32", 
+  "type": "ManMadeObject", 
+  "label": "Object", 
+  "right_held_by": [
+    {
+      "id": "https://linked.art/example/actor/6", 
+      "type": "Actor", 
+      "label": "Owner", 
+      "possesses": {
+        "id": "https://linked.art/example/Right/0", 
+        "type": "Right", 
+        "classified_as": "aat:300055603", 
+        "label": "Ownership Right by Owner of Object"
+      }
+    }, 
+    {
+      "id": "https://linked.art/example/actor/7", 
+      "type": "Actor", 
+      "label": "Holder", 
+      "possesses": {
+        "id": "https://linked.art/example/Right/1", 
+        "type": "Right", 
+        "classified_as": "aat:300055598", 
+        "label": "Copyright by Holder of Object['s information object]"
+      }
+    }
+  ], 
+  "subject_to": [
+    "https://linked.art/example/Right/0", 
+    "https://linked.art/example/Right/1"
+  ]
+}

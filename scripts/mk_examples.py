@@ -12,7 +12,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
-	CreditStatement, \
+	CreditStatement, RightsStatement, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
