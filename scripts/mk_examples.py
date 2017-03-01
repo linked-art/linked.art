@@ -592,12 +592,12 @@ crdt.value = "Donation of Ms J. Smith; Example Organization"
 what.referred_to_by = crdt
 id_uri_hash['objrights_credit'] = what
 
-#what = Painting()
-#what.label = "Example Painting"
-#crdt = RightsStatement()
-#crdt.value = "Copyright of object has not been assessed"
-#what.referred_to_by = crdt
-#id_uri_hash['objrights_rights'] = what
+what = Painting()
+what.label = "Example Painting"
+crdt = RightsStatement()
+crdt.value = "Copyright of this object has not yet been assessed"
+what.referred_to_by = crdt
+id_uri_hash['objrights_rights_stmt'] = what
 
 
 # NOTE WELL:  This is an example of CRM being FUBAR
@@ -622,7 +622,7 @@ cholder.possesses = copyright
 owner.possesses = ownership
 id_uri_hash['objrights_rights'] = what
 
-
+print ">>> Built examples "
 
 # ------ Build out the examples -------
 
@@ -726,4 +726,4 @@ for y in ym:
 	fh.write("    %s.json\n" % y)
 fh.close()
 
-
+print ">>> Wrote Indexes"
