@@ -30,6 +30,7 @@ example:
     objphys_materials: object/28.json
     objphys_materials_stmt: object/29.json
     objrights_credit: object/30.json
+    objrights_nkc: object/33.json
     objrights_rights: object/32.json
     objrights_rights_stmt: object/31.json
     prov_acq: activity/3.json

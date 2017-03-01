@@ -1,0 +1,12 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/33", 
+  "type": "ManMadeObject", 
+  "label": "Object", 
+  "subject_to": {
+    "id": "https://linked.art/example/Right/2", 
+    "type": "Right", 
+    "classified_as": "http://rightsstatements.org/vocab/NKC/1.0/", 
+    "label": "No known copyright"
+  }
+}

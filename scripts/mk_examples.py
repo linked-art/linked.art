@@ -600,7 +600,7 @@ what.referred_to_by = crdt
 id_uri_hash['objrights_rights_stmt'] = what
 
 
-# NOTE WELL:  This is an example of CRM being FUBAR
+# This is kind of wacky, but it's what we've got
 
 what = ManMadeObject()
 what.label = "Object"
@@ -621,6 +621,14 @@ what.right_held_by = cholder
 cholder.possesses = copyright
 owner.possesses = ownership
 id_uri_hash['objrights_rights'] = what
+
+what = ManMadeObject()
+what.label = "Object"
+cne = Right()
+cne.classified_as = Type("http://rightsstatements.org/vocab/NKC/1.0/")
+cne.label = "No known copyright"
+what.subject_to = cne
+id_uri_hash['objrights_nkc'] = what
 
 print ">>> Built examples "
 
