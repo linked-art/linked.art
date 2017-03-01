@@ -1,5 +1,7 @@
 ---
 title: "Objects: Aboutness"
+up_href: "/model/object/"
+up_label: "Objects"
 ---
 
 {% include "toc.html" %}
@@ -10,13 +12,19 @@ The features described in this section are information _about_ the object, and a
 
 ## Description
 
+The main description of the object is provided in the `description` property on the object itself.  It should also be given as a descriptive text in the same manner as other such texts, as the `value` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300080091)_.  The description can include any content that describes the object, and is useful primarily for display to a human user.
+
 {{ macros.include_example("objabout_description") }}
 
 ## Depiction
 
+Many sorts of artwork depict things that can be identified.  For example a portrait depicts the person sitting for it, or a sketch of a bridge depicts the bridge.  With access to an image of the object or the object itself, it must be possible to point out the depicted object. If the entity that is depicted is known, then it is useful to provide a `depicts` link to it. 
+
 {{ macros.include_example("objabout_depicts") }}
 
 ## Subject
+
+Subjects are the thematic concept that the object evokes, as opposed to an object (real or imaginary) that is depicted.  For example, a portrait of a military commander in full regalia on a battlefield depicts the person and the place, but could be interpreted to have a subject of "war".  The model for this is a little more complex, as the physical object is not `about` the subject, the concept that the artist is evoking is about the subject.  In order to capture this distinction, the object `carries` an `InformationObject` representing the work, which is in turn `about` the concept.  A shortcut of `subject` can be provided to go straight to the subject as well.
 
 {{ macros.include_example("objabout_subject") }}
 
