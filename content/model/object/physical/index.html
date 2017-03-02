@@ -44,6 +44,8 @@ Similarly to dimensions statements, it is possible to describe the materials usi
 
 ## Parts
 
+As described in the [baseline patterns](/model/base/), one of the main modeling paradigms used is to separate parts of resources from the whole. Physical objects are particularly amenable to this, and allows reuse of the rest of the model as needed.  The parts do not need to be physically separable without destroying the object, but do need to be objectively definable in terms of the matter that makes it up.  For example, the arm of a sculpture could have dimensions and materials, but while an arch in a rock formation might have dimensions, it is not made of anything, and is thus not a part of anything.  
+
+Physical parts are given using the `part` property, and use the high level `PhysicalObject` class. The `classified_as` property can be used to be more specific as to the sort of part, in this case the support for the painting, which is in turn made of canvas.
+
 {{ macros.include_example("base_parts_thing") }}
-
-
