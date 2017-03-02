@@ -18,7 +18,7 @@ The main description of the object is provided in the `description` property on 
 
 ## Depiction
 
-Many sorts of artwork depict things that can be identified.  For example a portrait depicts the person sitting for it, or a sketch of a bridge depicts the bridge.  With access to an image of the object or the object itself, it must be possible to point out the depicted object. If the entity that is depicted is known, then it is useful to provide a `depicts` link to it. 
+Many sorts of artwork depict things that can be identified.  For example a portrait depicts the person sitting for it, or a sketch of a bridge depicts the bridge.  With access to an image of the object or the object itself, it must be possible to point out the depicted object. If the entity that is depicted is known, then it is useful to provide a `depicts` link to it. If there isn't an entity to link to in this way, then the textual form of this information would go into `description` instead.
 
 {{ macros.include_example("objabout_depicts") }}
 
@@ -34,6 +34,6 @@ Styles are a categorization of the features of the work being described, and can
 
 {{ macros.include_example("objabout_style") }}
 
-!!! Note "Model is outside CIDOC-CRM"
-    The notion in CIDOC-CRM is tied to time and place of creation, not the actual style of the work.  For example, a painting done using materials from Japan, in Japan, by a Japanese artist, in a French style would be considered to have a style of Japanese by CIDOC-CRM following the scope notes for E4 Period. As such, we import the `genre` relationship from outside our core ontology.
-    An option is to use P130_shows_features_of instead, where the object shows features of the style Type. This is under discussion.  
+!!! Note "Model uses predicate from outside of CIDOC-CRM"
+    The notion of style in CIDOC-CRM is typically tied to time and place of creation, not the actual style of the work, and thus style is modeled as a Period (as discussed in the scope notes of E4 Period).  There is also an option to use E55 Type as the style, but no defined relationship to map from the object to its style.  For example, a painting done using materials from Japan, in Japan, by a Japanese artist, in a French style would be considered to have a style of Japanese by CIDOC-CRM due to the time/space period. As such, we import the `genre` relationship from outside our core ontology so that we can use Types.  If a new predicate is created for CIDOC-CRM that more closely maps to the usage, we will switch to use it in a future revision. <!-- Don't hold your breath! -->
+ 

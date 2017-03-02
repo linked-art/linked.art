@@ -8,19 +8,37 @@ up_label: "Objects"
 
 ## Introduction
 
+There are several important physical features of artworks that it is important to capture, including the size and materials that it is made of. The model allows for both being explicit in the model for these, as well as simply including a textual description.  The explicit form is strongly prefered, however it is recognized that not all systems will be able to provide it. 
+
+Beyond dimensions and materials, the model allows for the description of parts of objects, and parts of parts.  These parts can be thought of as objects in their own right, and thus have titles ("Left Panel" of a triptych), descriptions, rights, images, dimensions, materials, and so forth.   
+
 ## Dimensions
+
+Dimensions are included in the `dimension` property, and consist of three primary pieces of information:  the numeric value in `value`, the type of dimension (e.g. height vs width) in `classified_as` referencing an external vocabulary of dimension types, and the `unit` used to align the value with the real world such as inches, pounds or seconds. The unit should also be given from a controlled [vocabulary](/model/vocab/).
+
+For example, a painting that measures 16 inches wide, by 20 inches tall, could be described as given below.  Note that the repeated unit is not duplicated in its entirety, just its URI given in the second dimension.
 
 {{ macros.include_example("objphys_dims") }}
 
 ### Dimension Statement
 
+If the dimension text is not recorded in a way that is condusive to generating the full set, then it can be given as a `LinguisticObject`, classifed as dimensions by reference to _aat:300266036_, and the text provided in `value`.
+
+The same object might have a dimension statement as below. 
+
 {{ macros.include_example("objphys_dims_stmt") }}
 
 ## Materials
 
+Objects are `made_of` different materials. The materials are the type of material, rather than the specific bits of matter and therefore can refer directly to external vocabularies.  When possible, it is good to use this model, and combined with the parts model described in the next section, allows for a comprehensive set of information about which parts are which sizes and made of which materials.
+
+For example, a statue made of marble could be described as below.
+
 {{ macros.include_example("objphys_materials") }}
 
 ### Materials Statement 
+
+Similarly to dimensions statements, it is possible to describe the materials using a `LinguisticObject` classified as being about the materials of the object via _aat:300010358_.
 
 {{ macros.include_example("objphys_materials_stmt") }}
 

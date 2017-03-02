@@ -569,7 +569,7 @@ id_uri_hash['objphys_dims'] = what
 what = Painting()
 what.label = "Example Painting"
 dims = DimensionStatement()
-dims.value = "The painting is approximated 16 inches wide, by 20 inches high"
+dims.value = "The painting is approximately 16 inches wide, by 20 inches high"
 what.referred_to_by = dims
 id_uri_hash['objphys_dims_stmt'] = what
 
