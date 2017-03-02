@@ -5,14 +5,14 @@ import os
 
 import cromulent
 from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
-	Identifier, Person, TransferOfCustody, Identifier, Title, LinguisticObject, Right  
+	Identifier, Person, Image, TransferOfCustody, Identifier, Title, LinguisticObject, Right  
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
-	CreditStatement, RightsStatement, \
+	CreditStatement, RightsStatement, WebPage, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
