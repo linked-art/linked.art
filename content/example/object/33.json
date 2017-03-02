@@ -2,9 +2,10 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/33", 
   "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
   "label": "Object", 
   "subject_to": {
-    "id": "https://linked.art/example/Right/2", 
+    "id": "https://linked.art/example/Right/1", 
     "type": "Right", 
     "classified_as": "http://rightsstatements.org/vocab/NKC/1.0/", 
     "label": "No known copyright"

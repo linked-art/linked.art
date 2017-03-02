@@ -637,7 +637,7 @@ what.label = "Painting"
 page = WebPage("http://example.org/collection/1/painting")
 page.label = "Homepage for Painting"
 what.homepage = page
-id_uri_hash['objdig_homepage']
+id_uri_hash['objdig_homepage'] = what
 
 
 print ">>> Built examples "

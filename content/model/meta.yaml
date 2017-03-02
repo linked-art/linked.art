@@ -21,6 +21,8 @@ example:
     objabout_description: object/22.json
     objabout_style: object/25.json
     objabout_subject: object/24.json
+    objdig_homepage: object/35.json
+    objdig_image: object/34.json
     objid_legacy: object/18.json
     objid_title: object/19.json
     objid_title_alt: object/20.json

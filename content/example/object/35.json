@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/35", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
+  "label": "Painting", 
+  "homepage": {
+    "id": "http://example.org/collection/1/painting", 
+    "type": "InformationObject", 
+    "classified_as": "aat:300264578", 
+    "label": "Homepage for Painting"
+  }
+}
