@@ -30,4 +30,10 @@ Subjects are the thematic concept that the object evokes, as opposed to an objec
 
 ## Style / Genre
 
+Styles are a categorization of the features of the work being described, and can come from important features, techniques, locations, times or artistic movements. The style can be associated with the object using the `genre` property, and must be a reference to a particular style or genre in an appropriate vocabulary.
+
 {{ macros.include_example("objabout_style") }}
+
+!!! Note "Model is outside CIDOC-CRM"
+    The notion in CIDOC-CRM is tied to time and place of creation, not the actual style of the work.  For example, a painting done using materials from Japan, in Japan, by a Japanese artist, in a French style would be considered to have a style of Japanese by CIDOC-CRM following the scope notes for E4 Period. As such, we import the `genre` relationship from outside our core ontology.
+    An option is to use P130_shows_features_of instead, where the object shows features of the style Type. This is under discussion.  
