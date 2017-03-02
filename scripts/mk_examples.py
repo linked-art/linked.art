@@ -602,33 +602,43 @@ id_uri_hash['objrights_rights_stmt'] = what
 
 # This is kind of wacky, but it's what we've got
 
-what = ManMadeObject()
+what = Painting()
 what.label = "Object"
-ownership = Right()
-ownership.classified_as = Type("http://vocab.getty.edu/aat/300055603")
-ownership.label = "Ownership Right by Owner of Object"
 copyright = Right()
 copyright.classified_as = Type("http://vocab.getty.edu/aat/300055598")
 copyright.label = "Copyright by Holder of Object['s information object]"
-what.subject_to = ownership
 what.subject_to = copyright
-owner = Actor()
-owner.label = "Owner"
 cholder = Actor()
-cholder.label = "Holder"
-what.right_held_by = owner
+cholder.label = "Copyright Holder"
 what.right_held_by = cholder
 cholder.possesses = copyright
-owner.possesses = ownership
 id_uri_hash['objrights_rights'] = what
 
-what = ManMadeObject()
+what = Painting()
 what.label = "Object"
 cne = Right()
 cne.classified_as = Type("http://rightsstatements.org/vocab/NKC/1.0/")
 cne.label = "No known copyright"
 what.subject_to = cne
 id_uri_hash['objrights_nkc'] = what
+
+# Digital
+
+what = Painting()
+what.label = "Painting"
+img = Image("http://example.org/images/image.jpg")
+img.label = "Image of Painting"
+what.representation = img
+id_uri_hash['objdig_image'] = what
+
+
+what = Painting()
+what.label = "Painting"
+page = WebPage("http://example.org/collection/1/painting")
+page.label = "Homepage for Painting"
+what.homepage = page
+id_uri_hash['objdig_homepage']
+
 
 print ">>> Built examples "
 
