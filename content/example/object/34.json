@@ -7,6 +7,7 @@
   "representation": {
     "id": "http://example.org/images/image.jpg", 
     "type": "Image", 
-    "label": "Image of Painting"
+    "label": "Image of Painting", 
+    "format": "image/jpeg"
   }
 }

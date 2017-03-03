@@ -3,11 +3,11 @@
   "id": "https://linked.art/example/object/36", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300047090", 
-  "label": "Painting", 
+  "label": "Sculpture", 
   "representation": {
     "id": "http://iiif.example.org/image/1", 
     "type": "Image", 
-    "label": "IIIF Image Service for Painting", 
-    "conformsTo": "http://iiif.io/api/image/"
+    "label": "IIIF Image API for Sculpture", 
+    "conformsTo": "http://iiif.io/api/image"
   }
 }

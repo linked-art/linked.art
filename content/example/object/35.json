@@ -8,6 +8,7 @@
     "id": "http://example.org/collection/1/painting", 
     "type": "InformationObject", 
     "classified_as": "aat:300264578", 
-    "label": "Homepage for Painting"
+    "label": "Homepage for Painting", 
+    "format": "text/html"
   }
 }

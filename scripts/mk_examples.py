@@ -628,6 +628,7 @@ what = Painting()
 what.label = "Painting"
 img = Image("http://example.org/images/image.jpg")
 img.label = "Image of Painting"
+img.format = "image/jpeg"
 what.representation = img
 id_uri_hash['objdig_image'] = what
 
@@ -635,17 +636,18 @@ what = Painting()
 what.label = "Painting"
 page = WebPage("http://example.org/collection/1/painting")
 page.label = "Homepage for Painting"
+page.format = "text/html"
 what.homepage = page
 id_uri_hash['objdig_homepage'] = what
 
-
 what = Sculpture()
-what.label = "Painting"
+what.label = "Sculpture"
 img = Image("http://iiif.example.org/image/1")
-img.label = "IIIF Image Service for Painting"
-img.conformsTo = ExternalResource("http://iiif.io/api/image/")
+img.label = "IIIF Image API for Sculpture"
+img.conformsTo = ExternalResource("http://iiif.io/api/image")
 what.representation = img
 id_uri_hash['objdig_iiif_image'] = what
+
 
 
 print ">>> Built examples "
