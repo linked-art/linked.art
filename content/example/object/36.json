@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/36", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300047090", 
+  "label": "Painting", 
+  "representation": {
+    "id": "http://iiif.example.org/image/1", 
+    "type": "Image", 
+    "label": "IIIF Image Service for Painting", 
+    "conformsTo": "http://iiif.io/api/image/"
+  }
+}
