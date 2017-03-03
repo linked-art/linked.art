@@ -23,6 +23,7 @@ example:
     objabout_subject: object/24.json
     objdig_homepage: object/35.json
     objdig_iiif_image: object/36.json
+    objdig_iiif_manifest: object/37.json
     objdig_image: object/34.json
     objid_legacy: object/18.json
     objid_title: object/19.json
