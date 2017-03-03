@@ -12,7 +12,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
-	CreditStatement, RightsStatement, WebPage, Sculpture, \
+	CreditStatement, RightsStatement, WebPage, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -518,7 +518,7 @@ what.title = ttl2
 id_uri_hash['objid_title_alt'] = what
 
 what = Sculpture()
-what.label = "Scupture of a Dragon"
+what.label = "Sculpture of a Dragon"
 id_uri_hash['objid_types'] = what
 
 what = Painting()
@@ -639,7 +639,7 @@ what.homepage = page
 id_uri_hash['objdig_homepage'] = what
 
 
-what = Scuplture()
+what = Sculpture()
 what.label = "Painting"
 img = Image("http://iiif.example.org/image/1")
 img.label = "IIIF Image Service for Painting"
