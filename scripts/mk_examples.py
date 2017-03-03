@@ -4,7 +4,7 @@ import yaml
 import os
 
 import cromulent
-from cromulent.model import factory, Production, Acquisition, Purchase, Currency, \
+from cromulent.model import factory, ExternalResource, Production, Acquisition, Purchase, Currency, \
 	Identifier, Person, Image, TransferOfCustody, Identifier, Title, LinguisticObject, Right  
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
@@ -631,13 +631,21 @@ img.label = "Image of Painting"
 what.representation = img
 id_uri_hash['objdig_image'] = what
 
-
 what = Painting()
 what.label = "Painting"
 page = WebPage("http://example.org/collection/1/painting")
 page.label = "Homepage for Painting"
 what.homepage = page
 id_uri_hash['objdig_homepage'] = what
+
+
+what = Scuplture()
+what.label = "Painting"
+img = Image("http://iiif.example.org/image/1")
+img.label = "IIIF Image Service for Painting"
+img.conformsTo = ExternalResource("http://iiif.io/api/image/")
+what.representation = img
+id_uri_hash['objdig_iiif_image'] = what
 
 
 print ">>> Built examples "

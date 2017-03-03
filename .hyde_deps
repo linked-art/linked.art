@@ -80,6 +80,8 @@
 !!python/unicode 'example/object/31.json': []
 !!python/unicode 'example/object/32.json': []
 !!python/unicode 'example/object/33.json': []
+!!python/unicode 'example/object/34.json': []
+!!python/unicode 'example/object/35.json': []
 !!python/unicode 'example/object/5.json': []
 !!python/unicode 'example/object/9.json': []
 !!python/unicode 'example/place/0.json': []
@@ -109,7 +111,7 @@
 !!python/unicode 'model/object/.keep': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/object/aboutness/index.html': [macros.j2, ga.j2, base.j2,
   toc.html]
-!!python/unicode 'model/object/digital/index.html': [macros.j2, ga.j2, base.j2]
+!!python/unicode 'model/object/digital/index.html': [macros.j2, ga.j2, base.j2, toc.html]
 !!python/unicode 'model/object/identity/index.html': [macros.j2, ga.j2, base.j2, toc.html]
 !!python/unicode 'model/object/index.html': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'model/object/physical/index.html': [macros.j2, ga.j2, base.j2, toc.html]
