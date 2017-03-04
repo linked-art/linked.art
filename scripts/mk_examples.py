@@ -603,15 +603,14 @@ id_uri_hash['objrights_rights_stmt'] = what
 # This is kind of wacky, but it's what we've got
 
 what = Painting()
-what.label = "Object"
+what.label = "Example Painting"
 copyright = Right()
 copyright.classified_as = Type("http://vocab.getty.edu/aat/300055598")
-copyright.label = "Copyright by Holder of Object['s information object]"
+copyright.label = "Copyright of Example Painting's content"
 what.subject_to = copyright
 cholder = Actor()
 cholder.label = "Copyright Holder"
-what.right_held_by = cholder
-cholder.possesses = copyright
+copyright.possessed_by = cholder
 id_uri_hash['objrights_rights'] = what
 
 what = Painting()
