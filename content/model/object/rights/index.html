@@ -26,12 +26,20 @@ For general statements about rights that have not been aligned with any other co
 
 More detailed information is, however, often available and it is useful to be explicit. These patterns associate a `Right` that the object is `subject_to`, and then give more detail about the nature of that right, such as what sort of right, and who holds it.
 
+### Rightsstatements.org Assertions
+
+There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way.
+
+The object has a `subject_to` property, which records the particular `Right`. It is then `classified_as` the rightsstatements.org URI that's appropriate for the situation.  A `label` can also be given to provide clarity, and to display to the user.
+
+{{ macros.include_example("objrights_nkc") }}
+
+
 ### Copyright Assertion
 
-Copyright 
+Copyright, unlike the above situation where there is no known copyright, is slightly more complex in that it can be held by an individual or organization.  It is often important to capture who holds the copyright.  Other situations are similar, such as for trademarks.
+
+In these cases, the `Right` has an additional property of `possessed_by`, which refers to the `Actor` that holds the right. Actors are further described in the section about [people and organizations](/model/actor/).
 
 {{ macros.include_example("objrights_rights") }}
 
-### Rightsstatements.org Assertions
-
-{{ macros.include_example("objrights_nkc") }}
