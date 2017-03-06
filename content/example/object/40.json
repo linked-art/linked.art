@@ -11,13 +11,7 @@
     "label": "Museum", 
     "acquired_title_through": {
       "id": "https://linked.art/example/activity/39", 
-      "type": "Acquisition", 
-      "timespan": {
-        "id": "https://linked.art/example/time/7", 
-        "type": "TimeSpan", 
-        "begin_of_the_begin": "2001-04-05", 
-        "end_of_the_end": "2001-04-05"
-      }
+      "type": "Acquisition"
     }
   }
 }
