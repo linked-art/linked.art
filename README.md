@@ -2,3 +2,4 @@
 
 ```
 pip install hyde pymdown-extensions
+```
