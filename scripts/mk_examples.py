@@ -767,7 +767,6 @@ for (k,what) in sorted(id_uri_hash.items()):
 	fp += ".ttl"
 	fp = os.path.join(mdd, fp)
 
-	print "Writing: %s" % fp
 	fh = open(fp, 'w')
 	fh.write(out)
 	fh.close()
