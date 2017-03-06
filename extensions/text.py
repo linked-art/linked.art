@@ -16,7 +16,7 @@ def regex_replace(source, regex, replace):
 fh = file('content/ns/context/1/full.jsonld')
 data = fh.read()
 fh.close()
-ctxt = json.loads(data)
+ctxt = json.loads(data)['@context']
 
 def regex_replace_fn(source, regex):
 	try:
