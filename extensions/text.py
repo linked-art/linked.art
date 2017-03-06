@@ -36,4 +36,4 @@ def ctxtrepl(source):
 			crm = ctxt[data]
 		return "<abbr title='%s'>%s</abbr>" % (crm, full)
 	else:
-		return data
+		return full
