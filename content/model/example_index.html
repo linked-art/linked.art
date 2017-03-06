@@ -48,6 +48,9 @@ auth_idx:
     - [model/object/digital/index.html, object/35, objdig_image]
     - [model/object/digital/index.html, object/36, objdig_homepage]
     - [model/object/digital/index.html, object/38, objdig_iiif_manifest]
+    - [model/object/provenance/index.html, object/39, objprov_production]
+    - [model/object/provenance/index.html, object/40, objprov_owner]
+    - [model/object/provenance/index.html, object/41, objprov_location]
 - - aat:300047090
   - - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/5, prov_purchase]
@@ -81,6 +84,7 @@ auth_idx:
   - - [model/object/physical/index.html, object/28, objphys_dims_stmt]
 - - aat:300312281
   - - [model/base/index.html, group/0, base_parts_org]
+    - [model/object/provenance/index.html, object/40, objprov_owner]
 - - aat:300404628
   - - [model/provenance/auctions/index.html, object/12, auction_lotset]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
@@ -127,6 +131,7 @@ class_idx:
 - - Group
   - - [model/base/index.html, group/0, base_parts_org]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
+    - [model/object/provenance/index.html, object/40, objprov_owner]
 - - Identifier
   - - [model/provenance/auctions/index.html, object/12, auction_lotset]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
@@ -182,6 +187,9 @@ class_idx:
     - [model/object/digital/index.html, object/36, objdig_homepage]
     - [model/object/digital/index.html, object/37, objdig_iiif_image]
     - [model/object/digital/index.html, object/38, objdig_iiif_manifest]
+    - [model/object/provenance/index.html, object/39, objprov_production]
+    - [model/object/provenance/index.html, object/40, objprov_owner]
+    - [model/object/provenance/index.html, object/41, objprov_location]
 - - Material
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/object/physical/index.html, object/29, objphys_materials]
@@ -199,6 +207,7 @@ class_idx:
     - [model/provenance/index.html, activity/12, prov_curate]
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
+    - [model/object/provenance/index.html, object/39, objprov_production]
 - - PhysicalObject
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/provenance/auctions/index.html, object/12, auction_lotset]
@@ -212,10 +221,12 @@ class_idx:
     - [model/provenance/index.html, activity/2, prov_create]
     - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
+    - [model/object/provenance/index.html, object/41, objprov_location]
 - - Production
   - - [model/provenance/index.html, activity/2, prov_create]
     - [model/provenance/index.html, activity/3, prov_create_technique]
     - [model/object/aboutness/index.html, object/24, objabout_depicts]
+    - [model/object/provenance/index.html, object/39, objprov_production]
 - - Purchase
   - - [model/provenance/index.html, activity/5, prov_purchase]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
@@ -257,6 +268,7 @@ prop_idx:
     - [model/object/aboutness/index.html, object/24, objabout_depicts]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
+    - [model/object/provenance/index.html, object/39, objprov_production]
 - - carries
   - - [model/object/aboutness/index.html, object/25, objabout_subject]
 - - composed_of
@@ -282,8 +294,12 @@ prop_idx:
 - - currency
   - - [model/provenance/index.html, activity/5, prov_purchase]
     - [model/provenance/index.html, activity/9, prov_theft_sale]
+- - current_location
+  - - [model/object/provenance/index.html, object/41, objprov_location]
 - - current_or_former_member
   - - [model/base/index.html, group/0, base_parts_org]
+- - current_owner
+  - - [model/object/provenance/index.html, object/40, objprov_owner]
 - - depicts
   - - [model/object/aboutness/index.html, object/24, objabout_depicts]
 - - description
@@ -359,6 +375,9 @@ prop_idx:
     - [model/object/digital/index.html, object/36, objdig_homepage]
     - [model/object/digital/index.html, object/37, objdig_iiif_image]
     - [model/object/digital/index.html, object/38, objdig_iiif_manifest]
+    - [model/object/provenance/index.html, object/39, objprov_production]
+    - [model/object/provenance/index.html, object/40, objprov_owner]
+    - [model/object/provenance/index.html, object/41, objprov_location]
 - - made_of
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/object/physical/index.html, object/29, objphys_materials]
@@ -383,6 +402,7 @@ prop_idx:
   - - [model/provenance/index.html, activity/2, prov_create]
 - - produced_by
   - - [model/object/aboutness/index.html, object/24, objabout_depicts]
+    - [model/object/provenance/index.html, object/39, objprov_production]
 - - referred_to_by
   - - [model/base/index.html, object/2, base_stmt]
     - [model/object/aboutness/index.html, object/23, objabout_description]

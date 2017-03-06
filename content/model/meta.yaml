@@ -33,6 +33,9 @@ example:
     objphys_dims_stmt: object/28.json
     objphys_materials: object/29.json
     objphys_materials_stmt: object/30.json
+    objprov_location: object/41.json
+    objprov_owner: object/40.json
+    objprov_production: object/39.json
     objrights_credit: object/31.json
     objrights_nkc: object/34.json
     objrights_rights: object/33.json

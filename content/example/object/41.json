@@ -1,0 +1,12 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/41", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
+  "label": "Painting", 
+  "current_location": {
+    "id": "https://linked.art/example/place/5", 
+    "type": "Place", 
+    "label": "Gallery W6"
+  }
+}

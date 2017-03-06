@@ -686,7 +686,7 @@ id_uri_hash['objprov_production'] = what
 
 what = Painting()
 what.label = "Painting"
-who = Organization()
+who = MuseumOrg()
 who.label = "Museum"
 what.current_owner = who
 id_uri_hash['objprov_owner'] = what
