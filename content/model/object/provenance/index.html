@@ -10,18 +10,18 @@ Tracking the provenance of an object is described in detail in the [Provenance](
 
 ## Production
 
-In the same way that the `Production` event can reference the object that it `produced`, the object can reference its `Production` with `produced_by`.
+In the same way that the `Production` event can reference the object that it `produced`, the object can reference its `Production` with `produced_by`.  The example below includes the artist's details in `carried_out_by`, but might also include all of the other properties of the event. The modeling details for the events are described in the [Provenance](/model/provenance/) section.
 
 {{ macros.include_example("objprov_production") }}
 
 ## Ownership
 
-The current owner of the object should be referenced as the value for `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object.  To make this easier to find from the object, the same Actor should also be referenced via `current_owner` from the object itself. The event in which the object was acquired, via the `acquired_title_through` property, can be included to let systems start to trace provenance events.
+The current owner of the object should be referenced with `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object.  To make this easier to find from the object's description, the owner should also be referenced with `current_owner` from the object itself. The URI of the event in which the object was acquired, via the `acquired_title_through` property, can be included to let systems start to trace provenance events.  There are further modeling details available about [People and Orgaizations](/model/actor) that might own objects.
 
 {{ macros.include_example("objprov_owner") }}
 
 ## Location
 
-The current location of the object 
+The current location of the object is given using the `current_location` property.  This can give a reference to a gallery or specific part of a facility, or be used for the general address of the organization where the object is currently held. There are further modeling details available about [Places](/model/place/).
 
 {{ macros.include_example("objprov_location") }}
