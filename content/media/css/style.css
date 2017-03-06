@@ -215,7 +215,7 @@ article h5:hover .headeranchor-link,
 article h6:hover .headeranchor-link {
   height: 1em;
   padding-left: 8px;
-  margin-left: -30px;
+  margin-left: -1.5em;
   line-height: 1;
   text-decoration: none;
 }
@@ -242,5 +242,5 @@ article .headeranchor {
 }
 
 .headeranchor:before {
-  content: ' ';
+  content: '🔗';
 }
