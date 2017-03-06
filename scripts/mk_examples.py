@@ -690,6 +690,10 @@ who.label = "Museum"
 what.current_owner = who
 acq = Acquisition()
 who.acquired_title_through = acq
+ts = TimeSpan()
+ts.begin_of_the_begin = "2001-04-05"
+ts.end_of_the_end = "2001-04-05"
+acq.timespan = ts
 id_uri_hash['objprov_owner'] = what
 
 what = Painting()
