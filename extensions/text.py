@@ -29,6 +29,10 @@ def regex_replace_fn(source, regex):
 def ctxtrepl(source):
 	data = source.group(0)[1:-1]
 	if ctxt.has_key(data):
-		return "<abbr title='%s'>%s</abbr>" % (ctxt[data], data)
+		if type(ctxt[data]) == dict:
+			crm = ctxt[data]['@id']
+		else:
+			crm = ctxt[data]
+		return "<abbr title='%s'>`%s`</abbr>" % (crm, data)
 	else:
 		return data
