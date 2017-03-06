@@ -1,0 +1,47 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pi: <http://linked.art/ns/prov/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/object/14> a crm:E19_Physical_Object ;
+    rdfs:label "Set of Objects for Lot 812" ;
+    crm:P1_is_identified_by <https://linked.art/example/identifier/1> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300411307> ;
+    crm:P43_has_dimension <https://linked.art/example/money/4>,
+        <https://linked.art/example/money/5>,
+        <https://linked.art/example/money/6> ;
+    crm:P46_is_composed_of <https://linked.art/example/object/15> .
+
+<https://linked.art/example/identifier/1> a crm:E42_Identifier ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300404628> ;
+    rdf:value "812" .
+
+<https://linked.art/example/money/4> a crm:E97_Monetary_Amount ;
+    crm:P180_has_currency <https://linked.art/example/money/3> ;
+    crm:P2_has_type <http://data.getty.edu/money/type/startingPrice> ;
+    rdf:value 500 .
+
+<https://linked.art/example/money/5> a crm:E97_Monetary_Amount ;
+    crm:P180_has_currency <https://linked.art/example/money/3> ;
+    crm:P2_has_type <http://data.getty.edu/money/type/estimatedPrice> ;
+    rdf:value 4000 .
+
+<https://linked.art/example/money/6> a crm:E97_Monetary_Amount ;
+    crm:P180_has_currency <https://linked.art/example/money/3> ;
+    crm:P2_has_type <http://data.getty.edu/money/type/reservePrice> ;
+    rdf:value 3000 .
+
+<https://linked.art/example/object/15> a crm:E22_Man-Made_Object ;
+    rdfs:label "Example Painting" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+
+<https://linked.art/example/money/3> a crm:E98_Currency ;
+    rdfs:label "dollars" .
+

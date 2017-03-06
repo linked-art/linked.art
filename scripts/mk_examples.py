@@ -3,6 +3,10 @@ import json
 import yaml
 import os
 
+from rdflib import ConjunctiveGraph, URIRef
+from pyld import jsonld
+from pyld.jsonld import expand, to_rdf, JsonLdProcessor
+
 import cromulent
 from cromulent.model import factory, ExternalResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
@@ -666,6 +670,41 @@ prop_hash = {}
 class_hash = {}
 aat_hash = {}
 
+
+# Set up JSON-LD to TTL environment
+
+docCache = {}
+
+def fetch(url):
+    fh = urllib.urlopen(url)
+    data = fh.read()
+    fh.close()
+    return data    
+
+def load_document_and_cache(url):
+    if docCache.has_key(url):
+        return docCache[url]
+
+    doc = {
+        'contextUrl': None,
+        'documentUrl': None,
+        'document': ''
+    }
+    data = fetch(url)
+    doc['document'] = data;
+    docCache[url] = doc
+    return doc
+
+jsonld.set_document_loader(load_document_and_cache)
+
+fh = file('../content/ns/context/1/full.jsonld')
+ctxtdata = fh.read()
+fh.close()
+ctxtjs = json.loads(ctxtdata)
+docCache[factory.context_uri] = {'contextUrl': None,
+	'documentUrl': None,
+	'document': ctxtdata}
+
 def traverse(what, eg):
 	for (k,v) in what.items():
 		if k == 'type':
@@ -710,9 +749,28 @@ for (k,what) in sorted(id_uri_hash.items()):
 	ym.append("%s: %s" % (k, what.id.replace(baseUrl, '')))
 	# Now walk the json of the objects and build an index
 	js = factory.toJSON(what)
-	traverse(js, k)
+	traverse(js, k)	
+
 	# XXX: Now turn JSON-LD into TTL
-	# XXX: And link in the macro
+	nq = to_rdf(js, {"format": "application/nquads"})
+	g = ConjunctiveGraph()
+	for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'pi']:
+		g.bind(ns, ctxtjs['@context'][ns])
+	g.parse(data=nq, format="nt")
+	out = g.serialize(format="turtle")
+
+	# Copied from factory toFile :(
+	mdd = factory.base_dir
+	myid = js['id']	
+	mdb = factory.base_url
+	fp = myid[len(mdb):]	
+	fp += ".ttl"
+	fp = os.path.join(mdd, fp)
+
+	print "Writing: %s" % fp
+	fh = open(fp, 'w')
+	fh.write(out)
+	fh.close()
 
 def sorter(x):
 	y = id_uri_hash[x].id

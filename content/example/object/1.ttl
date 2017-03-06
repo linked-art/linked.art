@@ -1,0 +1,29 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pi: <http://linked.art/ns/prov/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/object/1> a crm:E22_Man-Made_Object ;
+    rdfs:label "Example Painting" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
+    crm:P45_consists_of <http://vocab.getty.edu/aat/300015045> ;
+    crm:P46_is_composed_of <https://linked.art/example/object/1/part/1> .
+
+<http://vocab.getty.edu/aat/300014078> a crm:E57_Material ;
+    rdfs:label "canvas" .
+
+<http://vocab.getty.edu/aat/300015045> a crm:E57_Material ;
+    rdfs:label "watercolor" .
+
+<https://linked.art/example/object/1/part/1> a crm:E19_Physical_Object ;
+    rdfs:label "Canvas Support" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300014844> ;
+    crm:P45_consists_of <http://vocab.getty.edu/aat/300014078> .
+
