@@ -167,6 +167,9 @@ th {
   margin-left: 25px;
 }
 
+abbr {
+  cursor: help;
+}
 
 /* Header Anchors */
 article {
