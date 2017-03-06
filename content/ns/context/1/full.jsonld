@@ -335,7 +335,7 @@
       "@id": "crm:P31i_was_modified_by", 
       "@type": "@id"
     }, 
-    "used_general_technique": {
+    "technique": {
       "@id": "crm:P32_used_general_technique", 
       "@type": "@id"
     }, 

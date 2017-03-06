@@ -11,7 +11,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/activity/3> a crm:E12_Production ;
-    crm:P14_carried_out_by <https://linked.art/example/actor/2> .
+    crm:P14_carried_out_by <https://linked.art/example/actor/2> ;
+    crm:P32_used_general_technique <http://vocab.getty.edu/aat/300053932> .
 
 <https://linked.art/example/actor/2> a crm:E39_Actor ;
     rdfs:label "Example Glassblower" .
