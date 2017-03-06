@@ -1284,10 +1284,10 @@
       "@id": "schema:width", 
       "@type": "@id"
     }, 
-    "familyName": {
+    "family_name": {
       "@id": "schema:familyName"
     }, 
-    "givenName": {
+    "given_name": {
       "@id": "schema:givenName"
     }, 
     "nationality": {
@@ -1297,7 +1297,7 @@
     "genre": {
       "@id": "schema:genre"
     }, 
-    "conformsTo": {
+    "conforms_to": {
       "@id": "dcterms:conformsTo", 
       "@type": "@id"
     }, 
