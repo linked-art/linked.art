@@ -15,8 +15,6 @@
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
     crm:P52_has_current_owner <https://linked.art/example/group/2> .
 
-<https://linked.art/example/activity/39> a crm:E8_Acquisition .
-
 <https://linked.art/example/group/2> a crm:E74_Group ;
     rdfs:label "Museum" ;
     crm:P22i_acquired_title_through <https://linked.art/example/activity/39> ;

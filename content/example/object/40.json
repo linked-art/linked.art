@@ -9,9 +9,6 @@
     "type": "Group", 
     "classified_as": "aat:300312281", 
     "label": "Museum", 
-    "acquired_title_through": {
-      "id": "https://linked.art/example/activity/39", 
-      "type": "Acquisition"
-    }
+    "acquired_title_through": "https://linked.art/example/activity/39"
   }
 }

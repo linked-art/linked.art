@@ -13,10 +13,7 @@
       "type": "ManMadeObject", 
       "classified_as": "aat:300033618"
     }, 
-    "transferred_title_to": {
-      "id": "https://linked.art/example/person/6", 
-      "type": "Person"
-    }, 
+    "transferred_title_to": "https://linked.art/example/person/6", 
     "occurs_before": {
       "id": "https://linked.art/example/activity/14", 
       "type": "Acquisition", 
