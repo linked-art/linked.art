@@ -31,4 +31,5 @@ def ctxtrepl(source):
 	if ctxt.has_key(data):
 		return "<abbr title='%s'>%s</abbr>" % (ctxt[data], data)
 	else:
+		print "Could not find: %s" % data
 		return data

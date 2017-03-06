@@ -668,7 +668,6 @@ aat_hash = {}
 
 def traverse(what, eg):
 	for (k,v) in what.items():
-		print k
 		if k == 'type':
 			if type(v) == list:
 				for t in v:
