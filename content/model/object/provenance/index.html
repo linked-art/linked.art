@@ -16,7 +16,7 @@ In the same way that the `Production` event can reference the object that it `pr
 
 ## Ownership
 
-The current owner of the object should be referenced as the value for `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object.  To make this easier to find from the object, the same Actor should also be referenced via `current_owner` from the object itself. 
+The current owner of the object should be referenced as the value for `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object.  To make this easier to find from the object, the same Actor should also be referenced via `current_owner` from the object itself. The event in which the object was acquired, via the `acquired_title_through` property, can be included along with the acquisition date, in the `timespan` property, to make that information easier to discover.
 
 {{ macros.include_example("objprov_owner") }}
 
