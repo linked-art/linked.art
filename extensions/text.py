@@ -19,7 +19,6 @@ fh.close()
 ctxt = json.loads(data)
 
 def regex_replace_fn(source, regex):
-	print "called r_r_fn"
 	try:
 		repl = re.compile(regex)
 	except:
@@ -29,7 +28,6 @@ def regex_replace_fn(source, regex):
 
 def ctxtrepl(source):
 	data = source.group(0)[1:-1]
-	print "got data: %r" % data
 	if ctxt.has_key(data):
 		return "<abbr title='%s'>%s</abbr>" % (ctxt[data], data)
 	else:
