@@ -7,3 +7,6 @@
 
 /*.jsonld
   Content-Type: application/ld+json
+
+/*.ttl
+  Content-Type: text/turtle
