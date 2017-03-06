@@ -31,6 +31,12 @@ The first activity in an object's provenance or lifecycle is its creation, or `P
 
 {{ macros.include_example("prov_create") }}
 
+### Techniques
+
+If there is a particular technique known to have been used in the creation of the object, for example glassblowing, identified by _aat:300053932_, the identifier for the technique can be referenced using `technique`.
+
+{{ macros.include_example("prov_create_technique") }}
+
 ## Object Acquisition
 
 Subsequent activities in the provenance of an object are the transfer of ownership from (`transferred_title_from`) one owner to (`transferred_title_to`) the next, starting with the artist as defacto first owner to the person or organization who owns it next. The object itself is the value of the `transferred_title_of` relationship. The ownership chain can then be expressed by repeating this same pattern of transferring title from the current owner to the next.

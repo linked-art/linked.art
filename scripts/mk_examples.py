@@ -199,6 +199,16 @@ act.produced = what
 act.took_place_at = where
 id_uri_hash['prov_create'] = act
 
+
+act = Production()
+who = Actor()
+who.label = "Example Glassblower"
+what = Sculpture()
+what.label = "Glass Sculpture"
+act.carried_out_by = who
+act.technique = Type("http://vocab.getty.edu/aat/300053932")
+id_uri_hash['prov_create_technique'] = act
+
 # Prov - Acquisition
 act = Acquisition()
 seller = Actor()
@@ -759,15 +769,8 @@ for (k,what) in sorted(id_uri_hash.items()):
 	g.parse(data=nq, format="nt")
 	out = g.serialize(format="turtle")
 
-	# Copied from factory toFile :(
-	mdd = factory.base_dir
-	myid = js['id']	
-	mdb = factory.base_url
-	fp = myid[len(mdb):]	
-	fp += ".ttl"
-	fp = os.path.join(mdd, fp)
-
-	fh = open(fp, 'w')
+	fp = js['id'][len(factory.base_url):] + ".ttl"	
+	fh = open(os.path.join(factory.base_dir, fp), 'w')
 	fh.write(out)
 	fh.close()
 

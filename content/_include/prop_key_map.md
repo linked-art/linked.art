@@ -8,6 +8,7 @@ P20i | specific_purpose_of
 P28 | transferred_custody_from
 P29 | transferred_custody_to
 P29i | acquired_custody_through
+P32 | technique
 P35i | condition_identified_by
 P37 | assigned_identifier
 P37i | identifier_assigned_by
