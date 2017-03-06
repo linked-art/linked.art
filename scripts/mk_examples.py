@@ -683,12 +683,13 @@ prod.carried_out_by = who
 what.produced_by = prod
 id_uri_hash['objprov_production'] = what
 
-
 what = Painting()
 what.label = "Painting"
 who = MuseumOrg()
 who.label = "Museum"
 what.current_owner = who
+acq = Acquisition()
+what.acquired_title_through = acq
 id_uri_hash['objprov_owner'] = what
 
 what = Painting()
