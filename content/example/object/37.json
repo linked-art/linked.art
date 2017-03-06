@@ -8,6 +8,6 @@
     "id": "http://iiif.example.org/image/1", 
     "type": "Image", 
     "label": "IIIF Image API for Sculpture", 
-    "conformsTo": "http://iiif.io/api/image"
+    "conforms_to": "http://iiif.io/api/image"
   }
 }

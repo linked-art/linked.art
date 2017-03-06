@@ -660,7 +660,7 @@ what = Sculpture()
 what.label = "Sculpture"
 img = Image("http://iiif.example.org/image/1")
 img.label = "IIIF Image API for Sculpture"
-img.conformsTo = ExternalResource("http://iiif.io/api/image")
+img.conforms_to = ExternalResource("http://iiif.io/api/image")
 what.representation = img
 id_uri_hash['objdig_iiif_image'] = what
 
@@ -668,7 +668,7 @@ what = Painting()
 what.label = "Painting"
 mfst = InformationObject("http://iiif.example.org/presentation/1/manifest.json")
 mfst.format = 'application/ld+json;profile="http://iiif.io/api/presentation/2/context.json"'
-mfst.conformsTo = ExternalResource("http://iiif.io/api/presentation")
+mfst.conforms_to = ExternalResource("http://iiif.io/api/presentation")
 what.subject_of = mfst
 id_uri_hash['objdig_iiif_manifest'] = what
 
