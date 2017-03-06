@@ -167,6 +167,7 @@ th {
   margin-left: 25px;
 }
 
+
 /* Header Anchors */
 article {
     padding-left: 30px;
@@ -242,5 +243,5 @@ article .headeranchor {
 }
 
 .headeranchor:before {
-  content: ' ';
+  content: '#';
 }

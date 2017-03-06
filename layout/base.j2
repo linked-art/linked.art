@@ -19,7 +19,9 @@
         <article id="content">
         {% filter regex_replace("aat:([0-9]+)", "<a href='http://vocab.getty.edu/aat/\\1' class='aat'>aat:\\1</a>") -%}
             {% filter markdown -%}
-            {% block content %}{% endblock %}
+                {% filter regex_replace_fn("`([A-Za-z_]+)`") -%}
+                    {% block content %}{% endblock %}
+                {%- endfilter %}
             {%- endfilter %}
         {%- endfilter %}
         </article>
