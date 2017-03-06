@@ -77,7 +77,8 @@ page_hash = {"base": "model/base/index.html",
 	"objabout": "model/object/aboutness/index.html",
 	"objphys": "model/object/physical/index.html",
 	"objrights": "model/object/rights/index.html",
-	"objdig": "model/object/digital/index.html"
+	"objdig": "model/object/digital/index.html",
+	"objprov": "model/object/provenance/index.html"
 	}
 
 ### First make the override table
@@ -671,6 +672,31 @@ mfst.format = 'application/ld+json;profile="http://iiif.io/api/presentation/2/co
 mfst.conforms_to = ExternalResource("http://iiif.io/api/presentation")
 what.subject_of = mfst
 id_uri_hash['objdig_iiif_manifest'] = what
+
+what = Painting()
+what.label = "Painting"
+prod = Production()
+prod.label = "Production of Painting"
+who = Person()
+who.label = "Artist"
+prod.carried_out_by = who
+what.produced_by = prod
+id_uri_hash['objprov_production'] = what
+
+
+what = Painting()
+what.label = "Painting"
+who = Organization()
+who.label = "Museum"
+what.current_owner = who
+id_uri_hash['objprov_owner'] = what
+
+what = Painting()
+what.label = "Painting"
+where = Place()
+where.label = "Gallery W6"
+what.current_location = where
+id_uri_hash['objprov_location'] = what
 
 print ">>> Built examples "
 

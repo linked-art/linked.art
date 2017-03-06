@@ -1,0 +1,27 @@
+---
+title: "Objects: Provenance"
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+Tracking the provenance of an object is described in detail in the [Provenance](/model/provenance) section of the model. This section describes how to link the object's description into those events and entities.
+
+## Production
+
+In the same way that the `Production` event can reference the object that it `produced`, the object can reference its `Production` with `produced_by`.
+
+{{ macros.include_example("objprov_production") }}
+
+## Ownership
+
+The current owner of the object should be referenced as the value for `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object.  To make this easier to find from the object, the same Actor should also be referenced via `current_owner` from the object itself. 
+
+{{ macros.include_example("objprov_owner") }}
+
+## Location
+
+The current location of the object 
+
+{{ macros.include_example("objprov_location") }}
