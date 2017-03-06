@@ -689,7 +689,7 @@ who = MuseumOrg()
 who.label = "Museum"
 what.current_owner = who
 acq = Acquisition()
-what.acquired_title_through = acq
+who.acquired_title_through = acq
 id_uri_hash['objprov_owner'] = what
 
 what = Painting()
