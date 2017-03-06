@@ -1,37 +1,31 @@
 {
-  "@context": "https://lod.shared-canvas.org/ns/context/1/full.jsonld", 
-  "id": "https://lod.shared-canvas.org/example/activity/12", 
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/12", 
   "type": "Activity", 
-  "classified_as": "aat:300055863", 
-  "label": "Provenance of Painting", 
-  "used_specific_object": {
-    "id": "https://lod.shared-canvas.org/example/object/8", 
-    "type": "ManMadeObject", 
-    "classified_as": "aat:300033618"
-  }, 
-  "consists_of": [
-    {
-      "id": "https://lod.shared-canvas.org/example/activity/13", 
-      "type": "Production", 
-      "produced": "https://lod.shared-canvas.org/example/object/8"
+  "classified_as": "aat:300054277", 
+  "label": "Ownership of the Painting", 
+  "continued": {
+    "id": "https://linked.art/example/activity/13", 
+    "type": "Acquisition", 
+    "label": "Acquisition of Painting by Owner", 
+    "transferred_title_of": {
+      "id": "https://linked.art/example/object/9", 
+      "type": "ManMadeObject", 
+      "classified_as": "aat:300033618"
     }, 
-    {
-      "id": "https://lod.shared-canvas.org/example/activity/14", 
+    "transferred_title_to": {
+      "id": "https://linked.art/example/person/6", 
+      "type": "Person"
+    }, 
+    "occurs_before": {
+      "id": "https://linked.art/example/activity/14", 
       "type": "Acquisition", 
-      "transferred_title_of": "https://lod.shared-canvas.org/example/object/8"
-    }, 
-    {
-      "id": "https://lod.shared-canvas.org/example/activity/15", 
-      "type": "Purchase", 
-      "transferred_title_of": "https://lod.shared-canvas.org/example/object/8"
-    }, 
-    {
-      "id": "https://lod.shared-canvas.org/example/activity/16", 
-      "type": [
-        "Destruction", 
-        "Activity"
-      ], 
-      "destroyed": "https://lod.shared-canvas.org/example/object/8"
+      "label": "Owner gives Painting to someone else", 
+      "transferred_title_of": "https://linked.art/example/object/9", 
+      "transferred_title_from": "https://linked.art/example/person/6"
     }
-  ]
+  }, 
+  "continued_by": "https://linked.art/example/activity/14", 
+  "carried_out_by": "https://linked.art/example/person/6", 
+  "used_specific_object": "https://linked.art/example/object/9"
 }

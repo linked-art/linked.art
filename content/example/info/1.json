@@ -10,12 +10,12 @@
     "label": "Description of Lot 16", 
     "refers_to": [
       {
-        "id": "https://linked.art/example/activity/35", 
+        "id": "https://linked.art/example/activity/36", 
         "type": "Activity", 
         "label": "Auction of Lot 16"
       }, 
       {
-        "id": "https://linked.art/example/object/17", 
+        "id": "https://linked.art/example/object/18", 
         "type": "PhysicalObject", 
         "classified_as": "aat:300411307", 
         "label": "Lot 16"
@@ -23,7 +23,7 @@
     ]
   }, 
   "refers_to": {
-    "id": "https://linked.art/example/activity/34", 
+    "id": "https://linked.art/example/activity/35", 
     "type": "Activity", 
     "classified_as": "aat:300054751", 
     "label": "Example Auction, 1924"

@@ -2,12 +2,13 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/36", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300047090", 
-  "label": "Sculpture", 
-  "representation": {
-    "id": "http://iiif.example.org/image/1", 
-    "type": "Image", 
-    "label": "IIIF Image API for Sculpture", 
-    "conformsTo": "http://iiif.io/api/image"
+  "classified_as": "aat:300033618", 
+  "label": "Painting", 
+  "homepage": {
+    "id": "http://example.org/collection/1/painting", 
+    "type": "InformationObject", 
+    "classified_as": "aat:300264578", 
+    "label": "Homepage for Painting", 
+    "format": "text/html"
   }
 }

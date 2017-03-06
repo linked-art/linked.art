@@ -3,11 +3,25 @@
   "id": "https://linked.art/example/object/27", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Example Painting", 
-  "referred_to_by": {
-    "id": "https://linked.art/example/text/1", 
-    "type": "LinguisticObject", 
-    "classified_as": "aat:300266036", 
-    "value": "The painting is approximately 16 inches wide, by 20 inches high"
-  }
+  "label": "Example 16x20 Painting", 
+  "dimension": [
+    {
+      "id": "https://linked.art/example/Dimension/0", 
+      "type": "Dimension", 
+      "classified_as": "aat:300055647", 
+      "value": 16, 
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379100", 
+        "type": "MeasurementUnit", 
+        "label": "inches"
+      }
+    }, 
+    {
+      "id": "https://linked.art/example/Dimension/1", 
+      "type": "Dimension", 
+      "classified_as": "aat:300055644", 
+      "value": 20, 
+      "unit": "http://vocab.getty.edu/aat/300379100"
+    }
+  ]
 }

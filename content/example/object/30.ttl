@@ -11,11 +11,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/object/30> a crm:E22_Man-Made_Object ;
-    rdfs:label "Example Painting" ;
+    rdfs:label "Example Multi-Media Painting" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
-    crm:P67i_is_referred_to_by <https://linked.art/example/text/3> .
+    crm:P67i_is_referred_to_by <https://linked.art/example/text/2> .
 
-<https://linked.art/example/text/3> a crm:E33_Linguistic_Object ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300026687> ;
-    rdf:value "Donation of Ms J. Smith; Example Organization" .
+<https://linked.art/example/text/2> a crm:E33_Linguistic_Object ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300010358> ;
+    rdf:value "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame" .
 

@@ -2,22 +2,22 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/7", 
   "type": "TransferOfCustody", 
-  "classified_as": "aat:300055292", 
-  "label": "Theft of Painting", 
+  "timespan": {
+    "id": "https://linked.art/example/time/3", 
+    "type": "TimeSpan", 
+    "label": "Time noticed as Lost", 
+    "begin_of_the_begin": "1790-12-04T00:00:00Z", 
+    "end_of_the_end": "1790-12-05T00:00:00Z"
+  }, 
   "transferred_custody_of": {
     "id": "https://linked.art/example/object/5", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
-    "label": "Example Stolen Painting"
+    "label": "Example Lost Painting"
   }, 
   "transferred_custody_from": {
-    "id": "https://linked.art/example/person/1", 
+    "id": "https://linked.art/example/person/0", 
     "type": "Person", 
-    "label": "Owner"
-  }, 
-  "transferred_custody_to": {
-    "id": "https://linked.art/example/person/2", 
-    "type": "Person", 
-    "label": "Unknown Thief"
+    "label": "Previous Owner"
   }
 }

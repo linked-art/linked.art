@@ -3,15 +3,15 @@
   "id": "https://linked.art/example/object/24", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Portrait of Lord Nelson", 
-  "carries": {
-    "id": "https://linked.art/example/info/3", 
-    "type": "InformationObject", 
-    "about": {
-      "id": "http://vocab.getty.edu/aat/300055314", 
-      "type": "Type", 
-      "label": "War"
-    }
+  "label": "Self Portrait", 
+  "depicts": {
+    "id": "https://linked.art/example/actor/6", 
+    "type": "Actor", 
+    "label": "Artist"
   }, 
-  "subject": "http://vocab.getty.edu/aat/300055314"
+  "produced_by": {
+    "id": "https://linked.art/example/activity/37", 
+    "type": "Production", 
+    "carried_out_by": "https://linked.art/example/actor/6"
+  }
 }

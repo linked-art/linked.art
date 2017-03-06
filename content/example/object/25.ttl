@@ -11,7 +11,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/object/25> a crm:E22_Man-Made_Object ;
-    rdfs:label "Example Impressionist Painting" ;
-    schema:genre "aat:300021503" ;
+    rdfs:label "Portrait of Lord Nelson" ;
+    crm:P128_carries <https://linked.art/example/info/3> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+
+<http://vocab.getty.edu/aat/300055314> a crm:E55_Type ;
+    rdfs:label "War" .
+
+<https://linked.art/example/info/3> a crm:E73_Information_Object ;
+    crm:P129_is_about <http://vocab.getty.edu/aat/300055314> .
 

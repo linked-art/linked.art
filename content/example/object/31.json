@@ -5,9 +5,9 @@
   "classified_as": "aat:300033618", 
   "label": "Example Painting", 
   "referred_to_by": {
-    "id": "https://linked.art/example/text/4", 
+    "id": "https://linked.art/example/text/3", 
     "type": "LinguisticObject", 
-    "classified_as": "aat:300055547", 
-    "value": "Copyright of this object has not yet been assessed"
+    "classified_as": "aat:300026687", 
+    "value": "Donation of Ms J. Smith; Example Organization"
   }
 }

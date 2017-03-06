@@ -10,27 +10,20 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.art/example/activity/11> a crm:E7_Activity ;
-    rdfs:label "Ownership of the Painting" ;
-    crm:P134_continued <https://linked.art/example/activity/12> ;
-    crm:P134i_was_continued_by <https://linked.art/example/activity/13> ;
-    crm:P14_carried_out_by <https://linked.art/example/person/6> ;
-    crm:P16_used_specific_object <https://linked.art/example/object/8> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300054277> .
-
-<https://linked.art/example/activity/12> a crm:E8_Acquisition ;
-    rdfs:label "Acquisition of Painting by Owner" ;
-    crm:P120_occurs_before <https://linked.art/example/activity/13> ;
-    crm:P22_transferred_title_to <https://linked.art/example/person/6> ;
-    crm:P24_transferred_title_of <https://linked.art/example/object/8> .
-
-<https://linked.art/example/activity/13> a crm:E8_Acquisition ;
-    rdfs:label "Owner gives Painting to someone else" ;
-    crm:P23_transferred_title_from <https://linked.art/example/person/6> ;
-    crm:P24_transferred_title_of <https://linked.art/example/object/8> .
+<https://linked.art/example/activity/11> a crm:E6_Destruction,
+        crm:E7_Activity ;
+    crm:P13_destroyed <https://linked.art/example/object/8> ;
+    crm:P14_carried_out_by <https://linked.art/example/person/5> ;
+    crm:P4_has_time-span <https://linked.art/example/time/5> .
 
 <https://linked.art/example/object/8> a crm:E22_Man-Made_Object ;
+    rdfs:label "Example Destroyed Painting" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<https://linked.art/example/person/6> a crm:E21_Person .
+<https://linked.art/example/person/5> a crm:E21_Person ;
+    rdfs:label "Painting Destroyer" .
+
+<https://linked.art/example/time/5> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1823-03-01T00:00:00Z"^^<xsd:dateTime> ;
+    crm:P82b_end_of_the_end "1823-03-31T00:00:00Z"^^<xsd:dateTime> .
 

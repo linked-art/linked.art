@@ -3,6 +3,15 @@
   "id": "https://linked.art/example/object/25", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Example Impressionist Painting", 
-  "genre": "aat:300021503"
+  "label": "Portrait of Lord Nelson", 
+  "carries": {
+    "id": "https://linked.art/example/info/3", 
+    "type": "InformationObject", 
+    "about": {
+      "id": "http://vocab.getty.edu/aat/300055314", 
+      "type": "Type", 
+      "label": "War"
+    }
+  }, 
+  "subject": "http://vocab.getty.edu/aat/300055314"
 }

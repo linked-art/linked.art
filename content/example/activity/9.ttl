@@ -1,0 +1,41 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pi: <http://linked.art/ns/prov/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/activity/9> a crm:E10_Transfer_of_Custody ;
+    rdfs:label "Sale of Stolen Object" ;
+    crm:P28_custody_surrendered_by <https://linked.art/example/person/3> ;
+    crm:P29_custody_received_by <https://linked.art/example/person/4> ;
+    crm:P30_transferred_custody_of <https://linked.art/example/object/7> ;
+    crm:P9_consists_of <https://linked.art/example/activity/10> .
+
+<https://linked.art/example/activity/10> a pi:Payment ;
+    pi:paid_amount <https://linked.art/example/money/2> ;
+    pi:paid_from <https://linked.art/example/person/4> ;
+    pi:paid_to <https://linked.art/example/person/3> .
+
+<https://linked.art/example/money/2> a crm:E97_Monetary_Amount ;
+    crm:P180_has_currency <https://linked.art/example/money/3> ;
+    rdf:value 1000 .
+
+<https://linked.art/example/money/3> a crm:E98_Currency ;
+    rdfs:label "dollars" .
+
+<https://linked.art/example/object/7> a crm:E22_Man-Made_Object ;
+    rdfs:label "Example Stolen Painting" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+
+<https://linked.art/example/person/3> a crm:E21_Person ;
+    rdfs:label "Thief" .
+
+<https://linked.art/example/person/4> a crm:E21_Person ;
+    rdfs:label "Recipient" .
+

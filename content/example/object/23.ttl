@@ -11,14 +11,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/object/23> a crm:E22_Man-Made_Object ;
-    rdfs:label "Self Portrait" ;
-    crm:P108i_was_produced_by <https://linked.art/example/activity/36> ;
+    rdfs:label "Example Painting" ;
+    dc:description "The Example Painting is a great example of exampleness." ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
-    crm:P62_depicts <https://linked.art/example/actor/5> .
+    crm:P67i_is_referred_to_by <https://linked.art/example/text/0> .
 
-<https://linked.art/example/activity/36> a crm:E12_Production ;
-    crm:P14_carried_out_by <https://linked.art/example/actor/5> .
-
-<https://linked.art/example/actor/5> a crm:E39_Actor ;
-    rdfs:label "Artist" .
+<https://linked.art/example/text/0> a crm:E33_Linguistic_Object ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300080091> ;
+    rdf:value "The Example Painting is a great example of exampleness." .
 

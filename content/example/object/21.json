@@ -2,6 +2,19 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/21", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300047090", 
-  "label": "Sculpture of a Dragon"
+  "classified_as": "aat:300033618", 
+  "label": "Self Portrait", 
+  "title": [
+    {
+      "id": "https://linked.art/example/Title/1", 
+      "type": "Title", 
+      "classified_as": "aat:300404670", 
+      "value": "Self Portrait"
+    }, 
+    {
+      "id": "https://linked.art/example/Title/2", 
+      "type": "Title", 
+      "value": "Portrait of the Artist"
+    }
+  ]
 }

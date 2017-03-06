@@ -12,14 +12,10 @@
 
 <https://linked.art/example/object/32> a crm:E22_Man-Made_Object ;
     rdfs:label "Example Painting" ;
-    crm:P104_is_subject_to <https://linked.art/example/Right/0> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
+    crm:P67i_is_referred_to_by <https://linked.art/example/text/4> .
 
-<https://linked.art/example/Right/0> a crm:E30_Right ;
-    rdfs:label "Copyright of Example Painting's content" ;
-    crm:P2_has_type <http://rightsstatements.org/vocab/InC/1.0/> ;
-    crm:P75i_is_possessed_by <https://linked.art/example/actor/6> .
-
-<https://linked.art/example/actor/6> a crm:E39_Actor ;
-    rdfs:label "Copyright Holder" .
+<https://linked.art/example/text/4> a crm:E33_Linguistic_Object ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300055547> ;
+    rdf:value "Copyright of this object has not yet been assessed" .
 

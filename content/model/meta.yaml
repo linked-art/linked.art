@@ -3,13 +3,13 @@ default_block: content
 level: top
 
 example:
-    auction_base: activity/24.json
+    auction_base: activity/25.json
     auction_catalog: info/1.json
-    auction_lot: activity/26.json
-    auction_lotset: object/11.json
-    auction_prices: object/14.json
-    auction_purchase: activity/29.json
-    auction_purchase_price: activity/31.json
+    auction_lot: activity/27.json
+    auction_lotset: object/12.json
+    auction_prices: object/15.json
+    auction_purchase: activity/30.json
+    auction_purchase_price: activity/32.json
     base_parts_activity: activity/0.json
     base_parts_info: info/0.json
     base_parts_org: group/0.json
@@ -17,34 +17,35 @@ example:
     base_parts_thing: object/1.json
     base_stmt: object/2.json
     base_type: object/0.json
-    objabout_depicts: object/23.json
-    objabout_description: object/22.json
-    objabout_style: object/25.json
-    objabout_subject: object/24.json
-    objdig_homepage: object/35.json
-    objdig_iiif_image: object/36.json
-    objdig_iiif_manifest: object/37.json
-    objdig_image: object/34.json
-    objid_legacy: object/18.json
-    objid_title: object/19.json
-    objid_title_alt: object/20.json
-    objid_types: object/21.json
-    objphys_dims: object/26.json
-    objphys_dims_stmt: object/27.json
-    objphys_materials: object/28.json
-    objphys_materials_stmt: object/29.json
-    objrights_credit: object/30.json
-    objrights_nkc: object/33.json
-    objrights_rights: object/32.json
-    objrights_rights_stmt: object/31.json
-    prov_acq: activity/3.json
+    objabout_depicts: object/24.json
+    objabout_description: object/23.json
+    objabout_style: object/26.json
+    objabout_subject: object/25.json
+    objdig_homepage: object/36.json
+    objdig_iiif_image: object/37.json
+    objdig_iiif_manifest: object/38.json
+    objdig_image: object/35.json
+    objid_legacy: object/19.json
+    objid_title: object/20.json
+    objid_title_alt: object/21.json
+    objid_types: object/22.json
+    objphys_dims: object/27.json
+    objphys_dims_stmt: object/28.json
+    objphys_materials: object/29.json
+    objphys_materials_stmt: object/30.json
+    objrights_credit: object/31.json
+    objrights_nkc: object/34.json
+    objrights_rights: object/33.json
+    objrights_rights_stmt: object/32.json
+    prov_acq: activity/4.json
     prov_create: activity/2.json
-    prov_curate: activity/11.json
-    prov_dest: activity/10.json
+    prov_create_technique: activity/3.json
+    prov_curate: activity/12.json
+    prov_dest: activity/11.json
     prov_event: activity/1.json
-    prov_inventory: activity/14.json
-    prov_lifetime: activity/16.json
-    prov_loss: activity/6.json
-    prov_purchase: activity/4.json
-    prov_theft: activity/7.json
-    prov_theft_sale: activity/8.json
+    prov_inventory: activity/15.json
+    prov_lifetime: activity/17.json
+    prov_loss: activity/7.json
+    prov_purchase: activity/5.json
+    prov_theft: activity/8.json
+    prov_theft_sale: activity/9.json

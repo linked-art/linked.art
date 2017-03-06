@@ -3,11 +3,11 @@
   "id": "https://linked.art/example/object/34", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Painting", 
-  "representation": {
-    "id": "http://example.org/images/image.jpg", 
-    "type": "Image", 
-    "label": "Image of Painting", 
-    "format": "image/jpeg"
+  "label": "Object", 
+  "subject_to": {
+    "id": "https://linked.art/example/Right/1", 
+    "type": "Right", 
+    "classified_as": "http://rightsstatements.org/vocab/NKC/1.0/", 
+    "label": "No known copyright"
   }
 }

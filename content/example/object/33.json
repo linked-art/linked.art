@@ -3,11 +3,16 @@
   "id": "https://linked.art/example/object/33", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Object", 
+  "label": "Example Painting", 
   "subject_to": {
-    "id": "https://linked.art/example/Right/1", 
+    "id": "https://linked.art/example/Right/0", 
     "type": "Right", 
-    "classified_as": "http://rightsstatements.org/vocab/NKC/1.0/", 
-    "label": "No known copyright"
+    "classified_as": "http://rightsstatements.org/vocab/InC/1.0/", 
+    "label": "Copyright of Example Painting's content", 
+    "possessed_by": {
+      "id": "https://linked.art/example/actor/7", 
+      "type": "Actor", 
+      "label": "Copyright Holder"
+    }
   }
 }

@@ -1,0 +1,49 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/32", 
+  "type": "Purchase", 
+  "used_specific_object": {
+    "id": "https://linked.art/example/object/17", 
+    "type": "PhysicalObject", 
+    "classified_as": "aat:300411307", 
+    "label": "Set of Objects"
+  }, 
+  "consists_of": [
+    {
+      "id": "https://linked.art/example/activity/33", 
+      "type": "Purchase", 
+      "transferred_title_of": {
+        "id": "https://linked.art/example/object/16", 
+        "type": "ManMadeObject", 
+        "classified_as": "aat:300033618", 
+        "label": "Example Painting"
+      }, 
+      "transferred_title_from": {
+        "id": "https://linked.art/example/actor/3", 
+        "type": "Actor", 
+        "label": "Seller"
+      }, 
+      "transferred_title_to": {
+        "id": "https://linked.art/example/person/4", 
+        "type": "Person", 
+        "label": "Recipient"
+      }
+    }, 
+    {
+      "id": "https://linked.art/example/activity/34", 
+      "type": "Payment", 
+      "paid_amount": {
+        "id": "https://linked.art/example/money/7", 
+        "type": "MonetaryAmount", 
+        "value": 4500, 
+        "currency": {
+          "id": "https://linked.art/example/money/3", 
+          "type": "Currency", 
+          "label": "dollars"
+        }
+      }, 
+      "paid_from": "https://linked.art/example/person/4", 
+      "paid_to": "https://linked.art/example/actor/3"
+    }
+  ]
+}

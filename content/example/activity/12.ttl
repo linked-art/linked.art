@@ -1,0 +1,36 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pi: <http://linked.art/ns/prov/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/activity/12> a crm:E7_Activity ;
+    rdfs:label "Ownership of the Painting" ;
+    crm:P134_continued <https://linked.art/example/activity/13> ;
+    crm:P134i_was_continued_by <https://linked.art/example/activity/14> ;
+    crm:P14_carried_out_by <https://linked.art/example/person/6> ;
+    crm:P16_used_specific_object <https://linked.art/example/object/9> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054277> .
+
+<https://linked.art/example/activity/13> a crm:E8_Acquisition ;
+    rdfs:label "Acquisition of Painting by Owner" ;
+    crm:P120_occurs_before <https://linked.art/example/activity/14> ;
+    crm:P22_transferred_title_to <https://linked.art/example/person/6> ;
+    crm:P24_transferred_title_of <https://linked.art/example/object/9> .
+
+<https://linked.art/example/activity/14> a crm:E8_Acquisition ;
+    rdfs:label "Owner gives Painting to someone else" ;
+    crm:P23_transferred_title_from <https://linked.art/example/person/6> ;
+    crm:P24_transferred_title_of <https://linked.art/example/object/9> .
+
+<https://linked.art/example/object/9> a crm:E22_Man-Made_Object ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+
+<https://linked.art/example/person/6> a crm:E21_Person .
+

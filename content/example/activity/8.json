@@ -2,7 +2,8 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/8", 
   "type": "TransferOfCustody", 
-  "label": "Sale of Stolen Object", 
+  "classified_as": "aat:300055292", 
+  "label": "Theft of Painting", 
   "transferred_custody_of": {
     "id": "https://linked.art/example/object/6", 
     "type": "ManMadeObject", 
@@ -10,29 +11,13 @@
     "label": "Example Stolen Painting"
   }, 
   "transferred_custody_from": {
-    "id": "https://linked.art/example/person/3", 
+    "id": "https://linked.art/example/person/1", 
     "type": "Person", 
-    "label": "Thief"
+    "label": "Owner"
   }, 
   "transferred_custody_to": {
-    "id": "https://linked.art/example/person/4", 
+    "id": "https://linked.art/example/person/2", 
     "type": "Person", 
-    "label": "Recipient"
-  }, 
-  "consists_of": {
-    "id": "https://linked.art/example/activity/9", 
-    "type": "Payment", 
-    "paid_amount": {
-      "id": "https://linked.art/example/money/2", 
-      "type": "MonetaryAmount", 
-      "value": 1000, 
-      "currency": {
-        "id": "https://linked.art/example/money/3", 
-        "type": "Currency", 
-        "label": "dollars"
-      }
-    }, 
-    "paid_from": "https://linked.art/example/person/4", 
-    "paid_to": "https://linked.art/example/person/3"
+    "label": "Unknown Thief"
   }
 }

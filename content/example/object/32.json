@@ -4,15 +4,10 @@
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
   "label": "Example Painting", 
-  "subject_to": {
-    "id": "https://linked.art/example/Right/0", 
-    "type": "Right", 
-    "classified_as": "http://rightsstatements.org/vocab/InC/1.0/", 
-    "label": "Copyright of Example Painting's content", 
-    "possessed_by": {
-      "id": "https://linked.art/example/actor/6", 
-      "type": "Actor", 
-      "label": "Copyright Holder"
-    }
+  "referred_to_by": {
+    "id": "https://linked.art/example/text/4", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:300055547", 
+    "value": "Copyright of this object has not yet been assessed"
   }
 }
