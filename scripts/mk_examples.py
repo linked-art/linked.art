@@ -708,7 +708,7 @@ who.label = "J. Smith"
 grp = MuseumOrg()
 who.label = "Example Museum Organization"
 actor = Actor()
-actor.label "Unknown Person or Organization"
+actor.label = "Unknown Person or Organization"
 acq = Acquisition()
 acq.transferred_title_from = who
 acq.transferred_title_to = grp
