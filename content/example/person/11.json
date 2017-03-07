@@ -4,37 +4,37 @@
   "type": "Person", 
   "label": "Lady Joan A. Smith, Duchess of Wolverhampton", 
   "identified_by": {
-    "id": "https://linked.art/example/Appellation/1", 
+    "id": "https://linked.art/example/name/1", 
     "type": "Appellation", 
     "classified_as": "aat:300404670", 
     "value": "Lady Joan A. Smith, Duchess of Wolverhampton", 
     "composed_of": [
       {
-        "id": "https://linked.art/example/Appellation/4", 
+        "id": "https://linked.art/example/name/4", 
         "type": "Appellation", 
         "classified_as": "aat:300404845", 
         "value": "Lady"
       }, 
       {
-        "id": "https://linked.art/example/Appellation/2", 
+        "id": "https://linked.art/example/name/2", 
         "type": "Appellation", 
         "classified_as": "aat:300404651", 
         "value": "Joan"
       }, 
       {
-        "id": "https://linked.art/example/Appellation/6", 
+        "id": "https://linked.art/example/name/6", 
         "type": "Appellation", 
         "classified_as": "aat:300404654", 
         "value": "A."
       }, 
       {
-        "id": "https://linked.art/example/Appellation/3", 
+        "id": "https://linked.art/example/name/3", 
         "type": "Appellation", 
         "classified_as": "aat:300404652", 
         "value": "Smith"
       }, 
       {
-        "id": "https://linked.art/example/Appellation/5", 
+        "id": "https://linked.art/example/name/5", 
         "type": "Appellation", 
         "classified_as": "aat:300404662", 
         "value": "Duchess of Wolverhampton"

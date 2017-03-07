@@ -10,7 +10,7 @@ from pyld.jsonld import expand, to_rdf, JsonLdProcessor
 import cromulent
 from cromulent.model import factory, ExternalResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
-    LinguisticObject, Right, OrderedDict
+    LinguisticObject, Right, OrderedDict, Appellation
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -44,6 +44,7 @@ PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
 LinguisticObject._uri_segment = "text"
+Appellation._uri_segment = "name"
 
 fh = file('../site.yaml')
 siteData = fh.read()
