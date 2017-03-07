@@ -18,7 +18,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
-	NamePrefix, NameSuffix, MiddleName, \
+	NamePrefix, NameSuffix, MiddleName, BiographyStatement, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -745,12 +745,14 @@ apl.composed_of = suff
 id_uri_hash['actor_name_parts'] = who
 
 who = Person()
+who = "Xavier Y. Zeelander"
 pid = LocalNumber()
 pid.value = 643
 who.identified_by = pid
 id_uri_hash['actor_identity'] = who
 
 who = Person()
+who.label = "Amanda B. Curtlett"
 birth = BeginningOfExistence()
 bts = TimeSpan()
 bts.begin_of_the_begin = "1767-01-09"
@@ -768,6 +770,13 @@ who.brought_into_existence_by = birth
 who.taken_out_of_existence_by = death 
 id_uri_hash['actor_birthdeath'] = who
 
+
+who = Person()
+who.label = "David E. Frederickson"
+bio = BiographyStatement()
+bio.value = "Example biography"
+who.referred_to_by = bio
+id_uri_hash['actor_biog'] = who
 
 print ">>> Built examples "
 
