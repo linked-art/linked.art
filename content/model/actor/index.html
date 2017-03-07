@@ -1,0 +1,50 @@
+---
+title: "Actors: People and Organizations"
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+
+## Types
+
+There are two primary types of acting agent, `Person` and `Group`.  They are subClasses of the `Actor` class, which might be used when it is not certain whether the actor is a Person or an Organization or Group.  For example, if a sale of an object is listed as being from an art dealer called "Smith", it is unclear whether it refers to a person via their family name, or to an organization named after its owner.  Equally, if there isn't any information about the actor currently, but identity is desired such that it can later be reconciled or used, then the use of `Actor` is likely needed.  As such, encountering all three should be anticipated.
+
+{{ macros.include_example("actor_type") }}
+
+## Names
+
+Names in CIDOC-CRM are turned into first class resources with their own identity, and given a class called `Appellation`. Being uniquely identified rather than just a string, they are said to identify the resource they are associated with.  Any sort of resource can have an Appellation of this sort. The main name associated with the resource, in this case Person, should also be its `label`.  The main name to use, if there are multiple, should be `classified_as` _aat:300404670_.
+
+{{ macros.include_example("actor_name") }}
+
+### Parts of Names
+
+{{ macros.include_example("actor_name_parts") }}
+
+
+## Identity
+
+{{ macros.include_example("actor_identity") }}
+
+
+## Birth and Death / Beginning and End of Existence
+
+{{ macros.include_example("actor_birthdeath") }}
+
+
+## Descriptions
+
+### Biography
+
+### Digital Integration
+
+### Gender
+
+### Nationality
+
+## Organizations
+
+### Members
+

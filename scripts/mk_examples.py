@@ -17,7 +17,8 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
-	CreditStatement, RightsStatement, WebPage, \
+	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
+	NamePrefix, NameSuffix, MiddleName, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -78,7 +79,8 @@ page_hash = {"base": "model/base/index.html",
 	"objphys": "model/object/physical/index.html",
 	"objrights": "model/object/rights/index.html",
 	"objdig": "model/object/digital/index.html",
-	"objprov": "model/object/provenance/index.html"
+	"objprov": "model/object/provenance/index.html",
+	"actor": "model/actor/index.html"
 	}
 
 ### First make the override table
@@ -698,6 +700,54 @@ where = Place()
 where.label = "Gallery W6"
 what.current_location = where
 id_uri_hash['objprov_location'] = what
+
+### Actors
+
+who = Person()
+who.label = "J. Smith"
+grp = MuseumOrg()
+who.label = "Example Museum Organization"
+actor = Actor()
+actor.label "Unknown Person or Organization"
+acq = Acquisition()
+acq.transferred_title_from = who
+acq.transferred_title_to = grp
+acq.carried_out_by = actor
+id_uri_hash['actor_type'] = acq
+
+who = Person()
+who.label = "J. Smith"
+apl = PrimaryName()
+apl.value = "J. Smith"
+who.identified_by = apl
+id_uri_hash['actor_name'] = who
+
+who = Person()
+who.label = "Lady Joan Smith, Duchess of Wolverhampton"
+apl = PrimaryName()
+apl.value = "Lady Joan Smith, Duchess of Wolverhampton"
+who.identified_by = apl
+given = GivenName()
+given.value = "Joan"
+fam = FamilyName()
+fam.value = "Smith"
+pref = NamePrefix()
+pref.value = "Lady"
+suff = NameSuffix()
+suff.value = "Duchess of Wolverhampton"
+apl.composed_of = pref
+apl.composed_of = given
+apl.composed_of = fam
+apl.composed_of = suff
+id_uri_hash['actor_name_parts'] = who
+
+
+id_uri_hash['actor_identity'] = who
+
+id_uri_hash['actor_birthdeath'] = who
+
+
+
 
 print ">>> Built examples "
 
