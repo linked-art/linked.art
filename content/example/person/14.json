@@ -1,0 +1,12 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/14", 
+  "type": "Person", 
+  "label": "David E. Frederickson", 
+  "referred_to_by": {
+    "id": "https://linked.art/example/text/5", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:300080102", 
+    "value": "Example biography"
+  }
+}

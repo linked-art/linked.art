@@ -11,6 +11,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/person/13> a crm:E21_Person ;
+    rdfs:label "Amanda B. Curtlett" ;
     crm:P92i_was_brought_into_existence_by <https://linked.art/example/BeginningOfExistence/0> ;
     crm:P93i_was_taken_out_of_existence_by <https://linked.art/example/EndOfExistence/0> .
 

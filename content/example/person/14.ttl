@@ -10,11 +10,11 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.art/example/person/12> a crm:E21_Person ;
-    rdfs:label "Xavier Y. Zeelander" ;
-    crm:P1_is_identified_by <https://linked.art/example/identifier/4> .
+<https://linked.art/example/person/14> a crm:E21_Person ;
+    rdfs:label "David E. Frederickson" ;
+    crm:P67i_is_referred_to_by <https://linked.art/example/text/5> .
 
-<https://linked.art/example/identifier/4> a crm:E42_Identifier ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300404621> ;
-    rdf:value 643 .
+<https://linked.art/example/text/5> a crm:E33_Linguistic_Object ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300080102> ;
+    rdf:value "Example biography" .
 

@@ -745,7 +745,7 @@ apl.composed_of = suff
 id_uri_hash['actor_name_parts'] = who
 
 who = Person()
-who = "Xavier Y. Zeelander"
+who.label = "Xavier Y. Zeelander"
 pid = LocalNumber()
 pid.value = 643
 who.identified_by = pid

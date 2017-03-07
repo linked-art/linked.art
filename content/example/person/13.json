@@ -2,6 +2,7 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/person/13", 
   "type": "Person", 
+  "label": "Amanda B. Curtlett", 
   "brought_into_existence_by": {
     "id": "https://linked.art/example/BeginningOfExistence/0", 
     "type": "BeginningOfExistence", 
