@@ -20,6 +20,9 @@
       "@id": "@type", 
       "@type": "@vocab"
     }, 
+
+    "aat:Painting": "aat:300033618",
+
     "CRMEntity": "crm:E1_CRM_Entity", 
     "TemporalEntity": "crm:E2_Temporal_Entity", 
     "ConditionState": "crm:E3_Condition_State", 
