@@ -3,8 +3,8 @@ default_block: content
 level: top
 
 example:
-    actor_birthdeath: person/11.json
-    actor_identity: person/11.json
+    actor_birthdeath: person/13.json
+    actor_identity: person/12.json
     actor_name: person/10.json
     actor_name_parts: person/11.json
     actor_type: activity/40.json

@@ -1,0 +1,30 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/13", 
+  "type": "Person", 
+  "taken_out_of_existence_by": {
+    "id": "https://linked.art/example/EndOfExistence/0", 
+    "type": "EndOfExistence", 
+    "timespan": {
+      "id": "https://linked.art/example/time/8", 
+      "type": "TimeSpan", 
+      "begin_of_the_begin": "1824-08-21", 
+      "end_of_the_end": "1824-08-21"
+    }, 
+    "took_place_at": {
+      "id": "https://linked.art/example/place/6", 
+      "type": "Place", 
+      "label": "Death Place"
+    }
+  }, 
+  "brought_into_existence_by": {
+    "id": "https://linked.art/example/BeginningOfExistence/0", 
+    "type": "BeginningOfExistence", 
+    "timespan": {
+      "id": "https://linked.art/example/time/7", 
+      "type": "TimeSpan", 
+      "begin_of_the_begin": "1767-01-09", 
+      "end_of_the_end": "1767-01-12"
+    }
+  }
+}

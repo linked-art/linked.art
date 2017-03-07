@@ -86,14 +86,14 @@ auth_idx:
   - - [model/base/index.html, group/0, base_parts_org]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/actor/index.html, activity/40, actor_type]
+- - aat:300404621
+  - - [model/actor/index.html, person/12, actor_identity]
 - - aat:300404628
   - - [model/provenance/auctions/index.html, object/12, auction_lotset]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
 - - aat:300404670
   - - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
     - [model/object/identity/index.html, object/20, objid_title]
 - - aat:300411307
   - - [model/provenance/auctions/index.html, object/12, auction_lotset]
@@ -133,20 +133,23 @@ class_idx:
 - - Appellation
   - - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
+- - BeginningOfExistence
+  - - [model/actor/index.html, person/13, actor_birthdeath]
 - - Currency
   - - [model/provenance/index.html, activity/5, prov_purchase]
     - [model/provenance/index.html, activity/9, prov_theft_sale]
 - - Destruction
   - - [model/provenance/index.html, activity/11, prov_dest]
+- - EndOfExistence
+  - - [model/actor/index.html, person/13, actor_birthdeath]
 - - Group
   - - [model/base/index.html, group/0, base_parts_org]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/actor/index.html, activity/40, actor_type]
 - - Identifier
-  - - [model/provenance/auctions/index.html, object/12, auction_lotset]
+  - - [model/actor/index.html, person/12, actor_identity]
+    - [model/provenance/auctions/index.html, object/12, auction_lotset]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
 - - Image
   - - [model/object/digital/index.html, object/35, objdig_image]
@@ -219,8 +222,8 @@ class_idx:
     - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
     - [model/provenance/index.html, activity/11, prov_dest]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
+    - [model/actor/index.html, person/12, actor_identity]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
     - [model/object/provenance/index.html, object/39, objprov_production]
@@ -237,6 +240,7 @@ class_idx:
     - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]
     - [model/provenance/index.html, activity/4, prov_acq]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/object/provenance/index.html, object/41, objprov_location]
 - - Production
@@ -257,6 +261,7 @@ class_idx:
     - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/11, prov_dest]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
 - - Title
   - - [model/object/identity/index.html, object/20, objid_title]
@@ -277,7 +282,10 @@ prop_idx:
     - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/11, prov_dest]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
+- - brought_into_existence_by
+  - - [model/actor/index.html, person/13, actor_birthdeath]
 - - carried_out_by
   - - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]
@@ -295,8 +303,6 @@ prop_idx:
   - - [model/base/index.html, info/0, base_parts_info]
     - [model/provenance/auctions/index.html, info/1, auction_catalog]
     - [model/actor/index.html, person/11, actor_name_parts]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
 - - conforms_to
   - - [model/object/digital/index.html, object/37, objdig_iiif_image]
     - [model/object/digital/index.html, object/38, objdig_iiif_manifest]
@@ -338,6 +344,7 @@ prop_idx:
     - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/11, prov_dest]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
 - - format
   - - [model/object/digital/index.html, object/35, objdig_image]
@@ -350,9 +357,8 @@ prop_idx:
 - - identified_by
   - - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
     - [model/provenance/auctions/index.html, object/12, auction_lotset]
+    - [model/actor/index.html, person/12, actor_identity]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/object/identity/index.html, object/19, objid_legacy]
 - - label
@@ -374,11 +380,10 @@ prop_idx:
     - [model/provenance/index.html, activity/9, prov_theft_sale]
     - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
     - [model/provenance/index.html, activity/11, prov_dest]
     - [model/provenance/index.html, activity/12, prov_curate]
     - [model/provenance/auctions/index.html, object/12, auction_lotset]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/provenance/index.html, activity/15, prov_inventory]
     - [model/provenance/index.html, activity/17, prov_lifetime]
@@ -458,6 +463,8 @@ prop_idx:
 - - subject_to
   - - [model/object/rights/index.html, object/33, objrights_rights]
     - [model/object/rights/index.html, object/34, objrights_nkc]
+- - taken_out_of_existence_by
+  - - [model/actor/index.html, person/13, actor_birthdeath]
 - - technique
   - - [model/provenance/index.html, activity/3, prov_create_technique]
 - - timespan
@@ -466,6 +473,7 @@ prop_idx:
     - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/11, prov_dest]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
 - - title
   - - [model/object/identity/index.html, object/20, objid_title]
@@ -474,6 +482,7 @@ prop_idx:
   - - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]
     - [model/provenance/index.html, activity/4, prov_acq]
+    - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
 - - transferred_custody_from
   - - [model/provenance/index.html, activity/7, prov_loss]
@@ -515,9 +524,8 @@ prop_idx:
     - [model/provenance/index.html, activity/9, prov_theft_sale]
     - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
-    - [model/actor/index.html, person/11, actor_birthdeath]
-    - [model/actor/index.html, person/11, actor_identity]
     - [model/provenance/auctions/index.html, object/12, auction_lotset]
+    - [model/actor/index.html, person/12, actor_identity]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/object/identity/index.html, object/20, objid_title]
     - [model/object/aboutness/index.html, object/23, objabout_description]
