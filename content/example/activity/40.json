@@ -10,11 +10,12 @@
   "transferred_title_from": {
     "id": "https://linked.art/example/person/9", 
     "type": "Person", 
-    "label": "Example Museum Organization"
+    "label": "J. Smith"
   }, 
   "transferred_title_to": {
     "id": "https://linked.art/example/group/3", 
     "type": "Group", 
-    "classified_as": "aat:300312281"
+    "classified_as": "aat:300312281", 
+    "label": "Example Museum Organization"
   }
 }

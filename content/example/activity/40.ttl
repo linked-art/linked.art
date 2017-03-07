@@ -19,8 +19,9 @@
     rdfs:label "Unknown Person or Organization" .
 
 <https://linked.art/example/group/3> a crm:E74_Group ;
+    rdfs:label "Example Museum Organization" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
 
 <https://linked.art/example/person/9> a crm:E21_Person ;
-    rdfs:label "Example Museum Organization" .
+    rdfs:label "J. Smith" .
 

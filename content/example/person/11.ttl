@@ -11,16 +11,17 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/person/11> a crm:E21_Person ;
-    rdfs:label "Lady Joan Smith, Duchess of Wolverhampton" ;
+    rdfs:label "Lady Joan A. Smith, Duchess of Wolverhampton" ;
     crm:P1_is_identified_by <https://linked.art/example/Appellation/1> .
 
 <https://linked.art/example/Appellation/1> a crm:E41_Appellation ;
     crm:P106_is_composed_of <https://linked.art/example/Appellation/2>,
         <https://linked.art/example/Appellation/3>,
         <https://linked.art/example/Appellation/4>,
-        <https://linked.art/example/Appellation/5> ;
+        <https://linked.art/example/Appellation/5>,
+        <https://linked.art/example/Appellation/6> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
-    rdf:value "Lady Joan Smith, Duchess of Wolverhampton" .
+    rdf:value "Lady Joan A. Smith, Duchess of Wolverhampton" .
 
 <https://linked.art/example/Appellation/2> a crm:E41_Appellation ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404651> ;
@@ -37,4 +38,8 @@
 <https://linked.art/example/Appellation/5> a crm:E41_Appellation ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404662> ;
     rdf:value "Duchess of Wolverhampton" .
+
+<https://linked.art/example/Appellation/6> a crm:E41_Appellation ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300404654> ;
+    rdf:value "A." .
 
