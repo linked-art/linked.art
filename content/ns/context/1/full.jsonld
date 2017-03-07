@@ -21,7 +21,7 @@
       "@type": "@vocab"
     }, 
 
-    "aat:Painting": "aat:300033618",
+    "aat-Painting": "aat:300033618",
 
     "CRMEntity": "crm:E1_CRM_Entity", 
     "TemporalEntity": "crm:E2_Temporal_Entity", 
