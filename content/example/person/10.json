@@ -1,0 +1,12 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/10", 
+  "type": "Person", 
+  "label": "J. Smith", 
+  "identified_by": {
+    "id": "https://linked.art/example/Appellation/0", 
+    "type": "Appellation", 
+    "classified_as": "aat:300404670", 
+    "value": "J. Smith"
+  }
+}

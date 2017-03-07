@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/40", 
+  "type": "Acquisition", 
+  "carried_out_by": {
+    "id": "https://linked.art/example/actor/8", 
+    "type": "Actor", 
+    "label": "Unknown Person or Organization"
+  }, 
+  "transferred_title_from": {
+    "id": "https://linked.art/example/person/9", 
+    "type": "Person", 
+    "label": "Example Museum Organization"
+  }, 
+  "transferred_title_to": {
+    "id": "https://linked.art/example/group/3", 
+    "type": "Group", 
+    "classified_as": "aat:300312281"
+  }
+}

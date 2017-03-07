@@ -1,0 +1,38 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/11", 
+  "type": "Person", 
+  "label": "Lady Joan Smith, Duchess of Wolverhampton", 
+  "identified_by": {
+    "id": "https://linked.art/example/Appellation/1", 
+    "type": "Appellation", 
+    "classified_as": "aat:300404670", 
+    "value": "Lady Joan Smith, Duchess of Wolverhampton", 
+    "composed_of": [
+      {
+        "id": "https://linked.art/example/Appellation/4", 
+        "type": "Appellation", 
+        "classified_as": "aat:300404845", 
+        "value": "Lady"
+      }, 
+      {
+        "id": "https://linked.art/example/Appellation/2", 
+        "type": "Appellation", 
+        "classified_as": "aat:300404651", 
+        "value": "Joan"
+      }, 
+      {
+        "id": "https://linked.art/example/Appellation/3", 
+        "type": "Appellation", 
+        "classified_as": "aat:300404652", 
+        "value": "Smith"
+      }, 
+      {
+        "id": "https://linked.art/example/Appellation/5", 
+        "type": "Appellation", 
+        "classified_as": "aat:300404662", 
+        "value": "Duchess of Wolverhampton"
+      }
+    ]
+  }
+}
