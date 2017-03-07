@@ -15,21 +15,25 @@ There are two primary types of acting agent, `Person` and `Group`.  They are sub
 
 ## Names
 
-Names in CIDOC-CRM are turned into first class resources with their own identity, and given a class called `Appellation`. Being uniquely identified rather than just a string, they are said to identify the resource they are associated with.  Any sort of resource can have an Appellation of this sort. The main name associated with the resource, in this case Person, should also be its `label`.  The main name to use, if there are multiple, should be `classified_as` _aat:300404670_.
+Names in CIDOC-CRM are turned into first class resources with their own identity, and given a class called `Appellation`. Being themselves uniquely identified rather than just an anonymous string, they are said to identify the resource they are associated with. This seems a little strange as names are not identifiers, but this particular instance of a name is uniquely associated with that particular person. Any sort of resource can have an Appellation of this sort. The main name associated with the resource, in this case Person, should also be its `label`.  The main name to use, if there are multiple, should be `classified_as` _aat:300404670_.
 
 {{ macros.include_example("actor_name") }}
 
 ### Parts of Names
 
-{{ macros.include_example("actor_name_parts") }}
+Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Appellation`s, and are included in the `composed_of` set in the same way as other partitioning.
 
+{{ macros.include_example("actor_name_parts") }}
 
 ## Identity
 
+Like objects, people are often assigned legacy identifiers that should be recorded and tracked.  While the primary identifier is the URI given to the person, there can be any number of other identifiers also associated with the resource.  These follow the same pattern as for object identifiers, with `identified_by` being used with an `Identifier` resource, that can have further classifications and a `value`.  Organizations can also have identifiers, using the same pattern.
+
 {{ macros.include_example("actor_identity") }}
 
-
 ## Birth and Death / Beginning and End of Existence
+
+Like the creation of objects, people and organizations also come into and out of existence through events or activities.  These events can take place at certain Places, happen at certain times, and are carried out by other actors.
 
 {{ macros.include_example("actor_birthdeath") }}
 

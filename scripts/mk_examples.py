@@ -745,12 +745,29 @@ apl.composed_of = fam
 apl.composed_of = suff
 id_uri_hash['actor_name_parts'] = who
 
-
+who = Person()
+pid = LocalNumber()
+pid.value = 643
+who.identified_by = pid
 id_uri_hash['actor_identity'] = who
 
+who = Person()
+birth = BeginningOfExistence()
+bts = TimeSpan()
+bts.begin_of_the_begin = "1767-01-09"
+bts.end_of_the_end = "1767-01-12"
+birth.timespan = bts
+death = EndOfExistence()
+dts = TimeSpan()
+dts.begin_of_the_begin = "1824-08-21"
+dts.end_of_the_end = "1824-08-21"
+death.timespan = dts
+dloc = Place()
+dloc.label = "Death Place"
+death.took_place_at = dloc
+who.brought_into_existence_by = birth
+who.taken_out_of_existence_by = death 
 id_uri_hash['actor_birthdeath'] = who
-
-
 
 
 print ">>> Built examples "
