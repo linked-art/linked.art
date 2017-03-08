@@ -31,11 +31,19 @@ Like objects, people are often assigned legacy identifiers that should be record
 
 {{ macros.include_example("actor_identity") }}
 
-## Birth and Death / Beginning and End of Existence
+## Life Events
+
+### Birth and Death / Beginning and End of Existence
 
 Like the creation of objects, people and organizations also come into and out of existence through events.  These events can take place at certain Places, and happen at certain times.  This similarity between people and organizations results in the somewhat unwieldy `brought_into_existence_by` and `taken_out_of_existence_by` property names, with the respective `BeginningOfExistence` and `EndOfExistence` classes.
 
 {{ macros.include_example("actor_birthdeath") }}
+
+### Active Dates
+
+It is often useful to know where and when the person was active in their professional function. For example, an artist might have started painting when they were 20, stopped by 30, and only painted in Italy. This information can be used to help eliminate dubious attributions, for example.  The pattern is similar to the provenance of an object.
+
+{{ macros.include_example("actor_active") }}
 
 ## Descriptive Information
 
@@ -67,5 +75,11 @@ Gender is not specifically discussed in CRM, in fact it was even deleted from a 
 
 ## Organizations
 
+As discussed above, Organizations can be seen as the actor when it comes to their roles in various events. For example, an auction is likely to be carried out by an organization, and they can own and curate objects.
+
 ### Members
+
+The only significantly new aspect to organizational actors, compared to people, is that they can have members.  These members can be either sub-groups, such as a department within a museum, or individuals.
+
+
 

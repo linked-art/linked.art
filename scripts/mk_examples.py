@@ -803,6 +803,17 @@ gender.label = "feminine"
 who.member_of = gender
 id_uri_hash['actor_gender'] = who
 
+who = Person()
+who.label = "Patrick Q. Robertson"
+active = Activity()
+active.classified_as = Type("http://vocab.getty.edu/aat/300393177")
+ats = TimeSpan()
+ats.begin_of_the_begin = "1910-01-01"
+ats.end_of_the_end = "1934-03-21"
+active.timespan = ats
+who.carried_out = active
+id_uri_hash['actor_active'] = who
+
 print ">>> Built examples "
 
 # ------ Build out the examples -------
