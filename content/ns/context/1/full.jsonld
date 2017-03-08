@@ -203,7 +203,7 @@
       "@id": "crm:P14_carried_out_by", 
       "@type": "@id"
     }, 
-    "performed": {
+    "carried_out": {
       "@id": "crm:P14i_performed", 
       "@type": "@id"
     }, 

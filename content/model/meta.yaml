@@ -3,6 +3,7 @@ default_block: content
 level: top
 
 example:
+    actor_active: person/18.json
     actor_biog: person/14.json
     actor_birthdeath: person/13.json
     actor_gender: person/17.json

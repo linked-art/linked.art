@@ -1,0 +1,24 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pi: <http://linked.art/ns/prov/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/person/18> a crm:E21_Person ;
+    rdfs:label "Patrick Q. Robertson" ;
+    crm:P14i_performed <https://linked.art/example/activity/41> .
+
+<https://linked.art/example/activity/41> a crm:E7_Activity ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300393177> ;
+    crm:P4_has_time-span <https://linked.art/example/time/9> .
+
+<https://linked.art/example/time/9> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1910-01-01"^^<xsd:dateTime> ;
+    crm:P82b_end_of_the_end "1934-03-21"^^<xsd:dateTime> .
+
