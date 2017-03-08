@@ -16,5 +16,6 @@
 
 <https://linked.art/example/group/5> a crm:E74_Group ;
     rdfs:label "feminine" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300055147> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300055147>,
+        <http://vocab.getty.edu/aat/300189557> .
 

@@ -6,7 +6,10 @@
   "member_of": {
     "id": "https://linked.art/example/group/5", 
     "type": "Group", 
-    "classified_as": "aat:300055147", 
+    "classified_as": [
+      "aat:300055147", 
+      "aat:300189557"
+    ], 
     "label": "feminine"
   }
 }

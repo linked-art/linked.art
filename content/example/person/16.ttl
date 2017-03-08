@@ -17,6 +17,5 @@
 <https://linked.art/example/group/4> a crm:E74_Group ;
     rdfs:label "British" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300111159>,
-        <http://vocab.getty.edu/aat/300189557>,
         <http://vocab.getty.edu/aat/300379842> .
 
