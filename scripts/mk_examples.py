@@ -44,6 +44,8 @@ Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
 LinguisticObject._uri_segment = "text"
 Appellation._uri_segment = "name"
+BeginningOfExistence._uri_segment = "event"
+EndOfExistence._uri_segment = "event"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -788,13 +790,15 @@ id_uri_hash['actor_image'] = what
 who = Person()
 who.label = "Jeremy K. Lintott"
 natl = Nationality()
-natl.label = "Example Nationality"
+natl.classified_as = Type("http://vocab.getty.edu/aat/300111159")
+natl.label = "British"
 who.member_of = natl
 id_uri_hash['actor_nationality'] = who
 
 who = Person()
 who.label = "Mabel N. Overton"
 gender = Gender()
+natl.classified_as = Type("http://vocab.getty.edu/aat/300189557")
 gender.label = "feminine"
 who.member_of = gender
 id_uri_hash['actor_gender'] = who

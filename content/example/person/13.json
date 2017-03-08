@@ -4,7 +4,7 @@
   "type": "Person", 
   "label": "Amanda B. Curtlett", 
   "brought_into_existence_by": {
-    "id": "https://linked.art/example/BeginningOfExistence/0", 
+    "id": "https://linked.art/example/event/0", 
     "type": "BeginningOfExistence", 
     "timespan": {
       "id": "https://linked.art/example/time/7", 
@@ -14,7 +14,7 @@
     }
   }, 
   "taken_out_of_existence_by": {
-    "id": "https://linked.art/example/EndOfExistence/0", 
+    "id": "https://linked.art/example/event/1", 
     "type": "EndOfExistence", 
     "timespan": {
       "id": "https://linked.art/example/time/8", 

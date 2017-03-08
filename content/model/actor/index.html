@@ -41,19 +41,19 @@ Like the creation of objects, people and organizations also come into and out of
 
 ### Biography
 
-Biographical descriptions follow the `LinguisticObject` pattern, with biography _(aat:300080102)_ as the classification.  
+Biographical descriptions follow the `LinguisticObject` pattern, with biography _(aat:300080102)_ as the classification.  In all other respects, it is a vanilla usage of a resource being `referred_to_by` a particular text.
 
 {{ macros.include_example("actor_biog") }}
 
 ### Digital Integration
 
-Images of the person can also be provided, in the same way as for [images of objects](/model/object/digital/) via the `representation` property. If IIIF resources, web pages or other digital content is available, the same patterns as for objects also apply.
+Images of the person can also be provided, in the same way as for [images of objects](/model/object/digital/) via the `representation` property. If IIIF resources, web pages or other digital content is available, the same patterns as for objects also apply.  Only the basic image case is shown below, the other scenarios can easily be determined from the referenced digital integration for objects.
 
 {{ macros.include_example("actor_image") }}
 
 ### Nationality
 
-Nationality is modeled in CRM as membership in a Group, the same way that a person can be a member of an organization, a band or any other set of people. 
+Nationality is modeled in CRM as membership in a Group, the same way that a person can be a `member_of` an organization, a band or any other set of people. The `Group` should have _aat:300379842_ as one of its classifications, and if known, another classification for the specific culture or location for the nationality itself. For example, a person considered to be of British nationality, would be a member of a `Group` that was `classified_as` both _aat:300379842_ and _aat:300111159_.
 
 {{ macros.include_example("actor_nationality") }}
 
@@ -61,8 +61,9 @@ Nationality is modeled in CRM as membership in a Group, the same way that a pers
 
 Gender is a hotly debated and politically charged topic. The intent of this section is not to take a stand on those debates, but instead to allow the representation of data in museum and other information management systems to be made accessible.
 
-{{ macros.include_example("actor_gender") }}
+Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the current modeling decision is to echo the same membership pattern as for nationality. This allows a plethora of gender diversity, and does not make any specific statements about biological versus assumed versus prefered gender roles.  A Person can be a member of multiple groups at the same time, allowing the association with multiple genders with this modeling decision.  Gender based groups should be `classified_as` _aat:300055147_ along with any specific classification known.
 
+{{ macros.include_example("actor_gender") }}
 
 ## Organizations
 
