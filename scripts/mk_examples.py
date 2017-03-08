@@ -18,7 +18,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
-	NamePrefix, NameSuffix, MiddleName, BiographyStatement, \
+	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
