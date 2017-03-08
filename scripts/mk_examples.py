@@ -770,13 +770,34 @@ who.brought_into_existence_by = birth
 who.taken_out_of_existence_by = death 
 id_uri_hash['actor_birthdeath'] = who
 
-
 who = Person()
 who.label = "David E. Frederickson"
 bio = BiographyStatement()
 bio.value = "Example biography"
 who.referred_to_by = bio
 id_uri_hash['actor_biog'] = who
+
+who = Person()
+who.label = "Gertrude H. Ingram"
+img = Image("http://example.org/images/gertrude.jpg")
+img.label = "Image of G.H. Ingram"
+img.format = "image/jpeg"
+who.representation = img
+id_uri_hash['actor_image'] = what
+
+who = Person()
+who.label = "Jeremy K. Lintott"
+natl = Nationality()
+natl.label = "Example Nationality"
+who.member_of = natl
+id_uri_hash['actor_nationality'] = who
+
+who = Person()
+who.label = "Mabel N. Overton"
+gender = Gender()
+gender.label = "feminine"
+who.member_of = gender
+id_uri_hash['actor_gender'] = who
 
 print ">>> Built examples "
 

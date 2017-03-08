@@ -27,6 +27,8 @@ P89 | spatially_within
 P89i | spatially_contains
 P90 | has_value
 P106i | composed_from
+P107 | member
+P107i | member_of
 P131 | actor_identified_by
 P131i | identifies_actor
 P132 | volume_overlaps_with

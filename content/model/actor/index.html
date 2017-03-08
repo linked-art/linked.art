@@ -41,15 +41,27 @@ Like the creation of objects, people and organizations also come into and out of
 
 ### Biography
 
-Biographical descriptions follow the `LinguisticObject` pattern. 
+Biographical descriptions follow the `LinguisticObject` pattern, with biography _(aat:300080102)_ as the classification.  
 
 {{ macros.include_example("actor_biog") }}
 
 ### Digital Integration
 
-### Gender
+Images of the person can also be provided, in the same way as for [images of objects](/model/object/digital/) via the `representation` property. If IIIF resources, web pages or other digital content is available, the same patterns as for objects also apply.
+
+{{ macros.include_example("actor_image") }}
 
 ### Nationality
+
+Nationality is modeled in CRM as membership in a Group, the same way that a person can be a member of an organization, a band or any other set of people. 
+
+{{ macros.include_example("actor_nationality") }}
+
+### Gender
+
+Gender is a hotly debated and politically charged topic. The intent of this section is not to take a stand on those debates, but instead to allow the representation of data in museum and other information management systems to be made accessible.
+
+{{ macros.include_example("actor_gender") }}
 
 
 ## Organizations
