@@ -1,0 +1,12 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/16", 
+  "type": "Person", 
+  "label": "Jeremy K. Lintott", 
+  "member_of": {
+    "id": "https://linked.art/example/group/4", 
+    "type": "Group", 
+    "classified_as": "aat:300379842", 
+    "label": "Example Nationality"
+  }
+}

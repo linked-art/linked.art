@@ -158,7 +158,7 @@ museum = MuseumOrg()
 museum.label = "Example Museum Organization"
 dept = Department(museum.id + "/part/1")
 dept.label = "Paintings Department"
-museum.current_or_former_member = dept
+museum.member = dept
 id_uri_hash['base_parts_org'] = museum
 
 # Base - Statements

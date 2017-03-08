@@ -51,6 +51,7 @@ auth_idx:
     - [model/object/provenance/index.html, object/39, objprov_production]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/object/provenance/index.html, object/41, objprov_location]
+    - [model/actor/index.html, object/41, actor_image]
 - - aat:300047090
   - - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/5, prov_purchase]
@@ -64,6 +65,8 @@ auth_idx:
   - - [model/base/index.html, activity/0, base_parts_activity]
     - [model/provenance/auctions/index.html, info/1, auction_catalog]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
+- - aat:300055147
+  - - [model/actor/index.html, person/17, actor_gender]
 - - aat:300055292
   - - [model/provenance/index.html, activity/8, prov_theft]
 - - aat:300055547
@@ -88,6 +91,8 @@ auth_idx:
   - - [model/base/index.html, group/0, base_parts_org]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/actor/index.html, activity/40, actor_type]
+- - aat:300379842
+  - - [model/actor/index.html, person/16, actor_nationality]
 - - aat:300404621
   - - [model/actor/index.html, person/12, actor_identity]
 - - aat:300404628
@@ -146,6 +151,8 @@ class_idx:
   - - [model/actor/index.html, person/13, actor_birthdeath]
 - - Group
   - - [model/base/index.html, group/0, base_parts_org]
+    - [model/actor/index.html, person/16, actor_nationality]
+    - [model/actor/index.html, person/17, actor_gender]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/actor/index.html, activity/40, actor_type]
@@ -209,6 +216,7 @@ class_idx:
     - [model/object/provenance/index.html, object/39, objprov_production]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/object/provenance/index.html, object/41, objprov_location]
+    - [model/actor/index.html, object/41, actor_image]
 - - Material
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/object/physical/index.html, object/29, objphys_materials]
@@ -228,6 +236,8 @@ class_idx:
     - [model/actor/index.html, person/12, actor_identity]
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/actor/index.html, person/14, actor_biog]
+    - [model/actor/index.html, person/16, actor_nationality]
+    - [model/actor/index.html, person/17, actor_gender]
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
     - [model/object/provenance/index.html, object/39, objprov_production]
@@ -247,6 +257,7 @@ class_idx:
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/object/provenance/index.html, object/41, objprov_location]
+    - [model/actor/index.html, object/41, actor_image]
 - - Production
   - - [model/provenance/index.html, activity/2, prov_create]
     - [model/provenance/index.html, activity/3, prov_create_technique]
@@ -329,8 +340,7 @@ prop_idx:
     - [model/provenance/index.html, activity/9, prov_theft_sale]
 - - current_location
   - - [model/object/provenance/index.html, object/41, objprov_location]
-- - current_or_former_member
-  - - [model/base/index.html, group/0, base_parts_org]
+    - [model/actor/index.html, object/41, actor_image]
 - - current_owner
   - - [model/object/provenance/index.html, object/40, objprov_owner]
 - - depicts
@@ -392,7 +402,9 @@ prop_idx:
     - [model/actor/index.html, person/14, actor_biog]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/provenance/index.html, activity/15, prov_inventory]
+    - [model/actor/index.html, person/16, actor_nationality]
     - [model/provenance/index.html, activity/17, prov_lifetime]
+    - [model/actor/index.html, person/17, actor_gender]
     - [model/object/identity/index.html, object/19, objid_legacy]
     - [model/object/identity/index.html, object/20, objid_title]
     - [model/object/identity/index.html, object/21, objid_title_alt]
@@ -420,10 +432,16 @@ prop_idx:
     - [model/object/provenance/index.html, object/39, objprov_production]
     - [model/actor/index.html, activity/40, actor_type]
     - [model/object/provenance/index.html, object/40, objprov_owner]
+    - [model/actor/index.html, object/41, actor_image]
     - [model/object/provenance/index.html, object/41, objprov_location]
 - - made_of
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/object/physical/index.html, object/29, objphys_materials]
+- - member
+  - - [model/base/index.html, group/0, base_parts_org]
+- - member_of
+  - - [model/actor/index.html, person/16, actor_nationality]
+    - [model/actor/index.html, person/17, actor_gender]
 - - occurs_before
   - - [model/provenance/index.html, activity/12, prov_curate]
 - - paid_amount

@@ -4,7 +4,7 @@
   "type": "Group", 
   "classified_as": "aat:300312281", 
   "label": "Example Museum Organization", 
-  "current_or_former_member": {
+  "member": {
     "id": "https://linked.art/example/group/0/part/1", 
     "type": "Group", 
     "classified_as": "aat:300263534", 
