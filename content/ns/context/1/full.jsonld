@@ -827,11 +827,11 @@
       "@id": "crm:P106i_forms_part_of", 
       "@type": "@id"
     }, 
-    "current_or_former_member": {
+    "member": {
       "@id": "crm:P107_has_current_or_former_member", 
       "@type": "@id"
     }, 
-    "current_or_former_member_of": {
+    "member_of": {
       "@id": "crm:P107i_is_current_or_former_member_of", 
       "@type": "@id"
     }, 
