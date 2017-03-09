@@ -33,6 +33,8 @@ Like objects, people are often assigned legacy identifiers that should be record
 
 ## Life Events
 
+There are key events in a person or organization's lifespan that are often recorded.  These include the birth or beginning of existence, death or end of existence, and then the core period of their professional work.
+
 ### Birth and Death / Beginning and End of Existence
 
 Like the creation of objects, people and organizations also come into and out of existence through events.  These events can take place at certain Places, and happen at certain times.  This similarity between people and organizations results in the somewhat unwieldy `brought_into_existence_by` and `taken_out_of_existence_by` property names, with the respective `BeginningOfExistence` and `EndOfExistence` classes.
@@ -42,6 +44,8 @@ Like the creation of objects, people and organizations also come into and out of
 ### Active Dates
 
 It is often useful to know where and when the person was active in their professional function. For example, an artist might have started painting when they were 20, stopped by 30, and only painted in Italy. This information can be used to help eliminate dubious attributions, for example.  The pattern is similar to the provenance of an object.
+
+The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` resource should be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  If a person was active between 1910-01-01 and 1934-03-21, it might look like the example below.
 
 {{ macros.include_example("actor_active") }}
 
