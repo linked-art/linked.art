@@ -1,0 +1,18 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/19", 
+  "type": "Person", 
+  "label": "Sameen T. Underwood", 
+  "member_of": {
+    "id": "https://linked.art/example/group/6", 
+    "type": "Group", 
+    "classified_as": "aat:300263534", 
+    "label": "Paintings Department", 
+    "member_of": {
+      "id": "https://linked.art/example/group/7", 
+      "type": "Group", 
+      "classified_as": "aat:300312281", 
+      "label": "Example Museum"
+    }
+  }
+}

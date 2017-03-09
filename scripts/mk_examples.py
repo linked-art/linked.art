@@ -814,6 +814,20 @@ active.timespan = ats
 who.carried_out = active
 id_uri_hash['actor_active'] = who
 
+who = Person()
+who.label = "Sameen T. Underwood"
+dept = Department()
+dept.label = "Paintings Department"
+mus = MuseumOrg()
+mus.label = "Example Museum"
+who.member_of = dept
+dept.member_of = mus
+id_uri_hash['actor_membership'] = who
+
+
+
+
+
 print ">>> Built examples "
 
 # ------ Build out the examples -------
