@@ -1312,6 +1312,10 @@
       "@id": "foaf:page", 
       "@type": "@id"
     }, 
+    "exact_match": {
+      "@id": "skos:exactMatch", 
+      "@type": "@id"
+    }, 
     "Payment": "pi:Payment", 
     "paid_from": {
       "@id": "pi:paid_from", 

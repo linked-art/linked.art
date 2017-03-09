@@ -6,6 +6,7 @@ title: "Actors: People and Organizations"
 
 ## Introduction
 
+All activities are carried out by some actor, typically a person or organization.  The identity and description of these actors are very important to provide in order to provide the context in which the objects are being acted upon. The creators, owners, sellers and curators of objects are all important to describe in a coherent fashion.
 
 ## Types
 
@@ -30,6 +31,13 @@ Personal names can often be broken down into parts, with different types.  The t
 Like objects, people are often assigned legacy identifiers that should be recorded and tracked.  While the primary identifier is the URI given to the person, there can be any number of other identifiers also associated with the resource.  These follow the same pattern as for object identifiers, with `identified_by` being used with an `Identifier` resource, that can have further classifications and a `value`.  Organizations can also have identifiers, using the same pattern.
 
 {{ macros.include_example("actor_identity") }}
+
+### Other Linked Data Identifiers
+
+There may be other identifiers for the person available in external systems, such as [ULAN](http://vocab.getty.edu/ulan/) or any of a dozen others.  If all of the information needed about the person is available from that system, then it is recommended to simply use that identifier directly as the URI for the Person.  If there is a requirement to maintain a separate identifier, then the `exactMatch` property should be used to align the two.
+
+{{ macros.include_example("actor_ulan") }}
+
 
 ## Life Events
 
@@ -85,10 +93,7 @@ As discussed above, Organizations can be seen as the actor when it comes to thei
 
 The only significantly new aspect to organizational actors, compared to people, is that they can have members.  These members can be either sub-groups, such as a department within a museum, or individuals.
 
-For example, a curator could be a `member_of` a department, which is in turn a member of the wider institution.
+For example, a curator could be a `member_of` a department, which is in turn a member of the wider institution.  This is simply the inverse of `member` relationship described in the [base patterns](/model/base/#25-organizations).
 
 {{ macros.include_example("actor_membership" )}}
-
-
-
 

@@ -1,0 +1,7 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/20", 
+  "type": "Person", 
+  "label": "Vincent Van Gogh", 
+  "exact_match": "http://vocab.getty.edu/ulan/500115588-agent"
+}

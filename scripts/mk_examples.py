@@ -824,8 +824,10 @@ who.member_of = dept
 dept.member_of = mus
 id_uri_hash['actor_membership'] = who
 
-
-
+who = Person()
+who.label = "Vincent Van Gogh"
+who.exact_match = ExternalResource("http://vocab.getty.edu/ulan/500115588-agent")
+id_uri_hash['actor_ulan'] = who
 
 
 print ">>> Built examples "

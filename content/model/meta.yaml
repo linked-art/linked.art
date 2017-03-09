@@ -14,6 +14,7 @@ example:
     actor_name_parts: person/11.json
     actor_nationality: person/16.json
     actor_type: activity/40.json
+    actor_ulan: person/20.json
     auction_base: activity/25.json
     auction_catalog: info/1.json
     auction_lot: activity/27.json
