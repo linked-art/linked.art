@@ -8,7 +8,7 @@ example:
     actor_birthdeath: person/13.json
     actor_gender: person/17.json
     actor_identity: person/12.json
-    actor_image: object/41.json
+    actor_image: person/15.json
     actor_name: person/10.json
     actor_name_parts: person/11.json
     actor_nationality: person/16.json

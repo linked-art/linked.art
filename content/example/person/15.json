@@ -1,0 +1,12 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/person/15", 
+  "type": "Person", 
+  "label": "Gertrude H. Ingram", 
+  "representation": {
+    "id": "http://example.org/images/gertrude.jpg", 
+    "type": "Image", 
+    "label": "Image of G.H. Ingram", 
+    "format": "image/jpeg"
+  }
+}

@@ -785,7 +785,7 @@ img = Image("http://example.org/images/gertrude.jpg")
 img.label = "Image of G.H. Ingram"
 img.format = "image/jpeg"
 who.representation = img
-id_uri_hash['actor_image'] = what
+id_uri_hash['actor_image'] = who
 
 who = Person()
 who.label = "Jeremy K. Lintott"
