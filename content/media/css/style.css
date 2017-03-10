@@ -93,6 +93,10 @@ footer {
  }
 
 /* ============ CODE BLOCKS ============ */
+code {
+  background-color: #fbf8e9;
+}
+
 .codehilite > pre {
   display: block;
   padding: 1rem 1.5rem;
