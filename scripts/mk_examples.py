@@ -8,7 +8,7 @@ from pyld import jsonld
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor
 
 import cromulent
-from cromulent.model import factory, ExternalResource, Production, Acquisition, Purchase, \
+from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, EndOfExistence
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
@@ -665,7 +665,7 @@ what = Sculpture()
 what.label = "Sculpture"
 img = Image("http://iiif.example.org/image/1")
 img.label = "IIIF Image API for Sculpture"
-img.conforms_to = ExternalResource("http://iiif.io/api/image")
+img.conforms_to = BaseResource("http://iiif.io/api/image")
 what.representation = img
 id_uri_hash['objdig_iiif_image'] = what
 
@@ -673,7 +673,7 @@ what = Painting()
 what.label = "Painting"
 mfst = InformationObject("http://iiif.example.org/presentation/1/manifest.json")
 mfst.format = 'application/ld+json;profile="http://iiif.io/api/presentation/2/context.json"'
-mfst.conforms_to = ExternalResource("http://iiif.io/api/presentation")
+mfst.conforms_to = BaseResource("http://iiif.io/api/presentation")
 what.subject_of = mfst
 id_uri_hash['objdig_iiif_manifest'] = what
 
@@ -826,7 +826,7 @@ id_uri_hash['actor_membership'] = who
 
 who = Person()
 who.label = "Vincent Van Gogh"
-who.exact_match = ExternalResource("http://vocab.getty.edu/ulan/500115588-agent")
+who.exact_match = BaseResource("http://vocab.getty.edu/ulan/500115588-agent")
 id_uri_hash['actor_ulan'] = who
 
 
