@@ -19,7 +19,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, \
+	Exhibition, Museum, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
