@@ -2,7 +2,7 @@
 {% macro include_example(link) -%}
 {% set link2 = resource.meta.example[link] %}
 
-<a name="{{ link }}"/>
+<a name="{{ link }}"></a>
 ```json
 {% include site.config.var.exampleDir + "/" + link2 %}
 

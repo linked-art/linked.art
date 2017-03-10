@@ -1,33 +1,39 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <link href="http://fonts.googleapis.com/css?family=Anton"
-            rel="stylesheet" type="text/css">
-            <title>{{ resource.meta.title }}</title>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600|Roboto:300" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="{{ media_url('css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ media_url('css/skeleton.css') }}">
         <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+
+        <title>{{ resource.meta.title }}</title>
+
     </head>
     <body>
         <nav>
             {% import "macros.j2" as macros with context %}
             {{ macros.render_basic_menu() }}
         </nav>
+        <main class="container">
 
-        <h1>{{ resource.meta.title }}</h1>
-        <hr/>
+            <h1>{{ resource.meta.title }}</h1>
 
-        <article id="content">
-        {% filter regex_replace_fn("&quot;([A-Za-z_]+)&quot;") -%}
-            {% filter regex_replace("aat:([0-9]+)", "<a href='http://vocab.getty.edu/aat/\\1' class='aat'>aat:\\1</a>") -%}
-                {% filter markdown -%}
-                    {% filter regex_replace_fn("`([A-Za-z_]+)`") -%}
-                        {% block content %}{% endblock %}
+            <article id="content">
+            {% filter regex_replace_fn("&quot;([A-Za-z_]+)&quot;") -%}
+                {% filter regex_replace("aat:([0-9]+)", "<a href='http://vocab.getty.edu/aat/\\1' class='aat'>aat:\\1</a>") -%}
+                    {% filter markdown -%}
+                        {% filter regex_replace_fn("`([A-Za-z_]+)`") -%}
+                            {% block content %}{% endblock %}
+                        {%- endfilter %}
                     {%- endfilter %}
                 {%- endfilter %}
             {%- endfilter %}
-        {%- endfilter %}
-        </article>
-
+            </article>
+        </main>
         <footer>
         Contact: rsanderson@getty.edu
         </footer>
