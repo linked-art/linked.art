@@ -826,7 +826,9 @@ id_uri_hash['actor_membership'] = who
 
 who = Person()
 who.label = "Vincent Van Gogh"
-who.exact_match = BaseResource("http://vocab.getty.edu/ulan/500115588-agent")
+ulan = BaseResource("http://vocab.getty.edu/ulan/500115588-agent")
+ulan.label = "Van Gogh, Vincent"
+who.exact_match = ulan
 id_uri_hash['actor_ulan'] = who
 
 

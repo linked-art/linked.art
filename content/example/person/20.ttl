@@ -14,3 +14,5 @@
     rdfs:label "Vincent Van Gogh" ;
     skos:exactMatch <http://vocab.getty.edu/ulan/500115588-agent> .
 
+<http://vocab.getty.edu/ulan/500115588-agent> rdfs:label "Van Gogh, Vincent" .
+
