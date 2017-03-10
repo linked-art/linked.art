@@ -29,6 +29,7 @@ example:
     base_parts_thing: object/1.json
     base_stmt: object/2.json
     base_type: object/0.json
+    exh_base: activity/42.json
     objabout_depicts: object/24.json
     objabout_description: object/23.json
     objabout_style: object/26.json

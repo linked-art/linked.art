@@ -19,7 +19,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, Museum, \
+	Exhibition, MuseumPlace, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -844,8 +844,8 @@ exh.timespan = ts
 ven = Exhibition()
 exh.consists_of = ven
 ven.label = "Example Exhibition at Example Museum"
-mus = Museum()
-mus.label = "Example Museum"
+mus = MuseumPlace()
+mus.label = "Example Museum Venue"
 ven.took_place_at = mus
 
 id_uri_hash['exh_base'] = exh
