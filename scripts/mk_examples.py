@@ -19,6 +19,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
+	Exhibition, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -82,7 +83,8 @@ page_hash = {"base": "model/base/index.html",
 	"objrights": "model/object/rights/index.html",
 	"objdig": "model/object/digital/index.html",
 	"objprov": "model/object/provenance/index.html",
-	"actor": "model/actor/index.html"
+	"actor": "model/actor/index.html",
+	"exh": "model/exhibition/index.html"
 	}
 
 ### First make the override table
@@ -830,6 +832,23 @@ ulan = BaseResource("http://vocab.getty.edu/ulan/500115588-agent")
 ulan.label = "Van Gogh, Vincent"
 who.exact_match = ulan
 id_uri_hash['actor_ulan'] = who
+
+
+
+exh = Exhibition()
+exh.label = "Example Exhibition"
+ts = TimeSpan()
+ts.begin_of_the_begin = "2010-08-01"
+ts.end_of_the_end = "2011-06-01"
+exh.timespan = ts
+ven = Exhibition()
+exh.consists_of = ven
+ven.label = "Example Exhibition at Example Museum"
+mus = Museum()
+mus.label = "Example Museum"
+ven.took_place_at = mus
+
+id_uri_hash['exh_base'] = exh
 
 
 print ">>> Built examples "
