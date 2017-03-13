@@ -1,0 +1,23 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/46", 
+  "type": "Activity", 
+  "classified_as": "aat:300054766", 
+  "label": "Example Exhibition", 
+  "consists_of": {
+    "id": "https://linked.art/example/AttributeAssignment/0", 
+    "type": "AttributeAssignment", 
+    "classified_as": "aat:300XXXXXX", 
+    "assigned": {
+      "id": "https://linked.art/example/name/7", 
+      "type": "Appellation", 
+      "value": "Exhibition Specific Name"
+    }, 
+    "assigned_attribute_to": {
+      "id": "https://linked.art/example/object/46", 
+      "type": "ManMadeObject", 
+      "classified_as": "aat:300033618", 
+      "label": "Real Painting Name"
+    }
+  }
+}

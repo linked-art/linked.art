@@ -12,17 +12,17 @@
 
 <https://linked.art/example/activity/42> a crm:E7_Activity ;
     rdfs:label "Example Exhibition" ;
+    crm:P14_carried_out_by <https://linked.art/example/group/8> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300054766> ;
     crm:P4_has_time-span <https://linked.art/example/time/10> ;
-    crm:P9_consists_of <https://linked.art/example/activity/43> .
-
-<https://linked.art/example/activity/43> a crm:E7_Activity ;
-    rdfs:label "Example Exhibition at Example Museum" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> ;
     crm:P7_took_place_at <https://linked.art/example/place/7> .
 
+<https://linked.art/example/group/8> a crm:E74_Group ;
+    rdfs:label "Example Museum" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+
 <https://linked.art/example/place/7> a crm:E53_Place ;
-    rdfs:label "Example Museum Venue" ;
+    rdfs:label "Example Museum's Location" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300005768> .
 
 <https://linked.art/example/time/10> a crm:E52_Time-Span ;

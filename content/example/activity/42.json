@@ -10,16 +10,16 @@
     "begin_of_the_begin": "2010-08-01", 
     "end_of_the_end": "2011-06-01"
   }, 
-  "consists_of": {
-    "id": "https://linked.art/example/activity/43", 
-    "type": "Activity", 
-    "classified_as": "aat:300054766", 
-    "label": "Example Exhibition at Example Museum", 
-    "took_place_at": {
-      "id": "https://linked.art/example/place/7", 
-      "type": "Place", 
-      "classified_as": "aat:300005768", 
-      "label": "Example Museum Venue"
-    }
+  "took_place_at": {
+    "id": "https://linked.art/example/place/7", 
+    "type": "Place", 
+    "classified_as": "aat:300005768", 
+    "label": "Example Museum's Location"
+  }, 
+  "carried_out_by": {
+    "id": "https://linked.art/example/group/8", 
+    "type": "Group", 
+    "classified_as": "aat:300312281", 
+    "label": "Example Museum"
   }
 }

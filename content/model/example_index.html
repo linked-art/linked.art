@@ -7,7 +7,7 @@ auth_idx:
 - - aat:300005234
   - - [model/provenance/auctions/index.html, activity/25, auction_base]
 - - aat:300005768
-  - - [model/exhibition/index.html, activity/42, exh_base]
+  - - [model/exhibition/index.html, activity/42, exh_activity]
 - - aat:300010358
   - - [model/base/index.html, object/2, base_stmt]
     - [model/object/physical/index.html, object/30, objphys_materials_stmt]
@@ -53,6 +53,8 @@ auth_idx:
     - [model/object/provenance/index.html, object/39, objprov_production]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/object/provenance/index.html, object/41, objprov_location]
+    - [model/exhibition/index.html, activity/44, exh_custody]
+    - [model/exhibition/index.html, activity/46, exh_labels]
 - - aat:300047090
   - - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/5, prov_purchase]
@@ -67,7 +69,13 @@ auth_idx:
     - [model/provenance/auctions/index.html, info/1, auction_catalog]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
 - - aat:300054766
-  - - [model/exhibition/index.html, activity/42, exh_base]
+  - - [model/exhibition/index.html, activity/42, exh_activity]
+    - [model/exhibition/index.html, activity/43, exh_objects]
+    - [model/exhibition/index.html, activity/44, exh_custody]
+    - [model/exhibition/index.html, activity/46, exh_labels]
+    - [model/exhibition/index.html, activity/47, exh_image]
+- - aat:300054773
+  - - [model/exhibition/index.html, activity/48, exh_multi]
 - - aat:300055147
   - - [model/actor/index.html, person/17, actor_gender]
 - - aat:300055292
@@ -100,6 +108,8 @@ auth_idx:
     - [model/actor/index.html, person/19, actor_membership]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/actor/index.html, activity/40, actor_type]
+    - [model/exhibition/index.html, activity/42, exh_activity]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - aat:300379842
   - - [model/actor/index.html, person/16, actor_nationality]
 - - aat:300393177
@@ -119,6 +129,8 @@ auth_idx:
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
     - [model/provenance/auctions/index.html, activity/32, auction_purchase_price]
+- - aat:300XXXXXX
+  - - [model/exhibition/index.html, activity/46, exh_labels]
 - - http://rightsstatements.org/vocab/InC/1.0/
   - - [model/object/rights/index.html, object/33, objrights_rights]
 - - http://rightsstatements.org/vocab/NKC/1.0/
@@ -139,7 +151,12 @@ class_idx:
     - [model/actor/index.html, person/18, actor_active]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
+    - [model/exhibition/index.html, activity/43, exh_objects]
+    - [model/exhibition/index.html, activity/44, exh_custody]
+    - [model/exhibition/index.html, activity/46, exh_labels]
+    - [model/exhibition/index.html, activity/47, exh_image]
+    - [model/exhibition/index.html, activity/48, exh_multi]
 - - Actor
   - - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]
@@ -153,6 +170,9 @@ class_idx:
 - - Appellation
   - - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
+    - [model/exhibition/index.html, activity/46, exh_labels]
+- - AttributeAssignment
+  - - [model/exhibition/index.html, activity/46, exh_labels]
 - - BeginningOfExistence
   - - [model/actor/index.html, person/13, actor_birthdeath]
 - - Currency
@@ -170,6 +190,8 @@ class_idx:
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/actor/index.html, activity/40, actor_type]
+    - [model/exhibition/index.html, activity/42, exh_activity]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - Identifier
   - - [model/actor/index.html, person/12, actor_identity]
     - [model/provenance/auctions/index.html, object/12, auction_lotset]
@@ -231,6 +253,8 @@ class_idx:
     - [model/object/provenance/index.html, object/39, objprov_production]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/object/provenance/index.html, object/41, objprov_location]
+    - [model/exhibition/index.html, activity/44, exh_custody]
+    - [model/exhibition/index.html, activity/46, exh_labels]
 - - Material
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/object/physical/index.html, object/29, objphys_materials]
@@ -275,7 +299,7 @@ class_idx:
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/object/provenance/index.html, object/41, objprov_location]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
 - - Production
   - - [model/provenance/index.html, activity/2, prov_create]
     - [model/provenance/index.html, activity/3, prov_create_technique]
@@ -297,13 +321,14 @@ class_idx:
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/actor/index.html, person/18, actor_active]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
 - - Title
   - - [model/object/identity/index.html, object/20, objid_title]
 - - TransferOfCustody
   - - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/8, prov_theft]
     - [model/provenance/index.html, activity/9, prov_theft_sale]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - Type
   - - [model/object/aboutness/index.html, object/25, objabout_subject]
 prop_idx:
@@ -311,6 +336,10 @@ prop_idx:
   - - [model/object/aboutness/index.html, object/25, objabout_subject]
 - - acquired_title_through
   - - [model/object/provenance/index.html, object/40, objprov_owner]
+- - assigned
+  - - [model/exhibition/index.html, activity/46, exh_labels]
+- - assigned_attribute_to
+  - - [model/exhibition/index.html, activity/46, exh_labels]
 - - begin_of_the_begin
   - - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]
@@ -320,7 +349,7 @@ prop_idx:
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/actor/index.html, person/18, actor_active]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
 - - brought_into_existence_by
   - - [model/actor/index.html, person/13, actor_birthdeath]
 - - carried_out
@@ -336,6 +365,8 @@ prop_idx:
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/object/provenance/index.html, object/39, objprov_production]
     - [model/actor/index.html, activity/40, actor_type]
+    - [model/exhibition/index.html, activity/42, exh_activity]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - carries
   - - [model/object/aboutness/index.html, object/25, objabout_subject]
 - - composed_of
@@ -355,7 +386,8 @@ prop_idx:
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
     - [model/provenance/auctions/index.html, activity/32, auction_purchase_price]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/46, exh_labels]
+    - [model/exhibition/index.html, activity/48, exh_multi]
 - - continued
   - - [model/provenance/index.html, activity/12, prov_curate]
 - - continued_by
@@ -367,6 +399,7 @@ prop_idx:
   - - [model/object/provenance/index.html, object/41, objprov_location]
 - - current_owner
   - - [model/object/provenance/index.html, object/40, objprov_owner]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - depicts
   - - [model/object/aboutness/index.html, object/24, objabout_depicts]
 - - description
@@ -385,7 +418,7 @@ prop_idx:
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/actor/index.html, person/18, actor_active]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
 - - exact_match
   - - [model/actor/index.html, person/20, actor_ulan]
 - - format
@@ -466,7 +499,11 @@ prop_idx:
     - [model/actor/index.html, activity/40, actor_type]
     - [model/object/provenance/index.html, object/40, objprov_owner]
     - [model/object/provenance/index.html, object/41, objprov_location]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
+    - [model/exhibition/index.html, activity/43, exh_objects]
+    - [model/exhibition/index.html, activity/44, exh_custody]
+    - [model/exhibition/index.html, activity/46, exh_labels]
+    - [model/exhibition/index.html, activity/47, exh_image]
 - - made_of
   - - [model/base/index.html, object/1, base_parts_thing]
     - [model/object/physical/index.html, object/29, objphys_materials]
@@ -516,6 +553,8 @@ prop_idx:
   - - [model/base/index.html, place/0, base_parts_place]
 - - spatially_within
   - - [model/base/index.html, place/0, base_parts_place]
+- - specific_purpose
+  - - [model/exhibition/index.html, activity/44, exh_custody]
 - - subject
   - - [model/object/aboutness/index.html, object/25, objabout_subject]
 - - subject_of
@@ -536,7 +575,7 @@ prop_idx:
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/actor/index.html, person/18, actor_active]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
 - - title
   - - [model/object/identity/index.html, object/20, objid_title]
     - [model/object/identity/index.html, object/21, objid_title_alt]
@@ -546,18 +585,21 @@ prop_idx:
     - [model/provenance/index.html, activity/4, prov_acq]
     - [model/actor/index.html, person/13, actor_birthdeath]
     - [model/provenance/auctions/index.html, activity/25, auction_base]
-    - [model/exhibition/index.html, activity/42, exh_base]
+    - [model/exhibition/index.html, activity/42, exh_activity]
 - - transferred_custody_from
   - - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/8, prov_theft]
     - [model/provenance/index.html, activity/9, prov_theft_sale]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - transferred_custody_of
   - - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/8, prov_theft]
     - [model/provenance/index.html, activity/9, prov_theft_sale]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - transferred_custody_to
   - - [model/provenance/index.html, activity/8, prov_theft]
     - [model/provenance/index.html, activity/9, prov_theft_sale]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - transferred_title_from
   - - [model/provenance/index.html, activity/4, prov_acq]
     - [model/provenance/index.html, activity/5, prov_purchase]
@@ -581,6 +623,8 @@ prop_idx:
     - [model/provenance/auctions/index.html, activity/27, auction_lot]
     - [model/provenance/auctions/index.html, activity/30, auction_purchase]
     - [model/provenance/auctions/index.html, activity/32, auction_purchase_price]
+    - [model/exhibition/index.html, activity/43, exh_objects]
+    - [model/exhibition/index.html, activity/44, exh_custody]
 - - value
   - - [model/base/index.html, object/2, base_stmt]
     - [model/provenance/index.html, activity/5, prov_purchase]
@@ -597,6 +641,7 @@ prop_idx:
     - [model/object/physical/index.html, object/30, objphys_materials_stmt]
     - [model/object/rights/index.html, object/31, objrights_credit]
     - [model/object/rights/index.html, object/32, objrights_rights_stmt]
+    - [model/exhibition/index.html, activity/46, exh_labels]
 
 ---
 

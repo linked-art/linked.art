@@ -35,6 +35,7 @@ P131i | identifies_actor
 P132 | volume_overlaps_with
 P133 | distinct_from
 P135i | type_created_by
+P140 | assigned_to
 P149 | concept_identified_by
 P149i | identifies_concept
 P151i | participated_in_formation

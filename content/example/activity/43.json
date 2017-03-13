@@ -1,0 +1,27 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/43", 
+  "type": "Activity", 
+  "classified_as": "aat:300054766", 
+  "label": "Example Exhibition", 
+  "used_specific_object": [
+    {
+      "id": "https://linked.art/example/object/42", 
+      "type": "ManMadeObject", 
+      "classified_as": "aat:300033618", 
+      "label": "Painting"
+    }, 
+    {
+      "id": "https://linked.art/example/object/43", 
+      "type": "ManMadeObject", 
+      "classified_as": "aat:300033618", 
+      "label": "Another Painting"
+    }, 
+    {
+      "id": "https://linked.art/example/object/44", 
+      "type": "ManMadeObject", 
+      "classified_as": "aat:300047090", 
+      "label": "Sculpture"
+    }
+  ]
+}

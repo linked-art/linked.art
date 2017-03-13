@@ -892,7 +892,7 @@ aa = Naming()
 name = Appellation()
 name.value = "Exhibition Specific Name"
 aa.assigned = name
-aa.assigned_to = obj
+aa.assigned_attribute_to = obj
 exh.consists_of = aa
 id_uri_hash['exh_labels'] = exh
 

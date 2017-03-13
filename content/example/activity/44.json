@@ -1,0 +1,33 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/44", 
+  "type": "TransferOfCustody", 
+  "label": "Custody Transfer of Painting for Exhibition", 
+  "transferred_custody_of": {
+    "id": "https://linked.art/example/object/45", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618", 
+    "label": "Painting", 
+    "current_owner": {
+      "id": "https://linked.art/example/group/10", 
+      "type": "Group", 
+      "classified_as": "aat:300312281", 
+      "label": "Owning Museum"
+    }
+  }, 
+  "transferred_custody_from": "https://linked.art/example/group/10", 
+  "transferred_custody_to": {
+    "id": "https://linked.art/example/group/9", 
+    "type": "Group", 
+    "classified_as": "aat:300312281", 
+    "label": "Exhibiting Museum"
+  }, 
+  "specific_purpose": {
+    "id": "https://linked.art/example/activity/45", 
+    "type": "Activity", 
+    "classified_as": "aat:300054766", 
+    "label": "Example Exhibition", 
+    "carried_out_by": "https://linked.art/example/group/9", 
+    "used_specific_object": "https://linked.art/example/object/45"
+  }
+}
