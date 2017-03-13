@@ -6,9 +6,19 @@ title: "Exhibitions"
 
 ## Introduction
 
+
 ## Exhibition Activity
 
+The exhibition itself follows the activity pattern, as described in the section on [Provenance](/model/provenance/).  In particular, it takes place at a certain time given in `timespan`, at a certain place given in `took_place_at`, and was organized by some actor, likely an organization, given in `carried_out_by`. It can be recognized as an exhibition using the classification of _aat:300054766_, "exhibitions".
+
 {{ macros.include_example("exh_activity") }}
+
+## Multiple Venues
+
+Some exhibitions are shown at different locations over time, moving from one museum or exhibition hall to another.  
+
+{{ macros.include_example("exh_multi") }}
+
 
 ## Objects 
 
@@ -25,8 +35,4 @@ title: "Exhibitions"
 ### Digital Integration
 
 {{ macros.include_example("exh_image") }}
-
-## Multiple Venues
-
-{{ macros.include_example("exh_multi") }}
 

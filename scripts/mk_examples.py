@@ -910,11 +910,23 @@ id_uri_hash['exh_image'] = exh
 
 
 multi = MultiExhibition()
-exh.label = "Exhibition at Two Museums"
+multi.label "Example Travelling Exhibition at Two Museums"
+ts = TimeSpan()
+ts.begin_of_the_begin = "1980-10-01"
+ts.end_of_the_end = "1981-08-14"
+multi.timespan = ts
 exh = Exhibition()
 exh.label = "Exhibition at Museum 1"
+ts2 = TimeSpan()
+ts2.begin_of_the_begin = "1980-10-01"
+ts2.end_of_the_end = "1981-03-01"
+exh.timespan = ts2
 exh2 = Exhibition()
 exh2.label = "Exhibition at Museum 2"
+ts3 = TimeSpan()
+ts3.begin_of_the_begin = "1981-03-14"
+ts3.end_of_the_end = "1981-08-14"
+exh2.timespan = ts3
 multi.consists_of = exh
 multi.consists_of = exh2
 id_uri_hash['exh_multi'] = multi
