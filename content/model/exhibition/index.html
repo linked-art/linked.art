@@ -25,17 +25,22 @@ The art objects on display at exhibitions can be listed from the Exhibition with
 
 {{ macros.include_example("exh_objects") }}
 
-### Transfer of Custody
+### Exhibition Provenance: Transfer of Custody
 
+As objects used for exhibitions frequently come from many different organizations, it is useful and interesting to track the custody of the object as well as the ownership.  This `TransferOfCustody` event is modeled in the same way as other [Provenance](/model/provenance/) changes.  
 
+For each exhibition, the custody of the object is transferred from the previous custodian to the next. In the simple case of a single venue for the exhibition, the first transfer is likely to be from the owner to the organization responsible for the exhibition, and then at the end of the exhibition, the custody is transferred back again.  In a more complex scenario with multiple venues, each organization hosting the exhibition will likely transfer custody to the next in the sequence.  Unlike regular provenance transfers, these happen for a specific purpose ... the exhibition.  This is added to the model with the `specific_purpose` property.
 
 {{ macros.include_example("exh_custody") }}
 
 ### Exhibition Specific Labels
 
+The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object _(aat:300411672)_ is part of the exhibition via the `consists_of` property, and assigns a new `Appellation` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the Appellation does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.
+
 {{ macros.include_example("exh_labels") }}
 
 ### Digital Integration
 
-{{ macros.include_example("exh_image") }}
+There are often photographs or other digital representations of the object as displayed in the exhibition. These follow the same pattern as other [digital representations of the object](/model/object/digital/) but are also, at the same time, a representation of the exhibition itself. To model this, the `representation` property can be used on the exhibition as well as the object, pointing to the `Image`.
 
+{{ macros.include_example("exh_image") }}
