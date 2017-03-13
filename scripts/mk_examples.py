@@ -19,7 +19,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, \
+	Exhibition, MuseumPlace, MultiExhibition, Naming, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -834,6 +834,7 @@ who.exact_match = ulan
 id_uri_hash['actor_ulan'] = who
 
 
+### Exhibitions
 
 exh = Exhibition()
 exh.label = "Example Exhibition"
@@ -841,14 +842,78 @@ ts = TimeSpan()
 ts.begin_of_the_begin = "2010-08-01"
 ts.end_of_the_end = "2011-06-01"
 exh.timespan = ts
-ven = Exhibition()
-exh.consists_of = ven
-ven.label = "Example Exhibition at Example Museum"
 mus = MuseumPlace()
-mus.label = "Example Museum Venue"
-ven.took_place_at = mus
+mus.label = "Example Museum's Location"
+exh.took_place_at = mus
+mus2 = MuseumOrg()
+mus2.label = "Example Museum"
+exh.carried_out_by = mus2
+id_uri_hash['exh_activity'] = exh
 
-id_uri_hash['exh_base'] = exh
+
+exh = Exhibition()
+exh.label = "Example Exhibition"
+obj = Painting()
+obj.label = "Painting"
+obj2 = Painting()
+obj2.label = "Another Painting"
+obj3 = Sculpture()
+obj3.label = "Sculpture"
+exh.used_specific_object = obj
+exh.used_specific_object = obj2
+exh.used_specific_object = obj3
+id_uri_hash['exh_objects'] = exh
+
+
+xfer = TransferOfCustody()
+xfer.label = "Custody Transfer of Painting for Exhibition"
+exh = Exhibition()
+exh.label = "Example Exhibition"
+obj = Painting()
+obj.label = "Painting"
+mus = MuseumOrg()
+mus.label = "Exhibiting Museum"
+owner = MuseumOrg()
+owner.label = "Owning Museum"
+xfer.transferred_custody_of = obj
+xfer.transferred_custody_to = mus
+xfer.transferred_title_from = owner
+xfer.specific_purpose = exh
+exh.used_specific_object = obj
+exh.carried_out_by = mus
+obj.current_owner = owner
+id_uri_hash['exh_custody'] = xfer
+
+exh = Exhibition()
+exh.label = "Example Exhibition"
+obj = Painting()
+obj.label = "Real Painting Name"
+aa = Naming()
+name = Appellation()
+name.value = "Exhibition Specific Name"
+aa.assigned = name
+aa.assigned_to = obj
+exh.consists_of = aa
+id_uri_hash['exh_labels'] = exh
+
+exh = Exhibition()
+exh.label = "Example Exhibition"
+
+id_uri_hash['exh_image'] = exh
+
+
+multi = MultiExhibition()
+exh.label = "Exhibition at Two Museums"
+exh = Exhibition()
+exh.label = "Exhibition at Museum 1"
+
+exh2 = Exhibition()
+exh2.label = "Exhibition at Museum 2"
+
+multi.consists_of = exh
+multi.consists_of = exh2
+id_uri_hash['exh_multi'] = multi
+
 
 
 print ">>> Built examples "
