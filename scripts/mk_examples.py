@@ -10,7 +10,7 @@ from pyld.jsonld import expand, to_rdf, JsonLdProcessor
 import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
-    LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \ 
+    LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
