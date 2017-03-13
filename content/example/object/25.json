@@ -7,11 +7,11 @@
   "carries": {
     "id": "https://linked.art/example/info/3", 
     "type": "InformationObject", 
-    "about": {
-      "id": "http://vocab.getty.edu/aat/300055314", 
-      "type": "Type", 
-      "label": "War"
-    }
+    "about": "http://vocab.getty.edu/aat/300055314"
   }, 
-  "subject": "http://vocab.getty.edu/aat/300055314"
+  "subject": {
+    "id": "http://vocab.getty.edu/aat/300055314", 
+    "type": "Type", 
+    "label": "War"
+  }
 }

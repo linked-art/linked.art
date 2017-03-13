@@ -8,14 +8,14 @@
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Painting", 
-    "current_owner": {
-      "id": "https://linked.art/example/group/10", 
-      "type": "Group", 
-      "classified_as": "aat:300312281", 
-      "label": "Owning Museum"
-    }
+    "current_owner": "https://linked.art/example/group/10"
   }, 
-  "transferred_custody_from": "https://linked.art/example/group/10", 
+  "transferred_custody_from": {
+    "id": "https://linked.art/example/group/10", 
+    "type": "Group", 
+    "classified_as": "aat:300312281", 
+    "label": "Owning Museum"
+  }, 
   "transferred_custody_to": {
     "id": "https://linked.art/example/group/9", 
     "type": "Group", 

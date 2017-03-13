@@ -8,21 +8,21 @@
     "id": "https://linked.art/example/activity/13", 
     "type": "Acquisition", 
     "label": "Acquisition of Painting by Owner", 
-    "transferred_title_of": {
-      "id": "https://linked.art/example/object/9", 
-      "type": "ManMadeObject", 
-      "classified_as": "aat:300033618"
-    }, 
+    "transferred_title_of": "https://linked.art/example/object/9", 
     "transferred_title_to": "https://linked.art/example/person/6", 
-    "occurs_before": {
-      "id": "https://linked.art/example/activity/14", 
-      "type": "Acquisition", 
-      "label": "Owner gives Painting to someone else", 
-      "transferred_title_of": "https://linked.art/example/object/9", 
-      "transferred_title_from": "https://linked.art/example/person/6"
-    }
+    "occurs_before": "https://linked.art/example/activity/14"
   }, 
-  "continued_by": "https://linked.art/example/activity/14", 
+  "continued_by": {
+    "id": "https://linked.art/example/activity/14", 
+    "type": "Acquisition", 
+    "label": "Owner gives Painting to someone else", 
+    "transferred_title_of": "https://linked.art/example/object/9", 
+    "transferred_title_from": "https://linked.art/example/person/6"
+  }, 
   "carried_out_by": "https://linked.art/example/person/6", 
-  "used_specific_object": "https://linked.art/example/object/9"
+  "used_specific_object": {
+    "id": "https://linked.art/example/object/9", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618"
+  }
 }

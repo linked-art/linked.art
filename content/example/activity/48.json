@@ -9,11 +9,11 @@
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Painting", 
-    "representation": {
-      "id": "http://example.org/images/object-at-exhibition.jpg", 
-      "type": "Image", 
-      "format": "image/jpeg"
-    }
+    "representation": "http://example.org/images/object-at-exhibition.jpg"
   }, 
-  "representation": "http://example.org/images/object-at-exhibition.jpg"
+  "representation": {
+    "id": "http://example.org/images/object-at-exhibition.jpg", 
+    "type": "Image", 
+    "format": "image/jpeg"
+  }
 }
