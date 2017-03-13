@@ -11,7 +11,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/activity/48> a crm:E7_Activity ;
-    rdfs:label "Exhibition at Two Museums" ;
+    rdfs:label "Example Exhibition" ;
     crm:P138i_has_representation <http://example.org/images/object-at-exhibition.jpg> ;
     crm:P16_used_specific_object <https://linked.art/example/object/47> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .

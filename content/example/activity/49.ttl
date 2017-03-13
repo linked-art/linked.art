@@ -11,15 +11,31 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/activity/49> a crm:E7_Activity ;
+    rdfs:label "Example Travelling Exhibition at Two Museums" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300054773> ;
+    crm:P4_has_time-span <https://linked.art/example/time/11> ;
     crm:P9_consists_of <https://linked.art/example/activity/50>,
         <https://linked.art/example/activity/51> .
 
 <https://linked.art/example/activity/50> a crm:E7_Activity ;
     rdfs:label "Exhibition at Museum 1" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> ;
+    crm:P4_has_time-span <https://linked.art/example/time/12> .
 
 <https://linked.art/example/activity/51> a crm:E7_Activity ;
     rdfs:label "Exhibition at Museum 2" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> ;
+    crm:P4_has_time-span <https://linked.art/example/time/13> .
+
+<https://linked.art/example/time/11> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1980-10-01"^^<xsd:dateTime> ;
+    crm:P82b_end_of_the_end "1981-08-14"^^<xsd:dateTime> .
+
+<https://linked.art/example/time/12> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1980-10-01"^^<xsd:dateTime> ;
+    crm:P82b_end_of_the_end "1981-03-01"^^<xsd:dateTime> .
+
+<https://linked.art/example/time/13> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1981-03-14"^^<xsd:dateTime> ;
+    crm:P82b_end_of_the_end "1981-08-14"^^<xsd:dateTime> .
 
