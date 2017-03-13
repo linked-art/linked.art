@@ -3,5 +3,17 @@
   "id": "https://linked.art/example/activity/48", 
   "type": "Activity", 
   "classified_as": "aat:300054766", 
-  "label": "Exhibition at Two Museums"
+  "label": "Exhibition at Two Museums", 
+  "used_specific_object": {
+    "id": "https://linked.art/example/object/47", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618", 
+    "label": "Painting", 
+    "representation": {
+      "id": "http://example.org/images/object-at-exhibition.jpg", 
+      "type": "Image", 
+      "format": "image/jpeg"
+    }
+  }, 
+  "representation": "http://example.org/images/object-at-exhibition.jpg"
 }

@@ -899,7 +899,13 @@ id_uri_hash['exh_labels'] = exh
 
 exh = Exhibition()
 exh.label = "Example Exhibition"
-
+obj = Painting()
+obj.label = "Painting"
+exh.used_specific_object = obj
+img = Image("http://example.org/images/object-at-exhibition.jpg")
+img.format = "image/jpeg"
+obj.representation = img
+exh.representation = img
 id_uri_hash['exh_image'] = exh
 
 
@@ -907,14 +913,11 @@ multi = MultiExhibition()
 exh.label = "Exhibition at Two Museums"
 exh = Exhibition()
 exh.label = "Exhibition at Museum 1"
-
 exh2 = Exhibition()
 exh2.label = "Exhibition at Museum 2"
-
 multi.consists_of = exh
 multi.consists_of = exh2
 id_uri_hash['exh_multi'] = multi
-
 
 
 print ">>> Built examples "
