@@ -5,15 +5,15 @@
   "classified_as": "aat:300054766", 
   "label": "Example Exhibition", 
   "consists_of": {
-    "id": "https://linked.art/example/AttributeAssignment/0", 
+    "id": "https://linked.art/example/activity/47", 
     "type": "AttributeAssignment", 
-    "classified_as": "aat:300XXXXXX", 
+    "classified_as": "aat:300411672", 
     "assigned": {
       "id": "https://linked.art/example/name/7", 
       "type": "Appellation", 
       "value": "Exhibition Specific Name"
     }, 
-    "assigned_attribute_to": {
+    "assigned_to": {
       "id": "https://linked.art/example/object/46", 
       "type": "ManMadeObject", 
       "classified_as": "aat:300033618", 

@@ -1067,7 +1067,7 @@
       "@id": "crm:P139_has_alternative_form", 
       "@type": "@id"
     }, 
-    "assigned_attribute_to": {
+    "assigned_to": {
       "@id": "crm:P140_assigned_attribute_to", 
       "@type": "@id"
     }, 

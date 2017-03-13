@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/activity/49", 
+  "type": "Activity", 
+  "classified_as": "aat:300054773", 
+  "consists_of": [
+    {
+      "id": "https://linked.art/example/activity/50", 
+      "type": "Activity", 
+      "classified_as": "aat:300054766", 
+      "label": "Exhibition at Museum 1"
+    }, 
+    {
+      "id": "https://linked.art/example/activity/51", 
+      "type": "Activity", 
+      "classified_as": "aat:300054766", 
+      "label": "Exhibition at Museum 2"
+    }
+  ]
+}

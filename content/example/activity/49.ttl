@@ -10,7 +10,16 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.art/example/activity/48> a crm:E7_Activity ;
-    rdfs:label "Exhibition at Two Museums" ;
+<https://linked.art/example/activity/49> a crm:E7_Activity ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054773> ;
+    crm:P9_consists_of <https://linked.art/example/activity/50>,
+        <https://linked.art/example/activity/51> .
+
+<https://linked.art/example/activity/50> a crm:E7_Activity ;
+    rdfs:label "Exhibition at Museum 1" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
+
+<https://linked.art/example/activity/51> a crm:E7_Activity ;
+    rdfs:label "Exhibition at Museum 2" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300054766> .
 

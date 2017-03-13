@@ -13,12 +13,12 @@
 <https://linked.art/example/activity/46> a crm:E7_Activity ;
     rdfs:label "Example Exhibition" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300054766> ;
-    crm:P9_consists_of <https://linked.art/example/AttributeAssignment/0> .
+    crm:P9_consists_of <https://linked.art/example/activity/47> .
 
-<https://linked.art/example/AttributeAssignment/0> a crm:E13_Attribute_Assignment ;
+<https://linked.art/example/activity/47> a crm:E13_Attribute_Assignment ;
     crm:P140_assigned_attribute_to <https://linked.art/example/object/46> ;
     crm:P141_assigned <https://linked.art/example/name/7> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300XXXXXX> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300411672> .
 
 <https://linked.art/example/name/7> a crm:E41_Appellation ;
     rdf:value "Exhibition Specific Name" .

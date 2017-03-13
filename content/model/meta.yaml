@@ -31,9 +31,9 @@ example:
     base_type: object/0.json
     exh_activity: activity/42.json
     exh_custody: activity/44.json
-    exh_image: activity/47.json
+    exh_image: activity/48.json
     exh_labels: activity/46.json
-    exh_multi: activity/48.json
+    exh_multi: activity/49.json
     exh_objects: activity/43.json
     objabout_depicts: object/24.json
     objabout_description: object/23.json
