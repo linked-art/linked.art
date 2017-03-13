@@ -15,16 +15,19 @@ The exhibition itself follows the activity pattern, as described in the section 
 
 ## Multiple Venues
 
-Some exhibitions are shown at different locations over time, moving from one museum or exhibition hall to another.  
+Some exhibitions are shown at different locations over time, moving from one museum or exhibition hall to another.  In this case, each of the different locations is treated as an exhibition in its own right, and then a broader "travelling exhibition" _(aat:300054773)_ is created that these are part of.  Note that the travelling exhibition can have separate properties from its parts, such as a `label` to distinguish the joint nature and a broader `timespan` that covers all of the venues. There is no need to duplicate the organizations and locations in the travelling exhibition, these can be determined more easily by looking at the exhibitions that it consists of.
 
 {{ macros.include_example("exh_multi") }}
 
-
 ## Objects 
+
+The art objects on display at exhibitions can be listed from the Exhibition with the property `used_specific_object`.  For the travelling exhibitions described above, the objects should be referenced from each of the venues, as some venues will add in or replace objects. It also helps to maintain the provenance of the object, described in the next section about transfer of custody.  The objects can refer back to the exhibitions they were displayed in using the inverse `used_for` property (not included in the example below).
 
 {{ macros.include_example("exh_objects") }}
 
 ### Transfer of Custody
+
+
 
 {{ macros.include_example("exh_custody") }}
 
