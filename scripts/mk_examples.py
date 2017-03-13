@@ -47,7 +47,7 @@ LinguisticObject._uri_segment = "text"
 Appellation._uri_segment = "name"
 BeginningOfExistence._uri_segment = "event"
 EndOfExistence._uri_segment = "event"
-AttributeAssigment._uri_segment = "activity"
+AttributeAssignment._uri_segment = "activity"
 
 fh = file('../site.yaml')
 siteData = fh.read()
