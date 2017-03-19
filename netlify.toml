@@ -4,4 +4,4 @@
   # Directory published to
   publish = ".site"
   # command to run to build
-  command = "build.sh"
+  command = "sh ./build.sh"
