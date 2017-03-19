@@ -1,4 +1,7 @@
 [build]
-  base    = ""
-  publish = "public"
-  command = ""
+  # Base directory where site is built from
+  base    = "."
+  # Directory published to
+  publish = ".site"
+  # command to run to build
+  command = "build.sh"

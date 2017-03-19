@@ -2,7 +2,7 @@ mode: development
 media_root: media
 media_url: /media
 base_url: /
-deploy_root: .site
+deploy_root: ../museum-lod-pages
 
 template: hyde.ext.templates.jinja.Jinja2Template
 
@@ -57,12 +57,12 @@ var:
     exampleDir: example
     version: 1
 
-#publisher:
-#    github:
-#        type: hyde.ext.publishers.dvcs.Git
-#        path: ../museum-lod-pages
-#        url: https://github.com/azaroth42/museum-lod.git
-#        branch: gh-pages
+publisher:
+    github:
+        type: hyde.ext.publishers.dvcs.Git
+        path: ../museum-lod-pages
+        url: https://github.com/azaroth42/museum-lod.git
+        branch: gh-pages
 
 ### Advanced part ###
 
