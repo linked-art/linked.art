@@ -1,0 +1,6 @@
+ordereddict
+cromulent
+hyde
+Jinja2
+pymdown_extensions
+pymdownx
