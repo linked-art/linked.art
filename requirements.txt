@@ -4,4 +4,5 @@ hyde
 Jinja2
 pymdown_extensions
 rdflib
+pyld
 
