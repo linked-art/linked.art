@@ -1,0 +1,94 @@
+
+
+# Classes
+
+## Claim_of_Title
+
+Parent class: E30_Right
+
+This class represents the legal notion of a claimed title, or the right of possession or ownership. It can be partitioned to allow for co-ownership, and those partitions are Claim_of_Title resources in and of themselves.
+
+Relationships:
+
+  * has_share (share_of) Claim_of_Title -- To allow for division of the claim
+
+Example:
+
+```
+_:title a Claim_of_Title ;
+  P2_has_type <vocab:legal> ;
+  P104_applies_to _:object ;
+  P94i_was_created_by _:split ;
+  has_share _:share1, _:share 2 .
+
+_:share1 a Claim_of_Title ;
+  P43_has_dimension _:half .
+
+_:half a Dimension ;
+  P90_has_value 50 ;
+  P91_has_unit <vocab:percent> .
+
+_:split a E65_Creation ;
+  P94_has_created _:title, _:share1, _:share2 ;
+  P14_carried_out_by _:actor .
+```
+
+## Transfer
+
+Subclass of: Activity
+Superclass of: Transfer_of_Custody, Acquisition
+
+
+
+Relationships:
+
+  * transferred_from () E39_Actor -- from whom the transferred entity is transferred
+  * transferred_to () E39_Actor -- to whom the transferred entity is transferred
+  * transferred () E1_CRM_Entity -- the entity being transferred
+
+Example:
+
+```
+_:xfer a x:Transfer ;
+  x:transferred _:share2 ;
+  x:transferred_from _:knoedler ;
+  x:transferred_to _:agnews ;
+  P4_has_time-span _:t3 ;
+  P14_carred_out_by _:agent_of_knoedler .
+```  
+
+
+# Relationships
+
+## has_share / is_share_of
+
+
+
+## transferred_from / ?
+
+
+
+## transferred_to / ?
+
+
+
+## transferred / transferred_by
+
+
+
+
+# Use Cases
+
+## Payment 
+
+
+## Joint Ownership
+
+
+## Theft
+
+
+
+
+
+

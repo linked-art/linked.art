@@ -57,12 +57,13 @@ var:
     exampleDir: example
     version: 1
 
-#publisher:
-#    github:
-#        type: hyde.ext.publishers.dvcs.Git
-#        path: ../museum-lod-pages
-#        url: https://github.com/azaroth42/museum-lod.git
-#        branch: gh-pages
+###  Unnecessary, netlify CI deploy now set up
+# publisher:
+#     github:
+#         type: hyde.ext.publishers.dvcs.Git
+#         path: ../museum-lod-pages
+#         url: https://github.com/azaroth42/museum-lod.git
+#         branch: gh-pages
 
 ### Advanced part ###
 
