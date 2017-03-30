@@ -11,7 +11,7 @@ import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment
+    EndOfExistence, AttributeAssignment, LegalObject
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -48,6 +48,7 @@ Appellation._uri_segment = "name"
 BeginningOfExistence._uri_segment = "event"
 EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
+LegalObject._uri_segment = "object"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -930,6 +931,7 @@ exh2.timespan = ts3
 multi.consists_of = exh
 multi.consists_of = exh2
 id_uri_hash['exh_multi'] = multi
+
 
 
 print ">>> Built examples "

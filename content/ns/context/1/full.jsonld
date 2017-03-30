@@ -118,8 +118,7 @@
       "@type": "@id"
     }, 
     "note": {
-      "@id": "crm:P3_has_note", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P3_has_note"
     }, 
     "timespan": {
       "@id": "crm:P4_has_time-span", 
@@ -514,8 +513,7 @@
       "@type": "@id"
     }, 
     "number_of_parts": {
-      "@id": "crm:P57_has_number_of_parts", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P57_has_number_of_parts"
     }, 
     "section_definition": {
       "@id": "crm:P58_has_section_definition", 
@@ -634,20 +632,16 @@
       "@type": "@id"
     }, 
     "beginning_is_qualified_by": {
-      "@id": "crm:P79_beginning_is_qualified_by", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P79_beginning_is_qualified_by"
     }, 
     "end_is_qualified_by": {
-      "@id": "crm:P80_end_is_qualified_by", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P80_end_is_qualified_by"
     }, 
     "ongoing_throughout": {
-      "@id": "crm:P81_ongoing_throughout", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P81_ongoing_throughout"
     }, 
     "at_some_time_within": {
-      "@id": "crm:P82_at_some_time_within", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P82_at_some_time_within"
     }, 
     "at_least_duration": {
       "@id": "crm:P83_had_at_least_duration", 
@@ -690,8 +684,7 @@
       "@type": "@id"
     }, 
     "has_value": {
-      "@id": "crm:P90_has_value", 
-      "@type": "rdfs:Literal"
+      "@id": "crm:P90_has_value"
     }, 
     "unit": {
       "@id": "crm:P91_has_unit", 
