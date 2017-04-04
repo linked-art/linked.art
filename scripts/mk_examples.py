@@ -530,6 +530,7 @@ what = Painting()
 what.label = "Example Painting"
 id1 = AccessionNumber()
 id1.value = "P1998-27"
+what.identified_by = id1
 
 idset = InformationObject()
 idset.label = "Painting Collection Identifiers"
