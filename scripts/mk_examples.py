@@ -11,7 +11,7 @@ import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment, LegalObject
+    EndOfExistence, AttributeAssignment, LegalObject, Collection
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -538,7 +538,7 @@ id1.composed_from = idset
 coll = Collection()
 coll.label = "Paintings Collection"
 idset.refers_to = coll
-coll.composed_of = what
+coll.part = what
 id_uri_hash['objid_linkcoll'] = what
 
 
