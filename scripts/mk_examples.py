@@ -527,6 +527,22 @@ what.identified_by = id2
 id_uri_hash['objid_legacy'] = what
 
 what = Painting()
+what.label = "Example Painting"
+id1 = AccessionNumber()
+id1.value = "P1998-27"
+
+idset = InformationObject()
+idset.label = "Painting Collection Identifiers"
+id1.composed_from = idset
+
+coll = Collection()
+coll.label = "Paintings Collection"
+idset.refers_to = coll
+coll.composed_of = what
+id_uri_hash['objid_linkcoll'] = what
+
+
+what = Painting()
 what.label = "Peasant and Sheep"
 ttl = PrimaryTitle()
 ttl.value = "Peasant and Sheep"
