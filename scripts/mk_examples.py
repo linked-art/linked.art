@@ -11,7 +11,7 @@ import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment, LegalObject, Collection
+    EndOfExistence, AttributeAssignment, LegalObject
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -20,7 +20,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, MultiExhibition, Naming, \
+	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, \
 	materialTypes, dimensionUnits
 from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
 	add_schema_properties
@@ -526,6 +526,9 @@ id2.label = "Local Repository Number"
 what.identified_by = id2
 id_uri_hash['objid_legacy'] = what
 
+
+# Legacy Identifiers with Collections
+
 what = Painting()
 what.label = "Example Painting"
 id1 = AccessionNumber()
@@ -533,10 +536,10 @@ id1.value = "P1998-27"
 what.identified_by = id1
 
 idset = InformationObject()
-idset.label = "Painting Collection Identifiers"
+idset.label = "Paintings Collection Identifiers"
 id1.composed_from = idset
 
-coll = Collection()
+coll = CollectionSet()
 coll.label = "Paintings Collection"
 idset.refers_to = coll
 coll.part = what
