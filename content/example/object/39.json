@@ -2,16 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/39", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
-  "label": "Painting", 
-  "produced_by": {
-    "id": "https://linked.art/example/activity/38", 
-    "type": "Production", 
-    "label": "Production of Painting", 
-    "carried_out_by": {
-      "id": "https://linked.art/example/person/8", 
-      "type": "Person", 
-      "label": "Artist"
-    }
+  "classified_as": "aat:300047090", 
+  "label": "Sculpture", 
+  "representation": {
+    "id": "http://iiif.example.org/image/1", 
+    "type": "Image", 
+    "label": "IIIF Image API for Sculpture", 
+    "conforms_to": "http://iiif.io/api/image"
   }
 }

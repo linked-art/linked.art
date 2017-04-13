@@ -16,14 +16,14 @@
     crm:P9_consists_of <https://linked.art/example/activity/47> .
 
 <https://linked.art/example/activity/47> a crm:E13_Attribute_Assignment ;
-    crm:P140_assigned_attribute_to <https://linked.art/example/object/46> ;
+    crm:P140_assigned_attribute_to <https://linked.art/example/object/48> ;
     crm:P141_assigned <https://linked.art/example/name/7> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300411672> .
 
 <https://linked.art/example/name/7> a crm:E41_Appellation ;
     rdf:value "Exhibition Specific Name" .
 
-<https://linked.art/example/object/46> a crm:E22_Man-Made_Object ;
+<https://linked.art/example/object/48> a crm:E22_Man-Made_Object ;
     rdfs:label "Real Painting Name" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 

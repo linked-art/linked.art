@@ -11,11 +11,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/object/35> a crm:E22_Man-Made_Object ;
-    rdfs:label "Painting" ;
-    crm:P138i_has_representation <http://example.org/images/image.jpg> ;
+    rdfs:label "Example Painting" ;
+    crm:P104_is_subject_to <https://linked.art/example/Right/0> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<http://example.org/images/image.jpg> a crm:E38_Image ;
-    rdfs:label "Image of Painting" ;
-    dc:format "image/jpeg" .
+<https://linked.art/example/Right/0> a crm:E30_Right ;
+    rdfs:label "Copyright of Example Painting's content" ;
+    crm:P2_has_type <http://rightsstatements.org/vocab/InC/1.0/> ;
+    crm:P75i_is_possessed_by <https://linked.art/example/actor/7> .
+
+<https://linked.art/example/actor/7> a crm:E39_Actor ;
+    rdfs:label "Copyright Holder" .
 

@@ -3,11 +3,23 @@
   "id": "https://linked.art/example/object/20", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Peasant and Sheep", 
-  "title": {
-    "id": "https://linked.art/example/Title/0", 
-    "type": "Title", 
-    "classified_as": "aat:300404670", 
-    "value": "Peasant and Sheep"
+  "label": "Example Painting", 
+  "identified_by": {
+    "id": "https://linked.art/example/identifier/4", 
+    "type": "Identifier", 
+    "classified_as": "aat:300312355", 
+    "value": "P1998-27", 
+    "composed_from": {
+      "id": "https://linked.art/example/info/3", 
+      "type": "InformationObject", 
+      "label": "Paintings Collection Identifiers", 
+      "refers_to": {
+        "id": "https://linked.art/example/object/21", 
+        "type": "PhysicalObject", 
+        "classified_as": "aat:300025976", 
+        "label": "Paintings Collection", 
+        "part": "https://linked.art/example/object/20"
+      }
+    }
   }
 }

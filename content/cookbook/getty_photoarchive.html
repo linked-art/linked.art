@@ -1,0 +1,91 @@
+---
+title: "Getty Photo Archive Mapping"
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+A brief walk through of mapping a sample Photo Archive record from the Getty.
+
+## Sample Record
+
+```
+{
+    "artist_name_1": "Rubens, Peter Paul", 
+    "artist_dates_1": "1577-1640", 
+    "artist_role_1": "Painter", 
+    "brief_citation": "Vlieghe, CorpRub 8 (1972-73), no.144.", 
+    "category": "PAINTINGS", 
+    "collection_type": "Public", 
+    "curr_owner_inst": "Galleria Nazionale d'Arte Antica, Palazzo Corsini", 
+    "curr_regn_dist": "Lazio", 
+    "curr_city": "Rome", 
+    "curr_country": "Italy", 
+    "curr_province": "Roma", 
+    "date": "ca. 1604", 
+    "dimension_units1": "cm",  
+    "excollections_provenance": "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)", 
+    "filing_category": "Religious, Devotional", 
+    "gcpa_acc_no": "292221", 
+    "height_1": "153", 
+    "media_materials": "Oil on canvas", 
+    "name_title": "St. Sebastian", 
+    "national_school_1": "Flemish", 
+    "photo_collection": "Erwin Panofsky Collection", 
+    "photo_color": "Bl/Wh", 
+    "photo_source": "Anderson", 
+    "photo_src_ref": "1195", 
+    "reference_number": "Inv. 388"
+    "width_1": "118"
+}
+```
+
+
+## Overview
+
+### The Photograph
+
+The Photograph in the archive does not have many properties in the data. Most are about the object depicted in the Photograph.
+
+In particular:
+ * `gcpa_acc_no`: the Getty Accession number
+ * `photo_color`: whether the photograph is black and white, or color
+ * `photo_collection`: the original photographer or collector's collection
+ * `photo_source`: who the Getty acquired the photograph from
+ * `photo_src_ref`: the source's reference number for the photograph
+
+Other records also have:
+ * `photo_date`: the date the photograph was taken
+ * `photo_coll_ref`: the reference number in the original collection
+ * `shelf_number`: the (older) shelf-based reference number the photograph
+ * `acquisition_date`: the date the photograph was acquired
+ * `photo_notes`: freetext notes about the photograph 
+
+The mapping approach is:
+
+ * The photograph itself is an [object](model/object)
+ * The `gcpa_acc_no`, `photo_src_ref` and `photo_coll_ref` values are [identifiers](/model/object/identity), with collection specific contexts
+ * The transaction between the `photo_source` and the Getty is modeled according to the [provenance](/model/provenance) model
+ * The `photo_date` provides the timespan for the creation of the photograph (we do not distinguish between the act of photographing and printing of the physical photograph)
+ * The `photo_notes` information is a note associated with the object
+ * The photograph then depicts the art object, as described under [depiction](/model/aboutness/#depiction)
+
+
+### The Depicted Object
+
+The rest of the information is about the object depicted.
+
+ * The `artist*` fields, `national_school` and `date` provide the [creation information](/model/provenance/#object-creation) and information about the [artist](/model/actor/).
+ * `name_title` is the [Title](/model/object/identity/#titles) of the object
+ * The `current*` fields, `reference_number` and `collection_type` are the last known location and owner of the object, described using the provenance model
+ * `height`, `width` and `dimension_units` plus `media_materials` are the [physical characteristics](/model/object/physical/) of the object
+ * `category` is object type, and `filing_category` is the [subject](/model/object/aboutness/#subject).
+ * `excollections_provenance` is further known provenance information
+
+## Mapping in Detail
+
+
+
+
+

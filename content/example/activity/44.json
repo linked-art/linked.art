@@ -4,7 +4,7 @@
   "type": "TransferOfCustody", 
   "label": "Custody Transfer of Painting for Exhibition", 
   "transferred_custody_of": {
-    "id": "https://linked.art/example/object/45", 
+    "id": "https://linked.art/example/object/47", 
     "type": "ManMadeObject", 
     "classified_as": "aat:300033618", 
     "label": "Painting", 
@@ -28,6 +28,6 @@
     "classified_as": "aat:300054766", 
     "label": "Example Exhibition", 
     "carried_out_by": "https://linked.art/example/group/9", 
-    "used_specific_object": "https://linked.art/example/object/45"
+    "used_specific_object": "https://linked.art/example/object/47"
   }
 }

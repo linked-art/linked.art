@@ -11,10 +11,21 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://linked.art/example/object/29> a crm:E22_Man-Made_Object ;
-    rdfs:label "Example Marble Sculpture" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300047090> ;
-    crm:P45_consists_of <http://vocab.getty.edu/aat/300011443> .
+    rdfs:label "Example 16x20 Painting" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
+    crm:P43_has_dimension <https://linked.art/example/Dimension/0>,
+        <https://linked.art/example/Dimension/1> .
 
-<http://vocab.getty.edu/aat/300011443> a crm:E57_Material ;
-    rdfs:label "marble" .
+<https://linked.art/example/Dimension/0> a crm:E54_Dimension ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300055647> ;
+    crm:P91_has_unit <http://vocab.getty.edu/aat/300379100> ;
+    rdf:value 16 .
+
+<https://linked.art/example/Dimension/1> a crm:E54_Dimension ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300055644> ;
+    crm:P91_has_unit <http://vocab.getty.edu/aat/300379100> ;
+    rdf:value 20 .
+
+<http://vocab.getty.edu/aat/300379100> a crm:E58_Measurement_Unit ;
+    rdfs:label "inches" .
 

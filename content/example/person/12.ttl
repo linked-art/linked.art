@@ -12,9 +12,9 @@
 
 <https://linked.art/example/person/12> a crm:E21_Person ;
     rdfs:label "Xavier Y. Zeelander" ;
-    crm:P1_is_identified_by <https://linked.art/example/identifier/4> .
+    crm:P1_is_identified_by <https://linked.art/example/identifier/5> .
 
-<https://linked.art/example/identifier/4> a crm:E42_Identifier ;
+<https://linked.art/example/identifier/5> a crm:E42_Identifier ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404621> ;
     rdf:value 643 .
 

@@ -2,12 +2,11 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/31", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
-  "label": "Example Painting", 
-  "referred_to_by": {
-    "id": "https://linked.art/example/text/3", 
-    "type": "LinguisticObject", 
-    "classified_as": "aat:300026687", 
-    "value": "Donation of Ms J. Smith; Example Organization"
+  "classified_as": "aat:300047090", 
+  "label": "Example Marble Sculpture", 
+  "made_of": {
+    "id": "http://vocab.getty.edu/aat/300011443", 
+    "type": "Material", 
+    "label": "marble"
   }
 }

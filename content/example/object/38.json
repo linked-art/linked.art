@@ -4,10 +4,11 @@
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
   "label": "Painting", 
-  "subject_of": {
-    "id": "http://iiif.example.org/presentation/1/manifest.json", 
+  "homepage": {
+    "id": "http://example.org/collection/1/painting", 
     "type": "InformationObject", 
-    "conforms_to": "http://iiif.io/api/presentation", 
-    "format": "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\""
+    "classified_as": "aat:300264578", 
+    "label": "Homepage for Painting", 
+    "format": "text/html"
   }
 }

@@ -14,7 +14,7 @@
       "value": "Exhibition Specific Name"
     }, 
     "assigned_to": {
-      "id": "https://linked.art/example/object/46", 
+      "id": "https://linked.art/example/object/48", 
       "type": "ManMadeObject", 
       "classified_as": "aat:300033618", 
       "label": "Real Painting Name"

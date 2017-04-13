@@ -3,11 +3,11 @@
   "id": "https://linked.art/example/object/34", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Object", 
-  "subject_to": {
-    "id": "https://linked.art/example/Right/1", 
-    "type": "Right", 
-    "classified_as": "http://rightsstatements.org/vocab/NKC/1.0/", 
-    "label": "No known copyright"
+  "label": "Example Painting", 
+  "referred_to_by": {
+    "id": "https://linked.art/example/text/4", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:300055547", 
+    "value": "Copyright of this object has not yet been assessed"
   }
 }

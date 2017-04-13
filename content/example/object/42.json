@@ -1,0 +1,14 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/example/object/42", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300033618", 
+  "label": "Painting", 
+  "current_owner": {
+    "id": "https://linked.art/example/group/2", 
+    "type": "Group", 
+    "classified_as": "aat:300312281", 
+    "label": "Museum", 
+    "acquired_title_through": "https://linked.art/example/activity/39"
+  }
+}

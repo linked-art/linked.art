@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/37", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300047090", 
-  "label": "Sculpture", 
+  "classified_as": "aat:300033618", 
+  "label": "Painting", 
   "representation": {
-    "id": "http://iiif.example.org/image/1", 
+    "id": "http://example.org/images/image.jpg", 
     "type": "Image", 
-    "label": "IIIF Image API for Sculpture", 
-    "conforms_to": "http://iiif.io/api/image"
+    "label": "Image of Painting", 
+    "format": "image/jpeg"
   }
 }

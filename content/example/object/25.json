@@ -3,15 +3,12 @@
   "id": "https://linked.art/example/object/25", 
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
-  "label": "Portrait of Lord Nelson", 
-  "carries": {
-    "id": "https://linked.art/example/info/3", 
-    "type": "InformationObject", 
-    "about": "http://vocab.getty.edu/aat/300055314"
-  }, 
-  "subject": {
-    "id": "http://vocab.getty.edu/aat/300055314", 
-    "type": "Type", 
-    "label": "War"
+  "label": "Example Painting", 
+  "description": "The Example Painting is a great example of exampleness.", 
+  "referred_to_by": {
+    "id": "https://linked.art/example/text/0", 
+    "type": "LinguisticObject", 
+    "classified_as": "aat:300080091", 
+    "value": "The Example Painting is a great example of exampleness."
   }
 }
