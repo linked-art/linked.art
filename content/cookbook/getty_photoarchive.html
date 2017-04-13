@@ -10,7 +10,7 @@ A brief walk through of mapping a sample Photo Archive record from the Getty.
 
 ## Sample Record
 
-```
+```json
 {
     "artist_name_1": "Rubens, Peter Paul", 
     "artist_dates_1": "1577-1640", 
@@ -49,6 +49,7 @@ A brief walk through of mapping a sample Photo Archive record from the Getty.
 The Photograph in the archive does not have many properties in the data. Most are about the object depicted in the Photograph.
 
 In particular:
+
  * `gcpa_acc_no`: the Getty Accession number
  * `photo_color`: whether the photograph is black and white, or color
  * `photo_collection`: the original photographer or collector's collection
@@ -56,6 +57,7 @@ In particular:
  * `photo_src_ref`: the source's reference number for the photograph
 
 Other records also have:
+
  * `photo_date`: the date the photograph was taken
  * `photo_coll_ref`: the reference number in the original collection
  * `shelf_number`: the (older) shelf-based reference number the photograph
@@ -77,7 +79,7 @@ The mapping approach is:
 The rest of the information is about the object depicted.
 
  * The `artist*` fields, `national_school` and `date` provide the [creation information](/model/provenance/#object-creation) and information about the [artist](/model/actor/).
- * `name_title` is the [Title](/model/object/identity/#titles) of the object
+ * `name_title` is the [title](/model/object/identity/#titles) of the object
  * The `current*` fields, `reference_number` and `collection_type` are the last known location and owner of the object, described using the provenance model
  * `height`, `width` and `dimension_units` plus `media_materials` are the [physical characteristics](/model/object/physical/) of the object
  * `category` is object type, and `filing_category` is the [subject](/model/object/aboutness/#subject).
