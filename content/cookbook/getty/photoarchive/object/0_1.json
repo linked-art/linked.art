@@ -1,0 +1,58 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/cookbook/getty/photoarchive/object/0", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300128359", 
+  "label": "Black and White Photograph of 'St. Sebastian'", 
+  "identified_by": [
+    {
+      "id": "https://linked.art/cookbook/getty/photoarchive/id/0", 
+      "type": "Identifier", 
+      "classified_as": "aat:300312355", 
+      "value": "292221"
+    }, 
+    {
+      "id": "https://linked.art/cookbook/getty/photoarchive/id/1", 
+      "type": "Identifier", 
+      "value": "1195", 
+      "composed_from": {
+        "id": "https://linked.art/cookbook/getty/photoarchive/info/0", 
+        "type": "InformationObject", 
+        "label": "Identifiers of Anderson", 
+        "refers_to": {
+          "id": "https://linked.art/cookbook/getty/photoarchive/object/1", 
+          "type": "PhysicalObject", 
+          "classified_as": "aat:300025976", 
+          "label": "Collection of Anderson", 
+          "current_owner": {
+            "id": "https://linked.art/cookbook/getty/photoarchive/actor/1", 
+            "type": "Actor", 
+            "label": "Anderson"
+          }
+        }
+      }
+    }
+  ], 
+  "part_of": {
+    "id": "https://linked.art/cookbook/getty/photoarchive/object/2", 
+    "type": "PhysicalObject", 
+    "classified_as": "aat:300025976", 
+    "label": "Erwin Panofsky Collection"
+  }, 
+  "changed_ownership_through": {
+    "id": "https://linked.art/cookbook/getty/photoarchive/activity/0", 
+    "type": "Acquisition", 
+    "transferred_title_from": "https://linked.art/cookbook/getty/photoarchive/actor/1", 
+    "transferred_title_to": {
+      "id": "https://linked.art/cookbook/getty/photoarchive/actor/0", 
+      "type": "Group", 
+      "classified_as": "aat:300312281", 
+      "label": "J. Paul Getty Trust"
+    }
+  }, 
+  "depicts": {
+    "id": "https://linked.art/cookbook/getty/photoarchive/object/3", 
+    "type": "ManMadeObject", 
+    "classified_as": "aat:300033618"
+  }
+}

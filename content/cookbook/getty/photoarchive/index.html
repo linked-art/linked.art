@@ -1,5 +1,12 @@
 ---
 title: "Getty Photo Archive Mapping"
+eg: "/cookbook/getty/photoarchive"
+example:
+  photo: object/0.json
+  photo_1: object/0_1.json
+  accno: id/0.json
+  srcid: id/1.json
+  pcoll: object/2.json
 ---
 
 {% include "toc.html" %}
@@ -36,7 +43,7 @@ A brief walk through of mapping a sample Photo Archive record from the Getty.
     "photo_color": "Bl/Wh", 
     "photo_source": "Anderson", 
     "photo_src_ref": "1195", 
-    "reference_number": "Inv. 388"
+    "reference_number": "Inv. 388",
     "width_1": "118"
 }
 ```
@@ -70,8 +77,12 @@ The mapping approach is:
  * The `gcpa_acc_no`, `photo_src_ref` and `photo_coll_ref` values are [identifiers](/model/object/identity), with collection specific contexts
  * The transaction between the `photo_source` and the Getty is modeled according to the [provenance](/model/provenance) model
  * The `photo_date` provides the timespan for the creation of the photograph (we do not distinguish between the act of photographing and printing of the physical photograph)
- * The `photo_notes` information is a note associated with the object
+ * The `photo_notes` information is a note associated with the object, modeled in the same way as other [descriptive texts](/model/base/index.html#base_stmt).
  * The photograph then depicts the art object, as described under [depiction](/model/aboutness/#depiction)
+
+This results in the model:
+
+![Photograph Model](photo_model.png){: width="800px"}
 
 
 ### The Depicted Object
@@ -87,7 +98,35 @@ The rest of the information is about the object depicted.
 
 ## Mapping in Detail
 
+### The Photograph
 
+We create a `ManMadeObject` to represent the photograph, by checking the `photo_color` property to see whether it should be black and white _(aat:300128359)_, color _(aat:300128347)_ or if not present, then just a photograph _(aat:300046300)_.
+We construct a label for the photograph based on this type and the name of the object depicted.
+
+{{ macros.include_example("photo", resource.meta.eg) }}
+
+We create an Identifier for the Accession Number, and type it as  _(aat:300312355)_. This is referenced from the photograph with the `identified_by` property.
+
+{{ macros.include_example("accno", resource.meta.eg) }}
+
+A second, more complex, Identifier for Anderson's identifier is created. This identifier is associated with the source collection, via a set of identifiers of which it is part.  We also create an Acquisition activity, by which the photograph is acquired by The Getty. This is not shown in the example below, but is shown in the full description of the photograph.
+
+{{ macros.include_example("srcid", resource.meta.eg) }}
+
+We create the original collection, despite only having a label for it, which will be referenced from the photograph via the `part_of` property.
+
+{{ macros.include_example("pcoll", resource.meta.eg) }} 
+
+Plus we link the, as of yet unconfigured, Painting resource to it via `depicts`.
+
+{{ macros.include_example("photo_1", resource.meta.eg) }}
+
+We can fill in the data to our model:
+
+![Photograph Data following Model](photo_data.png){: width="800px"}
+
+
+### The Art Object
 
 
 

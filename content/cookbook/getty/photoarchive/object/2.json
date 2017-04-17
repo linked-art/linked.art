@@ -1,0 +1,7 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/cookbook/getty/photoarchive/object/2", 
+  "type": "PhysicalObject", 
+  "classified_as": "aat:300025976", 
+  "label": "Erwin Panofsky Collection"
+}

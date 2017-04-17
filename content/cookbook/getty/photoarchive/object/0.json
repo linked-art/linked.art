@@ -1,0 +1,7 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/cookbook/getty/photoarchive/object/0", 
+  "type": "ManMadeObject", 
+  "classified_as": "aat:300128359", 
+  "label": "Black and White Photograph of 'St. Sebastian'"
+}
