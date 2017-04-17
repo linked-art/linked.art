@@ -11,6 +11,7 @@ example:
   abase: object/3.json
   aids: id/2.json
   aloc: place/0.json
+  art: object/3_1.json
 ---
 
 {% include "toc.html" %}
@@ -147,6 +148,12 @@ And its current collection, owner and identifier:
 And its current location:
 
 {{ macros.include_example("aloc", resource.meta.eg) }}
+
+Full Art Object:
+
+{{ macros.include_example("art", resource.meta.eg) }}
+
+
 
 
 
