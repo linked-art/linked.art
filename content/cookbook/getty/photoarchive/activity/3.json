@@ -1,0 +1,39 @@
+{
+  "@context": "https://linked.art/ns/context/1/full.jsonld", 
+  "id": "https://linked.art/cookbook/getty/photoarchive/activity/3", 
+  "type": "Production", 
+  "timespan": {
+    "id": "https://linked.art/cookbook/getty/photoarchive/time/2", 
+    "type": "TimeSpan", 
+    "label": "ca. 1604", 
+    "begin_of_the_begin": "1604", 
+    "end_of_the_end": "1604"
+  }, 
+  "carried_out_by": {
+    "id": "https://linked.art/cookbook/getty/photoarchive/actor/2", 
+    "type": "Person", 
+    "label": "Rubens, Peter Paul", 
+    "brought_into_existence_by": {
+      "id": "https://linked.art/cookbook/getty/photoarchive/activity/1", 
+      "type": "BeginningOfExistence", 
+      "timespan": {
+        "id": "https://linked.art/cookbook/getty/photoarchive/time/0", 
+        "type": "TimeSpan", 
+        "label": "1577", 
+        "begin_of_the_begin": "1577", 
+        "end_of_the_end": "1577"
+      }
+    }, 
+    "taken_out_of_existence_by": {
+      "id": "https://linked.art/cookbook/getty/photoarchive/activity/2", 
+      "type": "EndOfExistence", 
+      "timespan": {
+        "id": "https://linked.art/cookbook/getty/photoarchive/time/1", 
+        "type": "TimeSpan", 
+        "label": "1640", 
+        "begin_of_the_begin": "1640", 
+        "end_of_the_end": "1640"
+      }
+    }
+  }
+}

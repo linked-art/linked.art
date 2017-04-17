@@ -7,6 +7,10 @@ example:
   accno: id/0.json
   srcid: id/1.json
   pcoll: object/2.json
+  aprod: activity/3.json
+  abase: object/3.json
+  aids: id/2.json
+  aloc: place/0.json
 ---
 
 {% include "toc.html" %}
@@ -123,10 +127,26 @@ Plus we link the, as of yet unconfigured, Painting resource to it via `depicts`.
 
 We can fill in the data to our model:
 
-![Photograph Data following Model](photo_data.png){: width="800px"}
+![Photograph Data following Model](photo_data.png){: width="800px" background="white"}
 
 
 ### The Art Object
+
+We can fill out a lot of details about the object itself.  In particular, it has a Title (which we also associate with the object directly as a label), height and width dimensions in centimetres, and a parseable materials statement.  We record both the statement, as well as breaking the information out into machine readable material and part resources.
+
+{{ macros.include_example("abase", resource.meta.eg) }}
+
+Now we can tackle the production of the painting.  The activity is a `Production`, which was carried out by the artist at a particular point in time.  We know the artist's name and their birth and death dates.
+
+{{ macros.include_example("aprod", resource.meta.eg) }}
+
+And its current collection, owner and identifier:
+
+{{ macros.include_example("aids", resource.meta.eg) }}
+
+And its current location:
+
+{{ macros.include_example("aloc", resource.meta.eg) }}
 
 
 
