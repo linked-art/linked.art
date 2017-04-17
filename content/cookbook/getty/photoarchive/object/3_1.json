@@ -130,7 +130,11 @@
       "classified_as": "aat:300055863", 
       "value": "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)"
     }, 
-    "https://linked.art/cookbook/getty/photoarchive/info/5"
+    {
+      "id": "https://linked.art/cookbook/getty/photoarchive/info/6", 
+      "type": "LinguisticObject", 
+      "label": "Vlieghe, CorpRub 8 (1972-73), no.144."
+    }
   ], 
   "dimension": [
     {
