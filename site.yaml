@@ -28,7 +28,6 @@ markdown:
         - attr_list
         - admonition
         - toc
-        - pymdownx.githubemoji
         - pymdownx.headeranchor
         - pymdownx.smartsymbols
         - pymdownx.tasklist
