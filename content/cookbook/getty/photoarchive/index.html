@@ -133,27 +133,23 @@ We can fill in the data to our model:
 
 ### The Art Object
 
-We can fill out a lot of details about the object itself.  In particular, it has a Title (which we also associate with the object directly as a label), height and width dimensions in centimetres, and a parseable materials statement.  We record both the statement, as well as breaking the information out into machine readable material and part resources.
+We can fill out a lot of details about the object itself.  In particular, it has a Title (which we also associate with the object directly as a label), height and width dimensions in centimetres, and a parseable materials statement.  We record both the statement as a `LinguisticObject`, as well as breaking the information out into machine readable material and part resources.
 
 {{ macros.include_example("abase", resource.meta.eg) }}
 
-Now we can tackle the production of the painting.  The activity is a `Production`, which was carried out by the artist at a particular point in time.  We know the artist's name and their birth and death dates.
+Now we can tackle the creation of the painting.  The activity is a `Production`, which was carried out by the artist at a particular point in time.  We know the artist's name and their birth and death dates, and an approximate date for the activity.
 
 {{ macros.include_example("aprod", resource.meta.eg) }}
 
-And its current collection, owner and identifier:
+Due to research by the photo archive catalogers, we know a relatively recent (if not necessarily absolutely current) owner, location and identifier for the object. The owner and identifer follow the same pattern as for the identifiers of the photograph.
 
 {{ macros.include_example("aids", resource.meta.eg) }}
 
-And its current location:
+And its current location is very well described in the data, so we map all of it in this example.  However, this is not a recommended pattern and instead a gazetter or vocabulary such as TGN or Geonames should be used instead.  Only places that do not have existing identities should have new identities created.  Instead, the city of Rome should be identified as `tgn:7000874-place` and then the TGN hierarchy used for the province, region, and country.
 
 {{ macros.include_example("aloc", resource.meta.eg) }}
 
-Full Art Object:
+Putting all of this information together gives us a full description of the artwork depicted in the photograph.  Remember that the artwork is then referenced from the photograph by `depicted`.
 
 {{ macros.include_example("art", resource.meta.eg) }}
-
-
-
-
 
