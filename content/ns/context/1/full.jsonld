@@ -1223,20 +1223,16 @@
       "@type": "@id"
     }, 
     "end_of_the_begin": {
-      "@id": "crm:P81a_end_of_the_begin", 
-      "@type": "xsd:dateTime"
+      "@id": "crm:P81a_end_of_the_begin"
     }, 
     "begin_of_the_end": {
-      "@id": "crm:P81b_begin_of_the_end", 
-      "@type": "xsd:dateTime"
+      "@id": "crm:P81b_begin_of_the_end"
     }, 
     "begin_of_the_begin": {
-      "@id": "crm:P82a_begin_of_the_begin", 
-      "@type": "xsd:dateTime"
+      "@id": "crm:P82a_begin_of_the_begin"
     }, 
     "end_of_the_end": {
-      "@id": "crm:P82b_end_of_the_end", 
-      "@type": "xsd:dateTime"
+      "@id": "crm:P82b_end_of_the_end"
     }, 
     "sales_price": {
       "@id": "crm:P179_had_sales_price", 
@@ -1305,6 +1301,10 @@
     }, 
     "related": {
       "@id": "dcterms:relation", 
+      "@type": "@id"
+    }, 
+    "subject": {
+      "@id": "dcterms:subject", 
       "@type": "@id"
     }, 
     "Payment": "pi:Payment", 
