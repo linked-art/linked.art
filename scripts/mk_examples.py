@@ -587,11 +587,8 @@ id_uri_hash['objabout_depicts'] = what
 
 what = Painting()
 what.label = "Portrait of Lord Nelson"
-info = InformationObject()
 concept = Type("http://vocab.getty.edu/aat/300055314")
 concept.label = "War"
-info.about = concept
-what.carries = info
 what.subject = concept  # dct:subject
 id_uri_hash['objabout_subject'] = what
 

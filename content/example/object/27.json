@@ -4,11 +4,6 @@
   "type": "ManMadeObject", 
   "classified_as": "aat:300033618", 
   "label": "Portrait of Lord Nelson", 
-  "carries": {
-    "id": "https://linked.art/example/info/4", 
-    "type": "InformationObject", 
-    "about": "http://vocab.getty.edu/aat/300055314"
-  }, 
   "subject": {
     "id": "http://vocab.getty.edu/aat/300055314", 
     "type": "Type", 
