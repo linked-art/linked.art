@@ -17,14 +17,19 @@
   analytics.j2]
 !!python/unicode 'community/.keep': []
 !!python/unicode 'cookbook/.keep': []
+!!python/unicode 'cookbook/getty/photoarchive/activity/3.json': [macros.j2, ga.j2,
+  base.j2]
 !!python/unicode 'cookbook/getty/photoarchive/id/0.json': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'cookbook/getty/photoarchive/id/1.json': [macros.j2, ga.j2, base.j2]
+!!python/unicode 'cookbook/getty/photoarchive/id/2.json': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'cookbook/getty/photoarchive/index.html': [macros.j2, ga.j2, base.j2,
   toc.html]
 !!python/unicode 'cookbook/getty/photoarchive/object/0.json': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'cookbook/getty/photoarchive/object/0_1.json': [macros.j2, ga.j2,
   base.j2]
 !!python/unicode 'cookbook/getty/photoarchive/object/2.json': [macros.j2, ga.j2, base.j2]
+!!python/unicode 'cookbook/getty/photoarchive/object/3.json': [macros.j2, ga.j2, base.j2]
+!!python/unicode 'cookbook/getty/photoarchive/place/0.json': [macros.j2, ga.j2, base.j2]
 !!python/unicode 'cookbook/getty_photoarchive.html': [macros.j2, ga.j2, base.j2, toc.html]
 !!python/unicode 'example/Destruction/7.json': []
 !!python/unicode 'example/TransferOfCustody/0.json': []
