@@ -112,7 +112,7 @@
     "id": "https://linked.art/cookbook/getty/photoarchive/info/7", 
     "type": "InformationObject", 
     "about": {
-      "id": "https://linked.art/cookbook/getty/photoarchive/Type/0", 
+      "id": "https://linked.art/cookbook/getty/photoarchive/id/3", 
       "type": "Type", 
       "label": "Religious, Devotional"
     }
