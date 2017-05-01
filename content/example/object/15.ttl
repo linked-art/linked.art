@@ -42,6 +42,3 @@
     rdfs:label "Example Painting" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<https://linked.art/example/money/3> a crm:E98_Currency ;
-    rdfs:label "dollars" .
-

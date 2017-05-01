@@ -26,10 +26,10 @@
     rdfs:label "Death Place" .
 
 <https://linked.art/example/time/7> a crm:E52_Time-Span ;
-    crm:P82a_begin_of_the_begin "1767-01-09"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "1767-01-12"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "1767-01-09" ;
+    crm:P82b_end_of_the_end "1767-01-12" .
 
 <https://linked.art/example/time/8> a crm:E52_Time-Span ;
-    crm:P82a_begin_of_the_begin "1824-08-21"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "1824-08-21"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "1824-08-21" ;
+    crm:P82b_end_of_the_end "1824-08-21" .
 

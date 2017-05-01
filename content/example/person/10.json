@@ -6,7 +6,7 @@
   "identified_by": {
     "id": "https://linked.art/example/name/0", 
     "type": "Appellation", 
-    "classified_as": "aat:300404670", 
-    "value": "J. Smith"
+    "value": "J. Smith", 
+    "classified_as": "aat:300404670"
   }
 }

@@ -26,9 +26,6 @@
     crm:P180_has_currency <https://linked.art/example/money/3> ;
     rdf:value 1000 .
 
-<https://linked.art/example/money/3> a crm:E98_Currency ;
-    rdfs:label "dollars" .
-
 <https://linked.art/example/object/7> a crm:E22_Man-Made_Object ;
     rdfs:label "Example Stolen Painting" ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .

@@ -2,28 +2,28 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/4", 
   "type": "Acquisition", 
-  "timespan": {
-    "id": "https://linked.art/example/time/2", 
-    "type": "TimeSpan", 
-    "label": "When", 
-    "begin_of_the_begin": "1890-01-04T00:00:00Z", 
-    "end_of_the_end": "1890-01-05T00:00:00Z"
-  }, 
   "took_place_at": {
     "id": "https://linked.art/example/place/3", 
     "type": "Place", 
     "label": "Art Gallery"
   }, 
-  "transferred_title_of": {
-    "id": "https://linked.art/example/object/4", 
-    "type": "ManMadeObject", 
-    "classified_as": "aat:300047090", 
-    "label": "Glass Sculpture"
-  }, 
   "transferred_title_from": {
     "id": "https://linked.art/example/actor/3", 
     "type": "Actor", 
     "label": "Seller"
+  }, 
+  "timespan": {
+    "id": "https://linked.art/example/time/2", 
+    "type": "TimeSpan", 
+    "label": "When", 
+    "end_of_the_end": "1890-01-05T00:00:00Z", 
+    "begin_of_the_begin": "1890-01-04T00:00:00Z"
+  }, 
+  "transferred_title_of": {
+    "id": "https://linked.art/example/object/4", 
+    "type": "ManMadeObject", 
+    "label": "Glass Sculpture", 
+    "classified_as": "aat:300047090"
   }, 
   "transferred_title_to": {
     "id": "https://linked.art/example/actor/4", 

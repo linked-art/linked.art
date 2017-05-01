@@ -6,13 +6,13 @@
   "member_of": {
     "id": "https://linked.art/example/group/6", 
     "type": "Group", 
-    "classified_as": "aat:300263534", 
     "label": "Paintings Department", 
+    "classified_as": "aat:300263534", 
     "member_of": {
       "id": "https://linked.art/example/group/7", 
       "type": "Group", 
-      "classified_as": "aat:300312281", 
-      "label": "Example Museum"
+      "label": "Example Museum", 
+      "classified_as": "aat:300312281"
     }
   }
 }

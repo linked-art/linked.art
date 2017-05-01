@@ -2,8 +2,8 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/17", 
   "type": "Activity", 
-  "classified_as": "aat:300055863", 
   "label": "Lifetime of Painting", 
+  "classified_as": "aat:300055863", 
   "used_specific_object": {
     "id": "https://linked.art/example/object/10", 
     "type": "ManMadeObject", 
@@ -18,8 +18,8 @@
     {
       "id": "https://linked.art/example/activity/19", 
       "type": "Activity", 
-      "classified_as": "aat:300054277", 
-      "label": "Ownership by Artist"
+      "label": "Ownership by Artist", 
+      "classified_as": "aat:300054277"
     }, 
     {
       "id": "https://linked.art/example/activity/20", 
@@ -29,8 +29,8 @@
     {
       "id": "https://linked.art/example/activity/21", 
       "type": "Activity", 
-      "classified_as": "aat:300054277", 
-      "label": "Ownership by first owner"
+      "label": "Ownership by first owner", 
+      "classified_as": "aat:300054277"
     }, 
     {
       "id": "https://linked.art/example/activity/22", 
@@ -40,8 +40,8 @@
     {
       "id": "https://linked.art/example/activity/23", 
       "type": "Activity", 
-      "classified_as": "aat:300054277", 
-      "label": "Ownership by second and final owner"
+      "label": "Ownership by second and final owner", 
+      "classified_as": "aat:300054277"
     }, 
     {
       "id": "https://linked.art/example/activity/24", 

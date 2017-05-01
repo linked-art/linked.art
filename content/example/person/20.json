@@ -4,7 +4,7 @@
   "type": "Person", 
   "label": "Vincent Van Gogh", 
   "exact_match": {
-    "id": "http://vocab.getty.edu/ulan/500115588-agent", 
+    "id": "ulan:500115588-agent", 
     "label": "Van Gogh, Vincent"
   }
 }

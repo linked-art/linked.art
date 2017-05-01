@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/34", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Example Painting", 
+  "classified_as": "aat:300033618", 
   "referred_to_by": {
     "id": "https://linked.art/example/text/4", 
     "type": "LinguisticObject", 
-    "classified_as": "aat:300055547", 
-    "value": "Copyright of this object has not yet been assessed"
+    "value": "Copyright of this object has not yet been assessed", 
+    "classified_as": "aat:300055547"
   }
 }

@@ -24,6 +24,6 @@
     rdfs:label "Painting Destroyer" .
 
 <https://linked.art/example/time/5> a crm:E52_Time-Span ;
-    crm:P82a_begin_of_the_begin "1823-03-01T00:00:00Z"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "1823-03-31T00:00:00Z"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "1823-03-01T00:00:00Z" ;
+    crm:P82b_end_of_the_end "1823-03-31T00:00:00Z" .
 

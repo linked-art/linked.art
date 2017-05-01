@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/group/0", 
   "type": "Group", 
-  "classified_as": "aat:300312281", 
   "label": "Example Museum Organization", 
   "member": {
     "id": "https://linked.art/example/group/0/part/1", 
     "type": "Group", 
-    "classified_as": "aat:300263534", 
-    "label": "Paintings Department"
-  }
+    "label": "Paintings Department", 
+    "classified_as": "aat:300263534"
+  }, 
+  "classified_as": "aat:300312281"
 }

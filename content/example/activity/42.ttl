@@ -26,6 +26,6 @@
     crm:P2_has_type <http://vocab.getty.edu/aat/300005768> .
 
 <https://linked.art/example/time/10> a crm:E52_Time-Span ;
-    crm:P82a_begin_of_the_begin "2010-08-01"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "2011-06-01"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "2010-08-01" ;
+    crm:P82b_end_of_the_end "2011-06-01" .
 

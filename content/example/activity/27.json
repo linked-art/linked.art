@@ -6,14 +6,14 @@
   "carried_out_by": {
     "id": "https://linked.art/example/person/7", 
     "type": "Person", 
-    "classified_as": "aat:300025208", 
-    "label": "Example Auctioneer"
+    "label": "Example Auctioneer", 
+    "classified_as": "aat:300025208"
   }, 
   "used_specific_object": {
     "id": "https://linked.art/example/object/11", 
     "type": "PhysicalObject", 
-    "classified_as": "aat:300411307", 
-    "label": "Set of Objects for Lot J-1823-5"
+    "label": "Set of Objects for Lot J-1823-5", 
+    "classified_as": "aat:300411307"
   }, 
   "consists_of": [
     {

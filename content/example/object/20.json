@@ -2,13 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/20", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Example Painting", 
   "identified_by": {
     "id": "https://linked.art/example/identifier/4", 
     "type": "Identifier", 
-    "classified_as": "aat:300312355", 
     "value": "P1998-27", 
+    "classified_as": "aat:300312355", 
     "composed_from": {
       "id": "https://linked.art/example/info/3", 
       "type": "InformationObject", 
@@ -16,10 +15,11 @@
       "refers_to": {
         "id": "https://linked.art/example/object/21", 
         "type": "PhysicalObject", 
-        "classified_as": "aat:300025976", 
         "label": "Paintings Collection", 
+        "classified_as": "aat:300025976", 
         "part": "https://linked.art/example/object/20"
       }
     }
-  }
+  }, 
+  "classified_as": "aat:300033618"
 }

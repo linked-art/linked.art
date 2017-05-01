@@ -2,13 +2,13 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/48", 
   "type": "Activity", 
-  "classified_as": "aat:300054766", 
   "label": "Example Exhibition", 
+  "classified_as": "aat:300054766", 
   "used_specific_object": {
     "id": "https://linked.art/example/object/49", 
     "type": "ManMadeObject", 
-    "classified_as": "aat:300033618", 
     "label": "Painting", 
+    "classified_as": "aat:300033618", 
     "representation": "http://example.org/images/object-at-exhibition.jpg"
   }, 
   "representation": {

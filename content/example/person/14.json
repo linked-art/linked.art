@@ -6,7 +6,7 @@
   "referred_to_by": {
     "id": "https://linked.art/example/text/5", 
     "type": "LinguisticObject", 
-    "classified_as": "aat:300080102", 
-    "value": "Example biography"
+    "value": "Example biography", 
+    "classified_as": "aat:300080102"
   }
 }

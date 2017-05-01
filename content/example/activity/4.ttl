@@ -32,6 +32,6 @@
 
 <https://linked.art/example/time/2> a crm:E52_Time-Span ;
     rdfs:label "When" ;
-    crm:P82a_begin_of_the_begin "1890-01-04T00:00:00Z"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "1890-01-05T00:00:00Z"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "1890-01-04T00:00:00Z" ;
+    crm:P82b_end_of_the_end "1890-01-05T00:00:00Z" .
 

@@ -2,14 +2,14 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/23", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Self Portrait", 
+  "classified_as": "aat:300033618", 
   "title": [
     {
       "id": "https://linked.art/example/Title/1", 
       "type": "Title", 
-      "classified_as": "aat:300404670", 
-      "value": "Self Portrait"
+      "value": "Self Portrait", 
+      "classified_as": "aat:300404670"
     }, 
     {
       "id": "https://linked.art/example/Title/2", 

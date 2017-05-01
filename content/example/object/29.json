@@ -2,16 +2,16 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/29", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Example 16x20 Painting", 
+  "classified_as": "aat:300033618", 
   "dimension": [
     {
       "id": "https://linked.art/example/Dimension/0", 
       "type": "Dimension", 
-      "classified_as": "aat:300055647", 
       "value": 16, 
+      "classified_as": "aat:300055647", 
       "unit": {
-        "id": "http://vocab.getty.edu/aat/300379100", 
+        "id": "aat:300379100", 
         "type": "MeasurementUnit", 
         "label": "inches"
       }
@@ -19,9 +19,9 @@
     {
       "id": "https://linked.art/example/Dimension/1", 
       "type": "Dimension", 
-      "classified_as": "aat:300055644", 
       "value": 20, 
-      "unit": "http://vocab.getty.edu/aat/300379100"
+      "classified_as": "aat:300055644", 
+      "unit": "aat:300379100"
     }
   ]
 }

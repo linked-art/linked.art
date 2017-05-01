@@ -6,7 +6,7 @@
   "identified_by": {
     "id": "https://linked.art/example/identifier/5", 
     "type": "Identifier", 
-    "classified_as": "aat:300404621", 
-    "value": 643
+    "value": 643, 
+    "classified_as": "aat:300404621"
   }
 }

@@ -2,22 +2,22 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/1", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Example Painting", 
+  "classified_as": "aat:300033618", 
+  "made_of": {
+    "id": "aat:300015045", 
+    "type": "Material", 
+    "label": "watercolor"
+  }, 
   "part": {
     "id": "https://linked.art/example/object/1/part/1", 
     "type": "PhysicalObject", 
-    "classified_as": "aat:300014844", 
     "label": "Canvas Support", 
+    "classified_as": "aat:300014844", 
     "made_of": {
-      "id": "http://vocab.getty.edu/aat/300014078", 
+      "id": "aat:300014078", 
       "type": "Material", 
       "label": "canvas"
     }
-  }, 
-  "made_of": {
-    "id": "http://vocab.getty.edu/aat/300015045", 
-    "type": "Material", 
-    "label": "watercolor"
   }
 }

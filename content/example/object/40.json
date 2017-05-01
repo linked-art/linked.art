@@ -2,8 +2,8 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/40", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Painting", 
+  "classified_as": "aat:300033618", 
   "subject_of": {
     "id": "http://iiif.example.org/presentation/1/manifest.json", 
     "type": "InformationObject", 

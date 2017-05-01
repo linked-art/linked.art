@@ -6,10 +6,10 @@
   "member_of": {
     "id": "https://linked.art/example/group/4", 
     "type": "Group", 
+    "label": "British", 
     "classified_as": [
       "aat:300379842", 
       "aat:300111159"
-    ], 
-    "label": "British"
+    ]
   }
 }

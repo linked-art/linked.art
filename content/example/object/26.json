@@ -2,8 +2,8 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/26", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Self Portrait", 
+  "classified_as": "aat:300033618", 
   "depicts": {
     "id": "https://linked.art/example/actor/6", 
     "type": "Actor", 

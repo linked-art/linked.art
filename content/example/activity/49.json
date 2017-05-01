@@ -2,8 +2,8 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/49", 
   "type": "Activity", 
-  "classified_as": "aat:300054773", 
   "label": "Example Travelling Exhibition at Two Museums", 
+  "classified_as": "aat:300054773", 
   "timespan": {
     "id": "https://linked.art/example/time/11", 
     "type": "TimeSpan", 
@@ -14,8 +14,8 @@
     {
       "id": "https://linked.art/example/activity/50", 
       "type": "Activity", 
-      "classified_as": "aat:300054766", 
       "label": "Exhibition at Museum 1", 
+      "classified_as": "aat:300054766", 
       "timespan": {
         "id": "https://linked.art/example/time/12", 
         "type": "TimeSpan", 
@@ -26,8 +26,8 @@
     {
       "id": "https://linked.art/example/activity/51", 
       "type": "Activity", 
-      "classified_as": "aat:300054766", 
       "label": "Exhibition at Museum 2", 
+      "classified_as": "aat:300054766", 
       "timespan": {
         "id": "https://linked.art/example/time/13", 
         "type": "TimeSpan", 

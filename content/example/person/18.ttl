@@ -19,6 +19,6 @@
     crm:P4_has_time-span <https://linked.art/example/time/9> .
 
 <https://linked.art/example/time/9> a crm:E52_Time-Span ;
-    crm:P82a_begin_of_the_begin "1910-01-01"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "1934-03-21"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "1910-01-01" ;
+    crm:P82b_end_of_the_end "1934-03-21" .
 

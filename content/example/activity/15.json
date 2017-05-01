@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/15", 
   "type": "Activity", 
-  "classified_as": "aat:300054277", 
   "label": "Ownership of the Painting", 
+  "classified_as": "aat:300054277", 
   "consists_of": {
     "id": "https://linked.art/example/activity/16", 
     "type": "Activity", 
-    "classified_as": "aat:300077506", 
-    "label": "Inventory Taking by Owner"
+    "label": "Inventory Taking by Owner", 
+    "classified_as": "aat:300077506"
   }
 }

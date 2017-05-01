@@ -2,22 +2,22 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/46", 
   "type": "Activity", 
-  "classified_as": "aat:300054766", 
   "label": "Example Exhibition", 
+  "classified_as": "aat:300054766", 
   "consists_of": {
     "id": "https://linked.art/example/activity/47", 
     "type": "AttributeAssignment", 
-    "classified_as": "aat:300411672", 
     "assigned": {
       "id": "https://linked.art/example/name/7", 
       "type": "Appellation", 
       "value": "Exhibition Specific Name"
     }, 
+    "classified_as": "aat:300411672", 
     "assigned_to": {
       "id": "https://linked.art/example/object/48", 
       "type": "ManMadeObject", 
-      "classified_as": "aat:300033618", 
-      "label": "Real Painting Name"
+      "label": "Real Painting Name", 
+      "classified_as": "aat:300033618"
     }
   }
 }

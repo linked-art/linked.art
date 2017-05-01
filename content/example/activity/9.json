@@ -3,21 +3,21 @@
   "id": "https://linked.art/example/activity/9", 
   "type": "TransferOfCustody", 
   "label": "Sale of Stolen Object", 
-  "transferred_custody_of": {
-    "id": "https://linked.art/example/object/7", 
-    "type": "ManMadeObject", 
-    "classified_as": "aat:300033618", 
-    "label": "Example Stolen Painting"
+  "transferred_custody_to": {
+    "id": "https://linked.art/example/person/4", 
+    "type": "Person", 
+    "label": "Recipient"
   }, 
   "transferred_custody_from": {
     "id": "https://linked.art/example/person/3", 
     "type": "Person", 
     "label": "Thief"
   }, 
-  "transferred_custody_to": {
-    "id": "https://linked.art/example/person/4", 
-    "type": "Person", 
-    "label": "Recipient"
+  "transferred_custody_of": {
+    "id": "https://linked.art/example/object/7", 
+    "type": "ManMadeObject", 
+    "label": "Example Stolen Painting", 
+    "classified_as": "aat:300033618"
   }, 
   "consists_of": {
     "id": "https://linked.art/example/activity/10", 
@@ -26,11 +26,7 @@
       "id": "https://linked.art/example/money/2", 
       "type": "MonetaryAmount", 
       "value": 1000, 
-      "currency": {
-        "id": "https://linked.art/example/money/3", 
-        "type": "Currency", 
-        "label": "dollars"
-      }
+      "currency": "https://linked.art/example/money/3"
     }, 
     "paid_from": "https://linked.art/example/person/4", 
     "paid_to": "https://linked.art/example/person/3"

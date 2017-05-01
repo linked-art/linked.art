@@ -25,9 +25,6 @@
     pi:paid_from <https://linked.art/example/person/4> ;
     pi:paid_to <https://linked.art/example/actor/3> .
 
-<https://linked.art/example/money/3> a crm:E98_Currency ;
-    rdfs:label "dollars" .
-
 <https://linked.art/example/money/7> a crm:E97_Monetary_Amount ;
     crm:P180_has_currency <https://linked.art/example/money/3> ;
     rdf:value 4500 .

@@ -2,18 +2,18 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/12", 
   "type": "PhysicalObject", 
-  "classified_as": "aat:300411307", 
   "label": "Set of Objects for Lot 812", 
   "identified_by": {
     "id": "https://linked.art/example/identifier/0", 
     "type": "Identifier", 
-    "classified_as": "aat:300404628", 
-    "value": "812"
+    "value": "812", 
+    "classified_as": "aat:300404628"
   }, 
+  "classified_as": "aat:300411307", 
   "part": {
     "id": "https://linked.art/example/object/13", 
     "type": "ManMadeObject", 
-    "classified_as": "aat:300033618", 
-    "label": "Example Painting"
+    "label": "Example Painting", 
+    "classified_as": "aat:300033618"
   }
 }

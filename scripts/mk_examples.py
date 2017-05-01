@@ -594,7 +594,7 @@ id_uri_hash['objabout_subject'] = what
 
 what = Painting()
 what.label = "Example Impressionist Painting"
-what.genre = Type("http://vocab.getty.edu/aat/300021503")
+what.style = Type("http://vocab.getty.edu/aat/300021503")
 id_uri_hash['objabout_style'] = what
 
 what = Painting()

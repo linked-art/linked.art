@@ -2,6 +2,6 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/24", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300047090", 
-  "label": "Sculpture of a Dragon"
+  "label": "Sculpture of a Dragon", 
+  "classified_as": "aat:300047090"
 }

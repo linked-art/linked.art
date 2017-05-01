@@ -2,10 +2,10 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/3", 
   "type": "Production", 
+  "technique": "aat:300053932", 
   "carried_out_by": {
     "id": "https://linked.art/example/actor/2", 
     "type": "Actor", 
     "label": "Example Glassblower"
-  }, 
-  "technique": "aat:300053932"
+  }
 }

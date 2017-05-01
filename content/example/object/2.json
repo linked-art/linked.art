@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/2", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Example Painting on Canvas", 
+  "classified_as": "aat:300033618", 
   "referred_to_by": {
     "id": "https://linked.art/example/object/2/statement/1", 
     "type": "LinguisticObject", 
-    "classified_as": "aat:300010358", 
-    "value": "Oil on Canvas"
+    "value": "Oil on Canvas", 
+    "classified_as": "aat:300010358"
   }
 }

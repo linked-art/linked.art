@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/22", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Peasant and Sheep", 
+  "classified_as": "aat:300033618", 
   "title": {
     "id": "https://linked.art/example/Title/0", 
     "type": "Title", 
-    "classified_as": "aat:300404670", 
-    "value": "Peasant and Sheep"
+    "value": "Peasant and Sheep", 
+    "classified_as": "aat:300404670"
   }
 }

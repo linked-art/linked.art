@@ -16,16 +16,16 @@
   "taken_out_of_existence_by": {
     "id": "https://linked.art/example/event/1", 
     "type": "EndOfExistence", 
+    "took_place_at": {
+      "id": "https://linked.art/example/place/6", 
+      "type": "Place", 
+      "label": "Death Place"
+    }, 
     "timespan": {
       "id": "https://linked.art/example/time/8", 
       "type": "TimeSpan", 
       "begin_of_the_begin": "1824-08-21", 
       "end_of_the_end": "1824-08-21"
-    }, 
-    "took_place_at": {
-      "id": "https://linked.art/example/place/6", 
-      "type": "Place", 
-      "label": "Death Place"
     }
   }
 }

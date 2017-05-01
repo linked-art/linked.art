@@ -1278,8 +1278,9 @@
       "@id": "schema:nationality", 
       "@type": "@id"
     }, 
-    "genre": {
-      "@id": "schema:genre"
+    "style": {
+      "@id": "schema:genre", 
+      "@type": "@id"
     }, 
     "conforms_to": {
       "@id": "dcterms:conformsTo", 

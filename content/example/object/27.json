@@ -2,10 +2,10 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/27", 
   "type": "ManMadeObject", 
-  "classified_as": "aat:300033618", 
   "label": "Portrait of Lord Nelson", 
+  "classified_as": "aat:300033618", 
   "subject": {
-    "id": "http://vocab.getty.edu/aat/300055314", 
+    "id": "aat:300055314", 
     "type": "Type", 
     "label": "War"
   }

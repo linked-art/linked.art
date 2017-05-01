@@ -2,29 +2,29 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/activity/25", 
   "type": "Activity", 
-  "classified_as": "aat:300054751", 
   "label": "Example Auction in London 1875-03-12,13", 
+  "classified_as": "aat:300054751", 
+  "took_place_at": {
+    "id": "https://linked.art/example/place/4", 
+    "type": "Place", 
+    "label": "Auction House, London", 
+    "classified_as": "aat:300005234"
+  }, 
   "timespan": {
     "id": "https://linked.art/example/time/6", 
     "type": "TimeSpan", 
     "label": "12th and 13th of March, 1875", 
-    "begin_of_the_begin": "1875-03-12T00:00:00Z", 
-    "end_of_the_end": "1875-03-14T00:00:00Z"
-  }, 
-  "took_place_at": {
-    "id": "https://linked.art/example/place/4", 
-    "type": "Place", 
-    "classified_as": "aat:300005234", 
-    "label": "Auction House, London"
-  }, 
-  "carried_out_by": {
-    "id": "https://linked.art/example/group/1", 
-    "type": "Group", 
-    "label": "Auction Company"
+    "end_of_the_end": "1875-03-14T00:00:00Z", 
+    "begin_of_the_begin": "1875-03-12T00:00:00Z"
   }, 
   "consists_of": {
     "id": "https://linked.art/example/activity/26", 
     "type": "Activity", 
     "label": "Auction of Lot 1"
+  }, 
+  "carried_out_by": {
+    "id": "https://linked.art/example/group/1", 
+    "type": "Group", 
+    "label": "Auction Company"
   }
 }

@@ -30,6 +30,6 @@
 
 <https://linked.art/example/time/6> a crm:E52_Time-Span ;
     rdfs:label "12th and 13th of March, 1875" ;
-    crm:P82a_begin_of_the_begin "1875-03-12T00:00:00Z"^^<xsd:dateTime> ;
-    crm:P82b_end_of_the_end "1875-03-14T00:00:00Z"^^<xsd:dateTime> .
+    crm:P82a_begin_of_the_begin "1875-03-12T00:00:00Z" ;
+    crm:P82b_end_of_the_end "1875-03-14T00:00:00Z" .
 

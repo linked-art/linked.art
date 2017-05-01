@@ -2,8 +2,14 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/info/1", 
   "type": "InformationObject", 
-  "classified_as": "aat:300026068", 
   "label": "Auction Catalog of Example Auction", 
+  "classified_as": "aat:300026068", 
+  "refers_to": {
+    "id": "https://linked.art/example/activity/35", 
+    "type": "Activity", 
+    "label": "Example Auction, 1924", 
+    "classified_as": "aat:300054751"
+  }, 
   "composed_of": {
     "id": "https://linked.art/example/info/2", 
     "type": "InformationObject", 
@@ -17,15 +23,9 @@
       {
         "id": "https://linked.art/example/object/18", 
         "type": "PhysicalObject", 
-        "classified_as": "aat:300411307", 
-        "label": "Lot 16"
+        "label": "Lot 16", 
+        "classified_as": "aat:300411307"
       }
     ]
-  }, 
-  "refers_to": {
-    "id": "https://linked.art/example/activity/35", 
-    "type": "Activity", 
-    "classified_as": "aat:300054751", 
-    "label": "Example Auction, 1924"
   }
 }

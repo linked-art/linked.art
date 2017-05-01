@@ -18,13 +18,14 @@ The main description of the object is provided in the `description` property on 
 
 ## Depiction
 
-Many sorts of artwork depict things that can be identified.  For example a portrait depicts the person sitting for it, or a sketch of a bridge depicts the bridge.  With access to an image of the object or the object itself, it must be possible to point out the depicted object. If the entity that is depicted is known, then it is useful to provide a `depicts` link to it. If there isn't an entity to link to in this way, then the textual form of this information would go into `description` instead.
+Many sorts of artwork depict things that can be pointed out in the artwork. These could be identifiable entities, such as a known Person or Object with a name or identifier, or unidentifiable (perhaps fictional) instances of a class of entity, such as a depiction of a battle but not any particular battle.  For example a portrait depicts the person sitting for it, or a sketch of a generic landscape depicts a place even if it's not a particular, known location. The `depicts` property captures _what_ is depicted in the artwork. 
+
 
 {{ macros.include_example("objabout_depicts") }}
 
 ## Subject
 
-Subjects are the thematic concept that the artwork evokes, as opposed to an object (real or imaginary) that is depicted by the artwork.  For example, a portrait of a military commander in full regalia on a battlefield depicts the person and the place, but could be interpreted to have a subject of "war". We simply use the property `subject` to reference a concept for the subject in an appropriate vocabulary.
+Subjects are the concepts or things that the artwork evokes, as opposed to an object (real or imaginary) that is depicted by the artwork.  For example, a portrait of a military commander in full regalia on a battlefield depicts the person and the place, but could be interpreted to have a subject of "war". An painting with an allusion to a piece of literature does not depict the literature, but instead evokes it. We use the property `subject` to reference the subject matter in an appropriate vocabulary.  The `subject` property could be thought of as _why_ the content in the artwork is present, or what the artwork is _about_ rather than what can be seen.
 
 {{ macros.include_example("objabout_subject") }}
 
@@ -32,12 +33,17 @@ Subjects are the thematic concept that the artwork evokes, as opposed to an obje
     The notion of subjects in CIDOC-CRM is a little more complex than above, as the physical object is not `about` the subject. Instead the conceptual work that the object is a representation of is about the subject.  In order to capture this distinction, the full model requires the object to carry an `InformationObject` or `VisualItem` representing the work, which is in turn `about` the concept.
     In order to be consistent with Depiction above, and Style/Genre below, we instead use a shortcut property of `dcterms:subject`.
 
-## Style / Genre
+## Style
 
-Styles are a categorization of the aesthetic features of the work being described, and can come from important features, techniques, locations, times or artistic movements.  It is considered that all styles are aesthetic rather than cultural, but the aesthetic style may be related to a culture. The style is associated with the object using the `genre` property, and must be a reference to a `Type` in an appropriate vocabulary.
+Styles are a categorization of the aesthetic qualities of the work being described, and can come from important features, techniques, locations, times or artistic movements.  Styles might include "geometric", "abstract", and "limited palette". It is considered that all styles are aesthetic rather than cultural, but the aesthetic style may be related to a particular culture. The style is associated with the object using the `genre` property, and must be a reference to an appropriate vocabulary. The `genre` property could be thought of as _how_ the content is presented. 
 
 {{ macros.include_example("objabout_style") }}
 
 !!! Note "Model uses predicate from outside of CIDOC-CRM"
     The notion of style in CIDOC-CRM is typically tied to time and place of creation, not the actual style of the work, and thus style is modeled as a Period (as discussed in the scope notes of E4 Period).  There is also an option to use E55 Type as the style, but no defined relationship to map from the object to its style.  For example, a painting done using materials from Japan, in Japan, by a Japanese artist, in a French style would be considered to have a style of Japanese by CIDOC-CRM due to the time/space period. As such, we import the `genre` relationship from outside our core ontology so that we can use Types.  If a new predicate is created for CIDOC-CRM that more closely maps to the usage, we will switch to use it in a future revision. <!-- Don't hold your breath! -->
     The distinction that all styles are aesthetic is also somewhat controversial, but simplifies the model significantly at very little cost. The example which was seen as clear was that a perfect imitation of a Navajo dream-catcher made by a factory in China cannot be said to be culturally Navajo, but can be said to have an aesthetic that is related to the Navajo culture.
+
+## Classifications
+
+Other classifications can also be assigned to the object based on its content. If it is possible to say that "This object is an X" (or "The artistic content of this object is an X") , then X can be included in the set of classifications using the `classified_as` property.  This could include classifications such as "Landscape", "Allusion", or "Impressionist".
+
