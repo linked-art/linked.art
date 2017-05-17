@@ -76,7 +76,7 @@ nav ul li {
   color: #000;
 }
 .toc ul ul {
-  margin: 0.5rem 0 0rem 3rem;
+  margin: 0.5rem 0 0rem 2rem;
 }
 
 
@@ -101,8 +101,8 @@ code {
   display: block;
   padding: 1rem 1.5rem;
   white-space: pre; 
-  background-color: #fbf8e9;
-  border-color: #e4e0cd;
+  background-color: #F6F0E0;
+  border-color: #C0C0B0;
 }
 
 a:hover, a:focus {

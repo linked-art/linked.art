@@ -42,12 +42,18 @@ context:
         menu:
           - title: Home
             url: index.html
-          - title: Introduction
-            url: intro/index.html
+          - title: About
+            url: about/index.html
+          - title: Community
+            url: community/index.html
           - title: Model
             url: model/index.html
-          - title: Interactions
+          - title: Services
             url: api/index.html
+          - title: Recipes
+            url: cookbook/index.html
+          - title: Software
+            url: software/index.html
 
 var:
     scheme: https
@@ -63,9 +69,6 @@ var:
 #         url: https://github.com/azaroth42/museum-lod.git
 #         branch: gh-pages
 
-### Advanced part ###
-
-# This defines meta data on the whole site.
 meta:
     # 'nodemeta' will tell Hyde what file to look for inside a folder from
     # which to apply meta data to all files (resources) inside it. This is

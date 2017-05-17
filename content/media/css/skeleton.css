@@ -300,10 +300,10 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
-  font-size: 90%; }
+  margin: 0.5rem 0 0.5rem 3rem;
+  font-size: 94%; }
 li {
-  margin-bottom: 1rem; }
+  margin-bottom: 0.3rem; }
 
 
 /* Code

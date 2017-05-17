@@ -1,0 +1,104 @@
+{
+  "@context": "http://linked.art/ns/context/1/full.jsonld", 
+  "id": "http://lod.example.org/museum/object/0", 
+  "type": "ManMadeObject", 
+  "label": "What if we let Banksy spraypaint the back of Irises?", 
+  "description": "Van Gogh's \"Irises\" and Banksy's \"Cat with an Assault Rifle\" on canvas in an oak frame. Banksy's spraypaint covers both canvas and supporting beams of the frame.", 
+  "part": [
+    {
+      "id": "http://lod.example.org/museum/object/1", 
+      "type": "PhysicalObject", 
+      "label": "Support", 
+      "classified_as": "aat:300014844", 
+      "made_of": {
+        "id": "aat:300014078", 
+        "type": "Material", 
+        "label": "canvas"
+      }, 
+      "bears_feature": [
+        {
+          "id": "http://lod.example.org/museum/ManMadeFeature/0", 
+          "type": "ManMadeFeature", 
+          "label": "Canvas Recto", 
+          "classified_as": "aat:recto", 
+          "part": {
+            "id": "http://lod.example.org/museum/object/4", 
+            "type": "ManMadeObject", 
+            "label": "Irises", 
+            "produced_by": {
+              "id": "http://lod.example.org/museum/activity/0", 
+              "type": "Production", 
+              "carried_out_by": {
+                "id": "ulan:Van_Gogh", 
+                "type": "Person"
+              }
+            }, 
+            "made_of": {
+              "id": "aat:300015050", 
+              "type": "Material", 
+              "label": "oil"
+            }, 
+            "carries": {
+              "id": "http://lod.example.org/museum/info/0", 
+              "type": "InformationObject", 
+              "label": "Van Gogh's conception of Irises"
+            }, 
+            "representation": {
+              "id": "http://lod.example.org/museum/Image/0", 
+              "type": "Image", 
+              "format": "image/jpeg"
+            }, 
+            "depicts": "aat:flowers"
+          }
+        }, 
+        {
+          "id": "http://lod.example.org/museum/ManMadeFeature/1", 
+          "type": "ManMadeFeature", 
+          "label": "Canvas Verso", 
+          "classified_as": "aat:verso", 
+          "part": {
+            "id": "http://lod.example.org/museum/object/5", 
+            "type": "ManMadeObject", 
+            "label": "Cat With Assault Rifle", 
+            "produced_by": {
+              "id": "http://lod.example.org/museum/activity/1", 
+              "type": "Production", 
+              "carried_out_by": {
+                "id": "ulan:Banksy", 
+                "type": "Person"
+              }
+            }, 
+            "made_of": "aat:spraypaint", 
+            "carries": {
+              "id": "http://lod.example.org/museum/info/1", 
+              "type": "InformationObject", 
+              "label": "Banksy's conception of Cat with Assault Rifle", 
+              "about": "aat:war"
+            }, 
+            "representation": {
+              "id": "http://lod.example.org/museum/Image/1", 
+              "type": "Image", 
+              "format": "image/jpeg"
+            }
+          }
+        }
+      ]
+    }, 
+    {
+      "id": "http://lod.example.org/museum/object/2", 
+      "type": "ManMadeObject", 
+      "label": "Frame", 
+      "made_of": "aat:oak", 
+      "part": {
+        "id": "http://lod.example.org/museum/object/3", 
+        "type": "PhysicalObject", 
+        "label": "Structural beams of Frame", 
+        "part": "http://lod.example.org/museum/object/5"
+      }
+    }
+  ], 
+  "current_location": {
+    "id": "tgn:Los_Angeles", 
+    "type": "Place"
+  }
+}
