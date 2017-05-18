@@ -23,10 +23,10 @@
             <h1>{{ resource.meta.title }}</h1>
 
             <article id="content">
-            {% filter regex_replace_fn("&quot;([A-Za-z_]+)&quot;") -%}
-                {% filter regex_replace("aat:([0-9]+)", "<a href='http://vocab.getty.edu/aat/\\1' class='aat'>aat:\\1</a>") -%}
+            {% filter regex_replace_fn("&quot;([A-Za-z_]+)&quot;", "ctxtrepl") -%}
+                {% filter regex_replace_fn("aat:([0-9]+)", "aatlabel") -%}
                     {% filter markdown -%}
-                        {% filter regex_replace_fn("`([A-Za-z_]+)`") -%}
+                        {% filter regex_replace_fn("`([A-Za-z_]+)`", "ctxtrepl") -%}
                             {% block content %}{% endblock %}
                         {%- endfilter %}
                     {%- endfilter %}

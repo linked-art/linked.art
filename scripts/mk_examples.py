@@ -6,6 +6,7 @@ import os
 from rdflib import ConjunctiveGraph, URIRef
 from pyld import jsonld
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor
+import requests
 
 import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
@@ -1100,5 +1101,35 @@ fh.write(top)
 for y in ym:
 	fh.write("    %s.json\n" % y)
 fh.close()
+
+
+### And update aat_labels.json dict if needed
+
+fh = file('../extensions/aat_labels.json')
+data = fh.read()
+fh.close()
+aat_labels = json.loads(data)
+
+write_aat_json = False
+for k in aat_hash.keys():
+	if not k in aat_labels and k.startswith('aat:'):
+		# go fetch it as JSONLD
+		url = k.replace("aat:", "http://vocab.getty.edu/aat/")
+		url += ".jsonld"
+		resp = requests.get(url)
+		aatjs = json.loads(resp.text)
+		prefs = aatjs[0]["http://www.w3.org/2004/02/skos/core#prefLabel"]
+		for p in prefs:
+			if p['@language'] == 'en':
+				label = p['@value']
+				aat_labels[k] = label
+				write_aat_json = True
+				break
+
+if write_aat_json:
+	outjs = json.dumps(aat_labels)
+	fh = file('../extensions/aat_labels.json', 'w')
+	fh.write(outjs)
+	fh.close()
 
 print ">>> Wrote Indexes"
