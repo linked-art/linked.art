@@ -39,7 +39,7 @@ def aatlabel(source):
 	full = source.group(0)
 	data = source.group(1)
 	label = aat_labels.get(full, "")
-	# "<a href='http://vocab.getty.edu/aat/\\1' class='aat'>aat:\\1</a>"
+	label = label.replace("'", "\\'")
 	return "<a href='http://vocab.getty.edu/aat/%s' title='%s' class='aat'>aat:%s</a>" % (data, label, data)
 
 
