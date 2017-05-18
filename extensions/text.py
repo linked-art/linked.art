@@ -39,8 +39,8 @@ def aatlabel(source):
 	full = source.group(0)
 	data = source.group(1)
 	label = aat_labels.get(full, "")
-	label = label.replace("'", "\\'")
-	return "<a href='http://vocab.getty.edu/aat/%s' title='%s' class='aat'>aat:%s</a>" % (data, label, data)
+	label = label.replace('"', '')
+	return '<a href="http://vocab.getty.edu/aat/%s" title="%s" class="aat">aat:%s</a>' % (data, label, data)
 
 
 def ctxtrepl(source):
