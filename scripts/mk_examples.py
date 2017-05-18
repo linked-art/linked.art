@@ -1009,7 +1009,7 @@ def traverse(what, eg):
 					class_hash[v][eg] = 1
 				except:
 					class_hash[v] = {eg:1}
-		elif k in ['classified_as', 'technique', 'made_of']:
+		elif k  == 'classified_as':
 			if type(v) == list:
 				for t in v:
 					if type(t) == dict or isinstance(t, OrderedDict):
@@ -1026,8 +1026,11 @@ def traverse(what, eg):
 				except:
 					aat_hash[v] = {eg:1}
 		elif k in ['@context', 'id']:
-			# Not actually properties
-			pass
+			if v.startswith('aat:'):
+				try:
+					aat_hash[v][eg] = 1
+				except:
+					aat_hash[v] = {eg:1}				
 		else:		
 			try:
 				prop_hash[k][eg] = 1
@@ -1044,8 +1047,7 @@ for (k,what) in sorted(id_uri_hash.items()):
 	# Now walk the json of the objects and build an index
 	js = factory.toJSON(what)
 	traverse(js, k)	
-
-	# XXX: Now turn JSON-LD into TTL
+	# Now turn JSON-LD into TTL
 	nq = to_rdf(js, {"format": "application/nquads"})
 	g = ConjunctiveGraph()
 	for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'pi']:
@@ -1124,8 +1126,9 @@ for k in aat_hash.keys():
 		aatjs = json.loads(resp.text)
 		prefs = aatjs[0]["http://www.w3.org/2004/02/skos/core#prefLabel"]
 		for p in prefs:
-			if p['@language'] == 'en':
+			if p['@language'] in ['en', 'en-us']:
 				label = p['@value']
+				print "%s == %s" % (k, label)
 				aat_labels[k] = label
 				write_aat_json = True
 				break
