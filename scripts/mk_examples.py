@@ -1009,14 +1009,18 @@ def traverse(what, eg):
 					class_hash[v][eg] = 1
 				except:
 					class_hash[v] = {eg:1}
-		elif k == 'classified_as':
+		elif k in ['classified_as', 'technique', 'made_of']:
 			if type(v) == list:
 				for t in v:
+					if type(t) == dict or isinstance(t, OrderedDict):
+						t = t['id']					
 					try:
 						aat_hash[t][eg] = 1
 					except:
 						aat_hash[t] = {eg:1}
 			else:
+				if type(v) == dict or isinstance(v, OrderedDict):
+					v = v['id']
 				try:
 					aat_hash[v][eg] = 1
 				except:
