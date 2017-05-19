@@ -6,6 +6,7 @@ import os
 from rdflib import ConjunctiveGraph, URIRef
 from pyld import jsonld
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor
+import requests
 
 import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
@@ -1008,21 +1009,28 @@ def traverse(what, eg):
 					class_hash[v][eg] = 1
 				except:
 					class_hash[v] = {eg:1}
-		elif k == 'classified_as':
+		elif k  == 'classified_as':
 			if type(v) == list:
 				for t in v:
+					if type(t) == dict or isinstance(t, OrderedDict):
+						t = t['id']					
 					try:
 						aat_hash[t][eg] = 1
 					except:
 						aat_hash[t] = {eg:1}
 			else:
+				if type(v) == dict or isinstance(v, OrderedDict):
+					v = v['id']
 				try:
 					aat_hash[v][eg] = 1
 				except:
 					aat_hash[v] = {eg:1}
 		elif k in ['@context', 'id']:
-			# Not actually properties
-			pass
+			if v.startswith('aat:'):
+				try:
+					aat_hash[v][eg] = 1
+				except:
+					aat_hash[v] = {eg:1}				
 		else:		
 			try:
 				prop_hash[k][eg] = 1
@@ -1039,8 +1047,7 @@ for (k,what) in sorted(id_uri_hash.items()):
 	# Now walk the json of the objects and build an index
 	js = factory.toJSON(what)
 	traverse(js, k)	
-
-	# XXX: Now turn JSON-LD into TTL
+	# Now turn JSON-LD into TTL
 	nq = to_rdf(js, {"format": "application/nquads"})
 	g = ConjunctiveGraph()
 	for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'pi']:
@@ -1100,5 +1107,36 @@ fh.write(top)
 for y in ym:
 	fh.write("    %s.json\n" % y)
 fh.close()
+
+
+### And update aat_labels.json dict if needed
+
+fh = file('../extensions/aat_labels.json')
+data = fh.read()
+fh.close()
+aat_labels = json.loads(data)
+
+write_aat_json = False
+for k in aat_hash.keys():
+	if not k in aat_labels and k.startswith('aat:'):
+		# go fetch it as JSONLD
+		url = k.replace("aat:", "http://vocab.getty.edu/aat/")
+		url += ".jsonld"
+		resp = requests.get(url)
+		aatjs = json.loads(resp.text)
+		prefs = aatjs[0]["http://www.w3.org/2004/02/skos/core#prefLabel"]
+		for p in prefs:
+			if p['@language'] in ['en', 'en-us']:
+				label = p['@value']
+				print "%s == %s" % (k, label)
+				aat_labels[k] = label
+				write_aat_json = True
+				break
+
+if write_aat_json:
+	outjs = json.dumps(aat_labels)
+	fh = file('../extensions/aat_labels.json', 'w')
+	fh.write(outjs)
+	fh.close()
 
 print ">>> Wrote Indexes"
