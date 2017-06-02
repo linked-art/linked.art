@@ -16,13 +16,13 @@ The analysis In a tabular format, with less detailed notes:
 
 ### Abstract Classes
 
-_Classes:_  E1, E18, E2, E20, E24, E28, E70, E71, E72, E77, E89, E90, E92
+__Classes:__  E1, E18, E2, E20, E24, E28, E70, E71, E72, E77, E89, E90, E92
 
 There are 13 classes which are not themselves directly used, however are the domain or range of useful relationships, or otherwise important distinctions within the class hierarchy. These classes likely need to stay in the ontology, but can be ignored for practical purposes.  Producers should never put them into their data, and consumers can likewise expect to never see them in data.
 
 ### Data Type Classes
 
-Classes: E59, E60, E61, E62, E94, E95
+__Classes:__ E59, E60, E61, E62, E94, E95
 
 The classes in the CRM that model data types (String, Number, etc) can be ignored, and indeed are ignored in the recent RDF ontologies.  Instead the appropriate XSD types should be used in their place:
 
@@ -37,29 +37,29 @@ The classes in the CRM that model data types (String, Number, etc) can be ignore
 
 There are many classes that fail the CRM's own test of individual importance. These can be broken down into clusters.  The solution for all of these classes is instead to use _P2 has type_ to refer to an external vocabulary, if needed at all.
 
-Attribution Reification Classes: E14, E15, E16, E17
+__Attribution Reification Classes:__ E14, E15, E16, E17
 
 All of the subclasses of _E13 Attribute Assignment_ can be dispensed with, and replaced with references to external vocabularies from an instance of E13.  This would be more consistent with other assignments that must use E13 directly, such as attribution of an artist to a production event, the valuation of an object assigning a Monetary Amount to an object, the naming of an object assigning an Appellation and so on. 
 
-Appellation Classes: E44, E45, E46, E47, E48, E49, E50, E51, E75, E82
+__Appellation Classes:__ E44, E45, E46, E47, E48, E49, E50, E51, E75, E82
 
 Almost all of the subclasses of _E41 Appellation_ can be dispensed with as well, and for the most part there is no need to associate specific vocabulary terms.  The name of a Place does not need to be an _E44 Place Appellation_, as this carries no additional information beyond the class of the subject of the relationship. This also prevents the modeling collision between Names (E44 and similar) and Identifiers (E42) for resources as it would be questionable which of the two classes to use.
 
 An open question remains as to whether there is a significant semantic distinction between an _E41 Appellation_ and a _E35 Title_, and current thinking is that there is not and hence _E35 Title_ should probably be added to the list of Appellation sub-classes to ignore. Similarly, whether _E42 Identifier_ is sufficiently distinct from Appellation is questionable, however current thinking for this is that Identifiers serve a different purpose from Labels, and the distinction is thus valuable to maintain.
 
-Entity Beginning and Ending Classes: E6, E66, E67, E68, E69
+__Entity Beginning and Ending Classes:__ E6, E66, E67, E68, E69
 
 Subclasses of _E63 Beginning of Existence_ and _E64 End of Existence_ can be ignored, and their parent classes used instead.  The modeling of parents in the _E67 Birth_ class is less than ideal, and instead a role-based approach with specific activities in the same way as the production of artworks can be used to differentiate surrogates and egg donors from the woman that raised the child, and equivalent patterns for male involvement. The inclusion of _E6 Destruction_ in this set may be surprising to some, especially considering _E12 Production_ is maintained as useful.  The rationale is that as E6 is not also an _E7 Activity_ (which E12 is, making it useful), then the semantics of E6 and E64 are identical and thus the parent class is preferred for consistency.
 
-Entity Specialization Classes: E27, E31, E32, E40, E84, E99 
+__Entity Specialization Classes:__ E27, E31, E32, E40, E84, E99 
 
 These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM.
 
-Visual Concept Classes: E34, E37, E38
+__Visual Concept Classes:__ E34, E37, E38
 
 There is a significant overlap between the classes _E34 Inscription_, _E36 Visual Item_, _E37 Mark_ and _E38 Image_. The simplest approach is to use only E36 for visual or image content, and instead of E34, instead use _E33 Linguistic Object_ to capture inscriptions.  _E38 Image_, while a more appealing class name, has no additional features or meaning beyond that of E36. Similarly, E37 has absolutely no differences with E36. The use of E33 for inscriptions is more consistent with other modeling of textual information.
 
-Curated Holding Classes: E78, E87
+__Curated Holding Classes:__ E78, E87
 
 The _E78 Curated Holding_ class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are simply _E19 Physical Object_. In order to have a consistent approach, in the absence of a separate class to represent sets, the preferred class for all such aggregations is E19.  Collections can be typed as such using the well established P2 has type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.
 
@@ -74,7 +74,7 @@ Collections are aggregates of objects made for the functional purpose of collect
 
 ## Classes Not Currently Required
 
-Classes: E9, E11, E26, E29, E79, E80, E81
+__Specific Classes:__ E9, E11, E26, E29, E79, E80, E81
 
 After analysis of the datasets available from multiple consortia and large individual organizations, the data available does not currently require using these classes. This is not to say that they will not be useful in the future, just that they are not used by any model at the moment. In particular:
 
@@ -83,11 +83,11 @@ After analysis of the datasets available from multiple consortia and large indiv
   * _E29 Design or Procedure_ would be useful in a conservation specific system.
   * _E11 Modification, E79 Part Addition, E80 Part Removal_ and _E81 Transformation_ require too much information to be useful outside of a system dedicated to closely tracking conservation or object modification.
 
-Classes: E3
+__Condition Classes:__ E3
 
 Not only is there no current use case for _E3 Condition State_, it is too complex to use in any practical way, and lacks important additional structure in the ontology to make it worth the effort.  For example, there is no way to create an identity for "Box with lid open" versus "Box with lid closed" for the purposes of associating measurements or photographs.  
 
-Classes: E93
+__Incomprehensible Classes:__ E93
 
 _E93 Presence_ is simply incomprehensible. As such, it has no known use cases and is impossible to know whether it is useful or not. It is telling that there are no examples given in the documentation.
 
@@ -99,7 +99,7 @@ If further explanation, from any source, is forthcoming, then E93 might be moved
 
 ## Useful Classes
 
-Classes: E4, E5, E6, E7, E8, E10, E11, E12, E13, E19, E21, E22, E25, E30, E33, E39, E41, E42, E52, E53, E54, E55, E56, E57, E58, E63, E64, E65, E73, E74, E96, E97, E98
+__Classes:__ E4, E5, E6, E7, E8, E10, E11, E12, E13, E19, E21, E22, E25, E30, E33, E39, E41, E42, E52, E53, E54, E55, E56, E57, E58, E63, E64, E65, E73, E74, E96, E97, E98
 
 The remaining 34 classes are actively used in mappings for the known datasets.
 
@@ -141,5 +141,5 @@ The remaining 34 classes are actively used in mappings for the known datasets.
 
 ## Useful Additional Classes
 
-Classes:  Payment, Title_Claim
+__Classes:__  Payment, Title_Claim
 
