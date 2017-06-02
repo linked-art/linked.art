@@ -39,29 +39,29 @@ There are many classes that fail the CRM's own test of individual importance. Th
 
 Attribution Reification Classes: E14, E15, E16, E17
 
-All of the subclasses of *E13 Attribute Assignment *can be dispensed with, and replaced with references to external vocabularies from an instance of E13.  This would be more consistent with other assignments that must use E13 directly, such as attribution of an artist to a production event, the valuation of an object assigning a Monetary Amount to an object, the naming of an object assigning an Appellation and so on. 
+All of the subclasses of _E13 Attribute Assignment_ can be dispensed with, and replaced with references to external vocabularies from an instance of E13.  This would be more consistent with other assignments that must use E13 directly, such as attribution of an artist to a production event, the valuation of an object assigning a Monetary Amount to an object, the naming of an object assigning an Appellation and so on. 
 
 Appellation Classes: E44, E45, E46, E47, E48, E49, E50, E51, E75, E82
 
-Almost all of the subclasses of *E41 Appellation* can be dispensed with as well, and for the most part there is no need to associate specific vocabulary terms.  The name of a Place does not need to be an *E44 Place Appellation, *as this carries no additional information beyond the class of the subject of the relationship. This also prevents the modeling collision between Names (E44 and similar) and Identifiers (E42) for resources as it would be questionable which of the two classes to use.
+Almost all of the subclasses of _E41 Appellation_ can be dispensed with as well, and for the most part there is no need to associate specific vocabulary terms.  The name of a Place does not need to be an _E44 Place Appellation_, as this carries no additional information beyond the class of the subject of the relationship. This also prevents the modeling collision between Names (E44 and similar) and Identifiers (E42) for resources as it would be questionable which of the two classes to use.
 
-An open question remains as to whether there is a significant semantic distinction between an *E41 Appellation* and a *E35 Title*, and current thinking is that there is not and hence *E35 Title* should probably be added to the list of Appellation sub-classes to ignore. Similarly, whether *E42 Identifier* is sufficiently distinct from Appellation is questionable, however current thinking for this is that Identifiers serve a different purpose from Labels, and the distinction is thus valuable to maintain.
+An open question remains as to whether there is a significant semantic distinction between an _E41 Appellation_ and a _E35 Title_, and current thinking is that there is not and hence _E35 Title_ should probably be added to the list of Appellation sub-classes to ignore. Similarly, whether _E42 Identifier_ is sufficiently distinct from Appellation is questionable, however current thinking for this is that Identifiers serve a different purpose from Labels, and the distinction is thus valuable to maintain.
 
 Entity Beginning and Ending Classes: E6, E66, E67, E68, E69
 
-Subclasses of *E63 Beginning of Existence* and *E64 End of Existence* can be ignored, and their parent classes used instead.  The modeling of parents in the *E67 Birth* class is less than ideal, and instead a role-based approach with specific activities in the same way as the production of artworks can be used to differentiate surrogates and egg donors from the woman that raised the child, and equivalent patterns for male involvement. The inclusion of *E6 Destruction* in this set may be surprising to some, especially considering *E12 Production* is maintained as useful.  The rationale is that as E6 is not also an *E7 Activity* (which E12 is, making it useful), then the semantics of E6 and E64 are identical and thus the parent class is preferred for consistency.
+Subclasses of _E63 Beginning of Existence_ and _E64 End of Existence_ can be ignored, and their parent classes used instead.  The modeling of parents in the _E67 Birth_ class is less than ideal, and instead a role-based approach with specific activities in the same way as the production of artworks can be used to differentiate surrogates and egg donors from the woman that raised the child, and equivalent patterns for male involvement. The inclusion of _E6 Destruction_ in this set may be surprising to some, especially considering _E12 Production_ is maintained as useful.  The rationale is that as E6 is not also an _E7 Activity_ (which E12 is, making it useful), then the semantics of E6 and E64 are identical and thus the parent class is preferred for consistency.
 
 Entity Specialization Classes: E27, E31, E32, E40, E84, E99 
 
-These classes (*E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E99 Product Type*) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM.
+These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM.
 
 Visual Concept Classes: E34, E37, E38
 
-There is a significant overlap between the classes *E34 Inscription*, *E36 Visual Item*, *E37 Mark* and *E38 Image*. The simplest approach is to use only E36 for visual or image content, and instead of E34, instead use *E33 Linguistic Object* to capture inscriptions.  *E38 Image*, while a more appealing class name, has no additional features or meaning beyond that of E36. Similarly, E37 has absolutely no differences with E36. The use of E33 for inscriptions is more consistent with other modeling of textual information.
+There is a significant overlap between the classes _E34 Inscription_, _E36 Visual Item_, _E37 Mark_ and _E38 Image_. The simplest approach is to use only E36 for visual or image content, and instead of E34, instead use _E33 Linguistic Object_ to capture inscriptions.  _E38 Image_, while a more appealing class name, has no additional features or meaning beyond that of E36. Similarly, E37 has absolutely no differences with E36. The use of E33 for inscriptions is more consistent with other modeling of textual information.
 
 Curated Holding Classes: E78, E87
 
-The *E78 Curated Holding* class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are simply *E19 Physical Object*. In order to have a consistent approach, in the absence of a separate class to represent sets, the preferred class for all such aggregations is E19.  Collections can be typed as such using the well established P2 has type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.
+The _E78 Curated Holding_ class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are simply _E19 Physical Object_. In order to have a consistent approach, in the absence of a separate class to represent sets, the preferred class for all such aggregations is E19.  Collections can be typed as such using the well established P2 has type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.
 
 The definition of E19 has the following statement:
 
@@ -69,7 +69,8 @@ The definition of E19 has the following statement:
 
 Collections are aggregates of objects made for the functional purpose of collecting and curating them, and thus can fit into the scope of E19.
 
-Side Note: E19 can also be used for collections of *E25 *or* E26 Features* according to the ontology's structure.  One particular reading of the scope notes might treat "objects" above as meaning only *E19 Physical Object* and not including *E26 Physical Feature* … however both are *E18 Physical Thing*, which is the domain of the has part relationship, *P46 is composed of,* so the practical effect of such pedantry is negligible. If the intent is only E19, then the scope notes and the ontology should be clarified.
+!!! note "Collections of Features"
+    E19 can also be used for collections of _E25_ or _E26 Features_ according to the ontology's structure.  One particular reading of the scope notes might treat "objects" above as meaning only _E19 Physical Object_ and not including _E26 Physical Feature_ ... however both are _E18 Physical Thing_, which is the domain of the has part relationship, _P46 is composed of_, so the practical effect of such pedantry is negligible. If the intent is only E19, then the scope notes and the ontology should be clarified.
 
 ## Classes Not Currently Required
 
@@ -84,11 +85,11 @@ After analysis of the datasets available from multiple consortia and large indiv
 
 Classes: E3
 
-Not only is there no current use case for *E3 Condition State*, it is too complex to use in any practical way, and lacks important additional structure in the ontology to make it worth the effort.  For example, there is no way to create an identity for "Box with lid open" versus "Box with lid closed" for the purposes of associating measurements or photographs.  
+Not only is there no current use case for _E3 Condition State_, it is too complex to use in any practical way, and lacks important additional structure in the ontology to make it worth the effort.  For example, there is no way to create an identity for "Box with lid open" versus "Box with lid closed" for the purposes of associating measurements or photographs.  
 
 Classes: E93
 
-*E93 Presence* is simply incomprehensible. As such, it has no known use cases and is impossible to know whether it is useful or not. It is telling that there are no examples given in the documentation.
+_E93 Presence_ is simply incomprehensible. As such, it has no known use cases and is impossible to know whether it is useful or not. It is telling that there are no examples given in the documentation.
 
 The definition is:
 
@@ -102,40 +103,40 @@ Classes: E4, E5, E6, E7, E8, E10, E11, E12, E13, E19, E21, E22, E25, E30, E33, E
 
 The remaining 34 classes are actively used in mappings for the known datasets.
 
-	* *E4 Period:*  Activities such as Productions will often only fall within a named Period
-	* *E5 Event:* Events can be depicted by Artworks.
-	* *E7 Activity:* Activities of Actors and their interactions with objects is a core feature
-	* *E8 Acquisition:* Needed for Provenance
-	* *E10 Transfer of Custody:* Needed for Exhibitions
-	* *E12 Production:* Needed for Provenance
-	* *E13 Attribute Assignment:* Used for recording previously believed values
-	* *E19 Physical Object:* Used for Sets of things 
-	* *E21 Person:* Individual people
-	* *E22 Man-Made Object:* Objects
-	* *E25 Man-Made Feature:* Used for recto/verso of a sheet of material
-	* *E30 Right:* Used for rights information
-	* *E33 Linguistic Object:* Statements
-	* *E36 Visual Item:* Used for images
-	* *E39 Actor:* Used when it is unclear if the actor is an individual or a group 
-	* *E41 Appellation:* Names of things
-	* *E42 Identifier:* Identifiers of things
-	* *E52 Time-Span:* Collects the beginning and ending of time spans
-	* *E53 Place:* Locations
-	* *E54 Dimension:* Dimensions of objects 
-	* *E55 Type:* References to external vocabularies, such as AAT
-	* *E56 Language:* Used when the text of a E33 is not available, but the language is known. When the value is available, it should use the RDF language tags instead.
-	* *E57 Material:* The type of Material that makes up an object
-	* *E58 Measurement Unit:* The unit of measurement for a dimension value, such as inches
-	* *E63 Beginning of Existence:* Used for the beginning of non objects, non ideas
-	* *E64 End of Existence:* Used for end of existence of all things
-	* *E65 Creation:* Similar to Production, an Activity that creates non-physical things
-	* *E73 Information Object:* Concepts, Schemes, Texts  
-	* *E74 Group:* Married Couples, Organizations, Nationalities, Schools, etc. 
-	* *E85 Joining:* Primarily used for recording the time of getting married
-	* *E86 Leaving:* Primarily used for recording the dissolution of a marriage
-	* *E96 Purchase:* An acquisition with a Payment 
-	* *E97 Monetary Amount:* Recording the amount of money in a Purchase
-	* *E98 Currency:* The currency of the monetary amount
+  * _E4 Period:_  Activities such as Productions will often only fall within a named Period
+  * _E5 Event:_ Events can be depicted by Artworks.
+  * _E7 Activity:_ Activities of Actors and their interactions with objects is a core feature
+  * _E8 Acquisition:_ Needed for Provenance
+  * _E10 Transfer of Custody:_ Needed for Exhibitions
+  * _E12 Production:_ Needed for Provenance
+  * _E13 Attribute Assignment:_ Used for recording previously believed values
+  * _E19 Physical Object:_ Used for Sets of things 
+  * _E21 Person:_ Individual people
+  * _E22 Man-Made Object:_ Objects
+  * _E25 Man-Made Feature:_ Used for recto/verso of a sheet of material
+  * _E30 Right:_ Used for rights information
+  * _E33 Linguistic Object:_ Statements
+  * _E36 Visual Item:_ Used for images
+  * _E39 Actor:_ Used when it is unclear if the actor is an individual or a group 
+  * _E41 Appellation:_ Names of things
+  * _E42 Identifier:_ Identifiers of things
+  * _E52 Time-Span:_ Collects the beginning and ending of time spans
+  * _E53 Place:_ Locations
+  * _E54 Dimension:_ Dimensions of objects 
+  * _E55 Type:_ References to external vocabularies, such as AAT
+  * _E56 Language:_ Used when the text of a E33 is not available, but the language is known. When the value is available, it should use the RDF language tags instead.
+  * _E57 Material:_ The type of Material that makes up an object
+  * _E58 Measurement Unit:_ The unit of measurement for a dimension value, such as inches
+  * _E63 Beginning of Existence:_ Used for the beginning of non objects, non ideas
+  * _E64 End of Existence:_ Used for end of existence of all things
+  * _E65 Creation:_ Similar to Production, an Activity that creates non-physical things
+  * _E73 Information Object:_ Concepts, Schemes, Texts  
+  * _E74 Group:_ Married Couples, Organizations, Nationalities, Schools, etc. 
+  * _E85 Joining:_ Primarily used for recording the time of getting married
+  * _E86 Leaving:_ Primarily used for recording the dissolution of a marriage
+  * _E96 Purchase:_ An acquisition with a Payment 
+  * _E97 Monetary Amount:_ Recording the amount of money in a Purchase
+  * _E98 Currency:_ The currency of the monetary amount
 
 
 ## Useful Additional Classes
