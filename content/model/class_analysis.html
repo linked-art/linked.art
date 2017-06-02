@@ -1,17 +1,8 @@
 ---
 title: CIDOC-CRM Class Analysis
-layout: post
-author: azaroth42
-source-id: 17DP6OqqjWCsqhKh_APqIjLDfQo55A19fPrMLoAGfR0k
-published: true
 ---
-**CIDOC-CRM Class Analysis**
 
-**Contributors:**  Rob Sanderson, David Newbury (J Paul Getty Trust)
-
-**Contents:**
-
-[[TOC]]
+{% include "toc.html" %}
 
 ## Introduction
 
@@ -25,7 +16,7 @@ The analysis In a tabular format, with less detailed notes:
 
 ### Abstract Classes
 
-Classes:  E1, E18, E2, E20, E24, E28, E70, E71, E72, E77, E89, E90, E92
+_Classes:_  E1, E18, E2, E20, E24, E28, E70, E71, E72, E77, E89, E90, E92
 
 There are 13 classes which are not themselves directly used, however are the domain or range of useful relationships, or otherwise important distinctions within the class hierarchy. These classes likely need to stay in the ontology, but can be ignored for practical purposes.  Producers should never put them into their data, and consumers can likewise expect to never see them in data.
 
@@ -35,17 +26,12 @@ Classes: E59, E60, E61, E62, E94, E95
 
 The classes in the CRM that model data types (String, Number, etc) can be ignored, and indeed are ignored in the recent RDF ontologies.  Instead the appropriate XSD types should be used in their place:
 
-* *E59 Primitive Value* - 		rdf:Literal
-
-* *E60 Number* - 			xsd:integer / xsd:float as appropriate
-
-* *E61 Time Primitive* - 		xsd:dateTime
-
-* *E62 String* - 			xsd:string
-
-* *E94 Space Primitive* - 	* 
-
-* *E95 Spacetime Primitive* -  	*
+  * _E59 Primitive Value_ - rdf:Literal
+  * __E60 Number__ - xsd:integer / xsd:float as appropriate
+  * _E61 Time Primitive_ - xsd:dateTime
+  * _E62 String_ - xsd:string
+  * _E94 Space Primitive_ - * 
+  * _E95 Spacetime Primitive_ - *
 
 * We follow the CRM's recommendation of using an appropriate external vocabulary, such as one from OGC or GeoJSON-LD.
 
