@@ -5,3 +5,4 @@
   publish = ".site"
   # command to run to build
   command = "sh ./build.sh"
+

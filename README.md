@@ -14,7 +14,9 @@ Then run `hyde serve` to run a local webserver at http://localhost:8080/ to view
 
 Commits to the master branch will auto-deploy via our hosting provider, [netlify](https://netlify.com/), to the [Linked Art](https://linked.art/) site. 
 
-Pull requests from any other branch will auto-deploy to previews at https://deploy-preview-NNN--linked-art.netlify.com/, where NNN is the numeric identifier of the pull request. Commits on these branches with open PRs will re-deploy the preview. Branches without an open PR will not be deployed automatically.
+Pull requests from any branch, regardless of which repository they're from, will auto-deploy to previews at https://deploy-preview-NNN--linked-art.netlify.com/, where NNN is the numeric identifier of the pull request. Commits on these branches with open PRs will re-deploy the preview.
+
+Branches on this site will auto-deploy to https://BRANCHNAME--linked-art.netlify.com/ and thus a branch named "test" would result in a preview site at https://test--linked-art.netlify.com/.
 
 # Contributions Welcome!
 
