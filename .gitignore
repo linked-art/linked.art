@@ -1,2 +1,4 @@
 .site
 scripts/*.pyc
+extensions/*.pyc
+.hyde_deps
