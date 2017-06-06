@@ -40,7 +40,7 @@ def aatlabel(source):
 	data = source.group(1)
 	label = aat_labels.get(full, "")
 	label = label.replace('"', '')
-	return '<a href="http://vocab.getty.edu/aat/%s" title="%s" class="aat">aat:%s</a>' % (data, label, data)
+	return '<a href="http://vocab.getty.edu/aat/%s" data-ot="%s" data-ot-title="AAT Term" data-ot-fixed="true" class="aat">aat:%s</a>' % (data, label, data)
 
 
 def ctxtrepl(source):
@@ -51,6 +51,6 @@ def ctxtrepl(source):
 			crm = ctxt[data]['@id']
 		else:
 			crm = ctxt[data]
-		return "<abbr title='%s'>%s</abbr>" % (crm, full)
+		return '<abbr data-ot="%s" data-ot-title="Linked Data Term" data-ot-fixed="true">%s</abbr>' % (crm, full)
 	else:
 		return full
