@@ -106,6 +106,7 @@
   color: #4f4b47;
   text-shadow: -1px -1px 0px rgba(255,255,255,0.2);
 }
+
 .opentip-container .opentip .header {
   margin: 0;
   padding: 0;
@@ -114,6 +115,7 @@
 .ot-header h1 {
   font-size: 16px;
   font-weight: 700;
+  border-bottom: 1px solid #707070;
 }
 
 .opentip-container .opentip .ot-close {
