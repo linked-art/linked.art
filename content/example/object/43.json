@@ -4,9 +4,11 @@
   "type": "ManMadeObject", 
   "label": "Painting", 
   "classified_as": "aat:300033618", 
-  "current_location": {
-    "id": "https://linked.art/example/place/5", 
-    "type": "Place", 
-    "label": "Gallery W6"
+  "current_owner": {
+    "id": "https://linked.art/example/group/2", 
+    "type": "Group", 
+    "label": "Museum", 
+    "classified_as": "aat:300312281", 
+    "acquired_title_through": "https://linked.art/example/activity/39"
   }
 }

@@ -40,9 +40,10 @@ example:
     objabout_style: object/28.json
     objabout_subject: object/27.json
     objdig_homepage: object/38.json
-    objdig_iiif_image: object/39.json
-    objdig_iiif_manifest: object/40.json
+    objdig_iiif_image: object/40.json
+    objdig_iiif_manifest: object/41.json
     objdig_image: object/37.json
+    objdig_page: object/39.json
     objid_legacy: object/19.json
     objid_linkcoll: object/20.json
     objid_title: object/22.json
@@ -52,9 +53,9 @@ example:
     objphys_dims_stmt: object/30.json
     objphys_materials: object/31.json
     objphys_materials_stmt: object/32.json
-    objprov_location: object/43.json
-    objprov_owner: object/42.json
-    objprov_production: object/41.json
+    objprov_location: object/44.json
+    objprov_owner: object/43.json
+    objprov_production: object/42.json
     objrights_credit: object/33.json
     objrights_nkc: object/36.json
     objrights_rights: object/35.json

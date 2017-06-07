@@ -4,11 +4,14 @@
   "type": "ManMadeObject", 
   "label": "Painting", 
   "classified_as": "aat:300033618", 
-  "homepage": {
+  "subject_of": {
     "id": "http://example.org/collection/1/painting", 
     "type": "InformationObject", 
     "label": "Homepage for Painting", 
-    "classified_as": "aat:300264578", 
+    "classified_as": [
+      "aat:300264578", 
+      "aat:300404670"
+    ], 
     "format": "text/html"
   }
 }

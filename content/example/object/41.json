@@ -4,14 +4,10 @@
   "type": "ManMadeObject", 
   "label": "Painting", 
   "classified_as": "aat:300033618", 
-  "produced_by": {
-    "id": "https://linked.art/example/activity/38", 
-    "type": "Production", 
-    "label": "Production of Painting", 
-    "carried_out_by": {
-      "id": "https://linked.art/example/person/8", 
-      "type": "Person", 
-      "label": "Artist"
-    }
+  "subject_of": {
+    "id": "http://iiif.example.org/presentation/1/manifest.json", 
+    "type": "InformationObject", 
+    "conforms_to": "http://iiif.io/api/presentation", 
+    "format": "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\""
   }
 }

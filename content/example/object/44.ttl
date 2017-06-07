@@ -10,14 +10,11 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.art/example/object/38> a crm:E22_Man-Made_Object ;
+<https://linked.art/example/object/44> a crm:E22_Man-Made_Object ;
     rdfs:label "Painting" ;
-    crm:P129i_is_subject_of <http://example.org/collection/1/painting> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
+    crm:P55_has_current_location <https://linked.art/example/place/5> .
 
-<http://example.org/collection/1/painting> a crm:E73_Information_Object ;
-    rdfs:label "Homepage for Painting" ;
-    dc:format "text/html" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300264578>,
-        <http://vocab.getty.edu/aat/300404670> .
+<https://linked.art/example/place/5> a crm:E53_Place ;
+    rdfs:label "Gallery W6" .
 

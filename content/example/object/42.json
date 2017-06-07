@@ -4,11 +4,14 @@
   "type": "ManMadeObject", 
   "label": "Painting", 
   "classified_as": "aat:300033618", 
-  "current_owner": {
-    "id": "https://linked.art/example/group/2", 
-    "type": "Group", 
-    "label": "Museum", 
-    "classified_as": "aat:300312281", 
-    "acquired_title_through": "https://linked.art/example/activity/39"
+  "produced_by": {
+    "id": "https://linked.art/example/activity/38", 
+    "type": "Production", 
+    "label": "Production of Painting", 
+    "carried_out_by": {
+      "id": "https://linked.art/example/person/8", 
+      "type": "Person", 
+      "label": "Artist"
+    }
   }
 }
