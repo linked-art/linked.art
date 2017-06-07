@@ -12,7 +12,8 @@
 
 <https://linked.art/example/object/2> a crm:E22_Man-Made_Object ;
     rdfs:label "Example Painting on Canvas" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618>,
+        <http://vocab.getty.edu/aat/300133025> ;
     crm:P67i_is_referred_to_by <https://linked.art/example/object/2/statement/1> .
 
 <https://linked.art/example/object/2/statement/1> a crm:E33_Linguistic_Object ;

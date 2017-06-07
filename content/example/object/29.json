@@ -3,7 +3,10 @@
   "id": "https://linked.art/example/object/29", 
   "type": "ManMadeObject", 
   "label": "Portrait of Lord Nelson", 
-  "classified_as": "aat:300033618", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ], 
   "subject": {
     "id": "aat:300055314", 
     "type": "Type", 

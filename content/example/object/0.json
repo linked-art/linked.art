@@ -3,5 +3,8 @@
   "id": "https://linked.art/example/object/0", 
   "type": "ManMadeObject", 
   "label": "Simple Example Painting", 
-  "classified_as": "aat:300033618"
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ]
 }

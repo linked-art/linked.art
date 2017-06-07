@@ -23,7 +23,10 @@
     "id": "https://linked.art/example/object/4", 
     "type": "ManMadeObject", 
     "label": "Glass Sculpture", 
-    "classified_as": "aat:300047090"
+    "classified_as": [
+      "aat:300133025", 
+      "aat:300047090"
+    ]
   }, 
   "transferred_title_to": {
     "id": "https://linked.art/example/actor/4", 

@@ -3,7 +3,10 @@
   "id": "https://linked.art/example/object/42", 
   "type": "ManMadeObject", 
   "label": "Sculpture", 
-  "classified_as": "aat:300047090", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300047090"
+  ], 
   "representation": {
     "id": "http://iiif.example.org/image/1", 
     "type": "VisualItem", 

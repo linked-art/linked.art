@@ -22,7 +22,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, \
-	materialTypes, dimensionUnits
+	materialTypes, dimensionUnits, add_art_setter
 from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties
 
@@ -73,6 +73,7 @@ factory.context_uri = contextUrl
 factory.auto_id_type = "int-per-segment"
 add_rdf_value()
 add_schema_properties()
+add_art_setter()
 
 id_uri_hash = {}
 
@@ -118,12 +119,12 @@ fh.close()
 ### Now make all the examples
 
 # Base - Type
-eg = Painting()
+eg = Painting(art=1)
 eg.label = "Simple Example Painting"
 id_uri_hash['base_type'] = eg
 
 # Base - Parts - Example 1
-mmo = Painting()
+mmo = Painting(art=1)
 mmo.label = "Example Painting"
 mmo.made_of = materialTypes['watercolor']
 part = SupportPart(mmo.id + "/part/1")
@@ -168,7 +169,7 @@ museum.member = dept
 id_uri_hash['base_parts_org'] = museum
 
 # Base - Statements
-obj2 = Painting()
+obj2 = Painting(art=1)
 obj2.label = "Example Painting on Canvas"
 lo = MaterialStatement(obj2.id + "/statement/1")
 lo.value = "Oil on Canvas"
@@ -195,7 +196,7 @@ id_uri_hash['prov_event'] = act
 act = Production()
 who = Actor()
 who.label = "Example Artist"
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 when = TimeSpan()
 where = Place()
@@ -212,7 +213,7 @@ id_uri_hash['prov_create'] = act
 act = Production()
 who = Actor()
 who.label = "Example Glassblower"
-what = Sculpture()
+what = Sculpture(art=1)
 what.label = "Glass Sculpture"
 act.carried_out_by = who
 act.technique = Type("http://vocab.getty.edu/aat/300053932")
@@ -256,7 +257,7 @@ id_uri_hash['prov_purchase'] = act
 
 # Prov - Loss
 act = TransferOfCustody()
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Lost Painting"
 act.transferred_custody_of = what
 who = Person()
@@ -272,7 +273,7 @@ id_uri_hash['prov_loss'] = act
 # Prov - Theft
 act = Theft()
 act.label = "Theft of Painting"
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Stolen Painting"
 act.transferred_custody_of = what
 who = Person()
@@ -291,7 +292,7 @@ id_uri_hash['prov_theft'] = act
 
 act = TransferOfCustody()
 act.label = "Sale of Stolen Object"
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Stolen Painting"
 act.transferred_custody_of = what
 thief = Person()
@@ -314,7 +315,7 @@ id_uri_hash['prov_theft_sale'] = act
 
 # Prov - Destruction
 dest = EoEActivity()
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Destroyed Painting"
 dest.took_out_of_existence = what
 when = TimeSpan()
@@ -339,7 +340,7 @@ end = Acquisition()
 end.label = "Owner gives Painting to someone else"
 owner = Actor()
 owner.label = "Owner"
-what = Painting()
+what = Painting(art=1)
 who = Person()
 start.transferred_title_of = what
 start.transferred_title_to = who
@@ -361,7 +362,7 @@ id_uri_hash['prov_inventory'] = act
 
 # Full life time
 act = Provenance()
-what = Painting()
+what = Painting(art=1)
 act.label = "Lifetime of Painting"
 act.used_specific_object = what
 prod = Production()
@@ -430,7 +431,7 @@ lotset.label = "Set of Objects for Lot 812"
 ln = LotNumber()
 ln.value = "812"
 lotset.identified_by = ln
-obj = Painting()
+obj = Painting(art=1)
 obj.label = "Example Painting"
 lotset.part = obj
 id_uri_hash["auction_lotset"] = lotset
@@ -514,7 +515,7 @@ lotset.label = "Lot 16"
 entry.refers_to = lotset
 id_uri_hash['auction_catalog'] = catalog
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 id1 = AccessionNumber()
 id1.label = "Accession Number for Painting"
@@ -529,7 +530,7 @@ id_uri_hash['objid_legacy'] = what
 
 # Legacy Identifiers with Collections
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 id1 = AccessionNumber()
 id1.value = "P1998-27"
@@ -545,14 +546,14 @@ idset.refers_to = coll
 coll.part = what
 id_uri_hash['objid_linkcoll'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Peasant and Sheep"
 ttl = PrimaryAppellation()
 ttl.value = "Peasant and Sheep"
 what.identified_by = ttl
 id_uri_hash['objid_title'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Self Portrait"
 ttl = PrimaryAppellation()
 ttl.value = "Self Portrait"
@@ -562,11 +563,11 @@ ttl2.value = "Portrait of the Artist"
 what.identified_by = ttl2
 id_uri_hash['objid_title_alt'] = what
 
-what = Sculpture()
+what = Sculpture(art=1)
 what.label = "Sculpture of a Dragon"
 id_uri_hash['objid_types'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 what.description = "The Example Painting is a great example of exampleness."
 desc = Description()
@@ -574,14 +575,14 @@ desc.value = "The Example Painting is a great example of exampleness."
 what.referred_to_by = desc
 id_uri_hash['objabout_description'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Another Example Painting"
 p2 = Painting()
 p2.label = "Yet Another Example Painting"
 what.related = p2
 id_uri_hash['objabout_related'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Self Portrait"
 who = Actor()
 who.label = "Artist"
@@ -591,19 +592,19 @@ prd.carried_out_by = who
 what.produced_by = prd
 id_uri_hash['objabout_depicts'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Portrait of Lord Nelson"
 concept = Type("http://vocab.getty.edu/aat/300055314")
 concept.label = "War"
 what.subject = concept  # dct:subject
 id_uri_hash['objabout_subject'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Impressionist Painting"
 what.style = Type("http://vocab.getty.edu/aat/300021503")
 id_uri_hash['objabout_style'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example 16x20 Painting"
 w = Width()
 w.value = 16
@@ -615,33 +616,33 @@ h.unit = dimensionUnits['inches']
 what.dimension = h
 id_uri_hash['objphys_dims'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 dims = DimensionStatement()
 dims.value = "The painting is approximately 16 inches wide, by 20 inches high"
 what.referred_to_by = dims
 id_uri_hash['objphys_dims_stmt'] = what
 
-what = Sculpture()
+what = Sculpture(art=1)
 what.label = "Example Marble Sculpture"
 what.made_of = materialTypes['marble']
 id_uri_hash['objphys_materials'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Multi-Media Painting"
 mats = MaterialStatement()
 mats.value = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
 what.referred_to_by = mats
 id_uri_hash['objphys_materials_stmt'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 crdt = CreditStatement()
 crdt.value = "Donation of Ms J. Smith; Example Organization"
 what.referred_to_by = crdt
 id_uri_hash['objrights_credit'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 crdt = RightsStatement()
 crdt.value = "Copyright of this object has not yet been assessed"
@@ -651,7 +652,7 @@ id_uri_hash['objrights_rights_stmt'] = what
 
 # This is kind of wacky, but it's what we've got
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Example Painting"
 copyright = Right()
 copyright.classified_as = Type("http://rightsstatements.org/vocab/InC/1.0/")
@@ -662,7 +663,7 @@ cholder.label = "Copyright Holder"
 copyright.possessed_by = cholder
 id_uri_hash['objrights_rights'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Object"
 cne = Right()
 cne.classified_as = Type("http://rightsstatements.org/vocab/NKC/1.0/")
@@ -672,7 +673,7 @@ id_uri_hash['objrights_nkc'] = what
 
 # Digital
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 img = VisualItem("http://example.org/images/image.jpg")
 img.label = "Image of Painting"
@@ -680,7 +681,7 @@ img.format = "image/jpeg"
 what.representation = img
 id_uri_hash['objdig_image'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 page = WebPage("http://example.org/collection/1/painting")
 page.classified_as = Type("aat:300404670")
@@ -689,7 +690,7 @@ page.format = "text/html"
 what.subject_of = page
 id_uri_hash['objdig_homepage'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 page = WebPage("http://example.org/journal/article")
 page.label = "Webpage that discusses Painting"
@@ -697,7 +698,7 @@ page.format = "text/html"
 what.subject_of = page
 id_uri_hash['objdig_page'] = what
 
-what = Sculpture()
+what = Sculpture(art=1)
 what.label = "Sculpture"
 img = VisualItem("http://iiif.example.org/image/1")
 img.label = "IIIF Image API for Sculpture"
@@ -705,7 +706,7 @@ img.conforms_to = BaseResource("http://iiif.io/api/image")
 what.representation = img
 id_uri_hash['objdig_iiif_image'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 mfst = InformationObject("http://iiif.example.org/presentation/1/manifest.json")
 mfst.format = 'application/ld+json;profile="http://iiif.io/api/presentation/2/context.json"'
@@ -713,7 +714,7 @@ mfst.conforms_to = BaseResource("http://iiif.io/api/presentation")
 what.subject_of = mfst
 id_uri_hash['objdig_iiif_manifest'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 prod = Production()
 prod.label = "Production of Painting"
@@ -723,7 +724,7 @@ prod.carried_out_by = who
 what.produced_by = prod
 id_uri_hash['objprov_production'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 who = MuseumOrg()
 who.label = "Museum"
@@ -732,7 +733,7 @@ acq = Acquisition()
 who.acquired_title_through = acq
 id_uri_hash['objprov_owner'] = what
 
-what = Painting()
+what = Painting(art=1)
 what.label = "Painting"
 where = Place()
 where.label = "Gallery W6"
@@ -887,11 +888,11 @@ id_uri_hash['exh_activity'] = exh
 
 exh = Exhibition()
 exh.label = "Example Exhibition"
-obj = Painting()
+obj = Painting(art=1)
 obj.label = "Painting"
-obj2 = Painting()
+obj2 = Painting(art=1)
 obj2.label = "Another Painting"
-obj3 = Sculpture()
+obj3 = Sculpture(art=1)
 obj3.label = "Sculpture"
 exh.used_specific_object = obj
 exh.used_specific_object = obj2
@@ -902,7 +903,7 @@ xfer = TransferOfCustody()
 xfer.label = "Custody Transfer of Painting for Exhibition"
 exh = Exhibition()
 exh.label = "Example Exhibition"
-obj = Painting()
+obj = Painting(art=1)
 obj.label = "Painting"
 mus = MuseumOrg()
 mus.label = "Exhibiting Museum"
@@ -919,7 +920,7 @@ id_uri_hash['exh_custody'] = xfer
 
 exh = Exhibition()
 exh.label = "Example Exhibition"
-obj = Painting()
+obj = Painting(art=1)
 obj.label = "Real Painting Name"
 aa = Naming()
 name = Appellation()
@@ -931,7 +932,7 @@ id_uri_hash['exh_labels'] = exh
 
 exh = Exhibition()
 exh.label = "Example Exhibition"
-obj = Painting()
+obj = Painting(art=1)
 obj.label = "Painting"
 exh.used_specific_object = obj
 img = VisualItem("http://example.org/images/object-at-exhibition.jpg")

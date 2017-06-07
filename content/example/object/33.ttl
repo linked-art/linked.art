@@ -12,7 +12,8 @@
 
 <https://linked.art/example/object/33> a crm:E22_Man-Made_Object ;
     rdfs:label "Example Marble Sculpture" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300047090> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300047090>,
+        <http://vocab.getty.edu/aat/300133025> ;
     crm:P45_consists_of <http://vocab.getty.edu/aat/300011443> .
 
 <http://vocab.getty.edu/aat/300011443> a crm:E57_Material ;

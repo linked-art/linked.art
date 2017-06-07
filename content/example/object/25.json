@@ -4,7 +4,10 @@
   "type": "ManMadeObject", 
   "label": "Example Painting", 
   "description": "The Example Painting is a great example of exampleness.", 
-  "classified_as": "aat:300033618", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ], 
   "referred_to_by": {
     "id": "https://linked.art/example/text/0", 
     "type": "LinguisticObject", 

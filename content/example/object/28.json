@@ -3,7 +3,10 @@
   "id": "https://linked.art/example/object/28", 
   "type": "ManMadeObject", 
   "label": "Self Portrait", 
-  "classified_as": "aat:300033618", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ], 
   "depicts": {
     "id": "https://linked.art/example/actor/6", 
     "type": "Actor", 

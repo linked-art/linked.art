@@ -30,5 +30,6 @@
     crm:P24_transferred_title_of <https://linked.art/example/object/9> .
 
 <https://linked.art/example/object/9> a crm:E22_Man-Made_Object ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618>,
+        <http://vocab.getty.edu/aat/300133025> .
 

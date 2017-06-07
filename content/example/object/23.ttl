@@ -14,7 +14,8 @@
     rdfs:label "Self Portrait" ;
     crm:P1_is_identified_by <https://linked.art/example/name/1>,
         <https://linked.art/example/name/2> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618>,
+        <http://vocab.getty.edu/aat/300133025> .
 
 <https://linked.art/example/name/1> a crm:E41_Appellation ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;

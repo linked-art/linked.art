@@ -14,7 +14,8 @@
     rdfs:label "Example Painting" ;
     crm:P1_is_identified_by <https://linked.art/example/identifier/2>,
         <https://linked.art/example/identifier/3> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618>,
+        <http://vocab.getty.edu/aat/300133025> .
 
 <https://linked.art/example/identifier/2> a crm:E42_Identifier ;
     rdfs:label "Accession Number for Painting" ;

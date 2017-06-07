@@ -6,7 +6,10 @@
     "id": "https://linked.art/example/object/3", 
     "type": "ManMadeObject", 
     "label": "Example Painting", 
-    "classified_as": "aat:300033618"
+    "classified_as": [
+      "aat:300133025", 
+      "aat:300033618"
+    ]
   }, 
   "took_place_at": {
     "id": "https://linked.art/example/place/2", 

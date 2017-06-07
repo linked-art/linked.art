@@ -7,7 +7,10 @@
   "used_specific_object": {
     "id": "https://linked.art/example/object/10", 
     "type": "ManMadeObject", 
-    "classified_as": "aat:300033618"
+    "classified_as": [
+      "aat:300133025", 
+      "aat:300033618"
+    ]
   }, 
   "consists_of": [
     {

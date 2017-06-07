@@ -15,7 +15,10 @@
   "used_specific_object": {
     "id": "https://linked.art/example/object/9", 
     "type": "ManMadeObject", 
-    "classified_as": "aat:300033618"
+    "classified_as": [
+      "aat:300133025", 
+      "aat:300033618"
+    ]
   }, 
   "continued": {
     "id": "https://linked.art/example/activity/13", 

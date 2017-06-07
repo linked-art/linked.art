@@ -13,7 +13,8 @@
 <https://linked.art/example/object/26> a crm:E22_Man-Made_Object ;
     rdfs:label "Another Example Painting" ;
     dcterms:relation <https://linked.art/example/object/27> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618>,
+        <http://vocab.getty.edu/aat/300133025> .
 
 <https://linked.art/example/object/27> a crm:E22_Man-Made_Object ;
     rdfs:label "Yet Another Example Painting" ;

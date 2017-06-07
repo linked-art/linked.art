@@ -3,6 +3,9 @@
   "id": "https://linked.art/example/object/30", 
   "type": "ManMadeObject", 
   "label": "Example Impressionist Painting", 
-  "classified_as": "aat:300033618", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ], 
   "style": "aat:300021503"
 }

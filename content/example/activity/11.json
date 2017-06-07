@@ -15,7 +15,10 @@
     "id": "https://linked.art/example/object/8", 
     "type": "ManMadeObject", 
     "label": "Example Destroyed Painting", 
-    "classified_as": "aat:300033618"
+    "classified_as": [
+      "aat:300133025", 
+      "aat:300033618"
+    ]
   }, 
   "carried_out_by": {
     "id": "https://linked.art/example/person/5", 

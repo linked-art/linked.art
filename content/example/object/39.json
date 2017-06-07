@@ -3,7 +3,10 @@
   "id": "https://linked.art/example/object/39", 
   "type": "ManMadeObject", 
   "label": "Painting", 
-  "classified_as": "aat:300033618", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ], 
   "representation": {
     "id": "http://example.org/images/image.jpg", 
     "type": "VisualItem", 

@@ -8,7 +8,10 @@
     "id": "https://linked.art/example/object/52", 
     "type": "ManMadeObject", 
     "label": "Painting", 
-    "classified_as": "aat:300033618", 
+    "classified_as": [
+      "aat:300133025", 
+      "aat:300033618"
+    ], 
     "representation": "http://example.org/images/object-at-exhibition.jpg"
   }, 
   "representation": {

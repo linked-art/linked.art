@@ -3,7 +3,10 @@
   "id": "https://linked.art/example/object/38", 
   "type": "ManMadeObject", 
   "label": "Object", 
-  "classified_as": "aat:300033618", 
+  "classified_as": [
+    "aat:300133025", 
+    "aat:300033618"
+  ], 
   "subject_to": {
     "id": "https://linked.art/example/Right/1", 
     "type": "Right", 
