@@ -577,7 +577,7 @@ id_uri_hash['objabout_description'] = what
 
 what = Painting(art=1)
 what.label = "Another Example Painting"
-p2 = Painting()
+p2 = Painting(art=1)
 p2.label = "Yet Another Example Painting"
 what.related = p2
 id_uri_hash['objabout_related'] = what
