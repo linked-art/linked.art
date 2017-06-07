@@ -14,7 +14,7 @@
     rdfs:label "Gertrude H. Ingram" ;
     crm:P138i_has_representation <http://example.org/images/gertrude.jpg> .
 
-<http://example.org/images/gertrude.jpg> a crm:E38_Image ;
+<http://example.org/images/gertrude.jpg> a crm:E36_Visual_Item ;
     rdfs:label "Image of G.H. Ingram" ;
     dc:format "image/jpeg" .
 

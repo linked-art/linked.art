@@ -6,7 +6,7 @@
   "classified_as": "aat:300033618", 
   "representation": {
     "id": "http://example.org/images/image.jpg", 
-    "type": "Image", 
+    "type": "VisualItem", 
     "label": "Image of Painting", 
     "format": "image/jpeg"
   }

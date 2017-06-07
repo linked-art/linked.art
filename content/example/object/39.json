@@ -6,7 +6,7 @@
   "classified_as": "aat:300047090", 
   "representation": {
     "id": "http://iiif.example.org/image/1", 
-    "type": "Image", 
+    "type": "VisualItem", 
     "label": "IIIF Image API for Sculpture", 
     "conforms_to": "http://iiif.io/api/image"
   }

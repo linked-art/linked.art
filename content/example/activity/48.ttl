@@ -21,6 +21,6 @@
     crm:P138i_has_representation <http://example.org/images/object-at-exhibition.jpg> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<http://example.org/images/object-at-exhibition.jpg> a crm:E38_Image ;
+<http://example.org/images/object-at-exhibition.jpg> a crm:E36_Visual_Item ;
     dc:format "image/jpeg" .
 

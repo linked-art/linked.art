@@ -5,7 +5,7 @@
   "label": "Gertrude H. Ingram", 
   "representation": {
     "id": "http://example.org/images/gertrude.jpg", 
-    "type": "Image", 
+    "type": "VisualItem", 
     "label": "Image of G.H. Ingram", 
     "format": "image/jpeg"
   }

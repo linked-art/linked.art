@@ -15,7 +15,7 @@
     crm:P138i_has_representation <http://iiif.example.org/image/1> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300047090> .
 
-<http://iiif.example.org/image/1> a crm:E38_Image ;
+<http://iiif.example.org/image/1> a crm:E36_Visual_Item ;
     rdfs:label "IIIF Image API for Sculpture" ;
     dcterms:conformsTo <http://iiif.io/api/image> .
 

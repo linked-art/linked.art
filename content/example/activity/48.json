@@ -13,7 +13,7 @@
   }, 
   "representation": {
     "id": "http://example.org/images/object-at-exhibition.jpg", 
-    "type": "Image", 
+    "type": "VisualItem", 
     "format": "image/jpeg"
   }
 }

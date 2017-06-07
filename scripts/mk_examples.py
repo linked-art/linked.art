@@ -10,20 +10,20 @@ import requests
 
 import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
-    Currency, Identifier, Person, Image, TransferOfCustody, Identifier, Title, \
+    Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment, LegalObject
+    EndOfExistence, AttributeAssignment
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
-	PrimaryTitle, Sculpture, Description, Width, Height, DimensionStatement, \
+	PrimaryAppellation, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, \
 	materialTypes, dimensionUnits
-from cromulent.extra import PhysicalObject, Payment, DestructionActivity, add_rdf_value, \
+from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties
 
 ManMadeObject._uri_segment = "object"
@@ -40,7 +40,7 @@ Purchase._uri_segment = "activity"
 Payment._uri_segment = "activity"
 MonetaryAmount._uri_segment = "money"
 Currency._uri_segment = "money"
-DestructionActivity._uri_segment = "activity"
+EoEActivity._uri_segment = "activity"
 PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
@@ -49,7 +49,6 @@ Appellation._uri_segment = "name"
 BeginningOfExistence._uri_segment = "event"
 EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
-LegalObject._uri_segment = "object"
 
 fh = file('../site.yaml')
 siteData = fh.read()
@@ -314,10 +313,10 @@ act.consists_of = pay
 id_uri_hash['prov_theft_sale'] = act
 
 # Prov - Destruction
-dest = DestructionActivity()
+dest = EoEActivity()
 what = Painting()
 what.label = "Example Destroyed Painting"
-dest.destroyed = what
+dest.took_out_of_existence = what
 when = TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
@@ -377,8 +376,8 @@ c2 = Purchase()
 c2.transferred_title_of = what
 own3 = Curating()
 own3.label = "Ownership by second and final owner"
-dest = DestructionActivity()
-dest.destroyed = what
+dest = EoEActivity()
+dest.took_out_of_existence = what
 act.consists_of = prod
 act.consists_of = own1
 act.consists_of = c1
@@ -546,22 +545,21 @@ idset.refers_to = coll
 coll.part = what
 id_uri_hash['objid_linkcoll'] = what
 
-
 what = Painting()
 what.label = "Peasant and Sheep"
-ttl = PrimaryTitle()
+ttl = PrimaryAppellation()
 ttl.value = "Peasant and Sheep"
-what.title = ttl
+what.identified_by = ttl
 id_uri_hash['objid_title'] = what
 
 what = Painting()
 what.label = "Self Portrait"
-ttl = PrimaryTitle()
+ttl = PrimaryAppellation()
 ttl.value = "Self Portrait"
-what.title = ttl
-ttl2 = Title()
+what.identified_by = ttl
+ttl2 = Appellation()
 ttl2.value = "Portrait of the Artist"
-what.title = ttl2
+what.identified_by = ttl2
 id_uri_hash['objid_title_alt'] = what
 
 what = Sculpture()
@@ -669,7 +667,7 @@ id_uri_hash['objrights_nkc'] = what
 
 what = Painting()
 what.label = "Painting"
-img = Image("http://example.org/images/image.jpg")
+img = VisualItem("http://example.org/images/image.jpg")
 img.label = "Image of Painting"
 img.format = "image/jpeg"
 what.representation = img
@@ -685,7 +683,7 @@ id_uri_hash['objdig_homepage'] = what
 
 what = Sculpture()
 what.label = "Sculpture"
-img = Image("http://iiif.example.org/image/1")
+img = VisualItem("http://iiif.example.org/image/1")
 img.label = "IIIF Image API for Sculpture"
 img.conforms_to = BaseResource("http://iiif.io/api/image")
 what.representation = img
@@ -803,7 +801,7 @@ id_uri_hash['actor_biog'] = who
 
 who = Person()
 who.label = "Gertrude H. Ingram"
-img = Image("http://example.org/images/gertrude.jpg")
+img = VisualItem("http://example.org/images/gertrude.jpg")
 img.label = "Image of G.H. Ingram"
 img.format = "image/jpeg"
 who.representation = img
@@ -884,7 +882,6 @@ exh.used_specific_object = obj2
 exh.used_specific_object = obj3
 id_uri_hash['exh_objects'] = exh
 
-
 xfer = TransferOfCustody()
 xfer.label = "Custody Transfer of Painting for Exhibition"
 exh = Exhibition()
@@ -921,12 +918,11 @@ exh.label = "Example Exhibition"
 obj = Painting()
 obj.label = "Painting"
 exh.used_specific_object = obj
-img = Image("http://example.org/images/object-at-exhibition.jpg")
+img = VisualItem("http://example.org/images/object-at-exhibition.jpg")
 img.format = "image/jpeg"
 obj.representation = img
 exh.representation = img
 id_uri_hash['exh_image'] = exh
-
 
 multi = MultiExhibition()
 multi.label = "Example Travelling Exhibition at Two Museums"
@@ -959,7 +955,6 @@ print ">>> Built examples "
 prop_hash = {}
 class_hash = {}
 aat_hash = {}
-
 
 # Set up JSON-LD to TTL environment
 

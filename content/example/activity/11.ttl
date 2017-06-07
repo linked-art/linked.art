@@ -10,11 +10,11 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.art/example/activity/11> a crm:E6_Destruction,
+<https://linked.art/example/activity/11> a crm:E64_End_of_Existence,
         crm:E7_Activity ;
-    crm:P13_destroyed <https://linked.art/example/object/8> ;
     crm:P14_carried_out_by <https://linked.art/example/person/5> ;
-    crm:P4_has_time-span <https://linked.art/example/time/5> .
+    crm:P4_has_time-span <https://linked.art/example/time/5> ;
+    crm:P93_took_out_of_existence <https://linked.art/example/object/8> .
 
 <https://linked.art/example/object/8> a crm:E22_Man-Made_Object ;
     rdfs:label "Example Destroyed Painting" ;

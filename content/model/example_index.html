@@ -184,15 +184,15 @@ class_idx:
 - - Appellation
   - - [model/actor/index.html, person/10, actor_name]
     - [model/actor/index.html, person/11, actor_name_parts]
+    - [model/object/identity/index.html, object/22, objid_title]
     - [model/exhibition/index.html, activity/46, exh_labels]
 - - AttributeAssignment
   - - [model/exhibition/index.html, activity/46, exh_labels]
 - - BeginningOfExistence
   - - [model/actor/index.html, person/13, actor_birthdeath]
-- - Destruction
-  - - [model/provenance/index.html, activity/11, prov_dest]
 - - EndOfExistence
-  - - [model/actor/index.html, person/13, actor_birthdeath]
+  - - [model/provenance/index.html, activity/11, prov_dest]
+    - [model/actor/index.html, person/13, actor_birthdeath]
 - - Group
   - - [model/base/index.html, group/0, base_parts_org]
     - [model/actor/index.html, person/16, actor_nationality]
@@ -208,11 +208,6 @@ class_idx:
     - [model/provenance/auctions/index.html, object/12, auction_lotset]
     - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/object/identity/index.html, object/20, objid_linkcoll]
-- - Image
-  - - [model/actor/index.html, person/15, actor_image]
-    - [model/object/digital/index.html, object/37, objdig_image]
-    - [model/object/digital/index.html, object/39, objdig_iiif_image]
-    - [model/exhibition/index.html, activity/48, exh_image]
 - - InformationObject
   - - [model/base/index.html, info/0, base_parts_info]
     - [model/provenance/auctions/index.html, info/1, auction_catalog]
@@ -339,8 +334,6 @@ class_idx:
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/exhibition/index.html, activity/42, exh_activity]
     - [model/exhibition/index.html, activity/49, exh_multi]
-- - Title
-  - - [model/object/identity/index.html, object/22, objid_title]
 - - TransferOfCustody
   - - [model/provenance/index.html, activity/7, prov_loss]
     - [model/provenance/index.html, activity/8, prov_theft]
@@ -348,6 +341,11 @@ class_idx:
     - [model/exhibition/index.html, activity/44, exh_custody]
 - - Type
   - - [model/object/aboutness/index.html, object/27, objabout_subject]
+- - VisualItem
+  - - [model/actor/index.html, person/15, actor_image]
+    - [model/object/digital/index.html, object/37, objdig_image]
+    - [model/object/digital/index.html, object/39, objdig_iiif_image]
+    - [model/exhibition/index.html, activity/48, exh_image]
 prop_idx:
 - - acquired_title_through
   - - [model/object/provenance/index.html, object/42, objprov_owner]
@@ -420,8 +418,6 @@ prop_idx:
   - - [model/object/aboutness/index.html, object/26, objabout_depicts]
 - - description
   - - [model/object/aboutness/index.html, object/25, objabout_description]
-- - destroyed
-  - - [model/provenance/index.html, activity/11, prov_dest]
 - - dimension
   - - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/object/physical/index.html, object/29, objphys_dims]
@@ -454,6 +450,8 @@ prop_idx:
     - [model/provenance/auctions/index.html, object/15, auction_prices]
     - [model/object/identity/index.html, object/19, objid_legacy]
     - [model/object/identity/index.html, object/20, objid_linkcoll]
+    - [model/object/identity/index.html, object/22, objid_title]
+    - [model/object/identity/index.html, object/23, objid_title_alt]
 - - label
   - - [model/base/index.html, place/0, base_parts_place]
     - [model/base/index.html, group/0, base_parts_org]
@@ -601,9 +599,8 @@ prop_idx:
     - [model/provenance/auctions/index.html, activity/25, auction_base]
     - [model/exhibition/index.html, activity/42, exh_activity]
     - [model/exhibition/index.html, activity/49, exh_multi]
-- - title
-  - - [model/object/identity/index.html, object/22, objid_title]
-    - [model/object/identity/index.html, object/23, objid_title_alt]
+- - took_out_of_existence
+  - - [model/provenance/index.html, activity/11, prov_dest]
 - - took_place_at
   - - [model/provenance/index.html, activity/1, prov_event]
     - [model/provenance/index.html, activity/2, prov_create]

@@ -8,7 +8,7 @@
     "id": "https://linked.art/example/activity/47", 
     "type": "AttributeAssignment", 
     "assigned": {
-      "id": "https://linked.art/example/name/7", 
+      "id": "https://linked.art/example/name/10", 
       "type": "Appellation", 
       "value": "Exhibition Specific Name"
     }, 
