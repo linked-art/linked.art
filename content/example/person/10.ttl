@@ -12,9 +12,9 @@
 
 <https://linked.art/example/person/10> a crm:E21_Person ;
     rdfs:label "J. Smith" ;
-    crm:P1_is_identified_by <https://linked.art/example/name/0> .
+    crm:P1_is_identified_by <https://linked.art/example/name/3> .
 
-<https://linked.art/example/name/0> a crm:E41_Appellation ;
+<https://linked.art/example/name/3> a crm:E41_Appellation ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
     rdf:value "J. Smith" .
 

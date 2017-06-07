@@ -46,10 +46,10 @@
     {
       "id": "https://linked.art/example/activity/24", 
       "type": [
-        "Destruction", 
+        "EndOfExistence", 
         "Activity"
       ], 
-      "destroyed": "https://linked.art/example/object/10"
+      "took_out_of_existence": "https://linked.art/example/object/10"
     }
   ]
 }

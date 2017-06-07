@@ -15,7 +15,7 @@
     crm:P138i_has_representation <http://example.org/images/image.jpg> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<http://example.org/images/image.jpg> a crm:E38_Image ;
+<http://example.org/images/image.jpg> a crm:E36_Visual_Item ;
     rdfs:label "Image of Painting" ;
     dc:format "image/jpeg" .
 

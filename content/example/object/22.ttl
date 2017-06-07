@@ -12,10 +12,10 @@
 
 <https://linked.art/example/object/22> a crm:E22_Man-Made_Object ;
     rdfs:label "Peasant and Sheep" ;
-    crm:P102_has_title <https://linked.art/example/Title/0> ;
+    crm:P1_is_identified_by <https://linked.art/example/name/0> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<https://linked.art/example/Title/0> a crm:E35_Title ;
+<https://linked.art/example/name/0> a crm:E41_Appellation ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
     rdf:value "Peasant and Sheep" .
 

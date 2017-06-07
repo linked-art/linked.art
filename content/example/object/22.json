@@ -3,11 +3,11 @@
   "id": "https://linked.art/example/object/22", 
   "type": "ManMadeObject", 
   "label": "Peasant and Sheep", 
-  "classified_as": "aat:300033618", 
-  "title": {
-    "id": "https://linked.art/example/Title/0", 
-    "type": "Title", 
+  "identified_by": {
+    "id": "https://linked.art/example/name/0", 
+    "type": "Appellation", 
     "value": "Peasant and Sheep", 
     "classified_as": "aat:300404670"
-  }
+  }, 
+  "classified_as": "aat:300033618"
 }

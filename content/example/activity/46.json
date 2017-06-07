@@ -8,13 +8,13 @@
     "id": "https://linked.art/example/activity/47", 
     "type": "AttributeAssignment", 
     "assigned": {
-      "id": "https://linked.art/example/name/7", 
+      "id": "https://linked.art/example/name/10", 
       "type": "Appellation", 
       "value": "Exhibition Specific Name"
     }, 
     "classified_as": "aat:300411672", 
     "assigned_to": {
-      "id": "https://linked.art/example/object/48", 
+      "id": "https://linked.art/example/object/49", 
       "type": "ManMadeObject", 
       "label": "Real Painting Name", 
       "classified_as": "aat:300033618"

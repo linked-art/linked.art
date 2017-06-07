@@ -93,7 +93,7 @@ Exhibitions are another common way that the custody of an object changes, while 
 
 The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object, as above, leaves the chain open ended as it might be recovered in the future, however if the object is destroyed there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
 
-Objects are destroyed by during `Destruction` events that are not carried out by any actor, or by an `Activity` that is at the same time a `Destruction`.  This is a different model from `Production` which is always an activity.
+Objects are destroyed by during `EndOfExistence` events that are not carried out by any actor, or by an `Activity` that is at the same time an `EndOfExistence`.  This is a different model from `Production` which is always an activity.
 
 {{ macros.include_example("prov_dest") }}
 

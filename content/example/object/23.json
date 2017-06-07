@@ -3,18 +3,18 @@
   "id": "https://linked.art/example/object/23", 
   "type": "ManMadeObject", 
   "label": "Self Portrait", 
-  "classified_as": "aat:300033618", 
-  "title": [
+  "identified_by": [
     {
-      "id": "https://linked.art/example/Title/1", 
-      "type": "Title", 
+      "id": "https://linked.art/example/name/1", 
+      "type": "Appellation", 
       "value": "Self Portrait", 
       "classified_as": "aat:300404670"
     }, 
     {
-      "id": "https://linked.art/example/Title/2", 
-      "type": "Title", 
+      "id": "https://linked.art/example/name/2", 
+      "type": "Appellation", 
       "value": "Portrait of the Artist"
     }
-  ]
+  ], 
+  "classified_as": "aat:300033618"
 }
