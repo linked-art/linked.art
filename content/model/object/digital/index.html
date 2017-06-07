@@ -16,11 +16,19 @@ The most common scenario is if there are one or more images available of the obj
 
 {{ macros.include_example("objdig_image") }}
 
-## Web Page
+## Home Page
 
-Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `homepage` property, and points to an `InformationObject` `classified_as` a web page, or _aat:300264578_.  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
+Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to an `InformationObject` which is `classified_as` a web page, or _aat:300264578_ as well as being preferred (_aat:300404670_).  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
 
 {{ macros.include_example("objdig_homepage") }}
+
+
+## Other Pages
+
+While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being an `InformationObject`, but without the preferred classification.
+
+{{ macros.include_example("objdig_page") }}
+
 
 ## IIIF 
 

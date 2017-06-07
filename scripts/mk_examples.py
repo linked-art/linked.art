@@ -676,10 +676,19 @@ id_uri_hash['objdig_image'] = what
 what = Painting()
 what.label = "Painting"
 page = WebPage("http://example.org/collection/1/painting")
+page.classified_as = Type("aat:300404670")
 page.label = "Homepage for Painting"
 page.format = "text/html"
-what.homepage = page
+what.subject_of = page
 id_uri_hash['objdig_homepage'] = what
+
+what = Painting()
+what.label = "Painting"
+page = WebPage("http://example.org/journal/article")
+page.label = "Webpage that discusses Painting"
+page.format = "text/html"
+what.subject_of = page
+id_uri_hash['objdig_page'] = what
 
 what = Sculpture()
 what.label = "Sculpture"
