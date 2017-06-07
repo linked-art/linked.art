@@ -14,7 +14,7 @@
     }, 
     "classified_as": "aat:300411672", 
     "assigned_to": {
-      "id": "https://linked.art/example/object/49", 
+      "id": "https://linked.art/example/object/51", 
       "type": "ManMadeObject", 
       "label": "Real Painting Name", 
       "classified_as": "aat:300033618"

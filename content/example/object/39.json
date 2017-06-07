@@ -4,11 +4,10 @@
   "type": "ManMadeObject", 
   "label": "Painting", 
   "classified_as": "aat:300033618", 
-  "subject_of": {
-    "id": "http://example.org/journal/article", 
-    "type": "InformationObject", 
-    "label": "Webpage that discusses Painting", 
-    "classified_as": "aat:300264578", 
-    "format": "text/html"
+  "representation": {
+    "id": "http://example.org/images/image.jpg", 
+    "type": "VisualItem", 
+    "label": "Image of Painting", 
+    "format": "image/jpeg"
   }
 }

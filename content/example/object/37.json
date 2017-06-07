@@ -2,12 +2,17 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/37", 
   "type": "ManMadeObject", 
-  "label": "Painting", 
+  "label": "Example Painting", 
   "classified_as": "aat:300033618", 
-  "representation": {
-    "id": "http://example.org/images/image.jpg", 
-    "type": "VisualItem", 
-    "label": "Image of Painting", 
-    "format": "image/jpeg"
+  "subject_to": {
+    "id": "https://linked.art/example/Right/0", 
+    "type": "Right", 
+    "label": "Copyright of Example Painting's content", 
+    "classified_as": "http://rightsstatements.org/vocab/InC/1.0/", 
+    "possessed_by": {
+      "id": "https://linked.art/example/actor/7", 
+      "type": "Actor", 
+      "label": "Copyright Holder"
+    }
   }
 }

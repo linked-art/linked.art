@@ -16,7 +16,7 @@
     "classified_as": "aat:300312281"
   }, 
   "transferred_custody_of": {
-    "id": "https://linked.art/example/object/48", 
+    "id": "https://linked.art/example/object/50", 
     "type": "ManMadeObject", 
     "label": "Painting", 
     "classified_as": "aat:300033618", 
@@ -27,7 +27,7 @@
     "type": "Activity", 
     "label": "Example Exhibition", 
     "classified_as": "aat:300054766", 
-    "used_specific_object": "https://linked.art/example/object/48", 
+    "used_specific_object": "https://linked.art/example/object/50", 
     "carried_out_by": "https://linked.art/example/group/9"
   }
 }

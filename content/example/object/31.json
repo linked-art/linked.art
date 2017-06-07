@@ -2,11 +2,26 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/31", 
   "type": "ManMadeObject", 
-  "label": "Example Marble Sculpture", 
-  "classified_as": "aat:300047090", 
-  "made_of": {
-    "id": "aat:300011443", 
-    "type": "Material", 
-    "label": "marble"
-  }
+  "label": "Example 16x20 Painting", 
+  "classified_as": "aat:300033618", 
+  "dimension": [
+    {
+      "id": "https://linked.art/example/Dimension/0", 
+      "type": "Dimension", 
+      "value": 16, 
+      "classified_as": "aat:300055647", 
+      "unit": {
+        "id": "aat:300379100", 
+        "type": "MeasurementUnit", 
+        "label": "inches"
+      }
+    }, 
+    {
+      "id": "https://linked.art/example/Dimension/1", 
+      "type": "Dimension", 
+      "value": 20, 
+      "classified_as": "aat:300055644", 
+      "unit": "aat:300379100"
+    }
+  ]
 }

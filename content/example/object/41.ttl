@@ -12,10 +12,11 @@
 
 <https://linked.art/example/object/41> a crm:E22_Man-Made_Object ;
     rdfs:label "Painting" ;
-    crm:P129i_is_subject_of <http://iiif.example.org/presentation/1/manifest.json> ;
+    crm:P129i_is_subject_of <http://example.org/journal/article> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<http://iiif.example.org/presentation/1/manifest.json> a crm:E73_Information_Object ;
-    dc:format "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\"" ;
-    dcterms:conformsTo <http://iiif.io/api/presentation> .
+<http://example.org/journal/article> a crm:E73_Information_Object ;
+    rdfs:label "Webpage that discusses Painting" ;
+    dc:format "text/html" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300264578> .
 

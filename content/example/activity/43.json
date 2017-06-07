@@ -6,19 +6,19 @@
   "classified_as": "aat:300054766", 
   "used_specific_object": [
     {
-      "id": "https://linked.art/example/object/45", 
+      "id": "https://linked.art/example/object/47", 
       "type": "ManMadeObject", 
       "label": "Painting", 
       "classified_as": "aat:300033618"
     }, 
     {
-      "id": "https://linked.art/example/object/46", 
+      "id": "https://linked.art/example/object/48", 
       "type": "ManMadeObject", 
       "label": "Another Painting", 
       "classified_as": "aat:300033618"
     }, 
     {
-      "id": "https://linked.art/example/object/47", 
+      "id": "https://linked.art/example/object/49", 
       "type": "ManMadeObject", 
       "label": "Sculpture", 
       "classified_as": "aat:300047090"

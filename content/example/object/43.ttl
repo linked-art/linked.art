@@ -12,11 +12,10 @@
 
 <https://linked.art/example/object/43> a crm:E22_Man-Made_Object ;
     rdfs:label "Painting" ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> ;
-    crm:P52_has_current_owner <https://linked.art/example/group/2> .
+    crm:P129i_is_subject_of <http://iiif.example.org/presentation/1/manifest.json> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
 
-<https://linked.art/example/group/2> a crm:E74_Group ;
-    rdfs:label "Museum" ;
-    crm:P22i_acquired_title_through <https://linked.art/example/activity/39> ;
-    crm:P2_has_type <http://vocab.getty.edu/aat/300312281> .
+<http://iiif.example.org/presentation/1/manifest.json> a crm:E73_Information_Object ;
+    dc:format "application/ld+json;profile=\"http://iiif.io/api/presentation/2/context.json\"" ;
+    dcterms:conformsTo <http://iiif.io/api/presentation> .
 

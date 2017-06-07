@@ -575,6 +575,13 @@ what.referred_to_by = desc
 id_uri_hash['objabout_description'] = what
 
 what = Painting()
+what.label = "Another Example Painting"
+p2 = Painting()
+p2.label = "Yet Another Example Painting"
+what.related = p2
+id_uri_hash['objabout_related'] = what
+
+what = Painting()
 what.label = "Self Portrait"
 who = Actor()
 who.label = "Artist"

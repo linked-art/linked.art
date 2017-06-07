@@ -4,9 +4,14 @@
   "type": "ManMadeObject", 
   "label": "Painting", 
   "classified_as": "aat:300033618", 
-  "current_location": {
-    "id": "https://linked.art/example/place/5", 
-    "type": "Place", 
-    "label": "Gallery W6"
+  "produced_by": {
+    "id": "https://linked.art/example/activity/38", 
+    "type": "Production", 
+    "label": "Production of Painting", 
+    "carried_out_by": {
+      "id": "https://linked.art/example/person/8", 
+      "type": "Person", 
+      "label": "Artist"
+    }
   }
 }

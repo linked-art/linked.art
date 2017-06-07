@@ -2,16 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/38", 
   "type": "ManMadeObject", 
-  "label": "Painting", 
+  "label": "Object", 
   "classified_as": "aat:300033618", 
-  "subject_of": {
-    "id": "http://example.org/collection/1/painting", 
-    "type": "InformationObject", 
-    "label": "Homepage for Painting", 
-    "classified_as": [
-      "aat:300264578", 
-      "aat:300404670"
-    ], 
-    "format": "text/html"
+  "subject_to": {
+    "id": "https://linked.art/example/Right/1", 
+    "type": "Right", 
+    "label": "No known copyright", 
+    "classified_as": "http://rightsstatements.org/vocab/NKC/1.0/"
   }
 }

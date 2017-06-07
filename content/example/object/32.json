@@ -2,12 +2,12 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/32", 
   "type": "ManMadeObject", 
-  "label": "Example Multi-Media Painting", 
+  "label": "Example Painting", 
   "classified_as": "aat:300033618", 
   "referred_to_by": {
-    "id": "https://linked.art/example/text/2", 
+    "id": "https://linked.art/example/text/1", 
     "type": "LinguisticObject", 
-    "value": "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame", 
-    "classified_as": "aat:300010358"
+    "value": "The painting is approximately 16 inches wide, by 20 inches high", 
+    "classified_as": "aat:300266036"
   }
 }

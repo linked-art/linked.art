@@ -4,15 +4,10 @@
   "type": "ManMadeObject", 
   "label": "Example Painting", 
   "classified_as": "aat:300033618", 
-  "subject_to": {
-    "id": "https://linked.art/example/Right/0", 
-    "type": "Right", 
-    "label": "Copyright of Example Painting's content", 
-    "classified_as": "http://rightsstatements.org/vocab/InC/1.0/", 
-    "possessed_by": {
-      "id": "https://linked.art/example/actor/7", 
-      "type": "Actor", 
-      "label": "Copyright Holder"
-    }
+  "referred_to_by": {
+    "id": "https://linked.art/example/text/3", 
+    "type": "LinguisticObject", 
+    "value": "Donation of Ms J. Smith; Example Organization", 
+    "classified_as": "aat:300026687"
   }
 }

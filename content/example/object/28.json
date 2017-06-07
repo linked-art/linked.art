@@ -2,7 +2,16 @@
   "@context": "https://linked.art/ns/context/1/full.jsonld", 
   "id": "https://linked.art/example/object/28", 
   "type": "ManMadeObject", 
-  "label": "Example Impressionist Painting", 
+  "label": "Self Portrait", 
   "classified_as": "aat:300033618", 
-  "style": "aat:300021503"
+  "depicts": {
+    "id": "https://linked.art/example/actor/6", 
+    "type": "Actor", 
+    "label": "Artist"
+  }, 
+  "produced_by": {
+    "id": "https://linked.art/example/activity/37", 
+    "type": "Production", 
+    "carried_out_by": "https://linked.art/example/actor/6"
+  }
 }
