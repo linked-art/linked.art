@@ -216,8 +216,28 @@ who.label = "Example Glassblower"
 what = Sculpture(art=1)
 what.label = "Glass Sculpture"
 act.carried_out_by = who
-act.technique = Type("http://vocab.getty.edu/aat/300053932")
+act.classified_as = Type("http://vocab.getty.edu/aat/300053932")
 id_uri_hash['prov_create_technique'] = act
+
+topact = Production()
+what = Sculpture(art=1)
+what.label = "Painted Sculpture"
+topact.produced = what
+act1 = Production()
+act1.classified_as = Type("http://vocab.getty.edu/aat/300264383")
+who = Actor()
+who.label = "Example Sculptor"
+act1.carried_out_by = who
+topact.consists_of = act1
+act2 = Production()
+who2 = Actor()
+who2.label = "Example Sculpture Painter"
+act2.classified_as = Type("http://vocab.getty.edu/aat/300161986")
+act2.carried_out_by = who2
+topact.consists_of = act2
+id_uri_hash['prov_create_roles'] = topact
+
+
 
 # Prov - Acquisition
 act = Acquisition()
