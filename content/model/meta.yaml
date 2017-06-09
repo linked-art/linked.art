@@ -13,15 +13,15 @@ example:
     actor_name: person/10.json
     actor_name_parts: person/11.json
     actor_nationality: person/16.json
-    actor_type: activity/40.json
+    actor_type: activity/43.json
     actor_ulan: person/20.json
-    auction_base: activity/25.json
+    auction_base: activity/28.json
     auction_catalog: info/1.json
-    auction_lot: activity/27.json
-    auction_lotset: object/12.json
-    auction_prices: object/15.json
-    auction_purchase: activity/30.json
-    auction_purchase_price: activity/32.json
+    auction_lot: activity/30.json
+    auction_lotset: object/13.json
+    auction_prices: object/16.json
+    auction_purchase: activity/33.json
+    auction_purchase_price: activity/35.json
     base_parts_activity: activity/0.json
     base_parts_info: info/0.json
     base_parts_org: group/0.json
@@ -29,47 +29,48 @@ example:
     base_parts_thing: object/1.json
     base_stmt: object/2.json
     base_type: object/0.json
-    exh_activity: activity/42.json
-    exh_custody: activity/44.json
-    exh_image: activity/48.json
-    exh_labels: activity/46.json
-    exh_multi: activity/49.json
-    exh_objects: activity/43.json
-    objabout_depicts: object/28.json
-    objabout_description: object/25.json
-    objabout_related: object/26.json
-    objabout_style: object/30.json
-    objabout_subject: object/29.json
-    objdig_homepage: object/40.json
-    objdig_iiif_image: object/42.json
-    objdig_iiif_manifest: object/43.json
-    objdig_image: object/39.json
-    objdig_page: object/41.json
-    objid_legacy: object/19.json
-    objid_linkcoll: object/20.json
-    objid_title: object/22.json
-    objid_title_alt: object/23.json
-    objid_types: object/24.json
-    objphys_dims: object/31.json
-    objphys_dims_stmt: object/32.json
-    objphys_materials: object/33.json
-    objphys_materials_stmt: object/34.json
-    objprov_location: object/46.json
-    objprov_owner: object/45.json
-    objprov_production: object/44.json
-    objrights_credit: object/35.json
-    objrights_nkc: object/38.json
-    objrights_rights: object/37.json
-    objrights_rights_stmt: object/36.json
-    prov_acq: activity/4.json
+    exh_activity: activity/45.json
+    exh_custody: activity/47.json
+    exh_image: activity/51.json
+    exh_labels: activity/49.json
+    exh_multi: activity/52.json
+    exh_objects: activity/46.json
+    objabout_depicts: object/29.json
+    objabout_description: object/26.json
+    objabout_related: object/27.json
+    objabout_style: object/31.json
+    objabout_subject: object/30.json
+    objdig_homepage: object/41.json
+    objdig_iiif_image: object/43.json
+    objdig_iiif_manifest: object/44.json
+    objdig_image: object/40.json
+    objdig_page: object/42.json
+    objid_legacy: object/20.json
+    objid_linkcoll: object/21.json
+    objid_title: object/23.json
+    objid_title_alt: object/24.json
+    objid_types: object/25.json
+    objphys_dims: object/32.json
+    objphys_dims_stmt: object/33.json
+    objphys_materials: object/34.json
+    objphys_materials_stmt: object/35.json
+    objprov_location: object/47.json
+    objprov_owner: object/46.json
+    objprov_production: object/45.json
+    objrights_credit: object/36.json
+    objrights_nkc: object/39.json
+    objrights_rights: object/38.json
+    objrights_rights_stmt: object/37.json
+    prov_acq: activity/7.json
     prov_create: activity/2.json
+    prov_create_roles: activity/4.json
     prov_create_technique: activity/3.json
-    prov_curate: activity/12.json
-    prov_dest: activity/11.json
+    prov_curate: activity/15.json
+    prov_dest: activity/14.json
     prov_event: activity/1.json
-    prov_inventory: activity/15.json
-    prov_lifetime: activity/17.json
-    prov_loss: activity/7.json
-    prov_purchase: activity/5.json
-    prov_theft: activity/8.json
-    prov_theft_sale: activity/9.json
+    prov_inventory: activity/18.json
+    prov_lifetime: activity/20.json
+    prov_loss: activity/10.json
+    prov_purchase: activity/8.json
+    prov_theft: activity/11.json
+    prov_theft_sale: activity/12.json
