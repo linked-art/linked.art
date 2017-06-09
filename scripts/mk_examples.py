@@ -223,13 +223,13 @@ topact = Production()
 what = Sculpture(art=1)
 what.label = "Painted Sculpture"
 topact.produced = what
-act1 = Production()
+act1 = Activity()
 act1.classified_as = Type("http://vocab.getty.edu/aat/300264383")
 who = Actor()
 who.label = "Example Sculptor"
 act1.carried_out_by = who
 topact.consists_of = act1
-act2 = Production()
+act2 = Activity()
 who2 = Actor()
 who2.label = "Example Sculpture Painter"
 act2.classified_as = Type("http://vocab.getty.edu/aat/300161986")
