@@ -13,7 +13,7 @@ In order to provide examples of how to apply the [data model](/model/), this sec
 -->
 
 {% for folder in resource.node.child_nodes %}
-  * [{{ folder.meta.title }}]({{ folder.full_url }})
+  * {{ folder.meta.title }}
   {% for recipe in folder.child_nodes %}
     * [{{ recipe.meta.title }}]({{ recipe.full_url }})
   {% endfor %}
