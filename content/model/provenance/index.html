@@ -39,7 +39,7 @@ If there is a particular technique known to have been used in the creation of th
 
 ### Multiple Artists with Roles
 
-If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role in the production.
+If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. These components are instances of `Activity` to make it easier to distinguish between the `Production` of the object overall and the activities that happened as part of that. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
 
 {{ macros.include_example("prov_create_roles") }}
 

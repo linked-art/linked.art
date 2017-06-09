@@ -1071,6 +1071,9 @@ def traverse(what, eg):
 			# And now recurse
 			if isinstance(v, OrderedDict):
 				traverse(v, eg)
+			elif type(v) == list:
+				for x in v:
+					traverse(x, eg)
 
 ym = []
 for (k,what) in sorted(id_uri_hash.items()):
