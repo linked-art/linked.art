@@ -984,6 +984,22 @@ multi.consists_of = exh2
 id_uri_hash['exh_multi'] = multi
 
 
+obj = Painting(art=1)
+obj.label = "Current Painting Title"
+aa = Naming()
+name = Appellation()
+name.value = "Previous Painting Title"
+aa.assigned = name
+aa.assigned_to = obj
+who = Person()
+who.label = "Painting Curator"
+aa.carried_out_by = who
+ts = TimeSpan()
+ts.begin_of_the_begin = "1804-05-19"
+ts.end_of_the_end = "1890-03-12"
+aa.timespan = ts
+id_uri_hash['base_assigned'] = aa
+
 
 print ">>> Built examples "
 

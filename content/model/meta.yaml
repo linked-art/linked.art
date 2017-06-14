@@ -22,6 +22,7 @@ example:
     auction_prices: object/16.json
     auction_purchase: activity/33.json
     auction_purchase_price: activity/35.json
+    base_assigned: activity/55.json
     base_parts_activity: activity/0.json
     base_parts_info: info/0.json
     base_parts_org: group/0.json
