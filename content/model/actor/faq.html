@@ -1,0 +1,15 @@
+---
+title: "Actors: Questions and Current Decisions"
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+This document collects questions and decisions that have been raised and discussed for Actors (people and groups of people), but either do not impact the overall model or are considered so specific that the use case is unlikely to be generally shared.
+
+## Q1. Are Dead People still Actors?
+
+__2017-06-14__
+
+Yes, dead people are still instances of `Person` which is a subclass of `Actor`, even though the can no longer carry out actions.  People in comas or otherwise completely incapacitated also cannot carry out actions, but are not temporarily non-Actors. The modeling that death is actually the transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any value.  Thus a burial activity (_aat:300263485_) buries a Person, not a Thing that used to be a Person. 
