@@ -362,6 +362,7 @@ owner = Actor()
 owner.label = "Owner"
 what = Painting(art=1)
 who = Person()
+who.label = "Someone Else"
 start.transferred_title_of = what
 start.transferred_title_to = who
 end.transferred_title_of = what
@@ -750,6 +751,7 @@ who = MuseumOrg()
 who.label = "Museum"
 what.current_owner = who
 acq = Acquisition()
+acq.label = "Acquisition of Painting"
 who.acquired_title_through = acq
 id_uri_hash['objprov_owner'] = what
 
