@@ -4,6 +4,7 @@ P2 | classified_as
 P5 | subState
 P5i | subState_of
 P7i | location_of
+P12 | involved
 P14i | carried_out
 P20i | specific_purpose_of
 P28 | transferred_custody_from
