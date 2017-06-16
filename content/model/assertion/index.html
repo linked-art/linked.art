@@ -4,9 +4,17 @@ title: Previously-Held or Context-Specific Assertions
 
 ## Introduction
 
+It is useful for research to have access to historical information, such as which artist was previously believed to be the creator of a work, or previous valuations of an object.  The majority of use cases, however, are to get the current information.  The assignment of attributes model allows for this additional information to be associated, without making every property a list of historical values.
+
+This pattern is also used for context-specific assertions, such as when an object is given a label or description for the purposes of an exhibition or other event.  This exhibition label does not replace the owning museum's title, but is useful for historical comparison and research purposes.
 
 ## Assignment of Attributes
 
+The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers, rather than by artists. It is then `classified_as` an appropriate sort of activity for what is being assigned; assigning the artist to the `Production` event of an object would be _aat:300056109_, for example.  The general activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.
+
+The value of the assignment is given using `assigned`, and it must be a resource rather than a string or number.  Thus an `AttributeAssignment` can assign an `Actor` to a `Production`, or an `Appellation` to an `Actor`, but not a `value` to an `Appellation`.  The resource that the value is being associated with is given using `assigned_to`.
+
+The example below demonstrates associating a previous title with an object.
 
 {{ macros.include_example("assert_naming") }}
 
