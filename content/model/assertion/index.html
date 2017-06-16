@@ -1,0 +1,36 @@
+---
+title: Previously-Held or Context-Specific Assertions
+---
+
+## Introduction
+
+
+## Assignment of Attributes
+
+
+{{ macros.include_example("assert_naming") }}
+
+## AAT to CIDOC-CRM Mapping
+
+| Activity    | AAT Term        | CIDOC-CRM Predicate | Assigned Resource  |
+| ----------- | --------------- | ------------------- | ------------------ |
+| Attribution | _aat:300056109_ | `carried_out_by`    | `Actor`            |
+| Appraising  | _aat:300054622_ | ``                  | `MonetaryAmount`   |
+| Classifying | _aat:300054631_ | `classified_as`     | `Type`             |
+| Dating      | _aat:300054714_ | `timespan`          | `TimeSpan`         |
+| Describing  | _aat:300080091_ | `referred_to_by`    | `LinguisticObject` |
+| Locating    | _aat:300393211_ | `took_place_at`     | `Place` (for Activities) |
+|             |                 | `current_location`  | (for Objects)      |   
+| Measuring   | _aat:300053578_ | `dimension`         | `Dimension`        |
+| Naming      | _aat:300411672_ | `identified_by`     | `Appellation`      |
+
+
+## Qustions Arising
+
+* The difference between _aat:300054622_ and _aat:300055545_ ?
+* How to assert a material?
+* How to assert ownership?
+
+
+
+

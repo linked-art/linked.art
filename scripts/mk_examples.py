@@ -87,7 +87,8 @@ page_hash = {"base": "model/base/index.html",
 	"objdig": "model/object/digital/index.html",
 	"objprov": "model/object/provenance/index.html",
 	"actor": "model/actor/index.html",
-	"exh": "model/exhibition/index.html"
+	"exh": "model/exhibition/index.html",
+	"assert": "model/assertion/index.html"
 	}
 
 ### First make the override table
@@ -984,6 +985,8 @@ multi.consists_of = exh2
 id_uri_hash['exh_multi'] = multi
 
 
+# Assertions
+
 obj = Painting(art=1)
 obj.label = "Current Painting Title"
 aa = Naming()
@@ -996,9 +999,12 @@ who.label = "Painting Curator"
 aa.carried_out_by = who
 ts = TimeSpan()
 ts.begin_of_the_begin = "1804-05-19"
-ts.end_of_the_end = "1890-03-12"
+ts.end_of_the_end = "1804-05-19"
 aa.timespan = ts
-id_uri_hash['base_assigned'] = aa
+id_uri_hash['assert_naming'] = aa
+
+
+
 
 
 print ">>> Built examples "
