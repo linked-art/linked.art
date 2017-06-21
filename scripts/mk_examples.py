@@ -1003,23 +1003,17 @@ ts.end_of_the_end = "1804-05-19"
 aa.timespan = ts
 id_uri_hash['assert_naming'] = aa
 
-obj = Painting(art=1)
-obj.label = "Current Painting Title"
 aa = StyleOfAttribution()
+obj = Painting(art=1)
+obj.label = "Example Painting"
 who = Person()
-name.value = "Well Known Artist"
-aa.assigned = name
+who.label = "Well Known Artist"
+aa.assigned = who
 aa.assigned_to = obj
-who = Person()
-who.label = "Painting Curator"
-aa.carried_out_by = who
-ts = TimeSpan()
-ts.begin_of_the_begin = "1925-03-10"
-ts.end_of_the_end = "1925-03-10"
-aa.timespan = ts
+by = Person()
+by.label = "Painting Curator"
+aa.carried_out_by = by
 id_uri_hash['assert_style_of'] = aa
-
-
 
 
 print ">>> Built examples "
