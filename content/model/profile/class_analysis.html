@@ -53,11 +53,11 @@ Subclasses of _E63 Beginning of Existence_ and _E64 End of Existence_ can be ign
 
 __Entity Specialization Classes:__ E27, E31, E32, E40, E84, E99 
 
-These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM.
+These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM. Information Carriers are only distinguished from Man Made Objects by the unknowable intent of the designer. Likewise, the distinction between E73 and E31 is that instances of E31 is that subset of E73s that make propositions about reality ... which is not a very useful or tractable distinction.  
 
 __Visual Concept Classes:__ E34, E37, E38
 
-There is a significant overlap between the classes _E34 Inscription_, _E36 Visual Item_, _E37 Mark_ and _E38 Image_. The simplest approach is to use only E36 for visual or image content, and instead of E34, instead use _E33 Linguistic Object_ to capture inscriptions.  _E38 Image_, while a more appealing class name, has no additional features or meaning beyond that of E36. Similarly, E37 has absolutely no differences with E36. The use of E33 for inscriptions is more consistent with other modeling of textual information.
+There is a significant overlap between the classes _E34 Inscription_, _E36 Visual Item_, _E37 Mark_ and _E38 Image_. The simplest approach is to use only E36 for visual or image content, and instead of E34, instead use _E33 Linguistic Object_ to capture inscriptions.  _E38 Image_, while a more appealing class name, has no additional features or meaning beyond that of E36. Similarly, E37 has no differences with E36. The use of E33 for inscriptions is more consistent with other modeling of textual information, assuming that the inscription really contains linguistic content.  For the situations where it is uncertain if an inscription is linguistic, then E36 is preferred. Note that E37 "does not intend to describe ... an individual physical embodiment", which is modeled instead as an object.
 
 __Curated Holding Classes:__ E78, E87
 
