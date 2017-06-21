@@ -10,7 +10,7 @@ This pattern is also used for context-specific assertions, such as when an objec
 
 ## Assignment of Attributes
 
-The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers, rather than by artists. It is then `classified_as` an appropriate sort of activity for what is being assigned; assigning the artist to the `Production` event of an object would be _aat:300056109_, for example.  The general activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.
+The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers, rather than by artists. It is then `classified_as` an appropriate sort of activity for what is being assigned; assigning the artist to the `Production` event of an object would be attribution or _aat:300056109_, for example.  The general activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
 The value of the assignment is given using `assigned`, and it must be a resource rather than a string or number.  Thus an `AttributeAssignment` can assign an `Actor` to a `Production`, or an `Appellation` to an `Actor`, but not a `value` to an `Appellation`.  The resource that the value is being associated with is given using `assigned_to`.
 
@@ -18,12 +18,22 @@ The example below demonstrates associating a previous title with an object.
 
 {{ macros.include_example("assert_naming") }}
 
+## "Style Of" Attribution
+
+There is a common special case of wanting to assign not an individual (e.g. Rembrandt) or group (Workshop of Rembrandt) to the production of an object, but simply to say that it was produced as if it had been produced by some other actor.  This is traditionally recorded as being "in the style of" a known artist. It is not correct to say that Rembrandt carried out the production, but a search for objects attributed (loosely speaking) to Rembrandt should discover this object.  The assessment of "style of" attribution is a judgement decision that might be changed later as new evidence of the actual creator comes to light.
+
+The approach taken for this case is to use an `AttributeAssignment` classified not as attribution, but instead as "style of" (_aat:300404285_).  This prevent systems from mistakenly infering that the actor carried out the production, but is consistent with the overall pattern.  There is intentionally no further model for this use case that the `AttributeAssignment` could be translated into. 
+
+{{ macros.include_example("assert_style_of") }}
+
 ## AAT to CIDOC-CRM Mapping
+
+A table summarizing the known AAT activity classifications and the appropriate predicate and class of resource that would be assigned by that activity.  As further use cases are discovered, this table will be extended as needed.
 
 | Activity    | AAT Term        | CIDOC-CRM Predicate | Assigned Resource  |
 | ----------- | --------------- | ------------------- | ------------------ |
 | Attribution | _aat:300056109_ | `carried_out_by`    | `Actor`            |
-| Appraising  | _aat:300054622_ | ``                  | `MonetaryAmount`   |
+| Appraising  | _aat:300054622_ | __?__               | `MonetaryAmount`   |
 | Classifying | _aat:300054631_ | `classified_as`     | `Type`             |
 | Dating      | _aat:300054714_ | `timespan`          | `TimeSpan`         |
 | Describing  | _aat:300080091_ | `referred_to_by`    | `LinguisticObject` |
@@ -31,14 +41,12 @@ The example below demonstrates associating a previous title with an object.
 |             |                 | `current_location`  | (for Objects)      |   
 | Measuring   | _aat:300053578_ | `dimension`         | `Dimension`        |
 | Naming      | _aat:300411672_ | `identified_by`     | `Appellation`      |
+| _Style Of_  | _aat:300404285_ | none                | `Actor`            |
 
 
 ## Qustions Arising
 
-* The difference between _aat:300054622_ and _aat:300055545_ ?
-* How to assert a material?
-* How to assert ownership?
-
-
-
+* What is the difference between _aat:300054622_ and _aat:300055545_ ?
+* Is it possible to assert that a particular material is part of an object?
+* Is it possible to assert a particular owner of an object?
 

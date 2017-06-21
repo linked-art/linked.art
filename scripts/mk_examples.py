@@ -21,7 +21,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryAppellation, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, \
+	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
 	materialTypes, dimensionUnits, add_art_setter
 from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties
@@ -1003,6 +1003,21 @@ ts.end_of_the_end = "1804-05-19"
 aa.timespan = ts
 id_uri_hash['assert_naming'] = aa
 
+obj = Painting(art=1)
+obj.label = "Current Painting Title"
+aa = StyleOfAttribution()
+who = Person()
+name.value = "Well Known Artist"
+aa.assigned = name
+aa.assigned_to = obj
+who = Person()
+who.label = "Painting Curator"
+aa.carried_out_by = who
+ts = TimeSpan()
+ts.begin_of_the_begin = "1925-03-10"
+ts.end_of_the_end = "1925-03-10"
+aa.timespan = ts
+id_uri_hash['assert_style_of'] = aa
 
 
 
