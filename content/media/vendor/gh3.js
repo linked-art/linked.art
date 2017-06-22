@@ -875,9 +875,8 @@
 				},
 				success : function(res) {
 					var _files = [];
-					for (var f in res.data) {
-						file = res.data[f];
-						console.log(f);
+					for (var f=0;file = res.data[f];f++) {
+						console.log(file);
 						_files.push(new Gh3.File(file));
 					}
 					that.files = _files;

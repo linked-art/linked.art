@@ -53,7 +53,8 @@ if (window.location.hostname != "linked.art") {
 							pull.fetchFiles(
 								function(err, res) {
 									_.each(res.files, function(file) {
-										$("#branches").append("<div>"+file+"</div>");
+										fn = file.filename.replace('content', '', 1)
+										$("#branches").append("<div>"+fn+"</div>");
 									})
 								}
 							);
