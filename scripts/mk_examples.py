@@ -21,7 +21,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PrimaryAppellation, Sculpture, Description, Width, Height, DimensionStatement, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, \
+	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
 	materialTypes, dimensionUnits, add_art_setter
 from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties
@@ -87,7 +87,8 @@ page_hash = {"base": "model/base/index.html",
 	"objdig": "model/object/digital/index.html",
 	"objprov": "model/object/provenance/index.html",
 	"actor": "model/actor/index.html",
-	"exh": "model/exhibition/index.html"
+	"exh": "model/exhibition/index.html",
+	"assert": "model/assertion/index.html"
 	}
 
 ### First make the override table
@@ -985,6 +986,36 @@ multi.consists_of = exh
 multi.consists_of = exh2
 id_uri_hash['exh_multi'] = multi
 
+
+# Assertions
+
+obj = Painting(art=1)
+obj.label = "Current Painting Title"
+aa = Naming()
+name = Appellation()
+name.value = "Previous Painting Title"
+aa.assigned = name
+aa.assigned_to = obj
+who = Person()
+who.label = "Painting Curator"
+aa.carried_out_by = who
+ts = TimeSpan()
+ts.begin_of_the_begin = "1804-05-19"
+ts.end_of_the_end = "1804-05-19"
+aa.timespan = ts
+id_uri_hash['assert_naming'] = aa
+
+aa = StyleOfAttribution()
+obj = Painting(art=1)
+obj.label = "Example Painting"
+who = Person()
+who.label = "Well Known Artist"
+aa.assigned = who
+aa.assigned_to = obj
+by = Person()
+by.label = "Painting Curator"
+aa.carried_out_by = by
+id_uri_hash['assert_style_of'] = aa
 
 
 print ">>> Built examples "
