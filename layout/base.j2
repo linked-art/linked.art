@@ -12,6 +12,8 @@
 
         <link rel="stylesheet" href="{{ media_url('vendor/opentip.css') }}">
         <script src="{{ media_url('vendor/opentip.js') }}"></script>
+        <script src="{{ media_url('vendor/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ media_url('vendor/underscore-min.js') }}"></script>
 
         <title>{{ resource.meta.title }}</title>
 
@@ -43,5 +45,10 @@
         {% if site.config.mode == "production" -%}
             {% include "ga.j2" %}
         {%- endif %}
+        <script>
+            if (window.location.hostname != "linked.art") {
+                $("#main_nav_list").prepend('<span class="nav_warning">Preview Of <a href="https://linked.art/">linked.art</a> Change</span>');
+            }
+        </script>
     </body>
 </html>

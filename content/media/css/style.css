@@ -6,6 +6,7 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 hr {
   border-color: #e4e0cd;
@@ -27,8 +28,13 @@ nav {
     background-color: #302803;
     color: #E7E8D1;
     margin-top: 0px;
+    margin-bottom: 0px;
     padding: 1rem 0;
     margin-bottom: 6rem;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav a,
@@ -58,6 +64,19 @@ nav ul li {
     padding-left: 25px;
     padding-right: 5px;
 }
+
+nav .nav_warning {
+  font-weight: bold;
+  color: red;
+  border: 1px dashed red;
+  padding: 3px;
+  margin: 3px;
+}
+
+.container {
+  margin-top: 60px;
+}
+
 
 /* ============ TABLE OF CONTENTS ============ */
 .toc {
@@ -168,6 +187,7 @@ abbr {
 
 
 /* ============ ANCHOR LINKS ============ */
+
 
 article .headeranchor-link {
   position: absolute;

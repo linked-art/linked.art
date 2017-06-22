@@ -19,7 +19,7 @@
 
 
 {% macro render_basic_menu() -%}
-<ul>
+<ul id="main_nav_list">
 {% for menu_item in menu %}
     <li><a {% if (menu_item.url == resource.relative_path) %}class="selected" {% endif -%}
         href="{{ content_url(menu_item.url) }}">{{ menu_item.title }}</a></li>
