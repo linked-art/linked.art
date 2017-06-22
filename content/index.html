@@ -13,16 +13,8 @@ For now, see the [model](/model/) section.
 
 <div id="devbranch" style="display:none">
 <b>You are on a development branch.</b>
-	<div>
-	var me = new Gh3.User("azaroth42");
-	var larepo = new Gh3.Repository("linked-art.github.com", me);
-	larepo.fetch(
-		function(err, res) {
-			if (err) return;
-			var branches = larepo.getBranches();
-			console.log(branches);
-		}
-	);
+	<div id="branches">
+
 
 	</div>
 
@@ -33,7 +25,15 @@ For now, see the [model](/model/) section.
 <script src="/media/vendor/underscore-min.js"></script>
 <script>
 if (window.location.hostname != "linked.art") {
-
+	var me = new Gh3.User("azaroth42");
+	var larepo = new Gh3.Repository("linked-art.github.com", me);
+	larepo.fetch(
+		function(err, res) {
+			if (err) return;
+			var branches = larepo.getBranches();
+			console.log(branches);
+		}
+	);
 
 	$("#devbranch").show()
 }
