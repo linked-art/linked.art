@@ -13,11 +13,8 @@ For now, see the [model](/model/) section.
 
 <div id="devbranch" style="display:none">
 <b>You are on a development branch.</b>
-	<div id="branches">
-
-
-	</div>
-
+	<ul id="branches">
+	</ul>
 </div>
 
 <script src="/media/vendor/gh3.js"></script>
@@ -36,7 +33,10 @@ if (window.location.hostname != "linked.art") {
 					larepo.eachBranch(
 						function(branch) {
 							if (branch.name != "master") {
-								$("#branches").append("<div>"+branch.name+"</div>");
+								$("#branches").append('<li><a href="https://'+branch.name+\
+									'--linked-art.netlify.com/">'+branch.name+'</a></ul>');
+								// Getting files is hard, need to walk through many commits
+								// and somehow determine when to stop
 							}
 						}
 					)					
@@ -48,12 +48,14 @@ if (window.location.hostname != "linked.art") {
 					// var pulls = larepo.getPulls();
 					larepo.eachPull(
 						function(pull) {
-							$("#branches").append("<div>"+pull.number+"</div>");
+							$("#branches").append('<li><a href="https://deploy-preview-'+pull.number+\
+								'--linked-art.netlify.com/">Pull Request'+pull.number+'</a>' +\
+								'<ul id="files_'+pull.number+'">');
 							pull.fetchFiles(
 								function(err, res) {
 									_.each(res.files, function(file) {
 										fn = file.filename.replace('content', '', 1)
-										$("#branches").append("<div>"+fn+"</div>");
+										$("#files_"+pull.number).append("<li>"+fn+"</li>");
 									})
 								}
 							);
