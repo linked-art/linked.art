@@ -867,7 +867,6 @@
 
 		fetchFiles : function (callback) {
 			var that = this;
-			// console.log("calling " + that.url + "/files")
 			Gh3.Helper.callHttpApi({
 				service : "repos/"+that.base.repo.full_name+"/pulls/"+that.number+"/files",
 				error : function (res) {
@@ -876,7 +875,6 @@
 				success : function(res) {
 					var _files = [];
 					for (var f=0;file = res.data[f];f++) {
-						console.log(file);
 						_files.push(new Gh3.File(file));
 					}
 					that.files = _files;
