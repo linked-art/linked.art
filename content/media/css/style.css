@@ -28,9 +28,10 @@ nav {
     background-color: #302803;
     color: #E7E8D1;
     margin-top: 0px;
+    margin-bottom: 0px;
     padding: 1rem 0;
     margin-bottom: 6rem;
-    position: absolute;
+    position: fixed;
     top: 0px;
     width: 100%;
     z-index: 1000;
@@ -71,6 +72,11 @@ nav .nav_warning {
   padding: 3px;
   margin: 3px;
 }
+
+main {
+  margin-top: 60px;
+}
+
 
 /* ============ TABLE OF CONTENTS ============ */
 .toc {
@@ -181,6 +187,7 @@ abbr {
 
 
 /* ============ ANCHOR LINKS ============ */
+
 
 article .headeranchor-link {
   position: absolute;
