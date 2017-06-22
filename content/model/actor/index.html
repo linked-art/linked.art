@@ -47,6 +47,8 @@ There are key events in a person or organization's lifespan that are often recor
 
 Like the creation of objects, people and organizations also come into and out of existence through events.  These events can take place at certain Places, and happen at certain times.  This similarity between people and organizations results in the somewhat unwieldy `brought_into_existence_by` and `taken_out_of_existence_by` property names, with the respective `BeginningOfExistence` and `EndOfExistence` classes.
 
+After death, people are still instances of `Person` which is a subclass of `Actor`, even though they can no longer carry out activities.  People in comas or otherwise completely incapacitated also cannot carry out activities, but are not temporarily non-Actors. The modeling that death is a transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any actual value.  Thus a burial activity (_aat:300263485_) buries a Person, not a Thing-that-used-to-be-a-Person.
+
 {{ macros.include_example("actor_birthdeath") }}
 
 ### Active Dates
@@ -95,6 +97,3 @@ For example, a curator could be a `member_of` a department, which is in turn a m
 
 {{ macros.include_example("actor_membership" )}}
 
-## Further Decisions
-
-Specific questions and decisions about Actors are available in the [Actor FAQ](faq.html).
