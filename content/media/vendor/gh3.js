@@ -869,7 +869,7 @@
 			var that = this;
 
 			Gh3.Helper.callHttpApi({
-				service : "repos/"+that.user.login+"/"+that.repositoryName+"/pulls/"+that.id +"/files",
+				service : that.url +"/files",
 				error : function (res) {
 					if (callback) callback(new Error(res.responseJSON.message),res);
 				},
