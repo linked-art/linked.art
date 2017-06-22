@@ -6,6 +6,7 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 hr {
   border-color: #e4e0cd;
@@ -31,6 +32,8 @@ nav {
     margin-bottom: 6rem;
     position: absolute;
     top: 0px;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav a,
