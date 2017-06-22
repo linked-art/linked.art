@@ -56,7 +56,7 @@ The intent of adopting this pattern is to support simple and quick implementatio
 
 Implications:
 
-  * "Overlays" are an important pattern, where the basic information is left in place and overlaid with more complex data. For example, the Production is `carried_out_by` the Artist, and previous attributions use `AttributeAssignment` to assert them, rather than requiring `AttributeAssignment` for all such attributions.
+  * "Expansions" are an important pattern, where the primary, basic information uses a simple pattern, and more complex data does not interfere with that but instead expands upon it. For example, the Production is `carried_out_by` the Artist in all cases, whereas previous attributions expand upon this by using `AttributeAssignment` to assert them, rather than also requiring `AttributeAssignment` for the current attribution.  In the future the current Artist might be relegated to the previous attribution pattern and replaced.  For systems that only care about the current belief, the simple pattern is easy to use. For those that want more information, it is also available.
   * The importance of reuse of common patterns is reinforced, as additional complexity that seems familiar is better than a completely new pattern.
 
 
