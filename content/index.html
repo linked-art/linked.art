@@ -21,7 +21,7 @@ For now, see the [model](/model/) section.
 </div>
 
 <script src="/media/vendor/jquery-3.2.1.min.js"></script>
-<script src="/media/vendor/gh3.min.js"></script>
+<script src="/media/vendor/gh3.js"></script>
 <script src="/media/vendor/underscore-min.js"></script>
 <script>
 if (window.location.hostname != "linked.art") {
@@ -50,6 +50,13 @@ if (window.location.hostname != "linked.art") {
 					larepo.eachPull(
 						function(pull) {
 							$("#branches").append("<div>"+pull.number+"</div>");
+							pull.fetchFiles(
+								function(err, res) {
+									_.each(res.files, function(file) {
+										$("#branches").append("<div>"+file+"</div>");
+									})
+								}
+							);
 						}
 					)					
 				}
