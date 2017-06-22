@@ -33,13 +33,25 @@ if (window.location.hostname != "linked.art") {
 			larepo.fetchBranches(
 				function(err, res) {
 					if (err) return;
-					var branches = larepo.getBranches();
+					// var branches = larepo.getBranches();
 					larepo.eachBranch(
 						function(branch) {
-							$("#branches").append("<div>"+branch.name+"</div>")
+							if (branch.name != "master") {
+								$("#branches").append("<div>"+branch.name+"</div>");
+							}
 						}
-					)
-					console.log(branches);					
+					)					
+				}
+			);
+			larepo.fetchPulls(
+				function(err, res) {
+					if (err) return;
+					// var pulls = larepo.getPulls();
+					larepo.eachPull(
+						function(pull) {
+							$("#branches").append("<div>"+pull.number+"</div>");
+						}
+					)					
 				}
 			);
 		}
