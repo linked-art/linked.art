@@ -30,11 +30,20 @@ if (window.location.hostname != "linked.art") {
 	larepo.fetch(
 		function(err, res) {
 			if (err) return;
-			var branches = larepo.getBranches();
-			console.log(branches);
+			larepo.fetchBranches(
+				function(err, res) {
+					if (err) return;
+					var branches = larepo.getBranches();
+					larepo.eachBranch(
+						function(branch) {
+							$("#branches").append("<div>"+branch.name+"</div>")
+						}
+					)
+					console.log(branches);					
+				}
+			);
 		}
 	);
-
 	$("#devbranch").show()
 }
 
