@@ -29,6 +29,8 @@ nav {
     margin-top: 0px;
     padding: 1rem 0;
     margin-bottom: 6rem;
+    position: absolute;
+    top: 0px;
 }
 
 nav a,
@@ -59,11 +61,12 @@ nav ul li {
     padding-right: 5px;
 }
 
-.nav_warning {
+nav .nav_warning {
   font-weight: bold;
-  font-color: red;
+  color: red;
   border: 1px dashed red;
   padding: 3px;
+  margin: 3px;
 }
 
 /* ============ TABLE OF CONTENTS ============ */
