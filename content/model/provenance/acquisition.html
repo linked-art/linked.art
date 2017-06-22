@@ -6,10 +6,11 @@ title: Object Acquisition and Loan
 
 ## Introduction
 
+The majority of recorded provenance events are when the object changes ownership, and the various methods in which that happens.
 
 ## Object Acquisition
 
-Subsequent activities in the provenance of an object are the transfer of ownership from (`transferred_title_from`) one owner to (`transferred_title_to`) the next, starting with the artist as defacto first owner to the person or organization who owns it next. The object itself is the value of the `transferred_title_of` relationship. The ownership chain can then be expressed by repeating this same pattern of transferring title from the current owner to the next.
+The transfer of ownership from (`transferred_title_from`) one owner to (`transferred_title_to`) the next, starting with the artist as defacto first owner to the person or organization who owns it next. The object itself is the value of the `transferred_title_of` relationship. The ownership chain can then be expressed by repeating this same pattern of transferring title from the current owner to the next.
 
 If the previous or next owner is unknown, then the respective relationship can be omitted from the event. For example, if it is known that the object was sold between 1806 and 1809, but not to whom it was sold, this can be expresed by omitting `transferred_title_to` from the description.
 
@@ -39,6 +40,16 @@ The model makes a distinction between the transfer of legal ownership (e.g. by s
 
 Transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition` or `Purchase`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
 
+### Exhibitions
+
+Exhibitions are a common way that the custody of an object changes, while the ownership remains the same.  Exhibitions are described in more detail [here](/model/exhibition/).
+
+### Loss
+
+The loss of an object is the transfer of custody away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient might be able to be filled in.  If the object is then returned to the owner, there would be the reverse transfer of custody from the party that found it.  It might be that the owner simply loses track of it, and although it is still in their possession, they are not aware of it ... it has no custodian.
+
+{{ macros.include_example("provacq_loss") }}
+
 ### Theft
 
 Objects can change hands illegally with the activity being performed by the recipient of the object, such as theft (_aat:300055292_) or looting.  This is not an `Acquisition` or transfer of ownership, as the legal owner does not change. If the object were to be recovered, it would be returned to the owner.
@@ -47,14 +58,3 @@ Objects can change hands illegally with the activity being performed by the reci
 
 !!! warning "Sale of Stolen Items"
 	A concern with this model (which strictly follows CIDOC-CRM) is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody in exchange for payment.  If the stolen and fenced object were recovered, it would still go back to the real owner.  Which is okay, if it is known that the object was stolen.  If not, then the data would incorrectly record it as a sale, which is an Acquisition (a transfer of ownership, not custody).  In a distributed environment, where different data sources contribute to the overall provenance record, aggregating systems should be aware of this possibility and not accept the custody/ownership distinction without consideration of prior events.
-
-
-### Loss
-
-The loss of an object is the transfer of custody away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient might be able to be filled in.  If the object is then returned to the owner, there would be the reverse transfer of custody from the party that found it.  It might be that the owner simply loses track of it, and although it is still in their possession, they are not aware of it ... it has no custodian.
-
-{{ macros.include_example("provacq_loss") }}
-
-### Exhibitions
-
-Exhibitions are another common way that the custody of an object changes, while the ownership remains the same.  Exhibitions are described in more detail [here](/model/exhibition/).
