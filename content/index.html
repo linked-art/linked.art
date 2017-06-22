@@ -12,13 +12,29 @@ Documentation about the use of Linked Open Data in the Art domain.
 For now, see the [model](/model/) section.
 
 <div id="devbranch" style="display:none">
-You are on a development branch
+<b>You are on a development branch.</b>
+	<div>
+	var me = new Gh3.User("azaroth42");
+	var larepo = new Gh3.Repository("linked-art.github.com", me);
+	larepo.fetch(
+		function(err, res) {
+			if (err) return;
+			var branches = larepo.getBranches();
+			console.log(branches);
+		}
+	);
+
+	</div>
+
 </div>
 
 <script src="/media/vendor/jquery-3.2.1.min.js"></script>
 <script src="/media/vendor/gh3.min.js"></script>
+<script src="/media/vendor/underscore-min.js"></script>
 <script>
 if (window.location.hostname != "linked.art") {
+
+
 	$("#devbranch").show()
 }
 
