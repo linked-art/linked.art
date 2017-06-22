@@ -12,7 +12,7 @@ import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment
+    EndOfExistence, AttributeAssignment, Formation
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -79,6 +79,9 @@ id_uri_hash = {}
 
 page_hash = {"base": "model/base/index.html",
 	"prov": "model/provenance/index.html",
+	"provprod": "model/provenance/production.html",
+	"provcur": "model/provenance/curation.html",
+	"provacq": "model/provenance/acquisition.html",
 	"auction": "model/provenance/auctions/index.html",
 	"objid": "model/object/identity/index.html",
 	"objabout": "model/object/aboutness/index.html",
@@ -208,7 +211,7 @@ act.carried_out_by = who
 act.timespan = when
 act.produced = what
 act.took_place_at = where
-id_uri_hash['prov_create'] = act
+id_uri_hash['provprod_create'] = act
 
 
 act = Production()
@@ -218,7 +221,7 @@ what = Sculpture(art=1)
 what.label = "Glass Sculpture"
 act.carried_out_by = who
 act.classified_as = Type("http://vocab.getty.edu/aat/300053932")
-id_uri_hash['prov_create_technique'] = act
+id_uri_hash['provprod_technique'] = act
 
 topact = Production()
 what = Sculpture(art=1)
@@ -236,7 +239,63 @@ who2.label = "Example Sculpture Painter"
 act2.classified_as = Type("http://vocab.getty.edu/aat/300161986")
 act2.carried_out_by = who2
 topact.consists_of = act2
-id_uri_hash['prov_create_roles'] = topact
+id_uri_hash['provprod_roles'] = topact
+
+prod = Production()
+what = Painting(art=1)
+what.label = "Copy of Example Painting"
+copied = Painting(art=1)
+copied.label = "Example Painting"
+prod.influenced_by = copied
+prod.produced = what
+who = Person()
+who.label = "Copyist"
+prod.carried_out_by = who
+id_uri_hash['provprod_copy'] = prod
+
+prod = Production()
+what = Painting(art=1)
+what.label = "Example Painting, from workshop of Example Master"
+prod.produced = what
+grp = Group()
+grp.label = "Workshop of Example Master"
+f = Formation()
+who = Person()
+who.label = "Example Master"
+f.carried_out_by = who
+grp.formed_by = f
+prod.carried_out_by = grp
+id_uri_hash['provprod_workshop'] = prod
+
+aa = Attribution()
+obj = Painting(art=1)
+obj.label = "Example Painting"
+who = Person()
+who.label = "Previously-Thought Artist"
+aa.assigned = who
+aa.assigned_to = obj
+by = Person()
+by.label = "Painting Curator"
+aa.carried_out_by = by
+ts = TimeSpan()
+ts.begin_of_the_begin = "1923-07-20"
+ts.end_of_the_end = "1923-07-21"
+aa.timespan = ts
+id_uri_hash['provprod_previous'] = aa
+
+# Prov - Destruction
+dest = EoEActivity()
+what = Painting(art=1)
+what.label = "Example Destroyed Painting"
+dest.took_out_of_existence = what
+when = TimeSpan()
+when.begin_of_the_begin = "1823-03-01T00:00:00Z"
+when.end_of_the_end = "1823-03-31T00:00:00Z"
+dest.timespan = when
+who = Person()
+who.label = "Painting Destroyer"
+dest.carried_out_by = who
+id_uri_hash['provprod_dest'] = dest
 
 
 
@@ -257,7 +316,7 @@ act.took_place_at = where
 act.transferred_title_of = what
 act.transferred_title_from = seller
 act.transferred_title_to = buyer
-id_uri_hash['prov_acq'] = act
+id_uri_hash['provacq_acq'] = act
 
 # Prov - Purchase
 act = Purchase()
@@ -274,7 +333,7 @@ curr.label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
 act.consists_of = paymt
-id_uri_hash['prov_purchase'] = act
+id_uri_hash['provacq_purchase'] = act
 
 # Prov - Loss
 act = TransferOfCustody()
@@ -289,7 +348,7 @@ when.label = "Time noticed as Lost"
 when.begin_of_the_begin = "1790-12-04T00:00:00Z"
 when.end_of_the_end = "1790-12-05T00:00:00Z"
 act.timespan = when
-id_uri_hash['prov_loss'] = act
+id_uri_hash['provacq_loss'] = act
 
 # Prov - Theft
 act = Theft()
@@ -307,7 +366,7 @@ when = TimeSpan()
 when.label = "Time of Theft"
 when.begin_of_the_begin = "1940-07-10T00:00:00Z"
 when.end_of_the_end = "1940-07-11T00:00:00Z"
-id_uri_hash['prov_theft'] = act
+id_uri_hash['provacq_theft'] = act
 
 # Prov - Sale of Stolen Object
 
@@ -332,21 +391,8 @@ curr.label = "dollars"
 amt.currency = curr
 pay.paid_amount = amt
 act.consists_of = pay
-id_uri_hash['prov_theft_sale'] = act
+id_uri_hash['provacq_theft_sale'] = act
 
-# Prov - Destruction
-dest = EoEActivity()
-what = Painting(art=1)
-what.label = "Example Destroyed Painting"
-dest.took_out_of_existence = what
-when = TimeSpan()
-when.begin_of_the_begin = "1823-03-01T00:00:00Z"
-when.end_of_the_end = "1823-03-31T00:00:00Z"
-dest.timespan = when
-who = Person()
-who.label = "Painting Destroyer"
-dest.carried_out_by = who
-id_uri_hash['prov_dest'] = dest
 
 # Joint Ownership
 
@@ -373,14 +419,14 @@ act.used_specific_object = what
 start.occurs_before = end
 act.continued = start
 act.continued_by = end
-id_uri_hash['prov_curate'] = act
+id_uri_hash['provcur_curate'] = act
 
 act = Curating()
 act.label = "Ownership of the Painting"
 inv = Inventorying()
 inv.label = "Inventory Taking by Owner"
 act.consists_of = inv
-id_uri_hash['prov_inventory'] = act
+id_uri_hash['provcur_inventory'] = act
 
 # Full life time
 act = Provenance()
@@ -408,7 +454,8 @@ act.consists_of = own2
 act.consists_of = c2
 act.consists_of = own3
 act.consists_of = dest
-id_uri_hash['prov_lifetime'] = act
+id_uri_hash['provcur_lifetime'] = act
+
 
 # Auction - Auction
 auc = Auction()

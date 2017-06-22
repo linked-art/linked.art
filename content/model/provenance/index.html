@@ -15,113 +15,15 @@ The key participants in those different types of events are:
   * the [Locations](../place) at which the events occur
   * and the Times at which the events occur
 
-In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody (the painting is loaned out for an [exhibition](../exhibition/)) or [taking inventory](inventory.html) of the dealer's stock confirming that the painting is still in good condition and available for sale.
+In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody, such as when the painting is loaned out for an [exhibition](../exhibition/) or [curation activities](curation.html), such as taking inventory, conservation or revaluation.
 
-Finally, there is documentary evidence of these events, such as sales catalogs or stock books, from which we can piece together the path of the object through history.
-
-## General Event Model 
-
-The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail below.
+The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail in the following sections.
 
 {{ macros.include_example("prov_event") }}
 
-## Object Creation
+## Sections
 
-The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
-
-{{ macros.include_example("prov_create") }}
-
-### Roles / Techniques
-
-If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as a classification of the activity.
-
-{{ macros.include_example("prov_create_technique") }}
-
-### Multiple Artists with Roles
-
-If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. These components are instances of `Activity` to make it easier to distinguish between the `Production` of the object overall and the activities that happened as part of that. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
-
-{{ macros.include_example("prov_create_roles") }}
-
-## Object Acquisition
-
-Subsequent activities in the provenance of an object are the transfer of ownership from (`transferred_title_from`) one owner to (`transferred_title_to`) the next, starting with the artist as defacto first owner to the person or organization who owns it next. The object itself is the value of the `transferred_title_of` relationship. The ownership chain can then be expressed by repeating this same pattern of transferring title from the current owner to the next.
-
-If the previous or next owner is unknown, then the respective relationship can be omitted from the event. For example, if it is known that the object was sold between 1806 and 1809, but not to whom it was sold, this can be expresed by omitting `transferred_title_to` from the description.
-
-This pattern does not express any further detail about how the acquisition took place, just that the object's ownership was transferred.  For more detailed models of acquisition, the following sections include additional information.
-
-{{ macros.include_example("prov_acq") }}
-
-### Purchase
-
-A purchase is a common type of acquisition in which money is exchanged for the object.  The main activity is the transfer of the title for the object from the seller to the buyer, exactly as for any Acquisition.  The activity then consists of one or more related payments, without which the purchase would not be concluded.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include payments to or from others such as for shared ownership or payment of debts owed.
-
-The Payment activity has equivalent relationships for from (`paid_from`) and to (`paid_to`), as well as the amount of money paid (`paid_amount`).  The amount itself is a resource that has a value (`value`) and a currency (`currency`).  In the simple case, where the amount the object was offered for sale at (`offering_price`) is the same as it was sold for (`sales_price`) and there was a single transfer of money, for that amount.  However, these values might be different if in certain circumstances and are hence modeled separately.
-
-!!! note "Diachronic Comparison of Monetary Amounts"
-    The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
-
-{{ macros.include_example("prov_purchase") }}
-
-### Auctions
-
-The individual purchase that is the result of auctioning an object is the same as the above Purchase model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions/). 
-
-
-## Transfer of Custody
-
-The model makes a distinction between the transfer of legal ownership (e.g. by sale or gift) and the transfer of custody (e.g. by losing the object, loaning it for an exhibition, or having it stolen). If the possession of the object is either illegal or temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody only.
-
-Transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition` or `Purchase`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
-
-### Theft
-
-Objects can change hands illegally with the activity being performed by the recipient of the object, such as theft (_aat:300055292_) or looting.  This is not an `Acquisition` or transfer of ownership, as the legal owner does not change. If the object were to be recovered, it would be returned to the owner.
-
-{{ macros.include_example("prov_theft") }}
-
-!!! warning "Sale of Stolen Items"
-	A concern with this model (which strictly follows CIDOC-CRM) is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody in exchange for payment.  If the stolen and fenced object were recovered, it would still go back to the real owner.  Which is okay, if it is known that the object was stolen.  If not, then the data would incorrectly record it as a sale, which is an Acquisition (a transfer of ownership, not custody).  In a distributed environment, where different data sources contribute to the overall provenance record, aggregating systems should be aware of this possibility and not accept the custody/ownership distinction without consideration of prior events.
-
-
-### Loss
-
-The loss of an object is the transfer of custody away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient might be able to be filled in.  If the object is then returned to the owner, there would be the reverse transfer of custody from the party that found it.  It might be that the owner simply loses track of it, and although it is still in their possession, they are not aware of it ... it has no custodian.
-
-{{ macros.include_example("prov_loss") }}
-
-### Exhibitions
-
-Exhibitions are another common way that the custody of an object changes, while the ownership remains the same.  Exhibitions are described in more detail [here](/model/exhibition/).
-
-## Destruction
-
-The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object, as above, leaves the chain open ended as it might be recovered in the future, however if the object is destroyed there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
-
-Objects are destroyed by during `EndOfExistence` events that are not carried out by any actor, or by an `Activity` that is at the same time an `EndOfExistence`.  This is a different model from `Production` which is always an activity.
-
-{{ macros.include_example("prov_dest") }}
-
-## Ownership 
-
-The above events are often the only things recorded, however they exist in a larger context -- the ownership of the object by individuals, and the set of all owners.  Some events may only be linked to the owner, and hence be part of the ownership period with no further information available as to who carried them out or when they took place.
-
-### Individual Owners
-
-Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object _(aat:300054277)_ is modeled as a continuation of the ownership chain which is punctuated by the acquisition activities.
- 
-{{ macros.include_example("prov_curate") }}
-
-#### Taking Inventory
-
-One such activity is taking inventory _(aat:300077506)_ by the owner of all their objects, including the one being described. This is routinely carried out by art dealers, collectors or museums, in order to ensure that they still have custody of all of the objects that they believe they do.  This establishes the existence and presence of the object at a certain place and time, and is thus useful in tracking the object through history.
-
-{{ macros.include_example("prov_inventory") }}
-
-### Lifetime of Object
-
-The entire provenance of an object _(aat:300055863)_ is also an activity, that consists of all of all of the above events, from production through to destruction or the present day ownership.  All of the transfers of ownership and the resulting ownership periods are included, giving a single place to associate and thereby discover the events.
-
-{{ macros.include_example("prov_lifetime") }}
-
+* [Production, Destruction](production.html)
+* [Acquisition](acquisition.html)
+    * [Auctions](auctions/)
+* [Curation](curation.html)

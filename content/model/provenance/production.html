@@ -1,0 +1,51 @@
+---
+title: Object Production and Destruction
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+
+
+## Object Creation
+
+The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
+
+{{ macros.include_example("provprod_create") }}
+
+### Inspiration or Copies
+
+Some artworks are copies of or clearly directly inspired by others.  This relationship can be captured with the `influenced_by` property of the `Production` activity.  
+
+{{ macros.include_example("provprod_copy")}}
+
+### Roles / Techniques
+
+If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as a classification of the activity.
+
+{{ macros.include_example("provprod_technique") }}
+
+### Multiple Artists with Roles
+
+If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. These components are instances of `Activity` to make it easier to distinguish between the `Production` of the object overall and the activities that happened as part of that. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
+
+{{ macros.include_example("provprod_roles") }}
+
+### Attribution of a Group
+
+{{ macros.include_example("provprod_workshop") }}
+
+
+### Previous Attributions
+
+{{ macros.include_example("provprod_previous") }}
+
+
+## Destruction
+
+The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object, as above, leaves the chain open ended as it might be recovered in the future, however if the object is destroyed there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
+
+Objects are destroyed by events that are not carried out by an actor are modeled with the `EndOfExistence` class. However if the destruction is carried out by some actor, then it is also an `Activity` at the same time. This extra class must be added explicitly, and is a different model from `Production` which is always an `Activity`.
+
+{{ macros.include_example("provprod_dest") }}
