@@ -59,6 +59,13 @@ nav ul li {
     padding-right: 5px;
 }
 
+.nav_warning {
+  font-weight: bold;
+  font-color: red;
+  border: 1px dashed red;
+  padding: 3px;
+}
+
 /* ============ TABLE OF CONTENTS ============ */
 .toc {
   padding-left: 2rem;
