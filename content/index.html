@@ -53,7 +53,7 @@ if (window.location.hostname != "linked.art") {
 							pull.fetchFiles(
 								function(err, res) {
 									_.each(res.files, function(file) {
-										if file.filename.startsWith("content") {
+										if (file.filename.startsWith("content")) {
 											fn = file.filename.replace('content', '', 1)
 											if (fn.endsWith(".html") || fn.endsWith(".json")) {
 												$("#files_"+pull.number).append('<li><a href="'+fn+'">'+fn+"</a></li>");
