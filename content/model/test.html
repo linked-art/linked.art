@@ -1,0 +1,18 @@
+---
+title: Testing inline code
+---
+
+{% filter exec_example() -%}
+```
+top = Painting(art=1)
+top.label = "Simple Example Painting"
+```
+{%- endfilter %}
+
+
+{% filter exec_example() -%}
+```
+top = Painting(art=1)
+top.label = "Simple Example Painting Number 2"
+```
+{%- endfilter %}
