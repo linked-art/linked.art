@@ -21,6 +21,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
+	PhotographBW, PhotographColor, ProvenanceStatement, \
 	materialTypes, dimensionUnits, add_art_setter
 from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties

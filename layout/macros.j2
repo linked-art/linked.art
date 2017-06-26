@@ -1,23 +1,4 @@
 
-{% macro include_example(link, base=None) -%}
-
-{% if base == None -%} 
-  {% set base = site.config.var.exampleDir %}  
-{%- endif %}
-{% set link2 = resource.meta.example[link] %}
-
-<a name="{{ link }}"></a>
-```json
-{% include base + "/" + link2 %}
-
-```
-[Raw]({{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + base + "/" + link2 }}) | 
-[Playground](http://json-ld.org/playground/#startTab=tab-expanded&json-ld={{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + base + "/" + link2|urlencode }}) |
-[Raw Turtle]({{ site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + base + "/" + link2|replace("json", "ttl")}}) |
-[Styled Turtle](http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url={{site.config.var.scheme + "://" + site.config.var.hostname + site.config.base_url + base + "/" + link2|replace("json", "ttl")}})
-{%- endmacro %}
-
-
 {% macro render_basic_menu() -%}
 <ul id="main_nav_list">
 {% for menu_item in menu %}
@@ -26,4 +7,3 @@
 {% endfor %}
 </ul>
 {%- endmacro %}
-
