@@ -1,7 +1,0 @@
-{
-  "@context": "https://linked.art/ns/context/1/full.jsonld", 
-  "id": "https://linked.art/cookbook/getty/photoarchive/id/0", 
-  "type": "Identifier", 
-  "classified_as": "aat:300312355", 
-  "value": "292221"
-}
