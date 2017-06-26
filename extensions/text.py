@@ -129,17 +129,24 @@ class IndexingPlugin(Plugin):
 
 	def begin_text_resource(self, resource, text):
 		if resource.relative_path.endswith('.html'):
-			if resource in self.index and text.find("crom") < 0:
-				# Gets called multiple times, no idea why
-				# print text.find("crom")
+
+			# It gets called three times, only the last one
+			# actually does anything
+			# No Idea why
+
+			try:
+				self.index[resource.relative_path] += 1
+			except:
+				self.index[resource.relative_path] = 1
+
+			if self.index[resource.relative_path] != 3:
 				return text
-			self.index[resource] = {}
-			# Look for ``` crom ... ```
-			# and replace with {% syntax json %} ... {% endsyntax %}
+
+			# Look for ```crom ... ```
 			hits = self.matcher.findall(text)
 			for h in hits:
 				try:
-					eg = self.generate_example(h[1])
+					eg = self.generate_example(h[1], resource)
 				except Exception, e:
 					print ">>> In %s" % resource.relative_path
 					print "Caught Exception: %s" % e
@@ -149,13 +156,64 @@ class IndexingPlugin(Plugin):
 		return text
 
 	def site_complete(self):
-		#print "site complete... building example index"
-		#print self.index
-		pass
+		# Just write the document in markdown
+		top = """---
+extends: base.j2
+default_block: content
+title: Index of Classes, Properties, Authorities
+---
 
-	def generate_example(self, egtext):
+{% include "toc.html" %}
 
-		# Yes really...
+"""
+		lines = [top]
+
+		lines.append("## Class Index")
+		its = self.class_hash.items()
+		its.sort()
+		for (k,v) in its:
+			lines.append("* __%s__" % k)
+			lv= []
+			for (k2,v2) in v.items():
+				n = k2.replace('https://linked.art/example/', '')
+				lv.append("[%s](/%s)" % (n, v2.relative_path + "#" + n.replace('/', '_')))			
+			vstr = ' | '.join(lv)
+			lines.append("    * %s" % vstr)
+
+		lines.append("\n## Property Index")
+		its = self.prop_hash.items()
+		its.sort()
+		for (k,v) in its:
+			lines.append("* __%s__" % k)
+			lv= []
+			for (k2,v2) in v.items():
+				n = k2.replace('https://linked.art/example/', '')
+				lv.append("[%s](/%s)" % (n, v2.relative_path + "#" + n.replace('/', '_')))			
+			vstr = ' | '.join(lv)
+			lines.append("    * %s" % vstr)
+
+		lines.append("\n## AAT Index")
+		its = self.aat_hash.items()
+		its.sort()		
+		for (k,v) in its:
+			if not k.startswith('aat:'):
+				continue
+			lines.append("* __%s__ (%s)" % (k, aat_labels.get(k, "???")))
+			lv= []
+			for (k2,v2) in v.items():
+				n = k2.replace('https://linked.art/example/', '')				
+				lv.append("[%s](/%s)" % (n, v2.relative_path + "#" + n.replace('/', '_')))
+			vstr = ' | '.join(lv)
+			lines.append("    * %s" % vstr)
+
+		out = '\n'.join(lines)
+		fh = file('content/model/example_index.html', 'w')
+		fh.write(out)
+		fh.close()
+
+
+	def generate_example(self, egtext, resource):
+		# Yes really... 
 		exec(egtext) 
 
 		# Now in scope should be a top resource
@@ -171,80 +229,80 @@ class IndexingPlugin(Plugin):
 		g.parse(data=nq, format="nt")
 		out = g.serialize(format="turtle")
 
-		fp = js['id'][len(factory.base_url):] + ".ttl"	
-		fh = open(os.path.join(factory.base_dir, fp), 'w')
+		fp = js['id'][len(factory.base_url):]
+		fp2 = fp + ".ttl"	
+		fh = open(os.path.join(factory.base_dir, fp2), 'w')
 		fh.write(out)
 		fh.close()
 
 		# Build index references
-		# traverse(js, top.id)
+		self.traverse(js, top.id, resource)
 
 		# And return the JSON plus links, to be substed by the top level filter
 		raw = top.id + ".json"
 		playground = "http://json-ld.org/playground/#startTab=tab-expanded&json-ld=%s" % raw
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
+		egid = fp.replace('/', '_')
 		resp = """
+<a id="%s"/>
 ```json
 %s
 ```
 [Raw](%s) | 
 [Playground](%s) |
 [Raw Turtle](%s) |
-[Styled Turtle](%s)""" % (jsstr, raw, playground, turtle, turtle_play)	
+[Styled Turtle](%s)""" % (egid, jsstr, raw, playground, turtle, turtle_play)	
 		return resp
 
-
-def traverse(what, eg):
-	for (k,v) in what.items():
-		if k == 'type':
-			if type(v) == list:
-				for t in v:
-					try:
-						class_hash[t][eg] = 1
-					except:
-						class_hash[t] = {eg:1}
+	def traverse(self, what, top, res):
+		for (k,v) in what.items():
+			if k == 'type':
+				which = "class_hash"
+				nv = v
+			elif k == 'classified_as':
+				which = "aat_hash"
+				nv = v
+			elif k == 'id':
+				if v.startswith('aat:'):
+					which = "aat_hash"
+					nv = v
+				else:
+					continue
+			elif k == '@context':
+				continue
 			else:
-				try:
-					class_hash[v][eg] = 1
-				except:
-					class_hash[v] = {eg:1}
-		elif k  == 'classified_as':
-			if type(v) == list:
-				for t in v:
+				which = "prop_hash"			
+				nv = k
+
+			h = getattr(self, which)
+			if type(nv) == list:
+				for t in nv:
 					if type(t) == dict or isinstance(t, OrderedDict):
-						t = t['id']					
+						t = t['id']	
 					try:
-						aat_hash[t][eg] = 1
+						h[t][top] = res
 					except:
-						aat_hash[t] = {eg:1}
-			else:
-				if type(v) == dict or isinstance(v, OrderedDict):
-					v = v['id']
+						h[t] = {top: res}
+			else:	
+				if type(nv) == dict or isinstance(nv, OrderedDict):
+					nv = nv['id']
 				try:
-					aat_hash[v][eg] = 1
+					h[nv][top] = res
 				except:
-					aat_hash[v] = {eg:1}
-		elif k in ['@context', 'id']:
-			if v.startswith('aat:'):
-				try:
-					aat_hash[v][eg] = 1
-				except:
-					aat_hash[v] = {eg:1}				
-		else:		
-			try:
-				prop_hash[k][eg] = 1
-			except:
-				prop_hash[k] = {eg:1}
+					h[nv] = {top: res}
+
 			# And now recurse
-			if isinstance(v, OrderedDict):
-				traverse(v, eg)
-			elif type(v) == list:
-				for x in v:
-					traverse(x, eg)
+			if which == "prop_hash":
+				if isinstance(v, OrderedDict):
+					self.traverse(v, top, res)
+				elif type(v) == list:
+					for x in v:
+						self.traverse(x, top, res)
 
 
-# Global filters
+
+### Global filters
 
 def regex_replace(source, regex, replace):
 	try:

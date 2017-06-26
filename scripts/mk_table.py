@@ -1,6 +1,7 @@
 
 import cromulent
 import json
+import os
 
 lines = ["Property | Key", "-------- | ---"]
 fn = os.path.join(cromulent.__path__[0], 'data', 'overrides.json')
@@ -22,7 +23,7 @@ for (k,v) in its:
 	lines.append("%s | %s" % (k, v))
 
 table = '\n'.join(lines)
-fh = file('../content/_include/prop_key_map.md', 'w')
+fh = file('content/_include/prop_key_map.md', 'w')
 fh.write(table)
 fh.close()
 

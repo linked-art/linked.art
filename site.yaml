@@ -7,11 +7,12 @@ deploy_root: .site
 template: hyde.ext.templates.jinja.Jinja2Template
 
 plugins:
+    - extensions.text.IndexingPlugin
     - hyde.ext.plugins.meta.MetaPlugin
     - hyde.ext.plugins.meta.AutoExtendPlugin
     - hyde.ext.plugins.meta.TaggerPlugin
     - hyde.ext.plugins.text.SyntextPlugin
-    - extensions.text.IndexingPlugin
+
 
 jinja2:
     filters:
