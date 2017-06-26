@@ -131,16 +131,16 @@ class IndexingPlugin(Plugin):
 		print "called btr for %s" % resource.relative_path
 		if resource.relative_path.endswith('.html'):
 
-			# It gets called three times, only the last one
+			# It gets called three times locally, only the last one
 			# actually does anything
-			# No Idea why
+			# Weirder, it only gets called twice on netlify
 
 			try:
 				self.index[resource.relative_path] += 1
 			except:
 				self.index[resource.relative_path] = 1
 
-			if self.index[resource.relative_path] != 3:
+			if self.index[resource.relative_path] != 2:
 				return text
 
 			# Look for ```crom ... ```
