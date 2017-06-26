@@ -18,7 +18,22 @@ The value of the assignment is given using `assigned`, and it must be a resource
 
 The example below demonstrates associating a previous title with an object.
 
-{{ macros.include_example("assert_naming") }}
+```crom
+obj = Painting(art=1)
+obj.label = "Current Painting Title"
+top = Naming()
+name = Appellation()
+name.value = "Previous Painting Title"
+top.assigned = name
+top.assigned_to = obj
+who = Person()
+who.label = "Painting Curator"
+top.carried_out_by = who
+ts = TimeSpan()
+ts.begin_of_the_begin = "1804-05-19"
+ts.end_of_the_end = "1804-05-19"
+top.timespan = ts
+```
 
 ## "Style Of" Attribution
 
@@ -26,7 +41,18 @@ There is a common special case of wanting to assign not an individual (e.g. Remb
 
 The approach taken for this case is to use an `AttributeAssignment` classified not as attribution, but instead as "style of" (_aat:300404285_).  This prevent systems from mistakenly infering that the actor carried out the production, but is consistent with the overall pattern.  There is intentionally no further model for this use case that the `AttributeAssignment` could be translated into. 
 
-{{ macros.include_example("assert_style_of") }}
+```crom
+top = StyleOfAttribution()
+obj = Painting(art=1)
+obj.label = "Example Painting"
+who = Person()
+who.label = "Well Known Artist"
+top.assigned = who
+top.assigned_to = obj
+by = Person()
+by.label = "Painting Curator"
+top.carried_out_by = by
+```
 
 ## AAT to CIDOC-CRM Mapping
 

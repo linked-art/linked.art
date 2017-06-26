@@ -14,13 +14,25 @@ The rights information about both the physical objects and their digital represe
 
 It is important to be able to give a credit or attribution statement that should be displayed along with the object. For example, a painting that has been donated might have the requirement to state who the donor was. This is modeled as a `LinguisticObject`, that is `classified_as` _aat:300026687_ being the identity for "acknowledgements". The actual string is given in `value`.
 
-{{ macros.include_example("objrights_credit") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Painting"
+crdt = CreditStatement()
+crdt.value = "Donation of Ms J. Smith; Example Organization"
+top.referred_to_by = crdt
+```
 
 ## Rights Statement
 
 For general statements about rights that have not been aligned with any other controlled vocabularies such as AAT or [rightsstatements.org](http://rightsstatements.org/), the information can be provided in the same way as for a credit line.  The difference is that it is `classified_as` _aat:300055547_, being the identity for general "legal concepts".
 
-{{ macros.include_example("objrights_rights_stmt") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Painting"
+crdt = RightsStatement()
+crdt.value = "Copyright of this object has not yet been assessed"
+top.referred_to_by = crdt
+```
 
 ## Rights Assertions
 
@@ -32,8 +44,14 @@ There is a recent effort to standardize rights statements, described at [rightss
 
 The object has a `subject_to` property, which records the particular `Right`. It is then `classified_as` the rightsstatements.org URI that's appropriate for the situation.  A `label` can also be given to provide clarity, and to display to the user.
 
-{{ macros.include_example("objrights_nkc") }}
-
+```crom
+top = Painting(art=1)
+top.label = "Object"
+cne = Right()
+cne.classified_as = Type("http://rightsstatements.org/vocab/NKC/1.0/")
+cne.label = "No known copyright"
+top.subject_to = cne
+```
 
 ### Copyright Assertion
 
@@ -41,5 +59,14 @@ Copyright, unlike the above situation where there is no known copyright, is slig
 
 In these cases, the `Right` has an additional property of `possessed_by`, which refers to the `Actor` that holds the right. Actors are further described in the section about [people and organizations](/model/actor/).
 
-{{ macros.include_example("objrights_rights") }}
-
+```crom
+top = Painting(art=1)
+top.label = "Example Painting"
+copyright = Right()
+copyright.classified_as = Type("http://rightsstatements.org/vocab/InC/1.0/")
+copyright.label = "Copyright of Example Painting's content"
+top.subject_to = copyright
+cholder = Actor()
+cholder.label = "Copyright Holder"
+copyright.possessed_by = cholder
+```

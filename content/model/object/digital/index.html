@@ -14,21 +14,41 @@ It is very unlikely that the descriptions provided in this model are the only di
 
 The most common scenario is if there are one or more images available of the object. This is described by using the `representation` property, which has a `VisualItem` as its value. The `id` of the image is the URI at which it is available, and additional properties to describe the image should also be given, such as a `label` and its media type (sometimes called a MIME type) in `format`. 
 
-{{ macros.include_example("objdig_image") }}
+```crom
+top = Painting(art=1)
+top.label = "Painting"
+img = VisualItem("http://example.org/images/image.jpg")
+img.label = "Image of Painting"
+img.format = "image/jpeg"
+top.representation = img
+```
 
 ## Home Page
 
 Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to an `InformationObject` which is `classified_as` a web page, or _aat:300264578_ as well as being preferred (_aat:300404670_).  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
 
-{{ macros.include_example("objdig_homepage") }}
-
+```crom
+top = Painting(art=1)
+top.label = "Painting"
+page = WebPage("http://example.org/collection/1/painting")
+page.classified_as = Type("aat:300404670")
+page.label = "Homepage for Painting"
+page.format = "text/html"
+top.subject_of = page
+```
 
 ## Other Pages
 
 While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being an `InformationObject`, but without the preferred classification.
 
-{{ macros.include_example("objdig_page") }}
-
+```crom
+top = Painting(art=1)
+top.label = "Painting"
+page = WebPage("http://example.org/journal/article")
+page.label = "Webpage that discusses Painting"
+page.format = "text/html"
+top.subject_of = page
+```
 
 ## IIIF 
 
@@ -38,10 +58,24 @@ While the publishing organization might have a home page for their object as abo
 
 The [IIIF Image API](http://iiif.io/api/image/) in CRM can be considered a `VisualItem`, even though it is a service for obtaining them, and can thus be referenced with the same `representation` property. In order to know that the URI is an Image API endpoint, it should not have a `format` and instead have a `conformsTo` property with the value "http://iiif.io/api/image".  This follows the `protocol` pattern in IIIF Image Information documents.
 
-{{ macros.include_example("objdig_iiif_image") }}
+```crom
+top = Sculpture(art=1)
+top.label = "Sculpture"
+img = VisualItem("http://iiif.example.org/image/1")
+img.label = "IIIF Image API for Sculpture"
+img.conforms_to = BaseResource("http://iiif.io/api/image")
+top.representation = img
+```
 
 ### IIIF Manifests 
 
 The [IIIF Presentation API](http://iiif.io/api/presentation/) in CRM can be considered an Information Object that is about the object.  The property used to refer to it from the art object is `subject_of`.  It `conformsTo` the Presentation API URI, but can be given a `format` for JSON-LD that includes the context as a profile.
 
-{{ macros.include_example("objdig_iiif_manifest") }}
+```crom
+top = Painting(art=1)
+top.label = "Painting"
+mfst = InformationObject("http://iiif.example.org/presentation/1/manifest.json")
+mfst.format = 'application/ld+json;profile="http://iiif.io/api/presentation/2/context.json"'
+mfst.conforms_to = BaseResource("http://iiif.io/api/presentation")
+top.subject_of = mfst
+```

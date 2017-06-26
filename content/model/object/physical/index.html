@@ -18,7 +18,18 @@ Dimensions are included in the `dimension` property, and consist of three primar
 
 For example, a painting that measures 16 inches wide, by 20 inches tall, could be described as given below.  Note that the repeated unit is not duplicated in its entirety, just its URI given in the second dimension.
 
-{{ macros.include_example("objphys_dims") }}
+```crom
+top = Painting(art=1)
+top.label = "Example 16x20 Painting"
+w = Width()
+w.value = 16
+w.unit = dimensionUnits['inches']
+top.dimension = w
+h = Height()
+h.value = 20
+h.unit = dimensionUnits['inches']
+top.dimension = h
+```
 
 ### Dimension Statement
 
@@ -26,7 +37,13 @@ If the dimension text is not recorded in a way that is condusive to generating t
 
 The same object might have a dimension statement as below. 
 
-{{ macros.include_example("objphys_dims_stmt") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Painting"
+dims = DimensionStatement()
+dims.value = "The painting is approximately 16 inches wide, by 20 inches high"
+top.referred_to_by = dims
+```
 
 ## Materials
 
@@ -34,13 +51,23 @@ Objects are `made_of` different materials. The materials are the type of materia
 
 For example, a statue made of marble could be described as below.
 
-{{ macros.include_example("objphys_materials") }}
+```crom
+top = Sculpture(art=1)
+top.label = "Example Marble Sculpture"
+top.made_of = materialTypes['marble']
+```
 
 ### Materials Statement 
 
 Similarly to dimensions statements, it is possible to describe the materials using a `LinguisticObject` classified as being about the materials of the object via _aat:300010358_.
 
-{{ macros.include_example("objphys_materials_stmt") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Multi-Media Painting"
+mats = MaterialStatement()
+mats.value = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
+top.referred_to_by = mats
+```
 
 ## Parts
 
@@ -48,4 +75,13 @@ As described in the [baseline patterns](/model/base/), one of the main modeling 
 
 Physical parts are given using the `part` property, and use the high level `PhysicalObject` class. The `classified_as` property can be used to be more specific as to the sort of part, in this case the support for the painting, which is in turn made of canvas.
 
-{{ macros.include_example("base_parts_thing") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Painting"
+top.made_of = materialTypes['watercolor']
+part = SupportPart(top.id + "/part/1")
+part.label = "Canvas Support"
+part.made_of = materialTypes['canvas']
+top.part = part
+```
+

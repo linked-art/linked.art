@@ -11,7 +11,7 @@ import cromulent
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment
+    EndOfExistence, AttributeAssignment, Formation
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -113,8 +113,6 @@ data = fh.read()
 fh.close()
 aat_labels = json.loads(data)
 
-
-
 class IndexingPlugin(Plugin):
 
 	def __init__(self, site):
@@ -139,7 +137,13 @@ class IndexingPlugin(Plugin):
 			# and replace with {% syntax json %} ... {% endsyntax %}
 			hits = self.matcher.findall(text)
 			for h in hits:
-				eg = self.generate_example(h[1])
+				try:
+					eg = self.generate_example(h[1])
+				except Exception, e:
+					print ">>> In %s" % resource.relative_path
+					print "Caught Exception: %s" % e
+					print "Failed to execute example:\n%s" % h[1]
+					raise
 				text = text.replace(h[0], eg)
 		return text
 
@@ -150,10 +154,8 @@ class IndexingPlugin(Plugin):
 
 	def generate_example(self, egtext):
 
-		try:
-			exec(egtext) 
-		except:
-			return "EXECUTION FAIL\n\n" + egtext
+		# Yes really...
+		exec(egtext) 
 
 		# Now in scope should be a top resource
 		factory.toFile(top, compact=False)

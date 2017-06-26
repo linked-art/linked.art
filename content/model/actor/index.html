@@ -12,32 +12,81 @@ All activities are carried out by some actor, typically a person or organization
 
 There are two primary types of acting agent, `Person` and `Group`.  They are subClasses of the `Actor` class, which might be used when it is not certain whether the actor is a Person or an Organization or Group.  For example, if a sale of an object is listed as being from an art dealer called "Smith", it is unclear whether it refers to a person via their family name, or to an organization named after its owner.  Equally, if there isn't any information about the actor currently, but identity is desired such that it can later be reconciled or used, then the use of `Actor` is likely needed.  As such, encountering all three should be anticipated.
 
-{{ macros.include_example("actor_type") }}
+```crom
+who = Person()
+who.label = "J. Smith"
+grp = MuseumOrg()
+grp.label = "Example Museum Organization"
+actor = Actor()
+actor.label = "Unknown Person or Organization"
+top = Acquisition()
+top.transferred_title_from = who
+top.transferred_title_to = grp
+top.carried_out_by = actor
+```
 
 ## Names
 
 Names in CIDOC-CRM are turned into first class resources with their own identity, and given a class called `Appellation`. Being themselves uniquely identified rather than just an anonymous string, they are said to identify the resource they are associated with. This seems a little strange as names are not identifiers, but this particular instance of a name is uniquely associated with that particular person. Any sort of resource can have an Appellation of this sort. The main name associated with the resource, in this case Person, should also be its `label`.  The main name to use, if there are multiple, should be `classified_as` _aat:300404670_.
 
-{{ macros.include_example("actor_name") }}
+```crom
+top = Person()
+top.label = "J. Smith"
+apl = PrimaryName()
+apl.value = "J. Smith"
+top.identified_by = apl
+```
 
 ### Parts of Names
 
 Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Appellation`s, and are included in the `composed_of` set in the same way as other partitioning.
 
-{{ macros.include_example("actor_name_parts") }}
+```crom
+top = Person()
+top.label = "Lady Joan A. Smith, Duchess of Wolverhampton"
+apl = PrimaryName()
+apl.value = "Lady Joan A. Smith, Duchess of Wolverhampton"
+top.identified_by = apl
+given = GivenName()
+given.value = "Joan"
+fam = FamilyName()
+fam.value = "Smith"
+pref = NamePrefix()
+pref.value = "Lady"
+suff = NameSuffix()
+suff.value = "Duchess of Wolverhampton"
+mid = MiddleName()
+mid.value = "A."
+apl.composed_of = pref
+apl.composed_of = given
+apl.composed_of = mid
+apl.composed_of = fam
+apl.composed_of = suff
+```
 
 ## Identity
 
 Like objects, people are often assigned legacy identifiers that should be recorded and tracked.  While the primary identifier is the URI given to the person, there can be any number of other identifiers also associated with the resource.  These follow the same pattern as for object identifiers, with `identified_by` being used with an `Identifier` resource, that can have further classifications and a `value`.  Organizations can also have identifiers, using the same pattern.
 
-{{ macros.include_example("actor_identity") }}
+```crom
+top = Person()
+top.label = "Xavier Y. Zeelander"
+pid = LocalNumber()
+pid.value = 643
+top.identified_by = pid
+```
 
 ### Other Linked Data Identifiers
 
 There may be other identifiers for the person available in external systems, such as [ULAN](http://vocab.getty.edu/ulan/) or any of a dozen others.  If all of the information needed about the person is available from that system, then it is recommended to simply use that identifier directly as the URI for the Person.  If there is a requirement to maintain a separate identifier, then the `exact_match` property should be used to align the two.
 
-{{ macros.include_example("actor_ulan") }}
-
+```crom
+top = Person()
+top.label = "Vincent Van Gogh"
+ulan = BaseResource("http://vocab.getty.edu/ulan/500115588-agent")
+ulan.label = "Van Gogh, Vincent"
+top.exact_match = ulan
+```
 
 ## Life Events
 
@@ -49,7 +98,25 @@ Like the creation of objects, people and organizations also come into and out of
 
 After death, people are still instances of `Person` which is a subclass of `Actor`, even though they can no longer carry out activities.  People in comas or otherwise completely incapacitated also cannot carry out activities, but are not temporarily non-Actors. The modeling that death is a transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any actual value.  Thus a burial activity (_aat:300263485_) buries a Person, not a Thing-that-used-to-be-a-Person.
 
-{{ macros.include_example("actor_birthdeath") }}
+```crom
+top = Person()
+top.label = "Amanda B. Curtlett"
+birth = BeginningOfExistence()
+bts = TimeSpan()
+bts.begin_of_the_begin = "1767-01-09"
+bts.end_of_the_end = "1767-01-12"
+birth.timespan = bts
+death = EndOfExistence()
+dts = TimeSpan()
+dts.begin_of_the_begin = "1824-08-21"
+dts.end_of_the_end = "1824-08-21"
+death.timespan = dts
+dloc = Place()
+dloc.label = "Death Place"
+death.took_place_at = dloc
+top.brought_into_existence_by = birth
+top.taken_out_of_existence_by = death 
+```
 
 ### Active Dates
 
@@ -57,7 +124,17 @@ It is often useful to know where and when the person was active in their profess
 
 The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` resource should be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  If a person was active between 1910-01-01 and 1934-03-21, it might look like the example below.
 
-{{ macros.include_example("actor_active") }}
+```crom
+top = Person()
+top.label = "Patrick Q. Robertson"
+active = Activity()
+active.classified_as = Type("http://vocab.getty.edu/aat/300393177")
+ats = TimeSpan()
+ats.begin_of_the_begin = "1910-01-01"
+ats.end_of_the_end = "1934-03-21"
+active.timespan = ats
+top.carried_out = active
+```
 
 ## Descriptive Information
 
@@ -65,19 +142,39 @@ The property for the Person or Group is `carried_out`, the inverse of the more f
 
 Biographical descriptions follow the `LinguisticObject` pattern, with biography _(aat:300080102)_ as the classification.  In all other respects, it is a vanilla usage of a resource being `referred_to_by` a particular text.
 
-{{ macros.include_example("actor_biog") }}
+```crom
+top = Person()
+top.label = "David E. Frederickson"
+bio = BiographyStatement()
+bio.value = "Example biography"
+top.referred_to_by = bio
+```
 
 ### Digital Integration
 
 Images of the person can also be provided, in the same way as for [images of objects](/model/object/digital/) via the `representation` property. If IIIF resources, web pages or other digital content is available, the same patterns as for objects also apply.  Only the basic image case is shown below, the other scenarios can easily be determined from the referenced digital integration for objects.
 
-{{ macros.include_example("actor_image") }}
+```crom
+top = Person()
+top.label = "Gertrude H. Ingram"
+img = VisualItem("http://example.org/images/gertrude.jpg")
+img.label = "Image of G.H. Ingram"
+img.format = "image/jpeg"
+top.representation = img
+```
 
 ### Nationality
 
 Nationality is modeled in CRM as membership in a Group, the same way that a person can be a `member_of` an organization, a band or any other set of people. The `Group` should have _aat:300379842_ as one of its classifications, and if known, another classification for the specific culture or location for the nationality itself. For example, a person considered to be of British nationality, would be a member of a `Group` that was `classified_as` both _aat:300379842_ and _aat:300111159_.
 
-{{ macros.include_example("actor_nationality") }}
+```crom
+top = Person()
+top.label = "Jeremy K. Lintott"
+natl = Nationality()
+natl.classified_as = Type("http://vocab.getty.edu/aat/300111159")
+natl.label = "British"
+top.member_of = natl
+```
 
 ### Gender
 
@@ -85,7 +182,14 @@ Gender is a hotly debated and politically charged topic. The intent of this sect
 
 Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the current modeling decision is to echo the same membership pattern as for nationality. This allows a plethora of gender diversity, and does not make any specific statements about biological versus assumed versus prefered gender roles.  A Person can be a member of multiple groups at the same time, allowing the association with multiple genders with this modeling decision.  Gender based groups should be `classified_as` _aat:300055147_ along with any specific classification known.
 
-{{ macros.include_example("actor_gender") }}
+```crom
+top = Person()
+top.label = "Mabel N. Overton"
+gender = Gender()
+gender.classified_as = Type("http://vocab.getty.edu/aat/300189557")
+gender.label = "feminine"
+top.member_of = gender
+```
 
 ## Organization Membership
 
@@ -95,5 +199,13 @@ The only significantly new aspect to organizational actors, compared to people, 
 
 For example, a curator could be a `member_of` a department, which is in turn a member of the wider institution.  This is simply the inverse of `member` relationship described in the [base patterns](/model/base/#25-organizations).
 
-{{ macros.include_example("actor_membership" )}}
-
+```crom
+top = Person()
+top.label = "Sameen T. Underwood"
+dept = Department()
+dept.label = "Paintings Department"
+mus = MuseumOrg()
+mus.label = "Example Museum"
+top.member_of = dept
+dept.member_of = mus
+```
