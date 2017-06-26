@@ -128,6 +128,7 @@ class IndexingPlugin(Plugin):
 		self.class_hash = {}		
 
 	def begin_text_resource(self, resource, text):
+		print "called btr for %s" % resource.relative_path
 		if resource.relative_path.endswith('.html'):
 
 			# It gets called three times, only the last one
@@ -157,6 +158,7 @@ class IndexingPlugin(Plugin):
 
 	def site_complete(self):
 		# Just write the document in markdown
+		print "Called site_complete"
 		top = """---
 extends: base.j2
 default_block: content
