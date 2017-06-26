@@ -29,7 +29,10 @@ __Example:__
 
 The type of the object (an instance of CRM's ManMadeObject class) is a painting _(aat:300033618)_:
 
-{{ macros.include_example( "base_type" ) }}
+```crom
+top = Painting(art=1)
+top.label = "Simple Example Painting"
+```
 
 
 ## 2. Parts
@@ -52,7 +55,15 @@ __Example:__
 
 A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a support _(aat:300014844)_ made of canvas _(aat:300014078)_:
 
-{{ macros.include_example("base_parts_thing") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Painting"
+top.made_of = materialTypes['watercolor']
+part = SupportPart(top.id + "/part/1")
+part.label = "Canvas Support"
+part.made_of = materialTypes['canvas']
+top.part = part
+```
 
 ### 2.2. Time Periods and Events
 
@@ -69,7 +80,13 @@ __Example:__
 
 An auction _(aat:300054751)_ consists of many activities in which a particular lot is auctioned:
 
-{{ macros.include_example("base_parts_activity") }}
+```crom
+top = Auction()
+top.label = "Example Auction"
+lot = Activity(top.id + "/part/1")
+lot.label = "Example Auction of Lot"
+top.consists_of = lot
+```
 
 ### 2.3. Locations
 
@@ -85,7 +102,16 @@ __Example:__
 
 The "W02" gallery _(aat:300240057)_ is part of the museum, which is in Los Angeles _(tgn:7023900-place)_:
 
-{{ macros.include_example("base_parts_place") }}
+```crom
+top = Place()
+top.label = "Example Museum Building"
+gallery = Gallery(top.id + '/part/1')
+gallery.label = "Gallery W204"
+city = Place("http://vocab.getty.edu/tgn/7023900-place")
+city.label = "Los Angeles"
+top.spatially_contains = gallery
+top.spatially_within = city
+```
 
 !!! note "Use of Gazeteers"
     It is preferable to rely on linked controlled vocabulary systems that include hierarchies whenever possible, rather than duplicating the geographical structure into the metadata of other resources.
@@ -104,7 +130,13 @@ __Example:__
 
 The content of the first ledger from a dealer's records contains the content of the first row of that ledger.
 
-{{ macros.include_example("base_parts_info") }}
+```crom
+top = InformationObject()
+top.label = "Content of Ledger 1"
+row = InformationObject(top.id + "/part/1")
+row.label = "Content of Row 1"
+top.composed_of = row
+```
 
 ### 2.5. Organizations
 
@@ -118,8 +150,13 @@ __Example:__
 
 The Paintings Department _(aat:300263534)_ is part of the Example Museum _(aat:300312281)_
 
-{{ macros.include_example("base_parts_org") }}
-
+```crom
+top = MuseumOrg()
+top.label = "Example Museum Organization"
+dept = Department(top.id + "/part/1")
+dept.label = "Paintings Department"
+top.member = dept
+```
 
 ## 3. Statements about a Resource
 
@@ -141,12 +178,13 @@ __Example:__
 
 Having only a textual description of the materials, the value `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300010358)_ statement:
 
-{{ macros.include_example("base_stmt") }}
+```crom
+top = Painting(art=1)
+top.label = "Example Painting on Canvas"
+lo = MaterialStatement(top.id + "/statement/1")
+lo.value = "Oil on Canvas"
+top.referred_to_by = lo
+```
 
 !!! Note "Language of Content"
     Note that the pattern for providing the language of the content is currently under discussion, as to whether to use the Linked Open Data friendly method of language tags, or the CIDOC-CRM specific method of `P72_has_language`.
-
-
-
-
-

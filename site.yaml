@@ -11,12 +11,12 @@ plugins:
     - hyde.ext.plugins.meta.AutoExtendPlugin
     - hyde.ext.plugins.meta.TaggerPlugin
     - hyde.ext.plugins.text.SyntextPlugin
+    - extensions.text.IndexingPlugin
 
 jinja2:
     filters:
         regex_replace: extensions.text.regex_replace
         regex_replace_fn: extensions.text.regex_replace_fn
-        exec_example: extensions.text.exec_example
 
 markdown:
     extensions:

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 rm -rf .site/*
-cd scripts
-python ./mk_examples.py
-cd ..
+# make the table, still separate
 hyde gen
+
+
+
