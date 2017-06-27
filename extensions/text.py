@@ -9,6 +9,7 @@ from rdflib import ConjunctiveGraph, URIRef
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
 
 import cromulent
+from cromulent import model, vocab
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
