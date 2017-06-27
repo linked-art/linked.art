@@ -1,6 +1,7 @@
 
 import re
 from hyde.plugin import Plugin
+from hyde.site import Resource
 import json, yaml
 import os
 
@@ -128,7 +129,6 @@ class IndexingPlugin(Plugin):
 		self.class_hash = {}		
 
 	def begin_text_resource(self, resource, text):
-		print "called btr for %s" % resource.relative_path
 		if resource.relative_path.endswith('.html'):
 
 			# It gets called three times locally, only the last one
@@ -212,6 +212,7 @@ title: Index of Classes, Properties, Authorities
 		fh = file('content/model/example_index.html', 'w')
 		fh.write(out)
 		fh.close()
+		# Annoyingly we need to generate this file separately
 
 
 	def generate_example(self, egtext, resource):
