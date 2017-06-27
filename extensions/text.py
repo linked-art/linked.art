@@ -248,7 +248,7 @@ title: Index of Classes, Properties, Authorities
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
 		resp = """
-<a id="%s"/>
+<a id="%s"></a>
 ```json
 %s
 ```
