@@ -1,17 +1,5 @@
 ---
 title: "Getty Photo Archive Mapping"
-eg: "/cookbook/getty/photoarchive"
-example:
-  photo: object/0.json
-  photo_1: object/0_1.json
-  accno: id/0.json
-  srcid: id/1.json
-  pcoll: object/2.json
-  aprod: activity/3.json
-  abase: object/3.json
-  aids: id/2.json
-  aloc: place/0.json
-  art: object/3_1.json
 ---
 
 {% include "toc.html" %}
@@ -118,25 +106,47 @@ The rest of the information is about the object depicted.
 We create a `ManMadeObject` to represent the photograph, by checking the `photo_color` property to see whether it should be black and white _(aat:300128359)_, color _(aat:300128347)_ or if not present, then just a photograph _(aat:300046300)_.
 We construct a label for the photograph based on this type and the name of the object depicted.
 
-{{ macros.include_example("photo", resource.meta.eg) }}
+```crom
+top = PhotographBW()
+top.label = "Black and White Photograph of 'St. Sebastian'"
+```
 
 We create an Identifier for the Accession Number, and type it as  _(aat:300312355)_. This is referenced from the photograph with the `identified_by` property.
 
-{{ macros.include_example("accno", resource.meta.eg) }}
+```crom
+top = AccessionNumber()
+top.value = "292221"
+```
 
 A second, more complex, Identifier for Anderson's identifier is created. This identifier is associated with the source collection, via a set of identifiers of which it is part.  We also create an Acquisition activity, by which the photograph is acquired by The Getty. This is not shown in the example below, but is shown in the full description of the photograph.
 
-{{ macros.include_example("srcid", resource.meta.eg) }}
+```crom
+top = Identifier()
+top.value = "1195"  
+srcidset = InformationObject()
+srcidset.label = "Identifiers of Anderson"
+top.composed_from = srcidset
+srccoll = CollectionSet()
+srccoll.label = "Collection of Anderson"
+srcidset.refers_to = srccoll
+who = Actor()
+who.label = "Anderson"
+srccoll.current_owner = who
+```
 
-We create the original collection, despite only having a label for it, which will be referenced from the photograph via the `part_of` property.
+We create the original collection, despite only having a label for it, which will be referenced from the photograph via the `part_of` property.  Plus we link the, as of yet unconfigured, Painting resource to it via `depicts`.
 
-{{ macros.include_example("pcoll", resource.meta.eg) }} 
+```crom
+top = PhotographBW()
+top.label = "Black and White Photograph of 'St. Sebastian'"
+coll = CollectionSet()
+coll.label = "Erwin Panofsky Collection"
+top.part_of = coll
+art = Painting(art=1)
+top.depicts = art
+```
 
-Plus we link the, as of yet unconfigured, Painting resource to it via `depicts`.
-
-{{ macros.include_example("photo_1", resource.meta.eg) }}
-
-We can fill in the data to our model:
+We can thus fill in the data about the photograph to our model:
 
 ![Photograph Data following Model](photo_data.png){: width="800px"}
 
@@ -145,21 +155,112 @@ We can fill in the data to our model:
 
 We can fill out a lot of details about the object itself.  In particular, it has a Title (which we also associate with the object directly as a label), height and width dimensions in centimetres, and a parseable materials statement.  We record both the statement as a `LinguisticObject`, as well as breaking the information out into machine readable material and part resources.
 
-{{ macros.include_example("abase", resource.meta.eg) }}
+```crom
+top = Painting(art=1)
+top.label = "St. Sebastian"
+apl = Appellation()
+apl.value = "St. Sebastian"
+top.identified_by = apl
+h = Height()
+h.label = "Height"
+h.value = 153
+h.unit = dimensionUnits['cm']
+w = Width()
+w.label = "Width"
+w.value = 118
+w.unit = dimensionUnits['cm']
+top.dimension = h
+top.dimension = w
+mats = MaterialStatement()
+mats.value = "Oil on canvas"
+top.referred_to_by = mats
+top.made_of = materialTypes['oil']
+part = SupportPart()
+part.label = "Canvas Support"
+part.made_of = materialTypes['canvas']
+top.part = part
+```
 
 Now we can tackle the creation of the painting.  The activity is a `Production`, which was carried out by the artist at a particular point in time.  We know the artist's name and their birth and death dates, and an approximate date for the activity.
 
-{{ macros.include_example("aprod", resource.meta.eg) }}
+```crom
+top = Production()
+artist = Person()
+artist.label = "Rubens, Peter Paul"
+birth = BeginningOfExistence()
+bt = TimeSpan()
+bt.label = "1577"
+bd = "1577-01-01T00:00:00Z"
+bt.begin_of_the_begin = bd
+be = "1578-01-01T00:00:00Z"
+bt.end_of_the_end = be
+birth.timespan = bt
+death = EndOfExistence()
+dt = TimeSpan()
+dt.label = "1640"
+dd = "1640-01-01T00:00:00Z"
+dt.begin_of_the_begin = dd 
+de = "1641-01-01T00:00:00Z"
+dt.end_of_the_end = de
+death.timespan = dt
+artist.brought_into_existence_by = birth
+artist.taken_out_of_existence_by = death
+top.carried_out_by = artist
+ts = TimeSpan()
+ts.label = "ca. 1604"
+ts.begin_of_the_begin = "1603-01-01T00:00:00Z" 
+ts.end_of_the_end = "1606-01-01T00:00:00Z"
+top.timespan = ts 
+```
 
 Due to research by the photo archive catalogers, we know a relatively recent (if not necessarily absolutely current) owner, location and identifier for the object. The owner and identifer follow the same pattern as for the identifiers of the photograph.
 
-{{ macros.include_example("aids", resource.meta.eg) }}
+```crom
+own = Group()
+own.label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
+top = Identifier()
+top.value = "Inv. 388"
+coll = CollectionSet()
+coll.current_owner = own
+coll.classified_as = Type("http://vocab.getty.edu/aat/300411912")
+idset = InformationObject()
+idset.label = "Identifiers of Galleria Nazionale d'Arte Antica, Palazzo Corsini"
+top.composed_from = idset
+idset.refers_to = coll
+```
 
 And its current location is very well described in the data, so we map all of it in this example.  However, this is not a recommended pattern and instead a gazetter or vocabulary such as TGN or Geonames should be used instead.  Only places that do not have existing identities should have new identities created.  Instead, the city of Rome should be identified as `tgn:7000874-place` and then the TGN hierarchy used for the province, region, and country.
 
-{{ macros.include_example("aloc", resource.meta.eg) }}
+```crom
+itl = Place()
+itl.label = "Italy"
+laz = Place()
+laz.label = "Lazio"
+rom = Place()
+rom.label = "Roma"
+top = Place()
+top.label = "Rome"
+top.spatially_within = rom
+rom.spatially_within = laz
+laz.spatially_within = itl
+```
 
-Putting all of this information together gives us a full description of the artwork depicted in the photograph.  Remember that the artwork is then referenced from the photograph by `depicted`.
+And a few additional features for the provenance statement, a brief citation and a category:
 
-{{ macros.include_example("art", resource.meta.eg) }}
+```crom
+top = Painting(art=1)
+top.label = "St. Sebastian"
+ps = ProvenanceStatement()
+ps.value = "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)"
+top.referred_to_by = ps
+bc = LinguisticObject()
+bc.label = "Vlieghe, CorpRub 8 (1972-73), no.144."
+top.referred_to_by = bc
+io = InformationObject()
+t = Type()
+t.label = "Religious, Devotional"
+io.about = t
+top.carries = io
+```
 
+Putting all of the above together gives us a full description of the artwork depicted in the photograph.

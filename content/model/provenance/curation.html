@@ -16,17 +16,69 @@ Provenance activities exist in a larger context -- the ownership of the object b
 
 Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object _(aat:300054277)_ is modeled as a continuation of the ownership chain which is punctuated by the acquisition activities.
  
-{{ macros.include_example("provcur_curate") }}
+```crom
+top = Curating()
+top.label = "Ownership of the Painting"
+start = Acquisition()
+start.label = "Acquisition of Painting by Owner"
+end = Acquisition()
+end.label = "Owner gives Painting to someone else"
+owner = Actor()
+owner.label = "Owner"
+what = Painting(art=1)
+who = Person()
+who.label = "Someone Else"
+start.transferred_title_of = what
+start.transferred_title_to = who
+end.transferred_title_of = what
+end.transferred_title_from = who
+top.carried_out_by = who
+top.used_specific_object = what
+start.occurs_before = end
+top.continued = start
+top.continued_by = end
+```
 
 #### Taking Inventory
 
 One such activity is taking inventory _(aat:300077506)_ by the owner of all their objects, including the one being described. This is routinely carried out by art dealers, collectors or museums, in order to ensure that they still have custody of all of the objects that they believe they do.  This establishes the existence and presence of the object at a certain place and time, and is thus useful in tracking the object through history.
 
-{{ macros.include_example("provcur_inventory") }}
+```crom
+top = Curating()
+top.label = "Ownership of the Painting"
+inv = Inventorying()
+inv.label = "Inventory Taking by Owner"
+top.consists_of = inv
+```
 
 ### Lifetime of Object
 
 The entire provenance of an object _(aat:300055863)_ is also an activity, that consists of all of all of the above events, from production through to destruction or the present day ownership.  All of the transfers of ownership and the resulting ownership periods are included, giving a single place to associate and thereby discover the events.
 
-{{ macros.include_example("provcur_lifetime") }}
-
+```crom
+top = Provenance()
+what = Painting(art=1)
+top.label = "Lifetime of Painting"
+top.used_specific_object = what
+prod = Production()
+prod.produced = what
+own1 = Curating()
+own1.label = "Ownership by Artist"
+c1 = Acquisition()
+c1.transferred_title_of = what
+own2 = Curating()
+own2.label = "Ownership by first owner"
+c2 = Purchase()
+c2.transferred_title_of = what
+own3 = Curating()
+own3.label = "Ownership by second and final owner"
+dest = EoEActivity()
+dest.took_out_of_existence = what
+top.consists_of = prod
+top.consists_of = own1
+top.consists_of = c1
+top.consists_of = own2
+top.consists_of = c2
+top.consists_of = own3
+top.consists_of = dest
+```

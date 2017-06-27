@@ -19,7 +19,20 @@ In between the events there are periods of time in which the ownership does not 
 
 The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail in the following sections.
 
-{{ macros.include_example("prov_event") }}
+```crom
+top = Activity()
+who = Actor()
+who.label = "Who"
+when = TimeSpan()
+when.label = "When"
+when.begin_of_the_begin = "earliest-start-datetime"
+when.end_of_the_end = "latest-end-datetime"
+where = Place()
+where.label = "Where"
+top.carried_out_by = who
+top.took_place_at = where
+top.timespan = when
+```
 
 ## Sections
 

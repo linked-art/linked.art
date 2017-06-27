@@ -12,37 +12,116 @@ This section covers the beginning and ending of objects' existence, along with t
 
 The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
 
-{{ macros.include_example("provprod_create") }}
+```crom
+top = Production()
+who = Actor()
+who.label = "Example Artist"
+what = Painting(art=1)
+what.label = "Example Painting"
+when = TimeSpan()
+where = Place()
+where.label = "Example Artist's Studio"
+when.begin_of_the_begin = "1780-03-05T00:00:00Z"
+when.end_of_the_end = "1780-03-06T00:00:00Z"
+top.carried_out_by = who
+top.timespan = when
+top.produced = what
+top.took_place_at = where
+```
 
 ### Inspiration or Copies
 
 Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. 
 
-{{ macros.include_example("provprod_copy")}}
+```crom
+top = Production()
+what = Painting(art=1)
+what.label = "Copy of Example Painting"
+copied = Painting(art=1)
+copied.label = "Example Painting"
+top.influenced_by = copied
+top.produced = what
+who = Person()
+who.label = "Copyist"
+top.carried_out_by = who
+```
 
 ### Roles / Techniques
 
 If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as a classification of the activity.
 
-{{ macros.include_example("provprod_technique") }}
+```crom
+top = Production()
+who = Actor()
+who.label = "Example Glassblower"
+what = Sculpture(art=1)
+what.label = "Glass Sculpture"
+top.carried_out_by = who
+top.classified_as = Type("http://vocab.getty.edu/aat/300053932")
+```
 
 ### Multiple Artists with Roles
 
 If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. These components are instances of `Activity` to make it easier to distinguish between the `Production` of the object overall and the activities that happened as part of that. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
 
-{{ macros.include_example("provprod_roles") }}
+```crom
+top = Production()
+what = Sculpture(art=1)
+what.label = "Painted Sculpture"
+top.produced = what
+act1 = Activity()
+act1.classified_as = Type("http://vocab.getty.edu/aat/300264383")
+who = Actor()
+who.label = "Example Sculptor"
+act1.carried_out_by = who
+top.consists_of = act1
+act2 = Activity()
+who2 = Actor()
+who2.label = "Example Sculpture Painter"
+act2.classified_as = Type("http://vocab.getty.edu/aat/300161986")
+act2.carried_out_by = who2
+top.consists_of = act2
+```
 
 ### Attribution of a Group
 
 Even if the artist's or artists' identity is not known exactly, the person or persons may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`.  The "master" of the workshop is represented as the Actor that carried out the `Formation` of the `Group`.  
 
-{{ macros.include_example("provprod_workshop") }}
+```crom
+top = Production()
+what = Painting(art=1)
+what.label = "Example Painting, from workshop of Example Master"
+top.produced = what
+grp = Group()
+grp.label = "Workshop of Example Master"
+f = Formation()
+who = Person()
+who.label = "Example Master"
+f.carried_out_by = who
+grp.formed_by = f
+top.carried_out_by = grp
+```
 
 ### Previous Attributions
 
 Over time, attributions can be contested and change. The actor that is listed in `carried_out_by` from the `Production` should always be the one currently believed to have produced the art work.  Previous attributions can be recorded using the `AttributeAssignment` pattern, further described [here](/model/assertion/).
 
-{{ macros.include_example("provprod_previous") }}
+```crom
+top = Attribution()
+obj = Painting(art=1)
+obj.label = "Example Painting"
+who = Person()
+who.label = "Previously-Thought Artist"
+top.assigned = who
+top.assigned_to = obj
+by = Person()
+by.label = "Painting Curator"
+top.carried_out_by = by
+ts = TimeSpan()
+ts.begin_of_the_begin = "1923-07-20"
+ts.end_of_the_end = "1923-07-21"
+top.timespan = ts
+```
 
 ## Destruction
 
@@ -50,4 +129,16 @@ The end of the provenance chain of an object is when it is known to have been de
 
 Objects are destroyed by events that are not carried out by an actor are modeled with the `EndOfExistence` class. However if the destruction is carried out by some actor, then it is also an `Activity` at the same time. This extra class must be added explicitly, and is a different model from `Production` which is always an `Activity`.
 
-{{ macros.include_example("provprod_dest") }}
+```crom
+top = EoEActivity()
+what = Painting(art=1)
+what.label = "Example Destroyed Painting"
+top.took_out_of_existence = what
+when = TimeSpan()
+when.begin_of_the_begin = "1823-03-01T00:00:00Z"
+when.end_of_the_end = "1823-03-31T00:00:00Z"
+top.timespan = when
+who = Person()
+who.label = "Painting Destroyer"
+top.carried_out_by = who
+```
