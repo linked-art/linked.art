@@ -216,7 +216,7 @@ title: Index of Classes, Properties, Authorities
 		for (k,v) in its:
 			if not k.startswith('aat:'):
 				continue
-			lines.append("* __%s__ (%s)" % (k, aat_labels.get(k) or fetch_aat_label(k)))
+			lines.append("* __%s__: _%s_" % (k, aat_labels.get(k) or fetch_aat_label(k)))
 			lv= []
 			for (k2,v2) in v.items():
 				n = k2.replace('https://linked.art/example/', '')				
