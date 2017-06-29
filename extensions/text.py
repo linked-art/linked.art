@@ -190,7 +190,7 @@ title: Index of Classes, Properties, Authorities
 		its = self.class_hash.items()
 		its.sort()
 		for (k,v) in its:
-			lines.append("* __%s__" % k)
+			lines.append("* __`%s`__" % k)
 			lv= []
 			for (k2,v2) in v.items():
 				n = k2.replace('https://linked.art/example/', '')
@@ -202,7 +202,7 @@ title: Index of Classes, Properties, Authorities
 		its = self.prop_hash.items()
 		its.sort()
 		for (k,v) in its:
-			lines.append("* __%s__" % k)
+			lines.append("* __`%s`__" % k)
 			lv= []
 			for (k2,v2) in v.items():
 				n = k2.replace('https://linked.art/example/', '')
@@ -323,9 +323,8 @@ title: Index of Classes, Properties, Authorities
 					self.traverse(v, top, res)
 				elif type(v) == list:
 					for x in v:
-						self.traverse(x, top, res)
-
-
+						if isinstance(x, OrderedDict):
+							self.traverse(x, top, res)
 
 ### Global filters
 
