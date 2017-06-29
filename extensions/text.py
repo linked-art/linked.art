@@ -243,7 +243,7 @@ title: Index of Classes, Properties, Authorities
 
 		# Now in scope should be a top resource
 		factory.toFile(top, compact=False)
-		jsstr = factory.toString(top, compact=False)
+		jsstr = factory.toString(top, compact=False, collapse=80)
 		js = factory.toJSON(top)
 
 		# Generate all our serializations
