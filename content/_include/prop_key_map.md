@@ -20,6 +20,7 @@ P42i | type_assigned_by
 P45 | made_of
 P46 | part
 P46i | part_of
+P56 | bears
 P78 | time_identified_by
 P78i | identifies_time
 P86 | temporally_within

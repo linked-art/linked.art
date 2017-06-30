@@ -8,7 +8,7 @@ It is useful to have some common baseline patterns to follow when using a very o
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
 
-## 1. Types / Classifications
+## Types / Classifications
 
 The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate `crm:P2_has_type`, referred to as `classified_as` in the JSON-LD representation. The semantics of `crm:P2_has_type` are thus closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".
 
@@ -35,11 +35,11 @@ top.label = "Simple Example Painting"
 ```
 
 
-## 2. Parts
+## Parts
 
 The CRM allows the partitioning of many sorts of object, including those that are of most interest to the community. In particular,
 
-### 2.1. Objects
+### Objects
 
 Objects can be partitioned into separate pieces, with more specific information provided about each piece.  The individual pieces do not need to be physically separated or even separable from the whole, just objectively defined.
 
@@ -65,7 +65,7 @@ part.made_of = materialTypes['canvas']
 top.part = part
 ```
 
-### 2.2. Time Periods and Events
+### Time Periods and Events
 
 In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.
 
@@ -88,7 +88,7 @@ lot.label = "Example Auction of Lot"
 top.consists_of = lot
 ```
 
-### 2.3. Locations
+### Locations
 
 Locations can be made more specific by saying that the smaller region is part of the larger region.
 
@@ -116,7 +116,7 @@ top.spatially_within = city
 !!! note "Use of Gazeteers"
     It is preferable to rely on linked controlled vocabulary systems that include hierarchies whenever possible, rather than duplicating the geographical structure into the metadata of other resources.
 
-### 2.4. Information Objects
+### Information Objects
 
 CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
 
@@ -138,7 +138,7 @@ row.label = "Content of Row 1"
 top.composed_of = row
 ```
 
-### 2.5. Organizations
+### Organizations
 
 Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.
 
@@ -158,7 +158,7 @@ dept.label = "Paintings Department"
 top.member = dept
 ```
 
-## 3. Statements about a Resource
+## Statements about a Resource
 
 In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
 

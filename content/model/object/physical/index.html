@@ -75,6 +75,8 @@ As described in the [baseline patterns](/model/base/), one of the main modeling 
 
 Physical parts are given using the `part` property, and use the high level `PhysicalObject` class. The `classified_as` property can be used to be more specific as to the sort of part, in this case the support for the painting, which is in turn made of canvas.
 
+The model does not have a separate parts statement to describe this in a human-readable way, as this is traditionally done using the materials statement as demonstrated above.
+
 ```crom
 top = Painting(art=1)
 top.label = "Example Painting"
@@ -85,3 +87,37 @@ part.made_of = materialTypes['canvas']
 top.part = part
 ```
 
+## Features
+
+The model distinguishes between objectively-definable parts, such as the frame of a painting being distinct from the canvas, from features which have no objectively-definable border, such as the recto and verso of the canvas. This pattern allows separate identities for the recto and verso of a page, the obverse and reverse of a coin, without implying that there are two separate physical objects. 
+
+These are modeled as instances of `ManMadeFeature`, as opposed to a `ManMadeObject`. An object representing the whole then `bears` the features, and those features can have one or more `part`s for further sub-division.
+
+The artwork or content that is part of the front or back _is_ modeled as a `ManMadeObject` which is part of the Feature.  This is to provide consistency with the more common situation when the features are not modeled at all, despite the painting only being on one side of the canvas.
+
+```crom
+top = vocab.PhotographColor()
+top.label = "Photograph of Example Artwork"
+top.description = "Photograph of an Artwork, with commentary on the back"
+recto = vocab.FrontFeature()
+recto.label = "Photograph's Front"
+verso = vocab.BackFeature()
+verso.label = "Photograph's Back"
+top.bears = recto
+top.bears = verso
+
+# These part objects are clunky :(
+obj = ManMadeObject()
+obj.label = "Photographic Part"
+what = ManMadeObject(art=1)
+what.label = "Example Artwork"
+obj.depicts = what
+recto.part = obj
+
+back = ManMadeObject()
+back.label = "Back Part"
+txt = LinguisticObject()
+txt.value = "Photograph of Example, taken 1932"
+back.carries = txt
+verso.part = back
+```

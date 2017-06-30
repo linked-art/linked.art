@@ -4,11 +4,13 @@ from hyde.plugin import Plugin
 from hyde.site import Resource
 import json, yaml
 import os
+import requests
 
 from rdflib import ConjunctiveGraph, URIRef
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
 
 import cromulent
+from cromulent import model, vocab
 from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
@@ -115,6 +117,20 @@ data = fh.read()
 fh.close()
 aat_labels = json.loads(data)
 
+def fetch_aat_label(what):
+	url = what.replace("aat:", "http://vocab.getty.edu/aat/")
+	url += ".jsonld"
+	resp = requests.get(url)
+	aatjs = json.loads(resp.text)
+	prefs = aatjs[0]["http://www.w3.org/2004/02/skos/core#prefLabel"]
+	label = ""
+	for p in prefs:
+		if p['@language'] in ['en', 'en-us']:
+			label = p['@value']
+			aat_labels[what] = label
+			break
+	return label
+
 class IndexingPlugin(Plugin):
 
 	def __init__(self, site):
@@ -127,6 +143,7 @@ class IndexingPlugin(Plugin):
 		self.aat_hash = {}
 		self.prop_hash = {}
 		self.class_hash = {}		
+		self.aat_label_len = len(aat_labels)
 
 	def begin_text_resource(self, resource, text):
 		if resource.relative_path.endswith('.html'):
@@ -158,7 +175,6 @@ class IndexingPlugin(Plugin):
 
 	def site_complete(self):
 		# Just write the document in markdown
-		print "Called site_complete"
 		top = """---
 extends: base.j2
 default_block: content
@@ -174,7 +190,7 @@ title: Index of Classes, Properties, Authorities
 		its = self.class_hash.items()
 		its.sort()
 		for (k,v) in its:
-			lines.append("* __%s__" % k)
+			lines.append("* __`%s`__" % k)
 			lv= []
 			for (k2,v2) in v.items():
 				n = k2.replace('https://linked.art/example/', '')
@@ -186,7 +202,7 @@ title: Index of Classes, Properties, Authorities
 		its = self.prop_hash.items()
 		its.sort()
 		for (k,v) in its:
-			lines.append("* __%s__" % k)
+			lines.append("* __`%s`__" % k)
 			lv= []
 			for (k2,v2) in v.items():
 				n = k2.replace('https://linked.art/example/', '')
@@ -200,7 +216,7 @@ title: Index of Classes, Properties, Authorities
 		for (k,v) in its:
 			if not k.startswith('aat:'):
 				continue
-			lines.append("* __%s__ (%s)" % (k, aat_labels.get(k, "???")))
+			lines.append("* __%s__: _%s_" % (k, aat_labels.get(k) or fetch_aat_label(k)))
 			lv= []
 			for (k2,v2) in v.items():
 				n = k2.replace('https://linked.art/example/', '')				
@@ -214,6 +230,12 @@ title: Index of Classes, Properties, Authorities
 		fh.close()
 		# Annoyingly we need to generate this file separately
 
+		# Check if we should re-cache aat_labels
+		if len(aat_labels) > self.aat_label_len:
+			outjs = json.dumps(aat_labels)
+			fh = file('extensions/aat_labels.json', 'w')
+			fh.write(outjs)
+			fh.close()			
 
 	def generate_example(self, egtext, resource):
 		# Yes really... 
@@ -221,7 +243,7 @@ title: Index of Classes, Properties, Authorities
 
 		# Now in scope should be a top resource
 		factory.toFile(top, compact=False)
-		jsstr = factory.toString(top, compact=False)
+		jsstr = factory.toString(top, compact=False, collapse=80)
 		js = factory.toJSON(top)
 
 		# Generate all our serializations
@@ -248,7 +270,7 @@ title: Index of Classes, Properties, Authorities
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
 		resp = """
-<a id="%s"/>
+<a id="%s"></a>
 ```json
 %s
 ```
@@ -301,9 +323,8 @@ title: Index of Classes, Properties, Authorities
 					self.traverse(v, top, res)
 				elif type(v) == list:
 					for x in v:
-						self.traverse(x, top, res)
-
-
+						if isinstance(x, OrderedDict):
+							self.traverse(x, top, res)
 
 ### Global filters
 
@@ -330,10 +351,9 @@ def regex_replace_fn(source, regex, fnname):
 def aatlabel(source):
 	full = source.group(0)
 	data = source.group(1)
-	label = aat_labels.get(full, "")
+	label = aat_labels.get(full) or fetch_aat_label(full)
 	label = label.replace('"', '')
 	return '<a href="http://vocab.getty.edu/aat/%s" data-ot="%s" data-ot-title="AAT Term" data-ot-fixed="true" class="aat">aat:%s</a>' % (data, label, data)
-
 
 def ctxtrepl(source):
 	full = source.group(0)
