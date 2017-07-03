@@ -45,6 +45,18 @@ dims.value = "The painting is approximately 16 inches wide, by 20 inches high"
 top.referred_to_by = dims
 ```
 
+### Shapes
+
+While some combinations of dimensions can give a sense of the shape of the object, it is also often useful to be more explicit about the shape.  For example, a shield-shaped painting (perhaps due to being painted on an actual shield) would likely still only have height and width given. Without the additional information of the shape, it might be concluded that the painting is rectangular.
+
+Shapes are given as classifications on the object.  It is recommended to use one of the [AAT shape classifications](http://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273), such as _aat:300247394_ for shield-shaped or _aat:300263817_ for oval.
+
+```crom
+top = Painting()
+top.classified_as = Type("aat:300263817")
+top.label = "Example Oval Painting"
+```
+
 ## Materials
 
 Objects are `made_of` different materials. The materials are the type of material, rather than the specific bits of matter and therefore can refer directly to external vocabularies.  When possible, it is good to use this model, and combined with the parts model described in the next section, allows for a comprehensive set of information about which parts are which sizes and made of which materials.
@@ -121,3 +133,4 @@ txt.value = "Photograph of Example, taken 1932"
 back.carries = txt
 verso.part = back
 ```
+
