@@ -37,9 +37,11 @@ top.timespan = ts
 
 ## "Style Of" Attribution
 
-There is a common special case of wanting to assign not an individual (e.g. Rembrandt) or group (Workshop of Rembrandt) to the production of an object, but simply to say that it was produced as if it had been produced by some other actor.  This is traditionally recorded as being "in the style of" a known artist. It is not correct to say that Rembrandt carried out the production, but a search for objects attributed (loosely speaking) to Rembrandt should discover this object.  The assessment of "style of" attribution is a judgement decision that might be changed later as new evidence of the actual creator comes to light.
+There is a common special case of wanting to assign not an individual (e.g. Rembrandt) or a group with specific identity (Workshop of Rembrandt) to the production of an object, but simply to say that it was produced as if it had been produced by some other actor.  This is traditionally recorded as being "in the style of" a known artist. It is not correct to say that Rembrandt carried out the production, but a search for objects attributed (loosely speaking) to Rembrandt should discover this object.  The assessment of "style of" attribution is a judgement decision that might be changed later as new evidence of the actual creator comes to light.
 
 The approach taken for this case is to use an `AttributeAssignment` classified not as attribution, but instead as "style of" (_aat:300404285_).  This prevent systems from mistakenly infering that the actor carried out the production, but is consistent with the overall pattern.  There is intentionally no further model for this use case that the `AttributeAssignment` could be translated into. 
+
+This would also apply to cases where there is a "workshop of", "studio of", "circle of" and similar attributions in which there is doubt that there really was such a group, and thus there is reluctance to give that hypothetical group an identity.  Instead of using the "style of" aat concept, it would use "workshop of", or other [attribution qualifiers](http://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300404264) from AAT.
 
 ```crom
 top = StyleOfAttribution()
