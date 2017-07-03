@@ -35,7 +35,7 @@ top.consists_of = lot
 
 ## Sale of Lot
 
-The sale of the Lot is an activity that can be carried out by one or more Auctioneers (_aat:300025208_), though if the individual is not known, the company that performs the parent Auction can be inferred. The sale is for a specific object of the Lot, which is always a collection even if there is only one object being sold. The activity is further subdivided into two major sections -- the activity of the crowd of bidding, and the purchase of the Lot by the winner.  Typically the details of individual bids are not known, but often whether any bids occured or not is known.  Bidding without a Purchase might occur if the reserve price was not met, for example.
+The sale of the Lot is an activity that can be carried out by one or more Auctioneers (_aat:300025208_), though if the individual is not known, the company that performs the parent Auction can be inferred. The sale is for a specific object of the Lot, which is always a collection even if there is only one object being sold. The activity is further subdivided into two major sections -- the activity of the crowd of bidding, and the purchase of the Lot by the winner.  Typically the details of individual bids are not known, but often whether any bids occured or not is known.  Bidding without a purchase might occur if the reserve price was not met, for example. Note that the purchase is an `Acquisition` with the _aat:300077989_ classification.
 
 ```crom
 top = Activity()
@@ -72,7 +72,7 @@ top.part = obj
 
 ## Purchase
 
-The purchase of the lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. As the Lot is just the grouping of the objects together for the purposes of the auction, it doesn't make sense to transfer ownership of it, as the grouping is only for the purpose of the auction.  See on for information about prices.
+The purchase of the lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. As the lot is just the grouping of the objects together for the purposes of the auction, it doesn't make sense to transfer ownership of it, as the grouping is only for the purpose of the auction.
 
 ```crom
 top = Purchase()
@@ -138,7 +138,7 @@ top.dimension = amnt3
 
 ### Purchase / Hammer Price
 
-The purchase price follows the same pattern as for purchases outside of auctions.  It is the amount paid as part of the Purchase.  There is typically a single purchase price for the lot, rather than each object having an individual value, and as such the Payment is associated with the purchase of the Lot resource.  Thus, if the interest is calculating the value of the individual objects over time, the number of objects in the Lot should be taken into account.  This information might be duplicated on the purchase of the object, in the situation where there is per-object price information, which should take precedence. 
+The purchase price follows the same pattern as for purchases outside of auctions.  It is the amount paid as part of the purchase.  There is typically a single purchase price for the lot, rather than each object having an individual value, and as such the `Payment` is associated with the purchase of the Lot resource.  Thus, if the interest is calculating the value of the individual objects over time, the number of objects in the Lot should be taken into account.  This information might be duplicated on the purchase of the object, in the situation where there is per-object price information, which should take precedence. 
 
 ```crom
 top = Purchase()

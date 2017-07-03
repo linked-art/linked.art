@@ -41,9 +41,10 @@ top.transferred_title_to = buyer
 
 ### Purchase
 
-A purchase is a common type of acquisition in which money is exchanged for the object.  The main activity is the transfer of the title for the object from the seller to the buyer, exactly as for any Acquisition.  The activity then consists of one or more related payments, without which the purchase would not be concluded.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include payments to or from others such as for shared ownership or payment of debts owed.
+A purchase is a common type of acquisition in which money is exchanged for the object.  The main activity is the transfer of the title for the object from the seller to the buyer, exactly as for any `Acquisition`.  The activity then consists of one or more related payments, without which the purchase would not be concluded.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include payments to or from others such as for shared ownership or payment of debts owed.
 
-The Payment activity has equivalent relationships for from (`paid_from`) and to (`paid_to`), as well as the amount of money paid (`paid_amount`).  The amount itself is a resource that has a value (`value`) and a currency (`currency`).  In the simple case, where the amount the object was offered for sale at (`offering_price`) is the same as it was sold for (`sales_price`) and there was a single transfer of money, for that amount.  However, these values might be different if in certain circumstances and are hence modeled separately.
+The `Payment` activity has equivalent relationships for from (`paid_from`) and to (`paid_to`), as well as the amount of money paid (`paid_amount`).  The amount itself is a resource that has a value (`value`) and a currency (`currency`).  In the simple case, where the amount the object was offered for sale at (`offering_price`) is the same as it was sold for (`sales_price`) and there was a single transfer of money, for that amount.  However, these values might be different if in certain circumstances and are hence modeled separately. The `Acquisition` also has the aat classification of "purchasing" (_aat:300077989_) to ensure that even if there are no payments explicitly modeled, then it can still be distinguished from other types of acquisition such as inheritance or gifts.
+
 
 !!! note "Diachronic Comparison of Monetary Amounts"
     The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
@@ -73,14 +74,14 @@ top.consists_of = paymt
 
 ### Auctions
 
-The individual purchase that is the result of auctioning an object is the same as the above Purchase model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions/). 
+The individual purchase that is the result of auctioning an object is the same as the above model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions/). 
 
 
 ## Transfer of Custody
 
 The model makes a distinction between the transfer of legal ownership (e.g. by sale or gift) and the transfer of custody (e.g. by losing the object, loaning it for an exhibition, or having it stolen). If the possession of the object is either illegal or temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody only.
 
-Transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition` or `Purchase`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
+Transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
 
 ### Exhibitions
 

@@ -11,7 +11,7 @@ from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
 
 import cromulent
 from cromulent import model, vocab
-from cromulent.model import factory, BaseResource, Production, Acquisition, Purchase, \
+from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation
@@ -24,7 +24,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
-	PhotographBW, PhotographColor, ProvenanceStatement, \
+	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, \
 	materialTypes, dimensionUnits, add_art_setter
 from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties
