@@ -53,9 +53,9 @@ __Entity Beginning and Ending Classes:__ E6, E66, E67, E68, E69
 
 Subclasses of _E63 Beginning of Existence_ and _E64 End of Existence_ can be ignored, and their parent classes used instead.  The modeling of parents in the _E67 Birth_ class is less than ideal, and instead a role-based approach with specific activities in the same way as the production of artworks can be used to differentiate surrogates and egg donors from the woman that raised the child, and equivalent patterns for male involvement. The inclusion of _E6 Destruction_ in this set may be surprising to some, especially considering _E12 Production_ is maintained as useful.  The rationale is that as E6 is not also an _E7 Activity_ (which E12 is, making it useful), then the semantics of E6 and E64 are identical and thus the parent class is preferred for consistency.
 
-__Entity Specialization Classes:__ E27, E31, E32, E40, E84, E99 
+__Entity Specialization Classes:__ E27, E31, E32, E40, E84, E96, E99 
 
-These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM. Information Carriers are only distinguished from Man Made Objects by the unknowable intent of the designer. Likewise, the distinction between E73 and E31 is that instances of E31 is that subset of E73s that make propositions about reality ... which is not a very useful or tractable distinction.  
+These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E96 Purchase, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM. Information Carriers are only distinguished from Man Made Objects by the unknowable intent of the designer. Likewise, the distinction between E73 and E31 is that instances of E31 is that subset of E73s that make propositions about reality ... which is not a very useful or tractable distinction.  While Purchase does have a property (had_sales_price), it is quickly insufficient for any non-trivial transaction or description common in the art market, including multiple buyers or sellers, commissions, part payment/part exchange, reserve prices, and so on. Given the need for a Payment class, and the use of dimension to relate other prices, Purchase becomes unnecessary.
 
 __Visual Concept Classes:__ E34, E37, E38
 
@@ -103,7 +103,7 @@ If further explanation, from any source, is forthcoming, then E93 might be moved
 
 __Classes:__ E4, E5, E6, E7, E8, E10, E11, E12, E13, E19, E21, E22, E25, E30, E33, E39, E41, E42, E52, E53, E54, E55, E56, E57, E58, E63, E64, E65, E73, E74, E96, E97, E98
 
-The remaining 34 classes are actively used in mappings for the known datasets.
+The remaining 33 classes are actively used in mappings for the known datasets.
 
   * _E4 Period:_  Activities such as Productions will often only fall within a named Period
   * _E5 Event:_ Events can be depicted by Artworks.
@@ -136,12 +136,13 @@ The remaining 34 classes are actively used in mappings for the known datasets.
   * _E74 Group:_ Married Couples, Organizations, Nationalities, Schools, etc. 
   * _E85 Joining:_ Primarily used for recording the time of getting married
   * _E86 Leaving:_ Primarily used for recording the dissolution of a marriage
-  * _E96 Purchase:_ An acquisition with a Payment 
-  * _E97 Monetary Amount:_ Recording the amount of money in a Purchase
+  * _E97 Monetary Amount:_ Recording an amount of money for a price or payment
   * _E98 Currency:_ The currency of the monetary amount
 
 
 ## Useful Additional Classes
 
-__Classes:__  Payment, Title_Claim
+__Classes:__  Payment
+
+There is currently no way to describe the Activity of transferring MonetaryAmounts between actors, a Payment.  The transfer classes (Acquisition, Transfer of Custody, Move) are very specific as to their semantics and the sorts of things that can be transferred. Thus, a new class is required, `Payment`, with three relationships of `paid_from`, `paid_to` and `paid_amount`.  A better solution would be a low level transfer class that could be used to transfer right of custody, right of ownership, the object itself, and monetary amounts, from one actor to another.
 

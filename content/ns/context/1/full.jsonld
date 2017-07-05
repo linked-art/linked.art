@@ -104,7 +104,8 @@
     "Currency": "crm:E98_Currency", 
     "identified_by": {
       "@id": "crm:P1_is_identified_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "identifies": {
       "@id": "crm:P1i_identifies", 
@@ -112,7 +113,8 @@
     }, 
     "classified_as": {
       "@id": "crm:P2_has_type", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "type_of": {
       "@id": "crm:P2i_is_type_of", 
@@ -139,7 +141,8 @@
     }, 
     "took_place_at": {
       "@id": "crm:P7_took_place_at", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "location_of": {
       "@id": "crm:P7i_witnessed", 
@@ -155,11 +158,13 @@
     }, 
     "consists_of": {
       "@id": "crm:P9_consists_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "forms_part_of": {
       "@id": "crm:P9i_forms_part_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "falls_within": {
       "@id": "crm:P10_falls_within", 
@@ -177,13 +182,15 @@
       "@id": "crm:P11i_participated_in", 
       "@type": "@id"
     }, 
-    "occurred_in_the_presence_of": {
+    "involved": {
       "@id": "crm:P12_occurred_in_the_presence_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "present_at": {
       "@id": "crm:P12i_was_present_at", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "destroyed": {
       "@id": "crm:P13_destroyed", 
@@ -195,27 +202,33 @@
     }, 
     "carried_out_by": {
       "@id": "crm:P14_carried_out_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "carried_out": {
       "@id": "crm:P14i_performed", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "influenced_by": {
       "@id": "crm:P15_was_influenced_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "influenced": {
       "@id": "crm:P15i_influenced", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "used_specific_object": {
       "@id": "crm:P16_used_specific_object", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "used_for": {
       "@id": "crm:P16i_was_used_for", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "motivated_by": {
       "@id": "crm:P17_was_motivated_by", 
@@ -235,11 +248,13 @@
     }, 
     "specific_purpose": {
       "@id": "crm:P20_had_specific_purpose", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "specific_purpose_of": {
       "@id": "crm:P20i_was_purpose_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "general_purpose": {
       "@id": "crm:P21_had_general_purpose", 
@@ -255,7 +270,8 @@
     }, 
     "acquired_title_through": {
       "@id": "crm:P22i_acquired_title_through", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "transferred_title_from": {
       "@id": "crm:P23_transferred_title_from", 
@@ -263,15 +279,18 @@
     }, 
     "surrendered_title_through": {
       "@id": "crm:P23i_surrendered_title_through", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "transferred_title_of": {
       "@id": "crm:P24_transferred_title_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "changed_ownership_through": {
       "@id": "crm:P24i_changed_ownership_through", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "moved": {
       "@id": "crm:P25_moved", 
@@ -303,7 +322,8 @@
     }, 
     "surrendered_custody_through": {
       "@id": "crm:P28i_surrendered_custody_through", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "transferred_custody_to": {
       "@id": "crm:P29_custody_received_by", 
@@ -311,15 +331,18 @@
     }, 
     "acquired_custody_through": {
       "@id": "crm:P29i_received_custody_through", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "transferred_custody_of": {
       "@id": "crm:P30_transferred_custody_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "custody_transferred_through": {
       "@id": "crm:P30i_custody_transferred_through", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "modified": {
       "@id": "crm:P31_has_modified", 
@@ -331,11 +354,13 @@
     }, 
     "technique": {
       "@id": "crm:P32_used_general_technique", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "technique_of": {
       "@id": "crm:P32i_was_technique_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "specific_technique": {
       "@id": "crm:P33_used_specific_technique", 
@@ -411,7 +436,8 @@
     }, 
     "dimension": {
       "@id": "crm:P43_has_dimension", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "dimension_of": {
       "@id": "crm:P43i_is_dimension_of", 
@@ -427,19 +453,23 @@
     }, 
     "made_of": {
       "@id": "crm:P45_consists_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "incorporated_in": {
       "@id": "crm:P45i_is_incorporated_in", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "part": {
       "@id": "crm:P46_is_composed_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "part_of": {
       "@id": "crm:P46i_forms_part_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "preferred_identifier": {
       "@id": "crm:P48_has_preferred_identifier", 
@@ -463,7 +493,8 @@
     }, 
     "current_keeper_of": {
       "@id": "crm:P50i_is_current_keeper_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "former_or_current_owner": {
       "@id": "crm:P51_has_former_or_current_owner", 
@@ -479,7 +510,8 @@
     }, 
     "current_owner_of": {
       "@id": "crm:P52i_is_current_owner_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "former_or_current_location": {
       "@id": "crm:P53_has_former_or_current_location", 
@@ -503,11 +535,13 @@
     }, 
     "currently_holds": {
       "@id": "crm:P55i_currently_holds", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
-    "bears_feature": {
+    "bears": {
       "@id": "crm:P56_bears_feature", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "found_on": {
       "@id": "crm:P56i_is_found_on", 
@@ -534,27 +568,33 @@
     }, 
     "depicts": {
       "@id": "crm:P62_depicts", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "depicted_by": {
       "@id": "crm:P62i_is_depicted_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "shows_visual_item": {
       "@id": "crm:P65_shows_visual_item", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "shown_by": {
       "@id": "crm:P65i_is_shown_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "refers_to": {
       "@id": "crm:P67_refers_to", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "referred_to_by": {
       "@id": "crm:P67i_is_referred_to_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "foresees_use_of": {
       "@id": "crm:P68_foresees_use_of", 
@@ -586,11 +626,13 @@
     }, 
     "language": {
       "@id": "crm:P72_has_language", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "language_of": {
       "@id": "crm:P72i_is_language_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "translation": {
       "@id": "crm:P73_has_translation", 
@@ -610,7 +652,8 @@
     }, 
     "possesses": {
       "@id": "crm:P75_possesses", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "possessed_by": {
       "@id": "crm:P75i_is_possessed_by", 
@@ -678,11 +721,13 @@
     }, 
     "spatially_within": {
       "@id": "crm:P89_falls_within", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "spatially_contains": {
       "@id": "crm:P89i_contains", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "has_value": {
       "@id": "crm:P90_has_value"
@@ -697,7 +742,8 @@
     }, 
     "brought_into_existence": {
       "@id": "crm:P92_brought_into_existence", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "brought_into_existence_by": {
       "@id": "crm:P92i_was_brought_into_existence_by", 
@@ -705,7 +751,8 @@
     }, 
     "took_out_of_existence": {
       "@id": "crm:P93_took_out_of_existence", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "taken_out_of_existence_by": {
       "@id": "crm:P93i_was_taken_out_of_existence_by", 
@@ -713,7 +760,8 @@
     }, 
     "created": {
       "@id": "crm:P94_has_created", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "created_by": {
       "@id": "crm:P94i_was_created_by", 
@@ -721,7 +769,8 @@
     }, 
     "formed": {
       "@id": "crm:P95_has_formed", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "formed_by": {
       "@id": "crm:P95i_was_formed_by", 
@@ -793,7 +842,8 @@
     }, 
     "subject_to": {
       "@id": "crm:P104_is_subject_to", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "applies_to": {
       "@id": "crm:P104i_applies_to", 
@@ -805,27 +855,33 @@
     }, 
     "right_on": {
       "@id": "crm:P105i_has_right_on", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "composed_of": {
       "@id": "crm:P106_is_composed_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "composed_from": {
       "@id": "crm:P106i_forms_part_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "member": {
       "@id": "crm:P107_has_current_or_former_member", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "member_of": {
       "@id": "crm:P107i_is_current_or_former_member_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "produced": {
       "@id": "crm:P108_has_produced", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "produced_by": {
       "@id": "crm:P108i_was_produced_by", 
@@ -917,11 +973,13 @@
     }, 
     "occurs_before": {
       "@id": "crm:P120_occurs_before", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "occurs_after": {
       "@id": "crm:P120i_occurs_after", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "overlaps_with": {
       "@id": "crm:P121_overlaps_with", 
@@ -973,19 +1031,23 @@
     }, 
     "carries": {
       "@id": "crm:P128_carries", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "carried_by": {
       "@id": "crm:P128i_is_carried_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "about": {
       "@id": "crm:P129_is_about", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "subject_of": {
       "@id": "crm:P129i_is_subject_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "shows_features_of": {
       "@id": "crm:P130_shows_features_of", 
@@ -1013,11 +1075,13 @@
     }, 
     "continued": {
       "@id": "crm:P134_continued", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "continued_by": {
       "@id": "crm:P134i_was_continued_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "created_type": {
       "@id": "crm:P135_created_type", 
@@ -1045,11 +1109,13 @@
     }, 
     "represents": {
       "@id": "crm:P138_represents", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "representation": {
       "@id": "crm:P138i_has_representation", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "alternative_form": {
       "@id": "crm:P139_has_alternative_form", 
@@ -1061,7 +1127,8 @@
     }, 
     "attributed_by": {
       "@id": "crm:P140i_was_attributed_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "assigned": {
       "@id": "crm:P141_assigned", 
@@ -1069,7 +1136,8 @@
     }, 
     "assigned_by": {
       "@id": "crm:P141i_was_assigned_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "used_constituent": {
       "@id": "crm:P142_used_constituent", 
@@ -1085,7 +1153,8 @@
     }, 
     "joined_by": {
       "@id": "crm:P143i_was_joined_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "joined_with": {
       "@id": "crm:P144_joined_with", 
@@ -1093,7 +1162,8 @@
     }, 
     "gained_member_by": {
       "@id": "crm:P144i_gained_member_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "separated": {
       "@id": "crm:P145_separated", 
@@ -1101,7 +1171,8 @@
     }, 
     "left_by": {
       "@id": "crm:P145i_left_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "separated_from": {
       "@id": "crm:P146_separated_from", 
@@ -1109,7 +1180,8 @@
     }, 
     "lost_member_by": {
       "@id": "crm:P146i_lost_member_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "curated": {
       "@id": "crm:P147_curated", 
@@ -1121,11 +1193,13 @@
     }, 
     "component": {
       "@id": "crm:P148_has_component", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "component_of": {
       "@id": "crm:P148i_is_component_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "concept_identified_by": {
       "@id": "crm:P149_is_identified_by", 
@@ -1249,7 +1323,8 @@
     }, 
     "currency_of": {
       "@id": "crm:P180i_was_currency_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "label": {
       "@id": "rdfs:label"
@@ -1258,29 +1333,13 @@
       "@id": "rdf:value"
     }, 
     "description": {
-      "@id": "dc:description"
-    }, 
-    "height": {
-      "@id": "schema:height", 
-      "@type": "@id"
-    }, 
-    "width": {
-      "@id": "schema:width", 
-      "@type": "@id"
-    }, 
-    "family_name": {
-      "@id": "schema:familyName"
-    }, 
-    "given_name": {
-      "@id": "schema:givenName"
-    }, 
-    "nationality": {
-      "@id": "schema:nationality", 
-      "@type": "@id"
+      "@id": "dc:description", 
+      "@container": "@set"
     }, 
     "style": {
       "@id": "schema:genre", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "conforms_to": {
       "@id": "dcterms:conformsTo", 
@@ -1289,25 +1348,25 @@
     "format": {
       "@id": "dc:format"
     }, 
-    "homepage": {
-      "@id": "foaf:homepage", 
-      "@type": "@id"
-    }, 
-    "webpage": {
-      "@id": "foaf:page", 
-      "@type": "@id"
-    }, 
     "exact_match": {
       "@id": "skos:exactMatch", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "close_match": {
+      "@id": "skos:closeMatch", 
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "related": {
       "@id": "dcterms:relation", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "subject": {
       "@id": "dcterms:subject", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "Payment": "pi:Payment", 
     "paid_from": {

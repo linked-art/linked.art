@@ -104,9 +104,9 @@ grp.formed_by = f
 top.carried_out_by = grp
 ```
 
-### Previous Attributions
+### Previous or Uncertain Attributions
 
-Over time, attributions can be contested and change. The actor that is listed in `carried_out_by` from the `Production` should always be the one currently believed to have produced the art work.  Previous attributions can be recorded using the `AttributeAssignment` pattern, further described [here](/model/assertion/).
+Over time, attributions can be contested and change. The actor that is listed in `carried_out_by` from the `Production` should always be the one currently believed to have produced the art work.  Previous attributions, or ones that are so uncertain that there is a concern about using `carried_out_by` at all, can be recorded using the `AttributeAssignment` pattern, further described [here](/model/assertion/).
 
 ```crom
 top = Attribution()
