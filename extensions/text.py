@@ -5,6 +5,7 @@ from hyde.site import Resource
 import json, yaml
 import os
 import requests
+import urllib
 
 from rdflib import ConjunctiveGraph, URIRef
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
@@ -67,7 +68,7 @@ if port:
 basedir = site['base_url']
 egdir = site['var']['exampleDir']
 baseUrl = "%s://%s%s%s%s/" % (scheme, host, port, basedir, egdir)
-contextUrl = "%s://%s%s%sns/context/1/full.jsonld" % (scheme, host, port, basedir)
+contextUrl = "%s://%s%s%sns/v1/linked-art.json" % (scheme, host, port, basedir)
 
 factory.base_url = baseUrl
 factory.base_dir = "content/%s" % egdir
@@ -79,10 +80,14 @@ add_schema_properties()
 add_art_setter()
 
 # Try to load in the context only once
-fh = file('content/ns/context/1/full.jsonld')
+ctxt = factory.context_json['@context']
+
+# Extension
+fh = file('content/ns/v1/cidoc-extension.json')
 data = fh.read()
 fh.close()
-ctxt = json.loads(data)['@context']
+xtxt = json.loads(data)['@context']
+
 
 docCache = {}
 docCache[factory.context_uri] = {'contextUrl': None,
@@ -265,7 +270,8 @@ title: Index of Classes, Properties, Authorities
 
 		# And return the JSON plus links, to be substed by the top level filter
 		raw = top.id + ".json"
-		playground = "http://json-ld.org/playground/#startTab=tab-expanded&json-ld=%s" % raw
+		rawq = urllib.quote(raw).replace('/', "%2F")
+		playground = "http://json-ld.org/playground/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
@@ -358,11 +364,18 @@ def aatlabel(source):
 def ctxtrepl(source):
 	full = source.group(0)
 	data = source.group(1)
+
 	if ctxt.has_key(data):
-		if type(ctxt[data]) == dict:
-			crm = ctxt[data]['@id']
-		else:
-			crm = ctxt[data]
-		return '<abbr data-ot="%s" data-ot-title="Linked Data Term" data-ot-fixed="true">%s</abbr>' % (crm, full)
+		crm = ctxt[data]
+		ttl = "Core Linked Data Term"
+		col = ""
+	elif xtxt.has_key(data):
+		crm = xtxt[data]
+		ttl = "Extension Linked Data Term"
+		col = 'style="color: orange"'
 	else:
 		return full
+
+	if type(crm) == dict:
+		crm = crm['@id']
+	return '<abbr %s data-ot="%s" data-ot-title="%s" data-ot-fixed="true">%s</abbr>' % (col, crm, ttl, full)
