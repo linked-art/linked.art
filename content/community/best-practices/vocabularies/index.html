@@ -149,7 +149,7 @@ top.label = "Example Auction"
  
 
 ```crom
-top = FramePart()
+top = vocab.FramePart()
 top.label = "Example Frame"
 ```
 
@@ -164,7 +164,7 @@ top.label = "Example Frame"
  _aat:300404845_ | prefixes (name additions)
 
 ```crom
-top = FirstName()
+top = vocab.GivenName()
 top.value = "Example"
 ```
 
@@ -179,7 +179,7 @@ top.value = "Example"
  _aat:300056240_ | weight (heaviness attribute)
 
 ```crom
-top = Height()
+top = vocab.Height()
 top.value = 24
 ```
 
@@ -191,7 +191,7 @@ top.value = 24
  _aat:300190703_ | fronts (object portions) 
 
 ```crom
-top = FrontFeature()
+top = vocab.FrontFeature()
 top.label = "Front"
 ```
 
@@ -213,7 +213,7 @@ top.label = "Front"
  _aat:300056109_ | attribution
 
 ```crom
-top = Naming()
+top = vocab.Naming()
 top.label = "Object Naming"
 ```
 
@@ -238,8 +238,11 @@ These are instances of existing classes.
  _aat:300189559_ | male
 
 ```crom
-top = Group("aat:300111188")
-top.label = "French"
+top = Person()
+top.label = "Example French Person"
+grp = Group("aat:300111188")
+grp.label = "French"
+top.member_of = grp
 ```
 
 ### Material
@@ -286,11 +289,14 @@ top.label = "French"
  _aat:300235507_ | ceramic (material) 
 
 ```crom
-top = Material("aat:300012264")
-top.label = "oak"
+top = vocab.FramePart()
+top.label = "Oak Frame"
+oak = Material("aat:300012264")
+oak.label = "oak"
+top.made_of = oak
 ```
 
-### Dimension Units
+### MeasurementUnit
 
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
@@ -304,6 +310,10 @@ top.label = "oak"
  _aat:300379229_ | ounces (units for weight)
 
 ```crom
-top = DimensionUnit("aat:300379100")
-top.label = "inches"
+top = Height()
+top.label = "24 inches high"
+top.value = 24
+dim = MeasurementUnit("aat:300379100")
+dim.label = "inches"
+top.unit = dim
 ```
