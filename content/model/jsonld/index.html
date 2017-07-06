@@ -13,10 +13,9 @@ The serialization for JSON-LD is friendly to developers through the use of conte
 The context that provides the mapping of the terms used in the model is published as:
 > `{{ site.config.var.scheme }}://{{site.config.var.hostname}}{{site.config.base_url}}ns/v1/linked-art.json`
 
+## Examples
 
-## Example
-
-The examples throughout the documentation use the JSON-LD serialization.  Each has a link to the raw JSON-LD, and to load it into the invaluable JSON-LD playground where you can explore the details.  Instead of trying to describe all of the predicates and classes (for that just read the CIDOC-CRM specification), we present the models for the known use cases in an attempt to be more practical and results oriented.
+The examples throughout the documentation use the JSON-LD serialization.  Each has a link to the raw JSON-LD, and to load it into the invaluable JSON-LD playground where you can explore the details.  Instead of trying to describe all of the predicates and classes (for that just read the CIDOC-CRM specification), we present the models for the known use cases in an attempt to be more practical and results oriented.  We strive for usability and familiarity for developers, and the examples aim to present best practices at the same time as being easy to follow.
 
 An example of the JSON-LD serialization for a painting, that is made of watercolor on a canvas support:
 
@@ -36,18 +35,22 @@ The important part of the JSON-LD serialization is the shared context document. 
 
 * The resulting JSON must be __valid__ Linked Open Data and valid JSON-LD.  There are patterns that are valid in JSON that are not valid in JSON-LD, such as an array of arrays.  The nested object structure in the JSON is a result of the graph of resources. 
 * The resulting JSON must be __understandable__ by developers who are unfamiliar with both the model and RDF in general. If the target technical audience was developers who had the full suite of RDF tools at their disposal, then Turtle and SPARQL would likely be preferable.  The serialization instead tries to make the content as accessible as the model will allow.
-* The resulting JSON must be __usable__ regardless of programming language or application environment to ensure the widest possible adoption and value. The context is designed to allow as many of conveniences as possible to be used, and to maximize the situations in which it can be used.
+* The resulting JSON must be __usable__ regardless of programming language or application environment to ensure the widest possible adoption and value. The context is designed to allow as many of conveniences as possible to be used, and to maximize the situations in which it can be used.  Consistency is a core feature of usability, and as such the context tries to be as consistent as possible.
 
 There are some challenges overlaid on these principles from the CIDOC-CRM ontology.
 
 * The use of numbers in the class and properties runs counter to the understandable and usable principles.
 * The use of - in the names of some classes and properties reduces usability, as it is not allowed as the name of a property in most programming languages.
 * The use of the same name for a property, minus its number, is not possible in JSON-LD as the keys must map uniquely to a predicate.
-* The use of underscores in class or property names is not common in Javascript or in RDF ontologies, which tend to prefer camelCase.
+* The use of underscores in class or property names is not common in Javascript or in RDF ontologies, which tend to prefer CamelCase.
 
 The context tries to manage all of these issues in a practical and programmatically accesible way from the ontology definition.
 
 ## Context
+
+The context implements the notion that if a property can ever have multiple values, then it must always be an array. In JSON-LD this is done with `@container: @set` on such properties, and you'll see many instances of this in the examples where a property has an array with a single object inside it.
+
+<!-- Here would go language maps and not defining @type:@id for relationships -->
 
 The following process is used to create the JSON-LD keys from the CIDOC-CRM ontology:
 
