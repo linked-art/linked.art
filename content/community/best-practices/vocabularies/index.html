@@ -65,10 +65,12 @@ top.label = "Example Painting"
  _aat:300080102_ | biographies (documents)
  _aat:300266036_ | dimensions 
  _aat:300121294_ | editions
+ _aat:300026061_ | ?
 
-	"CatalogueRaisonne":  InformationObject, "vocab":"300026061"},
-
-
+```crom
+top = DimensionStatement()
+top.value = "Example painting is 24 inches wide by 36 1/2 inches tall"
+```
 
 ### Place
 
@@ -77,6 +79,11 @@ top.label = "Example Painting"
  _aat:300005234_ | auction houses 
  _aat:300005768_ | museums (buildings) 
  _aat:300240057_ | galleries (display spaces) 
+
+```crom
+top = MuseumPlace()
+top.label = "Example Museum Site"
+```
 
 ### Group
 
@@ -87,14 +94,13 @@ top.label = "Example Painting"
  _aat:300263534_ | departments (organizational units) 
  _aat:300055147_ | sex role 
 
-### Activity
 
-	"invention": "300056119",
-	"designs": "300102051",
-	"execution": "300069715",
-	"publishing": "300054686",
-	"commissions": "300400904"
-	"Auction":  Activity,  "300054751"},
+```crom
+top = MuseumOrg()
+top.label = "Example Museum Organization"
+```
+
+### Activity
 
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
@@ -103,6 +109,17 @@ top.label = "Example Painting"
  _aat:300054766_ | exhibitions (events) 
  _aat:300054773_ | traveling exhibitions 
 
+	"invention": "300056119",
+	"designs": "300102051",
+	"execution": "300069715",
+	"publishing": "300054686",
+	"commissions": "300400904"
+
+```crom
+top = Auction()
+top.label = "Auction"
+```
+
 
 ### PhysicalThing
 
@@ -110,9 +127,9 @@ top.label = "Example Painting"
 | -------------- | ---------------------- |
  _aat:300014844_ | supports (artists' materials) 
  _aat:300014657_ | panel (wood by form) 
-
-	"FramePart":  PhysicalThing, "vocab":"300404391"},
-	"MountPart":  PhysicalThing, "vocab":"300131087"},
+ _aat:300404391_ | frame 
+ _aat:300131087_ | mount
+ 
 
 ### Appellation
 
@@ -124,8 +141,6 @@ top.label = "Example Painting"
  _aat:300404662_ | suffixes (name additions) 
  _aat:300404845_ | prefixes (name additions)
 
-	"SortName":  Appellation, "vocab":"300404672"},
-
 
 ### Dimension
 
@@ -133,10 +148,10 @@ top.label = "Example Painting"
 | -------------- | ---------------------- |
  _aat:300055644_ | height 
  _aat:300055647_ | width 
+ _aat:300072633_ | depth
+ _aat:300055624_ | diameter
+ _aat:300056240_ | weight
 
-	"depth": "300072633",
-	"diameter": "300055624",
-	"weight": "300056240"
 
 ### Feature
 
@@ -162,12 +177,11 @@ These are instances of existing classes.
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
  _aat:300111159_ | British (modern)
+ _aat:300111188_ | French
+ _aat:300111198_ | Italian
+ _aat:300111192_ | German
+ _aat:300020929_ | Dutch
  _aat:300189557_ | female 
-
-	"french": "300111188",
-	"italian": "300111198",
-	"german": "300111192",
-	"dutch": "300020929"
 
 
 ### Material
@@ -230,7 +244,6 @@ These are instances of existing classes.
  _aat:300379098_ | centimeters 
  _aat:300379100_ | inches 
  _aat:300379101_ | feet	
-
 
 
 ## Other stuff
