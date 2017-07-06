@@ -38,9 +38,9 @@ top.value = "P2005.12.276"
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
  _aat:300133025_ | works of art 
- _aat:300014063_ | textiles (visual works) |
- _aat:300015342_ | mosaics (visual works) |
- _aat:300033618_ | paintings (visual works) | 
+ _aat:300014063_ | textiles (visual works)
+ _aat:300015342_ | mosaics (visual works) 
+ _aat:300033618_ | paintings (visual works)  
  _aat:300033963_ | collages (visual works) 
  _aat:300033973_ | drawings (visual works) 
  _aat:300041273_ | prints (visual works) 
@@ -65,12 +65,28 @@ top.label = "Example Painting"
  _aat:300080102_ | biographies (documents)
  _aat:300266036_ | dimensions 
  _aat:300121294_ | editions
- _aat:300026061_ | ?
+ _aat:300055863_ | provenance 
+ _aat:300080091_ | description (activity) 
+ _aat:300028702_ |
+ _aat:300028705_ |
+
 
 ```crom
 top = DimensionStatement()
 top.value = "Example painting is 24 inches wide by 36 1/2 inches tall"
 ```
+
+### InformationObject
+| AAT Term       | Label                  |
+| -------------- | ---------------------- |
+ _aat:300026061_ | catalogues raisonnés
+ _aat:300026068_ | auction catalogs 
+ _aat:300026657_ | periodicals 
+ _aat:300264578_ | Web pages (documents) 
+ _aat:300026074_ |
+ _aat:300026096_ |
+ _aat:300027483_ |
+ _aat:300027168_ |
 
 ### Place
 
@@ -109,17 +125,10 @@ top.label = "Example Museum Organization"
  _aat:300054766_ | exhibitions (events) 
  _aat:300054773_ | traveling exhibitions 
 
-	"invention": "300056119",
-	"designs": "300102051",
-	"execution": "300069715",
-	"publishing": "300054686",
-	"commissions": "300400904"
-
 ```crom
 top = Auction()
 top.label = "Auction"
 ```
-
 
 ### PhysicalThing
 
@@ -127,8 +136,8 @@ top.label = "Auction"
 | -------------- | ---------------------- |
  _aat:300014844_ | supports (artists' materials) 
  _aat:300014657_ | panel (wood by form) 
- _aat:300404391_ | frame 
- _aat:300131087_ | mount
+ _aat:300404391_ | picture frames
+ _aat:300131087_ | mounts (framing and mounting equipment)
  
 
 ### Appellation
@@ -148,9 +157,9 @@ top.label = "Auction"
 | -------------- | ---------------------- |
  _aat:300055644_ | height 
  _aat:300055647_ | width 
- _aat:300072633_ | depth
+ _aat:300072633_ | depth (size/dimension)
  _aat:300055624_ | diameter
- _aat:300056240_ | weight
+ _aat:300056240_ | weight (heaviness attribute)
 
 
 ### Feature
@@ -177,10 +186,10 @@ These are instances of existing classes.
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
  _aat:300111159_ | British (modern)
- _aat:300111188_ | French
- _aat:300111198_ | Italian
- _aat:300111192_ | German
- _aat:300020929_ | Dutch
+ _aat:300111188_ | French (culture or style)
+ _aat:300111198_ | Italian (culture or style)
+ _aat:300111192_ | German (culture or style)
+ _aat:300020929_ | Netherlandish
  _aat:300189557_ | female 
 
 
@@ -243,7 +252,7 @@ These are instances of existing classes.
 | -------------- | ---------------------- |
  _aat:300379098_ | centimeters 
  _aat:300379100_ | inches 
- _aat:300379101_ | feet	
+ _aat:300379101_ | feet (units of measurement)	
 
 
 ## Other stuff
@@ -253,14 +262,11 @@ These are instances of existing classes.
  _aat:300117130_ | fragments (object portions) 
  _aat:300000885_ | architectural elements 
  _aat:300078048_ | structural elements 
- _aat:300025208_ | auctioneers 
  _aat:300025976_ | collections (object groupings) 
  _aat:300411307_ | auction lots 
  _aat:300411912_ | public collections
  _aat:300026030_ | documents (object genre) 
- _aat:300026068_ | auction catalogs 
- _aat:300026657_ | periodicals 
- _aat:300264578_ | Web pages (documents) 
+
  _aat:300054328_ | archaeology 
  _aat:300054419_ | numismatics 
  _aat:300054156_ | architecture (discipline) 
@@ -275,7 +281,7 @@ These are instances of existing classes.
  _aat:300077989_ | purchasing 
  _aat:300080091_ | description (activity) 
  _aat:300411672_ | titling (collections management function) 
- _aat:300055863_ | provenance 
+
  _aat:300056109_ | attribution
  _aat:300055292_ | theft (social issue) 
  _aat:300264237_ | material components 
