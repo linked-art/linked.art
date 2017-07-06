@@ -48,10 +48,10 @@ top.value = "P2005.12.276"
  _aat:300047203_ | carvings (visual works)  
  _aat:300047896_ | installations (visual works) 
  _aat:300046300_ | photographs 
- _aat:300127173_ | negatives (photographs)
+ _aat:300117130_ | fragments (object portions) 
 
 ```crom
-top = Painting()
+top = Painting(art=1)
 top.label = "Example Painting"
 ```
 
@@ -77,16 +77,21 @@ top.value = "Example painting is 24 inches wide by 36 1/2 inches tall"
 ```
 
 ### InformationObject
+
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
  _aat:300026061_ | catalogues raisonnés
  _aat:300026068_ | auction catalogs 
- _aat:300026657_ | periodicals 
- _aat:300264578_ | Web pages (documents) 
  _aat:300026074_ | sales catalogs
  _aat:300026096_ | exhibition catalogs
  _aat:300027483_ | account books
  _aat:300027168_ | registers (lists)
+ _aat:300264578_ | Web pages (documents) 
+
+```crom
+top = AuctionCatalog()
+top.label = "Example Auction Catalog"
+```
 
 ### Place
 
@@ -127,7 +132,7 @@ top.label = "Example Museum Organization"
 
 ```crom
 top = Auction()
-top.label = "Auction"
+top.label = "Example Auction"
 ```
 
 ### PhysicalThing
@@ -143,6 +148,11 @@ top.label = "Auction"
  _aat:300411912_ | public collections
  
 
+```crom
+top = FramePart()
+top.label = "Example Frame"
+```
+
 ### Appellation
 
 | AAT Term       | Label                  |
@@ -153,6 +163,10 @@ top.label = "Auction"
  _aat:300404662_ | suffixes (name additions) 
  _aat:300404845_ | prefixes (name additions)
 
+```crom
+top = FirstName()
+top.value = "Example"
+```
 
 ### Dimension
 
@@ -164,6 +178,10 @@ top.label = "Auction"
  _aat:300055624_ | diameter
  _aat:300056240_ | weight (heaviness attribute)
 
+```crom
+top = Height()
+top.value = 24
+```
 
 ### Feature
 
@@ -171,6 +189,11 @@ top.label = "Auction"
 | -------------- | ---------------------- |
  _aat:300190692_ | backs (object portions) 
  _aat:300190703_ | fronts (object portions) 
+
+```crom
+top = FrontFeature()
+top.label = "Front"
+```
 
 ### AttributeAssignment
 
@@ -187,7 +210,12 @@ top.label = "Auction"
  _aat:300077989_ | purchasing 
  _aat:300080091_ | description (activity) 
  _aat:300411672_ | titling (collections management function) 
+ _aat:300056109_ | attribution
 
+```crom
+top = Naming()
+top.label = "Object Naming"
+```
 
 ## Instances
 
@@ -209,6 +237,10 @@ These are instances of existing classes.
  _aat:300189557_ | female 
  _aat:300189559_ | male
 
+```crom
+top = Group("aat:300111188")
+top.label = "French"
+```
 
 ### Material
 
@@ -253,6 +285,10 @@ These are instances of existing classes.
  _aat:300404632_ | pastel (material) 
  _aat:300235507_ | ceramic (material) 
 
+```crom
+top = Material("aat:300012264")
+top.label = "oak"
+```
 
 ### Dimension Units
 
@@ -267,22 +303,7 @@ These are instances of existing classes.
  _aat:300379254_ | pounds (units for weight)
  _aat:300379229_ | ounces (units for weight)
 
-
-## Other stuff
-
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300117130_ | fragments (object portions) 
- _aat:300000885_ | architectural elements 
- _aat:300078048_ | structural elements 
- _aat:300026030_ | documents (object genre) 
- _aat:300054328_ | archaeology 
- _aat:300054419_ | numismatics 
- _aat:300054156_ | architecture (discipline) 
- _aat:300054168_ | decorative arts (discipline) 
- _aat:300056109_ | attribution
- _aat:300055292_ | theft (social issue) 
- _aat:300264237_ | material components 
- _aat:300163347_ | mixed media 
- _aat:300021503_ | Impressionist (style) 
- _aat:300404670_ | preferred terms 
+```crom
+top = DimensionUnit("aat:300379100")
+top.label = "inches"
+```
