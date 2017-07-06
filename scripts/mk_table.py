@@ -20,7 +20,7 @@ def sorter(x):
 
 its.sort(key=sorter)
 for (k,v) in its:
-	lines.append("%s | %s" % (k, v))
+	lines.append("%s | `%s`" % (k, v))
 
 table = '\n'.join(lines)
 fh = file('content/_include/prop_key_map.md', 'w')
