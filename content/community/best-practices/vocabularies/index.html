@@ -22,28 +22,12 @@ If the term plus class is not self-evident as to how it should be used in the mo
 
 ## Classifications
 
-These classifications used to futher clarify the type of a resource.  The reference is found in the `classified_as` property of the resource. The lists are divided up per class of resource, given in the `type` property.
+These classifications used to futher clarify the type of a resource.  The reference is found in the `classified_as` property of the resource. The lists are divided up per class of resource, given in the `type` property.  In general, please see the [common patterns](/model/base/).
 
-### Identifier
-
-There are many specific types of identifiers, sometimes called "identifier schemes".  The set below are not specific schemes such as DOIs or Lugt Numbers, but general classes of identifier usage.  Broadly adopted identifier schemes will be included when there is data to support the extent of adoption.
-
-| AAT Term       | Label                | Usage Notes                   |
-| -------------- | -------------------- | ----------------------------- |
- _aat:300312355_ | accession numbers    | 
- _aat:300404621_ | repository numbers   | 
- _aat:300404628_ | lot numbers          | For auction lot identifiers
-
-Example:
-
-```crom
-top = AccessionNumber()
-top.value = "P2005.12.276"
-```
 
 ### ManMadeObject
 
-The most common classification used for art is the type of artwork.  The two lists below are divided into primarily visual works such as paintings and sculpture, separate from broad classes of man-made objects that are displayed.
+The most common classification used for art is the type of artwork.  The two lists below are divided into primarily visual works such as paintings and sculpture, separate from broad classes of man-made objects that are displayed. Please see [Object Types](/model/object/identity/#types).
 
 __Visual Works__
 
@@ -84,9 +68,29 @@ top = Painting(art=1)
 top.label = "Example Painting"
 ```
 
+### PhysicalObject
+
+Things take two roles within the model, as parts of objects (such as the support or a frame) and for aggregations such as a collection or auction lot. Please see [parts of objects](/model/object/physical/#parts) and [collections](/model/collection/) respectively.
+
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300014844_ | supports             | For the part that a drawing or painting is on
+ _aat:300014657_ | panel                | 
+ _aat:300404391_ | frames               | 
+ _aat:300131087_ | mounts               |
+ _aat:300025976_ | collections          | For an aggregation of objects
+ _aat:300411912_ | public collections   |
+ _aat:300411307_ | auction lots         |
+ 
+ 
+```crom
+top = vocab.FramePart()
+top.label = "Example Frame"
+```
+
 ### LinguisticObject
 
-These classifications are used to further describe the intent of a piece of text associated with some resource.
+These classifications are used to further describe the intent of a piece of text associated with some resource. Please see the [shared statements pattern](/model/base/#statements-about-a-resource).
 
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
@@ -109,6 +113,8 @@ top.value = "Example painting is 24 inches wide by 36 1/2 inches tall"
 
 ### InformationObject
 
+InformationObjects are classified primarily according to their function, such as an auction catalog versus an exhibition catalog.
+
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
  _aat:300026061_ | catalogues raisonnés |
@@ -126,6 +132,8 @@ top.label = "Example Auction Catalog"
 
 ### Place
 
+Places are also classified primarily according to the function that typically takes place there. Please see the model for [places](/model/place/).
+
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
  _aat:300005234_ | auction houses       | 
@@ -138,6 +146,8 @@ top.label = "Example Museum Site"
 ```
 
 ### Group
+
+Groups are described along with [people](/model/actor/).
 
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
@@ -169,25 +179,27 @@ top = Auction()
 top.label = "Example Auction"
 ```
 
-### PhysicalThing
+### Identifier
+
+There are many specific types of identifiers, sometimes called "identifier schemes".  The set below are not specific schemes such as DOIs or Lugt Numbers, but general classes of identifier usage.  Broadly adopted identifier schemes will be included when there is data to support the extent of adoption.
 
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
- _aat:300014844_ | supports             | For the part that a drawing or painting is on
- _aat:300014657_ | panel                | 
- _aat:300404391_ | frames               | 
- _aat:300131087_ | mounts               |
- _aat:300025976_ | collections          | For an aggregation of objects
- _aat:300411912_ | public collections   |
- _aat:300411307_ | auction lots         |
- 
- 
+ _aat:300312355_ | accession numbers    | 
+ _aat:300404621_ | repository numbers   | 
+ _aat:300404628_ | lot numbers          | For auction lot identifiers
+
+Example:
+
 ```crom
-top = vocab.FramePart()
-top.label = "Example Frame"
+top = AccessionNumber()
+top.value = "P2005.12.276"
 ```
 
+
 ### Appellation
+
+Unlike Identifiers, Appellations are normally classified only once they have been divided into parts.  The classification represents the nature of the part of the name, relative to the whole.
 
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
@@ -204,6 +216,8 @@ top.value = "Example"
 
 ### Dimension
 
+Dimensions are classified to represent the relationship between the value and the object being measured. Please see the section on [object dimensions](/model/object/physical/#dimensions).
+
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
  _aat:300055644_ | height               |
@@ -218,6 +232,8 @@ top.value = 24
 ```
 
 ### Feature
+
+Features are used to describe aspects of objects that are not objectively separable parts, such as the front of a piece of paper. Please see the distinction between parts and [features](/model/object/physical/#features).
 
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
@@ -235,7 +251,7 @@ top.label = "Front"
 
 ### AttributeAssignment
 
-[Assertions](/model/assertion/)
+AttributeAssignment is used to make assertions that are no longer true, uncertain as to their truth, or are true only within a given context. Please see [Assertions](/model/assertion/) for more details.
 
 | AAT Term       | Label                | Usage Notes                   |
 | -------------- | -------------------- | ----------------------------- |
@@ -257,8 +273,7 @@ top.label = "Object Naming"
 
 ## Instances
 
-These are instances of existing classes.
-
+Vocabulary terms are also used as the identifier for particular instances of classes, rather than to be more specific about their type.  For example, _aat:300111188_ is the identifier for the Group of people that could be considered as French. This Group could be further classified as a _aat:300379842_ Nationality.
 
 ### Group
 
