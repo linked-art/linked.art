@@ -88,18 +88,18 @@ top.label = "Example Painting"
 
 These classifications are used to further describe the intent of a piece of text associated with some resource.
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300010358_ | materials
- _aat:300026687_ | acknowledgments 
- _aat:300055547_ | legal concepts   
- _aat:300080102_ | biographies
- _aat:300266036_ | dimensions 
- _aat:300121294_ | editions
- _aat:300055863_ | provenance 
- _aat:300080091_ | description 
- _aat:300028702_ | inscriptions
- _aat:300028705_ | signatures
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300010358_ | materials            | For materials/medium statements
+ _aat:300026687_ | acknowledgments      | For acknolwedgements and attributions
+ _aat:300055547_ | legal concepts       | For rights statements
+ _aat:300080102_ | biographies          | For biographical descriptions of people/groups
+ _aat:300266036_ | dimensions           | For statements about size and shape
+ _aat:300121294_ | editions             | For series or edition statements
+ _aat:300055863_ | provenance           | For provenance statements
+ _aat:300080091_ | description          | For general descriptions
+ _aat:300028702_ | inscriptions         | For transcribing inscriptions
+ _aat:300028705_ | signatures           | For transcribing signatures
 
 
 ```crom
@@ -109,15 +109,15 @@ top.value = "Example painting is 24 inches wide by 36 1/2 inches tall"
 
 ### InformationObject
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300026061_ | catalogues raisonnés
- _aat:300026068_ | auction catalogs 
- _aat:300026074_ | sales catalogs
- _aat:300026096_ | exhibition catalogs
- _aat:300027483_ | account books
- _aat:300027168_ | registers (lists)
- _aat:300264578_ | Web pages
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300026061_ | catalogues raisonnés |
+ _aat:300026096_ | exhibition catalogs  |
+ _aat:300026068_ | auction catalogs     |
+ _aat:300026074_ | sales catalogs       |
+ _aat:300027483_ | account books        |
+ _aat:300027168_ | registers (lists)    | For lists of things
+ _aat:300264578_ | Web pages            |
 
 ```crom
 top = AuctionCatalog()
@@ -126,11 +126,11 @@ top.label = "Example Auction Catalog"
 
 ### Place
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300005234_ | auction houses 
- _aat:300005768_ | museums (buildings) 
- _aat:300240057_ | galleries (display spaces) 
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300005234_ | auction houses       | 
+ _aat:300005768_ | museums              |
+ _aat:300240057_ | galleries            |
 
 ```crom
 top = MuseumPlace()
@@ -139,12 +139,12 @@ top.label = "Example Museum Site"
 
 ### Group
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300312281_ | museums (institutions) 
- _aat:300379842_ | nationality 
- _aat:300263534_ | departments (organizational units) 
- _aat:300055147_ | sex role 
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300312281_ | museums              | 
+ _aat:300263534_ | departments          | For sub-institution structure
+ _aat:300379842_ | nationality          | 
+ _aat:300055147_ | sex role             | For genders
 
 
 ```crom
@@ -154,12 +154,15 @@ top.label = "Example Museum Organization"
 
 ### Activity
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300393177_ | active (professional function) 
- _aat:300054751_ | auctions 
- _aat:300054766_ | exhibitions (events) 
- _aat:300054773_ | traveling exhibitions 
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300393177_ | active               |
+ _aat:300054751_ | auctions             |
+ _aat:300054766_ | exhibitions          |
+ _aat:300054773_ | traveling exhibitions| 
+ _aat:300077506_ | inventorying         |
+ _aat:300054277_ | curating             |
+ _aat:300077989_ | purchasing           | For Acquisitions that involve money
 
 ```crom
 top = Auction()
@@ -168,17 +171,17 @@ top.label = "Example Auction"
 
 ### PhysicalThing
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300014844_ | supports (artists' materials) 
- _aat:300014657_ | panel (wood by form) 
- _aat:300404391_ | picture frames
- _aat:300131087_ | mounts (framing and mounting equipment)
- _aat:300025976_ | collections (object groupings) 
- _aat:300411307_ | auction lots 
- _aat:300411912_ | public collections
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300014844_ | supports             | For the part that a drawing or painting is on
+ _aat:300014657_ | panel                | 
+ _aat:300404391_ | frames               | 
+ _aat:300131087_ | mounts               |
+ _aat:300025976_ | collections          | For an aggregation of objects
+ _aat:300411912_ | public collections   |
+ _aat:300411307_ | auction lots         |
  
-
+ 
 ```crom
 top = vocab.FramePart()
 top.label = "Example Frame"
@@ -186,13 +189,13 @@ top.label = "Example Frame"
 
 ### Appellation
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300404651_ | first names 
- _aat:300404652_ | last names 
- _aat:300404654_ | middle names 
- _aat:300404662_ | suffixes (name additions) 
- _aat:300404845_ | prefixes (name additions)
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300404651_ | first names          |
+ _aat:300404652_ | last names           |
+ _aat:300404654_ | middle names         |
+ _aat:300404662_ | suffixes             |
+ _aat:300404845_ | prefixes             |
 
 ```crom
 top = vocab.GivenName()
@@ -201,13 +204,13 @@ top.value = "Example"
 
 ### Dimension
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300055644_ | height 
- _aat:300055647_ | width 
- _aat:300072633_ | depth (size/dimension)
- _aat:300055624_ | diameter
- _aat:300056240_ | weight (heaviness attribute)
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300055644_ | height               |
+ _aat:300055647_ | width                |
+ _aat:300072633_ | depth                |
+ _aat:300055624_ | diameter             |
+ _aat:300056240_ | weight               |
 
 ```crom
 top = vocab.Height()
@@ -216,10 +219,14 @@ top.value = 24
 
 ### Feature
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300190692_ | backs (object portions) 
- _aat:300190703_ | fronts (object portions) 
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300190692_ | backs                |
+ _aat:300190703_ | fronts               |
+ _aat:300190710_ | tops                 |
+ _aat:300190695_ | bottoms              |
+ _aat:300190706_ | sides                |
+
 
 ```crom
 top = vocab.FrontFeature()
@@ -228,20 +235,20 @@ top.label = "Front"
 
 ### AttributeAssignment
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300404285_ | style of (attribution qualifier) 
- _aat:300053578_ | measuring 
- _aat:300054277_ | curating 
- _aat:300054622_ | appraising 
- _aat:300054631_ | classification (information handling function) 
- _aat:300054714_ | dating (measuring process) 
- _aat:300055545_ | assessing 
- _aat:300077506_ | inventorying 
- _aat:300077989_ | purchasing 
- _aat:300080091_ | description (activity) 
- _aat:300411672_ | titling (collections management function) 
- _aat:300056109_ | attribution
+[Assertions](/model/assertion/)
+
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300404285_ | style of             | 
+ _aat:300404274_ | workshop of          |
+ _aat:300053578_ | measuring            | Assigning a `Dimension`
+ _aat:300054631_ | classification       | Assigning a `Type`
+ _aat:300054714_ | dating               | Assinging a `TimeSpan`
+ _aat:300055545_ | assessing            | Assigning a `MonetaryAmount`
+ _aat:300080091_ | description          | Assigning a `LinguisticObject` as description
+ _aat:300411672_ | titling              | Assigning an `Appellation`
+ _aat:300056109_ | attribution          | Assigning an `Actor` that carried out a `Production`
+ _aat:300393211_ | locating             | Assigning a `Place`
 
 ```crom
 top = vocab.Naming()
@@ -255,18 +262,20 @@ These are instances of existing classes.
 
 ### Group
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300111159_ | British (modern)
- _aat:300111188_ | French (culture or style)
- _aat:300111198_ | Italian (culture or style)
- _aat:300111192_ | German (culture or style)
- _aat:300111175_ | Dutch (culture or style)
- _aat:300111215_ | Spanish (culture or style)
- _aat:300017437_ | Native American
- _aat:300107956_ | American (North American)
- _aat:300189557_ | female 
- _aat:300189559_ | male
+Groups are used for many groups of people, however nationalities and genders are commonly recorded consistently across datasets.
+
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300111159_ | British              |
+ _aat:300111188_ | French               |
+ _aat:300111198_ | Italian              |
+ _aat:300111192_ | German               |
+ _aat:300111175_ | Dutch                |
+ _aat:300111215_ | Spanish              |
+ _aat:300017437_ | Native American      |
+ _aat:300107956_ | American             |
+ _aat:300189557_ | female               |
+ _aat:300189559_ | male                 |
 
 ```crom
 top = Person()
@@ -278,47 +287,48 @@ top.member_of = grp
 
 ### Material
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300010439_ | clay 
- _aat:300010669_ | terracotta (clay material) 
- _aat:300010797_ | glass (material) 
- _aat:300010900_ | metal 
- _aat:300010942_ | copper alloy 
- _aat:300010946_ | brass (alloy) 
- _aat:300010957_ | bronze (metal) 
- _aat:300011002_ | iron (metal) 
- _aat:300011020_ | copper (metal) 
- _aat:300011022_ | lead (metal) 
- _aat:300264831_ | gold leaf
- _aat:300011029_ | silver (metal)
- _aat:300011101_ | alabaster (mineral) 
- _aat:300011176_ | stone (worked rock) 
- _aat:300011443_ | marble (rock) 
- _aat:300011727_ | chalk 
- _aat:300011798_ | bone (material) 
- _aat:300011845_ | leather 
- _aat:300011852_ | vellum (parchment) 
- _aat:300011857_ | ivory (material) 
- _aat:300011914_ | wood (plant material) 
- _aat:300012264_ | oak (wood)
- _aat:300012862_ | charcoal (material)  
- _aat:300014069_ | linen (material) 
- _aat:300014078_ | canvas (textile material) 
- _aat:300014109_ | paper (fiber product) 
- _aat:300014224_ | cardboard 
- _aat:300014585_ | wax 
- _aat:300014927_ | plaster of Paris 
- _aat:300015012_ | ink 
- _aat:300015045_ | watercolor (paint) 
- _aat:300015050_ | oil paint (paint) 
- _aat:300015062_ | tempera 
- _aat:300070114_ | gouache (paint) 
- _aat:300147678_ | enamel paint 
- _aat:300410335_ | pencil (marking material) 
- _aat:300404632_ | pastel (material) 
- _aat:300235507_ | ceramic (material) 
-
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300010439_ | clay                 |
+ _aat:300010669_ | terracotta           |
+ _aat:300010797_ | glass                |
+ _aat:300010900_ | metal                |
+ _aat:300010942_ | copper alloy         |
+ _aat:300010946_ | brass                |
+ _aat:300010957_ | bronze               |
+ _aat:300011002_ | iron                 |
+ _aat:300011020_ | copper               |
+ _aat:300011022_ | lead                 |
+ _aat:300011021_ | gold                 |
+ _aat:300264831_ | gold leaf            |
+ _aat:300011029_ | silver               |
+ _aat:300011101_ | alabaster            |
+ _aat:300011176_ | stone                |
+ _aat:300011443_ | marble               |
+ _aat:300011727_ | chalk                |
+ _aat:300011798_ | bone                 |
+ _aat:300011845_ | leather              |
+ _aat:300011852_ | vellum               |
+ _aat:300011857_ | ivory                |
+ _aat:300011914_ | wood                 |
+ _aat:300012264_ | oak                  |
+ _aat:300012862_ | charcoal             |
+ _aat:300014069_ | linen                |
+ _aat:300014078_ | canvas               |
+ _aat:300014109_ | paper                |
+ _aat:300014224_ | cardboard            |
+ _aat:300014585_ | wax                  |
+ _aat:300014927_ | plaster of Paris     |
+ _aat:300015012_ | ink                  |
+ _aat:300015045_ | watercolor paint     |
+ _aat:300015050_ | oil paint            |
+ _aat:300015062_ | tempera              |
+ _aat:300070114_ | gouache              |
+ _aat:300147678_ | enamel paint         |
+ _aat:300410335_ | pencil               |
+ _aat:300404632_ | pastel               |
+ _aat:300235507_ | ceramic              |
+         
 ```crom
 top = vocab.FramePart()
 top.label = "Oak Frame"
@@ -329,16 +339,16 @@ top.made_of = oak
 
 ### MeasurementUnit
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300379099_ | meters (units for distance)
- _aat:300379098_ | centimeters 
- _aat:300379101_ | feet (units of measurement)	
- _aat:300379100_ | inches 
- _aat:300379226_ | kilograms
- _aat:300379225_ | grams (measurements) 
- _aat:300379254_ | pounds (units for weight)
- _aat:300379229_ | ounces (units for weight)
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300379099_ | meters               |
+ _aat:300379098_ | centimeters          |
+ _aat:300379101_ | feet                 |
+ _aat:300379100_ | inches               |
+ _aat:300379226_ | kilograms            |
+ _aat:300379225_ | grams                |
+ _aat:300379254_ | pounds               |
+ _aat:300379229_ | ounces               |
 
 ```crom
 top = Height()
