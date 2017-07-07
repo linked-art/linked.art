@@ -12,7 +12,13 @@ table tr td {
 
 ## Introduction
 
-!!! warning "This should (still, somehow) be auto-generated from data, and use emerging consensus rather than the editors' best guesses!"
+This is a living document that tries to capture the current set of frequently used vocabulary terms across organizations and projects. The lists of terms are not intended to be complete or all-encompassing, but starting points to use in data production and software development.
+
+The data model does not require the use of these terms, or any other specific terms, however if there is reasonably widespread re-use of the same terms, then that gives a good indication that they are valuable and understandable.  As such, if they are broadly adopted, the process of mapping real data into the model and the development of both server and client software that implements the model for users becomes significantly easier.
+
+If the term plus class is not self-evident as to how it should be used in the model, then a description of its usage is provided in the tables below. This should not be confused with the scope notes or description of the term itself ... it applies to the usage in the linked.art context, rather than being a general description of the concept.
+
+!!! warning "This should (still, somehow) be auto-generated from data, and use emerging consensus.  The current starter lists are from the Getty Provenance Index, Getty Museum, and the American Art Collaborative data."
 
 ## Classifications
 
@@ -20,11 +26,13 @@ These classifications used to futher clarify the type of a resource.  The refere
 
 ### Identifier
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300312355_ | accession numbers
- _aat:300404621_ | repository numbers 
- _aat:300404628_ | lot numbers 
+There are many specific types of identifiers, sometimes called "identifier schemes".  The set below are not specific schemes such as DOIs or Lugt Numbers, but general classes of identifier usage.  Broadly adopted identifier schemes will be included when there is data to support the extent of adoption.
+
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300312355_ | accession numbers    | 
+ _aat:300404621_ | repository numbers   | 
+ _aat:300404628_ | lot numbers          | For auction lot identifiers
 
 Example:
 
@@ -35,34 +43,40 @@ top.value = "P2005.12.276"
 
 ### ManMadeObject
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300133025_ | works of art 
- _aat:300014063_ | textiles (visual works)
- _aat:300015342_ | mosaics (visual works) 
- _aat:300151343_ | ceramics (object genre)  
- _aat:300033618_ | paintings (visual works)  
- _aat:300033963_ | collages (visual works) 
- _aat:300033973_ | drawings (visual works) 
- _aat:300041273_ | prints (visual works) 
- _aat:300047090_ | sculpture (visual works) 
- _aat:300047203_ | carvings (visual works)  
- _aat:300047896_ | installations (visual works) 
- _aat:300046300_ | photographs 
- _aat:300266660_ | calligraphy (visual works)
- _aat:300033936_ | miniatures (paintings)
- _aat:300028569_ | manuscripts (documents) 
- _aat:300117130_ | fragments (object portions) 
+The most common classification used for art is the type of artwork.  The two lists below are divided into primarily visual works such as paintings and sculpture, separate from broad classes of man-made objects that are displayed.
 
-| AAT Term       | Label                  |
-| -------------- | ---------------------- |
- _aat:300387350_ | exchange media (objects)
- _aat:300037336_ | furnishings (works)
- _aat:300266639_ | clothing
- _aat:300209273_ | costume accessories
- _aat:300036926_ | weapons
- _aat:300197197_ | containers
- _aat:300219258_ | vehicles
+__Visual Works__
+
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300133025_ | works of art         | Should be used for all objects considered as art
+ _aat:300014063_ | textiles             |
+ _aat:300015342_ | mosaics              |
+ _aat:300151343_ | ceramics             | 
+ _aat:300033618_ | paintings            |  
+ _aat:300033963_ | collages             |
+ _aat:300033973_ | drawings             |
+ _aat:300041273_ | prints               |
+ _aat:300047090_ | sculpture            | 
+ _aat:300047203_ | carvings             |
+ _aat:300047896_ | installations        |
+ _aat:300046300_ | photographs          |
+ _aat:300266660_ | calligraphy          |
+ _aat:300033936_ | miniatures           |
+ _aat:300028569_ | manuscripts          | 
+
+__Objects__
+
+| AAT Term       | Label                | Usage Notes                   |
+| -------------- | -------------------- | ----------------------------- |
+ _aat:300387350_ | exchange media       | For coins, stamps, tickets, coupons etc
+ _aat:300037336_ | furnishings          | For furniture and furnishings
+ _aat:300266639_ | clothing             | 
+ _aat:300209273_ | costume accessories  | For jewelry and other worn or held accessories
+ _aat:300036926_ | weapons              | 
+ _aat:300197197_ | containers           | For boxes, baskets, vessels of all types
+ _aat:300219258_ | vehicles             |
+ _aat:300117130_ | fragments            | For small, separated pieces
 
 
 ```crom
@@ -72,18 +86,20 @@ top.label = "Example Painting"
 
 ### LinguisticObject
 
+These classifications are used to further describe the intent of a piece of text associated with some resource.
+
 | AAT Term       | Label                  |
 | -------------- | ---------------------- |
- _aat:300010358_ | materials (substances)
+ _aat:300010358_ | materials
  _aat:300026687_ | acknowledgments 
  _aat:300055547_ | legal concepts   
- _aat:300080102_ | biographies (documents)
+ _aat:300080102_ | biographies
  _aat:300266036_ | dimensions 
  _aat:300121294_ | editions
  _aat:300055863_ | provenance 
- _aat:300080091_ | description (activity) 
+ _aat:300080091_ | description 
  _aat:300028702_ | inscriptions
- _aat:300028705_ | signatures (names)
+ _aat:300028705_ | signatures
 
 
 ```crom
@@ -101,7 +117,7 @@ top.value = "Example painting is 24 inches wide by 36 1/2 inches tall"
  _aat:300026096_ | exhibition catalogs
  _aat:300027483_ | account books
  _aat:300027168_ | registers (lists)
- _aat:300264578_ | Web pages (documents) 
+ _aat:300264578_ | Web pages
 
 ```crom
 top = AuctionCatalog()
