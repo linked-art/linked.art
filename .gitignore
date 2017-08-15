@@ -10,5 +10,6 @@ content/example/place/*
 content/example/info/*
 content/example/group/*
 content/example/identifier/*
+content/example/name/*
+content/example/value/*
 content/model/example_index.html
-

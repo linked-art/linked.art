@@ -15,7 +15,8 @@ from cromulent import model, vocab
 from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment, Formation
+    EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
+    ManMadeFeature, Dimension
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -25,7 +26,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
-	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, \
+	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	materialTypes, dimensionUnits, add_art_setter
 from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
 	add_schema_properties
@@ -53,6 +54,8 @@ Appellation._uri_segment = "name"
 BeginningOfExistence._uri_segment = "event"
 EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
+ManMadeFeature._uri_segment = "object"
+Dimension._uri_segment = "value"
 
 fh = file('site.yaml')
 siteData = fh.read()
