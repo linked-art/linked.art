@@ -283,10 +283,10 @@ title: Index of Classes, Properties, Authorities
 ```json
 %s
 ```
-[Raw](%s) | 
-[Playground](%s) |
-[Raw Turtle](%s) |
-[Styled Turtle](%s)""" % (egid, jsstr, raw, playground, turtle, turtle_play)	
+[JSON-LD (Raw)](%s) | 
+[JSON-LD (Playground)](%s) |
+[Turtle (Raw)](%s) |
+[Turtle (Styled)](%s)""" % (egid, jsstr, raw, playground, turtle, turtle_play)	
 		return resp
 
 	def traverse(self, what, top, res):
