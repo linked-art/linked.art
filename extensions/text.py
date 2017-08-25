@@ -95,7 +95,7 @@ xtxt = json.loads(data)['@context']
 docCache = {}
 docCache[factory.context_uri] = {'contextUrl': None,
 	'documentUrl': None,
-	'document': ctxt}
+	'document': {"@context": ctxt}}
 
 def fetch(url):
     fh = urllib.urlopen(url)
