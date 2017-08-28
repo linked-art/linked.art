@@ -111,9 +111,9 @@ top = vocab.PhotographColor()
 top.label = "Photograph of Example Artwork"
 top.description = "Photograph of an Artwork, with commentary on the back"
 
-recto = ManMadeObject(art=1)
+recto = vocab.FrontPart(art=1)
 recto.label = "Front of Photograph"
-verso = ManMadeObject()
+verso = vocab.BackPart()
 verso.label = "Back of Photograph"
 top.part = recto
 top.part = verso
