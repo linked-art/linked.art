@@ -257,7 +257,7 @@ title: Index of Classes, Properties, Authorities
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
-		for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'pi']:
+		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'pi']:
 			g.bind(ns, ctxt[ns])
 		g.parse(data=nq, format="nt")
 		out = g.serialize(format="turtle")

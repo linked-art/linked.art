@@ -99,38 +99,30 @@ part.made_of = materialTypes['canvas']
 top.part = part
 ```
 
-## Features
+### Sides of an Object
 
-The model distinguishes between objectively-definable parts, such as the frame of a painting being distinct from the canvas, from features which have no objectively-definable border, such as the recto and verso of the canvas. This pattern allows separate identities for the recto and verso of a page, the obverse and reverse of a coin, without implying that there are two separate physical objects. 
+While some artworks can be treated as two dimensional, as the only part of interest is the front of a flat surface such as a painting, drawing or photograph, there are many other objects where it is desirable to record information separately about the front and back, or any number of other sides.
 
-These are modeled as instances of `ManMadeFeature`, as opposed to a `ManMadeObject`. An object representing the whole then `bears` the features, and those features can have one or more `part`s for further sub-division.
+ This pattern allows separate identities for the recto and verso of a page, the obverse and reverse of a coin, in the same manner as the frame or canvas of a painting.  The use of "aat:300133025" is important to distinguish between objects that should be treated as the complete artwork, and objects that are either parts of it, or those that it is part of. One might treat only the front part of a photograph as an artwork, but still record information about the back, such as an inscription, without implying that the inscription was part of the art.
 
-The artwork or content that is part of the front or back _is_ modeled as a `ManMadeObject` which is part of the Feature.  This is to provide consistency with the more common situation when the features are not modeled at all, despite the painting only being on one side of the canvas.
 
 ```crom
 top = vocab.PhotographColor()
 top.label = "Photograph of Example Artwork"
 top.description = "Photograph of an Artwork, with commentary on the back"
-recto = vocab.FrontFeature()
-recto.label = "Photograph's Front"
-verso = vocab.BackFeature()
-verso.label = "Photograph's Back"
-top.bears = recto
-top.bears = verso
 
-# These part objects are clunky :(
-obj = ManMadeObject()
-obj.label = "Photographic Part"
+recto = vocab.FrontPart(art=1)
+recto.label = "Front of Photograph"
+verso = vocab.BackPart()
+verso.label = "Back of Photograph"
+top.part = recto
+top.part = verso
+
 what = ManMadeObject(art=1)
 what.label = "Example Artwork"
-obj.depicts = what
-recto.part = obj
+recto.depicts = what
 
-back = ManMadeObject()
-back.label = "Back Part"
 txt = LinguisticObject()
-txt.value = "Photograph of Example, taken 1932"
-back.carries = txt
-verso.part = back
+txt.value = "Photograph of Example Artwork, taken 1932"
+verso.carries = txt
 ```
-
