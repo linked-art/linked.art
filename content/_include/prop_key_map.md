@@ -34,6 +34,7 @@ P106 | `includes`
 P106i | `included_in`
 P107 | `member`
 P107i | `member_of`
+P117i | `temporally_includes`
 P131 | `actor_identified_by`
 P131i | `identifies_actor`
 P132 | `volume_overlaps_with`
@@ -44,4 +45,4 @@ P149 | `concept_identified_by`
 P149i | `identifies_concept`
 P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
-P165i | `incorporated_in`
+P165i | `incorporated_by`

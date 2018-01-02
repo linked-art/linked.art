@@ -9,7 +9,7 @@
     "skos": "http://www.w3.org/2004/02/skos/core#", 
     "foaf": "http://xmlns.com/foaf/0.1/", 
     "xsd": "http://www.w3.org/2001/XMLSchema#", 
-    "pi": "http://linked.art/ns/prov/", 
+    "la": "https://linked.art/ns/terms/", 
     "aat": "http://vocab.getty.edu/aat/", 
     "ulan": "http://vocab.getty.edu/ulan/", 
     "tgn": "http://vocab.getty.edu/tgn/", 
@@ -49,6 +49,8 @@
     "Leaving": "crm:E86_Leaving", 
     "MonetaryAmount": "crm:E97_Monetary_Amount", 
     "Currency": "crm:E98_Currency", 
+    "Name": "crm:la:Name", 
+    "EndingActivity": "crm:la:EndingActivity", 
     "identified_by": {
       "@id": "crm:P1_is_identified_by", 
       "@type": "@id", 
@@ -370,12 +372,12 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "composed_of": {
+    "includes": {
       "@id": "crm:P106_is_composed_of", 
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "composed_from": {
+    "included_in": {
       "@id": "crm:P106i_forms_part_of", 
       "@type": "@id", 
       "@container": "@set"
@@ -503,6 +505,16 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "component": {
+      "@id": "crm:P148_has_component", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "component_of": {
+      "@id": "crm:P148i_is_component_of", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
     "end_of_the_begin": {
       "@id": "crm:P81a_end_of_the_begin"
     }, 
@@ -566,17 +578,29 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "Payment": "pi:Payment", 
+    "Payment": "la:Payment", 
     "paid_from": {
-      "@id": "pi:paid_from", 
+      "@id": "la:paid_from", 
       "@type": "@id"
     }, 
     "paid_to": {
-      "@id": "pi:paid_to", 
+      "@id": "la:paid_to", 
       "@type": "@id"
     }, 
     "paid_amount": {
-      "@id": "pi:paid_amount", 
+      "@id": "la:paid_amount", 
+      "@type": "@id"
+    }, 
+    "brought_into_effect": {
+      "@id": "la:brought_into_effect", 
+      "@type": "@id"
+    }, 
+    "took_out_of_effect": {
+      "@id": "la:took_out_of_effect", 
+      "@type": "@id"
+    }, 
+    "effective_in": {
+      "@id": "la:effective_in", 
       "@type": "@id"
     }
   }
