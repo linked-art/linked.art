@@ -30,7 +30,8 @@ P87i | `identifies_place`
 P89 | `spatially_within`
 P89i | `spatially_contains`
 P90 | `has_value`
-P106i | `composed_from`
+P106 | `includes`
+P106i | `included_in`
 P107 | `member`
 P107i | `member_of`
 P131 | `actor_identified_by`
@@ -43,4 +44,4 @@ P149 | `concept_identified_by`
 P149i | `identifies_concept`
 P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
-P165i | `included_in`
+P165i | `incorporated_in`
