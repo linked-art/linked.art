@@ -16,7 +16,7 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension
+    ManMadeFeature, Dimension, PhysicalObject
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -28,8 +28,9 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	materialTypes, dimensionUnits, add_art_setter
-from cromulent.extra import PhysicalObject, Payment, EoEActivity, add_rdf_value, \
-	add_schema_properties
+from cromulent.extra import Payment, add_rdf_value, add_schema_properties
+from cromulent.multiple_instantiation import EoEActivity
+
 
 ManMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
@@ -257,7 +258,7 @@ title: Index of Classes, Properties, Authorities
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
-		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'pi']:
+		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf']:
 			g.bind(ns, ctxt[ns])
 		g.parse(data=nq, format="nt")
 		out = g.serialize(format="turtle")
