@@ -47,6 +47,7 @@ Implications:
   * Classes or properties that do not provide a functional and concrete advantage are unnecessary.
   * Reuse of existing classes/properties is greatly preferred to new ones - the cost of adding new features is high.
   * Extensions, the definition of new classes and properties, beyond the core CRM ontology are to be avoided if possible without an exceptional reason. This includes existing CRM extensions and new ones.
+  * Multiple Instantiation (an instance with multiple classes) is to be avoided as more complex to implement than Multiple Inheritance (a class with multiple parents). This leads to a very small number of new classes being defined where absolutely necessary.
 
 ### Intelligently Manage Addition of Complexity
 
