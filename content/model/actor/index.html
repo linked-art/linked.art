@@ -27,7 +27,7 @@ top.carried_out_by = actor
 
 ## Names
 
-Names in CIDOC-CRM are turned into first class resources with their own identity, and given a class called `Appellation`. Being themselves uniquely identified rather than just an anonymous string, they are said to identify the resource they are associated with. This seems a little strange as names are not identifiers, but this particular instance of a name is uniquely associated with that particular person. Any sort of resource can have an Appellation of this sort. The main name associated with the resource, in this case Person, should also be its `label`.  The main name to use, if there are multiple, should be `classified_as` _aat:300404670_.
+Names in CIDOC-CRM are turned into first class resources with their own identity, and given a class called `Name`. Being themselves uniquely identified rather than just an anonymous string, they are said to identify the resource they are associated with. This seems a little strange as names are not identifiers, but this particular instance of a name is uniquely associated with that particular person. Any sort of resource can have a `Name` of this sort. The main name associated with the resource, in this case Person, should also be its `label`.  The main name to use, if there are multiple, should be `classified_as` _aat:300404670_.
 
 ```crom
 top = Person()
@@ -39,7 +39,7 @@ top.identified_by = apl
 
 ### Parts of Names
 
-Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Appellation`s, and are included in the `includes` set in the same way as other partitioning.
+Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Name`s, and are included in the `includes` set in the same way as other partitioning.
 
 ```crom
 top = Person()

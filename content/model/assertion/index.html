@@ -14,7 +14,7 @@ This pattern is also used for context-specific assertions, such as when an objec
 
 The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers, rather than by artists. It is then `classified_as` an appropriate sort of activity for what is being assigned; assigning the artist to the `Production` event of an object would be attribution or _aat:300056109_, for example.  The general activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
-The value of the assignment is given using `assigned`, and it must be a resource rather than a string or number.  Thus an `AttributeAssignment` can assign an `Actor` to a `Production`, or an `Appellation` to an `Actor`, but not a `value` to an `Appellation`.  The resource that the value is being associated with is given using `assigned_to`.
+The value of the assignment is given using `assigned`, and it must be a resource rather than a string or number.  Thus an `AttributeAssignment` can assign an `Actor` to a `Production`, or a `Name` to an `Actor`, but not a `value` to a `Name`.  The resource that the value is being associated with is given using `assigned_to`.
 
 The example below demonstrates associating a previous title with an object.
 
@@ -22,7 +22,7 @@ The example below demonstrates associating a previous title with an object.
 obj = Painting(art=1)
 obj.label = "Current Painting Title"
 top = Naming()
-name = Appellation()
+name = Name()
 name.value = "Previous Painting Title"
 top.assigned = name
 top.assigned_to = obj
@@ -70,6 +70,6 @@ A table summarizing the known AAT activity classifications and the appropriate p
 | Locating    | _aat:300393211_ | `took_place_at`     | `Place` (for Activities) |
 |             |                 | `current_location`  | (for Objects)      |   
 | Measuring   | _aat:300053578_ | `dimension`         | `Dimension`        |
-| Naming      | _aat:300411672_ | `identified_by`     | `Appellation`      |
+| Naming      | _aat:300411672_ | `identified_by`     | `Name`             |
 | _Style Of_  | _aat:300404285_ | none                | `Actor`            |
 
