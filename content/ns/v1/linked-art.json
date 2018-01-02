@@ -49,8 +49,8 @@
     "Leaving": "crm:E86_Leaving", 
     "MonetaryAmount": "crm:E97_Monetary_Amount", 
     "Currency": "crm:E98_Currency", 
-    "Name": "crm:la:Name", 
-    "EndingActivity": "crm:la:EndingActivity", 
+    "Name": "la:Name", 
+    "EndingActivity": "la:EndingActivity", 
     "identified_by": {
       "@id": "crm:P1_is_identified_by", 
       "@type": "@id", 
