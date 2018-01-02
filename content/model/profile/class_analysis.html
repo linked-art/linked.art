@@ -43,11 +43,12 @@ __Attribution Reification Classes:__ E14, E15, E16, E17
 
 All of the subclasses of _E13 Attribute Assignment_ can be dispensed with, and replaced with references to external vocabularies from an instance of E13.  This would be more consistent with other assignments that must use E13 directly, such as attribution of an artist to a production event, the valuation of an object assigning a Monetary Amount to an object, the naming of an object assigning an Appellation and so on. 
 
-__Appellation Classes:__ E44, E45, E46, E47, E48, E49, E50, E51, E75, E82
+__Appellation Classes:__ E35, E41, E44, E45, E46, E47, E48, E49, E50, E51, E75, E82
 
-Almost all of the subclasses of _E41 Appellation_ can be dispensed with as well, and for the most part there is no need to associate specific vocabulary terms.  The name of a Place does not need to be an _E44 Place Appellation_, as this carries no additional information beyond the class of the subject of the relationship. This also prevents the modeling collision between Names (E44 and similar) and Identifiers (E42) for resources as it would be questionable which of the two classes to use.
+All of the subclasses of _E41 Appellation_ can be dispensed, other than E42 Identifier. For the most part there is also no need to associate specific vocabulary terms to replace them.  The name of a Place does not need to be an _E44 Place Appellation_, as this carries no additional information beyond the class of the subject of the relationship. This also prevents the modeling collision between Names (E44 and similar) and Identifiers (E42) for resources as it would be questionable which of the two classes to use.
 
-An open question remains as to whether there is a significant semantic distinction between an _E41 Appellation_ and a _E35 Title_, and current thinking is that there is not and hence _E35 Title_ should probably be added to the list of Appellation sub-classes to ignore. Similarly, whether _E42 Identifier_ is sufficiently distinct from Appellation is questionable, however current thinking for this is that Identifiers serve a different purpose from Labels, and the distinction is thus valuable to maintain.
+E41 Appellation is also added to the list of classes to ignore, as it is not also a Linguistic Object.  As the set of Appellations which are not Linguistic is infinitesimal compared to the set of Linguistic Appellations, we use only the extension `Name` class that inherits both Appellation and Linguistic Object.
+
 
 __Entity Beginning and Ending Classes:__ E6, E66, E67, E68, E69
 
@@ -115,12 +116,10 @@ The remaining 33 classes are actively used in mappings for the known datasets.
   * _E19 Physical Object:_ Used for Sets of things 
   * _E21 Person:_ Individual people
   * _E22 Man-Made Object:_ Objects
-  * _E25 Man-Made Feature:_ Used for recto/verso of a sheet of material
   * _E30 Right:_ Used for rights information
   * _E33 Linguistic Object:_ Statements
   * _E36 Visual Item:_ Used for images
   * _E39 Actor:_ Used when it is unclear if the actor is an individual or a group 
-  * _E41 Appellation:_ Names of things
   * _E42 Identifier:_ Identifiers of things
   * _E52 Time-Span:_ Collects the beginning and ending of time spans
   * _E53 Place:_ Locations
@@ -142,7 +141,10 @@ The remaining 33 classes are actively used in mappings for the known datasets.
 
 ## Useful Additional Classes
 
-__Classes:__  Payment
+__Payment__
 
 There is currently no way to describe the Activity of transferring MonetaryAmounts between actors, a Payment.  The transfer classes (Acquisition, Transfer of Custody, Move) are very specific as to their semantics and the sorts of things that can be transferred. Thus, a new class is required, `Payment`, with three relationships of `paid_from`, `paid_to` and `paid_amount`.  A better solution would be a low level transfer class that could be used to transfer right of custody, right of ownership, the object itself, and monetary amounts, from one actor to another.
 
+__Name__
+
+E41 Appellation is not a descendent of E33 Linguistic Object, meaning that it cannot have an E56 Language associated with it. As practically every name of a person or thing that is not an E42 Identifier is linguistic, the utility of E41 is greatly reduced.  Instead we create a new class that inherits from both E41 and E33, called Name.

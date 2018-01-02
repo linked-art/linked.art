@@ -99,7 +99,7 @@ obj.current_owner = owner
 
 ### Exhibition Specific Labels
 
-The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object _(aat:300411672)_ is part of the exhibition via the `consists_of` property, and assigns a new `Appellation` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the Appellation does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.
+The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object _(aat:300411672)_ is part of the exhibition via the `consists_of` property, and assigns a new `Name` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the `Name` does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.
 
 ```crom
 top = Exhibition()
@@ -107,7 +107,7 @@ top.label = "Example Exhibition"
 obj = Painting(art=1)
 obj.label = "Real Painting Name"
 aa = Naming()
-name = Appellation()
+name = Name()
 name.value = "Exhibition Specific Name"
 aa.assigned = name
 aa.assigned_to = obj

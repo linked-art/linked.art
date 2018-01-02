@@ -66,12 +66,12 @@ Although the `label` of the resource should always be included, it is valuable t
 
 ### Primary Title
 
-The primary title should be given as the `label` of the object, and also as a `Title` resource with a `value` containing the same information.  The Primary title should be `classified_as` the preferred one via _aat:300404670_. There should be exactly one primary title given per language.
+The primary title should be given as the `label` of the object, and also as a `Name` resource with a `value` containing the same information.  The Primary title should be `classified_as` the preferred one via _aat:300404670_. There should be exactly one primary title given per language.
 
 ```crom
 top = Painting(art=1)
 top.label = "Peasant and Sheep"
-ttl = PrimaryAppellation()
+ttl = PrimaryName()
 ttl.value = "Peasant and Sheep"
 top.identified_by = ttl
 ```
@@ -83,10 +83,10 @@ Further titles may also be given in the same way, just without the classificatio
 ```crom
 top = Painting(art=1)
 top.label = "Self Portrait"
-ttl = PrimaryAppellation()
+ttl = PrimaryName()
 ttl.value = "Self Portrait"
 top.identified_by = ttl
-ttl2 = Appellation()
+ttl2 = Name()
 ttl2.value = "Portrait of the Artist"
 top.identified_by = ttl2
 ```
