@@ -52,6 +52,7 @@ Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
 LinguisticObject._uri_segment = "text"
 Appellation._uri_segment = "name"
+Name._uri_segment = "name"
 BeginningOfExistence._uri_segment = "event"
 EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
@@ -258,7 +259,7 @@ title: Index of Classes, Properties, Authorities
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
-		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf']:
+		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'la']:
 			g.bind(ns, ctxt[ns])
 		g.parse(data=nq, format="nt")
 		out = g.serialize(format="turtle")
