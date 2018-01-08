@@ -56,19 +56,19 @@ top.produced_by = prd
 
 ## Subject
 
-Subjects are the concepts or things that the artwork evokes, as opposed to an object (real or imaginary) that is depicted by the artwork.  For example, a portrait of a military commander in full regalia on a battlefield depicts the person and the place, but could be interpreted to have a subject of "war". An painting with an allusion to a piece of literature does not depict the literature, but instead evokes it. We use the property `subject` to reference the subject matter in an appropriate vocabulary.  The `subject` property could be thought of as _why_ the content in the artwork is present, or what the artwork is _about_ rather than what can be seen.
+Subjects are the concepts or things that the artwork evokes, as opposed to an object (real or imaginary) that is depicted by the artwork.  For example, a portrait of a military commander in full regalia on a battlefield depicts the person and the place, but could be interpreted to have a subject of "war". An painting with an allusion to a piece of literature does not depict the literature, but instead evokes it as a subject. This could be thought of as _why_ the content in the artwork is present, or what the artwork is _about_ rather than what can be seen.
+
+Given the use of the `VisualItem` pattern for depiction, we reuse the same pattern but instead of the image being a representation of the depicted resource, it is `about` the subject.
 
 ```crom
 top = Painting(art=1)
 top.label = "Portrait of Lord Nelson"
 concept = Type("http://vocab.getty.edu/aat/300055314")
 concept.label = "War"
-top.subject = concept  # dct:subject
+vi = VisualItem()
+top.shows = vi
+vi.about = concept
 ```
-
-!!! Note "Model uses predicate from outside of CIDOC-CRM"
-    The notion of subjects in CIDOC-CRM is a little more complex than above, as the physical object is not `about` the subject. Instead the conceptual work that the object is a representation of is about the subject.  In order to capture this distinction, the full model requires the object to carry an `InformationObject` or `VisualItem` representing the work, which is in turn `about` the concept.
-    In order to be consistent with Depiction above, and Style/Genre below, we instead use a shortcut property of `dcterms:subject`.
 
 ## Style
 
