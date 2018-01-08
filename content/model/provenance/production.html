@@ -48,6 +48,25 @@ who.label = "Copyist"
 top.carried_out_by = who
 ```
 
+### Creation from an Identifiable Source
+
+Photograph from negative, print from plate, sculpture from a cast.  All show the same visual item.  Other Photographs printed from the same negative show the same visual item. used_specific_object is how to know which is the source.
+
+```crom
+top = Production()
+top.label = "Printing of Photograph"
+what = Photograph()
+what.label = "Photograph"
+negative = ManMadeObject() # This should be Negative()
+negative.label = "Negative"
+top.used_specific_object = negative
+vi = VisualItem()
+vi.label = "Visual Content of Photographs and Negative"
+what.shows = vi
+negative.shows = vi
+```
+
+
 ### Roles / Techniques
 
 If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as a classification of the activity.

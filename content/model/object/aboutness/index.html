@@ -37,15 +37,18 @@ top.related = p2
 
 ## Depiction
 
-Many sorts of artwork depict things that can be pointed out in the artwork. These could be identifiable entities, such as a known Person or Object with a name or identifier, or unidentifiable (perhaps fictional) instances of a class of entity, such as a depiction of a battle but not any particular battle.  For example a portrait depicts the person sitting for it, or a sketch of a generic landscape depicts a place even if it's not a particular, known location. The `depicts` property captures _what_ is depicted in the artwork. 
+Many sorts of artwork depict things that can be pointed out in the artwork. These could be identifiable entities, such as a known Person or Object with a name or identifier, or unidentifiable (perhaps fictional) instances of a class of entity, such as a depiction of a battle but not any particular battle.  For example a portrait depicts the person sitting for it, or a sketch of a generic landscape depicts a place even if it's not a particular, known location. 
 
+The model uses a `VisualItem` resource to stand for the visual content of the object, be it a painting, photograph or statue.  The object `shows` the `VisualItem`, which in turn `represents` the things depicted. This is the same model as for [digital images](../digital/) of the object. 
 
 ```crom
 top = Painting(art=1)
 top.label = "Self Portrait"
 who = Actor()
 who.label = "Artist"
-top.depicts = who 
+vi = VisualItem()
+top.shows = vi
+vi.represents = who 
 prd = Production()
 prd.carried_out_by = who
 top.produced_by = prd
