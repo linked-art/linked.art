@@ -25,7 +25,7 @@ top.representation = img
 
 ## Home Page
 
-Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to an `InformationObject` which is `classified_as` a web page, or _aat:300264578_ as well as being preferred (_aat:300404670_).  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
+Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to a `LinguisticObject` which is `classified_as` a web page, or _aat:300264578_ as well as being preferred (_aat:300404670_).  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
 
 ```crom
 top = Painting(art=1)
@@ -39,7 +39,7 @@ top.subject_of = page
 
 ## Other Pages
 
-While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being an `InformationObject`, but without the preferred classification.
+While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being a `LinguisticObject`, but without the preferred classification.
 
 ```crom
 top = Painting(art=1)
@@ -69,7 +69,7 @@ top.representation = img
 
 ### IIIF Manifests 
 
-The [IIIF Presentation API](http://iiif.io/api/presentation/) in CRM can be considered an Information Object that is about the object.  The property used to refer to it from the art object is `subject_of`.  It `conformsTo` the Presentation API URI, but can be given a `format` for JSON-LD that includes the context as a profile.
+The [IIIF Presentation API](http://iiif.io/api/presentation/) in CRM can be considered an `InformationObject` that is about the object.  The property used to refer to it from the art object is `subject_of`.  It `conformsTo` the Presentation API URI, but can be given a `format` for JSON-LD that includes the context as a profile.
 
 ```crom
 top = Painting(art=1)
