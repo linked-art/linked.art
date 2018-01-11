@@ -116,7 +116,7 @@ top.spatially_within = city
 !!! note "Use of Gazeteers"
     It is preferable to rely on linked controlled vocabulary systems that include hierarchies whenever possible, rather than duplicating the geographical structure into the metadata of other resources.
 
-### Information Objects
+### Information / Linguistic Objects
 
 CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
 
@@ -131,9 +131,9 @@ __Example:__
 The content of the first ledger from a dealer's records contains the content of the first row of that ledger.
 
 ```crom
-top = InformationObject()
+top = LinguisticObject()
 top.label = "Content of Ledger 1"
-row = InformationObject(top.id + "/part/1")
+row = LinguisticObject(top.id + "/part/1")
 row.label = "Content of Row 1"
 top.includes = row
 ```
