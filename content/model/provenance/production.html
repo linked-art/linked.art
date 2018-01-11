@@ -48,6 +48,26 @@ who.label = "Copyist"
 top.carried_out_by = who
 ```
 
+### Reproduction from an Identifiable Source
+
+Many objects are created from a source, such as a photograph being printed from a negative, a print created from a woodcut, or a sculpture made from a cast.  The use of the particular source can be captured as part of the description of the `Production` of the object using the `used_specific_object` property.
+
+All of the art objects created from the same source show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects, including the source object, show. This allows us to group the objects together based on their provenance.
+
+```crom
+top = Production()
+top.label = "Printing of Photograph"
+what = Photograph()
+what.label = "Photograph"
+negative = Negative()
+negative.label = "Negative"
+top.used_specific_object = negative
+vi = VisualItem()
+vi.label = "Visual Content of Photographs and Negative"
+what.shows = vi
+negative.shows = vi
+```
+
 ### Roles / Techniques
 
 If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as a classification of the activity.

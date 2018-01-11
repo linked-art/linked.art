@@ -22,7 +22,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
-	Sculpture, Description, Width, Height, DimensionStatement, \
+	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
@@ -130,8 +130,11 @@ aat_labels = json.loads(data)
 def fetch_aat_label(what):
 	url = what.replace("aat:", "http://vocab.getty.edu/aat/")
 	url += ".jsonld"
-	resp = requests.get(url)
-	aatjs = json.loads(resp.text)
+	try:
+		resp = requests.get(url)
+		aatjs = json.loads(resp.text)
+	except:
+		return ""
 	prefs = aatjs[0]["http://www.w3.org/2004/02/skos/core#prefLabel"]
 	label = ""
 	for p in prefs:
@@ -195,7 +198,7 @@ title: Index of Classes, Properties, Authorities
 
 """
 		lines = [top]
-
+ 
 		lines.append("## Class Index")
 		its = self.class_hash.items()
 		its.sort()

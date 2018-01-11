@@ -265,7 +265,7 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "shows_visual_item": {
+    "shows": {
       "@id": "crm:P65_shows_visual_item", 
       "@type": "@id", 
       "@container": "@set"
