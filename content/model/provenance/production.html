@@ -48,16 +48,18 @@ who.label = "Copyist"
 top.carried_out_by = who
 ```
 
-### Creation from an Identifiable Source
+### Reproduction from an Identifiable Source
 
-Photograph from negative, print from plate, sculpture from a cast.  All show the same visual item.  Other Photographs printed from the same negative show the same visual item. used_specific_object is how to know which is the source.
+Many objects are created from a source, such as a photograph being printed from a negative, a print created from a woodcut, or a sculpture made from a cast.  The use of the particular source can be captured as part of the description of the `Production` of the object using the `used_specific_object` property.
+
+All of the art objects created from the same source show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects, including the source object, show. This allows us to group the objects together based on their provenance.
 
 ```crom
 top = Production()
 top.label = "Printing of Photograph"
 what = Photograph()
 what.label = "Photograph"
-negative = ManMadeObject() # This should be Negative()
+negative = Negative()
 negative.label = "Negative"
 top.used_specific_object = negative
 vi = VisualItem()
@@ -65,7 +67,6 @@ vi.label = "Visual Content of Photographs and Negative"
 what.shows = vi
 negative.shows = vi
 ```
-
 
 ### Roles / Techniques
 
