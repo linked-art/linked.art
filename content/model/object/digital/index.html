@@ -12,12 +12,12 @@ It is very unlikely that the descriptions provided in this model are the only di
 
 ## Image 
 
-The most common scenario is if there are one or more images available of the object. This is described by using the `representation` property, which has a `VisualItem` as its value. The `id` of the image is the URI at which it is available, and additional properties to describe the image should also be given, such as a `label` and its media type (sometimes called a MIME type) in `format`. 
+The most common scenario is if there are one or more images available of the object. This is described by using the `representation` property, which has a `VisualItem` as its value. The `id` of the image is the URI at which it is available, and additional properties to describe the image should also be given, such as a `label` and its media type (sometimes called a MIME type) in `format`. The digital image should be classified as such using _aat:300215302_.
 
 ```crom
 top = Painting(art=1)
 top.label = "Painting"
-img = VisualItem("http://example.org/images/image.jpg")
+img = DigitalImage("http://example.org/images/image.jpg")
 img.label = "Image of Painting"
 img.format = "image/jpeg"
 top.representation = img
