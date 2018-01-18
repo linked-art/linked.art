@@ -1,0 +1,138 @@
+---
+title: Texts and Documents
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+This section documents the model for documents that contain text, including artworks such as medieval manuscripts, archival material such as letters, ledgers or diaries, scholarly communication such as journals, articles and monographs, digital objects such as web pages, or any other sort of written communication.
+
+The intent is not to be an all-encompassing model that would be suitable for a graph based library management system, archival finding aids, or catalog of any digital resource, but instead to provide sufficient description that the object is identified, understandable and able to be referenced within other more specific systems and ontologies.  This model is intended to be enough to use for the basic use cases of referencing texts that are related to artwork, regardless of whether they are held in a library, archive, museum, or on the internet.
+
+## Physical Objects, Conceptual Texts
+
+The first distinction that is needed is between the physical carrier of the text, and the text itself.  Like the `VisualItem` pattern for the [artwork's visual content shown by objects](/model/object/aboutness/#depiction), the `LinguisticObject` that represents the text of a work can be `carried` by many `ManMadeObject`s.  In this way, all of the copies of a particular book carry the same information content, that only needs to be described once and can act as a single connection point.
+
+Like other LinguisticObjects, it can have a `value` for the actual text of the work, classifications, languages and so forth.
+
+```crom
+top = vocab.Book()
+top.label = "Physical Book"
+li = LinguisticObject()
+li.label = "Textual content of the Book"
+li.value = "Once upon a time, ..."
+top.carries = li
+```
+
+## Core Features
+
+The same core features of all other resources are also applicable to the `LinguisticObject`s used to represent texts.  They must have an `id` and `type`, they should have a `label`, they should have a `classified_as` relationship to a `Type` that further describes the sort of object, and so forth.
+
+The title of a text is captured using the `Name` pattern, and assigned identifiers using the `Identifier` pattern, referenced with the `identified_by` relationship.
+
+```crom
+top = vocab.Article()
+top.label = "Example Article"
+title = Name()
+title.value = "Title of Article"
+id = Identifier()
+id.label = "DOI of Article"
+id.value = "10.1000/1011"
+top.identified_by = title
+top.identified_by = id
+```
+
+
+## Creation and Publication
+
+The production of the physical carriers of texts uses the same model as for other physical objects, and may be of interest for manuscripts, very early printed works (incunabula), letters or other similar documents, however the factory details for a specific modern book are likely of much less importance to capture.
+
+There are two primary text-specific activities that are captured -- the creation of the text, being the conceptual `LinguisticObject` and its publication.  The text is created by a `Creation` activity of the author, but then there is a publishing `Activity` (_aat:300054686_) carried out by the publishing organization, for the same resource. 
+
+```crom
+top = vocab.Article()
+top.label = "Example Journal Article"
+cre = model.Creation()
+cre.label = "Creation of the Article Content"
+author = Person()
+author.label = "Author"
+cre.carried_out_by = author
+top.created_by = cre
+pub = vocab.Publishing()
+publr = Group()
+publr.label = "Publishing House"
+pub.carried_out_by = publr
+top.used_for = pub
+```
+
+
+## Structure
+
+The textual structure can be modeled with the partitioning of `LinguisticObject`s via the `includes` property, in the same way that the parts of a physical object can be described using the `part` property.  Thus the content of an Article can be included in the containing Issue, which is included within a Volume, which is within the Journal or other periodical.  Similarly Chapters can be included within a Book or Proceedings, particular entries within a catalog, and so forth. 
+
+```crom
+top = vocab.Monograph()
+top.label = "Example Monograph Text"
+chap = vocab.Chapter()
+chap.label = "Chapter 1"
+chap2 = vocab.Chapter()
+chap2.label = "Chapter 2"
+top.includes = chap
+top.includes = chap2
+```
+
+## Pages
+
+Textual content is typically presented on pages or folios. As there might be many physical copies with the same structure, it is common to describe the pagination of the content as it applies to the content in general, rather than the many physical objects that carry that content.  Pagination (_aat:300200294_) or Foliation (_aat:300200662_) statements are the most common way to represent this, as simple descriptive fields following the core statement pattern. For uncomplicated, machine readable pagination values, it is possible create a pair of start and end Dimensions.
+
+### Pagination Statement
+
+The easiest way to describe the page range of a particular section of a larger collection is with a pagination statement.  The disadvantage of the approach is that it is not computationally available for processing.
+
+```crom
+top = vocab.Article()
+top.label = "Example 10 page Article"
+pag = vocab.PaginationStatement()
+pag.value = "125-135"
+top.referred_to_by = pag
+```
+
+### Page Dimensions
+
+Alternatively, if the pagination is a single range with known start and end page numbers, it can be expressed as two `Dimension` objects.
+
+```crom
+# XXX These need to be sourced from elsewhere
+startType = Type()
+startType.label = "Start page"
+endType = Type()
+endType.label = "End page"
+unit = MeasurementUnit()
+unit.label = "Page Numbers"
+
+top = vocab.Article()
+top.label = "Example 10 page Article"
+start = Dimension()
+start.value = 125
+start.classified_as = startType
+start.unit = unit
+end = Dimension()
+end.value = 135
+end.classified_as = endType
+end.unit = unit
+top.dimension = start
+top.dimension = end
+```
+
+!!! warning "Vocabulary Needed"
+    As this is not something that has typically been part of CRM, nor other art related ontologies, the Dimension class is not ideal for the mapping and there aren't obvious classifications for the start or end Dimensions, nor the unit of page numbers.  This part of the model should be considered at risk for change or removal.
+
+
+## Abstracts
+
+## Links
+
+
+
+

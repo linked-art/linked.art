@@ -8,6 +8,20 @@ It is useful to have some common baseline patterns to follow when using a very o
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
 
+## Core Properties
+
+There are a few core properties that every resource should have for it to be a useful part of the world of Linked Open Data:
+
+* `id` captures the URI that identifies the object.  Every resource must have exactly one id, and it must be an HTTP URI.
+* `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
+* `label` captures a human readable label for the object as a string.  Every resource should have exactly one label.
+
+
+```crom
+top = ManMadeObject()
+top.label = "Example Object"
+```
+
 ## Types / Classifications
 
 The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate `crm:P2_has_type`, referred to as `classified_as` in the JSON-LD representation. The semantics of `crm:P2_has_type` are thus closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".
