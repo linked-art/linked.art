@@ -149,3 +149,15 @@ abstr.label = "Example Abstracter"
 cre.carried_out_by = abstr
 top.created_by = cre
 ```
+
+## References to other Resources
+
+Textual content can `refer_to` other resources in the overall model. These references might be just that the content discusses the resource, such as a mention of a particular painting.  Equally, the reference might be that the content was used as the evidence for the resource, such as a Materials Statement being the evidence for the Materials in the model that the painting is asserted to be `made_of`. 
+
+```crom
+top = vocab.Article()
+top.label = "Article about Example Painting"
+what = Painting(art=1)
+what.label = "Example Painting"
+top.refers_to = what
+```
