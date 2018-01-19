@@ -10,6 +10,8 @@ This section documents the model for documents that contain text, including artw
 
 The intent is not to be an all-encompassing model that would be suitable for a graph based library management system, archival finding aids, or catalog of any digital resource, but instead to provide sufficient description that the object is identified, understandable and able to be referenced within other more specific systems and ontologies.  This model is intended to be enough to use for the basic use cases of referencing texts that are related to artwork, regardless of whether they are held in a library, archive, museum, or on the internet.
 
+Notably, it does not attempt to reproduce the formalisms of [FRBR](https://www.ifla.org/node/2016), as manifested by [FRBRoo](https://www.ifla.org/publications/node/11240) or [BibFrame](http://www.loc.gov/bibframe/docs/index.html), or other conceptual hierarchies, but instead provide as simple as possible a model to accomplish core bibliographic reference tasks. 
+
 ## Physical Objects, Conceptual Texts
 
 The first distinction that is needed is between the physical carrier of the text, and the text itself.  Like the `VisualItem` pattern for the [artwork's visual content shown by objects](/model/object/aboutness/#depiction), the `LinguisticObject` that represents the text of a work can be `carried` by many `ManMadeObject`s.  In this way, all of the copies of a particular book carry the same information content, that only needs to be described once and can act as a single connection point.
@@ -100,7 +102,7 @@ top.referred_to_by = pag
 
 ### Page Dimensions
 
-Alternatively, if the pagination is a single range with known start and end page numbers, it can be expressed as two `Dimension` objects.
+Alternatively, if the pagination is a single range with known start and end page numbers, it can be expressed as two `Dimension` objects.  Dimensions are the only way to express non time-based values in CRM, so while this may feel like an unnatural fit, the alternative is custom classes and relationships.  It must be noted that neither FRBRoo nor BibFrame have the concept of pagination in a machine readable context.
 
 ```crom
 # XXX These need to be sourced from elsewhere
@@ -131,8 +133,18 @@ top.dimension = end
 
 ## Abstracts
 
-## Links
+While the full text of the `LinguisticObject` may be either too long to provide, or protected by publication and access restrictions, it is common for an abstract to be published and circulated openly.  This abstract might be provided by some other actor than the author of the content, such as via an abstracting and indexing service.  In this case, the Abstract would have its own separate `Creation` activity from that of the abstracted content.
 
-
-
-
+```crom
+top = vocab.Abstract()
+top.label = "Abstract of Example Article"
+top.value = "This is the abstract of the example article, which is excellent."
+art = vocab.Article()
+art.label = "Example Article"
+top.refers_to = art
+cre = model.Creation()
+abstr = Person()
+abstr.label = "Example Abstracter"
+cre.carried_out_by = abstr
+top.created_by = cre
+```
