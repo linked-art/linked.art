@@ -7,7 +7,7 @@ rm -rf .site/*
 rm content/example/activity/*
 rm content/example/group/*
 rm content/example/identifier/*
-rm content/example/info/*
+rm content/example/text/*
 rm content/example/object/*
 rm content/example/person/*
 rm content/example/place/*

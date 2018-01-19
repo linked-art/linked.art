@@ -102,7 +102,7 @@ top.referred_to_by = pag
 
 ### Page Dimensions
 
-Alternatively, if the pagination is a single range with known start and end page numbers, it can be expressed as two `Dimension` objects.  Dimensions are the only way to express non time-based values in CRM, so while this may feel like an unnatural fit, the alternative is custom classes and relationships.  It must be noted that neither FRBRoo nor BibFrame have the concept of pagination in a machine readable context.
+Alternatively, if the pagination is a single range with known start and end page numbers, it can be expressed as two `Dimension` objects.  Dimensions are the only way to express non time-based values in CRM, so while this may feel like an unnatural fit, the alternative is custom classes and relationships.  It must be noted that neither FRBRoo nor BibFrame have the concept of pagination in a machine readable context.  If the text is non-contiguous (such as an article with a supplemental at the end of the issue), then there should be `LinguisticObject`s created for both sections, each of which has their own pair of page numbers.
 
 ```crom
 # XXX These need to be sourced from elsewhere
@@ -129,6 +129,7 @@ top.dimension = end
 
 !!! warning "Vocabulary Needed"
     As this is not something that has typically been part of CRM, nor other art related ontologies, the Dimension class is not ideal for the mapping and there aren't obvious classifications for the start or end Dimensions, nor the unit of page numbers.  This part of the model should be considered at risk for change or removal.
+    An alternative model would be to allow parts to be ordered, and then model the first page, plus a number of parts that would follow that.  The first page would then have an `Identifier` of the page number, from which the end page could be calculated.
 
 
 ## Abstracts
