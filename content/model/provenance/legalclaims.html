@@ -1,0 +1,75 @@
+---
+title: Legal Issues of Ownership
+up_href: "/model/provenance/"
+up_label: "Provenance"
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of shared ownership of an object, contested ownership, looting, theft and subsequent sale of the stolen object, as well as other legal claims such as copyright or restricted rights of reproduction. 
+
+## Claims of Rights
+
+In order to describe these situations, we introduce a new class called 'LegalClaim'.  This Claim is for a particular `Right`, such as ownership or copyright, and is claimed by an `Actor` within a legal jurisdiction modeled as a `Place`.  This class can then be used to describe any claim, valid or not, of any right.  
+
+The Claim is a Man Made Thing, rather than the activity of asserting the claim.  As such it can be created and destroyed.  It is not a physical thing, although there may be physical evidence such as a contract described using other parts of the model.  It is also not the same as a `ConceptualObject` which cannot be destroyed once conceived. It is the beginning and ending of the Claim that gives the period of asserted validity, rather than as properties of the Claim itself.
+
+The `Right` that is instantiated by the Claim is then associated with the object for which it applies, and is consistently used for all claims of that type for the object.  Thus, the basic Claim model has the following structure:
+
+```crom
+top = LegalClaim()
+top.label = "Claim of Ownership"
+right = Right()
+right.label = "Ownership right for Example Painting"
+who = Person()
+who.label = "Owner of Example Painting"
+what = Painting()
+what.label = "Example Painting"
+where = Place()
+where.label = "Legal jurisdiction of Claim"
+top.instantiates = right
+right.applies_to = what
+top.claimed_by = who
+top.jurisdiction = where
+```
+
+### Why isn't this just an E30 Right?
+
+!!! warning "CIDOC-CRM Arcana"
+    You almost certainly do not want to read this section.  [Just skip ahead](#multiple-owners).
+
+Okay... the basic problem with E30 Right is that it is a Conceptual Object, and Conceptual Objects cannot be destroyed.  While there is any carrier of the object, including the CIDOC-CRM description of it, or even within someone's memory, then the concept still exists somewhere.  As it cannot be written down without persisting it, it cannot be destroyed, it can simply pass out of all knowledge.  This means that the existence of the Right is not the same as the validity of the Right.  It means that for every combination of Right+Object+Actor, there are many instances, all of which exist at the same time. There are no terms within the CRM to express the effective dates, and the CRM-SIG clarified that the right's effectiveness would be a different sort of resource.  In particular that an E30 Right "is the formulation of the right, the terms", and not whether the right had any legal standing in any jurisdiction at any point in time. Beyond the lack of effective dates, there is no way to distinguish jurisdiction or legal code under which the right would exist, if it was ever in force. The discussion of the SIG was inconclusive as to whether a Right can be conceived by anyone, or only by Actors with the potential to make them legally enforcable even if they never do so. In other words, if I conceive of the terms of a Right of ownership, that applies to the Mona Lisa, and is possessed by myself ... is that an E30 Right, or is it just a Conceptual Object that quacks like a Right. 
+
+Regardless of the exact definition of E30, CIDOC-CRM lacks the expressiveness to state what is required. There was little enthusiasm in the SIG to take up the modeling effort, despite some reasonable suggestions from several parties. As such we have added this extension to allow the description of effective rights, not just conceptual ones.  If you're not convinced, you can read [the email thread that starts here](http://lists.ics.forth.gr/pipermail/crm-sig/2017-August/003045.html).
+
+
+## Multiple Owners
+
+The change in ownership might involve more than two parties, resulting in a state where multiple actors together own some part of the object.  Examples of this situation include when art dealers share the costs of purchasing an object and then share the proceeds of sale in the same proportions, when a donor gives part of the value of an object to an institution, or when a marriage is dissolved and the value of the object is split between the individuals.
+
+The base provenance model does not allow for the ownership to be transferred to multiple actors, and even if it did, it would be impossible to then determine the share of the value that was owned by each party.  The additions to the base provenance model described here accommodate cases in which the proportion of ownership can be split unevenly and can change over time.
+
+
+
+
+In order to allow for the description of different proportions of the object to be owned bu different actors, we need to introduce a new resource to represent the Ownership that can be then partitioned into shares to be divided among the parties.  The model uses a new `LegalClaim` object for describing legal privileges, which can in turn have components.  These components are themselves `LegalClaims`s that are claimed by the actors.
+
+
+The use of `Right` lets us describe the Ownership as an entity, and thus assert both relationships (the individual shares are part of the larger ownership) and properties, such as extent. In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership.  
+
+At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
+
+If it is necessary to track these individual shares, the top level `Right` must be discoverable from the `Acquisition` of the object.  As the Right is specific to the object and the group of owners, it is `brought_into_effect` as part of the `Acquisition` activity.  Before the Acquisition the Right existed as a concept, but it had no legal authority.
+
+
+### End of Effectiveness of Rights
+
+If the parties involved in ownership change, then the Right is no longer in effect, as it is `possessed_by` the particular group. Thus when there is another transfer of title of the object, then the effectiveness of the previous right of ownership ends.  This is conveyed with the `took_out_of_effect` relationship from the Acquisition to the previous Right.  This pattern includes when the ownership group shrinks as the share of one owner is transferred amongst the remaining owners, as the set of owners before and after are different, and thus different `Group`s.  
+
+## Transfer of Shares Amongst Owners
+
+In some situations, the set of owners does not change, however they trade the proportion of ownership of the object amongst themselves.  Two scenarios in which this occurs are when a group of dealers value without trading stock, and when individuals make partial gifts over time to a museum or other organization.
+
+As the owners do not change, there is no new Group to own the object, and thus there is no transfer of title via an `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the Right of ownership.  Rather than try to manage the reassignment of the dimensions with the existing shares, instead a new ownership Right is brought into effect with shares that include the new proportions, and the previous Right's effect ends.  This process likely also includes other transfers, perhaps of currency via a Payment.  The end of the previous Right, the beginning of the new one, and any further exchanges are part of a transfer `Activity`.
