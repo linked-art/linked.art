@@ -72,6 +72,42 @@ paymt.paid_amount = amt
 top.consists_of = paymt
 ```
 
+### Multiple Owners
+
+In some circumstances, the same object can be owned by multiple parties at the same time.  For example, art dealers will pool resources in order to purchase an expensive object and later share the proceeds of sale amongst themselves, or informal groups of individuals contributing to a purchase, where there isn't a legal entity that becomes the sole owner.
+
+In these cases, there are simply multiple buyers or sellers for the `Purchase`. The object is owned by all of the individuals, and it is unknown as to whether the ownership is evenly distributed or not. Similarly the multiple actors working together might make a payment for the object, and it is unknown how much each actor contributed to the total.  It does not imply that each actor made the payment, that would be described as two separate `Payment` activities, one from each.
+
+For situations where the division of ownership is known (likely based on the division of payment), please [see the section on legal claims of rights](legalclaims.html).
+
+```crom
+top = Purchase()
+top.label = "Purchase of the Example Painting by two Art Dealers"
+seller = Actor()
+seller.label = "Seller"
+what = Painting(art=1)
+what.label = "Example Painting"
+d1 = Group()
+d1.label = "Art Dealership 1"
+d2 = Group()
+d2.label = "Art Dealership 2"
+top.transferred_title_of = what
+top.transferred_title_from = seller
+top.transferred_title_to = d1
+top.transferred_title_to = d2
+paymt = Payment()
+paymt.paid_from = d1
+paymt.paid_from = d2
+paymt.paid_to = seller
+amt = MonetaryAmount()
+amt.value = 1000
+curr = Currency()
+curr.label = "dollars"
+amt.currency = curr
+paymt.paid_amount = amt
+top.consists_of = paymt
+```
+
 ### Auctions
 
 The individual purchase that is the result of auctioning an object is the same as the above model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions.html). 
@@ -108,25 +144,4 @@ top.timespan = when
 
 ### Theft
 
-Objects can change hands illegally with the activity being performed by the recipient of the object, such as theft (_aat:300055292_) or looting.  This is not an `Acquisition` or transfer of ownership, as the legal owner does not change. If the object were to be recovered, it would be returned to the owner.
-
-```crom
-top = Theft()
-top.label = "Theft of Painting"
-what = Painting(art=1)
-what.label = "Example Stolen Painting"
-top.transferred_custody_of = what
-who = Person()
-who.label = "Owner"
-top.transferred_custody_from = who
-who = Person()
-who.label = "Unknown Thief"
-top.transferred_custody_to = who
-when = TimeSpan()
-when.label = "Time of Theft"
-when.begin_of_the_begin = "1940-07-10T00:00:00Z"
-when.end_of_the_end = "1940-07-11T00:00:00Z"
-```
-
-!!! warning "Sale of Stolen Items"
-	A concern with this model (which strictly follows CIDOC-CRM) is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody in exchange for payment.  If the stolen and fenced object were recovered, it would still go back to the real owner.  Which is okay, if it is known that the object was stolen.  If not, then the data would incorrectly record it as a sale, which is an Acquisition (a transfer of ownership, not custody).  In a distributed environment, where different data sources contribute to the overall provenance record, aggregating systems should be aware of this possibility and not accept the custody/ownership distinction without consideration of prior events.
+Theft, looting and other illegal acquisitions are now covered more accurately under the [legal claims](legalclaims.html) pattern.  While CIDOC-CRM recommends the use of a Transfer of Custody as legal ownership does not change, just who is in possession of the object, there are serious drawbacks to this approach.  Notably when a stolen item is sold to an unwitting buyer, there is no outward appearance that there is anything untoward.  The ability to classify a legal claim as valid or invalid resolves this conundrum.
