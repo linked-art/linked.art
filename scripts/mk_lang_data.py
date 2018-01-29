@@ -31,11 +31,10 @@ items = languages.items()
 items.sort(key = lambda x: x[1]['name'])
 
 ctxt = OrderedDict()
-
-ctxt['aat_vocab'] = aat_uri
+ctxt['@context'] = {}
 
 for (uri, h) in items:
-	ctxt[h['code']] = uri
+	ctxt['@context'][h['code']] = uri
 
 context = json.dumps(ctxt, indent=2)
 fh = open('../content/ns/v1/languages.json', 'w')
