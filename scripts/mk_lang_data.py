@@ -12,8 +12,6 @@ results = data['results']['bindings']
 
 languages = {}
 
-
-
 for res in results:
 	uri = res['x']['value']
 	code = res['code']['value']
@@ -33,10 +31,20 @@ items.sort(key = lambda x: x[1]['name'])
 ctxt = OrderedDict()
 ctxt['@context'] = {}
 
+table = [ "Language | Identifier | Code ", "-------- | ---------- | ---- "]
+
 for (uri, h) in items:
 	ctxt['@context'][h['code']] = uri
+	aat = uri.replace(aat_uri, "aat:")
+	table.append(" %s | [%s](%s) | %s " % ( h['name'], aat, uri, h['code']))
 
 context = json.dumps(ctxt, indent=2)
 fh = open('../content/ns/v1/languages.json', 'w')
 fh.write(context)
+fh.close()
+
+tablestr = u'\n'.join(table)
+tablestr = tablestr.encode('UTF-8')
+fh = open('../content/_include/language_key_map.md', 'w')
+fh.write(tablestr)
 fh.close()
