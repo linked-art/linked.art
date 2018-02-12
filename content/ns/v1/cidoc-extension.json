@@ -44,12 +44,10 @@
     "Collection": "crm:E78_Collection", 
     "PartAddition": "crm:E79_Part_Addition", 
     "PartRemoval": "crm:E80_Part_Removal", 
-    "Transformation": "crm:E81_Transformation", 
     "ActorAppellation": "crm:E82_Actor_Appellation", 
     "TypeCreation": "crm:E83_Type_Creation", 
     "InformationCarrier": "crm:E84_Information_Carrier", 
     "CurationActivity": "crm:E87_Curation_Activity", 
-    "PropositionalObject": "crm:E89_Propositional_Object", 
     "SymbolicObject": "crm:E90_Symbolic_Object", 
     "SpacetimeVolume": "crm:E92_Spacetime_Volume", 
     "Presence": "crm:E93_Presence", 
@@ -342,14 +340,6 @@
       "@id": "crm:P71i_is_listed_in", 
       "@type": "@id"
     }, 
-    "translation": {
-      "@id": "crm:P73_has_translation", 
-      "@type": "@id"
-    }, 
-    "translation_of": {
-      "@id": "crm:P73i_is_translation_of", 
-      "@type": "@id"
-    }, 
     "current_or_former_residence": {
       "@id": "crm:P74_has_current_or_former_residence", 
       "@type": "@id"
@@ -553,7 +543,7 @@
       "@id": "crm:P117_occurs_during", 
       "@type": "@id"
     }, 
-    "includes": {
+    "temporally_includes": {
       "@id": "crm:P117i_includes", 
       "@type": "@id"
     }, 
@@ -579,22 +569,6 @@
     }, 
     "borders_with": {
       "@id": "crm:P122_borders_with", 
-      "@type": "@id"
-    }, 
-    "resulted_in": {
-      "@id": "crm:P123_resulted_in", 
-      "@type": "@id"
-    }, 
-    "resulted_from": {
-      "@id": "crm:P123i_resulted_from", 
-      "@type": "@id"
-    }, 
-    "transformed": {
-      "@id": "crm:P124_transformed", 
-      "@type": "@id"
-    }, 
-    "transformed_by": {
-      "@id": "crm:P124i_was_transformed_by", 
       "@type": "@id"
     }, 
     "used_object_of_type": {
@@ -669,10 +643,6 @@
       "@id": "crm:P137i_is_exemplified_by", 
       "@type": "@id"
     }, 
-    "alternative_form": {
-      "@id": "crm:P139_has_alternative_form", 
-      "@type": "@id"
-    }, 
     "used_constituent": {
       "@id": "crm:P142_used_constituent", 
       "@type": "@id"
@@ -688,16 +658,6 @@
     "curated_by": {
       "@id": "crm:P147i_was_curated_by", 
       "@type": "@id"
-    }, 
-    "component": {
-      "@id": "crm:P148_has_component", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "component_of": {
-      "@id": "crm:P148i_is_component_of", 
-      "@type": "@id", 
-      "@container": "@set"
     }, 
     "concept_identified_by": {
       "@id": "crm:P149_is_identified_by", 
@@ -767,7 +727,7 @@
       "@id": "crm:P165_incorporates", 
       "@type": "@id"
     }, 
-    "included_in": {
+    "incorporated_by": {
       "@id": "crm:P165i_is_incorporated_in", 
       "@type": "@id"
     }, 

@@ -48,6 +48,7 @@
     "Transformation": "crm:E81_Transformation", 
     "Joining": "crm:E85_Joining", 
     "Leaving": "crm:E86_Leaving", 
+    "PropositionalObject": "crm:E89_Propositional_Object", 
     "MonetaryAmount": "crm:E97_Monetary_Amount", 
     "Currency": "crm:E98_Currency", 
     "Payment": "la:Payment", 
@@ -302,6 +303,16 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "translation": {
+      "@id": "crm:P73_has_translation", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "translation_of": {
+      "@id": "crm:P73i_is_translation_of", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
     "possesses": {
       "@id": "crm:P75_possesses", 
       "@type": "@id", 
@@ -475,6 +486,11 @@
     }, 
     "representation": {
       "@id": "crm:P138i_has_representation", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "alternative_form": {
+      "@id": "crm:P139_has_alternative_form", 
       "@type": "@id", 
       "@container": "@set"
     }, 
