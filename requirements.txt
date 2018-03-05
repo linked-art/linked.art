@@ -6,4 +6,5 @@ pymdown_extensions
 rdflib
 pyld
 requests
+lxml
 

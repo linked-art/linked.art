@@ -1,0 +1,45 @@
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/LegalClaim/1> a la:LegalClaim ;
+    rdfs:label "Claim of Ownership" ;
+    crm:P92i_was_brought_into_existence_by <https://linked.art/example/event/4> ;
+    crm:P93i_was_taken_out_of_existence_by <https://linked.art/example/event/5> ;
+    la:claimed_by <https://linked.art/example/person/24> ;
+    la:instantiates <https://linked.art/example/Right/3> .
+
+<https://linked.art/example/Right/3> a crm:E30_Right ;
+    rdfs:label "Ownership right for Example Painting" ;
+    crm:P104i_applies_to <https://linked.art/example/object/80> .
+
+<https://linked.art/example/event/4> a crm:E63_Beginning_of_Existence ;
+    crm:P4_has_time-span <https://linked.art/example/time/15> .
+
+<https://linked.art/example/event/5> a crm:E64_End_of_Existence ;
+    crm:P4_has_time-span <https://linked.art/example/time/16> .
+
+<https://linked.art/example/object/80> a crm:E22_Man-Made_Object ;
+    rdfs:label "Example Painting" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300033618> .
+
+<https://linked.art/example/person/24> a crm:E21_Person ;
+    rdfs:label "Owner of Example Painting" .
+
+<https://linked.art/example/time/15> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1743-05-12T00:00:00" ;
+    crm:P82b_end_of_the_end "1743-05-13T00:00:00" .
+
+<https://linked.art/example/time/16> a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1821-11-27T00:00:00" ;
+    crm:P82b_end_of_the_end "1821-11-28T00:00:00" .
+
