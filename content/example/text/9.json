@@ -1,0 +1,37 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json", 
+  "id": "https://linked.art/example/text/9", 
+  "type": "LinguisticObject", 
+  "label": "Example Journal Article", 
+  "classified_as": [
+    "aat:300048715"
+  ], 
+  "used_for": [
+    {
+      "id": "https://linked.art/example/activity/8", 
+      "type": "Activity", 
+      "classified_as": [
+        "aat:300054686"
+      ], 
+      "carried_out_by": [
+        {
+          "id": "https://linked.art/example/group/8", 
+          "type": "Group", 
+          "label": "Publishing House"
+        }
+      ]
+    }
+  ], 
+  "created_by": {
+    "id": "https://linked.art/example/Creation/0", 
+    "type": "Creation", 
+    "label": "Creation of the Article Content", 
+    "carried_out_by": [
+      {
+        "id": "https://linked.art/example/person/17", 
+        "type": "Person", 
+        "label": "Author"
+      }
+    ]
+  }
+}
