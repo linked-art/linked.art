@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.cidoc-crm.org/cidoc-crm/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/">
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Payment">
+    <rdfs:label xml:lang="en">Payment</rdfs:label>
+    <rdfs:comment>Payment of Money</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/paid_amount">
+        <rdfs:label xml:lang="en">Paid Amount</rdfs:label>
+        <rdfs:comment xml:lang="en">The amount paid.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Payment"/>
+        <rdfs:range rdf:resource="E97_Monetary_Amount"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/paid_from">
+        <rdfs:label xml:lang="en">Paid From</rdfs:label>
+        <rdfs:comment xml:lang="en">Who the payment came from</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Payment"/>
+        <rdfs:range rdf:resource="E39_Actor"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/paid_to">
+        <rdfs:label xml:lang="en">Paid To</rdfs:label>
+        <rdfs:comment xml:lang="en">Who the payment went to</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Payment"/>
+        <rdfs:range rdf:resource="E39_Actor"/>
+</rdf:Property>
+
+<!-- Legal Claim / Property Interest -->
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/PropertyInterest">
+    <rdfs:label xml:lang="en">Property Interest</rdfs:label>
+    <rdfs:comment>A particular property interest, be it ownership or security, of intellectual or physical property </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E71_Man-Made_Thing"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/claimed_by">
+        <rdfs:label xml:lang="en">Claimed By</rdfs:label>
+        <rdfs:comment xml:lang="en">The actor that is claiming the property interest</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+        <rdfs:range rdf:resource="E39_Actor"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/jurisdiction">
+        <rdfs:label xml:lang="en">Jurisdiction</rdfs:label>
+        <rdfs:comment xml:lang="en">The jurisdiction under which the property interest is potentially enforceable</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+        <rdfs:range rdf:resource="E53_Place"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/claimed_under">
+    <rdfs:label xml:lang="en">Claimed under</rdfs:label>
+    <rdfs:comment xml:lang="en">The legal concept that the property interest is claimed under</rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+    <rdfs:range rdf:resource="E30_Right"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/interest_part">
+    <rdfs:label xml:lang="en">Interest Part</rdfs:label>
+    <rdfs:comment xml:lang="en">The object property interest is part of the subject property interest</rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/interest_part_of"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/interest_part_of">
+    <rdfs:label xml:lang="en">Interest Part Of</rdfs:label>
+    <rdfs:comment xml:lang="en">The subject property interest is part of the object     property interest</rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/PropertyInterest"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/interest_part"/>
+</rdf:Property>
+
+<!-- Reified Relationship class -->
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Relationship">
+    <rdfs:label xml:lang="en">Relationship</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E28_Conceptual_Object"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/related_to">
+        <rdfs:label xml:lang="en">related to</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Relationship"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/related_from">
+        <rdfs:label xml:lang="en">related from</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Relationship"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<!-- Merge Classes -->
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Name">
+    <rdfs:label xml:lang="en">Name</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E41_Appellation"/>
+    <rdfs:subClassOf rdf:resource="E33_Linguistic_Object"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/EndingActivity">
+    <rdfs:label xml:lang="en">EndingActivity</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E64_End_of_Existence"/>
+    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/BeginningActivity">
+    <rdfs:label xml:lang="en">Beginning Activity</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E63_Beginning_of_Existence"/>
+    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+</rdf:RDF>

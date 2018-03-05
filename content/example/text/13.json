@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json", 
+  "id": "https://linked.art/example/text/13", 
+  "type": "LinguisticObject", 
+  "label": "Example 10 page Article", 
+  "classified_as": [
+    "aat:300048715"
+  ], 
+  "referred_to_by": [
+    {
+      "id": "https://linked.art/example/text/14", 
+      "type": "LinguisticObject", 
+      "value": "125-135", 
+      "classified_as": [
+        "aat:300200294"
+      ]
+    }
+  ]
+}

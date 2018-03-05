@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.cidoc-crm.org/cidoc-crm/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/">
+
+<!-- 6.2.3 Classes Needed -->
+
+<rdfs:Class rdf:about="E97_Monetary_Amount">
+    <rdfs:label xml:lang="en">Monetary Amount</rdfs:label>
+    <rdfs:comment>This class comprises quantities of monetary possessions or obligations in terms of their nominal value with respect to a particular currency. These quantities may be abstract accounting units, the nominal value of a heap of coins or bank notes at the time of validity of the respective currency, the nominal value of a bill of exchange or other documents expressing monetary claims or obligations</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E54_Dimension"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="E98_Currency">
+    <rdfs:label xml:lang="en">Currency</rdfs:label>
+    <rdfs:comment>This class comprises the units in which a monetary system, supported by an administrative authority or other community, quantifies and arithmetically compares all monetary amounts declared in the unit. The unit of a monetary system must describe a nominal value which is kept constant by its administrative authority and an associated banking system if it exists, and not by market value. For instance, one may pay with grams of gold, but the respective monetary amount would have been agreed as the gold price in US dollars on the day of the payment. Under this definition, British Pounds, U.S. Dollars, and European Euros are examples of currency, but “grams of gold” is not. One monetary system has one and only one currency. Instances of this class must not be confused with coin denominations, such as “Dime” or “Sestertius”. Non-monetary exchange of value in terms of quantities of a particular type of goods, such as cows, do not constitute a currency.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E55_Type"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="P180_has_currency">
+    <rdfs:label xml:lang="en">has currency</rdfs:label>
+    <rdfs:comment xml:lang="en">This property establishes the relationship between an instance of E97 Monetary Amount and the currency that it is measured in.</rdfs:comment>
+    <rdfs:domain rdf:resource="E97_Monetary_Amount"/>
+    <rdfs:range rdf:resource="E98_Currency"/>
+    <rdfs:subPropertyOf rdf:resource="P91_has_unit"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P181_has_amount">
+    <rdfs:label xml:lang="en">has amount</rdfs:label>
+    <rdfs:comment xml:lang="en">This property establishes the relationship between an instance of E97 Monetary Amount and the amount of currency that it consists of.</rdfs:comment>
+    <rdfs:domain rdf:resource="E97_Monetary_Amount"/>   
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="P90_has_value"/>
+</rdf:Property>
+
+<!-- These redefine external classes and properties in relation to CRM -->
+<!-- All care has been taken in this mapping to avoid introducing semantics -->
+<!-- where non existed previously -->
+
+<rdf:Property rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
+  <rdfs:label>value</rdfs:label>
+  <rdfs:comment>Idiomatic property used for structured values.</rdfs:comment>
+  <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+  <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+  <rdfs:label>label</rdfs:label>
+  <rdfs:comment>A human-readable name for the subject.</rdfs:comment>
+  <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
+
+<!-- ore:Aggregation as collection / set -->
+
+<rdfs:Class rdf:about="http://www.openarchives.org/ore/terms/Aggregation">
+    <rdfs:label xml:lang="en">Aggregation</rdfs:label>
+    <rdfs:comment>ORE Aggregation is a conceptual collection of resources.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E28_Conceptual_Object"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="http://www.openarchives.org/ore/terms/aggregates">
+        <rdfs:label xml:lang="en">aggregates</rdfs:label>
+        <rdfs:comment xml:lang="en">has member</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdfs:Class rdf:about="http://www.openarchives.org/ore/terms/Proxy">
+    <rdfs:label xml:lang="en">Proxy</rdfs:label>
+    <rdfs:comment>Proxy for a resource within the context of an Aggregation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E1_CRM_Entity"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="http://www.openarchives.org/ore/terms/proxyIn">
+        <rdfs:label xml:lang="en">proxy in</rdfs:label>
+        <rdfs:comment xml:lang="en">proxy in</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.openarchives.org/ore/terms/Proxy"/>
+        <rdfs:range rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.openarchives.org/ore/terms/proxyFor">
+        <rdfs:label xml:lang="en">proxy for</rdfs:label>
+        <rdfs:comment xml:lang="en">proxy for</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<!-- Similarity of resources -->
+<!-- E1: owl:sameAs, skos:exactMatch, skos:closeMatch, dct:relation -->
+
+<rdf:Property rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+        <rdfs:label xml:lang="en">sameAs</rdfs:label>
+        <rdfs:comment xml:lang="en">Exactly the same entity</rdfs:comment>
+        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:label xml:lang="en">exactMatch</rdfs:label>
+        <rdfs:comment xml:lang="en">Exact Match, not quite sameAs, good for most uses</rdfs:comment>
+        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+        <rdfs:label xml:lang="en">closeMatch</rdfs:label>
+        <rdfs:comment xml:lang="en">Close Match, good for some uses</rdfs:comment>
+        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+        <rdfs:label xml:lang="en">seeAlso</rdfs:label>
+        <rdfs:comment xml:lang="en">A related resource, that is machine readable and related to the current resource.</rdfs:comment>
+        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="E28_Conceptual_Object"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/dc/terms/relation">
+        <rdfs:label xml:lang="en">relation</rdfs:label>
+        <rdfs:comment xml:lang="en">Related resources, with no further similarity semantics defined</rdfs:comment>
+        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+
+<!-- Aboutness relationships for objects -->
+
+<rdf:Property rdf:about="http://schema.org/genre">
+        <rdfs:label xml:lang="en">genre</rdfs:label>
+        <rdfs:comment xml:lang="en">Shortcut for Genre or Style</rdfs:comment>
+        <rdfs:domain rdf:resource="E36_Visual_Item"/>
+        <rdfs:range rdf:resource="E55_Type"/>
+</rdf:Property>
+
+<!-- Conformance of an object to a standard -->
+
+<rdf:Property rdf:about="http://purl.org/dc/terms/conformsTo">
+        <rdfs:label xml:lang="en">conformsTo</rdfs:label>
+        <rdfs:comment xml:lang="en">Some thing conforms to some standard</rdfs:comment>
+        <rdfs:domain rdf:resource="E71_Man-Made_Thing"/>
+        <rdfs:range rdf:resource="E73_Information_Object"/>
+</rdf:Property>
+
+<!-- InfoObj: dc:format -->
+
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/format">
+        <rdfs:label xml:lang="en">format</rdfs:label>
+        <rdfs:comment xml:lang="en">The media type of the information object</rdfs:comment>
+        <rdfs:domain rdf:resource="E73_Information_Object"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
+
+</rdf:RDF>

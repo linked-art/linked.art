@@ -1,0 +1,26 @@
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/text/8> a crm:E33_Linguistic_Object ;
+    rdfs:label "Example Article" ;
+    crm:P1_is_identified_by <https://linked.art/example/identifier/5>,
+        <https://linked.art/example/name/10> ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300048715> .
+
+<https://linked.art/example/identifier/5> a crm:E42_Identifier ;
+    rdfs:label "DOI of Article" ;
+    rdf:value "10.1000/1011" .
+
+<https://linked.art/example/name/10> a la:Name ;
+    rdf:value "Title of Article" .
+
