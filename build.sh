@@ -18,7 +18,8 @@ rm content/model/example_index.html
 python scripts/mk_table.py
 
 # Split up the current ontology into little static files
-#python scripts/split_ontology.py
+rm content/ns/terms/*
+python scripts/split_ontology.py
 
 # And now generate the site from scratch
 hyde gen -r

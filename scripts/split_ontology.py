@@ -1,5 +1,6 @@
 
 from lxml import etree
+import shutil
 
 NS = {'rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 	'xsd':"http://www.w3.org/2001/XMLSchema#",
@@ -10,6 +11,11 @@ NS = {'rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 	'xml': "http://www.w3.org/XML/1998/namespace",
 	'la': "https://linked.art/ns/terms/"
 }
+
+# Copy the full file out of model, into ns
+
+
+shutil.copyfile('content/model/profile/ontologies/linkedart.xml', 'content/ns/terms/index.xml')
 
 fh = open('content/ns/terms/index.xml')
 data = fh.read()
@@ -25,8 +31,6 @@ classes = dom.xpath("//rdfs:Class", namespaces=NS)
 for c in classes:
 	name = c.xpath('@rdf:about', namespaces=NS)[0]		
 	name = name.replace(NS['la'], '')
-	print name
-
 	odom = etree.XML(out)
 	odom.append(c)
 	o = etree.tostring(odom, pretty_print=True)
@@ -38,8 +42,6 @@ props = dom.xpath("//rdf:Property", namespaces=NS)
 for p in props:
 	name = p.xpath('@rdf:about', namespaces=NS)[0]		
 	name = name.replace(NS['la'], '')
-	print name
-
 	odom = etree.XML(out)
 	odom.append(p)
 	o = etree.tostring(odom, pretty_print=True)
