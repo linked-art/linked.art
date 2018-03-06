@@ -1,0 +1,33 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json", 
+  "id": "https://linked.art/example/LegalClaim/0", 
+  "type": "LegalClaim", 
+  "label": "Claim of Ownership", 
+  "instantiates": {
+    "id": "https://linked.art/example/Right/2", 
+    "type": "Right", 
+    "label": "Ownership right for Example Painting", 
+    "applies_to": {
+      "id": "https://linked.art/example/object/79", 
+      "type": "ManMadeObject", 
+      "label": "Example Painting", 
+      "classified_as": [
+        "aat:300033618"
+      ]
+    }
+  }, 
+  "claimed_by": [
+    {
+      "id": "https://linked.art/example/person/23", 
+      "type": "Person", 
+      "label": "Owner of Example Painting"
+    }
+  ], 
+  "jurisdiction": [
+    {
+      "id": "https://linked.art/example/place/12", 
+      "type": "Place", 
+      "label": "Legal jurisdiction of Claim"
+    }
+  ]
+}

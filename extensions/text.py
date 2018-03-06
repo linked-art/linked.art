@@ -59,6 +59,7 @@ EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
 ManMadeFeature._uri_segment = "object"
 Dimension._uri_segment = "value"
+LegalClaim._uri_segment = "legal"
 
 fh = file('site.yaml')
 siteData = fh.read()
