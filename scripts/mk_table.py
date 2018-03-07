@@ -13,10 +13,13 @@ its = overs.items()
 
 def sorter(x):
 	x = x[0]
-	if x[-1] == "i":
-		return int(x[1:-1]) + 0.5
-	else:
-		return int(x[1:])
+	try:
+		if x[-1] == "i":
+			return int(x[1:-1]) + 0.5
+		else:
+			return int(x[1:])
+	except:
+		return 1000
 
 its.sort(key=sorter)
 for (k,v) in its:

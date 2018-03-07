@@ -12,12 +12,11 @@ The features described in this section are information _about_ the object, and a
 
 ## Description
 
-The main description of the object is provided in the `description` property on the object itself.  It should also be given as a descriptive text in the same manner as other such texts, as the `value` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300080091)_.  The description can include any content that describes the object, and is useful primarily for display to a human user.
+The main description of the object is provided in the same manner as other such texts; as the `value` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300080091)_.  The description can include any content that describes the object, and is useful primarily for display to a human user.
 
 ```crom
 top = Painting(art=1)
 top.label = "Example Painting"
-top.description = "The Example Painting is a great example of exampleness."
 desc = Description()
 desc.value = "The Example Painting is a great example of exampleness."
 top.referred_to_by = desc

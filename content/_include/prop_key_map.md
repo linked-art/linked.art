@@ -47,3 +47,8 @@ P149i | `identifies_concept`
 P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
 P165i | `incorporated_by`
+skos:exactMatch | `exact_match`
+dcterms:relation | `related`
+dcterms:conformsTo | `conforms_to`
+skos:closeMatch | `close_match`
+schema:genre | `style`

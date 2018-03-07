@@ -16,7 +16,8 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, Transformation
+    ManMadeFeature, Dimension, PhysicalObject, Name, Transformation, \
+    PropertyInterest, Payment, EndingActivity
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -29,8 +30,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, \
 	materialTypes, dimensionUnits, add_art_setter
-from cromulent.extra import Payment, LegalClaim, add_rdf_value, add_schema_properties
-from cromulent.multiple_instantiation import EoEActivity
+
 
 
 ManMadeObject._uri_segment = "object"
@@ -47,7 +47,7 @@ Purchase._uri_segment = "activity"
 Payment._uri_segment = "activity"
 MonetaryAmount._uri_segment = "money"
 Currency._uri_segment = "money"
-EoEActivity._uri_segment = "activity"
+EndingActivity._uri_segment = "activity"
 PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
@@ -59,7 +59,7 @@ EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
 ManMadeFeature._uri_segment = "object"
 Dimension._uri_segment = "value"
-LegalClaim._uri_segment = "legal"
+PropertyInterest._uri_segment = "legal"
 
 fh = file('site.yaml')
 siteData = fh.read()
@@ -82,8 +82,6 @@ factory.base_dir = "content/%s" % egdir
 factory.context_uri = contextUrl
 # Ensure it's still int per segment
 factory.auto_id_type = "int-per-segment"
-add_rdf_value()
-add_schema_properties()
 add_art_setter()
 
 # Try to load in the context only once
