@@ -12,14 +12,14 @@ Ownership is often more complicated than a single individual acquiring an object
 
 ## Claims of Rights
 
-In order to describe these situations, we introduce a new class called 'LegalClaim'.  This Claim is for a particular `Right`, such as ownership or copyright, and is claimed by an `Actor` within a legal jurisdiction modeled as a `Place`.  This class can then be used to describe any claim, valid or not, of any right.  
+In order to describe these situations, we introduce a new class called 'PropertyInterest'.  This Claim is for a particular `Right`, such as ownership or copyright, and is claimed by an `Actor` within a legal jurisdiction modeled as a `Place`.  This class can then be used to describe any claim, valid or not, of any right.  
 
 The Claim is a Man Made Thing, rather than the activity of asserting the claim.  As such it can be created and destroyed.  It is not a physical thing, although there may be physical evidence such as a contract described using other parts of the model.  It is also not the same as a `ConceptualObject` which cannot be destroyed once conceived. It is the beginning and ending of the Claim that gives the period of asserted validity, rather than as properties of the Claim itself.
 
 The `Right` that is instantiated by the Claim is then associated with the object for which it applies, and is consistently used for all claims of that type for the object.  Thus, the basic Claim model has the following structure:
 
 ```crom
-top = LegalClaim()
+top = PropertyInterest()
 top.label = "Claim of Ownership"
 right = Right()
 right.label = "Ownership right for Example Painting"
@@ -29,7 +29,7 @@ what = Painting()
 what.label = "Example Painting"
 where = Place()
 where.label = "Legal jurisdiction of Claim"
-top.instantiates = right
+top.claimed_under = right
 right.applies_to = what
 top.claimed_by = who
 top.jurisdiction = where
@@ -37,10 +37,10 @@ top.jurisdiction = where
 
 ### Effective Period
 
-The `LegalClaim` class does not have any relationship with a period or time span over which it is claimed.  This is because it is modeled as a Thing, rather than a passive Activity.  Things are, instead, brought into and out of existence by Activities, and this is the pattern we use to determine the period in which the claim is in effect.  The claim is in effect from the moment it comes into existence to the moment it goes out of existence.  Those events can then be part of some larger, more human-centric, activity such as an `Acquisition`.
+The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because it is modeled as a Thing, rather than a passive Activity.  Things are, instead, brought into and out of existence by Activities, and this is the pattern we use to determine the period in which the claim is in effect.  The claim is in effect from the moment it comes into existence to the moment it goes out of existence.  Those events can then be part of some larger, more human-centric, activity such as an `Acquisition`.
 
 ```crom
-top = LegalClaim()
+top = PropertyInterest()
 top.label = "Claim of Ownership"
 right = Right()
 right.label = "Ownership right for Example Painting"
@@ -48,7 +48,7 @@ who = Person()
 who.label = "Owner of Example Painting"
 what = Painting()
 what.label = "Example Painting"
-top.instantiates = right
+top.claimed_under = right
 right.applies_to = what
 top.claimed_by = who
 begin = BeginningOfExistence()
@@ -81,9 +81,9 @@ In summary, CIDOC-CRM lacks the expressiveness to state what is required and the
 
 ## Ownership Rights
 
-The base [provenance model](/model/provenance/) and the `LegalClaim` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `LegalClaim` structure can be automatically generated to ensure a consistent model.
+The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
 
-In particular, the `Production` of the object would `consist_of` the `BeginningOfExistence` of the `LegalClaim`.  If the object is destroyed, then that activity would `consist_of` the `EndOfExistence` of the last `LegalClaim` around the object's ownership.  In between, any `Acquisition` would include a `Transformation` of the previous owner's `LegalClaim` into the new owner's `LegalClaim`.  Transformations end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, `Transformation` is a shortcut for a pair of beginning and end of existence events that occur at the same time.
+In particular, the `Production` of the object would `consist_of` the `BeginningOfExistence` of the `PropertyInterest`.  If the object is destroyed, then that activity would `consist_of` the `EndOfExistence` of the last `PropertyInterest` around the object's ownership.  In between, any `Acquisition` would include a `Transformation` of the previous owner's `PropertyInterest` into the new owner's `PropertyInterest`.  Transformations end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, `Transformation` is a shortcut for a pair of beginning and end of existence events that occur at the same time.
 
 We classify the Right as being one of Ownership (_aat:300055603_), as opposed to any other Right that might be applied to the object.
 
@@ -109,14 +109,14 @@ right.label = "Ownership Right of Example Painting"
 right.applies_to = what
 
 xform = Transformation()
-newclaim = LegalClaim()
+newclaim = PropertyInterest()
 newclaim.label = "Claim of Ownership by Buyer"
 newclaim.claimed_by = buyer
-newclaim.instantiates = right
-oldclaim = LegalClaim()
+newclaim.claimed_under = right
+oldclaim = PropertyInterest()
 oldclaim.label = "Claim of Ownership by Seller"
 oldclaim.claimed_by = seller
-oldclaim.instantiates = right
+oldclaim.claimed_under = right
 xform.transformed = oldclaim
 xform.resulted_in = newclaim
 top.consists_of = xform
@@ -126,9 +126,9 @@ top.consists_of = xform
 
 A change in ownership might involve more than two parties, resulting in a state where multiple actors together own some share of the object.  Examples of this situation include when art dealers share the costs of purchasing an object and then share the proceeds of sale in the same proportions, when a donor gives part of the value of an object to an institution, or when a marriage is dissolved and the value of the object is split between the individuals.
 
-The base provenance model does allow for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party.  The same is true for transfers of custody and for payments of monetary amounts.  The use of the `LegalClaim` structure accommodates these cases.
+The base provenance model does allow for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party.  The same is true for transfers of custody and for payments of monetary amounts.  The use of the `PropertyInterest` structure accommodates these cases.
 
-In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `LegalClaim` into shares to be divided. These components are themselves `LegalClaims`s that are claimed by the respective parties.
+In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `PropertyInterest` into shares to be divided. These components are themselves `PropertyInterests`s that are claimed by the respective parties.
 
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
 
@@ -153,32 +153,32 @@ unit.label = "Percent"
 right = vocab.OwnershipRight()
 right.applies_to = what
 
-newclaim = LegalClaim()
+newclaim = PropertyInterest()
 newclaim.label = "Total Claim of Ownership"
-newclaim.instantiates = right
+newclaim.claimed_under = right
 
-newclaim1 = LegalClaim()
+newclaim1 = PropertyInterest()
 newclaim1.label = "Claim of 30% Ownership by Dealer 1"
 newclaim1.claimed_by = d1
 dim1 = Dimension()
 dim1.value = 30
 dim1.unit = unit
 newclaim1.dimension = dim1
-newclaim.claimed_part = newclaim1
+newclaim.interest_part = newclaim1
 
-newclaim2 = LegalClaim()
+newclaim2 = PropertyInterest()
 newclaim2.label = "Claim of 70% Ownership by Dealer 2"
 newclaim2.claimed_by = d2
 dim2 = Dimension()
 dim2.value = 70
 dim2.unit = unit
 newclaim2.dimension = dim2
-newclaim.claimed_part = newclaim2
+newclaim.interest_part = newclaim2
 
-oldclaim = LegalClaim()
+oldclaim = PropertyInterest()
 oldclaim.label = "Claim of Ownership by Seller"
 oldclaim.claimed_by = seller
-oldclaim.instantiates = right
+oldclaim.claimed_under = right
 xform = Transformation()
 xform.transformed = oldclaim
 xform.resulted_in = newclaim
@@ -190,7 +190,7 @@ top.consists_of = xform
 
 In some situations, the set of owners does not change, however they trade the proportion of ownership of the object amongst themselves.  Two scenarios in which this occurs are when a group of dealers value without trading stock, and when individuals make partial gifts over time to a museum or other organization.
 
-As the owners do not change, there is no new `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the claimed ownership.  A new `LegalClaim` is brought into effect with shares that include the new proportions, and the previous `LegalClaim`'s effect ends.  This process likely also includes other transfers, perhaps of currency via a `Payment`.
+As the owners do not change, there is no new `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the claimed ownership.  A new `PropertyInterest` is brought into effect with shares that include the new proportions, and the previous `PropertyInterest`'s effect ends.  This process likely also includes other transfers, perhaps of currency via a `Payment`.
 
 ```crom
 
@@ -207,49 +207,49 @@ unit.label = "Percent"
 right = vocab.OwnershipRight()
 right.applies_to = what
 
-newclaim = LegalClaim()
+newclaim = PropertyInterest()
 newclaim.label = "Previous Total Claim of Ownership"
-newclaim.instantiates = right
+newclaim.claimed_under = right
 
-newclaim1 = LegalClaim()
+newclaim1 = PropertyInterest()
 newclaim1.label = "Claim of 30% Ownership by Dealer 1"
 newclaim1.claimed_by = d1
 dim1 = Dimension()
 dim1.value = 30
 dim1.unit = unit
 newclaim1.dimension = dim1
-newclaim.claimed_part = newclaim1
+newclaim.interest_part = newclaim1
 
-newclaim2 = LegalClaim()
+newclaim2 = PropertyInterest()
 newclaim2.label = "Claim of 70% Ownership by Dealer 2"
 newclaim2.claimed_by = d2
 dim2 = Dimension()
 dim2.value = 70
 dim2.unit = unit
 newclaim2.dimension = dim2
-newclaim.claimed_part = newclaim2
+newclaim.interest_part = newclaim2
 
-oldclaim = LegalClaim()
+oldclaim = PropertyInterest()
 oldclaim.label = "New Claim of Ownership"
-oldclaim.instantiates = right
+oldclaim.claimed_under = right
 
-oldclaim1 = LegalClaim()
+oldclaim1 = PropertyInterest()
 oldclaim1.label = "Claim of 40% Ownership by Dealer 1"
 oldclaim1.claimed_by = d1
 dim1 = Dimension()
 dim1.value = 40
 dim1.unit = unit
 oldclaim1.dimension = dim1
-oldclaim.claimed_part = oldclaim1
+oldclaim.interest_part = oldclaim1
 
-oldclaim2 = LegalClaim()
+oldclaim2 = PropertyInterest()
 oldclaim2.label = "Claim of 60% Ownership by Dealer 2"
 oldclaim2.claimed_by = d2
 dim2 = Dimension()
 dim2.value = 60
 dim2.unit = unit
 oldclaim2.dimension = dim2
-oldclaim.claimed_part = oldclaim2
+oldclaim.interest_part = oldclaim2
 
 xform = Transformation()
 xform.transformed = oldclaim
@@ -270,7 +270,7 @@ top.consists_of = pay
 
 ## Theft
 
-Objects can change hands illegally, such as via theft (_aat:300055292_) or looting (_aat:300379554_). This is modeled as a new `LegalClaim` that is marked as being actually illegal, via _aat:300055289_, that competes with the actual claim of the owner. This pattern means that when the thief then sells the stolen object to an unsuspecting buyer, the `Acquisition` is described the same way as any other. It also lets further claims of ownership be layered on top, where the situation is not so clear.  If the object is part of reparations or was looted by a government under some oppressive regime, then the Acquisition might be considered legitimate in some contexts and not in others.
+Objects can change hands illegally, such as via theft (_aat:300055292_) or looting (_aat:300379554_). This is modeled as a new `PropertyInterest` that is marked as being actually illegal, via _aat:300055289_, that competes with the actual claim of the owner. This pattern means that when the thief then sells the stolen object to an unsuspecting buyer, the `Acquisition` is described the same way as any other. It also lets further claims of ownership be layered on top, where the situation is not so clear.  If the object is part of reparations or was looted by a government under some oppressive regime, then the Acquisition might be considered legitimate in some contexts and not in others.
 
 ```crom
 top = Theft()
@@ -291,9 +291,9 @@ when.end_of_the_end = "1940-07-11T00:00:00Z"
 
 right = vocab.OwnershipRight()
 right.applies_to = what
-claim = LegalClaim()
+claim = PropertyInterest()
 claim.classified_as = Type("aat:300055289")
-claim.instantiates = right
+claim.claimed_under = right
 begin = BeginningOfExistence()
 begin.brought_into_existence = claim
 top.consists_of = begin
