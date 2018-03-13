@@ -67,7 +67,7 @@ ln.value = "812"
 top.identified_by = ln
 obj = Painting(art=1)
 obj.label = "Example Painting"
-top.part = obj
+top.aggregates = obj
 ```
 
 ## Purchase
@@ -100,9 +100,9 @@ In Auctions, there are several types of monetary values that are useful and inte
 
 There are three preset prices of interest:
 
-  * __Starting Price:__  The price at which the auction will start.
-  * __Reserve Price:__  The price that must be exceeded for the auction to result in a sale.
-  * __Estimated Price:__  The price that the auction house estimates will be the final sale price.
+  * __Starting Price:__  (_aat:300417242_) The price at which the auction will start.
+  * __Reserve Price:__  (_aat:300417243_) The price that must be exceeded for the auction to result in a sale.
+  * __Estimated Price:__  (_aat:300417244_) The price that the auction house estimates will be the final sale price.
 
 These prices are associated with the Set of Objects that the Lot is intended to sell.  In this way, even if the auction never takes place, there is still the set of objects to associate the prices with.  In order to associate a monetary value with an object, it is treated as an observed dimension.
 
@@ -116,21 +116,18 @@ ln.value = "812"
 top.identified_by = ln
 obj = Painting()
 obj.label = "Example Painting"
-top.part = obj
-amnt = MonetaryAmount()
+top.aggregates = obj
+amnt = vocab.StartingPrice()
 amnt.value = 500
 curr = Currency()
 curr.label = "dollars"
 amnt.currency = curr
-amnt.classified_as = Type("http://data.getty.edu/money/type/startingPrice")
-amnt2 = MonetaryAmount()
+amnt2 = vocab.EstimatedPrice()
 amnt2.value = 4000
 amnt2.currency = curr
-amnt2.classified_as = Type("http://data.getty.edu/money/type/estimatedPrice")
-amnt3 = MonetaryAmount()
+amnt3 = vocab.ReservePrice()
 amnt3.value = 3000
 amnt3.currency = curr
-amnt3.classified_as = Type("http://data.getty.edu/money/type/reservePrice")
 top.dimension = amnt
 top.dimension = amnt2
 top.dimension = amnt3
