@@ -61,4 +61,68 @@ by.label = "Painting Curator"
 top.carried_out_by = by
 ```
 
+## Context Specific Assertions
 
+The basic pattern for making an assertion within some context is to reuse the `AttributeAssignment` activity, and have it be part of some larger activity.  A good example of this is the assignment of a particular title to a work during an [Exhibition](/model/exhibition/).  This could equally be part of the larger cataloging activity of an organization, an art dealer taking inventory, or similar.
+
+There are two relationships to note with this pattern.  The first is that the broader activity `consists_of` the `AttributeAssignment`.  This gives some basic temporal context for the assignment. There is also in many cases a set of objects or other resources that provide additional context. In the Exhibition case, the set of objects and their labels in the exhibit is `involved` in the provision of the `Name` of the individual object.
+
+```crom
+top = Exhibition()
+top.label = "Example Exhibition"
+agg = Aggregation()
+top.used_specific_object = agg
+obj = Painting(art=1)
+obj.label = "Real Painting Name"
+agg.aggregates = obj
+aa = AttributeAssignment()
+aa.classified_as = "identified_by"
+name = Name()
+name.value = "Exhibition Specific Name"
+aa.assigned = name
+aa.assigned_to = obj
+curator = Person()
+curator.label = "A. Curator"
+aa.carried_out_by = curator
+aa.involved = agg
+top.consists_of = aa
+```
+
+### Proxies 
+
+If there are many `AttributeAssignment`s per object, the actor that carried out the assignment is not important to include in the dataset, and there is a collection or `Aggregation` of resources that provides context, then there is a more concise form of the above assertions using `Proxy` resources.
+
+Instead of turning the assignment into an activity, instead we can associate the information directly with a `Proxy` for the resource that is in the context of the `Aggregation`.  Any number of assertions can be managed by a single Proxy resource, and it is possible to go from the AttributeAssignment pattern to the Proxy pattern and back again without human intervention. There is only one Proxy per combination of an `Aggregation` and a particular resource that it `aggregates`.
+
+The equivalent form of the above example would be:
+
+```crom
+top = Exhibition()
+top.label = "Example Exhibition"
+agg = Aggregation()
+top.used_specific_object = agg
+obj = Painting(art=1)
+obj.label = "Real Painting Name"
+agg.aggregates = obj
+name = Name()
+name.value = "Exhibition Specific Name"
+p = Proxy()
+p.proxyFor = obj
+p.proxyIn = agg
+p.identified_by = name
+```
+
+The algorithm to go from a set of AttributeAssignments to a set of Proxies is:
+
+```python
+proxyFors = {}
+for aa in top_activity.consists_of:
+  if aa.type == "AttributeAssignment":
+  	p = proxyFors.get(aa.assigned_to, None)
+  	if not p:
+  	  p = Proxy()
+      p.proxyFor = aa.assigned_to
+      p.proxyIn = aa.involved
+      proxyFors[aa.assigned_to] = p
+    setattr(p, aa.classified_as, aa.assigned)
+```
