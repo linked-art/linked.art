@@ -12,4 +12,7 @@ content/example/group/*
 content/example/identifier/*
 content/example/name/*
 content/example/value/*
+content/example/text/*
+content/example/legal/*
+content/example/set/*
 content/model/example_index.html
