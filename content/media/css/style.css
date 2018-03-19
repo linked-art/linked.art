@@ -131,6 +131,12 @@ a:hover, a:focus {
 .codehilite .p { color: #555555; }
 .codehilite .s2 { color: #995555; }
 
+.codehilite .n {color: #555599;}
+.codehilite .nb {color: #555599;}
+.codehilite .o {color: #559999;}
+.codehilite .k {color: #559955;}
+.codehilite .ow {color: #995599;}
+
 .codehilite + p {
   margin-top: -22px;
   padding-left: 10px;
