@@ -129,13 +129,16 @@ top.carried_out_by = grp
 Over time, attributions can be contested and change. The actor that is listed in `carried_out_by` from the `Production` should always be the one currently believed to have produced the art work.  Previous attributions, or ones that are so uncertain that there is a concern about using `carried_out_by` at all, can be recorded using the `AttributeAssignment` pattern, further described [here](/model/assertion/).
 
 ```crom
-top = Attribution()
+top = AttributeAssignment()
 obj = Painting(art=1)
 obj.label = "Example Painting"
 who = Person()
 who.label = "Previously-Thought Artist"
-top.assigned = who
+prod = Production()
+prod.carried_out_by = who
+top.assigned = prod
 top.assigned_to = obj
+top.classified_as = "produced_by"
 by = Person()
 by.label = "Painting Curator"
 top.carried_out_by = by
