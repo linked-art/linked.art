@@ -180,7 +180,7 @@ class IndexingPlugin(Plugin):
 			for h in hits:
 				try:
 					eg = self.generate_example(h[1], resource)
-				except Exception, e:
+				except Exception as e:
 					print ">>> In %s" % resource.relative_path
 					print "Caught Exception: %s" % e
 					print "Failed to execute example:\n%s" % h[1]
