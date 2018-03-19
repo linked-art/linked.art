@@ -21,12 +21,12 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
-	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
+	AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
+	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, \
 	materialTypes, dimensionUnits, add_art_setter, add_attribute_assignment_check
