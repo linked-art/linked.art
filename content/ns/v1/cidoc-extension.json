@@ -4,6 +4,8 @@
     "CRMEntity": "crm:E1_CRM_Entity", 
     "TemporalEntity": "crm:E2_Temporal_Entity", 
     "ConditionState": "crm:E3_Condition_State", 
+    "Period": "crm:E4_Period", 
+    "Event": "crm:E5_Event", 
     "Destruction": "crm:E6_Destruction", 
     "Move": "crm:E9_Move", 
     "Modification": "crm:E11_Modification", 
@@ -12,8 +14,10 @@
     "Measurement": "crm:E16_Measurement", 
     "TypeAssignment": "crm:E17_Type_Assignment", 
     "PhysicalThing": "crm:E18_Physical_Thing", 
+    "PhysicalObject": "crm:E19_Physical_Object", 
     "BiologicalObject": "crm:E20_Biological_Object", 
     "PhysicalManMadeThing": "crm:E24_Physical_Man-Made_Thing", 
+    "ManMadeFeature": "crm:E25_Man-Made_Feature", 
     "PhysicalFeature": "crm:E26_Physical_Feature", 
     "Site": "crm:E27_Site", 
     "ConceptualObject": "crm:E28_Conceptual_Object", 
@@ -25,6 +29,7 @@
     "Mark": "crm:E37_Mark", 
     "Image": "crm:E38_Image", 
     "LegalBody": "crm:E40_Legal_Body", 
+    "Appellation": "crm:E41_Appellation", 
     "PlaceAppellation": "crm:E44_Place_Appellation", 
     "Address": "crm:E45_Address", 
     "SectionDefinition": "crm:E46_Section_Definition", 
@@ -51,7 +56,6 @@
     "SymbolicObject": "crm:E90_Symbolic_Object", 
     "SpacetimeVolume": "crm:E92_Spacetime_Volume", 
     "Presence": "crm:E93_Presence", 
-    "Purchase": "crm:E96_Purchase", 
     "type_of": {
       "@id": "crm:P2i_is_type_of", 
       "@type": "@id"
@@ -755,12 +759,20 @@
       "@id": "crm:P168i_defines_place", 
       "@type": "@id"
     }, 
-    "sales_price": {
-      "@id": "crm:P179_had_sales_price", 
+    "BeginningActivity": "la:BeginningActivity", 
+    "amount": {
+      "@id": "crm:P181_has_amount"
+    }, 
+    "sameAs": {
+      "@id": "owl:sameAs", 
       "@type": "@id"
     }, 
-    "sales_price_of": {
-      "@id": "crm:P179i_was_sales_price_of", 
+    "close_match": {
+      "@id": "skos:closeMatch", 
+      "@type": "@id"
+    }, 
+    "seeAlso": {
+      "@id": "rdfs:seeAlso", 
       "@type": "@id"
     }
   }
