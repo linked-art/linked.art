@@ -15,22 +15,17 @@
     "tgn": "http://vocab.getty.edu/tgn/", 
     "id": "@id", 
     "type": "@type", 
-    "Period": "crm:E4_Period", 
-    "Event": "crm:E5_Event", 
     "Activity": "crm:E7_Activity", 
     "Acquisition": "crm:E8_Acquisition", 
     "TransferOfCustody": "crm:E10_Transfer_of_Custody", 
     "Production": "crm:E12_Production", 
     "AttributeAssignment": "crm:E13_Attribute_Assignment", 
-    "PhysicalObject": "crm:E19_Physical_Object", 
     "Person": "crm:E21_Person", 
     "ManMadeObject": "crm:E22_Man-Made_Object", 
-    "ManMadeFeature": "crm:E25_Man-Made_Feature", 
     "Right": "crm:E30_Right", 
     "LinguisticObject": "crm:E33_Linguistic_Object", 
     "VisualItem": "crm:E36_Visual_Item", 
     "Actor": "crm:E39_Actor", 
-    "Appellation": "crm:E41_Appellation", 
     "Identifier": "crm:E42_Identifier", 
     "TimeSpan": "crm:E52_Time-Span", 
     "Place": "crm:E53_Place", 
@@ -49,12 +44,6 @@
     "Joining": "crm:E85_Joining", 
     "Leaving": "crm:E86_Leaving", 
     "PropositionalObject": "crm:E89_Propositional_Object", 
-    "MonetaryAmount": "crm:E97_Monetary_Amount", 
-    "Currency": "crm:E98_Currency", 
-    "Payment": "la:Payment", 
-    "LegalClaim": "la:LegalClaim", 
-    "Name": "la:Name", 
-    "EndingActivity": "la:EndingActivity", 
     "identified_by": {
       "@id": "crm:P1_is_identified_by", 
       "@type": "@id", 
@@ -489,7 +478,7 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "alternative_form": {
+    "alternative": {
       "@id": "crm:P139_has_alternative_form", 
       "@type": "@id", 
       "@container": "@set"
@@ -570,23 +559,96 @@
     "end_of_the_end": {
       "@id": "crm:P82b_end_of_the_end"
     }, 
+    "Payment": "la:Payment", 
+    "PropertyInterest": "la:PropertyInterest", 
+    "Relationship": "la:Relationship", 
+    "Name": "la:Name", 
+    "EndingActivity": "la:EndingActivity", 
+    "paid_amount": {
+      "@id": "la:paid_amount", 
+      "@type": "@id"
+    }, 
+    "paid_from": {
+      "@id": "la:paid_from", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "paid_to": {
+      "@id": "la:paid_to", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "claimed_by": {
+      "@id": "la:claimed_by", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "jurisdiction": {
+      "@id": "la:jurisdiction", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "claimed_under": {
+      "@id": "la:claimed_under", 
+      "@type": "@id"
+    }, 
+    "interest_part": {
+      "@id": "la:interest_part", 
+      "@type": "la:PropertyInterest", 
+      "@container": "@set"
+    }, 
+    "interest_part_of": {
+      "@id": "la:interest_part_of", 
+      "@type": "la:PropertyInterest"
+    }, 
+    "related_to": {
+      "@id": "la:related_to", 
+      "@type": "@id"
+    }, 
+    "related_from": {
+      "@id": "la:related_from", 
+      "@type": "@id"
+    }, 
+    "MonetaryAmount": "crm:E97_Monetary_Amount", 
+    "Currency": "crm:E98_Currency", 
+    "Aggregation": "ore:Aggregation", 
+    "Proxy": "ore:Proxy", 
     "currency": {
       "@id": "crm:P180_has_currency", 
       "@type": "@id"
     }, 
-    "currency_of": {
-      "@id": "crm:P180i_was_currency_of", 
-      "@type": "@id", 
-      "@container": "@set"
+    "value": {
+      "@id": "rdf:value"
     }, 
     "label": {
       "@id": "rdfs:label"
     }, 
-    "value": {
-      "@id": "rdf:value"
+    "aggregates": {
+      "@id": "ore:aggregates", 
+      "@type": "@id", 
+      "@container": "@set"
     }, 
-    "description": {
-      "@id": "dc:description", 
+    "aggregated_by": {
+      "@id": "ore:isAggregatedBy", 
+      "@type": "ore:Aggregation", 
+      "@container": "@set"
+    }, 
+    "proxyIn": {
+      "@id": "ore:proxyIn", 
+      "@type": "ore:Aggregation"
+    }, 
+    "proxyFor": {
+      "@id": "ore:proxyFor", 
+      "@type": "@id"
+    }, 
+    "exact_match": {
+      "@id": "skos:exactMatch", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "related": {
+      "@id": "dcterms:relation", 
+      "@type": "@id", 
       "@container": "@set"
     }, 
     "style": {
@@ -600,64 +662,6 @@
     }, 
     "format": {
       "@id": "dc:format"
-    }, 
-    "exact_match": {
-      "@id": "skos:exactMatch", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "close_match": {
-      "@id": "skos:closeMatch", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "related": {
-      "@id": "dcterms:relation", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "subject": {
-      "@id": "dcterms:subject", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "paid_from": {
-      "@id": "la:paid_from", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "paid_to": {
-      "@id": "la:paid_to", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "paid_amount": {
-      "@id": "la:paid_amount", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "instantiates": {
-      "@id": "la:instantiates", 
-      "@type": "@id"
-    }, 
-    "jurisdiction": {
-      "@id": "la:jurisdiction", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "claimed_by": {
-      "@id": "la:claimed_by", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "claimed_part": {
-      "@id": "la:claimed_part", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "claimed_part_of": {
-      "@id": "la:claimed_part", 
-      "@type": "@id"
     }
   }
 }
