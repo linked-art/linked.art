@@ -28,9 +28,8 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
-	DigitalImage, \
+	DigitalImage, add_proxy_wrapper, \
 	materialTypes, dimensionUnits, add_art_setter, add_attribute_assignment_check
-
 
 
 ManMadeObject._uri_segment = "object"
@@ -85,6 +84,7 @@ factory.context_uri = contextUrl
 factory.auto_id_type = "int-per-segment"
 add_art_setter()
 add_attribute_assignment_check()
+add_proxy_wrapper()
 
 # Try to load in the context only once
 ctxt = factory.context_json['@context']
