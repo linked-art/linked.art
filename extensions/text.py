@@ -21,15 +21,15 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
-	Attribution, Appraising, Dating, AuctionHouse, Auction, Bidding, AuctionCatalog, \
+	AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
+	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, \
-	materialTypes, dimensionUnits, add_art_setter
+	materialTypes, dimensionUnits, add_art_setter, add_attribute_assignment_check
 
 
 
@@ -84,6 +84,7 @@ factory.context_uri = contextUrl
 # Ensure it's still int per segment
 factory.auto_id_type = "int-per-segment"
 add_art_setter()
+add_attribute_assignment_check()
 
 # Try to load in the context only once
 ctxt = factory.context_json['@context']
@@ -179,10 +180,10 @@ class IndexingPlugin(Plugin):
 			for h in hits:
 				try:
 					eg = self.generate_example(h[1], resource)
-				except Exception, e:
-					print ">>> In %s" % resource.relative_path
-					print "Caught Exception: %s" % e
-					print "Failed to execute example:\n%s" % h[1]
+				except Exception as e:
+					print(">>> In %s" % resource.relative_path)
+					print("Caught Exception: %s" % e)
+					print("Failed to execute example:\n%s" % h[1])
 					raise
 				text = text.replace(h[0], eg)
 		return text
@@ -347,7 +348,7 @@ def regex_replace(source, regex, replace):
 	try:
 		repl = re.compile(regex)
 	except:
-		print "ERROR: Failing regex: %s" % regex
+		print("ERROR: Failing regex: %s" % regex)
 		return source
 	return repl.sub(replace, source)
 
@@ -355,12 +356,12 @@ def regex_replace_fn(source, regex, fnname):
 	try:
 		repl = re.compile(regex)
 	except:
-		print "ERROR: Failing regex: %s" % regex
+		print("ERROR: Failing regex: %s" % regex)
 		return source
 	try:
 		fn = globals()[fnname]
 	except:
-		print "ERROR: No such function '%s'" % fnname
+		print("ERROR: No such function '%s'" % fnname)
 	return repl.sub(fn, source)
 
 def aatlabel(source):

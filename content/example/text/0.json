@@ -1,9 +1,0 @@
-{
-  "@context": "https://linked.art/ns/v1/linked-art.json", 
-  "id": "https://linked.art/example/text/0", 
-  "type": "LinguisticObject", 
-  "value": "Example painting is 24 inches wide by 36 1/2 inches tall", 
-  "classified_as": [
-    "aat:300266036"
-  ]
-}

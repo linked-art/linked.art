@@ -1,9 +1,0 @@
-{
-  "@context": "https://linked.art/ns/v1/linked-art.json", 
-  "id": "https://linked.art/example/text/1", 
-  "type": "LinguisticObject", 
-  "label": "Example Auction Catalog", 
-  "classified_as": [
-    "aat:300026068"
-  ]
-}
