@@ -29,7 +29,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Exhibition, MuseumPlace, MultiExhibition, Naming, CollectionSet, StyleOfAttribution, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, \
-	materialTypes, dimensionUnits, add_art_setter
+	materialTypes, dimensionUnits, add_art_setter, add_attribute_assignment_check
 
 
 
@@ -84,6 +84,7 @@ factory.context_uri = contextUrl
 # Ensure it's still int per segment
 factory.auto_id_type = "int-per-segment"
 add_art_setter()
+add_attribute_assignment_check()
 
 # Try to load in the context only once
 ctxt = factory.context_json['@context']
