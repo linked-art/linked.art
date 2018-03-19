@@ -181,9 +181,9 @@ class IndexingPlugin(Plugin):
 				try:
 					eg = self.generate_example(h[1], resource)
 				except Exception as e:
-					print ">>> In %s" % resource.relative_path
-					print "Caught Exception: %s" % e
-					print "Failed to execute example:\n%s" % h[1]
+					print(">>> In %s" % resource.relative_path)
+					print("Caught Exception: %s" % e)
+					print("Failed to execute example:\n%s" % h[1])
 					raise
 				text = text.replace(h[0], eg)
 		return text
@@ -348,7 +348,7 @@ def regex_replace(source, regex, replace):
 	try:
 		repl = re.compile(regex)
 	except:
-		print "ERROR: Failing regex: %s" % regex
+		print("ERROR: Failing regex: %s" % regex)
 		return source
 	return repl.sub(replace, source)
 
@@ -356,12 +356,12 @@ def regex_replace_fn(source, regex, fnname):
 	try:
 		repl = re.compile(regex)
 	except:
-		print "ERROR: Failing regex: %s" % regex
+		print("ERROR: Failing regex: %s" % regex)
 		return source
 	try:
 		fn = globals()[fnname]
 	except:
-		print "ERROR: No such function '%s'" % fnname
+		print("ERROR: No such function '%s'" % fnname)
 	return repl.sub(fn, source)
 
 def aatlabel(source):
