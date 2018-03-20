@@ -58,7 +58,7 @@ top.consists_of = exh2
 
 The collection of art objects on display at exhibitions can be listed from the Exhibition with the property `used_specific_object`. The model for the set of objects that make up the content of the exhibition is the same as the model for permanent collections -- the objects are collected together into an `Aggregation`, which is the object used by the Exhibition.  
 
-For the travelling exhibitions described above, the collection of objects should be referenced from each of the venues.  If the set of objects is the same, it can be the same `Aggregation`. If objects are added or not displayed, then a new Aggregation should be used instead.
+For the travelling exhibitions described above, a different collection of objects should be referenced from each of the venues.  Objects are frequently added or removed for the venue, and each venue will likely have its own context specific information such as descriptions or labels.  The top level activity representing the overall exhibition does not have its own Aggregation in the travelling exhibition case.
 
 ```crom
 top = Exhibition()

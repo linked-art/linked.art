@@ -117,7 +117,7 @@ The algorithm to go from a set of AttributeAssignments to a set of Proxies is:
 ```python
 proxyFors = {}
 for aa in top_activity.consists_of:
-  if aa.type == "AttributeAssignment":
+  if aa.type == "AttributeAssignment" and aa.involved and aa.involved.type == "Aggregation":
   	p = proxyFors.get(aa.assigned_to, None)
   	if not p:
   	  p = Proxy()
