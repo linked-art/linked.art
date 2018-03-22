@@ -65,7 +65,7 @@ top.carried_out_by = by
 
 The basic pattern for making an assertion within some context is to reuse the `AttributeAssignment` activity, and have it be part of some larger activity.  A good example of this is the assignment of a particular title to a work during an [Exhibition](/model/exhibition/#exhibition-specific-labels). This could equally be part of the larger cataloging activity of an organization, an art dealer taking inventory, or similar.
 
-There are two relationships to note with this pattern.  The first is that the broader activity `consists_of` the `AttributeAssignment`.  This gives some basic temporal context for the assignment. There is also in many cases a set of objects or other resources that provide additional context. In the Exhibition case, the set of objects and their labels in the exhibit is `involved` in the provision of the `Name` of the individual object.
+There are two relationships to note with this pattern.  The first is that the broader activity has a `part` which is the `AttributeAssignment`.  This gives some basic temporal context for the assignment. There is also in many cases a set of objects or other resources that provide additional context. In the Exhibition case, the set of objects and their labels in the exhibit is `involved` in the provision of the `Name` of the individual object.
 
 ```crom
 top = Exhibition()
@@ -85,7 +85,7 @@ curator = Person()
 curator.label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
-top.consists_of = aa
+top.part = aa
 ```
 
 ### Proxies 
@@ -116,7 +116,7 @@ The algorithm to go from a set of AttributeAssignments to a set of Proxies is:
 
 ```python
 proxyFors = {}
-for aa in top_activity.consists_of:
+for aa in top_activity.part:
   if aa.type == "AttributeAssignment" and aa.involved and aa.involved.type == "Aggregation":
   	p = proxyFors.get(aa.assigned_to, None)
   	if not p:

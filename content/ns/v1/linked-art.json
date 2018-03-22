@@ -117,6 +117,16 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "motivated_by": {
+      "@id": "crm:P17_was_motivated_by", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "motivated": {
+      "@id": "crm:P17i_motivated", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
     "specific_purpose": {
       "@id": "crm:P20_had_specific_purpose", 
       "@type": "@id", 

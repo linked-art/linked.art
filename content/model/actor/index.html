@@ -39,7 +39,7 @@ top.identified_by = apl
 
 ### Parts of Names
 
-Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Name`s, and are included in the `includes` set in the same way as other partitioning.
+Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Name`s, and are included in the `part` set in the same way as other partitioning.
 
 ```crom
 top = Person()
@@ -57,11 +57,11 @@ suff = NameSuffix()
 suff.value = "Duchess of Wolverhampton"
 mid = MiddleName()
 mid.value = "A."
-apl.includes = pref
-apl.includes = given
-apl.includes = mid
-apl.includes = fam
-apl.includes = suff
+apl.part = pref
+apl.part = given
+apl.part = mid
+apl.part = fam
+apl.part = suff
 ```
 
 ## Identity

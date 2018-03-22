@@ -111,14 +111,6 @@
       "@id": "crm:P13i_was_destroyed_by", 
       "@type": "@id"
     }, 
-    "motivated_by": {
-      "@id": "crm:P17_was_motivated_by", 
-      "@type": "@id"
-    }, 
-    "motivated": {
-      "@id": "crm:P17i_motivated", 
-      "@type": "@id"
-    }, 
     "intended_use_of": {
       "@id": "crm:P19_was_intended_use_of", 
       "@type": "@id"

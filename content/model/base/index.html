@@ -99,7 +99,7 @@ top = Auction()
 top.label = "Example Auction"
 lot = Activity(top.id + "/part/1")
 lot.label = "Example Auction of Lot"
-top.consists_of = lot
+top.part = lot
 ```
 
 ### Locations
@@ -123,8 +123,8 @@ gallery = Gallery(top.id + '/part/1')
 gallery.label = "Gallery W204"
 city = Place("http://vocab.getty.edu/tgn/7023900-place")
 city.label = "Los Angeles"
-top.spatially_contains = gallery
-top.spatially_within = city
+top.part = gallery
+top.part_of = city
 ```
 
 !!! note "Use of Gazeteers"
@@ -149,12 +149,12 @@ top = LinguisticObject()
 top.label = "Content of Ledger 1"
 row = LinguisticObject(top.id + "/part/1")
 row.label = "Content of Row 1"
-top.includes = row
+top.part = row
 ```
 
 ### Organizations
 
-Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.
+Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.  Note that this pattern uses `member` rather than `part`, as instances of both `Group` and `Person` share the same membership relationship, rather than a strict partitioning. 
 
 Use cases for this pattern include:
 

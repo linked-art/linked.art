@@ -50,15 +50,14 @@ top.label = "Example Painting"
 id1 = AccessionNumber()
 id1.value = "P1998-27"
 top.identified_by = id1
-idset = InformationObject()
-idset.label = "Paintings Collection Identifiers"
-id1.included_in = idset
 coll = CollectionSet()
 coll.label = "Paintings Collection"
-idset.refers_to = coll
-coll.aggregates = top
+top.aggregated_by = coll
+proxy = Proxy()
+proxy.proxyFor = top
+proxy.proxyIn = coll
+proxy.identified_by = id1
 ```
-
 
 ## Titles
 

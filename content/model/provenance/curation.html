@@ -50,7 +50,7 @@ top = Curating()
 top.label = "Ownership of the Painting"
 inv = Inventorying()
 inv.label = "Inventory Taking by Owner"
-top.consists_of = inv
+top.part = inv
 ```
 
 ### Lifetime of Object
@@ -76,11 +76,11 @@ own3 = Curating()
 own3.label = "Ownership by second and final owner"
 dest = EndingActivity()
 dest.took_out_of_existence = what
-top.consists_of = prod
-top.consists_of = own1
-top.consists_of = c1
-top.consists_of = own2
-top.consists_of = c2
-top.consists_of = own3
-top.consists_of = dest
+top.part = prod
+top.part = own1
+top.part = c1
+top.part = own2
+top.part = c2
+top.part = own3
+top.part = dest
 ```

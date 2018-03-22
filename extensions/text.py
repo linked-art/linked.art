@@ -17,7 +17,8 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
     ManMadeFeature, Dimension, PhysicalObject, Name, Transformation, \
-    PropertyInterest, Payment, EndingActivity, Creation, Aggregation, Proxy
+    PropertyInterest, Payment, EndingActivity, Creation, Aggregation, Proxy, \
+    PropositionalObject
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \

@@ -12,7 +12,7 @@ Auctions are a very common way for art objects to change ownership.  The descrip
 
 ## Auction
 
-An auction (_aat:300054751_) is an activity which is performed by an organization, and for art objects typically takes place at an auction house (_aat:300005234_).  It (typically) consists of many sets of objects being sold in separate sales to the highest bidder, called Lots described below. The Auction description contains the information about the overall event (who, where, when) and references the sub-events in which the sales of the lots take place via `consists_of`.
+An auction (_aat:300054751_) is an activity which is performed by an organization, and for art objects typically takes place at an auction house (_aat:300005234_).  It (typically) consists of many sets of objects being sold in separate sales to the highest bidder, called Lots described below. The Auction description contains the information about the overall event (who, where, when) and references the sub-events in which the sales of the lots take place via `part`.
 
 ```crom
 top = Auction()
@@ -30,7 +30,7 @@ t.end_of_the_end = "1875-03-14T00:00:00Z"
 top.timespan = t
 lot = Activity()
 lot.label = "Auction of Lot 1"
-top.consists_of = lot
+top.part = lot
 ```
 
 ## Sale of Lot
@@ -48,10 +48,10 @@ lotset.label = "Set of Objects for Lot J-1823-5"
 top.used_specific_object = lotset
 txn = Purchase()
 txn.label = "Purchase of Lot"
-top.consists_of = txn
+top.part = txn
 bidset = Activity()
 bidset.label = "Bids made on Lot"
-top.consists_of = bidset
+top.part = bidset
 bidset.occurs_before = txn
 ```
 
@@ -84,7 +84,7 @@ als = AuctionLotSet()
 als.label = "Set of Objects"
 top.used_specific_object = als 
 act = Purchase()
-top.consists_of = act
+top.part = act
 obj = Painting(art=1)
 obj.label = "Example Painting"
 act.transferred_title_of = obj
@@ -147,7 +147,7 @@ als = AuctionLotSet()
 als.label = "Set of Objects"
 top.used_specific_object = als 
 act = Purchase()
-top.consists_of = act
+top.part = act
 obj = Painting(art=1)
 obj.label = "Example Painting"
 act.transferred_title_of = obj
@@ -162,7 +162,7 @@ curr = Currency()
 curr.label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
-top.consists_of = paymt
+top.part = paymt
 ```
 
 ## Auction Catalog
@@ -174,7 +174,7 @@ top = AuctionCatalog()
 top.label = "Auction Catalog of Example Auction"
 entry = LinguisticObject()
 entry.label = "Description of Lot 16"
-top.includes = entry
+top.part = entry
 auc = Auction()
 auc.label = "Example Auction, 1924"
 top.refers_to = auc

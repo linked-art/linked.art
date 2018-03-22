@@ -6,11 +6,40 @@ title: "Exhibitions"
 
 ## Introduction
 
-Exhibitions are very common activity that involves artwork owned by many different organizations being displayed together, often with additional contextual information linking the pieces together.  The exhibition is often presented at different venues over time.
+Exhibitions are very common activity that involves artwork owned by many different organizations being displayed together, often with additional contextual information linking the pieces together.  The exhibition is often presented at different venues over time, and might be part of a series such as the World's Fairs or annual exhibitions.
+
+## Exhibition Concept
+
+The model distinguishes between the concept of the exhibition and the activity that makes that concept real.  The concept is created by the people who originally think up the exhibition, long before any of the pieces are collected together.  The exhibition concept likely has some theme that results in a coherent set of objects being presented, which could be as complex as post-industrial life or as  simple as the life's work of a particular artist.
+
+The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition. It can have all of the affordances of any concept, such as names, identifiers, references, relationships and more.
+
+```crom
+top = PropositionalObject()
+top.classified_as = Type("aat:300417531")
+top.label = "Example Exhibition"
+id1 = Identifier()
+id1.value = "exh-2010-eg-a"
+top.identified_by = id1
+nm = Name()
+nm.value = "Example Exhibition"
+top.identified_by = nm
+typ = Type("aat:300233686")
+typ.label = "Gender Issues"
+top.about = typ
+cre = Creation()
+cur = Person()
+cur.label = "Curator"
+cre.carried_out_by = cur
+top.created_by = cre
+ex = Exhibition()
+ex.label = "Exhibition at Venue"
+top.motivated = ex
+```
 
 ## Exhibition Activity
 
-The exhibition itself follows the activity pattern, as described in the section on [Provenance](/model/provenance/).  In particular, it takes place at a certain time given in `timespan`, at a certain place given in `took_place_at`, and was organized by some actor, likely an organization, given in `carried_out_by`. It can be recognized as an exhibition using the classification of _aat:300054766_, "exhibitions".
+There is an activity, as described in the section on [Provenance](/model/provenance/), which is the exhibiting of the objects.  In particular, the public exhibition takes place at a certain time given in `timespan`, at a certain place or places given in `took_place_at`, and was organized by some actor or actors, likely organizations, given in `carried_out_by`. It can be recognized as an exhibition using the classification of _aat:300054766_, "exhibitions".
 
 ```crom
 top = Exhibition()
@@ -50,8 +79,8 @@ ts3 = TimeSpan()
 ts3.begin_of_the_begin = "1981-03-14"
 ts3.end_of_the_end = "1981-08-14"
 exh2.timespan = ts3
-top.consists_of = exh
-top.consists_of = exh2
+top.part = exh
+top.part = exh2
 ```
 
 ## Objects 
@@ -106,7 +135,7 @@ obj.current_owner = owner
 
 ### Exhibition Specific Labels
 
-The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object is part of the exhibition via the `consists_of` property, and assigns a new `Name` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the `Name` does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.  This is an instance of the [Context Specific Assertions](/model/assertion/#context-specific-assertions) pattern.
+The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object is part of the exhibition via the `part` property, and assigns a new `Name` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the `Name` does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.  This is an instance of the [Context Specific Assertions](/model/assertion/#context-specific-assertions) pattern.
 
 ```crom
 top = Exhibition()
@@ -126,7 +155,7 @@ curator = Person()
 curator.label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
-top.consists_of = aa
+top.part = aa
 ```
 
 ### Depiction of the Object at the Exhibition
