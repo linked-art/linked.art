@@ -1,61 +1,240 @@
 {
   "@context": {
+    "@version": 1.1, 
     "crm": "http://www.cidoc-crm.org/cidoc-crm/", 
-    "CRMEntity": "crm:E1_CRM_Entity", 
-    "TemporalEntity": "crm:E2_Temporal_Entity", 
-    "ConditionState": "crm:E3_Condition_State", 
-    "Period": "crm:E4_Period", 
-    "Event": "crm:E5_Event", 
-    "Destruction": "crm:E6_Destruction", 
-    "Move": "crm:E9_Move", 
-    "Modification": "crm:E11_Modification", 
-    "ConditionAssessment": "crm:E14_Condition_Assessment", 
-    "IdentifierAssignment": "crm:E15_Identifier_Assignment", 
-    "Measurement": "crm:E16_Measurement", 
-    "TypeAssignment": "crm:E17_Type_Assignment", 
-    "PhysicalThing": "crm:E18_Physical_Thing", 
-    "PhysicalObject": "crm:E19_Physical_Object", 
-    "BiologicalObject": "crm:E20_Biological_Object", 
-    "PhysicalManMadeThing": "crm:E24_Physical_Man-Made_Thing", 
-    "ManMadeFeature": "crm:E25_Man-Made_Feature", 
-    "PhysicalFeature": "crm:E26_Physical_Feature", 
-    "Site": "crm:E27_Site", 
-    "ConceptualObject": "crm:E28_Conceptual_Object", 
-    "DesignOrProcedure": "crm:E29_Design_or_Procedure", 
-    "Document": "crm:E31_Document", 
-    "AuthorityDocument": "crm:E32_Authority_Document", 
-    "Inscription": "crm:E34_Inscription", 
-    "Title": "crm:E35_Title", 
-    "Mark": "crm:E37_Mark", 
-    "Image": "crm:E38_Image", 
-    "LegalBody": "crm:E40_Legal_Body", 
-    "Appellation": "crm:E41_Appellation", 
-    "PlaceAppellation": "crm:E44_Place_Appellation", 
-    "Address": "crm:E45_Address", 
-    "SectionDefinition": "crm:E46_Section_Definition", 
-    "SpatialCoordinates": "crm:E47_Spatial_Coordinates", 
-    "PlaceName": "crm:E48_Place_Name", 
-    "TimeAppellation": "crm:E49_Time_Appellation", 
-    "Date": "crm:E50_Date", 
-    "ContactPoint": "crm:E51_Contact_Point", 
-    "Birth": "crm:E67_Birth", 
-    "Dissolution": "crm:E68_Dissolution", 
-    "Death": "crm:E69_Death", 
-    "Thing": "crm:E70_Thing", 
-    "ManMadeThing": "crm:E71_Man-Made_Thing", 
-    "LegalObject": "crm:E72_Legal_Object", 
-    "ConceptualObjectAppellation": "crm:E75_Conceptual_Object_Appellation", 
-    "PersistentItem": "crm:E77_Persistent_Item", 
-    "Collection": "crm:E78_Collection", 
-    "PartAddition": "crm:E79_Part_Addition", 
-    "PartRemoval": "crm:E80_Part_Removal", 
-    "ActorAppellation": "crm:E82_Actor_Appellation", 
-    "TypeCreation": "crm:E83_Type_Creation", 
-    "InformationCarrier": "crm:E84_Information_Carrier", 
-    "CurationActivity": "crm:E87_Curation_Activity", 
-    "SymbolicObject": "crm:E90_Symbolic_Object", 
-    "SpacetimeVolume": "crm:E92_Spacetime_Volume", 
-    "Presence": "crm:E93_Presence", 
+    "CRMEntity": {
+      "@context": {}, 
+      "@id": "crm:E1_CRM_Entity"
+    }, 
+    "TemporalEntity": {
+      "@context": {}, 
+      "@id": "crm:E2_Temporal_Entity"
+    }, 
+    "ConditionState": {
+      "@context": {}, 
+      "@id": "crm:E3_Condition_State"
+    }, 
+    "Period": {
+      "@context": {}, 
+      "@id": "crm:E4_Period"
+    }, 
+    "Event": {
+      "@context": {}, 
+      "@id": "crm:E5_Event"
+    }, 
+    "Destruction": {
+      "@context": {}, 
+      "@id": "crm:E6_Destruction"
+    }, 
+    "Move": {
+      "@context": {}, 
+      "@id": "crm:E9_Move"
+    }, 
+    "Modification": {
+      "@context": {}, 
+      "@id": "crm:E11_Modification"
+    }, 
+    "ConditionAssessment": {
+      "@context": {}, 
+      "@id": "crm:E14_Condition_Assessment"
+    }, 
+    "IdentifierAssignment": {
+      "@context": {}, 
+      "@id": "crm:E15_Identifier_Assignment"
+    }, 
+    "Measurement": {
+      "@context": {}, 
+      "@id": "crm:E16_Measurement"
+    }, 
+    "TypeAssignment": {
+      "@context": {}, 
+      "@id": "crm:E17_Type_Assignment"
+    }, 
+    "PhysicalThing": {
+      "@context": {}, 
+      "@id": "crm:E18_Physical_Thing"
+    }, 
+    "PhysicalObject": {
+      "@context": {}, 
+      "@id": "crm:E19_Physical_Object"
+    }, 
+    "BiologicalObject": {
+      "@context": {}, 
+      "@id": "crm:E20_Biological_Object"
+    }, 
+    "PhysicalManMadeThing": {
+      "@context": {}, 
+      "@id": "crm:E24_Physical_Man-Made_Thing"
+    }, 
+    "ManMadeFeature": {
+      "@context": {}, 
+      "@id": "crm:E25_Man-Made_Feature"
+    }, 
+    "PhysicalFeature": {
+      "@context": {}, 
+      "@id": "crm:E26_Physical_Feature"
+    }, 
+    "Site": {
+      "@context": {}, 
+      "@id": "crm:E27_Site"
+    }, 
+    "ConceptualObject": {
+      "@context": {}, 
+      "@id": "crm:E28_Conceptual_Object"
+    }, 
+    "DesignOrProcedure": {
+      "@context": {}, 
+      "@id": "crm:E29_Design_or_Procedure"
+    }, 
+    "Right": {
+      "@context": {}, 
+      "@id": "crm:E30_Right"
+    }, 
+    "Document": {
+      "@context": {}, 
+      "@id": "crm:E31_Document"
+    }, 
+    "AuthorityDocument": {
+      "@context": {}, 
+      "@id": "crm:E32_Authority_Document"
+    }, 
+    "Inscription": {
+      "@context": {}, 
+      "@id": "crm:E34_Inscription"
+    }, 
+    "Title": {
+      "@context": {}, 
+      "@id": "crm:E35_Title"
+    }, 
+    "Mark": {
+      "@context": {}, 
+      "@id": "crm:E37_Mark"
+    }, 
+    "Image": {
+      "@context": {}, 
+      "@id": "crm:E38_Image"
+    }, 
+    "LegalBody": {
+      "@context": {}, 
+      "@id": "crm:E40_Legal_Body"
+    }, 
+    "Appellation": {
+      "@context": {}, 
+      "@id": "crm:E41_Appellation"
+    }, 
+    "PlaceAppellation": {
+      "@context": {}, 
+      "@id": "crm:E44_Place_Appellation"
+    }, 
+    "Address": {
+      "@context": {}, 
+      "@id": "crm:E45_Address"
+    }, 
+    "SectionDefinition": {
+      "@context": {}, 
+      "@id": "crm:E46_Section_Definition"
+    }, 
+    "SpatialCoordinates": {
+      "@context": {}, 
+      "@id": "crm:E47_Spatial_Coordinates"
+    }, 
+    "PlaceName": {
+      "@context": {}, 
+      "@id": "crm:E48_Place_Name"
+    }, 
+    "TimeAppellation": {
+      "@context": {}, 
+      "@id": "crm:E49_Time_Appellation"
+    }, 
+    "Date": {
+      "@context": {}, 
+      "@id": "crm:E50_Date"
+    }, 
+    "ContactPoint": {
+      "@context": {}, 
+      "@id": "crm:E51_Contact_Point"
+    }, 
+    "Birth": {
+      "@context": {}, 
+      "@id": "crm:E67_Birth"
+    }, 
+    "Dissolution": {
+      "@context": {}, 
+      "@id": "crm:E68_Dissolution"
+    }, 
+    "Death": {
+      "@context": {}, 
+      "@id": "crm:E69_Death"
+    }, 
+    "Thing": {
+      "@context": {}, 
+      "@id": "crm:E70_Thing"
+    }, 
+    "ManMadeThing": {
+      "@context": {}, 
+      "@id": "crm:E71_Man-Made_Thing"
+    }, 
+    "LegalObject": {
+      "@context": {}, 
+      "@id": "crm:E72_Legal_Object"
+    }, 
+    "ConceptualObjectAppellation": {
+      "@context": {}, 
+      "@id": "crm:E75_Conceptual_Object_Appellation"
+    }, 
+    "PersistentItem": {
+      "@context": {}, 
+      "@id": "crm:E77_Persistent_Item"
+    }, 
+    "Collection": {
+      "@context": {}, 
+      "@id": "crm:E78_Collection"
+    }, 
+    "PartAddition": {
+      "@context": {}, 
+      "@id": "crm:E79_Part_Addition"
+    }, 
+    "PartRemoval": {
+      "@context": {}, 
+      "@id": "crm:E80_Part_Removal"
+    }, 
+    "ActorAppellation": {
+      "@context": {}, 
+      "@id": "crm:E82_Actor_Appellation"
+    }, 
+    "TypeCreation": {
+      "@context": {}, 
+      "@id": "crm:E83_Type_Creation"
+    }, 
+    "InformationCarrier": {
+      "@context": {}, 
+      "@id": "crm:E84_Information_Carrier"
+    }, 
+    "CurationActivity": {
+      "@context": {}, 
+      "@id": "crm:E87_Curation_Activity"
+    }, 
+    "SymbolicObject": {
+      "@context": {}, 
+      "@id": "crm:E90_Symbolic_Object"
+    }, 
+    "SpacetimeVolume": {
+      "@context": {}, 
+      "@id": "crm:E92_Spacetime_Volume"
+    }, 
+    "Presence": {
+      "@context": {}, 
+      "@id": "crm:E93_Presence"
+    }, 
+    "temporally_within": {
+      "@id": "crm:P86_falls_within", 
+      "@type": "@id"
+    }, 
+    "temporally_contains": {
+      "@id": "crm:P86i_contains", 
+      "@type": "@id"
+    },
+
     "type_of": {
       "@id": "crm:P2i_is_type_of", 
       "@type": "@id"
@@ -388,14 +567,6 @@
       "@id": "crm:P84i_was_maximum_duration_of", 
       "@type": "@id"
     }, 
-    "temporally_within": {
-      "@id": "crm:P86_falls_within", 
-      "@type": "@id"
-    }, 
-    "temporally_contains": {
-      "@id": "crm:P86i_contains", 
-      "@type": "@id"
-    }, 
     "place_identified_by": {
       "@id": "crm:P87_is_identified_by", 
       "@type": "@id"
@@ -475,6 +646,22 @@
       "@id": "crm:P103i_was_intention_of", 
       "@type": "@id"
     }, 
+    "subject_to": {
+      "@id": "crm:P104_is_subject_to", 
+      "@type": "@id"
+    }, 
+    "applies_to": {
+      "@id": "crm:P104i_applies_to", 
+      "@type": "@id"
+    }, 
+    "right_held_by": {
+      "@id": "crm:P105_right_held_by", 
+      "@type": "@id"
+    }, 
+    "right_on": {
+      "@id": "crm:P105i_has_right_on", 
+      "@type": "@id"
+    }, 
     "current_or_former_curator": {
       "@id": "crm:P109_has_current_or_former_curator", 
       "@type": "@id"
@@ -539,7 +726,7 @@
       "@id": "crm:P117_occurs_during", 
       "@type": "@id"
     }, 
-    "temporally_includes": {
+    "includes": {
       "@id": "crm:P117i_includes", 
       "@type": "@id"
     }, 
@@ -751,7 +938,10 @@
       "@id": "crm:P168i_defines_place", 
       "@type": "@id"
     }, 
-    "BeginningActivity": "la:BeginningActivity", 
+    "BeginningActivity": {
+      "@context": {}, 
+      "@id": "la:BeginningActivity"
+    }, 
     "amount": {
       "@id": "crm:P181_has_amount"
     }, 
