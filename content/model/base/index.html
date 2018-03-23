@@ -216,11 +216,9 @@ top.aggregates = mmo
 
 ## Statements about a Resource
 
-In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
+In many cases, current data does not support the level of specificity that the full ontology assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
 
 The pattern makes use of the Linguistic Object class -- a class for resources that identify a particular piece of textual content.  These Linguistic Objects can then refer to any other resource to state what the content is about.
-
-The same pattern is used for similar resources, such as Names and Titles.
 
 Example use cases for this pattern include:
 
@@ -241,6 +239,3 @@ lo = MaterialStatement(top.id + "/statement/1")
 lo.value = "Oil on Canvas"
 top.referred_to_by = lo
 ```
-
-!!! Note "Language of Content"
-    Note that the pattern for providing the language of the content is currently under discussion, as to whether to use the Linked Open Data friendly method of language tags, or the CIDOC-CRM specific method of `P72_has_language`.
