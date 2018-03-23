@@ -258,10 +258,14 @@ title: Index of Classes, Properties, Authorities
 		exec(egtext) 
 
 		# Now in scope should be a top resource
+		factory.pipe_scoped_contexts = False
 		factory.toFile(top, compact=False)
-		jsstr = factory.toString(top, compact=False, collapse=80)
-		js = factory.toJSON(top)
 
+		factory.pipe_scoped_contexts = True
+		jsstr = factory.toString(top, compact=False, collapse=80)
+		factory.pipe_scoped_contexts = False
+
+		js = factory.toJSON(top)
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
@@ -376,7 +380,14 @@ def ctxtrepl(source):
 	full = source.group(0)
 	data = source.group(1)
 
-	if ctxt.has_key(data):
+	pidx = data.find("|")
+	if pidx > -1:
+		# Hack to include it in the serialization
+		ttl = "Core Linked Data Term"
+		col = ""
+		crm = data[pidx+1:]
+		full = full.replace("|%s" % crm, '')
+	elif ctxt.has_key(data):
 		crm = ctxt[data]
 		ttl = "Core Linked Data Term"
 		col = ""
