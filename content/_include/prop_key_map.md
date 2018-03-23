@@ -37,6 +37,8 @@ P106 | `part`
 P106i | `part_of`
 P107 | `member`
 P107i | `member_of`
+P127 | `part_of`
+P127i | `part`
 P131 | `actor_identified_by`
 P131i | `identifies_actor`
 P132 | `volume_overlaps_with`
