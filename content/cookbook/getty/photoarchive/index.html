@@ -56,7 +56,7 @@ The model for the photo archive is divided into two main parts: the description 
 
 ### The Photograph
 
-The Photograph in the archive does not have many properties in the data. Most are about the object depicted in the Photograph.
+The photograph in the archive does not have many properties in this record. Most are about the object depicted in the photograph.
 
 In particular:
 
@@ -81,7 +81,7 @@ The mapping approach is:
  * The transaction between the `photo_source` and the Getty is modeled according to the [provenance](/model/provenance) model
  * The `photo_date` provides the timespan for the creation of the photograph (we do not distinguish between the act of photographing and printing of the physical photograph)
  * The `photo_notes` information is a note associated with the object, modeled in the same way as other [descriptive texts](/model/base/index.html#base_stmt).
- * The photograph then depicts the art object, as described under [depiction](/model/aboutness/#depiction)
+ * The photograph then shows an image, which represents the art object, as described under [depiction](/model/aboutness/#depiction)
 
 This results in the model:
 
@@ -140,7 +140,12 @@ proxy.proxyIn = srccoll
 proxy.identified_by = idr
 ```
 
-We create the original collection, despite only having a label for it, which will be referenced from the photograph via the `part_of` property.  Plus we link the, as of yet unconfigured, Painting resource to it via `depicts`.
+We create the original collection, despite only having a label for it. 
+
+The above needs work, as the Anderson Collection does not *currently* aggregate the photograph. See [Issue 147](https://github.com/linked-art/linked.art/issues/147).
+{: .warning}
+
+Plus we link the, as of yet unconfigured, Painting resource to it via a `VisualItem`.
 
 ```crom
 top = PhotographBW()
@@ -148,8 +153,11 @@ top.label = "Black and White Photograph of 'St. Sebastian'"
 coll = CollectionSet()
 coll.label = "Erwin Panofsky Collection"
 top.aggregated_by = coll
+vi = VisualItem()
+vi.label = "Image on Photograph"
 art = Painting(art=1)
-top.depicts = art
+vi.represents = art
+top.shows = vi
 ```
 
 We can thus fill in the data about the photograph to our model:
@@ -222,8 +230,8 @@ top.timespan = ts
 Due to research by the photo archive catalogers, we know a relatively recent (if not necessarily absolutely current) owner, location and identifier for the object. The owner and identifer follow the same pattern as for the identifiers of the photograph.
 
 ```crom
-top = PhotographBW()
-top.label = "Black and White Photograph of 'St. Sebastian'"
+top = Painting(art=1)
+top.label = "St. Sebastian"
 coll = CollectionSet()
 coll.classified_as = Type("http://vocab.getty.edu/aat/300411912")
 own = Group()
