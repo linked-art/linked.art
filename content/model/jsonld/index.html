@@ -43,14 +43,11 @@ There are some challenges overlaid on these principles from the CIDOC-CRM ontolo
 * The use of - in the names of some classes and properties reduces usability, as it is not allowed as the name of a property in most programming languages.
 * The use of the same name for a property, minus its number, is not possible in JSON-LD as the keys must map uniquely to a predicate.
 * The use of underscores in class or property names is not common in Javascript or in RDF ontologies, which tend to prefer CamelCase.
+* The same conceptual relationship between resources has different 
 
 The context tries to manage all of these issues in a practical and programmatically accesible way from the ontology definition.
 
 ## Context
-
-The context implements the notion that if a property can ever have multiple values, then it must always be an array. In JSON-LD this is done with `@container: @set` on such properties, and you'll see many instances of this in the examples where a property has an array with a single object inside it.
-
-<!-- Here would go language maps and not defining @type:@id for relationships -->
 
 The following process is used to create the JSON-LD keys from the CIDOC-CRM ontology:
 
@@ -67,7 +64,11 @@ The following process is used to create the JSON-LD keys from the CIDOC-CRM onto
 * Provide a second context for the other CIDOC-CRM terms, for those wishing to use them.  Extension terms used in the documentation (such as in this page) are colored orange for ease of identification
 * Include prefixes for commonly used ontologies (`skos`, `schema`, `rdf`) and vocabularies (`aat`, `tgn`, `geonames`)
 
-The name collisions and consistency changes have been resolved as follows:
+The context implements the notion that if a property can ever have multiple values, then it must always be an array. In JSON-LD this is done with `@container: @set` on such properties, and you'll see many instances of this in the examples where a property has an array with a single object inside it.
+
+The context is designed for JSON-LD 1.1, and uses the feature known as scoped contexts: sub-contexts that are defined per class or per relationship that apply only within that term.  This is used to map all of the the various partitioning relationships to `part` and `part_of`, regardless of the type of resource being partitioned.  This feature makes the JSON much easier to read and write, without losing the semantic precision of the separate underlying terms.
+
+Name collisions and naming inconsistencies in the ontology have been resolved as follows:
 
 > 
 {% include "_include/prop_key_map.md" %}

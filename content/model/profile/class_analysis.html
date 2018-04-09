@@ -10,10 +10,6 @@ up_label: "Profile"
 
 This is a brief analysis of the classes in the CIDOC-CRM ontology and their practical utility. The definition of "useful" is those classes which a reasonably comprehensive producer or consumer of a CIDOC-CRM based model should be expected to understand and would make functional differentiations on. Following this definition, there are several sets of classes that can be ignored, for various reasons.
 
-The analysis in a tabular format, with less detailed notes:
-
-  [https://docs.google.com/spreadsheets/d/1miZNwpOETnZML10BnqxiQ9qIVeFiNdpx1G2nLuvO8Xo/edit](https://docs.google.com/spreadsheets/d/1miZNwpOETnZML10BnqxiQ9qIVeFiNdpx1G2nLuvO8Xo/edit)
-
 ## Classes to Ignore
 
 ### Abstract Classes
@@ -64,16 +60,7 @@ There is a significant overlap between the classes _E34 Inscription_, _E36 Visua
 
 __Curated Holding Classes:__ E78, E87
 
-The _E78 Curated Holding_ class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are simply _E19 Physical Object_. In order to have a consistent approach, in the absence of a separate class to represent sets, the preferred class for all such aggregations is E19.  Collections can be typed as such using the well established P2 has type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.
-
-The definition of E19 has the following statement:
-
-> The class also includes all aggregates of objects made for functional purposes ... 
-
-Collections are aggregates of objects made for the functional purpose of collecting and curating them, and thus can fit into the scope of E19.
-
-!!! note "Collections of Features"
-    E19 can also be used for collections of _E25_ or _E26 Features_ according to the ontology's structure.  One particular reading of the scope notes might treat "objects" above as meaning only _E19 Physical Object_ and not including _E26 Physical Feature_ ... however both are _E18 Physical Thing_, which is the domain of the has part relationship, _P46 is composed of_, so the practical effect of such pedantry is negligible. If the intent is only E19, then the scope notes and the ontology should be clarified.
+The _E78 Curated Holding_ class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are sets of objects that are not curated. In order to have a consistent approach, in the absence of a separate class to represent sets, the preferred class for all such aggregations is `Aggregation`.  Collections can be typed as such using the well established P2_has_type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.  `Aggregation` is preferred over E19 Physical Object for consistency with sets of other types of resource, and that a Collection which was never brought together stretches the limits of the definition.  It also makes it very hard to distinguish between an object with physical parts (Painting with a Frame) and a Collection with members (Paintings Collection with a Painting).
 
 ## Classes Not Currently Required
 
@@ -113,10 +100,8 @@ The remaining 33 classes are actively used in mappings for the known datasets.
   * _E10 Transfer of Custody:_ Needed for Exhibitions
   * _E12 Production:_ Needed for Provenance
   * _E13 Attribute Assignment:_ Used for recording previously believed values
-  * _E19 Physical Object:_ Used for Sets of things 
   * _E21 Person:_ Individual people
   * _E22 Man-Made Object:_ Objects
-  * _E30 Right:_ Used for rights information
   * _E33 Linguistic Object:_ Statements
   * _E36 Visual Item:_ Used for images
   * _E39 Actor:_ Used when it is unclear if the actor is an individual or a group 
@@ -132,7 +117,7 @@ The remaining 33 classes are actively used in mappings for the known datasets.
   * _E64 End of Existence:_ Used for end of existence of all things
   * _E65 Creation:_ Similar to Production, an Activity that creates non-physical things
   * _E73 Information Object:_ Concepts, Schemes, Texts  
-  * _E74 Group:_ Married Couples, Organizations, Nationalities, Schools, etc. 
+  * _E74 Group:_ Married Couples, Organizations, Workshops, etc. 
   * _E85 Joining:_ Primarily used for recording the time of getting married
   * _E86 Leaving:_ Primarily used for recording the dissolution of a marriage
   * _E97 Monetary Amount:_ Recording an amount of money for a price or payment
@@ -148,3 +133,12 @@ There is currently no way to describe the Activity of transferring MonetaryAmoun
 __Name__
 
 E41 Appellation is not a descendent of E33 Linguistic Object, meaning that it cannot have an E56 Language associated with it. As practically every name of a person or thing that is not an E42 Identifier is linguistic, the utility of E41 is greatly reduced.  Instead we create a new class that inherits from both E41 and E33, called Name.
+
+__PropertyInterest__
+
+
+__Aggregation__
+
+
+__Relationship__
+
