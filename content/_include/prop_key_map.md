@@ -53,6 +53,7 @@ P164i | `timespan_of_presence`
 P165i | `incorporated_by`
 skos:exactMatch | `exact_match`
 ore:isAggregatedBy | `aggregated_by`
+rdfs:seeAlso | `see_also`
 dcterms:relation | `related`
 dcterms:conformsTo | `conforms_to`
 skos:closeMatch | `close_match`
