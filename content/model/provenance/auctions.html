@@ -165,6 +165,46 @@ paymt.paid_amount = amt
 top.part = paymt
 ```
 
+### Known Bid Amounts
+
+Sometimes we also know the monetary amounts that were unsuccessfully bid for the object, regardless of whether the auction eventually ended in a sale or not.  These bids are part of the overall bidding activity.
+
+Bids are modeled as the creation of a proposition that the bidder (or the person that an agent is bidding on behalf of) will pay a certain amount of money for the object. 
+
+
+```crom
+top = Activity()
+top.label = "Auction of Lot J-1823-5"
+who = Auctioneer()
+who.label = "Example Auctioneer"
+top.carried_out_by = who
+lotset = AuctionLotSet()
+lotset.label = "Set of Objects for Lot J-1823-5"
+top.used_specific_object = lotset
+txn = Purchase()
+txn.label = "Purchase of Lot"
+top.part = txn
+bidset = Activity()
+bidset.label = "Bids made on Lot"
+top.part = bidset
+bidset.occurs_before = txn
+bid = Creation()
+bid.classified_as = Type("aat:300054602")
+bidset.part = bid
+who = Person()
+who.label = "Example Bidder"
+bid.carried_out_by = who
+bidprop = PropositionalObject()
+amnt = MonetaryAmount()
+amnt.value = 10000
+curr = Currency()
+curr.label = "dollars"
+amnt.currency = curr
+bidprop.refers_to = amnt
+```
+
+
+
 ## Auction Catalog
 
 Much of the information we have about historical auctions comes from Auction Catalogs _(aat:300026068)_.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/) with the added AAT concept for being an auction catalog.
