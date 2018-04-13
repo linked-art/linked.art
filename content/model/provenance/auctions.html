@@ -169,7 +169,7 @@ top.part = paymt
 
 Sometimes we also know the monetary amounts that were unsuccessfully bid for the object, regardless of whether the auction eventually ended in a sale or not.  These bids are part of the overall bidding activity.
 
-Bids are modeled as the creation of a proposition that the bidder (or the person that an agent is bidding on behalf of) will pay a certain amount of money for the object. 
+Bids are modeled as the creation of a proposition that the bidder (or the person that an agent is bidding on behalf of) will pay a certain amount of money for the object. In the example below, a known bid is $10,000 but it is not stated whether there was a sale concluded.
 
 
 ```crom
@@ -181,13 +181,9 @@ top.carried_out_by = who
 lotset = AuctionLotSet()
 lotset.label = "Set of Objects for Lot J-1823-5"
 top.used_specific_object = lotset
-txn = Purchase()
-txn.label = "Purchase of Lot"
-top.part = txn
 bidset = Activity()
 bidset.label = "Bids made on Lot"
 top.part = bidset
-bidset.occurs_before = txn
 bid = Creation()
 bid.classified_as = Type("aat:300054602")
 bidset.part = bid
