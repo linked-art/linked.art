@@ -16,8 +16,9 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, Transformation, \
-    PropertyInterest, Payment, EndingActivity, Creation, Aggregation
+    ManMadeFeature, Dimension, PhysicalObject, Name, \
+    PropertyInterest, Payment, EndingActivity, Creation, Aggregation, Proxy, \
+    PropositionalObject, TransformingActivity
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -28,9 +29,8 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
-	DigitalImage, \
+	DigitalImage, add_proxy_wrapper, \
 	materialTypes, dimensionUnits, add_art_setter, add_attribute_assignment_check
-
 
 
 ManMadeObject._uri_segment = "object"
@@ -85,6 +85,7 @@ factory.context_uri = contextUrl
 factory.auto_id_type = "int-per-segment"
 add_art_setter()
 add_attribute_assignment_check()
+add_proxy_wrapper()
 
 # Try to load in the context only once
 ctxt = factory.context_json['@context']
@@ -257,10 +258,14 @@ title: Index of Classes, Properties, Authorities
 		exec(egtext) 
 
 		# Now in scope should be a top resource
+		factory.pipe_scoped_contexts = False
 		factory.toFile(top, compact=False)
-		jsstr = factory.toString(top, compact=False, collapse=80)
-		js = factory.toJSON(top)
 
+		factory.pipe_scoped_contexts = True
+		jsstr = factory.toString(top, compact=False, collapse=80)
+		factory.pipe_scoped_contexts = False
+
+		js = factory.toJSON(top)
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
@@ -375,7 +380,14 @@ def ctxtrepl(source):
 	full = source.group(0)
 	data = source.group(1)
 
-	if ctxt.has_key(data):
+	pidx = data.find("|")
+	if pidx > -1:
+		# Hack to include it in the serialization
+		ttl = "Core Linked Data Term"
+		col = ""
+		crm = data[pidx+1:]
+		full = full.replace("|%s" % crm, '')
+	elif ctxt.has_key(data):
 		crm = ctxt[data]
 		ttl = "Core Linked Data Term"
 		col = ""

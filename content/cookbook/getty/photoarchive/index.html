@@ -56,7 +56,7 @@ The model for the photo archive is divided into two main parts: the description 
 
 ### The Photograph
 
-The Photograph in the archive does not have many properties in the data. Most are about the object depicted in the Photograph.
+The photograph in the archive does not have many properties in this record. Most are about the object depicted in the photograph.
 
 In particular:
 
@@ -81,7 +81,7 @@ The mapping approach is:
  * The transaction between the `photo_source` and the Getty is modeled according to the [provenance](/model/provenance) model
  * The `photo_date` provides the timespan for the creation of the photograph (we do not distinguish between the act of photographing and printing of the physical photograph)
  * The `photo_notes` information is a note associated with the object, modeled in the same way as other [descriptive texts](/model/base/index.html#base_stmt).
- * The photograph then depicts the art object, as described under [depiction](/model/aboutness/#depiction)
+ * The photograph then shows an image, which represents the art object, as described under [depiction](/model/aboutness/#depiction)
 
 This results in the model:
 
@@ -118,25 +118,34 @@ top = AccessionNumber()
 top.value = "292221"
 ```
 
-A second, more complex, Identifier for Anderson's identifier is created. This identifier is associated with the source collection, via a set of identifiers of which it is part.  We also create an Acquisition activity, by which the photograph is acquired by The Getty. This is not shown in the example below, but is shown in the full description of the photograph.
+A second `Identifier` for Anderson's identifier is created. This identifier is associated with the source collection.  We also create an Acquisition activity, by which the photograph is acquired by The Getty. This is not shown in the example below, but is shown in the full description of the photograph.
 
 ```crom
-top = Identifier()
-top.value = "1195"  
-srcidset = InformationObject()
-srcidset.label = "Identifiers of Anderson"
-top.included_in = srcidset
+
+top = PhotographBW()
+top.label = "Black and White Photograph of 'St. Sebastian'"
 srccoll = CollectionSet()
 srccoll.label = "Collection of Anderson"
-srcidset.refers_to = srccoll
 who = Actor()
 who.label = "Anderson"
 cre = Creation()
 cre.carried_out_by = who
 srccoll.created_by = cre
+top.aggregated_by = srccoll
+idr = Identifier()
+idr.value = "1195" 
+proxy = Proxy()
+proxy.proxyFor = top
+proxy.proxyIn = srccoll
+proxy.identified_by = idr
 ```
 
-We create the original collection, despite only having a label for it, which will be referenced from the photograph via the `part_of` property.  Plus we link the, as of yet unconfigured, Painting resource to it via `depicts`.
+We create the original collection, despite only having a label for it. 
+
+The above needs work, as the Anderson Collection does not *currently* aggregate the photograph. See [Issue 147](https://github.com/linked-art/linked.art/issues/147).
+{: .warning}
+
+Plus we link the, as of yet unconfigured, Painting resource to it via a `VisualItem`.
 
 ```crom
 top = PhotographBW()
@@ -144,8 +153,11 @@ top.label = "Black and White Photograph of 'St. Sebastian'"
 coll = CollectionSet()
 coll.label = "Erwin Panofsky Collection"
 top.aggregated_by = coll
+vi = VisualItem()
+vi.label = "Image on Photograph"
 art = Painting(art=1)
-top.depicts = art
+vi.represents = art
+top.shows = vi
 ```
 
 We can thus fill in the data about the photograph to our model:
@@ -218,19 +230,22 @@ top.timespan = ts
 Due to research by the photo archive catalogers, we know a relatively recent (if not necessarily absolutely current) owner, location and identifier for the object. The owner and identifer follow the same pattern as for the identifiers of the photograph.
 
 ```crom
-own = Group()
-own.label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
-top = Identifier()
-top.value = "Inv. 388"
+top = Painting(art=1)
+top.label = "St. Sebastian"
 coll = CollectionSet()
 coll.classified_as = Type("http://vocab.getty.edu/aat/300411912")
-idset = InformationObject()
-idset.label = "Identifiers of Galleria Nazionale d'Arte Antica, Palazzo Corsini"
-top.included_in = idset
-idset.refers_to = coll
+own = Group()
+own.label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
 cre = Creation()
 cre.carried_out_by = own
 coll.created_by = cre
+top.aggregated_by = coll
+proxy = Proxy()
+proxy.proxyFor = top
+proxy.proxyIn = coll
+idr = Identifier()
+idr.value = "Inv. 388"
+proxy.identified_by = idr
 ```
 
 And its current location is very well described in the data, so we map all of it in this example.  However, this is not a recommended pattern and instead a gazetter or vocabulary such as TGN or Geonames should be used instead.  Only places that do not have existing identities should have new identities created.  Instead, the city of Rome should be identified as `tgn:7000874-place` and then the TGN hierarchy used for the province, region, and country.
@@ -244,9 +259,9 @@ rom = Place()
 rom.label = "Roma"
 top = Place()
 top.label = "Rome"
-top.spatially_within = rom
-rom.spatially_within = laz
-laz.spatially_within = itl
+top.part_of = rom
+rom.part_of = laz
+laz.part_of = itl
 ```
 
 And a few additional features for the provenance statement, a brief citation and a category:

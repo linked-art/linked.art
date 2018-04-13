@@ -6,10 +6,40 @@ title: "Exhibitions"
 
 ## Introduction
 
+Exhibitions are very common activity that involves artwork owned by many different organizations being displayed together, often with additional contextual information linking the pieces together.  The exhibition is often presented at different venues over time, and might be part of a series such as the World's Fairs or annual exhibitions.
+
+## Exhibition Concept
+
+The model distinguishes between the concept of the exhibition and the activity that makes that concept real.  The concept is created by the people who originally think up the exhibition, long before any of the pieces are collected together.  The exhibition concept likely has some theme that results in a coherent set of objects being presented, which could be as complex as post-industrial life or as  simple as the life's work of a particular artist.
+
+The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition. It can have all of the affordances of any concept, such as names, identifiers, references, relationships and more.
+
+```crom
+top = PropositionalObject()
+top.classified_as = Type("aat:300417531")
+top.label = "Example Exhibition"
+id1 = Identifier()
+id1.value = "exh-2010-eg-a"
+top.identified_by = id1
+nm = Name()
+nm.value = "Example Exhibition"
+top.identified_by = nm
+typ = Type("aat:300233686")
+typ.label = "Gender Issues"
+top.about = typ
+cre = Creation()
+cur = Person()
+cur.label = "Curator"
+cre.carried_out_by = cur
+top.created_by = cre
+ex = Exhibition()
+ex.label = "Exhibition at Venue"
+top.motivated = ex
+```
 
 ## Exhibition Activity
 
-The exhibition itself follows the activity pattern, as described in the section on [Provenance](/model/provenance/).  In particular, it takes place at a certain time given in `timespan`, at a certain place given in `took_place_at`, and was organized by some actor, likely an organization, given in `carried_out_by`. It can be recognized as an exhibition using the classification of _aat:300054766_, "exhibitions".
+There is an activity, as described in the section on [Provenance](/model/provenance/), which is the exhibiting of the objects.  In particular, the public exhibition takes place at a certain time given in `timespan`, at a certain place or places given in `took_place_at`, and was organized by some actor or actors, likely organizations, given in `carried_out_by`. It can be recognized as an exhibition using the classification of _aat:300054766_, "exhibitions".
 
 ```crom
 top = Exhibition()
@@ -49,26 +79,30 @@ ts3 = TimeSpan()
 ts3.begin_of_the_begin = "1981-03-14"
 ts3.end_of_the_end = "1981-08-14"
 exh2.timespan = ts3
-top.consists_of = exh
-top.consists_of = exh2
+top.part = exh
+top.part = exh2
 ```
 
 ## Objects 
 
-The art objects on display at exhibitions can be listed from the Exhibition with the property `used_specific_object`.  For the travelling exhibitions described above, the objects should be referenced from each of the venues, as some venues will add in or replace objects. It also helps to maintain the provenance of the object, described in the next section about transfer of custody.  The objects can refer back to the exhibitions they were displayed in using the inverse `used_for` property (not included in the example below).
+The collection of art objects on display at exhibitions can be listed from the Exhibition with the property `used_specific_object`. The model for the set of objects that make up the content of the exhibition is the same as the model for permanent collections -- the objects are collected together into an `Aggregation`, which is the object used by the Exhibition.  
+
+For the travelling exhibitions described above, a different collection of objects should be referenced from each of the venues.  Objects are frequently added or removed for the venue, and each venue will likely have its own context specific information such as descriptions or labels.  The top level activity representing the overall exhibition does not have its own Aggregation in the travelling exhibition case.
 
 ```crom
 top = Exhibition()
 top.label = "Example Exhibition"
+agg = Aggregation()
 obj = Painting(art=1)
 obj.label = "Painting"
 obj2 = Painting(art=1)
 obj2.label = "Another Painting"
 obj3 = Sculpture(art=1)
 obj3.label = "Sculpture"
-top.used_specific_object = obj
-top.used_specific_object = obj2
-top.used_specific_object = obj3
+agg.aggregates = obj
+agg.aggregates = obj2
+agg.aggregates = obj3
+top.used_specific_object = agg
 ```
 
 ### Exhibition Provenance: Transfer of Custody
@@ -92,41 +126,60 @@ top.transferred_custody_of = obj
 top.transferred_custody_to = mus
 top.transferred_custody_from = owner
 top.specific_purpose = exh
-exh.used_specific_object = obj
+agg = Aggregation()
+agg.aggregates = obj
+exh.used_specific_object = agg
 exh.carried_out_by = mus
 obj.current_owner = owner
 ```
 
 ### Exhibition Specific Labels
 
-The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object _(aat:300411672)_ is part of the exhibition via the `consists_of` property, and assigns a new `Name` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the `Name` does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.
+The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object is part of the exhibition via the `part` property, and assigns a new `Name` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the `Name` does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.  This is an instance of the [Context Specific Assertions](/model/assertion/#context-specific-assertions) pattern.
 
 ```crom
 top = Exhibition()
 top.label = "Example Exhibition"
+agg = Aggregation()
+top.used_specific_object = agg
 obj = Painting(art=1)
 obj.label = "Real Painting Name"
+agg.aggregates = obj
 aa = AttributeAssignment()
 aa.classified_as = "identified_by"
 name = Name()
 name.value = "Exhibition Specific Name"
 aa.assigned = name
 aa.assigned_to = obj
-top.consists_of = aa
+curator = Person()
+curator.label = "A. Curator"
+aa.carried_out_by = curator
+aa.involved = agg
+top.part = aa
 ```
 
-### Digital Integration
+### Depiction of the Object at the Exhibition
 
-There are often photographs or other digital representations of the object as displayed in the exhibition. These follow the same pattern as other [digital representations of the object](/model/object/digital/) but are also, at the same time, a representation of the exhibition itself. To model this, the `representation` property can be used on the exhibition as well as the object, pointing to the `Image`.
+There are often photographs of the object as displayed in the exhibition. These are representations of the object regardless, and hence can be associated directly with the object rather than via an `AttributeAssignment`. The description of the image therefore follows the same pattern as other [digital representations of the object](/model/object/digital/), but like the label example above, it occurred as part of the exhibition.
+
+The same pattern of having the creation of the image as part of the exhibition activity does not suffice, as the image could be a digital reproduction of physical photograph, created much later than the exhibition.  Secondly, the creation of the photograph was very likely not carried out as part of carrying out the exhibition by the museum, it could easily have been taken by a visitor. 
+
+Instead, we associate the image with a `Proxy` resource that stands for the object in the context of the Aggregation of objects used by the Exhibition ... the image is a representation of the object in that context.
 
 ```crom
 top = Exhibition()
 top.label = "Example Exhibition"
 obj = Painting(art=1)
 obj.label = "Painting"
-top.used_specific_object = obj
+agg = Aggregation()
+agg.aggregates = obj
+top.used_specific_object = agg
 img = DigitalImage("http://example.org/images/object-at-exhibition.jpg")
-img.format = "image/jpeg"
 obj.representation = img
-top.representation = img
+proxy = Proxy()
+proxy.proxyFor = obj
+proxy.proxyIn = agg
+# proxy.representation = img
+img.represents = proxy
 ```
+

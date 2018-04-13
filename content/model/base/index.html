@@ -4,7 +4,7 @@ title: Baseline Patterns
 
 {% include "toc.html" %}
 
-It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with the datasets of almost 20 museums, the following patterns have been agreed on as useful ways to think about our data.
+It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with datasets from across many different museums, the following patterns have been agreed on as useful ways to think about our cultural data.
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
 
@@ -16,7 +16,6 @@ There are a few core properties that every resource should have for it to be a u
 * `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
 * `label` captures a human readable label for the object as a string.  Every resource should have exactly one label.
 
-
 ```crom
 top = ManMadeObject()
 top.label = "Example Object"
@@ -24,11 +23,9 @@ top.label = "Example Object"
 
 ## Types / Classifications
 
-The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful in specific circumstances.  The mechanism for doing this provided by the CRM is the predicate `crm:P2_has_type`, referred to as `classified_as` in the JSON-LD representation. The semantics of `crm:P2_has_type` are thus closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class".
+The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the predicate `crm:P2_has_type`, mapped as `classified_as` in the model. The semantics of `crm:P2_has_type` are closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class" like `rdf:type` (mapped as `type` in the model). The `type` field is used for CRM defined classes, and as few other extensions as possible.
 
-It is useful to compare this with the predicate `rdf:type`, or `type` in the JSON-LD representation, which is the formal class of the resource. This is used almost exclusively for the CRM defined classes, with as few extensions as possible.
-
-While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms used in the model is listed [here](/model/vocab/).
+While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms that have been identified as useful from those vocabularies is listed in the [community best-practices](/community/best-practices/vocabularies/).
 
 Use cases for this pattern are in almost every example, but include:
 
@@ -41,17 +38,16 @@ Use cases for this pattern are in almost every example, but include:
 
 __Example:__
 
-The type of the object (an instance of CRM's ManMadeObject class) is a painting _(aat:300033618)_:
+The type of the object (an instance of `ManMadeObject`) is a painting _(aat:300033618)_:
 
 ```crom
 top = Painting(art=1)
 top.label = "Simple Example Painting"
 ```
 
-
 ## Parts
 
-The CRM allows the partitioning of many sorts of object, including those that are of most interest to the community. In particular,
+Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. These partitionings are sometimes immediately obvious (the frame is part of the painting) and sometimes rather abstract (the concept of oak is part of the broader concept of wood).
 
 ### Objects
 
@@ -99,7 +95,7 @@ top = Auction()
 top.label = "Example Auction"
 lot = Activity(top.id + "/part/1")
 lot.label = "Example Auction of Lot"
-top.consists_of = lot
+top.part = lot
 ```
 
 ### Locations
@@ -123,8 +119,8 @@ gallery = Gallery(top.id + '/part/1')
 gallery.label = "Gallery W204"
 city = Place("http://vocab.getty.edu/tgn/7023900-place")
 city.label = "Los Angeles"
-top.spatially_contains = gallery
-top.spatially_within = city
+top.part = gallery
+top.part_of = city
 ```
 
 !!! note "Use of Gazeteers"
@@ -132,7 +128,7 @@ top.spatially_within = city
 
 ### Information / Linguistic Objects
 
-CIDOC-CRM makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
+The model makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
 
 Use cases for this pattern include:
 
@@ -149,12 +145,36 @@ top = LinguisticObject()
 top.label = "Content of Ledger 1"
 row = LinguisticObject(top.id + "/part/1")
 row.label = "Content of Row 1"
-top.includes = row
+top.part = row
+```
+
+### Concept Hierarchy
+
+Similarly, concepts can be arranged in parent/child hierarchies where the parent concepts include all of the child concepts.  
+
+Use cases for this pattern include:
+
+* The concept of wood includes the concept of oak
+* The concept of paintings includes the concept of portraits
+
+__Example:__
+
+The concept of being the side of an object (_aat:300404461_) is part of the concept of being some portion of an object (_aat:300190691_).
+
+```crom
+top = ManMadeObject()
+top.label = "Side of an Object"
+child = Type("aat:300404461")
+child.label = "Sides"
+parent = Type("aat:300190691")
+parent.label = "Object portions"
+child.part_of = parent
+top.classified_as = child
 ```
 
 ### Organizations
 
-Organizations are modeled as groups in CIDOC-CRM, which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.
+Organizations are modeled as Groups which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.  Note that this pattern uses `member` rather than `part`, as instances of both `Group` and `Person` share the same membership relationship, rather than a strict partitioning. 
 
 Use cases for this pattern include:
 
@@ -172,15 +192,35 @@ dept.label = "Paintings Department"
 top.member = dept
 ```
 
+### Membership in a Collection
+
+Collections are modeled as Aggregations of objects. Aggregations are conceptual sets of resources.  Like `member` for participation in Groups, this is also not strict partitioning as any resource can be part of an Aggregation, and the same Aggregation can include many different types of resource.  Instead of `part`, we use the term `aggregates`.
+
+Use cases for this pattern include:
+
+* A collection of artworks
+* An auction Lot of objects
+* A set of related concepts
+
+__Example:__
+
+A Painting is a member of the Paintings Collection.
+
+```crom
+top = CollectionSet()
+top.label = "Paintings Collection"
+mmo = Painting()
+mmo.label = "Example Painting"
+top.aggregates = mmo
+```
+
 ## Statements about a Resource
 
-In many cases, current data does not support the level of specificity that CIDOC-CRM assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
+In many cases, current data does not support the level of specificity that the full ontology assumes.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource that has a more exact scope than just a general description, then this pattern can be used to record that descriptive text.
 
 The pattern makes use of the Linguistic Object class -- a class for resources that identify a particular piece of textual content.  These Linguistic Objects can then refer to any other resource to state what the content is about.
 
-The same pattern is used for similar resources, such as Names and Titles.
-
-Example use cases for this pattern include:
+Use cases for this pattern include:
 
 * General description of the resource
 * Materials statement for an object
@@ -199,6 +239,3 @@ lo = MaterialStatement(top.id + "/statement/1")
 lo.value = "Oil on Canvas"
 top.referred_to_by = lo
 ```
-
-!!! Note "Language of Content"
-    Note that the pattern for providing the language of the content is currently under discussion, as to whether to use the Linked Open Data friendly method of language tags, or the CIDOC-CRM specific method of `P72_has_language`.

@@ -39,7 +39,7 @@ top.identified_by = apl
 
 ### Parts of Names
 
-Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Name`s, and are included in the `includes` set in the same way as other partitioning.
+Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property.  In Western tradition, there is a distinction between a first or given name _(aat:300404651)_, a middle name _(aat:300404654)_, and the family or sirname _(aat:300404652)_. Titles, honorifics and similar can also be included, either as a suffix _(aat:300404845)_ or a prefix _(aat:300404662)_.  The name parts are themselves `Name`s, and are included in the `part` set in the same way as other partitioning.
 
 ```crom
 top = Person()
@@ -57,11 +57,11 @@ suff = NameSuffix()
 suff.value = "Duchess of Wolverhampton"
 mid = MiddleName()
 mid.value = "A."
-apl.includes = pref
-apl.includes = given
-apl.includes = mid
-apl.includes = fam
-apl.includes = suff
+apl.part = pref
+apl.part = given
+apl.part = mid
+apl.part = fam
+apl.part = suff
 ```
 
 ## Identity
@@ -165,7 +165,9 @@ top.representation = img
 
 ### Nationality
 
-Nationality is modeled in CRM as membership in a Group, the same way that a person can be a `member_of` an organization, a band or any other set of people. The `Group` should have _aat:300379842_ as one of its classifications, and if known, another classification for the specific culture or location for the nationality itself. For example, a person considered to be of British nationality, would be a member of a `Group` that was `classified_as` both _aat:300379842_ and _aat:300111159_.
+Nationality is modeled as an Aggregation of people, rather than as a Group.  This is because all of the people, across all time, who have had a particular nationality, cannot take action as a single coherent entity.  As Group is a subClass of Actor, it is not an appropriate class for this use.  Instead the nationality is an Aggregation, that the Person is `aggregated_by`.
+
+The `Aggregation` should have _aat:300379842_ as one of its classifications, and if known, another classification for the specific culture or location for the nationality itself. For example, a person considered to be of British nationality, would be a member of an `Aggregation` that was `classified_as` both _aat:300379842_ and _aat:300111159_.
 
 ```crom
 top = Person()
@@ -173,14 +175,14 @@ top.label = "Jeremy K. Lintott"
 natl = Nationality()
 natl.classified_as = Type("http://vocab.getty.edu/aat/300111159")
 natl.label = "British"
-top.member_of = natl
+top.aggregated_by = natl
 ```
 
 ### Gender
 
 Gender is a hotly debated and politically charged topic. The intent of this section is not to take a stand on those debates, but instead to allow the representation of data in museum and other information management systems to be made accessible.
 
-Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the current modeling decision is to echo the same membership pattern as for nationality. This allows a plethora of gender diversity, and does not make any specific statements about biological versus assumed versus prefered gender roles.  A Person can be a member of multiple groups at the same time, allowing the association with multiple genders with this modeling decision.  Gender based groups should be `classified_as` _aat:300055147_ along with any specific classification known.
+Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the current modeling decision is to echo the same `Aggregation` pattern as for nationality. This allows a plethora of gender diversity, and does not make any specific statements about biological versus assumed versus prefered gender roles.  A Person can be a member of multiple groups at the same time, allowing the association with multiple genders with this modeling decision.  Gender based groups should be `classified_as` _aat:300055147_ along with any specific classification known.
 
 ```crom
 top = Person()
@@ -188,7 +190,7 @@ top.label = "Mabel N. Overton"
 gender = Gender()
 gender.classified_as = Type("http://vocab.getty.edu/aat/300189557")
 gender.label = "feminine"
-top.member_of = gender
+top.aggregated_by = gender
 ```
 
 ## Organization Membership

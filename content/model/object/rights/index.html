@@ -42,31 +42,16 @@ More detailed information is, however, often available and it is useful to be ex
 
 There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way.
 
-The object has a `subject_to` property, which records the particular `Right`. It is then `classified_as` the rightsstatements.org URI that's appropriate for the situation.  A `label` can also be given to provide clarity, and to display to the user.
+The pattern is identical to custom rights statements, however the URI of the statement is given as the URI from rightsstatements.org, rather than a local one. A `label` can also be given to provide clarity, and to display to the user.
 
 ```crom
 top = Painting(art=1)
 top.label = "Object"
-cne = Right()
-cne.classified_as = Type("http://rightsstatements.org/vocab/NKC/1.0/")
+cne = RightsStatement("http://rightsstatements.org/vocab/NKC/1.0/")
 cne.label = "No known copyright"
-top.subject_to = cne
+top.referred_to_by = cne
 ```
 
-### Copyright Assertion
+### Other Rights Assertions
 
-Copyright, unlike the above situation where there is no known copyright, is slightly more complex in that it can be held by an individual or organization.  It is often important to capture who holds the copyright.  Other situations are similar, such as for trademarks.
-
-In these cases, the `Right` has an additional property of `possessed_by`, which refers to the `Actor` that holds the right. Actors are further described in the section about [people and organizations](/model/actor/).
-
-```crom
-top = Painting(art=1)
-top.label = "Example Painting"
-copyright = Right()
-copyright.classified_as = Type("http://rightsstatements.org/vocab/InC/1.0/")
-copyright.label = "Copyright of Example Painting's content"
-top.subject_to = copyright
-cholder = Actor()
-cholder.label = "Copyright Holder"
-copyright.possessed_by = cholder
-```
+Other, or more detailed, rights assertions for copyright, ownership or other legal matters can be described using the [`PropertyInterest` class](/model/provenance/legalclaims/).

@@ -1,5 +1,5 @@
 ordereddict
-cromulent
+-e git://github.com/thegetty/crom.git#egg=cromulent
 hyde
 Jinja2
 pymdown_extensions
