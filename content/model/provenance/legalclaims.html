@@ -72,7 +72,7 @@ The base [provenance model](/model/provenance/) and the `PropertyInterest` exten
 
 In particular, the `Production` of the object would have a `part` which is the `BeginningOfExistence` of the `PropertyInterest`.  If the object is destroyed, then that activity would also have a `part` of the `EndOfExistence` of the last `PropertyInterest` around the object's ownership.  In between, any `Acquisition` would include a `Transformation` of the previous owner's `PropertyInterest` into the new owner's `PropertyInterest`.  Transformations end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, `Transformation` is a shortcut for a pair of beginning and end of existence events that occur at the same time.
 
-We classify the Right as being one of Ownership (_aat:300055603_), as opposed to any other Right that might be applied to the object.
+We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
 
 ```crom
 top = Purchase()
