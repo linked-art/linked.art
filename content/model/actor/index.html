@@ -173,6 +173,7 @@ The `Aggregation` should have _aat:300379842_ as one of its classifications, and
 top = Person()
 top.label = "Jeremy K. Lintott"
 natl = Nationality()
+natl.classified_as = Type("http://vocab.getty.edu/aat/300379842")
 natl.classified_as = Type("http://vocab.getty.edu/aat/300111159")
 natl.label = "British"
 top.aggregated_by = natl
@@ -188,6 +189,7 @@ Gender is not specifically discussed in CRM, in fact it was even deleted from a 
 top = Person()
 top.label = "Mabel N. Overton"
 gender = Gender()
+gender.classified_as = Type("http://vocab.getty.edu/aat/300055147")
 gender.classified_as = Type("http://vocab.getty.edu/aat/300189557")
 gender.label = "feminine"
 top.aggregated_by = gender
