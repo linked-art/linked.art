@@ -115,7 +115,7 @@ The individual purchase that is the result of auctioning an object is the same a
 
 ## Transfer of Custody
 
-The model makes a distinction between the transfer of legal ownership (e.g. by sale or gift) and the transfer of custody (e.g. by losing the object, loaning it for an exhibition, or having it stolen). If the possession of the object is either illegal or temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody only.
+The model makes a distinction between the transfer of legal ownership (e.g. by sale or gift) and the transfer of custody (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody only.
 
 Transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
 
@@ -144,4 +144,4 @@ top.timespan = when
 
 ### Theft
 
-Theft, looting and other illegal acquisitions are now covered more accurately under the [legal claims](legalclaims.html) pattern.  While CIDOC-CRM recommends the use of a Transfer of Custody as legal ownership does not change, just who is in possession of the object, there are serious drawbacks to this approach.  Notably when a stolen item is sold to an unwitting buyer, there is no outward appearance that there is anything untoward.  The ability to classify a legal claim as valid or invalid resolves this conundrum.
+Theft, looting and other illegal acquisitions are covered more accurately under the [legal claims](legalclaims.html) pattern.  While CIDOC-CRM recommends the use of a Transfer of Custody as legal ownership does not change, there are serious drawbacks to this approach.  Notably when a stolen item is sold to an unwitting buyer, there is no outward appearance that there is anything untoward.  The ability to classify a legal claim as valid or invalid resolves this issue.
