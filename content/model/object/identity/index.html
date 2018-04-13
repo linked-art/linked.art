@@ -21,7 +21,7 @@ top = Painting(art=1)
 top.label = "Simple Example Painting"
 ```
 
-### Non-URI / Legacy Identifiers
+### Non-URI Identifiers
 
 There are often other identifiers available for the object, including local numbers provided by a database or collection management system, accession numbers, or stock numbers.  These are recorded as separate resources, with a `value` and a type, and referenced from the object via the `identified_by` relationship.  This also allows them to be linked to the [documentation](/model/document/) that asserts the identifier.  The different types of identifier can be given via the `classified_as` property.
 
@@ -40,9 +40,9 @@ id2.label = "Local Repository Number"
 top.identified_by = id2
 ```
 
-### Context for Legacy Identifiers
+### Context for Non-URI Identifiers
 
-Identifiers are typically assigned when an object is accessioned into a [collection](/model/collection/), or when technology systems that manage the descriptions of the objects, are updated.  It can be useful to associate the identifier with the collection it was minted for. This is done through an intermediary `InformationObject` which is the set of identifiers used in the collection. That set then `refers_to` the collection.
+Identifiers are typically assigned when an object is accessioned into a [collection](/model/collection/), or when technology systems that manage the descriptions of the objects, are updated.  It can be useful to associate the identifier with the collection it was minted for. This is done by asserting that that the [proxy](/model/collection/) for the object in the context of the collection also has the identifier.  Note that in this case the identifier is still current, and hence also associated with the object directly.
 
 ```crom
 top = Painting(art=1)
