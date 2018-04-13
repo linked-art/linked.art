@@ -63,20 +63,8 @@ top.brought_into_existence_by = begin
 top.taken_out_of_existence_by = end
 ```
 
-### Why isn't this just an E30 Right?
-
-!!! warning "CIDOC-CRM Arcana"
-    You almost certainly do not want to read this section.  [Just skip ahead](#multiple-owners).
-
-The basic problem with E30 Right is that it is a Conceptual Object, and Conceptual Objects cannot be destroyed.  While there is any carrier of the object, including the CIDOC-CRM description of it or even within someone's memory, then the concept still exists somewhere.  As it cannot be written down without persisting it, it cannot be destroyed and instead it can simply pass out of all knowledge.  This means that the existence of the Right is not the same as the validity of the Right: the concept of slavery in America still exists, but it is no longer legally valid. There are no terms within the CRM to express the effective dates, and the CRM-SIG clarified that the right's effectiveness would be a different sort of resource.  In particular that an E30 Right "is the formulation of the right, the terms", and not whether the right had any legal standing in any jurisdiction at any point in time.
-
-It also means that for every combination of Right+Object+Actor, there are many instances, all of which exist at the same time. The Right of Ownership of the Mona Lisa has at least one instance per Actor that ever actually owned it, and given the conceptual nature of E30, there could be many Rights for Actors that never actually owned it.
-
-There is also no way to distinguish jurisdiction or legal code under which the right would exist, if it was ever in force. The discussion of the SIG was inconclusive as to whether a Right can be conceived by anyone, or only by Actors with the potential to make them legally enforcable even if they never do so. In other words, if I conceive of the terms of a Right of ownership, that applies to the Mona Lisa, and is possessed by myself ... is that an E30 Right, or is it just a Conceptual Object that quacks like a Right. If I cannot concieve Rights into existence, what are the properties of agents that can? 
-
-Finally, E72 Legal Object is not the parent of Conceptual Object but instead of Symbolic Object. This means that Rights cannot be applied to ideas, yet patents can provide legal protection for those ideas. Thus even if all of the above were solved, Rights would still not cover the right set of classes.
-
-In summary, CIDOC-CRM lacks the expressiveness to state what is required and the current definition of E30 Right is insufficiently clear for use at all. There was little enthusiasm in the SIG to take up the modeling effort, despite some reasonable suggestions from several parties. As such, we have added this extension to allow the description of effective rights, not just conceptual ones.  If you're not convinced, you can read [the email thread that starts here](http://lists.ics.forth.gr/pipermail/crm-sig/2017-August/003045.html).
+!!! note "CIDOC-CRM Arcana"
+    You might be wondering why isn't this just an E30 Right? You almost certainly do not want to read [this section](/model/profile/class_analysis.html#ineffective-classes).
 
 ## Ownership Rights
 
