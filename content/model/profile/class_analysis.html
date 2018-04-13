@@ -149,16 +149,19 @@ __Name__
 
 E41 Appellation is not a descendent of E33 Linguistic Object, meaning that it cannot have an E56 Language associated with it. As practically every name of a person or thing that is not an E42 Identifier is linguistic, the utility of E41 is greatly reduced.  Instead we create a new class that inherits from both E41 and E33, called Name.
 
-
 __EndingActivity, TransformingActivity__
 
 Like `Name`, these classes merge End of Existence and Transformation with Activity respectively. Even if the  
 
 __PropertyInterest__
 
+A replacement for E30 Right that handles the place(s) and time(s) that the right is actually valid for, rather than just the concept of the right.
 
-__Aggregation__
+__Aggregation, Proxy__
 
+As described above, E78 Curated Holding is overly specific and E19 is both insufficient and ambiguous to use to model collections of objects. There is no way to have sets of instances of non Object classes, such as Types or Places. The use of Aggregation gives us a consistent method to describe sets of resources, and the Proxy notion of the aggregated resource in the context of the aggregation gives us a convenient mechanism to record context-specific information.
 
 __Relationship__
+
+This class is used when there is a relationship between two instances, but not one that is able to be described using the model, or when the data does not make it clear what the relationship is beyond a label. This is a fallback to ensure that what (perhaps little) data does exist can be captured, with a view to (hopefully) later improving the modeling.
 
