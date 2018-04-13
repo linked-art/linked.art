@@ -70,7 +70,7 @@ top.taken_out_of_existence_by = end
 
 The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
 
-In particular, the `Production` of the object would have a `part` which is the `BeginningOfExistence` of the `PropertyInterest`.  If the object is destroyed, then that activity would also have a `part` of the `EndOfExistence` of the last `PropertyInterest` around the object's ownership.  In between, any `Acquisition` would include a `Transformation` of the previous owner's `PropertyInterest` into the new owner's `PropertyInterest`.  Transformations end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, `Transformation` is a shortcut for a pair of beginning and end of existence events that occur at the same time.
+In particular, the `Production` of the object would have a `part` which is the `BeginningOfExistence` of the `PropertyInterest`.  If the object is destroyed, then that activity would also have a `part` of the `EndOfExistence` of the last `PropertyInterest` around the object's ownership.  In between, any `Acquisition` would include a `TransformingActivity` of the previous owner's `PropertyInterest` into the new owner's `PropertyInterest`.  Transforming Activities end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, the resource is a shortcut for a pair of Beginning and End of Existence events that occur at the same time.
 
 We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
 
@@ -91,7 +91,7 @@ top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = buyer
 
-xform = Transformation()
+xform = TransformingActivity()
 newclaim = PropertyInterest()
 oship = Type("aat:300055603")
 newclaim.classified_as = oship
@@ -167,7 +167,7 @@ oldclaim.classified_as = oship
 oldclaim.label = "Claim of Ownership by Seller"
 oldclaim.claimed_by = seller
 oldclaim.interest_for = what
-xform = Transformation()
+xform = TransformingActivity()
 xform.transformed = oldclaim
 xform.resulted_in = newclaim
 top.part = xform
@@ -244,7 +244,7 @@ dim2.unit = unit
 oldclaim2.dimension = dim2
 oldclaim.interest_part = oldclaim2
 
-xform = Transformation()
+xform = TransformingActivity()
 xform.transformed = oldclaim
 xform.resulted_in = newclaim
 top.part = xform
