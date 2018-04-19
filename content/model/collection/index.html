@@ -43,6 +43,8 @@ top.created_by = cre
 
 Aggregations can be used to record the set of objects that make up a curated collection. This not necessarily the set of objects that the institution owns, as there could be objects which are looked after but owned by some other organization or individual, nor the set of objects that the institution has custody over, as objects being loaned to other organizations for exhibitions are still part of the conceptual collection of objects. The details of the relationship between the object and the institution are recorded on the object, and the Aggregation simply records which objects are thought of as being part of the collection.  Objects can be thought of as being part of multiple collections at the same time -- the private owner's personal collection and the museum's public collection.  So while the majority of objects are both owned by and in the custody of the organization, this is not certain and should not be inferred. The Aggregation is created by the organization or person that abstractly manages the collected objects.
 
+This pattern can be used for any type of organization that manages objects, from museums and archives to individuals and art dealers.
+
 ```crom
 top = CollectionSet()
 top.label = "Collection of Example Museum"
