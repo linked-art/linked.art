@@ -91,8 +91,19 @@ Information about a resource that is specific to the context of the Aggregation 
 
 ## Collections over Time
 
+Collections are not static over time but instead change as objects are acquired and sold, stolen or given to new owners. Recording these states results in some complexity, as we still want to be able to refer to objects in a previous context, rather than just their current context. It is useful, for example, to record the accession or stock number of an object in previous collections or as assigned by dealerships and auction houses.  For collections that never change once finished, this isn't a problem.  The object can be considered to always be part of the auction lot.  However for museum or dealer collections, it is important to distinguish between the objects that are currently part of that collection and the objects that have ever been part of the collection. 
+
+The solution that has been adopted is to have two different types of aggregation for the same collection, one is a snapshot at a particular time and normally the current time, and the other is atemporal and records all of the objects that have ever been part of the collection. The atemporal Aggregation is the focus, as along with the full provenance of the objects, it can be used to generate the snapshot at any given point in time.
+
+Much of the time only one is needed at all.  The current set of people with a particular nationality is unimportant, only that a particular person was of that nationality when they were alive. The nationality aggregation is thus always atemporal and snapshots are impossible to generate.  Conversely, there is no need for an atemporal auction lot, as the set of objects never changes.
+
 
 ### Adding and Removing Resources
+
+Objects are rarely added and removed from collections without further contextual information, there is almost always some larger activity that results in the change.  The ownership of the object is transferred to the organization which prompts it to be accessioned into the collection, and subsequently an accession number Identifier as assigned to it.
+
+There are two activities, Adding and Removing.  They reference the Proxy, rather than having relationships to the object and the collection, in order to ensure that information associated with the Proxy can be tied to the activity.
+
 
 ### Snapshots
 
