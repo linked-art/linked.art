@@ -10,6 +10,7 @@
     "skos": "http://www.w3.org/2004/02/skos/core#", 
     "foaf": "http://xmlns.com/foaf/0.1/", 
     "xsd": "http://www.w3.org/2001/XMLSchema#", 
+    "ore": "http://www.openarchives.org/ore/terms/",
     "la": "https://linked.art/ns/terms/", 
     "aat": "http://vocab.getty.edu/aat/", 
     "ulan": "http://vocab.getty.edu/ulan/", 
