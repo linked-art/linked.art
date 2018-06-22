@@ -312,6 +312,11 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "technique": {
+      "@id": "crm:P32_used_general_technique", 
+      "@type": "@id", 
+      "@container": "@set"
+    },
     "dimension": {
       "@id": "crm:P43_has_dimension", 
       "@type": "@id", 

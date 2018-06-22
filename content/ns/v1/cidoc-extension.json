@@ -337,12 +337,7 @@
     "modified_by": {
       "@id": "crm:P31i_was_modified_by", 
       "@type": "@id"
-    }, 
-    "technique": {
-      "@id": "crm:P32_used_general_technique", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
+    },  
     "technique_of": {
       "@id": "crm:P32i_was_technique_of", 
       "@type": "@id", 
