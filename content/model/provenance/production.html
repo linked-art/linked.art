@@ -70,7 +70,7 @@ negative.shows = vi
 
 ### Roles / Techniques
 
-If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as a classification of the activity.
+If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as the `technique` of the activity.
 
 ```crom
 top = Production()
@@ -79,7 +79,7 @@ who.label = "Example Glassblower"
 what = Sculpture(art=1)
 what.label = "Glass Sculpture"
 top.carried_out_by = who
-top.classified_as = Type("http://vocab.getty.edu/aat/300053932")
+top.technique = Type("http://vocab.getty.edu/aat/300053932")
 ```
 
 ### Multiple Artists with Roles
