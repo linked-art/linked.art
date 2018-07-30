@@ -6,11 +6,38 @@ title: "Places"
 
 ## Introduction
 
+Places are a foundational aspect of the model.  Events and activities occur at both a time and a place, objects of all sizes have locations, and people and organizations have associated locations where they reside or are otherwise associated with. Places are extents in space, independent of time or what may or may not be present in that space. For built works such as architecture and works that are fixed in location due to their media (a cave drawing for example), Place is a defining characteristic.
+
+Places also form a core integration point with Geographical Information Systems (GIS) and map based user interfaces. By aligning with these other systems, we enable better usability and interactivity with our data. 
 
 ## Core Information
 
+All of the core information for resources is available for Place, including identifiers, classifications, labels, names, statements and so forth.
+
+```crom
+top = Place()
+top.classified_as = Type("aat:300008389") # city
+top.label = "Los Angeles, CA"
+n = Name()
+n.value = "Los Angeles"
+# n.language = Language("en")
+top.identified_by = n
+```
+
 
 ## Partitioning
+
+While it is recommended that external gazeteer systems be used for recording the spatial hierarchy of Places, it is useful to be able to position historical locations within their larger geospatial context.  This uses the same partitioning pattern as all other classes in the model.
+
+```crom
+top = Place()
+top.classified_as = Type("aat:300008389") # city
+top.label = "Ancient City"
+region = Place()
+region.classified_as = Type("aat:300000774") # province
+region.label = "Ancient Province"
+top.part_of = region
+```
 
 
 ## Geospatial Dimensions
