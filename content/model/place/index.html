@@ -40,7 +40,25 @@ top.part_of = region
 ```
 
 
-## Geospatial Dimensions
+## Geospatial Extent
+
+In order to plot the extent of the place on a map, or calculate the geospatial overlap of places, it is useful to have a geometry that describes the place's boundaries in the real world. This could be very detailed or a simple bounding box within which the place fits.  It could even be a center point and a radius.
+
+This is handled by the Geometry class, an extension to the core ontology. The Geometry has a `value`, similar to a LinguisticObject, which records the machine-readable description of the spatial extent.  It has a format (for example GeoJSON or WKT), and is expressed in terms of a geospatial reference system such as Latitude/Longitude.
+
+```crom
+top = Place()
+top.label = "New Zealand"
+top.classified_as = Type("aat:") # nation
+geom = Geometry()
+geom.value = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
+iso13249 = InformationObject()
+iso13249.label = "ISO/IEC 13249-3:2016"
+geom.conforms_to = iso13249
+top.identified_by = geom
+system = CoordinateSystem()
+system.label = "WGS 84"
+```
 
 
 ## Buildings and Locations
