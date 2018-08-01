@@ -6,16 +6,71 @@ title: "Places"
 
 ## Introduction
 
+Places are a foundational aspect of the model.  Events and activities occur at both a time and a place, objects of all sizes have locations, and people and organizations have associated locations where they reside or are otherwise associated with. Places are extents in space, independent of time or what may or may not be present in that space. For built works such as architecture and works that are fixed in location due to their media (a cave drawing for example), Place is a defining characteristic.
+
+Places also form a core integration point with Geographical Information Systems (GIS) and map based user interfaces. By aligning with these other systems, we enable better usability and interactivity with our data. 
 
 ## Core Information
+
+All of the core information for resources is available for Place, including identifiers, classifications, labels, names, statements and so forth.
+
+```crom
+top = Place()
+top.classified_as = Type("aat:300008389") # city
+top.label = "Los Angeles, CA"
+n = Name()
+n.value = "Los Angeles"
+# n.language = Language("en")
+top.identified_by = n
+```
 
 
 ## Partitioning
 
+While it is recommended that external gazeteer systems be used for recording the spatial hierarchy of Places, it is useful to be able to position historical locations within their larger geospatial context.  This uses the same partitioning pattern as all other classes in the model.
 
-## Geospatial Dimensions
+```crom
+top = Place()
+top.classified_as = Type("aat:300008389") # city
+top.label = "Ancient City"
+region = Place()
+region.classified_as = Type("aat:300000774") # province
+region.label = "Ancient Province"
+top.part_of = region
+```
+
+
+## Geospatial Extent
+
+In order to plot the extent of the place on a map, or calculate the geospatial overlap of places, it is useful to have a geometry that describes the place's boundaries in the real world. This could be very detailed or a simple bounding box within which the place fits.  It could even be a center point and a radius.
+
+This is handled by the Geometry class, an extension to the core ontology. The Geometry has a `value`, similar to a LinguisticObject, which records the machine-readable description of the spatial extent.  It has a format (for example GeoJSON or WKT), and is expressed in terms of a geospatial reference system such as Latitude/Longitude.
+
+```crom
+top = Place()
+top.label = "New Zealand"
+top.classified_as = Type("aat:300128207") # nation
+geom = Geometry()
+geom.value = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
+iso13249 = InformationObject()
+iso13249.label = "ISO/IEC 13249-3:2016"
+geom.conforms_to = iso13249
+top.identified_by = geom
+system = CoordinateSystem()
+system.label = "WGS 84"
+```
 
 
 ## Buildings and Locations
 
+It is easy to confuse places with the constructions that exist at the place. While rare, there are situations when buildings are moved between locations. The building, just like a painting, is thus modeled as an object that has a current location in space. Activities take place in the place, rather than in the object.  The granularity of the place compared to the building may be different due to underlying data management.
 
+```crom
+top = ManMadeObject()
+top.label = "Example Building"
+top.classified_as = Type("aat:300004792") # building
+p = Place();
+p.classified_as = Type("aat:300008077") # city block
+p.label = "Location of Example Building"
+top.current_location = p
+```
