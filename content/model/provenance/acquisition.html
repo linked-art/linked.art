@@ -108,6 +108,37 @@ paymt.paid_amount = amt
 top.part = paymt
 ```
 
+### Agents and Commissions
+
+In some cases, an agent other than the eventual owner carries out the acquisition.  This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. If there was some known payment for this service, that can also be modeled as a payment that is part of the purchase, but instead where the recipient is the agent. In order to make it clear that this payment is a commission, it should have the type _aat:300393199_.
+
+```crom
+top = Purchase()
+seller = Actor()
+seller.label = "Seller"
+buyer = Actor()
+buyer.label = "Buyer"
+what = Painting(art=1)
+what.label = "Example Painting"
+agent = Actor()
+agent.label = "Agent for the Buyer"
+top.carried_out_by = agent
+top.transferred_title_of = what
+top.transferred_title_from = seller
+top.transferred_title_to = buyer
+paymt = Payment()
+paymt.classified_as = Type("aat:300393199")
+paymt.paid_from = buyer
+paymt.paid_to = agent
+amt = MonetaryAmount()
+amt.value = 100
+curr = Currency()
+curr.label = "dollars"
+amt.currency = curr
+paymt.paid_amount = amt
+top.part = paymt
+```
+
 ### Auctions
 
 The individual purchase that is the result of auctioning an object is the same as the above model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions.html). 

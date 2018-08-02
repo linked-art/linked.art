@@ -61,6 +61,7 @@ ManMadeFeature._uri_segment = "object"
 Dimension._uri_segment = "value"
 PropertyInterest._uri_segment = "legal"
 Aggregation._uri_segment = "set"
+PropositionalObject._uri_segment = "concept"  # For Exhibition concept
 
 fh = file('site.yaml')
 siteData = fh.read()

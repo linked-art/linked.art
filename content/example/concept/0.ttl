@@ -11,19 +11,19 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.art/example/PropositionalObject/0> a crm:E89_Propositional_Object ;
+<https://linked.art/example/concept/0> a crm:E89_Propositional_Object ;
     rdfs:label "Example Exhibition" ;
     crm:P129_is_about <http://vocab.getty.edu/aat/300233686> ;
     crm:P17i_motivated <https://linked.art/example/activity/12> ;
     crm:P1_is_identified_by <https://linked.art/example/identifier/6>,
-        <https://linked.art/example/name/13> ;
+        <https://linked.art/example/name/14> ;
     crm:P2_has_type <http://vocab.getty.edu/aat/300417531> ;
-    crm:P94i_was_created_by <https://linked.art/example/Creation/4> .
+    crm:P94i_was_created_by <https://linked.art/example/Creation/7> .
 
 <http://vocab.getty.edu/aat/300233686> a crm:E55_Type ;
     rdfs:label "Gender Issues" .
 
-<https://linked.art/example/Creation/4> a crm:E65_Creation ;
+<https://linked.art/example/Creation/7> a crm:E65_Creation ;
     crm:P14_carried_out_by <https://linked.art/example/person/20> .
 
 <https://linked.art/example/activity/12> a crm:E7_Activity ;
@@ -33,7 +33,7 @@
 <https://linked.art/example/identifier/6> a crm:E42_Identifier ;
     rdf:value "exh-2010-eg-a" .
 
-<https://linked.art/example/name/13> a la:Name ;
+<https://linked.art/example/name/14> a la:Name ;
     rdf:value "Example Exhibition" .
 
 <https://linked.art/example/person/20> a crm:E21_Person ;
