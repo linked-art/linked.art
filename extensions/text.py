@@ -288,7 +288,7 @@ title: Index of Classes, Properties, Authorities
 		# And return the JSON plus links, to be substed by the top level filter
 		raw = top.id + ".json"
 		rawq = urllib.quote(raw).replace('/', "%2F")
-		playground = "http://json-ld.org/playground/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
+		playground = "http://json-ld.org/playground-dev/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
