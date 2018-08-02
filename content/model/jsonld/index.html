@@ -13,6 +13,14 @@ The serialization for JSON-LD is friendly to developers through the use of conte
 The context that provides the mapping of the terms used in the model is published as:
 > `{{ site.config.var.scheme }}://{{site.config.var.hostname}}{{site.config.base_url}}ns/v1/linked-art.json`
 
+## Media Type
+
+The media type to use for representations in JSON-LD using the context is:
+
+> `application/ld+json;profile="{{ site.config.var.scheme }}://{{site.config.var.hostname}}{{site.config.base_url}}ns/v1/linked-art.json"`
+
+This would be the value of the `Content-Type` HTTP header on responses, and if there are other representations available via content negotiation, then it can be sent in requests in the `Accept` header,
+
 ## Examples
 
 The examples throughout the documentation use the JSON-LD serialization.  Each has a link to the raw JSON-LD, and to load it into the invaluable JSON-LD playground where you can explore the details.  Instead of trying to describe all of the predicates and classes (for that just read the CIDOC-CRM specification), we present the models for the known use cases in an attempt to be more practical and results oriented.  We strive for usability and familiarity for developers, and the examples aim to present best practices at the same time as being easy to follow.
