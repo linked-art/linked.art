@@ -16,7 +16,7 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, \
+    ManMadeFeature, Dimension, PhysicalObject, Name, Move, \
     PropertyInterest, Payment, EndingActivity, Creation, Aggregation, Proxy, \
     PropositionalObject, TransformingActivity, Language, Geometry, CoordinateSystem
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
@@ -51,6 +51,7 @@ EndingActivity._uri_segment = "activity"
 PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
+Move._uri_segment = "activity"
 LinguisticObject._uri_segment = "text"
 Appellation._uri_segment = "name"
 Name._uri_segment = "name"
