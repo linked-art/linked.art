@@ -36,7 +36,7 @@ ts.end_of_the_end = "1804-05-19"
 top.timespan = ts
 ```
 
-## "Style Of" Attribution
+### "Style Of" Attribution
 
 There is a common special case of wanting to assign not an individual (e.g. Rembrandt) or a group with specific identity (Workshop of Rembrandt) to the production of an object, but simply to say that it was produced as if it had been produced by some other actor.  This is traditionally recorded as being "in the style of" a known artist. It is not correct to say that Rembrandt carried out the production, but a search for objects attributed (loosely speaking) to Rembrandt should discover this object.  The assessment of "style of" attribution is a judgement decision that might be changed later as new evidence of the actual creator comes to light.
 
@@ -125,4 +125,19 @@ for aa in top_activity.part:
       p.proxyIn = aa.involved
       proxyFors[aa.assigned_to] = p
     setattr(p, aa.classified_as, aa.assigned)
+```
+
+## Inferred Data
+
+Some assertions, or even entire resources, are computationally inferred from other data rather than being evidenced in primary source literature or history. It is useful to tag these resources as such, so that they can be treated appropriately when it comes to research making use of them: if the underlying data has errors, these errors will have been propogated to this resource.
+
+The way that this can be signalled in the data is to add the "computer-generated" concept _aat:300202389_ to the resource in the `classified_as` field.  
+
+```crom
+top = Activity()
+top.label = "Inferred Activity"
+top.classified_as = Type("aat:300292389")
+a = Actor()
+a.label = "Performer of inferred activity"
+top.carried_out_by = a
 ```
