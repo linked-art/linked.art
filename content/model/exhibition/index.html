@@ -133,6 +133,31 @@ exh.carried_out_by = mus
 obj.current_owner = owner
 ```
 
+### Exhibition Provenance: Internal Moves
+
+Conversely to the previous section, when the object being exhibited at the location is owned by the same organization, there is no transfer of custody. The equivalent activity is likely to be simply moving the object from its regular location to the exhibition space.  If the exhibition location is not known, then there is no need to provide the `moved_to` and `moved_from` relationships for the `Move` activity.
+
+```crom
+top = Move()
+top.label = "Move of object for exhibition"
+exh = Exhibition()
+exh.label = "Example Exhibition"
+obj = Painting(art=1)
+obj.label = "Example Painting"
+mus = MuseumOrg()
+mus.label = "Exhibiting Museum"
+agg = Aggregation()
+agg.label = "Set of Exhibited Objects"
+top.moved = obj
+top.specific_purpose = exh
+obj.current_owner = mus
+agg.aggregates = obj
+exh.used_specific_object = agg
+exh.carried_out_by = mus
+top.carried_out_by = mus
+```
+
+
 ### Exhibition Specific Labels
 
 The curators for exhibitions sometimes assign new labels or names for objects, for example to ensure that they follow an established pattern for the exhibition, rather than following that of the owning organization or person, if any.  This activity of assigning a title to the object is part of the exhibition via the `part` property, and assigns a new `Name` to the object. This separation of the name from the object via the `AttributeAssignment` ensures that the `Name` does not directly end up in the set of titles for the object without further intervention.  As with any activity, the assignment can also be `carried_out_by` an actor, and have a timespan for when it was assigned.  This is an instance of the [Context Specific Assertions](/model/assertion/#context-specific-assertions) pattern.
