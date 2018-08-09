@@ -68,7 +68,7 @@ what.shows = vi
 negative.shows = vi
 ```
 
-### Roles / Techniques
+### Techniques
 
 If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as the `technique` of the activity.
 
@@ -84,23 +84,23 @@ top.technique = Type("http://vocab.getty.edu/aat/300053932")
 
 ### Multiple Artists with Roles
 
-If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. These components are instances of `Activity` to make it easier to distinguish between the `Production` of the object overall and the activities that happened as part of that. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
+If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
 
 ```crom
 top = Production()
 what = Sculpture(art=1)
 what.label = "Painted Sculpture"
 top.produced = what
-act1 = Activity()
-act1.classified_as = Type("http://vocab.getty.edu/aat/300264383")
+act1 = Production()
+act1.technique = Type("http://vocab.getty.edu/aat/300264383")
 who = Actor()
 who.label = "Example Sculptor"
 act1.carried_out_by = who
 top.part = act1
-act2 = Activity()
+act2 = Production()
 who2 = Actor()
 who2.label = "Example Sculpture Painter"
-act2.classified_as = Type("http://vocab.getty.edu/aat/300161986")
+act2.technique = Type("http://vocab.getty.edu/aat/300161986")
 act2.carried_out_by = who2
 top.part = act2
 ```
