@@ -79,7 +79,7 @@ who.label = "Example Glassblower"
 what = Sculpture(art=1)
 what.label = "Glass Sculpture"
 top.carried_out_by = who
-top.technique = Type("http://vocab.getty.edu/aat/300053932")
+top.technique = instances['glassblowing']
 ```
 
 ### Multiple Artists with Roles
@@ -92,7 +92,7 @@ what = Sculpture(art=1)
 what.label = "Painted Sculpture"
 top.produced = what
 act1 = Production()
-act1.technique = Type("http://vocab.getty.edu/aat/300264383")
+act1.technique = instances['sculpting']
 who = Actor()
 who.label = "Example Sculptor"
 act1.carried_out_by = who
@@ -100,7 +100,7 @@ top.part = act1
 act2 = Production()
 who2 = Actor()
 who2.label = "Example Sculpture Painter"
-act2.technique = Type("http://vocab.getty.edu/aat/300161986")
+act2.technique = instances['painting']
 act2.carried_out_by = who2
 top.part = act2
 ```

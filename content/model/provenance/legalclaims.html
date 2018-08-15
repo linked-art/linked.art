@@ -19,10 +19,8 @@ The Claim is a Man Made Thing, rather than the activity of asserting the claim. 
 The legal status that is claimed by the Property Interest is associated as a classification, like all other out-of-model classes.  Thus, the basic Property Interest model has the following structure:
 
 ```crom
-top = PropertyInterest()
+top = vocab.OwnershipRight()
 top.label = "Claim of Ownership"
-oship = Type("aat:300055603")
-top.classified_as = oship
 who = Person()
 who.label = "Owner of Example Painting"
 what = Painting()
@@ -39,10 +37,8 @@ top.jurisdiction = where
 The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because it is modeled as a Thing, rather than a passive Activity.  Things are, instead, brought into and out of existence by Activities, and this is the pattern we use to determine the period in which the claim is in effect.  The claim is in effect from the moment it comes into existence to the moment it goes out of existence.  Those events can then be part of some larger, more human-centric, activity such as an `Acquisition`.
 
 ```crom
-top = PropertyInterest()
+top = vocab.OwnershipRight()
 top.label = "Claim of Ownership"
-oship = Type("aat:300055603")
-top.classified_as = oship
 who = Person()
 who.label = "Owner of Example Painting"
 what = Painting()
@@ -92,14 +88,11 @@ top.transferred_title_from = seller
 top.transferred_title_to = buyer
 
 xform = TransformingActivity()
-newclaim = PropertyInterest()
-oship = Type("aat:300055603")
-newclaim.classified_as = oship
+newclaim = vocab.OwnershipRight()
 newclaim.label = "Claim of Ownership by Buyer"
 newclaim.claimed_by = buyer
 newclaim.interest_for = what
-oldclaim = PropertyInterest()
-oldclaim.classified_as = oship
+oldclaim = vocab.OwnershipRight()
 oldclaim.label = "Claim of Ownership by Seller"
 oldclaim.claimed_by = seller
 oldclaim.interest_for = what
@@ -135,15 +128,13 @@ top.transferred_title_to = d1
 top.transferred_title_to = d2
 unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
 unit.label = "Percent"
-oship = Type("aat:300055603")
 
-newclaim = PropertyInterest()
+
+newclaim = vocab.OwnershipRight()
 newclaim.label = "Total Claim of Ownership"
-newclaim.classified_as = oship
 newclaim.interest_for = what
 
-newclaim1 = PropertyInterest()
-newclaim1.classified_as = oship
+newclaim1 = vocab.OwnershipRight()
 newclaim1.label = "Claim of 30% Ownership by Dealer 1"
 newclaim1.claimed_by = d1
 dim1 = Dimension()
@@ -152,8 +143,7 @@ dim1.unit = unit
 newclaim1.dimension = dim1
 newclaim.interest_part = newclaim1
 
-newclaim2 = PropertyInterest()
-newclaim2.classified_as = oship
+newclaim2 = vocab.OwnershipRight()
 newclaim2.label = "Claim of 70% Ownership by Dealer 2"
 newclaim2.claimed_by = d2
 dim2 = Dimension()
@@ -162,8 +152,7 @@ dim2.unit = unit
 newclaim2.dimension = dim2
 newclaim.interest_part = newclaim2
 
-oldclaim = PropertyInterest()
-oldclaim.classified_as = oship
+oldclaim = vocab.OwnershipRight()
 oldclaim.label = "Claim of Ownership by Seller"
 oldclaim.claimed_by = seller
 oldclaim.interest_for = what
@@ -192,15 +181,12 @@ d2 = Group()
 d2.label = "Art Dealership 2"
 unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
 unit.label = "Percent"
-oship = Type("aat:300055603")
 
-newclaim = PropertyInterest()
-newclaim.classified_as = oship
+newclaim = vocab.OwnershipRight()
 newclaim.label = "Previous Total Claim of Ownership"
 newclaim.interest_for = what
 
-newclaim1 = PropertyInterest()
-newclaim1.classified_as = oship
+newclaim1 = vocab.OwnershipRight()
 newclaim1.label = "Claim of 30% Ownership by Dealer 1"
 newclaim1.claimed_by = d1
 dim1 = Dimension()
@@ -209,8 +195,7 @@ dim1.unit = unit
 newclaim1.dimension = dim1
 newclaim.interest_part = newclaim1
 
-newclaim2 = PropertyInterest()
-newclaim2.classified_as = oship
+newclaim2 = vocab.OwnershipRight()
 newclaim2.label = "Claim of 70% Ownership by Dealer 2"
 newclaim2.claimed_by = d2
 dim2 = Dimension()
@@ -219,13 +204,11 @@ dim2.unit = unit
 newclaim2.dimension = dim2
 newclaim.interest_part = newclaim2
 
-oldclaim = PropertyInterest()
-oldclaim.classified_as = oship
+oldclaim = vocab.OwnershipRight()
 oldclaim.label = "New Claim of Ownership"
 oldclaim.interest_for = what
 
-oldclaim1 = PropertyInterest()
-oldclaim1.classified_as = oship
+oldclaim1 = vocab.OwnershipRight()
 oldclaim1.label = "Claim of 40% Ownership by Dealer 1"
 oldclaim1.claimed_by = d1
 dim1 = Dimension()
@@ -234,8 +217,7 @@ dim1.unit = unit
 oldclaim1.dimension = dim1
 oldclaim.interest_part = oldclaim1
 
-oldclaim2 = PropertyInterest()
-oldclaim2.classified_as = oship
+oldclaim2 = vocab.OwnershipRight()
 oldclaim2.label = "Claim of 60% Ownership by Dealer 2"
 oldclaim2.claimed_by = d2
 dim2 = Dimension()
@@ -282,10 +264,8 @@ when.label = "Time of Theft"
 when.begin_of_the_begin = "1940-07-10T00:00:00Z"
 when.end_of_the_end = "1940-07-11T00:00:00Z"
 
-claim = PropertyInterest()
-claim.classified_as = Type("aat:300055289")
-oship = Type("aat:300055603")
-claim.classified_as = oship
+claim = vocab.OwnershipRight()
+claim.classified_as = instances['crime']
 claim.interest_for = what
 begin = BeginningOfExistence()
 begin.brought_into_existence = claim

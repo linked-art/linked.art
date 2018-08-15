@@ -53,7 +53,7 @@ who = Person()
 who.label = "Well Known Artist"
 prod = Production()
 prod.influenced_by = who
-prod.classified_as = Type("aat:300404285")
+prod.classified_as = instances['style of']
 top.assigned = prod
 top.assigned_to = obj
 by = Person()
@@ -136,7 +136,7 @@ The way that this can be signalled in the data is to add the "computer-generated
 ```crom
 top = Activity()
 top.label = "Inferred Activity"
-top.classified_as = Type("aat:300292389")
+top.classified_as = instances['computer generated']
 a = Actor()
 a.label = "Performer of inferred activity"
 top.carried_out_by = a

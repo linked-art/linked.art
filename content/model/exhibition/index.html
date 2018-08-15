@@ -15,8 +15,7 @@ The model distinguishes between the concept of the exhibition and the activity t
 The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition. It can have all of the affordances of any concept, such as names, identifiers, references, relationships and more.
 
 ```crom
-top = PropositionalObject()
-top.classified_as = Type("aat:300417531")
+top = vocab.ExhibitionIdea()
 top.label = "Example Exhibition"
 id1 = Identifier()
 id1.value = "exh-2010-eg-a"
@@ -24,8 +23,7 @@ top.identified_by = id1
 nm = Name()
 nm.value = "Example Exhibition"
 top.identified_by = nm
-typ = Type("aat:300233686")
-typ.label = "Gender Issues"
+typ = instances['gender issues']
 top.about = typ
 cre = Creation()
 cur = Person()
