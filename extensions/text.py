@@ -16,7 +16,7 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, Move, \
+    ManMadeFeature, Dimension, PhysicalObject, Name, Move, Language, \
     PropertyInterest, Payment, EndingActivity, Creation, Aggregation, Proxy, \
     PropositionalObject, TransformingActivity, Language, Geometry, CoordinateSystem
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
@@ -30,7 +30,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, add_proxy_wrapper, \
-	materialTypes, dimensionUnits, add_art_setter, add_attribute_assignment_check
+	instances, add_art_setter, add_attribute_assignment_check
 
 
 ManMadeObject._uri_segment = "object"

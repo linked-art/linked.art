@@ -178,20 +178,20 @@ top.identified_by = apl
 h = Height()
 h.label = "Height"
 h.value = 153
-h.unit = dimensionUnits['cm']
+h.unit = instances['cm']
 w = Width()
 w.label = "Width"
 w.value = 118
-w.unit = dimensionUnits['cm']
+w.unit = instances['cm']
 top.dimension = h
 top.dimension = w
 mats = MaterialStatement()
 mats.value = "Oil on canvas"
 top.referred_to_by = mats
-top.made_of = materialTypes['oil']
+top.made_of = instances['oil']
 part = SupportPart()
 part.label = "Canvas Support"
-part.made_of = materialTypes['canvas']
+part.made_of = instances['canvas']
 top.part = part
 ```
 
@@ -233,7 +233,7 @@ Due to research by the photo archive catalogers, we know a relatively recent (if
 top = Painting(art=1)
 top.label = "St. Sebastian"
 coll = CollectionSet()
-coll.classified_as = Type("http://vocab.getty.edu/aat/300411912")
+coll.classified_as = instances['public collection']
 own = Group()
 own.label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
 cre = Creation()
@@ -276,7 +276,7 @@ bc = LinguisticObject()
 bc.label = "Vlieghe, CorpRub 8 (1972-73), no.144."
 top.referred_to_by = bc
 io = InformationObject()
-t = Type()
+t = Type() # NB Explicitly no id to generate local identifier
 t.label = "Religious, Devotional"
 io.about = t
 top.carries = io

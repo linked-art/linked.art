@@ -62,8 +62,7 @@ Given the use of the `VisualItem` pattern for depiction, we reuse the same patte
 ```crom
 top = Painting(art=1)
 top.label = "Portrait of Lord Nelson"
-concept = Type("http://vocab.getty.edu/aat/300055314")
-concept.label = "War"
+concept = instances['war']
 vi = VisualItem()
 top.shows = vi
 vi.about = concept
@@ -82,7 +81,7 @@ top = Painting(art=1)
 top.label = "Example Impressionist Painting"
 vi = VisualItem()
 top.shows = vi
-vi.style = Type("http://vocab.getty.edu/aat/300021503")
+vi.style = instances['impressionism']
 ```
 
 !!! Note "Model uses predicate from outside of CIDOC-CRM"
@@ -98,6 +97,6 @@ top = Painting(art=1)
 top.label = "Example Landscape Painting"
 vi = VisualItem()
 top.shows = vi
-vi.classified_as = Type("http://vocab.getty.edu/aat/300015636")
+vi.classified_as = instances['landscapes']
 ```
 

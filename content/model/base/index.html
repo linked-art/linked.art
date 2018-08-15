@@ -68,10 +68,10 @@ A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a 
 ```crom
 top = Painting(art=1)
 top.label = "Example Painting"
-top.made_of = materialTypes['watercolor']
+top.made_of = instances['watercolor']
 part = SupportPart(top.id + "/part/1")
 part.label = "Canvas Support"
-part.made_of = materialTypes['canvas']
+part.made_of = instances['canvas']
 top.part = part
 ```
 
@@ -170,6 +170,7 @@ parent = Type("aat:300190691")
 parent.label = "Object portions"
 child.part_of = parent
 top.classified_as = child
+# Note - No need to put these in crom.vocab as example explicit to Type hierarchy
 ```
 
 ### Organizations

@@ -23,11 +23,11 @@ top = Painting(art=1)
 top.label = "Example 16x20 Painting"
 w = Width()
 w.value = 16
-w.unit = dimensionUnits['inches']
+w.unit = instances['inches']
 top.dimension = w
 h = Height()
 h.value = 20
-h.unit = dimensionUnits['inches']
+h.unit = instances['inches']
 top.dimension = h
 ```
 
@@ -53,7 +53,7 @@ Shapes are given as classifications on the object.  It is recommended to use one
 
 ```crom
 top = Painting(art=1)
-top.classified_as = Type("aat:300263817")
+top.classified_as = instances['oval']
 top.label = "Example Oval Painting"
 ```
 
@@ -66,7 +66,7 @@ For example, a statue made of marble could be described as below.
 ```crom
 top = Sculpture(art=1)
 top.label = "Example Marble Sculpture"
-top.made_of = materialTypes['marble']
+top.made_of = instances['marble']
 ```
 
 ### Materials Statement 
@@ -92,10 +92,10 @@ The model does not have a separate parts statement to describe this in a human-r
 ```crom
 top = Painting(art=1)
 top.label = "Example Painting"
-top.made_of = materialTypes['watercolor']
+top.made_of = instances['watercolor']
 part = SupportPart(top.id + "/part/1")
 part.label = "Canvas Support"
-part.made_of = materialTypes['canvas']
+part.made_of = instances['canvas']
 top.part = part
 ```
 
