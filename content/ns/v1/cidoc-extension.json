@@ -150,10 +150,6 @@
       "@context": {}, 
       "@id": "crm:E50_Date"
     }, 
-    "ContactPoint": {
-      "@context": {}, 
-      "@id": "crm:E51_Contact_Point"
-    }, 
     "Birth": {
       "@context": {}, 
       "@id": "crm:E67_Birth"
@@ -516,14 +512,6 @@
     }, 
     "current_or_former_residence_of": {
       "@id": "crm:P74i_is_current_or_former_residence_of", 
-      "@type": "@id"
-    }, 
-    "contact_point": {
-      "@id": "crm:P76_has_contact_point", 
-      "@type": "@id"
-    }, 
-    "provides_access_to": {
-      "@id": "crm:P76i_provides_access_to", 
       "@type": "@id"
     }, 
     "time_identified_by": {
