@@ -24,18 +24,20 @@ top.label = "Physical Book"
 li = LinguisticObject()
 li.label = "Textual content of the Book"
 li.value = "Once upon a time, ..."
+li.language = instances['english']
 top.carries = li
 ```
 
 ## Core Features
 
-The same core features of all other resources are also applicable to the `LinguisticObject`s used to represent texts.  They must have an `id` and `type`, they should have a `label`, they should have a `classified_as` relationship to a `Type` that further describes the sort of object, and so forth.
+The same core features of all other resources are also applicable to the `LinguisticObject`s used to represent texts.  They must have an `id` and `type`, they should have a `label`, they should have a `classified_as` relationship to a `Type` that further describes the sort of object, and so forth. They may also have a `language` property, that references a Language resource.
 
 The title of a text is captured using the `Name` pattern, and assigned identifiers using the `Identifier` pattern, referenced with the `identified_by` relationship.
 
 ```crom
 top = vocab.Article()
 top.label = "Example Article"
+top.language = instances['english']
 title = Name()
 title.value = "Title of Article"
 id = Identifier()
@@ -67,7 +69,6 @@ publr.label = "Publishing House"
 pub.carried_out_by = publr
 top.used_for = pub
 ```
-
 
 ## Structure
 
@@ -160,4 +161,18 @@ top.label = "Article about Example Painting"
 what = Painting(art=1)
 what.label = "Example Painting"
 top.refers_to = what
+```
+
+## Translations
+
+One Linguistic Object, be it captured in the model as a Statement or as the full text content carried by a physical object, can be the translation of another. For example an article can be the translation of an original article in a different language. This is represented using the `translation_of` relationship.
+
+```crom
+top = vocab.Article()
+top.label = "The Birth of Artistic Conception in China"
+top.language = instances['english']
+orig = vocab.Article()
+orig.label =  "Zhongguo yishu yijing zhi dansheng"
+orig.language = instances['chinese']
+top.translation_of = orig
 ```
