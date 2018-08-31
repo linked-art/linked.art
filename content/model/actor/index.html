@@ -88,6 +88,51 @@ ulan.label = "Van Gogh, Vincent"
 top.exact_match = ulan
 ```
 
+## Addresses
+
+People and Organizations often have addresses, physical or online, via which they can be contacted. This includes mailing addresses, email addresses and so forth.  These are modeled separately from Identifiers, as many Actors might have the same contact point, a single Actor might have many contact points. They are also not a name for the actor, but instead a description of a service that is related to the actor.
+
+The model itself relates a `ContactPoint` object to the actor via the `contact_point` property.  Contact Points can be `classified_as` different types, and have a `value` to capture the address itself.
+
+```crom
+top = Person()
+top.label = "A. Person"
+cp = vocab.EmailAddress()
+cp.value = "a.person@example.org"
+top.contact_point = cp
+org = MuseumOrg()
+org.label = "Example City Museum"
+sa = vocab.StreetAddress()
+sa.value = "1200 Museum Drive, Example City"
+org.contact_point = sa
+top.member_of = org
+```
+
+### Street Addresses
+
+It is also valuable to use the partitioning pattern to break street addresses into their component parts.
+
+!!! warning "Additional Vocabulary Needed"
+This needs more vocabulary for the parts of the address.
+
+```crom
+top = MuseumOrg()
+top.label = "Example City Museum"
+sa = vocab.StreetAddress()
+sa.value = "1200 Museum Drive, Example City"
+top.contact_point = sa
+
+sn = model.ContactPoint()
+sn.value = "1200"
+sa.part = sn
+s = model.ContactPoint()
+s.value = "Museum Drive"
+sa.part = s
+c = model.ContactPoint()
+c.value = "Example City"
+sa.part = c
+```
+
 ## Life Events
 
 There are key events in a person or organization's lifespan that are often recorded.  These include the birth or beginning of existence, death or end of existence, and then the core period of their professional work.
@@ -208,3 +253,6 @@ mus.label = "Example Museum"
 top.member_of = dept
 dept.member_of = mus
 ```
+
+
+

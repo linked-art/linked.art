@@ -61,6 +61,10 @@
       "@context": {"part": {"@id":"crm:P106_is_composed_of","@type":"@id","@container":"@set"}, "part_of": "crm:P106i_forms_part_of"}, 
       "@id": "crm:E42_Identifier"
     }, 
+    "ContactPoint": {
+      "@context": {}, 
+      "@id": "crm:E51_Contact_Point"
+    }, 
     "TimeSpan": {
       "@context": {"part_of": "crm:P86_falls_within", "part": {"@id":"crm:P86i_contains","@type":"@id","@container":"@set"}}, 
       "@id": "crm:E52_Time-Span"
@@ -429,6 +433,14 @@
     }, 
     "possessed_by": {
       "@id": "crm:P75i_is_possessed_by", 
+      "@type": "@id"
+    }, 
+    "contact_point": {
+      "@id": "crm:P76_has_contact_point", 
+      "@type": "@id"
+    }, 
+    "provides_access_to": {
+      "@id": "crm:P76i_provides_access_to", 
       "@type": "@id"
     }, 
     "unit": {
