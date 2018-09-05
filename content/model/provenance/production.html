@@ -155,15 +155,15 @@ The end of the provenance chain of an object is when it is known to have been de
 Objects are destroyed by events that are not carried out by an actor are modeled with the `EndOfExistence` class. However if the destruction is carried out by some actor, then it is also an `Activity` at the same time. This extra class must be added explicitly, and is a different model from `Production` which is always an `Activity`.
 
 ```crom
-top = EndingActivity()
+top = Destruction()
 what = Painting(art=1)
 what.label = "Example Destroyed Painting"
-top.took_out_of_existence = what
+top.destroyed = what
 when = TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
 top.timespan = when
-who = Person()
-who.label = "Painting Destroyer"
-top.carried_out_by = who
+#who = Person()
+#who.label = "Painting Destroyer"
+#top.carried_out_by = who
 ```

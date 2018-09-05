@@ -16,9 +16,9 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
     EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, Move, Language, \
-    PropertyInterest, Payment, EndingActivity, Creation, Aggregation, Proxy, \
-    PropositionalObject, TransformingActivity, Language, Geometry, CoordinateSystem
+    ManMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
+    PropertyInterest, Payment, Creation, Aggregation, Proxy, Destruction, \
+    PropositionalObject, Language, Geometry, CoordinateSystem, Phase
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -47,7 +47,6 @@ Purchase._uri_segment = "activity"
 Payment._uri_segment = "activity"
 MonetaryAmount._uri_segment = "money"
 Currency._uri_segment = "money"
-EndingActivity._uri_segment = "activity"
 PhysicalObject._uri_segment = "object"
 Identifier._uri_segment = "identifier"
 TransferOfCustody._uri_segment = "activity"
@@ -63,6 +62,8 @@ Dimension._uri_segment = "value"
 PropertyInterest._uri_segment = "legal"
 Aggregation._uri_segment = "set"
 PropositionalObject._uri_segment = "concept"  # For Exhibition concept
+Destruction._uri_segment = "activity"
+Phase._uri_segment = "activity"
 
 fh = file('site.yaml')
 siteData = fh.read()
@@ -271,7 +272,7 @@ title: Index of Classes, Properties, Authorities
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
-		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'foaf', 'la']:
+		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'la', 'geo', 'sci']:
 			g.bind(ns, ctxt[ns])
 		g.parse(data=nq, format="nt")
 		out = g.serialize(format="turtle")
