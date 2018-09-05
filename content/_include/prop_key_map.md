@@ -52,6 +52,8 @@ P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
 P165i | `incorporated_by`
 skos:exactMatch | `exact_match`
+sci:O13i_is_triggered_by | `caused_by`
+sci:O13_triggers | `caused`
 ore:isAggregatedBy | `aggregated_by`
 rdfs:seeAlso | `see_also`
 dcterms:relation | `related`
