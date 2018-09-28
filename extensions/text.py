@@ -57,7 +57,6 @@ Name._uri_segment = "name"
 BeginningOfExistence._uri_segment = "event"
 EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
-ManMadeFeature._uri_segment = "object"
 Dimension._uri_segment = "value"
 PropertyInterest._uri_segment = "legal"
 Aggregation._uri_segment = "set"
@@ -89,6 +88,7 @@ factory.auto_id_type = "int-per-segment"
 add_art_setter()
 add_attribute_assignment_check()
 add_proxy_wrapper()
+factory.id_type_label = True
 
 # Try to load in the context only once
 ctxt = factory.context_json['@context']
