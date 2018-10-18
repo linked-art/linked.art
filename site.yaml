@@ -30,7 +30,7 @@ markdown:
         - attr_list
         - admonition
         - toc
-        - pymdownx.smartsymbols
+#        - pymdownx.smartsymbols
         - pymdownx.tasklist
 
 context:
