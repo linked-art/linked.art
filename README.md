@@ -37,6 +37,13 @@ Pull requests for typo corrections and other non-normative changes are very welc
 
 Technical infrastructure improvements, such as tests, coverage or other integrations, are welcome but do drop by slack to discuss them first.  Stylistic or HTML changes are the same.
 
+### Gotchas
+
+* If the build errors with a complaint about not being able to "generate meta", it is probably that you have a special character in the title of the document, such as a `:`. Remember that the header is actually YAML, so put the title in double quotes.
+
+* The pymdown extras package is slightly broken with hyde at version 6.0 (late 2018), and hence we restrict the version in requirements. If some markdown functionality isn't working as expected, it could be this.
+
+
 ## Current Contributors
 
 * Rob Sanderson (rsanderson@getty.edu)
