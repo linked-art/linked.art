@@ -30,7 +30,7 @@ markdown:
         - attr_list
         - admonition
         - toc
-        - pymdownx.smartsymbols
+#        - pymdownx.smartsymbols
         - pymdownx.tasklist
 
 context:
@@ -40,7 +40,7 @@ context:
         project:
             name: Museum Linked Open Data
             url: "https://linked.art/"
-            install: "https://github.com/azaroth42/museum-lod"
+            install: "https://github.com/linked-art/linked.art"
         menu:
           - title: Home
             url: index.html
@@ -56,6 +56,8 @@ context:
             url: cookbook/index.html
           - title: Software
             url: software/index.html
+          - title: LOUD
+            url: loud/index.html
 
 var:
     scheme: https
