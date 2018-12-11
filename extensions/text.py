@@ -93,11 +93,13 @@ factory.id_type_label = True
 # Try to load in the context only once
 ctxt = factory.context_json['@context']
 
-# Extension
-fh = file('content/ns/v1/cidoc-extension.json')
-data = fh.read()
+# Profile definition
+fn = os.path.join(os.path.dirname(cromulent.__file__), 'data')
+fn += "/crm-profile.json"
+fh = open(fn)
+d = fh.read()
 fh.close()
-xtxt = json.loads(data)['@context']
+linked_art_profile = json.loads(d)
 
 
 docCache = {}
@@ -391,16 +393,31 @@ def ctxtrepl(source):
 		crm = data[pidx+1:]
 		full = full.replace("|%s" % crm, '')
 	elif ctxt.has_key(data):
-		crm = ctxt[data]
-		ttl = "Core Linked Data Term"
-		col = ""
-	elif xtxt.has_key(data):
-		crm = xtxt[data]
-		ttl = "Extension Linked Data Term"
-		col = 'style="color: orange"'
+		# So it's CRM or added extension
+		# get the full from 
+		defn = ctxt[data]
+		if not type(defn) == dict:
+			# type --> @type
+			crm = defn
+			ttl = "Core Linked Data Term"
+			col = ""
+		else:
+			crm = ctxt[data]['@id']
+			term = crm.replace('crm:', '')
+			if term in linked_art_profile:
+				okay = linked_art_profile[term]
+				if okay == 0 or (type(okay) == list and okay[0] == 0):
+					ttl = "Extension Linked Data Term"
+					col = 'style="color: orange"'				
+				else:
+					ttl = "Core Linked Data Term"
+					col = ""
+			else:
+				return full
 	else:
 		return full
 
-	if type(crm) == dict:
-		crm = crm['@id']
-	return '<abbr %s data-ot="%s" data-ot-title="%s" data-ot-fixed="true">%s</abbr>' % (col, crm, ttl, full)
+	val = '<abbr %s data-ot="%s" data-ot-title="%s" data-ot-fixed="true">%s</abbr>' % (col, crm, ttl, full)
+	return val
+
+
