@@ -33,6 +33,7 @@ P87i | `identifies_place`
 P89 | `part_of`
 P89i | `part`
 P90 | `has_value`
+P101 | `general_use`
 P106 | `part`
 P106i | `part_of`
 P107 | `member`
