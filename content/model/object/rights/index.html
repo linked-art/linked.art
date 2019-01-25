@@ -18,7 +18,7 @@ It is important to be able to give a credit or attribution statement that should
 top = Painting(art=1)
 top.label = "Example Painting"
 crdt = CreditStatement()
-crdt.value = "Donation of Ms J. Smith; Example Organization"
+crdt.content = "Donation of Ms J. Smith; Example Organization"
 top.referred_to_by = crdt
 ```
 
@@ -30,7 +30,7 @@ For general statements about rights that have not been aligned with any other co
 top = Painting(art=1)
 top.label = "Example Painting"
 crdt = RightsStatement()
-crdt.value = "Copyright of this object has not yet been assessed"
+crdt.content = "Copyright of this object has not yet been assessed"
 top.referred_to_by = crdt
 ```
 

@@ -36,7 +36,9 @@ top.jurisdiction = where
 
 The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because it is modeled as a Thing, rather than a passive Activity.  Things are, instead, brought into and out of existence by Activities, and this is the pattern we use to determine the period in which the claim is in effect.  The claim is in effect from the moment it comes into existence to the moment it goes out of existence.  Those events can then be part of some larger, more human-centric, activity such as an `Acquisition`.
 
-```crom
+XXX FIXME PropertyInterest / Transformation
+
+```
 top = vocab.OwnershipRight()
 top.label = "Claim of Ownership"
 who = Person()
@@ -60,7 +62,7 @@ top.taken_out_of_existence_by = end
 ```
 
 !!! note "CIDOC-CRM Arcana"
-    You might be wondering why `PropertyInterest` isn't just an E30 Right? You almost certainly do not want to read [this section](/model/profile/class_analysis.html#ineffective-classes) that explains the details.
+    You might be wondering why `PropertyInterest` isn't just an E30 Right? You almost certainly do not want to read [this section](/model/profile/class_analysis.html#ineffective-classes) that explains the gruesome details.
 
 ## Ownership Rights
 
@@ -70,7 +72,9 @@ In particular, the `Production` of the object would have a `part` which is the `
 
 We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
 
-```crom
+XXX Can't Transform non Physical Things any more
+
+```
 top = Purchase()
 top.label = "Purchase of the Example Painting on Jan 1, 2010"
 ts = TimeSpan()
@@ -111,7 +115,9 @@ In order to allow for the description of different proportions of the object to 
 
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
 
-```crom
+XXX Ditto
+
+```
 top = Purchase()
 top.label = "Purchase of the Example Painting by two Art Dealers"
 seller = Actor()
@@ -169,10 +175,11 @@ In some situations, the set of owners does not change, however they trade the pr
 
 As the owners do not change, there is no new `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the claimed ownership.  A new `PropertyInterest` is brought into effect with shares that include the new proportions, and the previous `PropertyInterest`'s effect ends.  This process likely also includes other transfers, perhaps of currency via a `Payment`.
 
-```crom
 
+XXX Still true
+
+```
 top = Activity()
-
 what = Painting()
 what.label = "Example Painting"
 d1 = Group()
@@ -247,7 +254,10 @@ top.part = pay
 
 Objects can change hands illegally, such as via theft (_aat:300055292_) or looting (_aat:300379554_). This is modeled as a new `PropertyInterest` that is marked as being actually illegal, via _aat:300055289_, that competes with the actual claim of the owner. This pattern means that when the thief then sells the stolen object to an unsuspecting buyer, the `Acquisition` is described the same way as any other. It also lets further claims of ownership be layered on top, where the situation is not so clear.  If the object is part of reparations or was looted by a government under some oppressive regime, then the Acquisition might be considered legitimate in some contexts and not in others.
 
-```crom
+
+XXX Yup.
+
+```
 top = Theft()
 top.label = "Theft of Painting"
 what = Painting(art=1)

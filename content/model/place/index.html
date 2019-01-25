@@ -19,7 +19,7 @@ top = Place()
 top.classified_as = instances['city']
 top.label = "Los Angeles, CA"
 n = Name()
-n.value = "Los Angeles"
+n.content = "Los Angeles"
 # n.language = Language("en")
 top.identified_by = n
 ```
@@ -46,12 +46,14 @@ In order to plot the extent of the place on a map, or calculate the geospatial o
 
 This is handled by the Geometry class, an extension to the core ontology. The Geometry has a `value`, similar to a LinguisticObject, which records the machine-readable description of the spatial extent.  It has a format (for example GeoJSON or WKT), and is expressed in terms of a geospatial reference system such as Latitude/Longitude.
 
-```crom
+!!! FIXME
+
+```
 top = Place()
 top.label = "New Zealand"
 top.classified_as = instances['nation']
 geom = Geometry()
-geom.value = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
+geom.content = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
 iso13249 = InformationObject()
 iso13249.label = "ISO/IEC 13249-3:2016"
 geom.conforms_to = iso13249

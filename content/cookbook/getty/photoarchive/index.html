@@ -115,7 +115,7 @@ We create an Identifier for the Accession Number, and type it as  _(aat:30031235
 
 ```crom
 top = AccessionNumber()
-top.value = "292221"
+top.content = "292221"
 ```
 
 A second `Identifier` for Anderson's identifier is created. This identifier is associated with the source collection.  We also create an Acquisition activity, by which the photograph is acquired by The Getty. This is not shown in the example below, but is shown in the full description of the photograph.
@@ -133,7 +133,7 @@ cre.carried_out_by = who
 srccoll.created_by = cre
 top.aggregated_by = srccoll
 idr = Identifier()
-idr.value = "1195" 
+idr.content = "1195" 
 proxy = Proxy()
 proxy.proxyFor = top
 proxy.proxyIn = srccoll
@@ -173,7 +173,7 @@ We can fill out a lot of details about the object itself.  In particular, it has
 top = Painting(art=1)
 top.label = "St. Sebastian"
 apl = Name()
-apl.value = "St. Sebastian"
+apl.content = "St. Sebastian"
 top.identified_by = apl
 h = Height()
 h.label = "Height"
@@ -186,7 +186,7 @@ w.unit = instances['cm']
 top.dimension = h
 top.dimension = w
 mats = MaterialStatement()
-mats.value = "Oil on canvas"
+mats.content = "Oil on canvas"
 top.referred_to_by = mats
 top.made_of = instances['oil']
 part = SupportPart()
@@ -201,7 +201,7 @@ Now we can tackle the creation of the painting.  The activity is a `Production`,
 top = Production()
 artist = Person()
 artist.label = "Rubens, Peter Paul"
-birth = BeginningOfExistence()
+birth = Birth()
 bt = TimeSpan()
 bt.label = "1577"
 bd = "1577-01-01T00:00:00Z"
@@ -209,7 +209,7 @@ bt.begin_of_the_begin = bd
 be = "1578-01-01T00:00:00Z"
 bt.end_of_the_end = be
 birth.timespan = bt
-death = EndOfExistence()
+death = Death()
 dt = TimeSpan()
 dt.label = "1640"
 dd = "1640-01-01T00:00:00Z"
@@ -217,8 +217,8 @@ dt.begin_of_the_begin = dd
 de = "1641-01-01T00:00:00Z"
 dt.end_of_the_end = de
 death.timespan = dt
-artist.brought_into_existence_by = birth
-artist.taken_out_of_existence_by = death
+artist.born = birth
+artist.died = death
 top.carried_out_by = artist
 ts = TimeSpan()
 ts.label = "ca. 1604"
@@ -244,7 +244,7 @@ proxy = Proxy()
 proxy.proxyFor = top
 proxy.proxyIn = coll
 idr = Identifier()
-idr.value = "Inv. 388"
+idr.content = "Inv. 388"
 proxy.identified_by = idr
 ```
 
@@ -270,7 +270,7 @@ And a few additional features for the provenance statement, a brief citation and
 top = Painting(art=1)
 top.label = "St. Sebastian"
 ps = ProvenanceStatement()
-ps.value = "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)"
+ps.content = "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)"
 top.referred_to_by = ps
 bc = LinguisticObject()
 bc.label = "Vlieghe, CorpRub 8 (1972-73), no.144."

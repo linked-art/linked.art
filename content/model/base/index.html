@@ -237,7 +237,7 @@ Having only a textual description of the materials in English, the value `"Oil o
 top = Painting(art=1)
 top.label = "Example Painting on Canvas"
 lo = MaterialStatement(top.id + "/statement/1")
-lo.value = "Oil on Canvas"
+lo.content = "Oil on Canvas"
 lo.language = instances['english']
 top.referred_to_by = lo
 ```
