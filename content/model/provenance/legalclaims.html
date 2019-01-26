@@ -64,10 +64,9 @@ top.timespan = ts1
 
 The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
 
-In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html).
+In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html). It would also terminate the previous Ownership Phase of the object claimed by the seller.
 
-We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
-
+We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object. It also makes no assertion about the legality of the claim, allowing it to be used for sale of stolen items.
 
 
 ```crom
@@ -88,17 +87,22 @@ top.transferred_title_from = seller
 top.transferred_title_to = buyer
 
 op = vocab.OwnershipPhase()
+op.label = "Ownership by Buyer"
 pi = vocab.OwnershipRight()
 pi.label = "Claim of Ownership"
 op.related_entity = pi
 pi.interest_for = what
 pi.claimed_by = buyer
 op.phase_of = what
-top.initiated = op
 ts1 = TimeSpan()
 ts1.begin_of_the_begin = "2010-01-01T00:00:00Z"
 ts1.end_of_the_end = "2015-03-21T00:00:00Z"
 op.timespan = ts1
+top.initiated = op
+
+pop = vocab.OwnershipPhase()
+pop.label = "Ownership by Seller"
+top.terminated = pop
 ```
 
 ## Multiple Owners
