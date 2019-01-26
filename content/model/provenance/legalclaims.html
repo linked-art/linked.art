@@ -34,31 +34,30 @@ top.jurisdiction = where
 
 ### Effective Period
 
-The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because it is modeled as a Thing, rather than a passive Activity.  Things are, instead, brought into and out of existence by Activities, and this is the pattern we use to determine the period in which the claim is in effect.  The claim is in effect from the moment it comes into existence to the moment it goes out of existence.  Those events can then be part of some larger, more human-centric, activity such as an `Acquisition`.
+The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
 
-XXX FIXME PropertyInterest / Transformation
+XXX FIXME
 
-```
-top = vocab.OwnershipRight()
-top.label = "Claim of Ownership"
+This should probably be that an event initiates a phase in which the object is governed by a particular PropertyInterest. That event used specific object of the object, and had participants of the owning parties.  This aligns with regular ownership phase without PI.
+
+```crom
+top = OwnershipPhase()
+pi = vocab.OwnershipRight()
+pi.label = "Claim of Ownership"
+top.related_entity = pi
+
 who = Person()
 who.label = "Owner of Example Painting"
+pi.claimed_by = who
 what = Painting()
 what.label = "Example Painting"
-top.interest_for = what
-top.claimed_by = who
-begin = BeginningOfExistence()
-end = EndOfExistence()
+pi.interest_for = what
+top.phase_of = what
+
 ts1 = TimeSpan()
 ts1.begin_of_the_begin = "1743-05-12T00:00:00"
-ts1.end_of_the_end = "1743-05-13T00:00:00"
-ts2 = TimeSpan()
-ts2.begin_of_the_begin = "1821-11-27T00:00:00"
-ts2.end_of_the_end = "1821-11-28T00:00:00"
-begin.timespan = ts1
-end.timespan = ts2
-top.brought_into_existence_by = begin
-top.taken_out_of_existence_by = end
+ts1.end_of_the_end = "1821-11-28T00:00:00"
+top.timespan = ts1
 ```
 
 !!! note "CIDOC-CRM Arcana"
