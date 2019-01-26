@@ -66,7 +66,6 @@ The base [provenance model](/model/provenance/) and the `PropertyInterest` exten
 
 In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html).
 
-
 We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
 
 
@@ -112,9 +111,7 @@ In order to allow for the description of different proportions of the object to 
 
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
 
-XXX Ditto
-
-```
+```crom
 top = Purchase()
 top.label = "Purchase of the Example Painting by two Art Dealers"
 seller = Actor()
@@ -132,10 +129,13 @@ top.transferred_title_to = d2
 unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
 unit.label = "Percent"
 
+op = vocab.OwnershipPhase()
+top.initiated = op
 
 newclaim = vocab.OwnershipRight()
 newclaim.label = "Total Claim of Ownership"
 newclaim.interest_for = what
+op.related_entity = newclaim
 
 newclaim1 = vocab.OwnershipRight()
 newclaim1.label = "Claim of 30% Ownership by Dealer 1"
@@ -154,15 +154,6 @@ dim2.value = 70
 dim2.unit = unit
 newclaim2.dimension = dim2
 newclaim.interest_part = newclaim2
-
-oldclaim = vocab.OwnershipRight()
-oldclaim.label = "Claim of Ownership by Seller"
-oldclaim.claimed_by = seller
-oldclaim.interest_for = what
-xform = Transformation()
-xform.transformed = oldclaim
-xform.resulted_in = newclaim
-top.part = xform
 ```
 
 
