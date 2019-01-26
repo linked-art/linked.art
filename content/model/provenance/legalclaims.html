@@ -36,9 +36,6 @@ top.jurisdiction = where
 
 The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
 
-XXX FIXME
-
-This should probably be that an event initiates a phase in which the object is governed by a particular PropertyInterest. That event used specific object of the object, and had participants of the owning parties.  This aligns with regular ownership phase without PI.
 
 ```crom
 top = vocab.OwnershipPhase()
@@ -67,17 +64,18 @@ top.timespan = ts1
 
 The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
 
-In particular, the `Production` of the object would have a `part` which is the `BeginningOfExistence` of the `PropertyInterest`.  If the object is destroyed, then that activity would also have a `part` of the `EndOfExistence` of the last `PropertyInterest` around the object's ownership.  In between, any `Acquisition` would include a `Transformation` of the previous owner's `PropertyInterest` into the new owner's `PropertyInterest`.  Transformations end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, the resource is a shortcut for a pair of Beginning and End of Existence events that occur at the same time.
+In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html).
+
 
 We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
 
-XXX Can't Transform non Physical Things any more
 
-```
+
+```crom
 top = Purchase()
 top.label = "Purchase of the Example Painting on Jan 1, 2010"
 ts = TimeSpan()
-ts.begin_of_the_begin = "2010-01-01T00:00:00Z"
+ts.begin_of_the_begin = "2010-01-01T00:00:00Z" 
 ts.end_of_the_end = "2010-01-02T00:00:00Z"
 top.timespan = ts
 seller = Person()
@@ -90,18 +88,18 @@ top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = buyer
 
-xform = Transformation()
-newclaim = vocab.OwnershipRight()
-newclaim.label = "Claim of Ownership by Buyer"
-newclaim.claimed_by = buyer
-newclaim.interest_for = what
-oldclaim = vocab.OwnershipRight()
-oldclaim.label = "Claim of Ownership by Seller"
-oldclaim.claimed_by = seller
-oldclaim.interest_for = what
-xform.transformed = oldclaim
-xform.resulted_in = newclaim
-top.part = xform
+op = vocab.OwnershipPhase()
+pi = vocab.OwnershipRight()
+pi.label = "Claim of Ownership"
+op.related_entity = pi
+pi.interest_for = what
+pi.claimed_by = buyer
+op.phase_of = what
+top.initiated = op
+ts1 = TimeSpan()
+ts1.begin_of_the_begin = "2010-01-01T00:00:00Z"
+ts1.end_of_the_end = "2015-03-21T00:00:00Z"
+op.timespan = ts1
 ```
 
 ## Multiple Owners
