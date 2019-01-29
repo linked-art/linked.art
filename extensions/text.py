@@ -14,11 +14,11 @@ import cromulent
 from cromulent import model, vocab
 from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
-    LinguisticObject, Right, OrderedDict, Appellation, BeginningOfExistence, \
-    EndOfExistence, AttributeAssignment, Formation, Material, MeasurementUnit, \
+    LinguisticObject, OrderedDict, Appellation, \
+    AttributeAssignment, Formation, Material, MeasurementUnit, \
     ManMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
     PropertyInterest, Payment, Creation, Aggregation, Proxy, Destruction, \
-    PropositionalObject, Language, Geometry, CoordinateSystem, Phase
+    PropositionalObject, Language, Geometry, CoordinateSystem, Phase, Birth, Death
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
@@ -54,8 +54,6 @@ Move._uri_segment = "activity"
 LinguisticObject._uri_segment = "text"
 Appellation._uri_segment = "name"
 Name._uri_segment = "name"
-BeginningOfExistence._uri_segment = "event"
-EndOfExistence._uri_segment = "event"
 AttributeAssignment._uri_segment = "activity"
 Dimension._uri_segment = "value"
 PropertyInterest._uri_segment = "legal"
@@ -63,6 +61,8 @@ Aggregation._uri_segment = "set"
 PropositionalObject._uri_segment = "concept"  # For Exhibition concept
 Destruction._uri_segment = "activity"
 Phase._uri_segment = "activity"
+Birth._uri_segment = "activity"
+Death._uri_segment = "activity"
 
 fh = file('site.yaml')
 siteData = fh.read()
@@ -274,7 +274,7 @@ title: Index of Classes, Properties, Authorities
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
-		for ns in ['aat', 'crm', 'dc', 'schema', 'dcterms', 'skos', 'la', 'geo', 'sci']:
+		for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'la']:
 			g.bind(ns, ctxt[ns])
 		g.parse(data=nq, format="nt")
 		out = g.serialize(format="turtle")

@@ -32,10 +32,10 @@ top = Painting(art=1)
 top.label = "Example Painting"
 id1 = AccessionNumber()
 id1.label = "Accession Number for Painting"
-id1.value = "X198-093"
+id1.content = "X198-093"
 top.identified_by = id1
 id2 = LocalNumber()
-id2.value = 677
+id2.content = 677
 id2.label = "Local Repository Number"
 top.identified_by = id2
 ```
@@ -48,7 +48,7 @@ Identifiers are typically assigned when an object is accessioned into a [collect
 top = Painting(art=1)
 top.label = "Example Painting"
 id1 = AccessionNumber()
-id1.value = "P1998-27"
+id1.content = "P1998-27"
 top.identified_by = id1
 coll = CollectionSet()
 coll.label = "Paintings Collection"
@@ -71,7 +71,7 @@ The primary title should be given as the `label` of the object, and also as a `N
 top = Painting(art=1)
 top.label = "Peasant and Sheep"
 ttl = PrimaryName()
-ttl.value = "Peasant and Sheep"
+ttl.content = "Peasant and Sheep"
 top.identified_by = ttl
 ```
 
@@ -83,10 +83,10 @@ Further titles may also be given in the same way, just without the classificatio
 top = Painting(art=1)
 top.label = "Self Portrait"
 ttl = PrimaryName()
-ttl.value = "Self Portrait"
+ttl.content = "Self Portrait"
 top.identified_by = ttl
 ttl2 = Name()
-ttl2.value = "Portrait of the Artist"
+ttl2.content = "Portrait of the Artist"
 top.identified_by = ttl2
 ```
 

@@ -23,7 +23,7 @@ top = vocab.Book()
 top.label = "Physical Book"
 li = LinguisticObject()
 li.label = "Textual content of the Book"
-li.value = "Once upon a time, ..."
+li.content = "Once upon a time, ..."
 li.language = instances['english']
 top.carries = li
 ```
@@ -39,10 +39,10 @@ top = vocab.Article()
 top.label = "Example Article"
 top.language = instances['english']
 title = Name()
-title.value = "Title of Article"
+title.content = "Title of Article"
 id = Identifier()
 id.label = "DOI of Article"
-id.value = "10.1000/1011"
+id.content = "10.1000/1011"
 top.identified_by = title
 top.identified_by = id
 ```
@@ -97,7 +97,7 @@ The easiest way to describe the page range of a particular section of a larger c
 top = vocab.Article()
 top.label = "Example 10 page Article"
 pag = vocab.PaginationStatement()
-pag.value = "125-135"
+pag.content = "125-135"
 top.referred_to_by = pag
 ```
 
@@ -140,7 +140,7 @@ While the full text of the `LinguisticObject` may be either too long to provide,
 ```crom
 top = vocab.Abstract()
 top.label = "Abstract of Example Article"
-top.value = "This is the abstract of the example article, which is excellent."
+top.content = "This is the abstract of the example article, which is excellent."
 art = vocab.Article()
 art.label = "Example Article"
 top.refers_to = art

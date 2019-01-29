@@ -33,7 +33,7 @@ Names in CIDOC-CRM are turned into first class resources with their own identity
 top = Person()
 top.label = "J. Smith"
 apl = PrimaryName()
-apl.value = "J. Smith"
+apl.content = "J. Smith"
 top.identified_by = apl
 ```
 
@@ -45,18 +45,18 @@ Personal names can often be broken down into parts, with different types.  The t
 top = Person()
 top.label = "Lady Joan A. Smith, Duchess of Wolverhampton"
 apl = PrimaryName()
-apl.value = "Lady Joan A. Smith, Duchess of Wolverhampton"
+apl.content = "Lady Joan A. Smith, Duchess of Wolverhampton"
 top.identified_by = apl
 given = GivenName()
-given.value = "Joan"
+given.content = "Joan"
 fam = FamilyName()
-fam.value = "Smith"
+fam.content = "Smith"
 pref = NamePrefix()
-pref.value = "Lady"
+pref.content = "Lady"
 suff = NameSuffix()
-suff.value = "Duchess of Wolverhampton"
+suff.content = "Duchess of Wolverhampton"
 mid = MiddleName()
-mid.value = "A."
+mid.content = "A."
 apl.part = pref
 apl.part = given
 apl.part = mid
@@ -72,7 +72,7 @@ Like objects, people are often assigned legacy identifiers that should be record
 top = Person()
 top.label = "Xavier Y. Zeelander"
 pid = LocalNumber()
-pid.value = 643
+pid.content = "643"
 top.identified_by = pid
 ```
 
@@ -98,12 +98,12 @@ The model itself relates a `ContactPoint` object to the actor via the `contact_p
 top = Person()
 top.label = "A. Person"
 cp = vocab.EmailAddress()
-cp.value = "a.person@example.org"
+cp.content = "a.person@example.org"
 top.contact_point = cp
 org = MuseumOrg()
 org.label = "Example City Museum"
 sa = vocab.StreetAddress()
-sa.value = "1200 Museum Drive, Example City"
+sa.content = "1200 Museum Drive, Example City"
 org.contact_point = sa
 top.member_of = org
 ```
@@ -123,21 +123,21 @@ It is also valuable to use the partitioning pattern to break street addresses in
 top = MuseumOrg()
 top.label = "Example City Museum"
 sa = vocab.StreetAddress()
-sa.value = "1200 Museum Drive, Example City, 90049"
+sa.content = "1200 Museum Drive, Example City, 90049"
 top.contact_point = sa
 
 sn = vocab.StreetNumber()
-sn.value = "1200"
+sn.content = "1200"
 sa.part = sn
 s = vocab.StreetName()
-s.value = "Museum Drive"
+s.content = "Museum Drive"
 sa.part = s
-c = model.ContactPoint()
+c = model.Name()
 c.classified_as = instances["city"]
-c.value = "Example City"
+c.content = "Example City"
 sa.part = c
 pc = vocab.PostalCode()
-pc.value = "90049"
+pc.content = "90049"
 sa.part = pc
 ```
 
@@ -147,19 +147,21 @@ There are key events in a person or organization's lifespan that are often recor
 
 ### Birth and Death / Beginning and End of Existence
 
-Like the creation of objects, people and organizations also come into and out of existence through events.  These events can take place at certain Places, and happen at certain times.  This similarity between people and organizations results in the somewhat unwieldy `brought_into_existence_by` and `taken_out_of_existence_by` property names, with the respective `BeginningOfExistence` and `EndOfExistence` classes.
+Like the creation of objects, people and organizations also come into and out of existence through events.  These events can take place at certain Places, and happen at certain times.  
+
+FIXME:  Talk about born, Birth, died, Death
 
 After death, people are still instances of `Person` which is a subclass of `Actor`, even though they can no longer carry out activities.  People in comas or otherwise completely incapacitated also cannot carry out activities, but are not temporarily non-Actors. The modeling that death is a transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any actual value.  Thus a burial activity (_aat:300263485_) buries a Person, not a Thing-that-used-to-be-a-Person.
 
 ```crom
 top = Person()
 top.label = "Amanda B. Curtlett"
-birth = BeginningOfExistence()
+birth = Birth()
 bts = TimeSpan()
 bts.begin_of_the_begin = "1767-01-09"
 bts.end_of_the_end = "1767-01-12"
 birth.timespan = bts
-death = EndOfExistence()
+death = Death()
 dts = TimeSpan()
 dts.begin_of_the_begin = "1824-08-21"
 dts.end_of_the_end = "1824-08-21"
@@ -167,8 +169,8 @@ death.timespan = dts
 dloc = Place()
 dloc.label = "Death Place"
 death.took_place_at = dloc
-top.brought_into_existence_by = birth
-top.taken_out_of_existence_by = death 
+top.born = birth
+top.died = death 
 ```
 
 ### Active Dates
@@ -198,7 +200,7 @@ Biographical descriptions follow the `LinguisticObject` pattern, with biography 
 top = Person()
 top.label = "David E. Frederickson"
 bio = BiographyStatement()
-bio.value = "Example biography"
+bio.content = "Example biography"
 top.referred_to_by = bio
 ```
 
@@ -226,7 +228,7 @@ top = Person()
 top.label = "Jeremy K. Lintott"
 natl = Nationality("http://vocab.getty.edu/aat/300111159")
 natl.label = "British"
-top.aggregated_by = natl
+top.classified_as = natl
 ```
 
 ### Gender
@@ -240,7 +242,7 @@ top = Person()
 top.label = "Mabel N. Overton"
 gender = Gender("http://vocab.getty.edu/aat/300189557")
 gender.label = "feminine"
-top.aggregated_by = gender
+top.classified_as = gender
 ```
 
 ## Organization Membership

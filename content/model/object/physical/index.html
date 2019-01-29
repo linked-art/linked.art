@@ -41,7 +41,7 @@ The same object might have a dimension statement as below.
 top = Painting(art=1)
 top.label = "Example Painting"
 dims = DimensionStatement()
-dims.value = "The painting is approximately 16 inches wide, by 20 inches high"
+dims.content = "The painting is approximately 16 inches wide, by 20 inches high"
 top.referred_to_by = dims
 ```
 
@@ -77,7 +77,7 @@ Similarly to dimensions statements, it is possible to describe the materials usi
 top = Painting(art=1)
 top.label = "Example Multi-Media Painting"
 mats = MaterialStatement()
-mats.value = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
+mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
 top.referred_to_by = mats
 ```
 
@@ -124,6 +124,6 @@ vi.represents = what
 recto.shows = vi
 
 txt = LinguisticObject()
-txt.value = "Photograph of Example Artwork, taken 1932"
+txt.content = "Photograph of Example Artwork, taken 1932"
 verso.carries = txt
 ```

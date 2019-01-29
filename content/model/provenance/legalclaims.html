@@ -34,47 +34,46 @@ top.jurisdiction = where
 
 ### Effective Period
 
-The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because it is modeled as a Thing, rather than a passive Activity.  Things are, instead, brought into and out of existence by Activities, and this is the pattern we use to determine the period in which the claim is in effect.  The claim is in effect from the moment it comes into existence to the moment it goes out of existence.  Those events can then be part of some larger, more human-centric, activity such as an `Acquisition`.
+The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
+
 
 ```crom
-top = vocab.OwnershipRight()
-top.label = "Claim of Ownership"
+top = vocab.OwnershipPhase()
+pi = vocab.OwnershipRight()
+pi.label = "Claim of Ownership"
+top.related_entity = pi
+
 who = Person()
 who.label = "Owner of Example Painting"
+pi.claimed_by = who
 what = Painting()
 what.label = "Example Painting"
-top.interest_for = what
-top.claimed_by = who
-begin = BeginningOfExistence()
-end = EndOfExistence()
+pi.interest_for = what
+top.phase_of = what
+
 ts1 = TimeSpan()
 ts1.begin_of_the_begin = "1743-05-12T00:00:00"
-ts1.end_of_the_end = "1743-05-13T00:00:00"
-ts2 = TimeSpan()
-ts2.begin_of_the_begin = "1821-11-27T00:00:00"
-ts2.end_of_the_end = "1821-11-28T00:00:00"
-begin.timespan = ts1
-end.timespan = ts2
-top.brought_into_existence_by = begin
-top.taken_out_of_existence_by = end
+ts1.end_of_the_end = "1821-11-28T00:00:00"
+top.timespan = ts1
 ```
 
 !!! note "CIDOC-CRM Arcana"
-    You might be wondering why `PropertyInterest` isn't just an E30 Right? You almost certainly do not want to read [this section](/model/profile/class_analysis.html#ineffective-classes) that explains the details.
+    You might be wondering why `PropertyInterest` isn't just an E30 Right? You almost certainly do not want to read [this section](/model/profile/class_analysis.html#ineffective-classes) that explains the gruesome details.
 
 ## Ownership Rights
 
 The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
 
-In particular, the `Production` of the object would have a `part` which is the `BeginningOfExistence` of the `PropertyInterest`.  If the object is destroyed, then that activity would also have a `part` of the `EndOfExistence` of the last `PropertyInterest` around the object's ownership.  In between, any `Acquisition` would include a `Transformation` of the previous owner's `PropertyInterest` into the new owner's `PropertyInterest`.  Transformations end the existence of the "input" to the process (the claim that is `transformed`) and begin the existence of the "output" of the process (the claim that the process `results_in`).  Thus, the resource is a shortcut for a pair of Beginning and End of Existence events that occur at the same time.
+In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html). It would also terminate the previous Ownership Phase of the object claimed by the seller.
 
-We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object.
+We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object. It also makes no assertion about the legality of the claim, allowing it to be used for sale of stolen items.
+
 
 ```crom
 top = Purchase()
 top.label = "Purchase of the Example Painting on Jan 1, 2010"
 ts = TimeSpan()
-ts.begin_of_the_begin = "2010-01-01T00:00:00Z"
+ts.begin_of_the_begin = "2010-01-01T00:00:00Z" 
 ts.end_of_the_end = "2010-01-02T00:00:00Z"
 top.timespan = ts
 seller = Person()
@@ -87,18 +86,23 @@ top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = buyer
 
-xform = Transformation()
-newclaim = vocab.OwnershipRight()
-newclaim.label = "Claim of Ownership by Buyer"
-newclaim.claimed_by = buyer
-newclaim.interest_for = what
-oldclaim = vocab.OwnershipRight()
-oldclaim.label = "Claim of Ownership by Seller"
-oldclaim.claimed_by = seller
-oldclaim.interest_for = what
-xform.transformed = oldclaim
-xform.resulted_in = newclaim
-top.part = xform
+op = vocab.OwnershipPhase()
+op.label = "Ownership by Buyer"
+pi = vocab.OwnershipRight()
+pi.label = "Claim of Ownership"
+op.related_entity = pi
+pi.interest_for = what
+pi.claimed_by = buyer
+op.phase_of = what
+ts1 = TimeSpan()
+ts1.begin_of_the_begin = "2010-01-01T00:00:00Z"
+ts1.end_of_the_end = "2015-03-21T00:00:00Z"
+op.timespan = ts1
+top.initiated = op
+
+pop = vocab.OwnershipPhase()
+pop.label = "Ownership by Seller"
+top.terminated = pop
 ```
 
 ## Multiple Owners
@@ -129,10 +133,13 @@ top.transferred_title_to = d2
 unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
 unit.label = "Percent"
 
+op = vocab.OwnershipPhase()
+top.initiated = op
 
 newclaim = vocab.OwnershipRight()
 newclaim.label = "Total Claim of Ownership"
 newclaim.interest_for = what
+op.related_entity = newclaim
 
 newclaim1 = vocab.OwnershipRight()
 newclaim1.label = "Claim of 30% Ownership by Dealer 1"
@@ -151,15 +158,6 @@ dim2.value = 70
 dim2.unit = unit
 newclaim2.dimension = dim2
 newclaim.interest_part = newclaim2
-
-oldclaim = vocab.OwnershipRight()
-oldclaim.label = "Claim of Ownership by Seller"
-oldclaim.claimed_by = seller
-oldclaim.interest_for = what
-xform = Transformation()
-xform.transformed = oldclaim
-xform.resulted_in = newclaim
-top.part = xform
 ```
 
 
@@ -169,10 +167,11 @@ In some situations, the set of owners does not change, however they trade the pr
 
 As the owners do not change, there is no new `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the claimed ownership.  A new `PropertyInterest` is brought into effect with shares that include the new proportions, and the previous `PropertyInterest`'s effect ends.  This process likely also includes other transfers, perhaps of currency via a `Payment`.
 
-```crom
 
+XXX Still true
+
+```
 top = Activity()
-
 what = Painting()
 what.label = "Example Painting"
 d1 = Group()
@@ -247,7 +246,10 @@ top.part = pay
 
 Objects can change hands illegally, such as via theft (_aat:300055292_) or looting (_aat:300379554_). This is modeled as a new `PropertyInterest` that is marked as being actually illegal, via _aat:300055289_, that competes with the actual claim of the owner. This pattern means that when the thief then sells the stolen object to an unsuspecting buyer, the `Acquisition` is described the same way as any other. It also lets further claims of ownership be layered on top, where the situation is not so clear.  If the object is part of reparations or was looted by a government under some oppressive regime, then the Acquisition might be considered legitimate in some contexts and not in others.
 
-```crom
+
+XXX Yup.
+
+```
 top = Theft()
 top.label = "Theft of Painting"
 what = Painting(art=1)
