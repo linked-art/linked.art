@@ -44,6 +44,9 @@ top.identified_by = id2
 
 Identifiers are typically assigned when an object is accessioned into a [collection](/model/collection/), or when technology systems that manage the descriptions of the objects, are updated.  It can be useful to associate the identifier with the collection it was minted for. This is done by asserting that that the [proxy](/model/collection/) for the object in the context of the collection also has the identifier.  Note that in this case the identifier is still current, and hence also associated with the object directly.
 
+!!! warning "Change Likely"
+This pattern uses the ore:Proxy pattern, which has been found difficult to implement in practice. It is likely to change to use a Phase-based model, in which the object is identified by an Identifier over a particular period of time.
+
 ```crom
 top = Painting(art=1)
 top.label = "Example Painting"
