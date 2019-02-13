@@ -2085,16 +2085,20 @@
       "@id": "crm:P190_has_symbolic_content"
     }, 
     "end_of_the_begin": {
-      "@id": "crm:P81a_end_of_the_begin"
+      "@id": "crm:P81a_end_of_the_begin", 
+      "@type": "xsd:dateTime"
     }, 
     "begin_of_the_end": {
-      "@id": "crm:P81b_begin_of_the_end"
+      "@id": "crm:P81b_begin_of_the_end", 
+      "@type": "xsd:dateTime"
     }, 
     "begin_of_the_begin": {
-      "@id": "crm:P82a_begin_of_the_begin"
+      "@id": "crm:P82a_begin_of_the_begin", 
+      "@type": "xsd:dateTime"
     }, 
     "end_of_the_end": {
-      "@id": "crm:P82b_end_of_the_end"
+      "@id": "crm:P82b_end_of_the_end", 
+      "@type": "xsd:dateTime"
     }, 
     "Payment": {
       "@context": {
