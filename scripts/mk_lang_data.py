@@ -38,13 +38,13 @@ for (uri, h) in items:
 	aat = uri.replace(aat_uri, "aat:")
 	table.append(" %s | [%s](%s) | %s " % ( h['name'], aat, uri, h['code']))
 
-context = json.dumps(ctxt, indent=2)
-fh = open('../content/ns/v1/languages.json', 'w')
-fh.write(context)
-fh.close()
+# context = json.dumps(ctxt, indent=2)
+# fh = open('languages.json', 'w')
+# fh.write(context)
+# fh.close()
 
 tablestr = u'\n'.join(table)
 tablestr = tablestr.encode('UTF-8')
-fh = open('../content/_include/language_key_map.md', 'w')
+fh = open('language_key_map.md', 'w')
 fh.write(tablestr)
 fh.close()
