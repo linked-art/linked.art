@@ -14,11 +14,11 @@ There are a few core properties that every resource should have for it to be a u
 
 * `id` captures the URI that identifies the object.  Every resource must have exactly one id, and it must be an HTTP URI.
 * `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
-* `label` captures a human readable label for the object as a string.  Every resource should have exactly one label.
+* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every resource should have exactly one label, and must not have more than one.
 
 ```crom
 top = ManMadeObject()
-top.label = "Example Object"
+top._label = "Example Object"
 ```
 
 ## Types / Classifications
@@ -42,7 +42,7 @@ The type of the object (an instance of `ManMadeObject`) is a painting _(aat:3000
 
 ```crom
 top = Painting(art=1)
-top.label = "Simple Example Painting"
+top._label = "Simple Example Painting"
 ```
 
 ## Parts
@@ -67,10 +67,10 @@ A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a 
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 top.made_of = instances['watercolor']
 part = SupportPart(top.id + "/part/1")
-part.label = "Canvas Support"
+part._label = "Canvas Support"
 part.made_of = instances['canvas']
 top.part = part
 ```
@@ -92,9 +92,9 @@ An auction _(aat:300054751)_ consists of many activities in which a particular l
 
 ```crom
 top = Auction()
-top.label = "Example Auction"
+top._label = "Example Auction"
 lot = Activity(top.id + "/part/1")
-lot.label = "Example Auction of Lot"
+lot._label = "Example Auction of Lot"
 top.part = lot
 ```
 
@@ -114,11 +114,11 @@ The "W02" gallery _(aat:300240057)_ is part of the museum, which is in Los Angel
 
 ```crom
 top = Place()
-top.label = "Example Museum Building"
+top._label = "Example Museum Building"
 gallery = Gallery(top.id + '/part/1')
-gallery.label = "Gallery W204"
+gallery._label = "Gallery W204"
 city = Place("http://vocab.getty.edu/tgn/7023900-place")
-city.label = "Los Angeles"
+city._label = "Los Angeles"
 top.part = gallery
 top.part_of = city
 ```
@@ -142,9 +142,9 @@ The content of the first ledger from a dealer's records contains the content of 
 
 ```crom
 top = LinguisticObject()
-top.label = "Content of Ledger 1"
+top._label = "Content of Ledger 1"
 row = LinguisticObject(top.id + "/part/1")
-row.label = "Content of Row 1"
+row._label = "Content of Row 1"
 top.part = row
 ```
 
@@ -163,11 +163,11 @@ The concept of being the side of an object (_aat:300404461_) is part of the conc
 
 ```crom
 top = ManMadeObject()
-top.label = "Side of an Object"
+top._label = "Side of an Object"
 child = Type("aat:300404461")
-child.label = "Sides"
+child._label = "Sides"
 parent = Type("aat:300190691")
-parent.label = "Object portions"
+parent._label = "Object portions"
 child.part_of = parent
 top.classified_as = child
 # Note - No need to put these in crom.vocab as example explicit to Type hierarchy
@@ -187,9 +187,9 @@ The Paintings Department _(aat:300263534)_ is part of the Example Museum _(aat:3
 
 ```crom
 top = MuseumOrg()
-top.label = "Example Museum Organization"
+top._label = "Example Museum Organization"
 dept = Department(top.id + "/part/1")
-dept.label = "Paintings Department"
+dept._label = "Paintings Department"
 top.member = dept
 ```
 
@@ -209,9 +209,9 @@ A Painting is a member of the Paintings Collection.
 
 ```crom
 top = CollectionSet()
-top.label = "Paintings Collection"
+top._label = "Paintings Collection"
 mmo = Painting()
-mmo.label = "Example Painting"
+mmo._label = "Example Painting"
 top.aggregates = mmo
 ```
 
@@ -235,7 +235,7 @@ Having only a textual description of the materials in English, the value `"Oil o
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting on Canvas"
+top._label = "Example Painting on Canvas"
 lo = MaterialStatement(top.id + "/statement/1")
 lo.content = "Oil on Canvas"
 lo.language = instances['english']

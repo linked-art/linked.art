@@ -20,9 +20,9 @@ Like other LinguisticObjects, it can have a `value` for the actual text of the w
 
 ```crom
 top = vocab.Book()
-top.label = "Physical Book"
+top._label = "Physical Book"
 li = LinguisticObject()
-li.label = "Textual content of the Book"
+li._label = "Textual content of the Book"
 li.content = "Once upon a time, ..."
 li.language = instances['english']
 top.carries = li
@@ -36,12 +36,12 @@ The title of a text is captured using the `Name` pattern, and assigned identifie
 
 ```crom
 top = vocab.Article()
-top.label = "Example Article"
+top._label = "Example Article"
 top.language = instances['english']
 title = Name()
 title.content = "Title of Article"
 id = Identifier()
-id.label = "DOI of Article"
+id._label = "DOI of Article"
 id.content = "10.1000/1011"
 top.identified_by = title
 top.identified_by = id
@@ -56,16 +56,16 @@ There are two primary text-specific activities that are captured -- the creation
 
 ```crom
 top = vocab.Article()
-top.label = "Example Journal Article"
+top._label = "Example Journal Article"
 cre = model.Creation()
-cre.label = "Creation of the Article Content"
+cre._label = "Creation of the Article Content"
 author = Person()
-author.label = "Author"
+author._label = "Author"
 cre.carried_out_by = author
 top.created_by = cre
 pub = vocab.Publishing()
 publr = Group()
-publr.label = "Publishing House"
+publr._label = "Publishing House"
 pub.carried_out_by = publr
 top.used_for = pub
 ```
@@ -76,11 +76,11 @@ The textual structure can be modeled with the partitioning of `LinguisticObject`
 
 ```crom
 top = vocab.Monograph()
-top.label = "Example Monograph Text"
+top._label = "Example Monograph Text"
 chap = vocab.Chapter()
-chap.label = "Chapter 1"
+chap._label = "Chapter 1"
 chap2 = vocab.Chapter()
-chap2.label = "Chapter 2"
+chap2._label = "Chapter 2"
 top.part = chap
 top.part = chap2
 ```
@@ -95,7 +95,7 @@ The easiest way to describe the page range of a particular section of a larger c
 
 ```crom
 top = vocab.Article()
-top.label = "Example 10 page Article"
+top._label = "Example 10 page Article"
 pag = vocab.PaginationStatement()
 pag.content = "125-135"
 top.referred_to_by = pag
@@ -110,12 +110,12 @@ startType = instances['first']
 
 # XXX These need to be created
 endType = Type()
-endType.label = "Last -- waiting for AAT id"
+endType._label = "Last -- waiting for AAT id"
 unit = MeasurementUnit()
-unit.label = "Page Numbers"
+unit._label = "Page Numbers"
 
 top = vocab.Article()
-top.label = "Example 10 page Article"
+top._label = "Example 10 page Article"
 start = Dimension()
 start.value = 125
 start.classified_as = startType
@@ -139,14 +139,14 @@ While the full text of the `LinguisticObject` may be either too long to provide,
 
 ```crom
 top = vocab.Abstract()
-top.label = "Abstract of Example Article"
+top._label = "Abstract of Example Article"
 top.content = "This is the abstract of the example article, which is excellent."
 art = vocab.Article()
-art.label = "Example Article"
+art._label = "Example Article"
 top.refers_to = art
 cre = model.Creation()
 abstr = Person()
-abstr.label = "Example Abstracter"
+abstr._label = "Example Abstracter"
 cre.carried_out_by = abstr
 top.created_by = cre
 ```
@@ -157,9 +157,9 @@ Textual content can `refer_to` other resources in the overall model. These refer
 
 ```crom
 top = vocab.Article()
-top.label = "Article about Example Painting"
+top._label = "Article about Example Painting"
 what = Painting(art=1)
-what.label = "Example Painting"
+what._label = "Example Painting"
 top.refers_to = what
 ```
 
@@ -169,10 +169,10 @@ One Linguistic Object, be it captured in the model as a Statement or as the full
 
 ```crom
 top = vocab.Article()
-top.label = "The Birth of Artistic Conception in China"
+top._label = "The Birth of Artistic Conception in China"
 top.language = instances['english']
 orig = vocab.Article()
-orig.label =  "Zhongguo yishu yijing zhi dansheng"
+orig._label =  "Zhongguo yishu yijing zhi dansheng"
 orig.language = instances['chinese']
 top.translation_of = orig
 ```

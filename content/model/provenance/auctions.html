@@ -16,20 +16,20 @@ An auction (_aat:300054751_) is an activity which is performed by an organizatio
 
 ```crom
 top = Auction()
-top.label = "Example Auction in London 1875-03-12,13"
+top._label = "Example Auction in London 1875-03-12,13"
 h = AuctionHouse()
-h.label = "Auction House, London"
+h._label = "Auction House, London"
 top.took_place_at = h
 org = Group()
-org.label = "Auction Company"
+org._label = "Auction Company"
 top.carried_out_by = org
 t = TimeSpan()
-t.label = "12th and 13th of March, 1875"
+t._label = "12th and 13th of March, 1875"
 t.begin_of_the_begin = "1875-03-12T00:00:00Z"
 t.end_of_the_end = "1875-03-14T00:00:00Z"
 top.timespan = t
 lot = Activity()
-lot.label = "Auction of Lot 1"
+lot._label = "Auction of Lot 1"
 top.part = lot
 ```
 
@@ -39,18 +39,18 @@ The sale of the Lot is an activity that can be carried out by one or more Auctio
 
 ```crom
 top = Activity()
-top.label = "Auction of Lot J-1823-5"
+top._label = "Auction of Lot J-1823-5"
 who = Auctioneer()
-who.label = "Example Auctioneer"
+who._label = "Example Auctioneer"
 top.carried_out_by = who
 lotset = AuctionLotSet()
-lotset.label = "Set of Objects for Lot J-1823-5"
+lotset._label = "Set of Objects for Lot J-1823-5"
 top.used_specific_object = lotset
 txn = Purchase()
-txn.label = "Purchase of Lot"
+txn._label = "Purchase of Lot"
 top.part = txn
 bidset = Activity()
-bidset.label = "Bids made on Lot"
+bidset._label = "Bids made on Lot"
 top.part = bidset
 bidset.occurs_before = txn
 ```
@@ -61,12 +61,12 @@ The Lot is a set of objects (_aat:300411307_) grouped together for the purposes 
 
 ```crom
 top = AuctionLotSet()
-top.label = "Set of Objects for Lot 812"
+top._label = "Set of Objects for Lot 812"
 ln = LotNumber()
 ln.content = "812"
 top.identified_by = ln
 obj = Painting(art=1)
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 top.aggregates = obj
 ```
 
@@ -77,16 +77,16 @@ The purchase of the lot is very similar to the purchase of any other object, how
 ```crom
 top = Purchase()
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 buyer = Actor()
-buyer.label = "Buyer"
+buyer._label = "Buyer"
 als = AuctionLotSet()
-als.label = "Set of Objects"
+als._label = "Set of Objects"
 top.used_specific_object = als 
 act = Purchase()
 top.part = act
 obj = Painting(art=1)
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 act.transferred_title_of = obj
 act.transferred_title_from = seller
 act.transferred_title_to = buyer
@@ -110,17 +110,17 @@ For example, a lot with a starting price of $500, a reserve price of $3000 and a
 
 ```crom
 top = AuctionLotSet()
-top.label = "Set of Objects for Lot 812"
+top._label = "Set of Objects for Lot 812"
 ln = LotNumber()
 ln.content = "812"
 top.identified_by = ln
 obj = Painting()
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 top.aggregates = obj
 amnt = vocab.StartingPrice()
 amnt.value = 500
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amnt.currency = curr
 amnt2 = vocab.EstimatedPrice()
 amnt2.value = 4000
@@ -140,16 +140,16 @@ The purchase price follows the same pattern as for purchases outside of auctions
 ```crom
 top = Purchase()
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 buyer = Actor()
-buyer.label = "Buyer"
+buyer._label = "Buyer"
 als = AuctionLotSet()
-als.label = "Set of Objects"
+als._label = "Set of Objects"
 top.used_specific_object = als 
 act = Purchase()
 top.part = act
 obj = Painting(art=1)
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 act.transferred_title_of = obj
 act.transferred_title_from = seller
 act.transferred_title_to = buyer
@@ -159,7 +159,7 @@ paymt.paid_to = seller
 amt = MonetaryAmount()
 amt.value = 4500
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
 top.part = paymt
@@ -174,27 +174,27 @@ Bids are modeled as the creation of a proposition that the bidder (or the person
 
 ```crom
 top = Activity()
-top.label = "Auction of Lot J-1823-5"
+top._label = "Auction of Lot J-1823-5"
 who = Auctioneer()
-who.label = "Example Auctioneer"
+who._label = "Example Auctioneer"
 top.carried_out_by = who
 lotset = AuctionLotSet()
-lotset.label = "Set of Objects for Lot J-1823-5"
+lotset._label = "Set of Objects for Lot J-1823-5"
 top.used_specific_object = lotset
 bidset = Activity()
-bidset.label = "Bids made on Lot"
+bidset._label = "Bids made on Lot"
 top.part = bidset
 bid = vocab.Bidding()
 bidset.part = bid
 who = Person()
-who.label = "Example Bidder"
+who._label = "Example Bidder"
 bid.carried_out_by = who
 bidprop = PropositionalObject()
 bid.created = bidprop
 amnt = MonetaryAmount()
 amnt.value = 10000
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amnt.currency = curr
 bidprop.refers_to = amnt
 ```
@@ -207,17 +207,17 @@ Much of the information we have about historical auctions comes from Auction Cat
 
 ```crom
 top = AuctionCatalog()
-top.label = "Auction Catalog of Example Auction"
+top._label = "Auction Catalog of Example Auction"
 entry = LinguisticObject()
-entry.label = "Description of Lot 16"
+entry._label = "Description of Lot 16"
 top.part = entry
 auc = Auction()
-auc.label = "Example Auction, 1924"
+auc._label = "Example Auction, 1924"
 top.refers_to = auc
 lot = Activity()
-lot.label = "Auction of Lot 16"
+lot._label = "Auction of Lot 16"
 entry.refers_to = lot
 lotset = AuctionLotSet()
-lotset.label = "Lot 16"
+lotset._label = "Lot 16"
 entry.refers_to = lotset
 ```

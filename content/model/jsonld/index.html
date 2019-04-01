@@ -29,10 +29,10 @@ An example of the JSON-LD serialization for a painting, that is made of watercol
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 top.made_of = instances['watercolor']
 part = SupportPart(top.id + "/part/1")
-part.label = "Canvas Support"
+part._label = "Canvas Support"
 part.made_of = instances['canvas']
 top.part = part
 ```

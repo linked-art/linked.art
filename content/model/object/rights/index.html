@@ -16,7 +16,7 @@ It is important to be able to give a credit or attribution statement that should
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 crdt = CreditStatement()
 crdt.content = "Donation of Ms J. Smith; Example Organization"
 top.referred_to_by = crdt
@@ -28,7 +28,7 @@ For general statements about rights that have not been aligned with any other co
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 crdt = RightsStatement()
 crdt.content = "Copyright of this object has not yet been assessed"
 top.referred_to_by = crdt
@@ -46,9 +46,9 @@ The pattern is identical to custom rights statements, however the URI of the sta
 
 ```crom
 top = Painting(art=1)
-top.label = "Object"
+top._label = "Object"
 cne = RightsStatement("http://rightsstatements.org/vocab/NKC/1.0/")
-cne.label = "No known copyright"
+cne._label = "No known copyright"
 top.referred_to_by = cne
 ```
 

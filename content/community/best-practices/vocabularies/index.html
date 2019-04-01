@@ -84,7 +84,7 @@ __Parts of Objects__
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 ```
 
 ### PhysicalObject
@@ -100,7 +100,7 @@ Things take two roles within the model, as parts of objects (such as the support
  
 ```crom
 top = vocab.AuctionLotSet()
-top.label = "Set of Objects in an Auction Lot"
+top._label = "Set of Objects in an Auction Lot"
 ```
 
 ### LinguisticObject
@@ -142,7 +142,7 @@ InformationObjects are classified primarily according to their function, such as
 
 ```crom
 top = vocab.AuctionCatalog()
-top.label = "Example Auction Catalog"
+top._label = "Example Auction Catalog"
 ```
 
 ### Place
@@ -157,7 +157,7 @@ Places are also classified primarily according to the function that typically ta
 
 ```crom
 top = MuseumPlace()
-top.label = "Example Museum Site"
+top._label = "Example Museum Site"
 ```
 
 ### Group
@@ -174,7 +174,7 @@ Groups are described along with [people](/model/actor/).
 
 ```crom
 top = MuseumOrg()
-top.label = "Example Museum Organization"
+top._label = "Example Museum Organization"
 ```
 
 ### Activity
@@ -191,7 +191,7 @@ top.label = "Example Museum Organization"
 
 ```crom
 top = Auction()
-top.label = "Example Auction"
+top._label = "Example Auction"
 ```
 
 ### Identifier
@@ -273,9 +273,9 @@ Groups are used for many groups of people, however nationalities and genders are
 
 ```crom
 top = Person()
-top.label = "Example French Person"
+top._label = "Example French Person"
 grp = Group("aat:300111188")
-grp.label = "French"
+grp._label = "French"
 top.member_of = grp
 ```
 
@@ -325,9 +325,9 @@ top.member_of = grp
          
 ```crom
 top = vocab.FramePart()
-top.label = "Oak Frame"
+top._label = "Oak Frame"
 oak = Material("aat:300012264")
-oak.label = "oak"
+oak._label = "oak"
 top.made_of = oak
 ```
 
@@ -346,9 +346,9 @@ top.made_of = oak
 
 ```crom
 top = Height()
-top.label = "24 inches high"
+top._label = "24 inches high"
 top.value = 24
 dim = MeasurementUnit("aat:300379100")
-dim.label = "inches"
+dim._label = "inches"
 top.unit = dim
 ```

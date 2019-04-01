@@ -20,9 +20,9 @@ Like any resource, Aggregations must have an `id` and `type`, are likely to have
 
 ```crom
 top = CollectionSet()
-top.label = "Example Collection"
+top._label = "Example Collection"
 p = Painting()
-p.label = "Example Painting"
+p._label = "Example Painting"
 top.aggregates = p
 desc = Description()
 desc.content = "This is a lovely little collection"
@@ -47,13 +47,13 @@ This pattern can be used for any type of organization that manages objects, from
 
 ```crom
 top = CollectionSet()
-top.label = "Collection of Example Museum"
+top._label = "Collection of Example Museum"
 p = Painting()
-p.label = "Example Painting"
+p._label = "Example Painting"
 top.aggregates = p
 cre = Creation()
 inst = vocab.MuseumOrg()
-inst.label = "Example Museum"
+inst._label = "Example Museum"
 cre.carried_out_by = inst
 top.created_by = cre
 ```
@@ -64,15 +64,15 @@ Institutions are often split up into departments, each of which will manage a pa
 
 ```crom
 top = CollectionSet()
-top.label = "Collection of Example Museum's Paintings Department"
+top._label = "Collection of Example Museum's Paintings Department"
 p = Painting()
-p.label = "Example Painting"
+p._label = "Example Painting"
 top.aggregates = p
 cre = Creation()
 inst = vocab.MuseumOrg()
-inst.label = "Example Museum"
+inst._label = "Example Museum"
 dept = vocab.Department()
-dept.label = "Paintings Department"
+dept._label = "Paintings Department"
 dept.member_of = inst
 cre.carried_out_by = dept
 top.created_by = cre

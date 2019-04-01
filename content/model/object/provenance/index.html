@@ -16,11 +16,11 @@ In the same way that the `Production` event can reference the object that it `pr
 
 ```crom
 top = Painting(art=1)
-top.label = "Painting"
+top._label = "Painting"
 prod = Production()
-prod.label = "Production of Painting"
+prod._label = "Production of Painting"
 who = Person()
-who.label = "Artist"
+who._label = "Artist"
 prod.carried_out_by = who
 top.produced_by = prod
 ```
@@ -31,12 +31,12 @@ The current owner of the object should be referenced with `transferred_title_to`
 
 ```crom
 top = Painting(art=1)
-top.label = "Painting"
+top._label = "Painting"
 who = MuseumOrg()
-who.label = "Museum"
+who._label = "Museum"
 top.current_owner = who
 acq = Acquisition()
-acq.label = "Acquisition of Painting"
+acq._label = "Acquisition of Painting"
 who.acquired_title_through = acq
 ```
 
@@ -46,8 +46,8 @@ The current location of the object is given using the `current_location` propert
 
 ```crom
 top = Painting(art=1)
-top.label = "Painting"
+top._label = "Painting"
 where = Place()
-where.label = "Gallery W6"
+where._label = "Gallery W6"
 top.current_location = where
 ```
