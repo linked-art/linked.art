@@ -20,16 +20,16 @@ Between acquisitions, the object is owned and, presumably, looked after by its o
  
 ```crom
 top = model.Phase()
-top.label = "Ownership of the Painting"
+top._label = "Ownership of the Painting"
 start = Acquisition()
-start.label = "Acquisition of Painting by Owner"
+start._label = "Acquisition of Painting by Owner"
 end = Acquisition()
-end.label = "Owner gives Painting to someone else"
+end._label = "Owner gives Painting to someone else"
 owner = Actor()
-owner.label = "Owner"
+owner._label = "Owner"
 what = Painting(art=1)
 who = Person()
-who.label = "Someone Else"
+who._label = "Someone Else"
 start.transferred_title_of = what
 start.transferred_title_to = who
 end.transferred_title_of = what
@@ -47,9 +47,9 @@ One such activity is taking inventory _(aat:300077506)_ by the owner of all thei
 
 ```crom
 top = model.Phase()
-top.label = "Ownership of the Painting"
+top._label = "Ownership of the Painting"
 inv = Inventorying()
-inv.label = "Inventory Taking by Owner"
+inv._label = "Inventory Taking by Owner"
 top.part = inv
 ```
 
@@ -60,20 +60,20 @@ The entire provenance of an object _(aat:300055863)_ is also an activity, that c
 ```crom
 top = model.Phase()
 what = Painting(art=1)
-top.label = "Lifetime of Painting"
+top._label = "Lifetime of Painting"
 top.phase_of = what
 prod = Production()
 prod.produced = what
 own1 = model.Phase()
-own1.label = "Ownership by Artist"
+own1._label = "Ownership by Artist"
 c1 = Acquisition()
 c1.transferred_title_of = what
 own2 = model.Phase()
-own2.label = "Ownership by first owner"
+own2._label = "Ownership by first owner"
 c2 = Purchase()
 c2.transferred_title_of = what
 own3 = model.Phase()
-own3.label = "Ownership by second and final owner"
+own3._label = "Ownership by second and final owner"
 dest = Destruction()
 dest.took_out_of_existence = what
 top.part = prod

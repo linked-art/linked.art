@@ -14,11 +14,11 @@ There are two primary types of acting agent, `Person` and `Group`.  They are sub
 
 ```crom
 who = Person()
-who.label = "J. Smith"
+who._label = "J. Smith"
 grp = MuseumOrg()
-grp.label = "Example Museum Organization"
+grp._label = "Example Museum Organization"
 actor = Actor()
-actor.label = "Unknown Person or Organization"
+actor._label = "Unknown Person or Organization"
 top = Acquisition()
 top.transferred_title_from = who
 top.transferred_title_to = grp
@@ -31,7 +31,7 @@ Names in CIDOC-CRM are turned into first class resources with their own identity
 
 ```crom
 top = Person()
-top.label = "J. Smith"
+top._label = "J. Smith"
 apl = PrimaryName()
 apl.content = "J. Smith"
 top.identified_by = apl
@@ -43,7 +43,7 @@ Personal names can often be broken down into parts, with different types.  The t
 
 ```crom
 top = Person()
-top.label = "Lady Joan A. Smith, Duchess of Wolverhampton"
+top._label = "Lady Joan A. Smith, Duchess of Wolverhampton"
 apl = PrimaryName()
 apl.content = "Lady Joan A. Smith, Duchess of Wolverhampton"
 top.identified_by = apl
@@ -70,7 +70,7 @@ Like objects, people are often assigned legacy identifiers that should be record
 
 ```crom
 top = Person()
-top.label = "Xavier Y. Zeelander"
+top._label = "Xavier Y. Zeelander"
 pid = LocalNumber()
 pid.content = "643"
 top.identified_by = pid
@@ -82,9 +82,9 @@ There may be other identifiers for the person available in external systems, suc
 
 ```crom
 top = Person()
-top.label = "Vincent Van Gogh"
+top._label = "Vincent Van Gogh"
 ulan = BaseResource("http://vocab.getty.edu/ulan/500115588-agent")
-ulan.label = "Van Gogh, Vincent"
+ulan._label = "Van Gogh, Vincent"
 top.exact_match = ulan
 ```
 
@@ -96,12 +96,12 @@ The model itself relates a `ContactPoint` object to the actor via the `contact_p
 
 ```crom
 top = Person()
-top.label = "A. Person"
+top._label = "A. Person"
 cp = vocab.EmailAddress()
 cp.content = "a.person@example.org"
 top.contact_point = cp
 org = MuseumOrg()
-org.label = "Example City Museum"
+org._label = "Example City Museum"
 sa = vocab.StreetAddress()
 sa.content = "1200 Museum Drive, Example City"
 org.contact_point = sa
@@ -121,7 +121,7 @@ It is also valuable to use the partitioning pattern to break street addresses in
 
 ```crom
 top = MuseumOrg()
-top.label = "Example City Museum"
+top._label = "Example City Museum"
 sa = vocab.StreetAddress()
 sa.content = "1200 Museum Drive, Example City, 90049"
 top.contact_point = sa
@@ -155,7 +155,7 @@ After death, people are still instances of `Person` which is a subclass of `Acto
 
 ```crom
 top = Person()
-top.label = "Amanda B. Curtlett"
+top._label = "Amanda B. Curtlett"
 birth = Birth()
 bts = TimeSpan()
 bts.begin_of_the_begin = "1767-01-09"
@@ -167,7 +167,7 @@ dts.begin_of_the_begin = "1824-08-21"
 dts.end_of_the_end = "1824-08-21"
 death.timespan = dts
 dloc = Place()
-dloc.label = "Death Place"
+dloc._label = "Death Place"
 death.took_place_at = dloc
 top.born = birth
 top.died = death 
@@ -181,7 +181,7 @@ The property for the Person or Group is `carried_out`, the inverse of the more f
 
 ```crom
 top = Person()
-top.label = "Patrick Q. Robertson"
+top._label = "Patrick Q. Robertson"
 active = vocab.Active()
 ats = TimeSpan()
 ats.begin_of_the_begin = "1910-01-01"
@@ -198,7 +198,7 @@ Biographical descriptions follow the `LinguisticObject` pattern, with biography 
 
 ```crom
 top = Person()
-top.label = "David E. Frederickson"
+top._label = "David E. Frederickson"
 bio = BiographyStatement()
 bio.content = "Example biography"
 top.referred_to_by = bio
@@ -210,9 +210,9 @@ Images of the person can also be provided, in the same way as for [images of obj
 
 ```crom
 top = Person()
-top.label = "Gertrude H. Ingram"
+top._label = "Gertrude H. Ingram"
 img = DigitalImage("http://example.org/images/gertrude.jpg")
-img.label = "Image of G.H. Ingram"
+img._label = "Image of G.H. Ingram"
 img.format = "image/jpeg"
 top.representation = img
 ```
@@ -225,9 +225,9 @@ The `Aggregation` should have _aat:300379842_ as one of its classifications, and
 
 ```crom
 top = Person()
-top.label = "Jeremy K. Lintott"
+top._label = "Jeremy K. Lintott"
 natl = Nationality("http://vocab.getty.edu/aat/300111159")
-natl.label = "British"
+natl._label = "British"
 top.classified_as = natl
 ```
 
@@ -239,9 +239,9 @@ Gender is not specifically discussed in CRM, in fact it was even deleted from a 
 
 ```crom
 top = Person()
-top.label = "Mabel N. Overton"
+top._label = "Mabel N. Overton"
 gender = Gender("http://vocab.getty.edu/aat/300189557")
-gender.label = "feminine"
+gender._label = "feminine"
 top.classified_as = gender
 ```
 
@@ -255,11 +255,11 @@ For example, a curator could be a `member_of` a department, which is in turn a m
 
 ```crom
 top = Person()
-top.label = "Sameen T. Underwood"
+top._label = "Sameen T. Underwood"
 dept = Department()
-dept.label = "Paintings Department"
+dept._label = "Paintings Department"
 mus = MuseumOrg()
-mus.label = "Example Museum"
+mus._label = "Example Museum"
 top.member_of = dept
 dept.member_of = mus
 ```

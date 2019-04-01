@@ -22,13 +22,13 @@ The general model, as hinted at above, is to create a resource for the Activity 
 ```crom
 top = Activity()
 who = Actor()
-who.label = "Who"
+who._label = "Who"
 when = TimeSpan()
-when.label = "When"
+when._label = "When"
 when.begin_of_the_begin = "earliest-start-datetime"
 when.end_of_the_end = "latest-end-datetime"
 where = Place()
-where.label = "Where"
+where._label = "Where"
 top.carried_out_by = who
 top.took_place_at = where
 top.timespan = when

@@ -21,18 +21,18 @@ This pattern does not express any further detail about how the acquisition took 
 ```crom
 top = Acquisition()
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 buyer = Actor()
-buyer.label = "Buyer"
+buyer._label = "Buyer"
 when = TimeSpan()
-when.label = "When"
+when._label = "When"
 when.begin_of_the_begin = "1890-01-04T00:00:00Z"
 when.end_of_the_end = "1890-01-05T00:00:00Z"
 top.timespan = when
 where = Place()
-where.label = "Art Gallery"
+where._label = "Art Gallery"
 what = Sculpture(art=1)
-what.label = "Example Sculpture"
+what._label = "Example Sculpture"
 top.took_place_at = where
 top.transferred_title_of = what
 top.transferred_title_from = seller
@@ -52,11 +52,11 @@ The `Payment` activity has equivalent relationships for from (`paid_from`) and t
 ```crom
 top = Purchase()
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 buyer = Actor()
-buyer.label = "Buyer"
+buyer._label = "Buyer"
 what = Painting(art=1)
-what.label = "Example Painting"
+what._label = "Example Painting"
 top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = buyer
@@ -66,7 +66,7 @@ paymt.paid_to = seller
 amt = MonetaryAmount()
 amt.value = 100
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
 top.part = paymt
@@ -82,15 +82,15 @@ For situations where the division of ownership is known (likely based on the div
 
 ```crom
 top = Purchase()
-top.label = "Purchase of the Example Painting by two Art Dealers"
+top._label = "Purchase of the Example Painting by two Art Dealers"
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 what = Painting(art=1)
-what.label = "Example Painting"
+what._label = "Example Painting"
 d1 = Group()
-d1.label = "Art Dealership 1"
+d1._label = "Art Dealership 1"
 d2 = Group()
-d2.label = "Art Dealership 2"
+d2._label = "Art Dealership 2"
 top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = d1
@@ -102,7 +102,7 @@ paymt.paid_to = seller
 amt = MonetaryAmount()
 amt.value = 1000
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
 top.part = paymt
@@ -115,13 +115,13 @@ In some cases, an agent other than the eventual owner carries out the acquisitio
 ```crom
 top = Purchase()
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 buyer = Actor()
-buyer.label = "Buyer"
+buyer._label = "Buyer"
 what = Painting(art=1)
-what.label = "Example Painting"
+what._label = "Example Painting"
 agent = Actor()
-agent.label = "Agent for the Buyer"
+agent._label = "Agent for the Buyer"
 top.carried_out_by = agent
 top.transferred_title_of = what
 top.transferred_title_from = seller
@@ -132,7 +132,7 @@ paymt.paid_to = agent
 amt = MonetaryAmount()
 amt.value = 100
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amt.currency = curr
 paymt.paid_amount = amt
 top.part = paymt
@@ -160,13 +160,13 @@ The loss of an object is the transfer of custody away from its current owner, wi
 ```crom
 top = TransferOfCustody()
 what = Painting(art=1)
-what.label = "Example Lost Painting"
+what._label = "Example Lost Painting"
 top.transferred_custody_of = what
 who = Person()
-who.label = "Previous Owner"
+who._label = "Previous Owner"
 top.transferred_custody_from = who
 when = TimeSpan()
-when.label = "Time noticed as Lost"
+when._label = "Time noticed as Lost"
 when.begin_of_the_begin = "1790-12-04T00:00:00Z"
 when.end_of_the_end = "1790-12-05T00:00:00Z"
 top.timespan = when

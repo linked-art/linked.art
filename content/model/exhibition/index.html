@@ -16,7 +16,7 @@ The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:3004
 
 ```crom
 top = vocab.ExhibitionIdea()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 id1 = Identifier()
 id1.content = "exh-2010-eg-a"
 top.identified_by = id1
@@ -27,11 +27,11 @@ typ = instances['gender issues']
 top.about = typ
 cre = Creation()
 cur = Person()
-cur.label = "Curator"
+cur._label = "Curator"
 cre.carried_out_by = cur
 top.created_by = cre
 ex = Exhibition()
-ex.label = "Exhibition at Venue"
+ex._label = "Exhibition at Venue"
 top.motivated = ex
 ```
 
@@ -41,16 +41,16 @@ There is an activity, as described in the section on [Provenance](/model/provena
 
 ```crom
 top = Exhibition()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 ts = TimeSpan()
 ts.begin_of_the_begin = "2010-08-01"
 ts.end_of_the_end = "2011-06-01"
 top.timespan = ts
 mus = MuseumPlace()
-mus.label = "Example Museum's Location"
+mus._label = "Example Museum's Location"
 top.took_place_at = mus
 mus2 = MuseumOrg()
-mus2.label = "Example Museum"
+mus2._label = "Example Museum"
 top.carried_out_by = mus2
 ```
 
@@ -60,19 +60,19 @@ Some exhibitions are shown at different locations over time, moving from one mus
 
 ```crom
 top = MultiExhibition()
-top.label = "Example Travelling Exhibition at Two Museums"
+top._label = "Example Travelling Exhibition at Two Museums"
 ts = TimeSpan()
 ts.begin_of_the_begin = "1980-10-01"
 ts.end_of_the_end = "1981-08-14"
 top.timespan = ts
 exh = Exhibition()
-exh.label = "Exhibition at Museum 1"
+exh._label = "Exhibition at Museum 1"
 ts2 = TimeSpan()
 ts2.begin_of_the_begin = "1980-10-01"
 ts2.end_of_the_end = "1981-03-01"
 exh.timespan = ts2
 exh2 = Exhibition()
-exh2.label = "Exhibition at Museum 2"
+exh2._label = "Exhibition at Museum 2"
 ts3 = TimeSpan()
 ts3.begin_of_the_begin = "1981-03-14"
 ts3.end_of_the_end = "1981-08-14"
@@ -89,14 +89,14 @@ For the travelling exhibitions described above, a different collection of object
 
 ```crom
 top = Exhibition()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 agg = Aggregation()
 obj = Painting(art=1)
-obj.label = "Painting"
+obj._label = "Painting"
 obj2 = Painting(art=1)
-obj2.label = "Another Painting"
+obj2._label = "Another Painting"
 obj3 = Sculpture(art=1)
-obj3.label = "Sculpture"
+obj3._label = "Sculpture"
 agg.aggregates = obj
 agg.aggregates = obj2
 agg.aggregates = obj3
@@ -111,15 +111,15 @@ For each exhibition, the custody of the object is transferred from the previous 
 
 ```crom
 top = TransferOfCustody()
-top.label = "Custody Transfer of Painting for Exhibition"
+top._label = "Custody Transfer of Painting for Exhibition"
 exh = Exhibition()
-exh.label = "Example Exhibition"
+exh._label = "Example Exhibition"
 obj = Painting(art=1)
-obj.label = "Painting"
+obj._label = "Painting"
 mus = MuseumOrg()
-mus.label = "Exhibiting Museum"
+mus._label = "Exhibiting Museum"
 owner = MuseumOrg()
-owner.label = "Owning Museum"
+owner._label = "Owning Museum"
 top.transferred_custody_of = obj
 top.transferred_custody_to = mus
 top.transferred_custody_from = owner
@@ -137,15 +137,15 @@ Conversely to the previous section, when the object being exhibited at the locat
 
 ```crom
 top = Move()
-top.label = "Move of object for exhibition"
+top._label = "Move of object for exhibition"
 exh = Exhibition()
-exh.label = "Example Exhibition"
+exh._label = "Example Exhibition"
 obj = Painting(art=1)
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 mus = MuseumOrg()
-mus.label = "Exhibiting Museum"
+mus._label = "Exhibiting Museum"
 agg = Aggregation()
-agg.label = "Set of Exhibited Objects"
+agg._label = "Set of Exhibited Objects"
 top.moved = obj
 top.specific_purpose = exh
 obj.current_owner = mus
@@ -162,11 +162,11 @@ The curators for exhibitions sometimes assign new labels or names for objects, f
 
 ```crom
 top = Exhibition()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 agg = Aggregation()
 top.used_specific_object = agg
 obj = Painting(art=1)
-obj.label = "Real Painting Name"
+obj._label = "Real Painting Name"
 agg.aggregates = obj
 aa = AttributeAssignment()
 aa.classified_as = "identified_by"
@@ -175,7 +175,7 @@ name.content = "Exhibition Specific Name"
 aa.assigned = name
 aa.assigned_to = obj
 curator = Person()
-curator.label = "A. Curator"
+curator._label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
 top.part = aa
@@ -191,9 +191,9 @@ Instead, we associate the image with a `Proxy` resource that stands for the obje
 
 ```crom
 top = Exhibition()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 obj = Painting(art=1)
-obj.label = "Painting"
+obj._label = "Painting"
 agg = Aggregation()
 agg.aggregates = obj
 top.used_specific_object = agg

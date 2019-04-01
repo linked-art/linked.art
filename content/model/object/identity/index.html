@@ -18,7 +18,7 @@ The URI of the resource, as given in `id`, is the primary identifier for the obj
 
 ```crom
 top = Painting(art=1)
-top.label = "Simple Example Painting"
+top._label = "Simple Example Painting"
 ```
 
 ### Non-URI Identifiers
@@ -29,14 +29,14 @@ The example below expresses two legacy identifiers, an Accession Number _(aat:30
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 id1 = AccessionNumber()
-id1.label = "Accession Number for Painting"
+id1._label = "Accession Number for Painting"
 id1.content = "X198-093"
 top.identified_by = id1
 id2 = LocalNumber()
 id2.content = 677
-id2.label = "Local Repository Number"
+id2._label = "Local Repository Number"
 top.identified_by = id2
 ```
 
@@ -49,12 +49,12 @@ This pattern uses the ore:Proxy pattern, which has been found difficult to imple
 
 ```crom
 top = Painting(art=1)
-top.label = "Example Painting"
+top._label = "Example Painting"
 id1 = AccessionNumber()
 id1.content = "P1998-27"
 top.identified_by = id1
 coll = CollectionSet()
-coll.label = "Paintings Collection"
+coll._label = "Paintings Collection"
 top.aggregated_by = coll
 proxy = Proxy()
 proxy.proxyFor = top
@@ -72,7 +72,7 @@ The primary title should be given as the `label` of the object, and also as a `N
 
 ```crom
 top = Painting(art=1)
-top.label = "Peasant and Sheep"
+top._label = "Peasant and Sheep"
 ttl = PrimaryName()
 ttl.content = "Peasant and Sheep"
 top.identified_by = ttl
@@ -84,7 +84,7 @@ Further titles may also be given in the same way, just without the classificatio
 
 ```crom
 top = Painting(art=1)
-top.label = "Self Portrait"
+top._label = "Self Portrait"
 ttl = PrimaryName()
 ttl.content = "Self Portrait"
 top.identified_by = ttl
@@ -101,5 +101,5 @@ In particular, all objects that are considered to be works of art should be have
 
 ```crom
 top = Sculpture(art=1)
-top.label = "Sculpture of a Dragon"
+top._label = "Sculpture of a Dragon"
 ```

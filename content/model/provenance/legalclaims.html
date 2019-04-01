@@ -20,14 +20,14 @@ The legal status that is claimed by the Property Interest is associated as a cla
 
 ```crom
 top = vocab.OwnershipRight()
-top.label = "Claim of Ownership"
+top._label = "Claim of Ownership"
 who = Person()
-who.label = "Owner of Example Painting"
+who._label = "Owner of Example Painting"
 what = Painting()
-what.label = "Example Painting"
+what._label = "Example Painting"
 top.interest_for = what
 where = Place()
-where.label = "Legal jurisdiction of Claim"
+where._label = "Legal jurisdiction of Claim"
 top.claimed_by = who
 top.jurisdiction = where
 ```
@@ -40,14 +40,14 @@ The `PropertyInterest` class does not have any relationship with a period or tim
 ```crom
 top = vocab.OwnershipPhase()
 pi = vocab.OwnershipRight()
-pi.label = "Claim of Ownership"
+pi._label = "Claim of Ownership"
 top.related_entity = pi
 
 who = Person()
-who.label = "Owner of Example Painting"
+who._label = "Owner of Example Painting"
 pi.claimed_by = who
 what = Painting()
-what.label = "Example Painting"
+what._label = "Example Painting"
 pi.interest_for = what
 top.phase_of = what
 
@@ -71,25 +71,25 @@ We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), 
 
 ```crom
 top = Purchase()
-top.label = "Purchase of the Example Painting on Jan 1, 2010"
+top._label = "Purchase of the Example Painting on Jan 1, 2010"
 ts = TimeSpan()
 ts.begin_of_the_begin = "2010-01-01T00:00:00Z" 
 ts.end_of_the_end = "2010-01-02T00:00:00Z"
 top.timespan = ts
 seller = Person()
-seller.label = "Seller"
+seller._label = "Seller"
 buyer = Person()
-buyer.label = "Buyer"
+buyer._label = "Buyer"
 what = Painting(art=1)
-what.label = "Example Painting"
+what._label = "Example Painting"
 top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = buyer
 
 op = vocab.OwnershipPhase()
-op.label = "Ownership by Buyer"
+op._label = "Ownership by Buyer"
 pi = vocab.OwnershipRight()
-pi.label = "Claim of Ownership"
+pi._label = "Claim of Ownership"
 op.related_entity = pi
 pi.interest_for = what
 pi.claimed_by = buyer
@@ -101,7 +101,7 @@ op.timespan = ts1
 top.initiated = op
 
 pop = vocab.OwnershipPhase()
-pop.label = "Ownership by Seller"
+pop._label = "Ownership by Seller"
 top.terminated = pop
 ```
 
@@ -117,32 +117,32 @@ In the same way as describing the physical extent of a physical object, we can u
 
 ```crom
 top = Purchase()
-top.label = "Purchase of the Example Painting by two Art Dealers"
+top._label = "Purchase of the Example Painting by two Art Dealers"
 seller = Actor()
-seller.label = "Seller"
+seller._label = "Seller"
 d1 = Group()
-d1.label = "Art Dealership 1"
+d1._label = "Art Dealership 1"
 d2 = Group()
-d2.label = "Art Dealership 2"
+d2._label = "Art Dealership 2"
 what = Painting()
-what.label = "Example Painting"
+what._label = "Example Painting"
 top.transferred_title_of = what
 top.transferred_title_from = seller
 top.transferred_title_to = d1
 top.transferred_title_to = d2
 unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
-unit.label = "Percent"
+unit._label = "Percent"
 
 op = vocab.OwnershipPhase()
 top.initiated = op
 
 newclaim = vocab.OwnershipRight()
-newclaim.label = "Total Claim of Ownership"
+newclaim._label = "Total Claim of Ownership"
 newclaim.interest_for = what
 op.related_entity = newclaim
 
 newclaim1 = vocab.OwnershipRight()
-newclaim1.label = "Claim of 30% Ownership by Dealer 1"
+newclaim1._label = "Claim of 30% Ownership by Dealer 1"
 newclaim1.claimed_by = d1
 dim1 = Dimension()
 dim1.value = 30
@@ -151,7 +151,7 @@ newclaim1.dimension = dim1
 newclaim.interest_part = newclaim1
 
 newclaim2 = vocab.OwnershipRight()
-newclaim2.label = "Claim of 70% Ownership by Dealer 2"
+newclaim2._label = "Claim of 70% Ownership by Dealer 2"
 newclaim2.claimed_by = d2
 dim2 = Dimension()
 dim2.value = 70
@@ -173,20 +173,20 @@ XXX Still true
 ```
 top = Activity()
 what = Painting()
-what.label = "Example Painting"
+what._label = "Example Painting"
 d1 = Group()
-d1.label = "Art Dealership 1"
+d1._label = "Art Dealership 1"
 d2 = Group()
-d2.label = "Art Dealership 2"
+d2._label = "Art Dealership 2"
 unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
-unit.label = "Percent"
+unit._label = "Percent"
 
 newclaim = vocab.OwnershipRight()
-newclaim.label = "Previous Total Claim of Ownership"
+newclaim._label = "Previous Total Claim of Ownership"
 newclaim.interest_for = what
 
 newclaim1 = vocab.OwnershipRight()
-newclaim1.label = "Claim of 30% Ownership by Dealer 1"
+newclaim1._label = "Claim of 30% Ownership by Dealer 1"
 newclaim1.claimed_by = d1
 dim1 = Dimension()
 dim1.value = 30
@@ -195,7 +195,7 @@ newclaim1.dimension = dim1
 newclaim.interest_part = newclaim1
 
 newclaim2 = vocab.OwnershipRight()
-newclaim2.label = "Claim of 70% Ownership by Dealer 2"
+newclaim2._label = "Claim of 70% Ownership by Dealer 2"
 newclaim2.claimed_by = d2
 dim2 = Dimension()
 dim2.value = 70
@@ -204,11 +204,11 @@ newclaim2.dimension = dim2
 newclaim.interest_part = newclaim2
 
 oldclaim = vocab.OwnershipRight()
-oldclaim.label = "New Claim of Ownership"
+oldclaim._label = "New Claim of Ownership"
 oldclaim.interest_for = what
 
 oldclaim1 = vocab.OwnershipRight()
-oldclaim1.label = "Claim of 40% Ownership by Dealer 1"
+oldclaim1._label = "Claim of 40% Ownership by Dealer 1"
 oldclaim1.claimed_by = d1
 dim1 = Dimension()
 dim1.value = 40
@@ -217,7 +217,7 @@ oldclaim1.dimension = dim1
 oldclaim.interest_part = oldclaim1
 
 oldclaim2 = vocab.OwnershipRight()
-oldclaim2.label = "Claim of 60% Ownership by Dealer 2"
+oldclaim2._label = "Claim of 60% Ownership by Dealer 2"
 oldclaim2.claimed_by = d2
 dim2 = Dimension()
 dim2.value = 60
@@ -236,7 +236,7 @@ pay.paid_to = d2
 amnt = MonetaryAmount()
 amnt.value = 100000
 curr = Currency()
-curr.label = "dollars"
+curr._label = "dollars"
 amnt.currency = curr
 pay.paid_amount = amnt
 top.part = pay
@@ -251,18 +251,18 @@ XXX Yup.
 
 ```
 top = Theft()
-top.label = "Theft of Painting"
+top._label = "Theft of Painting"
 what = Painting(art=1)
-what.label = "Example Stolen Painting"
+what._label = "Example Stolen Painting"
 top.transferred_title_of = what
 who = Person()
-who.label = "Owner"
+who._label = "Owner"
 top.transferred_title_from = who
 who = Person()
-who.label = "Unknown Thief"
+who._label = "Unknown Thief"
 top.transferred_title_to = who
 when = TimeSpan()
-when.label = "Time of Theft"
+when._label = "Time of Theft"
 when.begin_of_the_begin = "1940-07-10T00:00:00Z"
 when.end_of_the_end = "1940-07-11T00:00:00Z"
 

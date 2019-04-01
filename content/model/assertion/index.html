@@ -20,7 +20,7 @@ The example below demonstrates associating a previous title with an object.
 
 ```crom
 obj = Painting(art=1)
-obj.label = "Current Painting Title"
+obj._label = "Current Painting Title"
 top = AttributeAssignment()
 top.classified_as = "identified_by"
 name = Name()
@@ -28,7 +28,7 @@ name.content = "Previous Painting Title"
 top.assigned = name
 top.assigned_to = obj
 who = Person()
-who.label = "Painting Curator"
+who._label = "Painting Curator"
 top.carried_out_by = who
 ts = TimeSpan()
 ts.begin_of_the_begin = "1804-05-19"
@@ -48,16 +48,16 @@ This would also apply to cases where there is a "workshop of", "studio of", "cir
 top = AttributeAssignment()
 top.classified_as = "produced_by"
 obj = Painting(art=1)
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 who = Person()
-who.label = "Well Known Artist"
+who._label = "Well Known Artist"
 prod = Production()
 prod.influenced_by = who
 prod.classified_as = instances['style of']
 top.assigned = prod
 top.assigned_to = obj
 by = Person()
-by.label = "Painting Curator"
+by._label = "Painting Curator"
 top.carried_out_by = by
 ```
 
@@ -69,11 +69,11 @@ There are two relationships to note with this pattern.  The first is that the br
 
 ```crom
 top = Exhibition()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 agg = Aggregation()
 top.used_specific_object = agg
 obj = Painting(art=1)
-obj.label = "Real Painting Name"
+obj._label = "Real Painting Name"
 agg.aggregates = obj
 aa = AttributeAssignment()
 aa.classified_as = "identified_by"
@@ -82,7 +82,7 @@ name.content = "Exhibition Specific Name"
 aa.assigned = name
 aa.assigned_to = obj
 curator = Person()
-curator.label = "A. Curator"
+curator._label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
 top.part = aa
@@ -98,11 +98,11 @@ The equivalent form of the above example would be:
 
 ```crom
 top = Exhibition()
-top.label = "Example Exhibition"
+top._label = "Example Exhibition"
 agg = Aggregation()
 top.used_specific_object = agg
 obj = Painting(art=1)
-obj.label = "Real Painting Name"
+obj._label = "Real Painting Name"
 agg.aggregates = obj
 name = Name()
 name.content = "Exhibition Specific Name"
@@ -135,9 +135,9 @@ The way that this can be signalled in the data is to add the "computer-generated
 
 ```crom
 top = Activity()
-top.label = "Inferred Activity"
+top._label = "Inferred Activity"
 top.classified_as = instances['computer generated']
 a = Actor()
-a.label = "Performer of inferred activity"
+a._label = "Performer of inferred activity"
 top.carried_out_by = a
 ```

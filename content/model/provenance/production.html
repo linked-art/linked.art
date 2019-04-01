@@ -17,12 +17,12 @@ The first activity in an object's provenance or lifecycle is its creation, or `P
 ```crom
 top = Production()
 who = Actor()
-who.label = "Example Artist"
+who._label = "Example Artist"
 what = Painting(art=1)
-what.label = "Example Painting"
+what._label = "Example Painting"
 when = TimeSpan()
 where = Place()
-where.label = "Example Artist's Studio"
+where._label = "Example Artist's Studio"
 when.begin_of_the_begin = "1780-03-05T00:00:00Z"
 when.end_of_the_end = "1780-03-06T00:00:00Z"
 top.carried_out_by = who
@@ -38,13 +38,13 @@ Some artworks are copies of, or clearly directly inspired by, others.  This rela
 ```crom
 top = Production()
 what = Painting(art=1)
-what.label = "Copy of Example Painting"
+what._label = "Copy of Example Painting"
 copied = Painting(art=1)
-copied.label = "Example Painting"
+copied._label = "Example Painting"
 top.influenced_by = copied
 top.produced = what
 who = Person()
-who.label = "Copyist"
+who._label = "Copyist"
 top.carried_out_by = who
 ```
 
@@ -56,14 +56,14 @@ All of the art objects created from the same source show the same image, be it f
 
 ```crom
 top = Production()
-top.label = "Printing of Photograph"
+top._label = "Printing of Photograph"
 what = Photograph()
-what.label = "Photograph"
+what._label = "Photograph"
 negative = Negative()
-negative.label = "Negative"
+negative._label = "Negative"
 top.used_specific_object = negative
 vi = VisualItem()
-vi.label = "Visual Content of Photographs and Negative"
+vi._label = "Visual Content of Photographs and Negative"
 what.shows = vi
 negative.shows = vi
 ```
@@ -75,9 +75,9 @@ If there is a particular technique known to have been used in the creation of th
 ```crom
 top = Production()
 who = Actor()
-who.label = "Example Glassblower"
+who._label = "Example Glassblower"
 what = Sculpture(art=1)
-what.label = "Glass Sculpture"
+what._label = "Glass Sculpture"
 top.carried_out_by = who
 top.technique = instances['glassblowing']
 ```
@@ -89,17 +89,17 @@ If there are multiple artists collaborating, and they had individual roles or th
 ```crom
 top = Production()
 what = Sculpture(art=1)
-what.label = "Painted Sculpture"
+what._label = "Painted Sculpture"
 top.produced = what
 act1 = Production()
 act1.technique = instances['sculpting']
 who = Actor()
-who.label = "Example Sculptor"
+who._label = "Example Sculptor"
 act1.carried_out_by = who
 top.part = act1
 act2 = Production()
 who2 = Actor()
-who2.label = "Example Sculpture Painter"
+who2._label = "Example Sculpture Painter"
 act2.technique = instances['painting']
 act2.carried_out_by = who2
 top.part = act2
@@ -112,13 +112,13 @@ Even if the artist's or artists' identity is not known exactly, the person or pe
 ```crom
 top = Production()
 what = Painting(art=1)
-what.label = "Example Painting, from workshop of Example Master"
+what._label = "Example Painting, from workshop of Example Master"
 top.produced = what
 grp = Group()
-grp.label = "Workshop of Example Master"
+grp._label = "Workshop of Example Master"
 f = Formation()
 who = Person()
-who.label = "Example Master"
+who._label = "Example Master"
 f.carried_out_by = who
 grp.formed_by = f
 top.carried_out_by = grp
@@ -131,16 +131,16 @@ Over time, attributions can be contested and change. The actor that is listed in
 ```crom
 top = AttributeAssignment()
 obj = Painting(art=1)
-obj.label = "Example Painting"
+obj._label = "Example Painting"
 who = Person()
-who.label = "Previously-Thought Artist"
+who._label = "Previously-Thought Artist"
 prod = Production()
 prod.carried_out_by = who
 top.assigned = prod
 top.assigned_to = obj
 top.classified_as = "produced_by"
 by = Person()
-by.label = "Painting Curator"
+by._label = "Painting Curator"
 top.carried_out_by = by
 ts = TimeSpan()
 ts.begin_of_the_begin = "1923-07-20"
@@ -157,13 +157,13 @@ Objects are destroyed by events that are not carried out by an actor are modeled
 ```crom
 top = Destruction()
 what = Painting(art=1)
-what.label = "Example Destroyed Painting"
+what._label = "Example Destroyed Painting"
 top.destroyed = what
 when = TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
 top.timespan = when
 #who = Person()
-#who.label = "Painting Destroyer"
+#who._label = "Painting Destroyer"
 #top.carried_out_by = who
 ```
