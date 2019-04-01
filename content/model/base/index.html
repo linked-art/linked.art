@@ -14,7 +14,7 @@ There are a few core properties that every resource should have for it to be a u
 
 * `id` captures the URI that identifies the object.  Every resource must have exactly one id, and it must be an HTTP URI.
 * `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
-* `label` captures a human readable label for the object as a string.  Every resource should have exactly one label.
+* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every resource should have exactly one label, and must not have more than one.
 
 ```crom
 top = ManMadeObject()
