@@ -21,7 +21,6 @@ top = ManMadeObject()
 top._label = "Example Object"
 ```
 
-
 ## Types / Classifications
 
 The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the predicate `crm:P2_has_type`, mapped as `classified_as` in the model. The semantics of `crm:P2_has_type` are closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class" like `rdf:type` (mapped as `type` in the model). The `type` field is used for CRM defined classes, and as few other extensions as possible.
