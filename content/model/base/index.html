@@ -21,7 +21,7 @@ top = ManMadeObject()
 top._label = "Example Object"
 ```
 
-## Types / Classifications
+## Types and Classifications
 
 The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the predicate `crm:P2_has_type`, mapped as `classified_as` in the model. The semantics of `crm:P2_has_type` are closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class" like `rdf:type` (mapped as `type` in the model). The `type` field is used for CRM defined classes, and as few other extensions as possible.
 
@@ -45,174 +45,37 @@ top = Painting(art=1)
 top._label = "Simple Example Painting"
 ```
 
-## Parts
+## Names and Identifiers for a Resource
 
-Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. These partitionings are sometimes immediately obvious (the frame is part of the painting) and sometimes rather abstract (the concept of oak is part of the broader concept of wood).
+### Names
 
-### Objects
+As the `_label` property is intended as internal documentation for the data, it is strongly recommended that every resource that should be rendered to an end user as an item of interest also have at least one specific name. This name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` resource.  The value of the name is given in the `content` property of the `Name`. 
 
-Objects can be partitioned into separate pieces, with more specific information provided about each piece.  The individual pieces do not need to be physically separated or even separable from the whole, just objectively defined.
-
-Use cases for this pattern include:
-
-* Different measurements of the size of the parts of the object
-* Different materials for parts of the object
-* Specific descriptions of parts of the object
-* Recombining a physically distributed object into a single description
-* The physical pages of a manuscript
-
-__Example:__
-
-A painting _(aat:300033618)_ is made of watercolor paint _(aat:300015045)_ on a support _(aat:300014844)_ made of canvas _(aat:300014078)_:
+If there is more than one name given, then there should be one that is `classified_as` the primary name for use. This is done by adding the Primary Name _(aat:300404670)_ term to it.
 
 ```crom
 top = Painting(art=1)
-top._label = "Example Painting"
-top.made_of = instances['watercolor']
-part = SupportPart(top.id + "/part/1")
-part._label = "Canvas Support"
-part.made_of = instances['canvas']
-top.part = part
+top._label = "Painting: Pasture and Sheep"
+ttl = PrimaryName()
+ttl.content = "Pasture and Sheep"
+top.identified_by = ttl
 ```
 
-### Time Periods and Events
+### Identifiers
 
-In order to make assertions about events or time periods that occur within some larger context, the same pattern of asserting a part-of/has-part relationship is useful.
+Many resources of interest are also given external identifiers, such as Accession Numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
 
-Use cases for this pattern include:
-
-* The display of an exhibition at a specific venue, as part of the exhibition as a whole
-* The auctioning of a specific lot, as part of the auction as a whole
-* The activity of taking inventory, as part of the actions taken over the period of curation of the collection
-* The payment of a cost, as part of a purchase activity
-
-__Example:__
-
-An auction _(aat:300054751)_ consists of many activities in which a particular lot is auctioned:
+As Identifiers and Names use the same `identified_by` property, the JSON will frequently have mixed classes in the array. 
 
 ```crom
-top = Auction()
-top._label = "Example Auction"
-lot = Activity(top.id + "/part/1")
-lot._label = "Example Auction of Lot"
-top.part = lot
-```
-
-### Locations
-
-Locations can be made more specific by saying that the smaller region is part of the larger region.
-
-Use cases for this pattern include:
-
-* A city (where an event takes place, for example) is part of a country
-* A gallery (where an object is on display, for example) is part of the museum premises
-* A region (where an artist was born, for example) is part of a country
-
-__Example:__
-
-The "W02" gallery _(aat:300240057)_ is part of the museum, which is in Los Angeles _(tgn:7023900-place)_:
-
-```crom
-top = Place()
-top._label = "Example Museum Building"
-gallery = Gallery(top.id + '/part/1')
-gallery._label = "Gallery W204"
-city = Place("http://vocab.getty.edu/tgn/7023900-place")
-city._label = "Los Angeles"
-top.part = gallery
-top.part_of = city
-```
-
-!!! note "Use of Gazeteers"
-    It is preferable to rely on linked controlled vocabulary systems that include hierarchies whenever possible, rather than duplicating the geographical structure into the metadata of other resources.
-
-### Information / Linguistic Objects
-
-The model makes a distinction between the abstract information content and the physical carriers of that content. Using this separation, we can distinguish between the textual or otherwise semantic partitioning of the content (such as chapter, verse or scene) and the physical partitioning of the carriers of that content, using the Object model described above.
-
-Use cases for this pattern include:
-
-* The content of the sales ledger is divided into rows (which refer to objects)
-* The content of the tryptych is divided into three scenes (which are depicted on the panels)
-* The content of the manuscript is divided into chapters
-
-__Example:__
-
-The content of the first ledger from a dealer's records contains the content of the first row of that ledger.
-
-```crom
-top = LinguisticObject()
-top._label = "Content of Ledger 1"
-row = LinguisticObject(top.id + "/part/1")
-row._label = "Content of Row 1"
-top.part = row
-```
-
-### Concept Hierarchy
-
-Similarly, concepts can be arranged in parent/child hierarchies where the parent concepts include all of the child concepts.  
-
-Use cases for this pattern include:
-
-* The concept of wood includes the concept of oak
-* The concept of paintings includes the concept of portraits
-
-__Example:__
-
-The concept of being the side of an object (_aat:300404461_) is part of the concept of being some portion of an object (_aat:300190691_).
-
-```crom
-top = ManMadeObject()
-top._label = "Side of an Object"
-child = Type("aat:300404461")
-child._label = "Sides"
-parent = Type("aat:300190691")
-parent._label = "Object portions"
-child.part_of = parent
-top.classified_as = child
-# Note - No need to put these in crom.vocab as example explicit to Type hierarchy
-```
-
-### Organizations
-
-Organizations are modeled as Groups which can have members that are part of that group.  The members can themselves be groups, allowing a hierarchy to be created in the same way as for parts of the classes above.  Note that this pattern uses `member` rather than `part`, as instances of both `Group` and `Person` share the same membership relationship, rather than a strict partitioning. 
-
-Use cases for this pattern include:
-
-* Departments as part of an Organization
-
-__Example:__
-
-The Paintings Department _(aat:300263534)_ is part of the Example Museum _(aat:300312281)_
-
-```crom
-top = MuseumOrg()
-top._label = "Example Museum Organization"
-dept = Department(top.id + "/part/1")
-dept._label = "Paintings Department"
-top.member = dept
-```
-
-### Membership in a Collection
-
-Collections are modeled as Aggregations of objects. Aggregations are conceptual sets of resources.  Like `member` for participation in Groups, this is also not strict partitioning as any resource can be part of an Aggregation, and the same Aggregation can include many different types of resource.  Instead of `part`, we use the term `aggregates`.
-
-Use cases for this pattern include:
-
-* A collection of artworks
-* An auction Lot of objects
-* A set of related concepts
-
-__Example:__
-
-A Painting is a member of the Paintings Collection.
-
-```crom
-top = CollectionSet()
-top._label = "Paintings Collection"
-mmo = Painting()
-mmo._label = "Example Painting"
-top.aggregates = mmo
+top = Painting(art=1)
+top._label = "Painting: "
+id1 = AccessionNumber()
+id1.content = "P1998-27"
+top.identified_by = id1
+ttl = PrimaryName()
+ttl.content = "Pasture and Sheep"
+top.identified_by = ttl
 ```
 
 ## Statements about a Resource
@@ -241,3 +104,31 @@ lo.content = "Oil on Canvas"
 lo.language = instances['english']
 top.referred_to_by = lo
 ```
+
+## Parts
+
+Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. These partitionings can be physical (the frame is part of the painting), temporal (World War Two is part of the modern era), linguistic (the first chapter is part of the manuscript's text), or more closely related to membership in a set (the painting is part of the collection).
+
+The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole.  For example the material of the frame part could be specified as oak, whereas the material of the support part could be specified as canvas.
+
+```crom
+top = Painting(art=1)
+top._label = "Example Painting"
+top.made_of = instances['watercolor']
+part = SupportPart(top.id + "/part/1")
+part._label = "Canvas Support"
+part.made_of = instances['canvas']
+top.part = part
+```
+
+Similary, a distinction between the abstract information content and the physical carriers of that content gives us the ability to separately partition objects from text or image content. For example, the content of the first ledger from a dealer's records contains the content of the first row of that ledger without saying anything about where that information might be carried.
+
+```crom
+top = LinguisticObject()
+top._label = "Content of Ledger 1"
+row = LinguisticObject(top.id + "/part/1")
+row._label = "Content of Row 1"
+top.part = row
+```
+
+
