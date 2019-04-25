@@ -90,16 +90,16 @@ For the travelling exhibitions described above, a different collection of object
 ```crom
 top = Exhibition()
 top._label = "Example Exhibition"
-agg = Aggregation()
+agg = model.Set()
 obj = Painting(art=1)
 obj._label = "Painting"
 obj2 = Painting(art=1)
 obj2._label = "Another Painting"
 obj3 = Sculpture(art=1)
 obj3._label = "Sculpture"
-agg.aggregates = obj
-agg.aggregates = obj2
-agg.aggregates = obj3
+agg.member = obj
+agg.member = obj2
+agg.member = obj3
 top.used_specific_object = agg
 ```
 
@@ -124,8 +124,8 @@ top.transferred_custody_of = obj
 top.transferred_custody_to = mus
 top.transferred_custody_from = owner
 top.specific_purpose = exh
-agg = Aggregation()
-agg.aggregates = obj
+agg = model.Set()
+agg.member = obj
 exh.used_specific_object = agg
 exh.carried_out_by = mus
 obj.current_owner = owner
@@ -144,12 +144,12 @@ obj = Painting(art=1)
 obj._label = "Example Painting"
 mus = MuseumOrg()
 mus._label = "Exhibiting Museum"
-agg = Aggregation()
+agg = model.Set()
 agg._label = "Set of Exhibited Objects"
 top.moved = obj
 top.specific_purpose = exh
 obj.current_owner = mus
-agg.aggregates = obj
+agg.member = obj
 exh.used_specific_object = agg
 exh.carried_out_by = mus
 top.carried_out_by = mus
@@ -163,11 +163,11 @@ The curators for exhibitions sometimes assign new labels or names for objects, f
 ```crom
 top = Exhibition()
 top._label = "Example Exhibition"
-agg = Aggregation()
+agg = model.Set()
 top.used_specific_object = agg
 obj = Painting(art=1)
 obj._label = "Real Painting Name"
-agg.aggregates = obj
+agg.member = obj
 aa = AttributeAssignment()
 aa.classified_as = "identified_by"
 name = Name()
@@ -194,15 +194,15 @@ top = Exhibition()
 top._label = "Example Exhibition"
 obj = Painting(art=1)
 obj._label = "Painting"
-agg = Aggregation()
-agg.aggregates = obj
+agg = model.Set()
+agg.member = obj
 top.used_specific_object = agg
 img = DigitalImage("http://example.org/images/object-at-exhibition.jpg")
 obj.representation = img
-proxy = Proxy()
-proxy.proxyFor = obj
-proxy.proxyIn = agg
+#proxy = Proxy()
+#proxy.proxyFor = obj
+#proxy.proxyIn = agg
 # proxy.representation = img
-img.represents = proxy
+#img.represents = proxy
 ```
 

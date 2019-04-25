@@ -67,14 +67,16 @@ The basic pattern for making an assertion within some context is to reuse the `A
 
 There are two relationships to note with this pattern.  The first is that the broader activity has a `part` which is the `AttributeAssignment`.  This gives some basic temporal context for the assignment. There is also in many cases a set of objects or other resources that provide additional context. In the Exhibition case, the set of objects and their labels in the exhibit is `involved` in the provision of the `Name` of the individual object.
 
+
+
 ```crom
 top = Exhibition()
 top._label = "Example Exhibition"
-agg = Aggregation()
+agg = model.Set()
 top.used_specific_object = agg
 obj = Painting(art=1)
 obj._label = "Real Painting Name"
-agg.aggregates = obj
+agg.member = obj
 aa = AttributeAssignment()
 aa.classified_as = "identified_by"
 name = Name()
@@ -96,7 +98,9 @@ Instead of turning the assignment into an activity, instead we can associate the
 
 The equivalent form of the above example would be:
 
-```crom
+**This needs work. Proxies are too magical to implement**
+
+```
 top = Exhibition()
 top._label = "Example Exhibition"
 agg = Aggregation()

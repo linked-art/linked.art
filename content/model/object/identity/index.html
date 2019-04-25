@@ -55,11 +55,11 @@ id1.content = "P1998-27"
 top.identified_by = id1
 coll = CollectionSet()
 coll._label = "Paintings Collection"
-top.aggregated_by = coll
-proxy = Proxy()
-proxy.proxyFor = top
-proxy.proxyIn = coll
-proxy.identified_by = id1
+top.member_of = coll
+#proxy = Proxy()
+#proxy.proxyFor = top
+#proxy.proxyIn = coll
+#proxy.identified_by = id1
 ```
 
 ## Titles
