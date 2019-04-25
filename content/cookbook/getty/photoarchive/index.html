@@ -131,13 +131,13 @@ who._label = "Anderson"
 cre = Creation()
 cre.carried_out_by = who
 srccoll.created_by = cre
-top.aggregated_by = srccoll
+top.member_of = srccoll
 idr = Identifier()
 idr.content = "1195" 
-proxy = Proxy()
-proxy.proxyFor = top
-proxy.proxyIn = srccoll
-proxy.identified_by = idr
+#proxy = Proxy()
+#proxy.proxyFor = top
+#proxy.proxyIn = srccoll
+#proxy.identified_by = idr
 ```
 
 We create the original collection, despite only having a label for it. 
@@ -152,7 +152,7 @@ top = PhotographBW()
 top._label = "Black and White Photograph of 'St. Sebastian'"
 coll = CollectionSet()
 coll._label = "Erwin Panofsky Collection"
-top.aggregated_by = coll
+top.member_of = coll
 vi = VisualItem()
 vi._label = "Image on Photograph"
 art = Painting(art=1)
@@ -239,13 +239,13 @@ own._label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
 cre = Creation()
 cre.carried_out_by = own
 coll.created_by = cre
-top.aggregated_by = coll
-proxy = Proxy()
-proxy.proxyFor = top
-proxy.proxyIn = coll
-idr = Identifier()
-idr.content = "Inv. 388"
-proxy.identified_by = idr
+top.member_of = coll
+#proxy = Proxy()
+#proxy.proxyFor = top
+#proxy.proxyIn = coll
+#idr = Identifier()
+#idr.content = "Inv. 388"
+#proxy.identified_by = idr
 ```
 
 And its current location is very well described in the data, so we map all of it in this example.  However, this is not a recommended pattern and instead a gazetter or vocabulary such as TGN or Geonames should be used instead.  Only places that do not have existing identities should have new identities created.  Instead, the city of Rome should be identified as `tgn:7000874-place` and then the TGN hierarchy used for the province, region, and country.

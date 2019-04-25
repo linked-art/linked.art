@@ -50,11 +50,12 @@ P186i | `type_produced_by`
 P190 | `content`
 skos:exactMatch | `exact_match`
 sci:O13i_is_triggered_by | `caused_by`
-ore:isAggregatedBy | `aggregated_by`
-rdfs:label | `_label`
+la:has_member | `member`
+la:member_of | `member_of`
 rdfs:seeAlso | `see_also`
 dcterms:relation | `related`
 dcterms:conformsTo | `conforms_to`
+rdfs:label | `_label`
 skos:closeMatch | `close_match`
 sci:O13_triggers | `caused`
 schema:genre | `style`

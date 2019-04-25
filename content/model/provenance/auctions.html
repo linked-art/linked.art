@@ -67,7 +67,7 @@ ln.content = "812"
 top.identified_by = ln
 obj = Painting(art=1)
 obj._label = "Example Painting"
-top.aggregates = obj
+top.member = obj
 ```
 
 ## Purchase
@@ -116,7 +116,7 @@ ln.content = "812"
 top.identified_by = ln
 obj = Painting()
 obj._label = "Example Painting"
-top.aggregates = obj
+top.member = obj
 amnt = vocab.StartingPrice()
 amnt.value = 500
 curr = Currency()
