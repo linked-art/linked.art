@@ -12,7 +12,7 @@ The rights information about both the physical objects and their digital represe
 
 ## Credit / Attribution Statement
 
-It is important to be able to give a credit or attribution statement that should be displayed along with the object. For example, a painting that has been donated might have the requirement to state who the donor was. This is modeled as a `LinguisticObject`, that is `classified_as` _aat:300026687_ being the identity for "acknowledgements". The actual string is given in `value`.
+It is important to be able to give a credit or attribution statement that should be displayed along with the object. For example, a painting that has been donated might have the requirement to state who the donor was. This is modeled as a `LinguisticObject`, that is `classified_as` _aat:300026687_ being the identity for "acknowledgements". The actual string is given in `content`.
 
 ```crom
 top = Painting(art=1)
@@ -38,7 +38,7 @@ top.referred_to_by = crdt
 
 More detailed information is, however, often available and it is useful to be explicit. These patterns associate a `Right` that the object is `subject_to`, and then give more detail about the nature of that right, such as what sort of right, and who holds it.
 
-### Rightsstatements.org Assertions
+### RightsStatements.org Assertions
 
 There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way.
 
