@@ -233,12 +233,48 @@
       "@id": "crm:E21_Person"
     }, 
     "HumanMadeObject": {
+      "@context": {
+        "part_of": {
+          "@id": "crm:P46i_forms_part_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }, 
+        "part": {
+          "@id": "crm:P46_is_composed_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }
+      }, 
       "@id": "crm:E22_Human-Made_Object"
     }, 
     "PhysicalHumanMadeThing": {
+      "@context": {
+        "part_of": {
+          "@id": "crm:P46i_forms_part_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }, 
+        "part": {
+          "@id": "crm:P46_is_composed_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }
+      }, 
       "@id": "crm:E24_Physical_Human-Made_Thing"
     }, 
     "HumanMadeFeature": {
+      "@context": {
+        "part_of": {
+          "@id": "crm:P46i_forms_part_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }, 
+        "part": {
+          "@id": "crm:P46_is_composed_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }
+      }, 
       "@id": "crm:E25_Human-Made_Feature"
     }, 
     "PhysicalFeature": {
