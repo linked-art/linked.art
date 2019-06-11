@@ -16,12 +16,12 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, OrderedDict, Appellation, \
     AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
+    HumanMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
     PropertyInterest, Payment, Creation, Destruction, \
     PropositionalObject, Language, Geometry, CoordinateSystem, Phase, Birth, Death
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
-	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
+	TimeSpan, HumanMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
@@ -32,7 +32,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	DigitalImage, instances, add_art_setter, add_attribute_assignment_check
 
 
-ManMadeObject._uri_segment = "object"
+HumanMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
 Place._uri_segment = "place"
 InformationObject._uri_segment = "info"
