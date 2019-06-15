@@ -46,6 +46,7 @@ P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
 P165i | `incorporated_by`
 P172 | `spatially_contains`
+P177 | `assigned_property`
 P186i | `type_produced_by`
 P190 | `content`
 skos:exactMatch | `exact_match`

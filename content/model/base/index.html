@@ -140,7 +140,9 @@ part.made_of = instances['canvas']
 top.part = part
 ```
 
-Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. Membership is given using the `member` or `member_of` property, instead of the corresponding `part` and `part_of`.
+### Membership
+
+Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member` or `member_of` property, instead of the corresponding `part` and `part_of`.
 
 Use cases for the membership pattern include:
 

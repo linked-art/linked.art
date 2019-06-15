@@ -2114,9 +2114,9 @@
       "@id": "crm:P176i_starts_after_the_start_of", 
       "@type": "@id"
     }, 
-    "assigned_property_type": {
+    "assigned_property": {
       "@id": "crm:P177_assigned_property_type", 
-      "@type": "@vocab"
+      "@type": "@id"
     }, 
     "sales_price": {
       "@id": "crm:P179_had_sales_price", 
@@ -2231,11 +2231,11 @@
       "@id": "crm:P82b_end_of_the_end", 
       "@type": "xsd:dateTime"
     }, 
-    "minimum_value": {
-      "@id": "crm:P90a_has_minimum_value"
+    "lower_value_limit": {
+      "@id": "crm:P90a_has_lower_value_limit"
     }, 
-    "maximum_value": {
-      "@id": "crm:P90b_has_maximum_value"
+    "upper_value_limit": {
+      "@id": "crm:P90b_has_upper_value_limit"
     }, 
     "Payment": {
       "@context": {
