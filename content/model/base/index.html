@@ -118,9 +118,17 @@ top.referred_to_by = lo
 
 ## Parts
 
-Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. These partitionings can be physical (the frame is part of the painting), temporal (World War Two is part of the modern era), linguistic (the first chapter is part of the manuscript's text), or more closely related to membership in a set (the painting is part of the collection). The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole.
+Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part` (from the whole to the part) or `part_of` (from the part to the whole).
 
-Example: The painting is a watercolor, and the support on which it is found is made of canvas.
+Use cases for this pattern include:
+
+ * Delineating physical components or aspects of an object, such as the frame being part of the painting, or the recto side being part of the page.
+ * Separating a long period or event into smaller sections, such as battles within a war, or the activities of different people during the production of an object.
+ * Separating geographical locations into smaller subdivisions, such as that the neighborhood is part of the city, which is in turn part of the state.
+ * Partitioning a text into segments, such as that the paragraph is part of a chapter, which is in turn part of the entire book
+
+
+Example: The canvas support is part of the overall watercolor painting.
 
 ```crom
 top = Painting(art=1)
@@ -132,14 +140,20 @@ part.made_of = instances['canvas']
 top.part = part
 ```
 
-Similary, a distinction between the abstract information content and the physical carriers of that content gives us the ability to physically partition objects and logically partition the text or image content, without having strong dependencies between the two. 
+Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. Membership is given using the `member` or `member_of` property, instead of the corresponding `part` and `part_of`.
 
-Example: The content of the first ledger from a dealer's records contains the content of the first row of that ledger.
+Use cases for the membership pattern include:
+
+* A curator is a member of the paintings department of the museum.
+* A painting is part of the collection of a the museum.
+* An identifier is part of the set of identifiers that collectively make up the accession numbers assigned to paintings by the museum.
+
+Example: The curator is a member of the paintings department.
 
 ```crom
-top = LinguisticObject()
-top._label = "Content of Ledger 1"
-row = LinguisticObject(top.id + "/part/1")
-row._label = "Content of Row 1"
-top.part = row
+top = vocab.Department()
+top._label = "Paintings Department"
+who = Person()
+who._label = "Curator"
+top.member = who
 ```
