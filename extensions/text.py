@@ -155,6 +155,7 @@ class IndexingPlugin(Plugin):
 		super(IndexingPlugin, self).__init__(site)
 		self.index = {}		
 		self.matcher = re.compile("^(```\s*crom\s*$(.+?)^```)$", re.M | re.U | re.S)
+		self.example_list = []
 
 	def begin_site(self):
 		self.index = {}
@@ -255,6 +256,14 @@ title: Index of Classes, Properties, Authorities
 			fh.write(outjs)
 			fh.close()			
 
+		# Create a simple list of the examples in /example/index.json
+		if self.example_list:
+			self.example_list.sort()
+			listjs = json.dumps({"examples": self.example_list})
+			fh = file('content/example/index.json', 'w')
+			fh.write(listjs)
+			fh.close()
+
 	def generate_example(self, egtext, resource):
 		# Yes really... 
 		exec(egtext) 
@@ -287,6 +296,7 @@ title: Index of Classes, Properties, Authorities
 
 		# And return the JSON plus links, to be substed by the top level filter
 		raw = top.id + ".json"
+		self.example_list.append(raw)
 		rawq = urllib.quote(raw).replace('/', "%2F")
 		playground = "http://json-ld.org/playground-dev/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
 		turtle = top.id + ".ttl" 
