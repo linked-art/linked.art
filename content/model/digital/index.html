@@ -56,7 +56,7 @@ top.subject_of = page
 
 ### IIIF Images
 
-The [IIIF Image API](http://iiif.io/api/image/) in CRM can be considered a `VisualItem`, even though it is a service for obtaining them, and can thus be referenced with the same `representation` property. In order to know that the URI is an Image API endpoint, it should not have a `format` and instead have a `conformsTo` property with the value "http://iiif.io/api/image".  This follows the `protocol` pattern in IIIF Image Information documents.
+The [IIIF Image API](http://iiif.io/api/image/) in CRM can be considered a `VisualItem`, even though it is a service for obtaining them, and can thus be referenced with the same `representation` property. In order to know that the URI is an Image API endpoint, it should not have a `format` and instead have a `conforms_to` property with the value "http://iiif.io/api/image".  This follows the `protocol` pattern in IIIF Image Information documents.
 
 ```crom
 top = Sculpture(art=1)

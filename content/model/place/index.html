@@ -68,7 +68,7 @@ system._label = "WGS 84"
 It is easy to confuse places with the constructions that exist at the place. While rare, there are situations when buildings are moved between locations. The building, just like a painting, is thus modeled as an object that has a current location in space. Activities take place in the place, rather than in the object.  The granularity of the place compared to the building may be different due to underlying data management.
 
 ```crom
-top = ManMadeObject()
+top = HumanMadeObject()
 top._label = "Example Building"
 top.classified_as = instances['building']
 p = Place();

@@ -14,7 +14,7 @@ This pattern is also used for context-specific assertions, such as when an objec
 
 The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers rather than by artists, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the subject of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are also available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
-The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `assigned_to` property, and the relationship between them is given using `classified_as`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  
+The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `assigned_to` property, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  
 
 The example below demonstrates associating a previous title with an object.
 
@@ -22,7 +22,7 @@ The example below demonstrates associating a previous title with an object.
 obj = Painting(art=1)
 obj._label = "Current Painting Title"
 top = AttributeAssignment()
-top.classified_as = "identified_by"
+top.assigned_property = "identified_by"
 name = Name()
 name.content = "Previous Painting Title"
 top.assigned = name
@@ -46,7 +46,7 @@ This would also apply to cases where there is a "workshop of", "studio of", "cir
 
 ```crom
 top = AttributeAssignment()
-top.classified_as = "produced_by"
+top.assigned_property = "produced_by"
 obj = Painting(art=1)
 obj._label = "Example Painting"
 who = Person()
@@ -78,7 +78,7 @@ obj = Painting(art=1)
 obj._label = "Real Painting Name"
 agg.member = obj
 aa = AttributeAssignment()
-aa.classified_as = "identified_by"
+aa.assigned_property = "identified_by"
 name = Name()
 name.content = "Exhibition Specific Name"
 aa.assigned = name
@@ -88,47 +88,6 @@ curator._label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
 top.part = aa
-```
-
-### Proxies 
-
-If there are many `AttributeAssignment`s per object, the actor that carried out the assignment is not important to include in the dataset, and there is a collection or `Aggregation` of resources that provides context, then there is a more concise form of the above assertions using `Proxy` resources.
-
-Instead of turning the assignment into an activity, instead we can associate the information directly with a `Proxy` for the resource that is in the context of the `Aggregation`.  Any number of assertions can be managed by a single Proxy resource, and it is possible to go from the AttributeAssignment pattern to the Proxy pattern and back again without human intervention. There is only one Proxy per combination of an `Aggregation` and a particular resource that it `aggregates`.
-
-The equivalent form of the above example would be:
-
-**This needs work. Proxies are too magical to implement**
-
-```
-top = Exhibition()
-top._label = "Example Exhibition"
-agg = Aggregation()
-top.used_specific_object = agg
-obj = Painting(art=1)
-obj._label = "Real Painting Name"
-agg.aggregates = obj
-name = Name()
-name.content = "Exhibition Specific Name"
-p = Proxy()
-p.proxyFor = obj
-p.proxyIn = agg
-p.identified_by = name
-```
-
-The algorithm to go from a set of AttributeAssignments to a set of Proxies is:
-
-```python
-proxyFors = {}
-for aa in top_activity.part:
-  if aa.type == "AttributeAssignment" and aa.involved and aa.involved.type == "Aggregation":
-  	p = proxyFors.get(aa.assigned_to, None)
-  	if not p:
-  	  p = Proxy()
-      p.proxyFor = aa.assigned_to
-      p.proxyIn = aa.involved
-      proxyFors[aa.assigned_to] = p
-    setattr(p, aa.classified_as, aa.assigned)
 ```
 
 ## Inferred Data

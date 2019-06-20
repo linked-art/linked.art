@@ -16,12 +16,12 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
     LinguisticObject, OrderedDict, Appellation, \
     AttributeAssignment, Formation, Material, MeasurementUnit, \
-    ManMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
+    HumanMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
     PropertyInterest, Payment, Creation, Destruction, \
     PropositionalObject, Language, Geometry, CoordinateSystem, Phase, Birth, Death
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
-	TimeSpan, ManMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
+	TimeSpan, HumanMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
 	AuctionHouse, Auction, Bidding, AuctionCatalog, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
@@ -32,7 +32,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	DigitalImage, instances, add_art_setter, add_attribute_assignment_check
 
 
-ManMadeObject._uri_segment = "object"
+HumanMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
 Place._uri_segment = "place"
 InformationObject._uri_segment = "info"
@@ -155,6 +155,7 @@ class IndexingPlugin(Plugin):
 		super(IndexingPlugin, self).__init__(site)
 		self.index = {}		
 		self.matcher = re.compile("^(```\s*crom\s*$(.+?)^```)$", re.M | re.U | re.S)
+		self.example_list = []
 
 	def begin_site(self):
 		self.index = {}
@@ -255,6 +256,14 @@ title: Index of Classes, Properties, Authorities
 			fh.write(outjs)
 			fh.close()			
 
+		# Create a simple list of the examples in /example/index.json
+		if self.example_list:
+			self.example_list.sort()
+			listjs = json.dumps({"examples": self.example_list})
+			fh = file('content/example/index.json', 'w')
+			fh.write(listjs)
+			fh.close()
+
 	def generate_example(self, egtext, resource):
 		# Yes really... 
 		exec(egtext) 
@@ -287,6 +296,7 @@ title: Index of Classes, Properties, Authorities
 
 		# And return the JSON plus links, to be substed by the top level filter
 		raw = top.id + ".json"
+		self.example_list.append(raw)
 		rawq = urllib.quote(raw).replace('/', "%2F")
 		playground = "http://json-ld.org/playground-dev/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
 		turtle = top.id + ".ttl" 
