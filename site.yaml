@@ -44,6 +44,8 @@ context:
         menu:
           - title: Home
             url: index.html
+          - title: LOUD
+            url: loud/index.html
           - title: About
             url: about/index.html
           - title: Community
@@ -56,8 +58,6 @@ context:
             url: cookbook/index.html
           - title: Software
             url: software/index.html
-          - title: LOUD
-            url: loud/index.html
 
 var:
     scheme: https
