@@ -45,6 +45,7 @@ P140 | `assigned_to`
 P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
 P165i | `incorporated_by`
+P168 | `defined_by`
 P172 | `spatially_contains`
 P177 | `assigned_property`
 P186i | `type_produced_by`

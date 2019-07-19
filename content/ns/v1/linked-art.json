@@ -2067,7 +2067,7 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "place_is_defined_by": {
+    "defined_by": {
       "@id": "crm:P168_place_is_defined_by"
     }, 
     "spacetime_volume_is_defined_by": {
@@ -2140,37 +2140,45 @@
     "amount": {
       "@id": "crm:P181_has_amount"
     }, 
-    "ends_before_of_at_the_start_of": {
-      "@id": "crm:P182_ends_before_of_at_the_start_of", 
-      "@type": "@id"
+    "ends_before_or_with_the_start_of": {
+      "@id": "crm:P182_ends_before_or_with_the_start_of", 
+      "@type": "@id", 
+      "@container": "@set"
     }, 
-    "starts_with_or_after_the_end_of": {
-      "@id": "crm:P182i_starts_with_or_after_the_end_of", 
-      "@type": "@id"
+    "starts_after_or_with_the_end_of": {
+      "@id": "crm:P182i_starts_after_or_with_the_end_of", 
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "ends_before_the_start_of": {
       "@id": "crm:P183_ends_before_the_start_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "starts_after_the_end_of": {
       "@id": "crm:P183i_starts_after_the_end_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "ends_before_or_with_the_end_of": {
       "@id": "crm:P184_ends_before_or_with_the_end_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "ends_with_or_after_the_end_of": {
       "@id": "crm:P184i_ends_with_or_after_the_end_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "ends_before_the_end_of": {
       "@id": "crm:P185_ends_before_the_end_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "ends_after_the_end_of": {
       "@id": "crm:P185i_ends_after_the_end_of", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "produced_thing_of_product_type": {
       "@id": "crm:P186_produced_thing_of_product_type", 
@@ -2198,11 +2206,13 @@
     }, 
     "approximates": {
       "@id": "crm:P189_approximates", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "approximated_by": {
       "@id": "crm:P189i_is_approximated_by", 
-      "@type": "@id"
+      "@type": "@id", 
+      "@container": "@set"
     }, 
     "content": {
       "@id": "crm:P190_has_symbolic_content"
@@ -2287,6 +2297,9 @@
     }, 
     "Relationship": {
       "@id": "la:Relationship"
+    }, 
+    "Container": {
+      "@id": "la:Container"
     }, 
     "paid_amount": {
       "@id": "la:paid_amount", 
