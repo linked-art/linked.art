@@ -6,11 +6,11 @@ title: "Exhibitions"
 
 ## Introduction
 
-Exhibitions are very common activity that involves artwork owned by many different organizations being displayed together, often with additional contextual information linking the pieces together.  The exhibition is often presented at different venues over time, and might be part of a series such as the World's Fairs or annual exhibitions.
+Exhibitions are a very common activity that involves artwork owned by many different organizations being displayed together, often with additional contextual information linking the pieces together.  The exhibition is often presented at different venues over time, and might be part of a series such as the World's Fairs or annual exhibitions.
 
 ## Exhibition Concept
 
-The model distinguishes between the concept of the exhibition and the activity that makes that concept real.  The concept is created by the people who originally think up the exhibition, long before any of the pieces are collected together.  The exhibition concept likely has some theme that results in a coherent set of objects being presented, which could be as complex as post-industrial life or as  simple as the life's work of a particular artist.
+The model distinguishes between the concept of the exhibition and the activity that makes that concept real.  The concept is created by the people who originally think up the exhibition, long before any of the pieces are collected together.  The exhibition concept likely has some theme that results in a coherent set of objects being presented, which could be as complex as post-industrial life or as simple as the life's work of a particular artist.
 
 The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition. It can have all of the affordances of any concept, such as names, identifiers, references, relationships and more.
 
@@ -185,7 +185,7 @@ top.part = aa
 
 There are often photographs of the object as displayed in the exhibition. These are representations of the object regardless, and hence can be associated directly with the object rather than via an `AttributeAssignment`. The description of the image therefore follows the same pattern as other [digital representations of the object](/model/object/digital/), but like the label example above, it occurred as part of the exhibition.
 
-The same pattern of having the creation of the image as part of the exhibition activity does not suffice, as the image could be a digital reproduction of physical photograph, created much later than the exhibition.  Secondly, the creation of the photograph was very likely not carried out as part of carrying out the exhibition by the museum, it could easily have been taken by a visitor. 
+The same pattern of having the creation of the image as part of the exhibition activity does not suffice, as the image could be a digital reproduction of a physical photograph, created much later than the exhibition.  Secondly, the creation of the photograph was very likely not carried out as part of carrying out the exhibition by the museum, it could easily have been taken by a visitor.
 
 Instead, we associate the image with a `Proxy` resource that stands for the object in the context of the Aggregation of objects used by the Exhibition ... the image is a representation of the object in that context.
 
