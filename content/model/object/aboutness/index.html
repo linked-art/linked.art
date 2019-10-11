@@ -26,12 +26,14 @@ top.referred_to_by = desc
 
 A list of related objects is often known for any given object, however the reason for the relation is not recorded.  In this circumstance, the best that can be done is to record that there is some relationship using the `related` property.  If there are more details known about the relationship then more specific patterns should be used instead.
 
+FIXME
+
 ```crom
 top = Painting(art=1)
 top._label = "Another Example Painting"
 p2 = Painting(art=1)
 p2._label = "Yet Another Example Painting"
-top.related = p2
+# top.related = p2
 ```
 
 ## Depiction

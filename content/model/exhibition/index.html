@@ -189,6 +189,8 @@ The same pattern of having the creation of the image as part of the exhibition a
 
 Instead, we associate the image with a `Proxy` resource that stands for the object in the context of the Aggregation of objects used by the Exhibition ... the image is a representation of the object in that context.
 
+FIXME
+
 ```crom
 top = Exhibition()
 top._label = "Example Exhibition"
@@ -197,8 +199,8 @@ obj._label = "Painting"
 agg = model.Set()
 agg.member = obj
 top.used_specific_object = agg
-img = DigitalImage("http://example.org/images/object-at-exhibition.jpg")
-obj.representation = img
+#img = DigitalImage("http://example.org/images/object-at-exhibition.jpg")
+#obj.representation = img
 #proxy = Proxy()
 #proxy.proxyFor = obj
 #proxy.proxyIn = agg
