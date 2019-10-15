@@ -159,13 +159,42 @@ class IndexingPlugin(Plugin):
 		self.example_list = []
 		self.class_styles = {
 			"HumanMadeObject": "object",
+			"Place": "place",
+			"Actor": "actor",
 			"Person": "actor",
 			"Group": "actor",
 			"Type": "type",
+			"MeasurementUnit": "type",
+			"Currency": "type",
 			"Material": "type",
+			"Language": "type",
 			"Name": "name",
 			"Identifier": "name",
-			"Language": "type"
+			"Dimension": "dims",
+			"MonetaryAmount": "dims",			
+			"LinguisticObject": "infoobj",
+			"VisualItem": "infoobj",
+			"InformationObject": "infoobj",
+			"Set": "infoobj",
+			"PropositionalObject": "infoobj",
+			"Right": "infoobj",
+			"PropertyInterest": "infoobj",
+			"TimeSpan": "timespan",
+			"Activity": "event",
+			"Event": "event",
+			"Birth": "event",
+			"Death": "event",
+			"Production": "event",
+			"Destruction": "event",
+			"Creation": "event",
+			"Formation": "event",
+			"Dissolution": "event",
+			"Acquisition": "event",
+			"TransferOfCustody": "event",
+			"Move": "event",
+			"Payment": "event",
+			"AttributeAssignment": "event",
+			"Phase": "event"
 		}
 
 	def begin_site(self):
@@ -199,14 +228,22 @@ class IndexingPlugin(Plugin):
 				curr_int += 1
 				id_map[curr] = currid
 			lbl = self.uri_to_label(curr)
-			mermaid.append("%s(%s)" % (currid, lbl))
+			line = "%s(%s)" % (currid, lbl)
+			if not line in mermaid:
+				mermaid.append(line)
 			t = js.get('type', '')
 			if t:
 				style = self.class_styles.get(t, '')
 				if style:
-					mermaid.append("class %s %s;" % (currid, style))
-				mermaid.append("%s-- type -->%s_0[%s]" % (currid, currid, t)) 			
-				mermaid.append("class %s_0 classstyle;" % currid)
+					line = "class %s %s;" % (currid, style)
+					if not line in mermaid:
+						mermaid.append("class %s %s;" % (currid, style))
+				else:
+					print("No style for class %s" % t)
+				line = "%s-- type -->%s_0[%s]" % (currid, currid, t)
+				if not line in mermaid:
+					mermaid.append(line) 			
+					mermaid.append("class %s_0 classstyle;" % currid)
 
 			n = 0
 			for k,v in js.items():
@@ -222,12 +259,17 @@ class IndexingPlugin(Plugin):
 							print "Iterating a list and found %r" % vi
 				elif isinstance(v, dict):
 					(rng, curr_int, id_map) = self.walk(v, curr_int, id_map, mermaid)
-					mermaid.append("%s-- %s -->%s" % (currid, k, rng))				
+					line = "%s-- %s -->%s" % (currid, k, rng)
+					if not line in mermaid:
+						mermaid.append(line)				
 				else:
 					if type(v) in [str, unicode]:
-						v = "''%s''"% v
-					mermaid.append("%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v))
-					mermaid.append("class %s_%s literal;" % (currid, n))
+						# :|
+						v = "\"''%s''\""% v
+					line = "%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v)
+					if not line in mermaid:
+						mermaid.append(line)
+						mermaid.append("class %s_%s literal;" % (currid, n))
 			return (currid, curr_int, id_map)
 
 	def build_mermaid(self, js):
@@ -238,8 +280,13 @@ class IndexingPlugin(Plugin):
 		mermaid.append("classDef object stroke:black,fill:#E1BA9C,rx:20px,ry:20px;")
 		mermaid.append("classDef actor stroke:black,fill:#FFBDCA,rx:20px,ry:20px;")
 		mermaid.append("classDef type stroke:red,fill:#FAB565,rx:20px,ry:20px;")
-		mermaid.append("classDef name stroke:orange,fill:#FEF3BA,rx:20px,ry20px;")
-		mermaid.append("classDef literal stroke:black,fill:#e0e0e0;")
+		mermaid.append("classDef name stroke:orange,fill:#FEF3BA,rx:20px,ry:20px;")
+		mermaid.append("classDef dims stroke:black,fill:#c6c6c6,rx:20px,ry:20px;")
+		mermaid.append("classDef infoobj stroke:#907010,fill:#fffa40,rx:20px,ry:20px")
+		mermaid.append("classDef timespan stroke:blue,fill:#ddfffe,rx:20px,ry:20px")
+		mermaid.append("classDef place stroke:#3a7a3a,fill:#aff090,rx:20px,ry:20px")
+		mermaid.append("classDef event stroke:blue,fill:#96e0f6,rx:20px,ry:20px")
+		mermaid.append("classDef literal stroke:black,fill:#f0f0e0;")
 		mermaid.append("classDef classstyle stroke:black,fill:white;")
 		self.walk(js, curr_int, id_map, mermaid)
 		return "\n".join(mermaid)
