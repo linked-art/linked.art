@@ -144,8 +144,11 @@ a:hover, a:focus {
 
 .mermaid {
   background: white;
-  border: 1px solid black;
-  margin-bottom: 5px;
+  border: 1px dashed black;
+  margin-bottom: 10px;
+  padding: 3px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 

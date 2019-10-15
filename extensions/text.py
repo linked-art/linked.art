@@ -1,4 +1,3 @@
-
 import re
 from hyde.plugin import Plugin
 from hyde.site import Resource
@@ -31,7 +30,6 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, instances, add_art_setter, add_attribute_assignment_check
-
 
 HumanMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
@@ -435,19 +433,19 @@ title: Index of Classes, Properties, Authorities
 		egid = fp.replace('/', '_')
 		resp = """
 <a id="%s"></a>
-
 ```json
 %s
 ```
-[JSON-LD (Raw)](%s) | 
+<div class="mermaid">
+%s
+</div>
+Other Representations: [JSON-LD (Raw)](%s) | 
 [JSON-LD (Playground)](%s) |
 [Turtle (Raw)](%s) |
 [Turtle (Styled)](%s)
 
-<div class="mermaid">
-%s
-</div>
-""" % (egid, jsstr, raw, playground, turtle, turtle_play, mermaid)	
+
+""" % (egid, jsstr, mermaid, raw, playground, turtle, turtle_play)	
 		return resp
 
 	def traverse(self, what, top, res):
