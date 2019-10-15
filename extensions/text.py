@@ -1,4 +1,3 @@
-
 import re
 from hyde.plugin import Plugin
 from hyde.site import Resource
@@ -6,6 +5,7 @@ import json, yaml
 import os
 import requests
 import urllib
+import uuid
 
 from rdflib import ConjunctiveGraph, URIRef
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
@@ -21,8 +21,8 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     PropositionalObject, Language, Geometry, CoordinateSystem, Phase, Birth, Death
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
-	TimeSpan, HumanMadeObject, MonetaryAmount, Curating, Inventorying, Provenance, \
-	AuctionHouse, Auction, Bidding, AuctionCatalog, \
+	TimeSpan, HumanMadeObject, MonetaryAmount, Curating, Inventorying, \
+	AuctionHouse, Auction, Bidding, AuctionCatalogText, \
 	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
 	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
 	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
@@ -30,7 +30,6 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
 	DigitalImage, instances, add_art_setter, add_attribute_assignment_check
-
 
 HumanMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
@@ -156,6 +155,45 @@ class IndexingPlugin(Plugin):
 		self.index = {}		
 		self.matcher = re.compile("^(```\s*crom\s*$(.+?)^```)$", re.M | re.U | re.S)
 		self.example_list = []
+		self.class_styles = {
+			"HumanMadeObject": "object",
+			"Place": "place",
+			"Actor": "actor",
+			"Person": "actor",
+			"Group": "actor",
+			"Type": "type",
+			"MeasurementUnit": "type",
+			"Currency": "type",
+			"Material": "type",
+			"Language": "type",
+			"Name": "name",
+			"Identifier": "name",
+			"Dimension": "dims",
+			"MonetaryAmount": "dims",			
+			"LinguisticObject": "infoobj",
+			"VisualItem": "infoobj",
+			"InformationObject": "infoobj",
+			"Set": "infoobj",
+			"PropositionalObject": "infoobj",
+			"Right": "infoobj",
+			"PropertyInterest": "infoobj",
+			"TimeSpan": "timespan",
+			"Activity": "event",
+			"Event": "event",
+			"Birth": "event",
+			"Death": "event",
+			"Production": "event",
+			"Destruction": "event",
+			"Creation": "event",
+			"Formation": "event",
+			"Dissolution": "event",
+			"Acquisition": "event",
+			"TransferOfCustody": "event",
+			"Move": "event",
+			"Payment": "event",
+			"AttributeAssignment": "event",
+			"Phase": "event"
+		}
 
 	def begin_site(self):
 		self.index = {}
@@ -163,6 +201,93 @@ class IndexingPlugin(Plugin):
 		self.prop_hash = {}
 		self.class_hash = {}		
 		self.aat_label_len = len(aat_labels)
+
+	def uri_to_label(self, uri):
+		if uri.startswith('http://vocab.getty.edu/'):
+			uri = uri.replace('http://vocab.getty.edu/', '')
+			uri = uri.replace('/', ': ')
+			return uri
+		elif uri.startswith('https://linked.art/example/'):
+			uri = uri.replace('https://linked.art/example/', '')
+			uri = uri.replace('/', '')
+			return uri
+		else:
+			print "Unhandled URI: %s" % uri
+			return uri
+
+	def walk(self, js, curr_int, id_map, mermaid):
+		if isinstance(js, dict):
+			# Resource
+			curr = js.get('id', str(uuid.uuid4()))
+			if curr in id_map:
+				currid = id_map[curr]
+			else:
+				currid = "O%s" % curr_int
+				curr_int += 1
+				id_map[curr] = currid
+			lbl = self.uri_to_label(curr)
+			line = "%s(%s)" % (currid, lbl)
+			if not line in mermaid:
+				mermaid.append(line)
+			t = js.get('type', '')
+			if t:
+				style = self.class_styles.get(t, '')
+				if style:
+					line = "class %s %s;" % (currid, style)
+					if not line in mermaid:
+						mermaid.append("class %s %s;" % (currid, style))
+				else:
+					print("No style for class %s" % t)
+				line = "%s-- type -->%s_0[%s]" % (currid, currid, t)
+				if not line in mermaid:
+					mermaid.append(line) 			
+					mermaid.append("class %s_0 classstyle;" % currid)
+
+			n = 0
+			for k,v in js.items():
+				n += 1
+				if k in ["@context", "id", "type"]:
+					continue
+				elif isinstance(v, list):
+					for vi in v:
+						if isinstance(vi, dict):
+							(rng, curr_int, id_map) = self.walk(vi, curr_int, id_map, mermaid)
+							mermaid.append("%s-- %s -->%s" % (currid, k, rng))				
+						else:
+							print "Iterating a list and found %r" % vi
+				elif isinstance(v, dict):
+					(rng, curr_int, id_map) = self.walk(v, curr_int, id_map, mermaid)
+					line = "%s-- %s -->%s" % (currid, k, rng)
+					if not line in mermaid:
+						mermaid.append(line)				
+				else:
+					if type(v) in [str, unicode]:
+						# :|
+						v = "\"''%s''\""% v
+					line = "%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v)
+					if not line in mermaid:
+						mermaid.append(line)
+						mermaid.append("class %s_%s literal;" % (currid, n))
+			return (currid, curr_int, id_map)
+
+	def build_mermaid(self, js):
+		curr_int = 1
+		mermaid = []
+		id_map = {}
+		mermaid.append("graph TD")
+		mermaid.append("classDef object stroke:black,fill:#E1BA9C,rx:20px,ry:20px;")
+		mermaid.append("classDef actor stroke:black,fill:#FFBDCA,rx:20px,ry:20px;")
+		mermaid.append("classDef type stroke:red,fill:#FAB565,rx:20px,ry:20px;")
+		mermaid.append("classDef name stroke:orange,fill:#FEF3BA,rx:20px,ry:20px;")
+		mermaid.append("classDef dims stroke:black,fill:#c6c6c6,rx:20px,ry:20px;")
+		mermaid.append("classDef infoobj stroke:#907010,fill:#fffa40,rx:20px,ry:20px")
+		mermaid.append("classDef timespan stroke:blue,fill:#ddfffe,rx:20px,ry:20px")
+		mermaid.append("classDef place stroke:#3a7a3a,fill:#aff090,rx:20px,ry:20px")
+		mermaid.append("classDef event stroke:blue,fill:#96e0f6,rx:20px,ry:20px")
+		mermaid.append("classDef literal stroke:black,fill:#f0f0e0;")
+		mermaid.append("classDef classstyle stroke:black,fill:white;")
+		self.walk(js, curr_int, id_map, mermaid)
+		return "\n".join(mermaid)
 
 	def begin_text_resource(self, resource, text):
 		if resource.relative_path.endswith('.html'):
@@ -291,6 +416,10 @@ title: Index of Classes, Properties, Authorities
 		fh.write(out)
 		fh.close()
 
+		# And build mermaid description
+
+		mermaid = self.build_mermaid(js)
+
 		# Build index references
 		self.traverse(js, top.id, resource)
 
@@ -307,10 +436,16 @@ title: Index of Classes, Properties, Authorities
 ```json
 %s
 ```
-[JSON-LD (Raw)](%s) | 
+<div class="mermaid">
+%s
+</div>
+Other Representations: [JSON-LD (Raw)](%s) | 
 [JSON-LD (Playground)](%s) |
 [Turtle (Raw)](%s) |
-[Turtle (Styled)](%s)""" % (egid, jsstr, raw, playground, turtle, turtle_play)	
+[Turtle (Styled)](%s)
+
+
+""" % (egid, jsstr, mermaid, raw, playground, turtle, turtle_play)	
 		return resp
 
 	def traverse(self, what, top, res):

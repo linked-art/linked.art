@@ -35,7 +35,7 @@ The same core features of all other resources are also applicable to the `Lingui
 The title of a text is captured using the `Name` pattern, and assigned identifiers using the `Identifier` pattern, referenced with the `identified_by` relationship.
 
 ```crom
-top = vocab.Article()
+top = vocab.ArticleText()
 top._label = "Example Article"
 top.language = instances['english']
 title = Name()
@@ -55,7 +55,7 @@ The production of the physical carriers of texts uses the same model as for othe
 There are two primary text-specific activities that are captured -- the creation of the text, being the conceptual `LinguisticObject` and its publication.  The text is created by a `Creation` activity of the author, but then there is a publishing `Activity` (_aat:300054686_) carried out by the publishing organization, for the same resource. 
 
 ```crom
-top = vocab.Article()
+top = vocab.ArticleText()
 top._label = "Example Journal Article"
 cre = model.Creation()
 cre._label = "Creation of the Article Content"
@@ -75,11 +75,11 @@ top.used_for = pub
 The textual structure can be modeled with the partitioning of `LinguisticObject`s via the `includes` property, in the same way that the parts of a physical object can be described using the `part` property.  Thus the content of an Article can be included in the containing Issue, which is included within a Volume, which is within the Journal or other periodical.  Similarly Chapters can be included within a Book or Proceedings, particular entries within a catalog, and so forth. 
 
 ```crom
-top = vocab.Monograph()
+top = vocab.MonographText()
 top._label = "Example Monograph Text"
-chap = vocab.Chapter()
+chap = vocab.ChapterText()
 chap._label = "Chapter 1"
-chap2 = vocab.Chapter()
+chap2 = vocab.ChapterText()
 chap2._label = "Chapter 2"
 top.part = chap
 top.part = chap2
@@ -94,7 +94,7 @@ Textual content is typically presented on pages or folios. As there might be man
 The easiest way to describe the page range of a particular section of a larger collection is with a pagination statement.  The disadvantage of the approach is that it is not computationally available for processing.
 
 ```crom
-top = vocab.Article()
+top = vocab.ArticleText()
 top._label = "Example 10 page Article"
 pag = vocab.PaginationStatement()
 pag.content = "125-135"
@@ -114,7 +114,7 @@ endType._label = "Last -- waiting for AAT id"
 unit = MeasurementUnit()
 unit._label = "Page Numbers"
 
-top = vocab.Article()
+top = vocab.ArticleText()
 top._label = "Example 10 page Article"
 start = Dimension()
 start.value = 125
@@ -141,7 +141,7 @@ While the full text of the `LinguisticObject` may be either too long to provide,
 top = vocab.Abstract()
 top._label = "Abstract of Example Article"
 top.content = "This is the abstract of the example article, which is excellent."
-art = vocab.Article()
+art = vocab.ArticleText()
 art._label = "Example Article"
 top.refers_to = art
 cre = model.Creation()
@@ -156,7 +156,7 @@ top.created_by = cre
 Textual content can `refer_to` other resources in the overall model. These references might be just that the content discusses the resource, such as a mention of a particular painting.  Equally, the reference might be that the content was used as the evidence for the resource, such as a Materials Statement being the evidence for the Materials in the model that the painting is asserted to be `made_of`. 
 
 ```crom
-top = vocab.Article()
+top = vocab.ArticleText()
 top._label = "Article about Example Painting"
 what = Painting(art=1)
 what._label = "Example Painting"
@@ -168,10 +168,10 @@ top.refers_to = what
 One Linguistic Object, be it captured in the model as a Statement or as the full text content carried by a physical object, can be the translation of another. For example an article can be the translation of an original article in a different language. This is represented using the `translation_of` relationship.
 
 ```crom
-top = vocab.Article()
+top = vocab.ArticleText()
 top._label = "The Birth of Artistic Conception in China"
 top.language = instances['english']
-orig = vocab.Article()
+orig = vocab.ArticleText()
 orig._label =  "Zhongguo yishu yijing zhi dansheng"
 orig.language = instances['chinese']
 top.translation_of = orig

@@ -303,13 +303,15 @@ top.classified_as = gender
 
 Images of the person can also be provided, in the same way as for [images of objects](/model/object/digital/) via the `representation` property. If IIIF resources, web pages or other digital content is available, the same patterns as for objects also apply.  Only the basic image case is shown below, the other scenarios can easily be determined from the referenced digital integration for objects.
 
+FIXME
+
 ```crom
 top = Person()
 top._label = "Gertrude H. Ingram"
-img = DigitalImage("http://example.org/images/gertrude.jpg")
-img._label = "Image of G.H. Ingram"
-img.format = "image/jpeg"
-top.representation = img
+# img = DigitalImage("http://example.org/images/gertrude.jpg")
+# img._label = "Image of G.H. Ingram"
+# img.format = "image/jpeg"
+# top.representation = img
 ```
 
 
