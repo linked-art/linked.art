@@ -1,5 +1,7 @@
 ---
 title: Baseline Patterns
+up_href: "/model/"
+up_label: "Model Overview"
 ---
 
 {% include "toc.html" %}
@@ -12,11 +14,14 @@ These patterns are presented below with examples of how they are used in practic
 
 There are a few core properties that every resource should have for it to be a useful part of the world of Linked Open Data:
 
+* `@context` is a reference to the context mapping which determines how to interpret the JSON as Linked Open Data. It is not a property of the entity being described, but of the document. It must be present.
 * `id` captures the URI that identifies the object.  Every resource must have exactly one id, and it must be an HTTP URI.
 * `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
 * `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every resource should have exactly one label, and must not have more than one.
 
-Example:  The simplest possible object.
+__Example:__
+
+The simplest possible object has a URI, a class and a label.
 
 ```crom
 top = HumanMadeObject()
@@ -25,9 +30,9 @@ top._label = "Example Object"
 
 ## Types and Classifications
 
-The CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the predicate `crm:P2_has_type`, mapped as `classified_as` in the model. The semantics of `crm:P2_has_type` are closer to "is classified as" or perhaps "has semantic tag", rather than "is an instance of the class" like `rdf:type` (mapped as `type` in the model). The `type` field is used for CRM defined classes, and as few other extensions as possible.
+CIDOC-CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the `classified_as` property. This should be contrasted with the`type` property described above, which is used for CIDOC-CRM defined classes, and a few extensions as possible. The `classified_as` property is thus a way to be more specific about the sort of entity, without requiring a full ontological description of the class.
 
-While any external vocabulary of terms can be used, the Getty Vocabularies are used whenever possible for consistency. The set of terms that have been identified as useful from those vocabularies is listed in the [community best-practices](/community/best-practices/vocabularies/).
+While any external vocabulary of terms can be used, the Getty's Art and Architecture Thesaurus is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [community best-practices](/community/best-practices/vocabularies/) for recommendations, and within the documentation of the model when a particular choice is essential for interoperability.
 
 Use cases for this pattern are in almost every example, but include:
 
@@ -40,9 +45,7 @@ Use cases for this pattern are in almost every example, but include:
 
 __Example:__
 
-The type of the object (an instance of `HumanMadeObject`) is a painting _(aat:300033618)_:
-
-Example: An object is a painting and a work of art.
+The type of the object (an instance of the class `HumanMadeObject`) is a painting _(aat:300033618)_, and an artwork _(aat:300133025)_:
 
 ```crom
 top = Painting(art=1)
@@ -53,15 +56,17 @@ top._label = "Simple Example Painting"
 
 ### Names
 
-As the `_label` property is intended as internal documentation for the data, it is strongly recommended that every resource that should be rendered to an end user as an item of interest also have at least one specific name. This name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` resource.  The value of the name is given in the `content` property of the `Name`. 
+As the `_label` property is intended as internal documentation for the data, it is strongly recommended that every resource that should be rendered to an end user also have at least one specific name. The name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` resource.  The value of the name is given in the `content` property of the `Name`. 
 
 It is somewhat unintuitive to think of a name as identifying the resource it is associated with, as names are typically not unique.  However, as the name itself __is__ uniquely identified rather than just an anonymous string, they are no longer a shared label and instead the particular instance of a name is uniquely associated with the resource. With this formulation, the name instance does uniquely identify the resource.  
 
 If there is more than one name given, then there should be one that is `classified_as` the primary name for use. This is done by adding the Primary Name _(aat:300404670)_ term to it. There should be exactly one primary title given per language.
 
-Names are also part of language, and can have the Linguistic features of the model associated with them, such as being in a language, or having translations.
+Names are also part of human communication, and can have the Linguistic features of the model associated with them, such as having a particular language, or having translations.
 
-Example:  The primary name for the painting is "Pasture and Sheep", which is in English.
+__Example:__
+
+The primary name for the painting is "Pasture and Sheep", which is in English.
 
 ```crom
 top = Painting(art=1)
@@ -74,11 +79,13 @@ top.identified_by = ttl
 
 ### Identifiers
 
-Many resources of interest are also given external identifiers, such as Accession Numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
+Many resources of interest are also given external identifiers, such as accession numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
 
-As Identifiers and Names use the same `identified_by` property, the JSON will frequently have mixed classes in the array. Unlike Names, Identifiers are not part of human language and thus cannot have translations or a language associated with them.
+As `Identifier`s and `Name`s use the same `identified_by` property, the JSON will frequently have mixed classes in the array. Unlike `Name`s, `Identifier`s are not part of human language and thus cannot have translations or a language associated with them.
 
-Example:  The Accession Number identifier for the painting is "P1998-27".
+__Example:__
+
+The accession number identifier for the painting is "P1998-27".
 
 ```crom
 top = Painting(art=1)
@@ -95,7 +102,7 @@ top.identified_by = ttl
 
 In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
 
-The pattern makes use of the Linguistic Object class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.
+The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.
 
 Use cases for this pattern include:
 
@@ -105,7 +112,9 @@ Use cases for this pattern include:
 * Biography for a person
 * Dimensions statement for a part of an object
 
-Example: Having only a textual description of the materials in English, the content `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300010358)_ statement:
+__Example:__
+
+Having only a textual description of the materials in English, the content `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300435429)_ statement:
 
 ```crom
 top = Painting(art=1)
@@ -128,7 +137,9 @@ Use cases for this pattern include:
  * Partitioning a text into segments, such as that the paragraph is part of a chapter, which is in turn part of the entire book
 
 
-Example: The canvas support is part of the overall watercolor painting.
+__Example:__
+
+The canvas support is part of the overall watercolor painting.
 
 ```crom
 top = Painting(art=1)
@@ -150,7 +161,9 @@ Use cases for the membership pattern include:
 * A painting is part of the collection of a the museum.
 * An identifier is part of the set of identifiers that collectively make up the accession numbers assigned to paintings by the museum.
 
-Example: The curator is a member of the paintings department.
+__Example:__
+
+The curator is a member of the paintings department.
 
 ```crom
 top = vocab.Department()
@@ -159,3 +172,37 @@ who = Person()
 who._label = "Curator"
 top.member = who
 ```
+
+## Events and Activities
+
+Patterns are not only within a single entity, but also in the way that we manage relationships between entities.  While many systems link straight from one an object to its creator, for example, CIDOC-CRM and thus Linked Art instead uses an intermediate entity that represents the activity of the artist in creating the object. This enables us to associate time, place, actors, techniques, other objects and more with the creation activity, rather than needing many individual relationships.
+
+The key participants in those different types of events are:
+
+  * the [Object](../object/) being acted upon,
+  * the [Actors](../actor/) (people or organizations) that perform the activity,
+  * the [Locations](../place) at which the activity occurs,
+  * and the Time at which it occurs.
+
+The general pattern is to create a resource for the `Activity` or `Event`, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the `Object` is dependent on the type of `Event` or `Activity`, which are discussed in more detail in the specific sections.
+
+There are both subclasses of `Activity`, such as `Acquisition`, `Production` and `AttributeAssignment`, and classifications associated with them to be more specific, either as a `technique` like glassblowing _(aat:300053932)_, or via `classified_as` for more general terms like gift giving _(aat:aat:300404212)_ to clarify the sort of `Acquisition`.
+
+The pattern uses the terms and structure given in this example:
+
+```crom
+top = Activity()
+who = Actor()
+who._label = "Who"
+when = TimeSpan()
+when._label = "When"
+when.begin_of_the_begin = "earliest-start-datetime"
+when.end_of_the_end = "latest-end-datetime"
+where = Place()
+where._label = "Where"
+top.carried_out_by = who
+top.took_place_at = where
+top.timespan = when
+```
+
+
