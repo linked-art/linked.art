@@ -172,3 +172,37 @@ who = Person()
 who._label = "Curator"
 top.member = who
 ```
+
+## Events and Activities
+
+Patterns are not only within a single entity, but also in the way that we manage relationships between entities.  While many systems link straight from one an object to its creator, for example, CIDOC-CRM and thus Linked Art instead uses an intermediate entity that represents the activity of the artist in creating the object. This enables us to associate time, place, actors, techniques, other objects and more with the creation activity, rather than needing many individual relationships.
+
+The key participants in those different types of events are:
+
+  * the [Object](../object/) being acted upon,
+  * the [Actors](../actor/) (people or organizations) that perform the activity,
+  * the [Locations](../place) at which the activity occurs,
+  * and the Time at which it occurs.
+
+The general pattern is to create a resource for the `Activity` or `Event`, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the `Object` is dependent on the type of `Event` or `Activity`, which are discussed in more detail in the specific sections.
+
+There are both subclasses of `Activity`, such as `Acquisition`, `Production` and `AttributeAssignment`, and classifications associated with them to be more specific, either as a `technique` like glassblowing _(aat:300053932)_, or via `classified_as` for more general terms like gift giving _(aat:aat:300404212)_ to clarify the sort of `Acquisition`.
+
+The pattern uses the terms and structure given in this example:
+
+```crom
+top = Activity()
+who = Actor()
+who._label = "Who"
+when = TimeSpan()
+when._label = "When"
+when.begin_of_the_begin = "earliest-start-datetime"
+when.end_of_the_end = "latest-end-datetime"
+where = Place()
+where._label = "Where"
+top.carried_out_by = who
+top.took_place_at = where
+top.timespan = when
+```
+
+

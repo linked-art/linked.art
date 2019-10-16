@@ -1,5 +1,7 @@
 ---
 title: Object Provenance
+up_href: "/model/"
+up_label: "Model Overview"
 ---
 
 {% include "toc.html" %}
@@ -8,31 +10,9 @@ title: Object Provenance
 
 The general model for describing the provenance of an object is to track the events in which the object of interest is created or discovered, transferred between owners or custodians, until it is lost, destroyed or in its present location.  For example a painting's provenance starts when the artist paints it, and then there are events in which it ownership of the painting is transferred from the artist to its first owner, and then on to subsequent owners. The details of those transfers are the primary data to be collected in the provenance model.
 
-The key participants in those different types of events are:
-
-  * the [Object](../object/) itself
-  * the [Actors](../actor/) (people or organizations) that own the object or facilitate the transfer
-  * the [Locations](../place) at which the events occur
-  * and the Times at which the events occur
-
 In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody, such as when the painting is loaned out for an [exhibition](../exhibition/) or [curation activities](curation.html), such as taking inventory, conservation or revaluation.
 
-The general model, as hinted at above, is to create a resource for the Activity or Event, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to Events that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human Activities.  The relationship to the Object is dependent on the type of Event or Activity, which are discussed in more detail in the following sections.
-
-```crom
-top = Activity()
-who = Actor()
-who._label = "Who"
-when = TimeSpan()
-when._label = "When"
-when.begin_of_the_begin = "earliest-start-datetime"
-when.end_of_the_end = "latest-end-datetime"
-where = Place()
-where._label = "Where"
-top.carried_out_by = who
-top.took_place_at = where
-top.timespan = when
-```
+The general activity pattern is described in the [base patterns](/model/base/) section, and expanded on in the sections below.
 
 ## Sections
 
