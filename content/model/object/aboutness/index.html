@@ -83,11 +83,10 @@ top = Painting(art=1)
 top._label = "Example Impressionist Painting"
 vi = VisualItem()
 top.shows = vi
-vi.style = instances['impressionism']
+vi.classified_as = instances['impressionism']
 ```
 
-!!! Note "Model uses predicate from outside of CIDOC-CRM"
-    The notion of style in CIDOC-CRM is typically tied to time and place of creation, not the actual style of the image content, and thus style is modeled as a Period (as discussed in the scope notes of E4 Period).  There is also an option to use E55 Type as the style, but no defined relationship to map from the object to its style.  For example, a painting done using materials from Japan, in Japan, by a Japanese artist, in a French style would be considered to have a style of Japanese by CIDOC-CRM due to the time/space period. As such, we import the `genre` relationship from outside our core ontology so that we can use Types.  If a new predicate is created for CIDOC-CRM that more closely maps to the usage, we will switch to use it in a future revision. <!-- Don't hold your breath! -->
+FIXME - the style needs a meta-type
 
 
 ## Classifications
