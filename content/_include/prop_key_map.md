@@ -42,6 +42,8 @@ P133 | `distinct_from`
 P135i | `type_created_by`
 P139 | `alternative`
 P140 | `assigned_to`
+P148 | `c_part`
+P148i | `c_part_of`
 P151i | `participated_in_formation`
 P164i | `timespan_of_presence`
 P165i | `incorporated_by`

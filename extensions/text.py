@@ -17,7 +17,7 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     LinguisticObject, OrderedDict, Appellation, \
     AttributeAssignment, Formation, Material, MeasurementUnit, \
     HumanMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
-    PropertyInterest, Payment, Creation, Destruction, \
+    Payment, Creation, Destruction, \
     PropositionalObject, Language, Geometry, CoordinateSystem, Phase, Birth, Death
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
@@ -54,7 +54,6 @@ Appellation._uri_segment = "name"
 Name._uri_segment = "name"
 AttributeAssignment._uri_segment = "activity"
 Dimension._uri_segment = "value"
-PropertyInterest._uri_segment = "legal"
 PropositionalObject._uri_segment = "concept"  # For Exhibition concept and bid
 Destruction._uri_segment = "activity"
 Phase._uri_segment = "activity"
