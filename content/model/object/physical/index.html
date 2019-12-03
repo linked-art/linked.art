@@ -14,7 +14,7 @@ Beyond dimensions and materials, the model allows for the description of parts o
 
 ## Dimensions
 
-Dimensions are included in the `dimension` property, and consist of three primary pieces of information:  the numeric value in `value`, the type of dimension (e.g. height vs width) in `classified_as` referencing an external vocabulary of dimension types, and the `unit` used to align the value with the real world such as inches, pounds or seconds. The unit should also be given from a controlled [vocabulary](/model/vocab/).
+Dimensions are included in the `dimension` property, and consist of three primary pieces of information:  the numeric value in `value`, the type of dimension (e.g. height vs width) in `classified_as` referencing an external vocabulary of dimension types, and the `unit` used to align the value with the real world such as inches, pounds or seconds. The unit should also be given from a controlled vocabulary.
 
 For example, a painting that measures 16 inches wide, by 20 inches tall, could be described as given below.  Note that the repeated unit is not duplicated in its entirety, just its URI given in the second dimension.
 
@@ -33,7 +33,7 @@ top.dimension = h
 
 ### Dimension Statement
 
-If the dimension text is not recorded in a way that is condusive to generating the full set, then it can be given as a `LinguisticObject`, classifed as dimensions by reference to _aat:300266036_, and the text provided in `value`.
+If the dimension text is not recorded in a way that is condusive to generating the full set, then it can be given as a `LinguisticObject`, classifed as dimensions by reference to _aat:300435430_, and the text provided in `value`.
 
 The same object might have a dimension statement as below. 
 
@@ -45,7 +45,33 @@ dims.content = "The painting is approximately 16 inches wide, by 20 inches high"
 top.referred_to_by = dims
 ```
 
-### Shapes
+### Colors
+
+The main colors of an object can be determined and record in two very different ways - by capturing a very specific value for the wavelength of the light or composition of the color (in a Red/Green/Blue colorspace, for example), or categorizing the object into more broader, subjective color types ("pale green", "ochre"). The first approach might be done with instruments measuring the reflected light off the original, or via digital photography and computing the color from the resulting digital image.  The second approach is likely carried out by a curator in describing the object in a collection management system, hopefully using a controlled set of terms. As it is desirable to have only a single place to look for information, the model for color tries to capture both of these possibilities at once in as simple a way as possible, allowing either or both to happen for any given color.
+
+Measurements record a `Dimension`, and thus we create an instance of the class to record the color, even if the measurement is a categorization. The dimension has a `value` and `unit`, just like the more obvious physical dimensions described above. For an RGB colorspace, the value must be converted into an integer from the more traditional three-part hexadecimal value, as values are always decimalized. This allows the true value to be recorded.  The dimension can also be `classified_as` a particular color family -- the object has a color which is a green color, for example. Either or both of these patterns can be used, and multiple dimensions using this pattern can be recorded without having to match up which categories map to which values. 
+
+__Example:__
+
+A green painting has a vivid (`00FF00`) green color, and is also categorized as being green (_aat:300128438_)
+
+```crom
+top = Painting(art=1)
+top._label = "Example Green Painting"
+c = vocab.Color()
+c._label = "green"
+c.classified_as = vocab.instances['color green']
+c.value = 65280
+c.unit = vocab.instances['rgb_colorspace']
+top.dimension = c
+```
+
+!!! note "Implementation Note"
+
+	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int(hex_value, 16)`. The reverse is also true, with the equivalent being `hex(int_value)`. As such, the unobvious value of `65280` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer.
+
+
+## Shapes
 
 While some combinations of dimensions can give a sense of the shape of the object, it is also often useful to be more explicit about the shape.  For example, a shield-shaped painting (perhaps due to being painted on an actual shield) would likely still only have height and width given. Without the additional information of the shape, it might be concluded that the painting is rectangular.
 
