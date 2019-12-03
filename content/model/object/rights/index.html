@@ -12,7 +12,11 @@ The rights information about both the physical objects and their digital represe
 
 ## Credit / Attribution Statement
 
-It is important to be able to give a credit or attribution statement that should be displayed along with the object. For example, a painting that has been donated might have the requirement to state who the donor was. This is modeled as a `LinguisticObject`, that is `classified_as` _aat:300026687_ being the identity for "acknowledgements". The actual string is given in `content`.
+It is important to be able to give a credit or attribution statement that should be displayed along with the object. For example, a painting that has been donated might have the requirement to state who the donor was. This is modeled using the statement pattern as a `LinguisticObject`, that is `classified_as` _aat:300026687_ - the term for "acknowledgements". The text is given in the `content` property.
+
+__Example:__
+
+The painting was a donation of a Ms J. Smith.
 
 ```crom
 top = Painting(art=1)
@@ -24,7 +28,11 @@ top.referred_to_by = crdt
 
 ## Rights Statement
 
-For general statements about rights that have not been aligned with any other controlled vocabularies such as AAT or [rightsstatements.org](http://rightsstatements.org/), the information can be provided in the same way as for a credit line.  The difference is that it is `classified_as` _aat:300055547_, being the identity for general "legal concepts".
+For general statements about rights that have not been aligned with any other controlled vocabularies such as [rightsstatements.org](http://rightsstatements.org/), the information can be provided in the same way as for a credit or attribution.  The difference is that it is `classified_as` _aat:300435434_ - the term for license or legal statements.
+
+__Example:__
+
+An assertion that the copyright status of an object has not been assessed, and is thus unknown.
 
 ```crom
 top = Painting(art=1)
@@ -42,16 +50,18 @@ More detailed information is, however, often available and it is useful to be ex
 
 There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way.
 
-The pattern is identical to custom rights statements, however the URI of the statement is given as the URI from rightsstatements.org, rather than a local one. A `label` can also be given to provide clarity, and to display to the user.
+These assertions are modeled as individual Rights, which are then `classified_as` the rights statement URI. A label, via`_label`, can also be given to provide clarity for developers looking at the data in the same way as `Type` objects.
+
+__Example:__
+
+The painting has no known copyright.
 
 ```crom
 top = Painting(art=1)
-top._label = "Object"
-cne = RightsStatement("http://rightsstatements.org/vocab/NKC/1.0/")
-cne._label = "No known copyright"
-top.referred_to_by = cne
+top._label = "Painting"
+r = model.Right()
+t = model.Type(ident="http://rightsstatements.org/vocab/NKC/1.0/")
+t._label = "No known copyright"
+r.classified_as = t
+top.subject_to = r
 ```
-
-### Other Rights Assertions
-
-Other, or more detailed, rights assertions for copyright, ownership or other legal matters can be described using the [`PropertyInterest` class](/model/provenance/legalclaims/).

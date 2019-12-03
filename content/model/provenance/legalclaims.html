@@ -10,6 +10,11 @@ up_label: "Provenance"
 
 Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of shared ownership of an object, contested ownership, looting, theft and subsequent sale of the stolen object, as well as other legal claims such as copyright or restricted rights of reproduction. 
 
+
+
+# This needs to be rewritten
+
+
 ## Claims of Rights
 
 In order to describe these situations, we introduce a new class called 'PropertyInterest'.  This is a claim of a particular legal right, such as ownership or copyright, and is claimed by an `Actor` within a legal jurisdiction modeled as a `Place`.  This class can then be used to describe any claim, valid or not, of any right.  
@@ -18,7 +23,7 @@ The Claim is a Man Made Thing, rather than the activity of asserting the claim. 
 
 The legal status that is claimed by the Property Interest is associated as a classification, like all other out-of-model classes.  Thus, the basic Property Interest model has the following structure:
 
-```crom
+```
 top = vocab.OwnershipRight()
 top._label = "Claim of Ownership"
 who = Person()
@@ -29,15 +34,15 @@ top.interest_for = what
 where = Place()
 where._label = "Legal jurisdiction of Claim"
 top.claimed_by = who
-top.jurisdiction = where
+# top.jurisdiction = where
 ```
 
 ### Effective Period
 
-The `PropertyInterest` class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
+The XXXXXXXXXXXXXXXXX class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
 
 
-```crom
+```
 top = vocab.OwnershipPhase()
 pi = vocab.OwnershipRight()
 pi._label = "Claim of Ownership"
@@ -57,8 +62,6 @@ ts1.end_of_the_end = "1821-11-28T00:00:00"
 top.timespan = ts1
 ```
 
-!!! note "CIDOC-CRM Arcana"
-    You might be wondering why `PropertyInterest` isn't just an E30 Right? You almost certainly do not want to read [this section](/model/profile/class_analysis.html#ineffective-classes) that explains the gruesome details.
 
 ## Ownership Rights
 
@@ -69,7 +72,7 @@ In particular, an `Acquisition` of the object would initiate the Ownership Phase
 We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object. It also makes no assertion about the legality of the claim, allowing it to be used for sale of stolen items.
 
 
-```crom
+```
 top = Purchase()
 top._label = "Purchase of the Example Painting on Jan 1, 2010"
 ts = TimeSpan()
@@ -115,7 +118,7 @@ In order to allow for the description of different proportions of the object to 
 
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
 
-```crom
+```
 top = Purchase()
 top._label = "Purchase of the Example Painting by two Art Dealers"
 seller = Actor()
