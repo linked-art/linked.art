@@ -10,13 +10,15 @@ up_label: "Objects"
 
 There are several important physical features of artworks that it is important to capture, including the size, shapes, colors, and the materials that it is made of. The model allows for both being explicit in the data for these, as well as simply including a textual description.  The explicit form is preferred, however it is recognized that not all systems will be able to provide it. 
 
-Beyond dimensions and materials, the model allows for the description of parts of objects, and parts of parts.  These parts can be thought of as objects in their own right, and thus have titles ("Left Panel" of a triptych), descriptions, rights, images, dimensions, materials, and so forth.   
+Beyond dimensions and materials, the model allows for the description of parts of objects, and parts of parts, using the base pattern.  These parts can be thought of as objects in their own right, and thus have titles ("Left Panel" of a triptych), descriptions, rights, images, dimensions, materials, and so forth.   
 
 ## Dimensions
 
 Dimensions are included in the `dimension` property, and consist of three primary pieces of information:  the numeric value in `value`, the type of dimension (e.g. height vs width) in `classified_as` referencing an external vocabulary of dimension types, and the `unit` used to align the value with the real world such as inches, pounds or seconds. The unit should also be given from a controlled vocabulary.
 
-For example, a painting that measures 16 inches wide, by 20 inches tall, could be described as given below.  Note that the repeated unit is not duplicated in its entirety, just its URI given in the second dimension.
+__Example:__
+
+A painting that measures 16 inches wide by 20 inches tall.  Note that the repeated unit might not be duplicated in its entirety, and just its URI given for its second occurence in the record.
 
 ```crom
 top = Painting(art=1)
@@ -33,9 +35,11 @@ top.dimension = h
 
 ### Dimension Statement
 
-If the dimension text is not recorded in a way that is condusive to generating the full set, then it can be given as a `LinguisticObject`, classifed as dimensions by reference to _aat:300435430_, and the text provided in `value`.
+If the dimension text is not recorded in a way that is condusive to generating the full set, then it can be given as a `LinguisticObject`, classifed as dimensions by reference to _aat:300435430_, and the text provided in `content`. This is an example of the Statements base pattern.
 
-The same object might have a dimension statement as below. 
+__Example:__
+
+The same 16 by 20 inch painting, described only in a human-readable text.
 
 ```crom
 top = Painting(art=1)
@@ -73,9 +77,13 @@ top.dimension = c
 
 ## Shapes
 
-While some combinations of dimensions can give a sense of the shape of the object, it is also often useful to be more explicit about the shape.  For example, a shield-shaped painting (perhaps due to being painted on an actual shield) would likely still only have height and width given. Without the additional information of the shape, it might be concluded that the painting is rectangular.
+While some combinations of dimensions can give a sense of the shape of the object, it is also often useful to be more explicit.  For example, a shield-shaped painting (perhaps due to being painted on an actual shield) would likely still only have height and width given. Without the additional information of the shape, it might be concluded that the painting is rectangular. Similarly, a circular object could be mistaken as a square, as the height and width would be the same in either case.
 
-Shapes are given as classifications on the object.  It is recommended to use one of the [AAT shape classifications](http://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300056273), such as _aat:300247394_ for shield-shaped or _aat:300263817_ for oval.
+Shapes are given as classifications on the object via the `classified_as` property.  The classification is then further classified as being a shape, with the term _aat:300056273_, in the same way that being a painting is further classified as being the type of work.
+
+__Example:__
+
+An oval-shaped painting.
 
 ```crom
 top = Painting(art=1)
@@ -87,7 +95,11 @@ top._label = "Example Oval Painting"
 
 Objects are `made_of` different materials. The materials are the type of material, rather than the specific bits of matter and therefore can refer directly to external vocabularies.  When possible, it is good to use this model, and combined with the parts model described in the next section, allows for a comprehensive set of information about which parts are which sizes and made of which materials.
 
-For example, a statue made of marble could be described as below.
+Note that the type-of-type pattern is not needed for materials like it is for shape, as they have their own `Material` class that is used to distinguish them.
+
+__Example:__
+
+A statue made of marble.
 
 ```crom
 top = Sculpture(art=1)

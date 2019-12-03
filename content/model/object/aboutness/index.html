@@ -76,7 +76,7 @@ Styles are a categorization of the aesthetic qualities of the work being describ
 
 The distinction that all styles are aesthetic is somewhat controversial, but simplifies the model significantly at very little cost. A clear example is a perfect imitation of a Navajo dream-catcher made by a factory in China cannot be said to be culturally Navajo as an object, but the image of the object can be said to have an aesthetic that is related to the Navajo culture.
 
-The style is associated with the object using the `style` property, and must be a reference to an appropriate vocabulary. It is associated with the `VisualItem` that is shown by the object, to reinforce that it is the way the object looks that determines the style, not the physicality of its production.  The `style` property could be thought of as _how_ the content is presented.
+The style is associated with the object using the `classified_as` property, and must be a reference to an appropriate vocabulary. It is associated with the `VisualItem` that is shown by the object, to reinforce that it is the way the object looks that determines the style, not the physicality of its production.  The `style` property could be thought of as _how_ the content is presented.
 
 ```crom
 top = Painting(art=1)
@@ -85,9 +85,6 @@ vi = VisualItem()
 top.shows = vi
 vi.classified_as = instances['style impressionism']
 ```
-
-FIXME - the style needs a meta-type
-
 
 ## Classifications
 
