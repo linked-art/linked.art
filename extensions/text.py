@@ -262,6 +262,7 @@ class IndexingPlugin(Plugin):
 				else:
 					if type(v) in [str, unicode]:
 						# :|
+						v = v.replace('"', "''")
 						v = "\"''%s''\""% v
 					line = "%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v)
 					if not line in mermaid:
