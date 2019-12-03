@@ -12,7 +12,11 @@ The features described in this section are information _about_ the object, and a
 
 ## Description
 
-The main description of the object is provided in the same manner as other such texts; as the `content` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300080091)_.  The description can include any content that describes the object, and is useful primarily for display to a human user.
+The main description of the object is provided in the same manner as other such texts; as the `content` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300411780)_.  The description can include any content that describes the object, and is useful primarily for display to a human user.
+
+__Example:__
+
+A painting the has the description "The Example Painting is a great example of exampleness".
 
 ```crom
 top = Painting(art=1)
@@ -22,25 +26,15 @@ desc.content = "The Example Painting is a great example of exampleness."
 top.referred_to_by = desc
 ```
 
-## Related Objects
-
-A list of related objects is often known for any given object, however the reason for the relation is not recorded.  In this circumstance, the best that can be done is to record that there is some relationship using the `related` property.  If there are more details known about the relationship then more specific patterns should be used instead.
-
-FIXME
-
-```crom
-top = Painting(art=1)
-top._label = "Another Example Painting"
-p2 = Painting(art=1)
-p2._label = "Yet Another Example Painting"
-# top.related = p2
-```
-
 ## Depiction
 
 Many sorts of artwork depict things that can be pointed out in the artwork. These could be identifiable entities, such as a known Person or Object with a name or identifier, or unidentifiable (perhaps fictional) instances of a class of entity, such as a depiction of a battle but not any particular battle.  For example a portrait depicts the person sitting for it, or a sketch of a generic landscape depicts a place even if it's not a particular, known location. The depiction pattern describes _what_ is in the artwork's image.
 
 The model uses a `VisualItem` resource to stand for the visual content of the object, be it a painting, photograph or statue.  The object `shows` the `VisualItem`, which in turn `represents` the things depicted. This is the same model as for [digital images](../digital/) of the object.
+
+__Example:__
+
+A self portrait is both produced by the artist and has visual content that represents the artist.
 
 ```crom
 top = Painting(art=1)
@@ -61,22 +55,32 @@ Subjects are the concepts or things that the artwork evokes, as opposed to an ob
 
 Given the use of the `VisualItem` pattern for depiction, we reuse the same pattern but instead of the image being a representation of the depicted resource, it is `about` the subject.
 
+__Example:__
+
+A visual content of a portrait of Lord Nelson has the conceptual subject of "war". It would also represent Lord Nelson, following the example above, however this is not included in the example.
+
 ```crom
 top = Painting(art=1)
 top._label = "Portrait of Lord Nelson"
-concept = instances['war']
 vi = VisualItem()
 top.shows = vi
-vi.about = concept
+vi.about = instances['war']
 ```
 
-## Style
+
+## Classifications
+
+### Style
 
 Styles are a categorization of the aesthetic qualities of the work being described, and can come from important features, techniques, locations, times or artistic movements.  Styles might include "geometric", "abstract", and "limited palette". It is considered that all styles are aesthetic rather than cultural, but the aesthetic style may be related to a particular culture. 
 
 The distinction that all styles are aesthetic is somewhat controversial, but simplifies the model significantly at very little cost. A clear example is a perfect imitation of a Navajo dream-catcher made by a factory in China cannot be said to be culturally Navajo as an object, but the image of the object can be said to have an aesthetic that is related to the Navajo culture.
 
-The style is associated with the object using the `classified_as` property, and must be a reference to an appropriate vocabulary. It is associated with the `VisualItem` that is shown by the object, to reinforce that it is the way the object looks that determines the style, not the physicality of its production.  The `style` property could be thought of as _how_ the content is presented.
+The style is associated with the object using the `classified_as` property, and must be a reference to an appropriate vocabulary. It is associated with the `VisualItem` that is shown by the object, to reinforce that it is the way the object looks that determines the style, not the physicality of its production.  The `style` property could be thought of as _how_ the content is presented.  In order to distinguish styles from other classifications, the style itself has a `classified_as` of _aat:300015646_.
+
+__Example:__
+
+An impressionist painting is classified as impressionism, which is classified as being a type of style.
 
 ```crom
 top = Painting(art=1)
@@ -86,15 +90,37 @@ top.shows = vi
 vi.classified_as = instances['style impressionism']
 ```
 
-## Classifications
+### Other Classifications
 
-Other classifications can also be assigned to the object's content. If it is possible to say that "the artistic content of this object is an X", then X can be included in the set of classifications using the `classified_as` property on the `VisualItem`.  This could include classifications such as "Landscape" or "Allusion", compared to classifications that are derived from the physical nature of the object such as a "Painting", "Photograph" or "Sculpture" which are associated with the `HumanMadeObject`.
+Other classifications can also be assigned to the object's content. If it is possible to say that "the artistic content of this object is an X", then X can be included in the set of classifications using the `classified_as` property on the `VisualItem`.  This could include classifications such as "Landscape" or "Allusion", compared to classifications that are derived from the physical nature of the object such as a "Painting", "Photograph" or "Sculpture" which are associated with the object.  
 
 ```crom
 top = Painting(art=1)
-top._label = "Example Landscape Painting"
+top._label = "Example Allusion Painting"
 vi = VisualItem()
 top.shows = vi
-vi.classified_as = instances['style landscape']
+vi.classified_as = instances['allusion']
 ```
+
+## Related Objects
+
+A list of related objects is often known for any given object, however the reason for the relation is not recorded. These objects might be physically similar, they may have been created by the same artist, they might have been exhibited together or they might just be both highlights of the current institution and share no observable features. In this circumstance, the best that can be done is to record that there is some relationship without any specificity as to the details.  If there are more details known about the relationship then more specific patterns should be used instead.
+
+The model uses a `Relationship` class to capture the relationship.  This allows additional information to be associated with the Relationship, such as a label or classification if known. The relationship has a direction, it is from one object to another. The relationship instance uses the `relates_to` property to refer to the target of the relationship, and the source of the relationship uses the `related_from_by` property to refer to the Relationship. This is the inverse of the Relationship's `relates_from` property.
+
+__Example:__
+
+Another Example Painting is related, in some unknown way, to Yet Another Example Painting. Perhaps the relationship is that they are both examples.
+
+```crom
+top = Painting(art=1)
+top._label = "Another Example Painting"
+p2 = Painting(art=1)
+p2._label = "Yet Another Example Painting"
+r = model.Relationship()
+r._label = "Related Example Paintings"
+top.related_from_by = r
+r.relates_to = p2
+```
+
 
