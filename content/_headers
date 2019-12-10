@@ -4,6 +4,7 @@
 
 /ns/*
   Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
 
 /*.jsonld
   Content-Type: application/ld+json
