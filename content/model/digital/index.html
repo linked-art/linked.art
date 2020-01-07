@@ -14,7 +14,6 @@ It is very unlikely that the descriptions provided in this model are the only di
 
 The most common scenario is if there are one or more images available of the object. This is described by using the `representation` property, which has a `VisualItem` as its value. The `id` of the image is the URI at which it is available, and additional properties to describe the image should also be given, such as a `label` and its media type (sometimes called a MIME type) in `format`. The digital image should be classified as such using _aat:300215302_.
 
-FIXME
 
 ```crom
 top = Painting(art=1)
@@ -27,7 +26,7 @@ top._label = "Painting"
 
 ## Home Page
 
-Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to a `LinguisticObject` which is `classified_as` a web page, or _aat:300264578_ as well as being preferred (_aat:300404670_).  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
+Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to a `LinguisticObject` which is `classified_as` a web page, or _aat:300264578_.  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
 
 ```crom
 top = Painting(art=1)
@@ -41,15 +40,15 @@ top.subject_of = page
 
 ## Other Pages
 
-While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being a `LinguisticObject`, but without the preferred classification.
+While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being a `LinguisticObject`, but instead use the `referred_to_by` property for the link. 
 
 ```crom
 top = Painting(art=1)
 top._label = "Painting"
 page = WebPage("http://example.org/journal/article")
-page._label = "Webpage that discusses Painting"
+page._label = "Webpage that discusses Painting, but is not its homepage"
 page.format = "text/html"
-top.subject_of = page
+top.referred_to_by = page
 ```
 
 ## IIIF 
