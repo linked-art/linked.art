@@ -6,35 +6,41 @@ title: "Actors: People and Organizations"
 
 ## Introduction
 
-All activities are carried out by some actor, either a person (`Person`) or a group of people (`Group`) such as an organization or company.  The identity and description of these actors are very important to record in order to provide the human context for the activities, and their related places and objects. The creators, finders, owners, sellers and curators of objects are all important to describe in a consistent fashion.
+All activities are carried out by some actor, either a person (`Person`) or a group of people (`Group`) such as an organization or company.  The identity and description of these actors are very important to record in order to provide the human context for the activities, and their related places and objects. The creators, finders, owners, sellers and curators of objects are all relevant to understanding our cultural heritage.
 
 As far as scope goes, the model does not consider that non-humans (such as software or animals) can perform activities, as activities require some notion of intent. Thus the [infamous monkey selfies from 2011](https://www.cnn.com/2018/04/24/us/monkey-selfie-peta-appeal/index.html) is not carried out by anyone, as the monkey cannot do it and the photographer did not intend for the selfies to be taken.
 
+This model does not aim to capture all of the possible information about a Person or Group, or their relationships to other people, objects, places or activities. Instead it attempts to capture sufficient information to distinguish the actor from others, and to align the actor with other systems. 
+
 ## Types
 
-There are two primary types of acting agent, `Person` and `Group`.  They are sub-classes of the `Actor` class, which might be used when it is not certain whether the actor is a Person or a Group. For example, if a sale of an object is listed as being from an art dealer called "Smith", it is unclear whether it refers to a person via their family name, or to an organization named after its owner.  Equally, if there is no information about the actor currently available, but identity is desired such that it can later be reconciled or used because there is some other information known, then the use of `Actor` is likely needed in this case as well.  As such, encountering all three should be anticipated.
+There are two primary types of acting agent, `Person` and `Group`. `Person` is used for humans, and `Group` is used for any collective set of humans.  Groups typically are able to take action as a coherent whole, but in some cases this is overlooked for simplicity's sake.  For example, it is useful to be able to say that "The Museum" acquired a painting or "The Workshop" produced a sculpture, when in fact it was some subset of the members of the group that actually performed the activity but we do not know exactly who. 
 
-Example: Example Museum, a `Group`, acquires something from a J. Smith, a `Person`. The actual acquisition is carried out by some unknown group or person, and therefore just an `Actor`.
+
+`Person` and `Group` are sub-classes of the `Actor` class, which might be used when it is not certain whether the actor is a Person or a Group. For example, if a sale of an object is listed as being from an art dealer called "Smith", it is unclear whether it refers to a person via their family name, or to an organization named after its owner.  Equally, if there is no information about the actor currently available, but identity is desired such that it can later be reconciled or used because there is some other information known, then the use of `Actor` is likely needed in this case as well. This is only to be used when the nature of the actor is unknown to avoid asserting the existence of a Person when it might have been a Group, or vice versa.
+
+__Example:__ 
+
+Example Museum, a `Group`, acquires something from a J. Smith, a `Person`.
 
 ```crom
 who = Person()
 who._label = "J. Smith"
 grp = MuseumOrg()
 grp._label = "Example Museum Organization"
-actor = Actor()
-actor._label = "Unknown Person or Organization"
 top = Acquisition()
 top.transferred_title_from = who
 top.transferred_title_to = grp
-top.carried_out_by = actor
 ```
 
 ## Names
 
-Names are turned into first class resources with their own identity, and given a class called `Name`. They are described in detail in the [shared patterns section](/model/base.html#names). If there is a primary or main name to use, it should be `classified_as` _aat:300404670_.
+Names are described in detail in the [shared patterns section](/model/base.html#names). If there is a primary or main name to use, it should be `classified_as` _aat:300404670_.
 
 
-Example: A person named "J. Smith"
+__Example:__
+
+A person named "J. Smith"
 
 ```crom
 top = Person()
@@ -48,7 +54,7 @@ top.identified_by = apl
 
 Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property. The name parts are themselves `Name`s, and are included in the `part` set in the same way as other partitioning. The type of name is given using `classified_as`, in the regular fashion. Western name division vocabulary is given below, and other name part types should be suggested.
 
-Vocabulary:
+Recommended Vocabulary:
 
 | Term        | Vocabulary        |
 |-------------|-------------------|
@@ -86,9 +92,11 @@ apl.part = suff
 
 ## Identity
 
-People are often assigned identifiers that should be recorded and tracked in the same way as any other identity.  While the primary identifier from a Linked Open Data perspective is the URI given to the person that provides the data about the person, there can be any number of other identifiers also associated with the resource.  These follow the same pattern as for other identifiers, with `identified_by` being used with an `Identifier` resource, that can have further classifications and a `content` string.  Organizations can also have identifiers, using the same pattern.
+People and Organizations are often assigned identifiers that should be recorded and tracked in the same way as any other identity. These follow the same [basic pattern][/model/base.html#identifiers] as for other identifiers, with `identified_by` being used with an `Identifier` resource.
 
-Example:  A local identifier for the person is "643".
+__Example:__
+
+A local identifier for the person is "643".
 
 ```crom
 top = Person()
@@ -103,7 +111,9 @@ top.identified_by = pid
 There may be other identifiers for the person available in external systems, such as [ULAN](http://vocab.getty.edu/ulan/) or any of a dozen others.  If all of the information needed about the person is available from that system, then it is recommended to simply use that identifier directly as the URI for the Person.  If there is a requirement to maintain separate information about the person, then the `exact_match` property should be used to align the two. This might happen when, for example, the local data has additional information about which documents refer to the person, or more detailed biographical information.
 
 
-Example: Van Gogh has the ULAN identity `http://vocab.getty.edu/ulan/500115588`
+__Example:__
+
+Van Gogh has the ULAN identity `http://vocab.getty.edu/ulan/500115588`
 
 ```crom
 top = Person()
@@ -115,9 +125,13 @@ top.exact_match = ulan
 
 ## Addresses
 
-People and Organizations often have addresses, physical or online, via which they can be contacted. This includes mailing addresses, email addresses and so forth.  These are referenced separately from Names and Identifiers, as many Actors might have the same contact point. The address is the Name for a location or service, and is thus modeled as a Name. This Name is then related to the actor via the `contact_point` property.  They can be `classified_as` different types, and use the `content` property to capture the address itself.
+People and Organizations often have addresses, physical or online, via which they can be contacted. This includes mailing addresses, email addresses and so forth.  These are referenced separately from Names and Identifiers, as many Actors might have the same contact point. The address is an identifier for a location or service, and is thus modeled as an Identifier. This means it does not have language information, unlike Names, but addresses are not inherently linguistic. 
 
-Example:  The person A. Bacchus has an email address, and can be contacted via mail at the museum they are employed by.
+This `Identifier` is then related to the actor via the `contact_point` property.  They can be `classified_as` different types, and use the `content` property to capture the address itself.
+
+__Example:__
+
+The person A. Bacchus has an email address, and can be contacted via mail at the museum they are employed by.
 
 ```crom
 top = Person()
@@ -131,43 +145,6 @@ sa = vocab.StreetAddress()
 sa.content = "1200 Museum Drive, Example City"
 org.contact_point = sa
 top.member_of = org
-```
-
-### Street Addresses
-
-It is also valuable to use the partitioning pattern to break street addresses into their component parts, for presentation to users, for filling out forms, or for ease of discovery.  In particular, the following terms are recommended.
-
-| Term           | Vocabulary        | Description       |
-|----------------|-------------------|-------------------|
-| Street Number  | (_aat:300419272_) | The number of the street address |
-| Street Name    | (_aat:300419273_) | The complete name of the street, including any directional attributes (South) and type (Boulevard) |
-| City           | (_aat:300008389_) | The name of the city |
-| Postal Code    | (_aat:300419274_) | The postal code for the address |
-| State/Province | (_aat:300000774_) | The state or province for the address |
-| Country        | (_aat:300128207_) | The country for the address |
-
-Example: The Museum's address is made up of a street number, street name, city and postal code.
-
-```crom
-top = MuseumOrg()
-top._label = "Example City Museum"
-sa = vocab.StreetAddress()
-sa.content = "1200 Museum Drive, Example City, 90049"
-top.contact_point = sa
-
-sn = vocab.StreetNumber()
-sn.content = "1200"
-sa.part = sn
-s = vocab.StreetName()
-s.content = "Museum Drive"
-sa.part = s
-c = model.Name()
-c.classified_as = instances["city"]
-c.content = "Example City"
-sa.part = c
-pc = vocab.PostalCode()
-pc.content = "90049"
-sa.part = pc
 ```
 
 ## Life Events
