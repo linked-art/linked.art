@@ -83,11 +83,11 @@ top.produced_by = prod
 act1 = Production()
 act1.technique = instances['sculpting']
 act1.carried_out_by = Actor(label="Sculptor")
-top.part = act1
+prod.part = act1
 act2 = Production()
 act2.carried_out_by = Actor(label="Painter")
 act2.technique = instances['painting']
-top.part = act2
+prod.part = act2
 ```
 
 ## Objects Related to the Production
@@ -129,7 +129,7 @@ top.produced_by = prod
 negative = Negative(label = "Negative of Photograph")
 prod.used_specific_object = negative
 vi = VisualItem(label="Visual Content of Photographs and Negative")
-what.shows = vi
+top.shows = vi
 negative.shows = vi
 ```
 
@@ -169,13 +169,15 @@ __Example:__
 top = Painting(label="Painting", art=1)
 prod = Production()
 top.produced_by = prod
-aa = AttributeAssignment()
+aa = vocab.ObsoleteAssignment()
 who = Person(label="Previously-Thought Artist")
 prod2 = Production()
 prod2.carried_out_by = who
-prod.assigned_to_by = aa
+prod.assigned_by = aa
 aa.assigned = prod2
+aa.assigned_to = prod
 aa.assigned_property = "part_of"
+aa.assigned_to = None # This is needed as a check for the property
 aa.carried_out_by = Person(label = "Paintings Curator")
 ts = TimeSpan()
 ts.begin_of_the_begin = "1923-07-20"
