@@ -14,33 +14,35 @@ Places also form a core integration point with Geographical Information Systems 
 
 All of the core information for resources is available for Place, including identifiers, classifications, labels, names, statements and so forth.
 
-```crom
-top = vocab.City(label="Los Angles, CA")
-top.identified_by = Name(content="Los Angeles")
-```
-
-## Partitioning
-
 It is recommended that external gazeteer systems be used for recording the spatial hierarchy of Places, however it is still useful to be able to position historical locations within their larger geospatial context.  This uses the same partitioning pattern as all other classes in the model.
 
+__Example:__
+
+There is a city called Los Angeles, in California.
+
 ```crom
-top = vocab.City(label="Ancient City")
-top.part_of = vocab.Province(label="Ancient Province")
+top = vocab.City(label="Los Angeles, CA")
+top.identified_by = Name(content="Los Angeles")
+top.referred_to_by = vocab.Description(content="Los Angeles is a city in California, USA.")
+top.part_of = vocab.Province(label="California")
 ```
 
 
 ## Geospatial Location
 
-In order to plot the extent of the place on a map, or calculate the geospatial overlap of places, it is useful to have a geometry that describes the place's boundaries in the real world. This could be very detailed or a simple bounding box within which the place fits.  It could even be a center point and a radius.
+One of the expected user interface requirements for places is the ability to plot them on a map.  In order to do this, or to calculate the geospatial overlap of places, it is useful to have a geometry that describes the place's boundaries in the real world. This could be very detailed, a simple bounding box within which the place fits, or a point close to the center of the area.
 
-This is handled simply by associating a WKT string with the place using the `defined_by` property.
+This is handled simply by associating a [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) string with the place using the `defined_by` property. A simple user interface for generating WKT representations is available from the [Wicket Project](https://arthur-e.github.io/Wicket/sandbox-gmaps3.html).
 
+
+__Example:__
+
+A polygon that (approximately) defines the country New Zealand.
 
 ```crom
 top = vocab.Nation(label="New Zealand")
 top.defined_by = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
 ```
-
 
 ### Geospatial Approximation
 
@@ -56,7 +58,7 @@ Many art sales take place in auction houses over time, and while the city might 
 ```crom
 top = model.Place(label="True Auction House Location")
 p2 = model.Place(label="Auction House Location Approximation")
-p2.defined_by = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
+p2.defined_by = "POINT(-0.0032937526703165 51.515107154846)"
 top.approximated_by = p2
 ```
 
@@ -65,7 +67,12 @@ top.approximated_by = p2
 
 It is easy to confuse places with the constructions that exist at the place. While rare, there are situations when buildings are moved between locations. The building, just like a painting, is thus modeled as an object that has a current location in space. Activities take place in the place, rather than in the object.  The granularity of the place compared to the building may be different due to underlying data management.
 
+
+__Example:__
+
+The [Frank Lloyd Wright House][https://crystalbridges.org/frank-lloyd-wright/] was originally built in New Jersey, and subsequently moved to its current location in Arkansas.
+
 ```crom
-top = vocab.Building(label="Example Building")
-top.current_location = Place(label="Location of Example Building");
+top = vocab.Building(label="Frank Lloyd Wright House")
+top.current_location = Place(label="Current Location in Arkansas at Crystal Bridges");
 ```
