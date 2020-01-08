@@ -156,28 +156,29 @@ grp.formed_by = f
 f.influenced_by = Person(label = "Franckz")
 ```
 
-### Attributions
+### Uncertain or Changing Attributions
 
-Over time, attributions can be contested and change. The actor that is listed in `carried_out_by` from the `Production` should always be the one currently believed to have produced the art work.  Previous attributions, or ones that are so uncertain that there is a concern about using `carried_out_by` at all, can be recorded using the `AttributeAssignment` pattern, further described [here](/model/assertion/).
+A piece of information associated with historical artworks that can change as research and understanding improves is the identity of the artist that produced it. The actor that is referenced in `carried_out_by` is the current opinion, but previous attributions can still be recorded. 
 
+In order to clearly separate the previous thinking from current, the model explicitly includes the act of assigning the previous artist as an `AttributeAssignment`. The assignment activity assigns the previous artist's role as part of the main Production, but has an "obsolete" classification to indicate that it is no longer believed to be correct. A "possibly" classification would indicate that the attribution of the artist is uncertain.
+
+The Attribute Assignment pattern is further described [here](/model/assertion/).
 
 __Example:__
 
-
+It was previously thought that J. Artist produced the painting, by Paintings Curator in 1923, but that is no longer held to be correct.
 
 ```crom
 top = Painting(label="Painting", art=1)
 prod = Production()
 top.produced_by = prod
 aa = vocab.ObsoleteAssignment()
-who = Person(label="Previously-Thought Artist")
+who = Person(label="J. Artist")
 prod2 = Production()
 prod2.carried_out_by = who
 prod.assigned_by = aa
 aa.assigned = prod2
-aa.assigned_to = prod
 aa.assigned_property = "part_of"
-aa.assigned_to = None # This is needed as a check for the property
 aa.carried_out_by = Person(label = "Paintings Curator")
 ts = TimeSpan()
 ts.begin_of_the_begin = "1923-07-20"
