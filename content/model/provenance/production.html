@@ -10,9 +10,13 @@ up_label: "Provenance"
 
 This section covers the beginning and ending of objects' existence, along with the attribution of the artist to the production of the object.
 
-## Object Creation
+## Base Production Activity
 
-The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
+The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors. This follows the base pattern for [activities](/model/base/#events-and-activities).
+
+__Example:__
+
+The infamous example painting is created by the example artist, in their studio, in March 1780.
 
 ```crom
 top = Production()
@@ -31,9 +35,82 @@ top.produced = what
 top.took_place_at = where
 ```
 
+## Techniques and Classifications
+
+We distinguish between techniques used to create the artwork, and other classifications. Techniques have their own property (`technique` rather than `classified_as`) and can thus easily be distinguished from other classifications.
+
+### Techniques
+
+If there is a particular technique known to have been used in the creation of the object, this can be expressed using the `technique` property, referring to a controlled vocabulary term for the technique. This should be used to capture specific techniques or methods, and the base `classified_as` property used for more general classifications of the activity.
+
+__Example:__
+
+A glass sculpture is created using the glassblowing technique, which is identified by _aat:300053932_.
+
+```crom
+top = Production()
+who = Actor()
+who._label = "Example Glassblower"
+what = Sculpture(art=1)
+what._label = "Glass Sculpture"
+top.carried_out_by = who
+top.technique = instances['glassblowing']
+```
+
+### Classifications
+
+Classifications for production events are less common than techniques, but still possible.  These classifications must not be techniques, but instead some assertion about the activity generally. This could include whether the activity was a minor contribution to the overall work, or whether the activity was performed legally or not. 
+
+__Example:__
+
+Grafitti artwork is created using the "spraypainting" technique, and could also be considered "vandalism", but vandalism is not a technique.
+
+```crom
+top = Production(label="Production of Graffiti")
+top.technique = vocab.instances['spraypainting']
+top.classified_as = vocab.instances['vandalism']
+what = HumanMadeObject(label="Graffiti", art=1)
+top.produced = what
+```
+
+## Multiple Artists
+
+If there are multiple artists collaborating on the same piece of artwork, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. For consistency, it is recommended that this pattern be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. 
+
+__Example:__
+
+A sculpture that is then painted by another artist, would be produced by the overall activity, with two parts, one for each artist's activities.
+
+```crom
+top = Production()
+what = Sculpture(art=1)
+what._label = "Painted Sculpture"
+top.produced = what
+act1 = Production()
+act1.technique = instances['sculpting']
+who = Actor()
+who._label = "Example Sculptor"
+act1.carried_out_by = who
+top.part = act1
+act2 = Production()
+who2 = Actor()
+who2._label = "Example Sculpture Painter"
+act2.technique = instances['painting']
+act2.carried_out_by = who2
+top.part = act2
+```
+
+
+## Objects Related to the Production
+
+
+
 ### Inspiration or Copies
 
 Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. 
+
+__Example:__
+
 
 ```crom
 top = Production()
@@ -54,6 +131,9 @@ Many objects are created from a source, such as a photograph being printed from 
 
 All of the art objects created from the same source show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects, including the source object, show. This allows us to group the objects together based on their provenance.
 
+__Example:__
+
+
 ```crom
 top = Production()
 top._label = "Printing of Photograph"
@@ -68,42 +148,7 @@ what.shows = vi
 negative.shows = vi
 ```
 
-### Techniques
-
-If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as the `technique` of the activity.
-
-```crom
-top = Production()
-who = Actor()
-who._label = "Example Glassblower"
-what = Sculpture(art=1)
-what._label = "Glass Sculpture"
-top.carried_out_by = who
-top.technique = instances['glassblowing']
-```
-
-### Multiple Artists with Roles
-
-If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
-
-```crom
-top = Production()
-what = Sculpture(art=1)
-what._label = "Painted Sculpture"
-top.produced = what
-act1 = Production()
-act1.technique = instances['sculpting']
-who = Actor()
-who._label = "Example Sculptor"
-act1.carried_out_by = who
-top.part = act1
-act2 = Production()
-who2 = Actor()
-who2._label = "Example Sculpture Painter"
-act2.technique = instances['painting']
-act2.carried_out_by = who2
-top.part = act2
-```
+## Attributions
 
 ### Attribution of a Group
 
