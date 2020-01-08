@@ -30,9 +30,9 @@ top._label = "Example Object"
 
 ## Types and Classifications
 
-CIDOC-CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the `classified_as` property. This should be contrasted with the`type` property described above, which is used for CIDOC-CRM defined classes, and a few extensions as possible. The `classified_as` property is thus a way to be more specific about the sort of entity, without requiring a full ontological description of the class.
+CIDOC-CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the `classified_as` property, which refers to a term from a controlled vocabulary. This is in contrast to the `type` property described above, which is used for CIDOC-CRM defined classes, and a few extensions as needed. The `classified_as` property is thus a way to be more specific about the sort of entity, while maintaining the core information as the class using `type`. Controlled vocabulary entries should not be used with `type`, nor classes used with `classified_as`.
 
-While any external vocabulary of terms can be used, the Getty's Art and Architecture Thesaurus is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [community best-practices](/community/best-practices/vocabularies/) for recommendations, and within the documentation of the model when a particular choice is essential for interoperability.
+While any external vocabulary of terms can be used, the [Getty's Art and Architecture Thesaurus][http://vocab.getty.edu/aat/] is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [community best-practices](/community/best-practices/vocabularies/) for recommendations, and within the documentation of the model when a particular choice is essential for interoperability.
 
 Use cases for this pattern are in almost every example, but include:
 
