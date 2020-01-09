@@ -192,6 +192,9 @@ The end of the provenance chain of an object is when it is known to have been de
 
 The model uses a `Destruction` class that represents the going out of existence of the object. A destruction only applies to a single object, and thus every object has their own destruction, even if that destruction was caused by the same wider event or activity.  This means that the Destruction is not `carried_out_by` an actor, but instead (as in the following section) another activity causes the destruction.
 
+__Example:__
+
+The Painting was destroyed in 1823.
 
 ```crom
 top = Painting(label="Example Destroyed Painting", art=1)
@@ -206,6 +209,13 @@ dest.timespan = when
 
 ### Cause of Destruction
 
+As discussed above, the same event or activity could be the cause of the destruction of many individual objects. A museum burning down or otherwise being destroyed would destroy many objects, including the building itself. On a smaller scale, an individual destruction could be caused by a particular activity of an individual. 
+
+In order to distinguish between the destruction itself and its cause, we use the `caused_by` relationship between the Destruction and the Activity or Event that caused it. The event should be described and classified as any other event in the model.
+
+__Example:__
+
+The Painting was destroyed in 1823, due to being burnt by someone.
 
 ```crom
 top = Painting(label="Example Destroyed Painting", art=1)
