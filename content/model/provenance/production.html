@@ -10,42 +10,105 @@ up_label: "Provenance"
 
 This section covers the beginning and ending of objects' existence, along with the attribution of the artist to the production of the object.
 
-## Object Creation
+## Base Production Activity
 
-The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors.
+The first activity in an object's provenance or lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors. This follows the base pattern for [activities](/model/base/#events-and-activities).
+
+__Example:__
+
+A painting is created by an artist, in their studio, in March 1780.
 
 ```crom
-top = Production()
-who = Actor()
-who._label = "Example Artist"
-what = Painting(art=1)
-what._label = "Example Painting"
+top = Painting(label="Painting", art=1)
+prod = Production()
+prod.carried_out_by = Actor(label="Artist")
+prod.took_place_at = Place(label="Artist's Studio")
 when = TimeSpan()
-where = Place()
-where._label = "Example Artist's Studio"
 when.begin_of_the_begin = "1780-03-05T00:00:00Z"
 when.end_of_the_end = "1780-03-06T00:00:00Z"
-top.carried_out_by = who
-top.timespan = when
-top.produced = what
-top.took_place_at = where
+prod.timespan = when
+top.produced_by = prod
 ```
+
+## Techniques and Classifications
+
+We distinguish between techniques used to create the artwork, and other classifications. Techniques have their own property (`technique` rather than `classified_as`) and can thus easily be distinguished from other classifications.
+
+### Techniques
+
+If there is a particular technique known to have been used in the creation of the object, this can be expressed using the `technique` property, referring to a controlled vocabulary term for the technique. This should be used to capture specific techniques or methods, and the base `classified_as` property used for more general classifications of the activity.
+
+__Example:__
+
+A glass sculpture is created using the glassblowing technique, which is identified by _aat:300053932_.
+
+```crom
+top = Sculpture(label="Glass Sculpture", art=1)
+prod = Production()
+prod.carried_out_by = Actor(label = "Glassblowing Artist")
+prod.technique = instances['glassblowing']
+top.produced_by = prod
+```
+
+### Classifications
+
+Classifications for production events are less common than techniques, but still possible.  These classifications must not be techniques, but instead some assertion about the activity generally. This could include whether the activity was a minor contribution to the overall work, or whether the activity was performed legally or not. 
+
+__Example:__
+
+Grafitti artwork is created using the "spraypainting" technique, and could also be considered "vandalism", but vandalism is not a technique.
+
+```crom
+top = HumanMadeObject(label="Graffiti", art=1)
+prod = Production(label="Production of Graffiti")
+prod.technique = vocab.instances['spraypainting']
+prod.classified_as = vocab.instances['vandalism']
+top.produced_by = prod
+```
+
+## Multiple Artists
+
+If there are multiple artists collaborating on the same piece of artwork, then we follow the partitioning pattern of creating separate parts of the main `Production` activity. Each of these components captures the details of one particular artist's role in the production of the object. This allows us to assert different properties for each artist's contribution, including different times, techniques, locations or influences.
+
+For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. 
+
+__Example:__
+
+A sculpture that is then painted by another artist, would be produced by the overall activity, with two parts, one for each artist's activities.
+
+```crom
+top = Sculpture(label = "Painted Sculpture", art=1)
+prod = Production()
+top.produced_by = prod
+act1 = Production()
+act1.technique = instances['sculpting']
+act1.carried_out_by = Actor(label="Sculptor")
+prod.part = act1
+act2 = Production()
+act2.carried_out_by = Actor(label="Painter")
+act2.technique = instances['painting']
+prod.part = act2
+```
+
+## Objects Related to the Production
+
+Other objects can play critical roles in the production of artwork, such as copying or being inspired by another artwork, or the use of the same source to create an artwork, either mechanically or manually, such as the negative used for printing a photograph.
+
 
 ### Inspiration or Copies
 
 Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. 
 
+__Example:__
+
+
 ```crom
-top = Production()
-what = Painting(art=1)
-what._label = "Copy of Example Painting"
-copied = Painting(art=1)
-copied._label = "Example Painting"
-top.influenced_by = copied
-top.produced = what
-who = Person()
-who._label = "Copyist"
-top.carried_out_by = who
+top = Painting(label="Copy of Painting of a Fish", art=1)
+prod = Production()
+top.produced_by = prod
+copied = Painting(label="Painting of a Fish", art=1)
+prod.influenced_by = copied
+prod.carried_out_by = Person(label="Copyist")
 ```
 
 ### Reproduction from an Identifiable Source
@@ -54,116 +117,118 @@ Many objects are created from a source, such as a photograph being printed from 
 
 All of the art objects created from the same source show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects, including the source object, show. This allows us to group the objects together based on their provenance.
 
+__Example:__
+
+A photograph is printed using a Negative. Both the positive and the negative show the same visual content, as would any other prints of the photograph.
+
+
 ```crom
-top = Production()
-top._label = "Printing of Photograph"
-what = Photograph()
-what._label = "Photograph"
-negative = Negative()
-negative._label = "Negative"
-top.used_specific_object = negative
-vi = VisualItem()
-vi._label = "Visual Content of Photographs and Negative"
-what.shows = vi
+top = Photograph(label = "Photograph")
+prod = Production(label = "Printing of Photograph")
+top.produced_by = prod
+negative = Negative(label = "Negative of Photograph")
+prod.used_specific_object = negative
+vi = VisualItem(label="Visual Content of Photographs and Negative")
+top.shows = vi
 negative.shows = vi
 ```
 
-### Techniques
-
-If there is a particular technique known to have been used in the creation of the object, for example glassblowing identified by _aat:300053932_, the identifier for the technique can be included as the `technique` of the activity.
-
-```crom
-top = Production()
-who = Actor()
-who._label = "Example Glassblower"
-what = Sculpture(art=1)
-what._label = "Glass Sculpture"
-top.carried_out_by = who
-top.technique = instances['glassblowing']
-```
-
-### Multiple Artists with Roles
-
-If there are multiple artists collaborating, and they had individual roles or their work took place at different locations or over different time periods, then we follow the pattern of creating components of the main `Production` activity.  Each of the components captures the details of one particular artist's role in the production of the object. For example, a sculpture that is painted by another artist, would be produced by the overall activity, with two components one for each artist's role.
-
-```crom
-top = Production()
-what = Sculpture(art=1)
-what._label = "Painted Sculpture"
-top.produced = what
-act1 = Production()
-act1.technique = instances['sculpting']
-who = Actor()
-who._label = "Example Sculptor"
-act1.carried_out_by = who
-top.part = act1
-act2 = Production()
-who2 = Actor()
-who2._label = "Example Sculpture Painter"
-act2.technique = instances['painting']
-act2.carried_out_by = who2
-top.part = act2
-```
+## Attributions
 
 ### Attribution of a Group
 
-Even if the artist's or artists' identity is not known exactly, the person or persons may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`.  The "master" of the workshop is represented as the Actor that carried out the `Formation` of the `Group`.  
+Even if the artist's or artists' identity is not known exactly, the person or persons may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`: this does not mean that every member of the group participated, just that at least one of them did, in the same way that saying that a document was written by an organization does not imply all employees contributed to the text.
+
+We can use the `influenced_by` property on the `Formation` (the creation) of the group to connect it to a known person -- the "master" of the workshop in the example use case. The "master" might not have participated in the group, or even been alive when it was formed, and hence does not necessarily form the group or is even a member of it. 
+
+__Example:__
+
+ 
 
 ```crom
-top = Production()
-what = Painting(art=1)
-what._label = "Example Painting, from workshop of Example Master"
-top.produced = what
-grp = Group()
-grp._label = "Workshop of Example Master"
+top = Painting(label = "Painting from the workshop of Franckz", art=1)
+prod = Production()
+top.produced_by = prod
+grp = Group(label = "Workshop of Franckz")
+prod.carried_out_by = grp
 f = Formation()
-who = Person()
-who._label = "Example Master"
-f.carried_out_by = who
 grp.formed_by = f
-top.carried_out_by = grp
+f.influenced_by = Person(label = "Franckz")
 ```
 
-### Previous or Uncertain Attributions
+### Uncertain or Changing Attributions
 
-Over time, attributions can be contested and change. The actor that is listed in `carried_out_by` from the `Production` should always be the one currently believed to have produced the art work.  Previous attributions, or ones that are so uncertain that there is a concern about using `carried_out_by` at all, can be recorded using the `AttributeAssignment` pattern, further described [here](/model/assertion/).
+A piece of information associated with historical artworks that can change as research and understanding improves is the identity of the artist that produced it. The actor that is referenced in `carried_out_by` is the current opinion, but previous attributions can still be recorded. 
+
+In order to clearly separate the previous thinking from current, the model explicitly includes the act of assigning the previous artist as an `AttributeAssignment`. The assignment activity assigns the previous artist's role as part of the main Production, but has an "obsolete" classification to indicate that it is no longer believed to be correct. A "possibly" classification would indicate that the attribution of the artist is uncertain.
+
+The Attribute Assignment pattern is described in more detail in the [assertions](/model/assertion/) section of the documentation.
+
+__Example:__
+
+It was previously thought that J. Artist produced the painting, by Paintings Curator in 1923, but that is no longer held to be correct.
 
 ```crom
-top = AttributeAssignment()
-obj = Painting(art=1)
-obj._label = "Example Painting"
-who = Person()
-who._label = "Previously-Thought Artist"
+top = Painting(label="Painting", art=1)
 prod = Production()
-prod.carried_out_by = who
-top.assigned = prod
-top.assigned_to = obj
-top.assigned_property = "produced_by"
-by = Person()
-by._label = "Painting Curator"
-top.carried_out_by = by
+top.produced_by = prod
+aa = vocab.ObsoleteAssignment()
+who = Person(label="J. Artist")
+prod2 = Production()
+prod2.carried_out_by = who
+prod.assigned_by = aa
+aa.assigned = prod2
+aa.assigned_property = "part_of"
+aa.carried_out_by = Person(label = "Paintings Curator")
 ts = TimeSpan()
 ts.begin_of_the_begin = "1923-07-20"
 ts.end_of_the_end = "1923-07-21"
-top.timespan = ts
+aa.timespan = ts
 ```
 
 ## Destruction
 
 The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object leaves the chain open ended as it might be recovered in the future, however if the object is destroyed then there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
 
-Objects are destroyed by events that are not carried out by an actor are modeled with the `EndOfExistence` class. However if the destruction is carried out by some actor, then it is also an `Activity` at the same time. This extra class must be added explicitly, and is a different model from `Production` which is always an `Activity`.
+The model uses a `Destruction` class that represents the going out of existence of the object. A destruction only applies to a single object, and thus every object has their own destruction, even if that destruction was caused by the same wider event or activity.  This means that the Destruction is not `carried_out_by` an actor, but instead (as in the following section) another activity causes the destruction.
+
+__Example:__
+
+The Painting was destroyed in 1823.
 
 ```crom
-top = Destruction()
-what = Painting(art=1)
-what._label = "Example Destroyed Painting"
-top.destroyed = what
+top = Painting(label="Example Destroyed Painting", art=1)
+dest = Destruction(label="Destruction of Painting")
+top.destroyed_by = dest
 when = TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
-top.timespan = when
-#who = Person()
-#who._label = "Painting Destroyer"
-#top.carried_out_by = who
+dest.timespan = when
 ```
+
+
+### Cause of Destruction
+
+As discussed above, the same event or activity could be the cause of the destruction of many individual objects. A museum burning down or otherwise being destroyed would destroy many objects, including the building itself. On a smaller scale, an individual destruction could be caused by a particular activity of an individual. 
+
+In order to distinguish between the destruction itself and its cause, we use the `caused_by` relationship between the Destruction and the Activity or Event that caused it. The event should be described and classified as any other event in the model.
+
+__Example:__
+
+The Painting was destroyed in 1823, due to being burnt by someone.
+
+```crom
+top = Painting(label="Example Destroyed Painting", art=1)
+dest = Destruction(label="Destruction of Painting")
+top.destroyed_by = dest
+when = TimeSpan()
+when.begin_of_the_begin = "1823-03-01T00:00:00Z"
+when.end_of_the_end = "1823-03-31T00:00:00Z"
+dest.timespan = when
+act = Activity(label="Burning of the Painting")
+act.carried_out_by = Person(label="Painting Burner")
+dest.caused_by = act
+```
+
+
+
