@@ -162,7 +162,7 @@ A piece of information associated with historical artworks that can change as re
 
 In order to clearly separate the previous thinking from current, the model explicitly includes the act of assigning the previous artist as an `AttributeAssignment`. The assignment activity assigns the previous artist's role as part of the main Production, but has an "obsolete" classification to indicate that it is no longer believed to be correct. A "possibly" classification would indicate that the attribution of the artist is uncertain.
 
-The Attribute Assignment pattern is further described [here](/model/assertion/).
+The Attribute Assignment pattern is described in more detail in the [assertions](/model/assertion/) section of the documentation.
 
 __Example:__
 
@@ -190,18 +190,35 @@ aa.timespan = ts
 
 The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object leaves the chain open ended as it might be recovered in the future, however if the object is destroyed then there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
 
-Objects are destroyed by events that are not carried out by an actor are modeled with the `EndOfExistence` class. However if the destruction is carried out by some actor, then it is also an `Activity` at the same time. This extra class must be added explicitly, and is a different model from `Production` which is always an `Activity`.
+The model uses a `Destruction` class that represents the going out of existence of the object. A destruction only applies to a single object, and thus every object has their own destruction, even if that destruction was caused by the same wider event or activity.  This means that the Destruction is not `carried_out_by` an actor, but instead (as in the following section) another activity causes the destruction.
+
 
 ```crom
-top = Destruction()
-what = Painting(art=1)
-what._label = "Example Destroyed Painting"
-top.destroyed = what
+top = Painting(label="Example Destroyed Painting", art=1)
+dest = Destruction(label="Destruction of Painting")
+top.destroyed_by = dest
 when = TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
-top.timespan = when
-#who = Person()
-#who._label = "Painting Destroyer"
-#top.carried_out_by = who
+dest.timespan = when
 ```
+
+
+### Cause of Destruction
+
+
+```crom
+top = Painting(label="Example Destroyed Painting", art=1)
+dest = Destruction(label="Destruction of Painting")
+top.destroyed_by = dest
+when = TimeSpan()
+when.begin_of_the_begin = "1823-03-01T00:00:00Z"
+when.end_of_the_end = "1823-03-31T00:00:00Z"
+dest.timespan = when
+act = Activity(label="Burning of the Painting")
+act.carried_out_by = Person(label="Painting Burner")
+dest.caused_by = act
+```
+
+
+
