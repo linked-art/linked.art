@@ -127,7 +127,9 @@ code {
 a:hover, a:focus {
     text-decoration: underline;
 }
-.codehilite .nt { color: #559955; }
+
+
+.codehilite .nt { color: #663399; }
 .codehilite .p { color: #555555; }
 .codehilite .s2 { color: #995555; }
 
