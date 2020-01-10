@@ -130,10 +130,11 @@ a:hover, a:focus {
 
 
 .codehilite .nt { color: #663399; }
-.codehilite .p { color: #555555; }
+.codehilite .p { color: #000000; }
 .codehilite .s2 { color: #005500; }
 
-.codehilite .n {color: #555599;}
+.codehilite .n {color: #aa2e00;}
+.codehilite .mi {color: #aa2e00;}
 .codehilite .nb {color: #555599;}
 .codehilite .o {color: #559999;}
 .codehilite .k {color: #559955;}
