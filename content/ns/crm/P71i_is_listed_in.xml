@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P71i_is_listed_in">
+	<rdfs:label xml:lang="el">&#960;&#949;&#961;&#953;&#955;&#945;&#956;&#946;&#940;&#957;&#949;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="de">wird aufgelistet in</rdfs:label>
+	<rdfs:label xml:lang="en">is listed in</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1095;&#1080;&#1089;&#1083;&#1077;&#1085; &#1074;</rdfs:label>
+    <rdfs:label xml:lang="fr">est d&#233;fini par</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; definido por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#26465;&#21015;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E32_Authority_Document"/>
+	<rdfs:subPropertyOf rdf:resource="P67i_is_referred_to_by"/>
+<owl:inverseOf rdf:resource="P71_lists"/>
+</rdf:Property>
+
+
+</rdf:RDF>

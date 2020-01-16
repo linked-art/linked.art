@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E21_Person">
+	<rdfs:label xml:lang="de">Person</rdfs:label>
+	<rdfs:label xml:lang="fr">Personne</rdfs:label>
+	<rdfs:label xml:lang="en">Person</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1051;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1100;</rdfs:label>
+	<rdfs:label xml:lang="el">&#928;&#961;&#972;&#963;&#969;&#960;&#959;</rdfs:label>
+	<rdfs:label xml:lang="pt">Pessoa</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20154;&#29289;</rdfs:label>
+	<rdfs:comment>This class comprises real persons who live or are assumed to have lived. 
+Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CRM does not propose a specific form to support reasoning about possible identity.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E20_Biological_Object"/>
+	<rdfs:subClassOf rdf:resource="E39_Actor"/>
+</rdfs:Class>
+
+</rdf:RDF>

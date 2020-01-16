@@ -1,0 +1,24 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P42_assigned">
+	<rdfs:label xml:lang="el">&#945;&#960;&#941;&#948;&#969;&#963;&#949; &#969;&#962; &#953;&#948;&#953;&#972;&#964;&#951;&#964;&#945;</rdfs:label>
+    <rdfs:label xml:lang="en">assigned</rdfs:label>
+   <rdfs:label xml:lang="fr">a attribu&#233;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1085;&#1072;&#1079;&#1085;&#1072;&#1095;&#1080;&#1083;</rdfs:label>
+    <rdfs:label xml:lang="de">wies zu</rdfs:label>
+	<rdfs:label xml:lang="pt">atribuiu</rdfs:label>
+	<rdfs:label xml:lang="zh">&#25351;&#23450;&#31867;&#22411;&#20026;</rdfs:label>
+
+	<rdfs:comment>This property records the type that was assigned to an entity by an E17 Type Assignment activity. 
+Type assignment events allow a more detailed path from E1 CRM Entity through P41 classified (was classified by), E17 Type Assignment, P42 assigned (was assigned by) to E55 Type for assigning types to objects compared to the shortcut offered by P2 has type (is type of).
+For example, a fragment of an antique vessel could be assigned the type &#8220;attic red figured belly handled amphora&#8221; by expert A. The same fragment could be assigned the type &#8220;shoulder handled amphora&#8221; by expert B.
+A Type may be intellectually constructed independent from assigning an instance of it.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E17_Type_Assignment"/>
+	<rdfs:range rdf:resource="E55_Type"/>
+	<rdfs:subPropertyOf rdf:resource="P141_assigned"/>
+<owl:inverseOf rdf:resource="P42i_was_assigned_by"/>
+</rdf:Property>
+
+
+</rdf:RDF>

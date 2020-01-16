@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P34_concerned">
+	<rdfs:label xml:lang="el">&#945;&#966;&#959;&#961;&#959;&#973;&#963;&#949; &#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1083; &#1076;&#1077;&#1083;&#1086; &#1089;</rdfs:label>
+    <rdfs:label xml:lang="de">betraf</rdfs:label>
+    <rdfs:label xml:lang="en">concerned</rdfs:label>
+    <rdfs:label xml:lang="fr">a concern&#233;</rdfs:label>
+    <rdfs:label xml:lang="pt">interessada</rdfs:label>
+	<rdfs:label xml:lang="zh">&#35780;&#20272;&#20102;</rdfs:label>
+	<rdfs:comment>This property identifies the E18 Physical Thing that was assessed during an E14 Condition Assessment activity. 
+Conditions may be assessed either by direct observation or using recorded evidence. In the latter case the E18 Physical Thing does not need to be present or extant.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E14_Condition_Assessment"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P140_assigned_attribute_to"/>
+<owl:inverseOf rdf:resource="P34i_was_assessed_by"/>
+</rdf:Property>
+
+
+</rdf:RDF>

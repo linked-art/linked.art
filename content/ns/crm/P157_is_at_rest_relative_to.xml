@@ -1,0 +1,13 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P157_is_at_rest_relative_to">
+	<rdfs:label xml:lang="en">is at rest relative to</rdfs:label>
+	<rdfs:comment>This property associates an instance of P53 Place with the instance of E18 Physical Thing that determines a reference space for this instance of P53 Place by being at rest with respect to this reference space. The relative stability of form of an E18 Physical Thing defines its default reference space. The reference space is not spatially limited to the referred thing. For example, a ship determines a reference space in terms of which other ships in its neighbourhood may be described. Larger constellations of matter, such as continental plates, may comprise many physical features that are at rest with them and define the same reference space.
+	</rdfs:comment>
+	<rdfs:domain rdf:resource="E53_Place"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P59i_is_located_on_or_within"/>
+<owl:inverseOf rdf:resource="P157i_provides_reference_space_for"/>
+</rdf:Property>
+
+</rdf:RDF>

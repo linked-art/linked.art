@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P62i_is_depicted_by">
+	<rdfs:label xml:lang="el">&#945;&#960;&#949;&#953;&#954;&#959;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="de">wird abgebildet durch</rdfs:label>
+	<rdfs:label xml:lang="en">is depicted by</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1086;&#1087;&#1080;&#1089;&#1072;&#1085; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+    <rdfs:label xml:lang="fr">est figur&#233;e sur</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; retratada por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#25551;&#32472;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E24_Physical_Human-Made_Thing"/>
+<owl:inverseOf rdf:resource="P62_depicts"/>
+</rdf:Property>
+
+
+</rdf:RDF>

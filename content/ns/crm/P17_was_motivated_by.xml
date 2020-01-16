@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P17_was_motivated_by">
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1086;&#1073;&#1091;&#1089;&#1083;&#1086;&#1074;&#1083;&#1077;&#1085; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+    <rdfs:label xml:lang="de">wurde angeregt durch</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#967;&#949; &#969;&#962; &#945;&#966;&#959;&#961;&#956;&#942;</rdfs:label>
+    <rdfs:label xml:lang="en">was motivated by</rdfs:label>
+	<rdfs:label xml:lang="fr">a &#233;t&#233; motiv&#233;e par</rdfs:label>
+	<rdfs:label xml:lang="pt">foi motivado por</rdfs:label>
+
+	<rdfs:label xml:lang="zh">&#26377;&#20419;&#21160;&#20107;&#29289;</rdfs:label>
+	<rdfs:comment>This property describes an item or items that are regarded as a reason for carrying out the E7 Activity. 
+For example, the discovery of a large hoard of treasure may call for a celebration, an order from head quarters can start a military manoeuvre. 
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E7_Activity"/>
+	<rdfs:range rdf:resource="E1_CRM_Entity"/>
+	<rdfs:subPropertyOf rdf:resource="P15_was_influenced_by"/>
+<owl:inverseOf rdf:resource="P17i_motivated"/>
+</rdf:Property>
+
+</rdf:RDF>

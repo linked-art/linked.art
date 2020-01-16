@@ -1,0 +1,11 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P191_had_duration">
+    <rdfs:label xml:lang="en">had duration</rdfs:label>
+    <rdfs:comment>This property describes the length of time covered by an E52 Time-Span. It allows an E52 Time-Span to be associated with an E54 Dimension representing duration independent from the actual beginning and end.</rdfs:comment>
+    <rdfs:domain rdf:resource="E52_Time-Span"/>
+    <rdfs:range rdf:resource="E54_Dimension"/>
+	<owl:inverseOf rdf:resource="P191i_was_duration_of"/>
+</rdf:Property>
+
+</rdf:RDF>

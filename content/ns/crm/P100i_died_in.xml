@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P100i_died_in">
+	<rdfs:label xml:lang="de">starb in</rdfs:label>
+	<rdfs:label xml:lang="fr">est mort par</rdfs:label>
+	<rdfs:label xml:lang="en">died in</rdfs:label>
+	<rdfs:label xml:lang="el">&#960;&#941;&#952;&#945;&#957;&#949; &#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1091;&#1084;&#1077;&#1088; &#1074;</rdfs:label>
+	<rdfs:label xml:lang="pt">morreu em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#27515;&#20129;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E21_Person"/>
+	<rdfs:range rdf:resource="E69_Death"/>
+	<rdfs:subPropertyOf rdf:resource="P93i_was_taken_out_of_existence_by"/>
+<owl:inverseOf rdf:resource="P100_was_death_of"/>
+</rdf:Property>
+
+</rdf:RDF>

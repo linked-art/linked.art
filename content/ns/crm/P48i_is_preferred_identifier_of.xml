@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P48i_is_preferred_identifier_of">
+	<rdfs:label xml:lang="en">is preferred identifier of</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1087;&#1088;&#1077;&#1076;&#1087;&#1086;&#1095;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1084; &#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088;&#1086;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="de">ist bevorzugtes Kennzeichen f&#252;r</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#960;&#961;&#959;&#964;&#953;&#956;&#974;&#956;&#949;&#957;&#959; &#945;&#957;&#945;&#947;&#957;&#969;&#961;&#953;&#963;&#964;&#953;&#954;&#972;</rdfs:label>
+   <rdfs:label xml:lang="fr">est l&#8217;identificateur retenu de</rdfs:label>
+   <rdfs:label xml:lang="pt">&#233; o identificador preferido de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#39318;&#36873;&#26631;&#35782;&#31526;&#30340;&#26631;&#30340;&#29289;&#26159;</rdfs:label>
+   
+	<rdfs:domain rdf:resource="E42_Identifier"/>
+	<rdfs:range rdf:resource="E1_CRM_Entity"/>
+	<rdfs:subPropertyOf rdf:resource="P1i_identifies"/>
+<owl:inverseOf rdf:resource="P48_has_preferred_identifier"/>
+</rdf:Property>
+
+
+</rdf:RDF>

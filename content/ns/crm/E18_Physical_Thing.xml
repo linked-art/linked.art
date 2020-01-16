@@ -1,0 +1,25 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E18_Physical_Thing">
+	<rdfs:label xml:lang="de">Materielles</rdfs:label>
+	<rdfs:label xml:lang="el">&#933;&#955;&#953;&#954;&#972; &#928;&#961;&#940;&#947;&#956;&#945;</rdfs:label>
+	<rdfs:label xml:lang="en">Physical Thing</rdfs:label>
+	<rdfs:label xml:lang="fr">Chose mat&#233;rielle</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1060;&#1080;&#1079;&#1080;&#1095;&#1077;&#1089;&#1082;&#1072;&#1103; &#1042;&#1077;&#1097;&#1100;</rdfs:label>
+	<rdfs:label xml:lang="pt">Coisa Material</rdfs:label>
+	<rdfs:label xml:lang="zh">&#23454;&#20307;&#29289;</rdfs:label>
+	<rdfs:comment>This class comprises all persistent physical items with a relatively stable form, man-made or natural.
+
+Depending on the existence of natural boundaries of such things, the CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.
+
+An instance of E18 Physical Thing occupies not only a particular geometric space, but in the course of its existence it also forms a trajectory through spacetime, which occupies a real, that is phenomenal, volume in spacetime. We include in the occupied space the space filled by the matter of the physical thing and all its inner spaces, such as the interior of a box. Physical things consisting of aggregations of physically unconnected objects, such as a set of chessmen, occupy a number of individually contiguous spacetime volumes equal to the number of unconnected objects that constitute the set.
+
+We model E18 Physical Thing to be a subclass of E72 Legal Object and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E18 Physical Thing without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E18 Physical Thing is matter while a spacetime volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E18 Physical Thing is regarded to be unique to it, due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E18 Physical Thing. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language.
+
+The CIDOC CRM is generally not concerned with amounts of matter in fluid or gaseous states. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E72_Legal_Object"/>
+	<rdfs:subClassOf rdf:resource="E92_Spacetime_Volume"/>
+</rdfs:Class>
+
+</rdf:RDF>

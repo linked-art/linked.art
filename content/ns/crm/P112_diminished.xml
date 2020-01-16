@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P112_diminished">
+	<rdfs:label xml:lang="ru">&#1091;&#1084;&#1077;&#1085;&#1100;&#1096;&#1080;&#1083;</rdfs:label>
+	<rdfs:label xml:lang="en">diminished</rdfs:label>
+	<rdfs:label xml:lang="de">verminderte</rdfs:label>
+	<rdfs:label xml:lang="fr">a diminu&#233;</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#958;&#940;&#955;&#949;&#953;&#968;&#949;</rdfs:label>
+	<rdfs:label xml:lang="pt">diminuiu</rdfs:label>
+	<rdfs:label xml:lang="zh">&#32553;&#20943;&#20102;</rdfs:label>
+	<rdfs:comment>This property identifies the E24 Physical Human-Made Thing that was diminished by E80 Part Removal.
+Although a Part removal activity normally concerns only one item of Physical Man-Made Thing, it is possible to imagine circumstances under which more than one item might be diminished by a single Part Removal activity. 
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E80_Part_Removal"/>
+	<rdfs:range rdf:resource="E24_Physical_Human-Made_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P31_has_modified"/>
+<owl:inverseOf rdf:resource="P112i_was_diminished_by"/>
+</rdf:Property>
+
+</rdf:RDF>

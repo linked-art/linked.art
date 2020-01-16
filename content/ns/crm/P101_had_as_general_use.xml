@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P101_had_as_general_use">
+	<rdfs:label xml:lang="en">had as general use</rdfs:label>
+    <rdfs:label xml:lang="fr">avait comme utilisation g&#233;n&#233;rale</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#967;&#949; &#969;&#962; &#947;&#949;&#957;&#953;&#954;&#942; &#967;&#961;&#942;&#963;&#951;</rdfs:label>
+   <rdfs:label xml:lang="de">hatte die allgemeine Verwendung</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1083; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1077; &#1087;&#1088;&#1080;&#1084;&#1077;&#1085;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem como uso geral</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#24815;&#29992;&#26044;</rdfs:label>
+
+	<rdfs:comment>This property links an instance of E70 Thing to an E55 Type of usage.
+It allows the relationship between particular things, both physical and immaterial, and general methods and techniques of use to be documented. Thus it can be asserted that a baseball bat had a general use for sport and a specific use for threatening people during the Great Train Robbery.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E70_Thing"/>
+	<rdfs:range rdf:resource="E55_Type"/>
+<owl:inverseOf rdf:resource="P101i_was_use_of"/>
+</rdf:Property>
+
+</rdf:RDF>

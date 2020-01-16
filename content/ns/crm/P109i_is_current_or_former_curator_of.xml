@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P109i_is_current_or_former_curator_of">
+	<rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1091;&#1102;&#1097;&#1080;&#1084; &#1080;&#1083;&#1080; &#1073;&#1099;&#1074;&#1096;&#1080;&#1084; &#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1077;&#1083;&#1077;&#1084;</rdfs:label>
+   <rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#942; &#942;&#964;&#945;&#957; &#949;&#960;&#953;&#956;&#949;&#955;&#951;&#964;&#942;&#962; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="fr">est ou a &#233;t&#233; le conservateur de</rdfs:label>
+    <rdfs:label xml:lang="de">ist derzeitiger oder fr&#252;herer Kurator von</rdfs:label>
+    <rdfs:label xml:lang="en">is current or former curator of</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; ou foi curador de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#30446;&#21069;&#25110;&#26366;&#32463;&#20856;&#34255;&#31649;&#29702;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E78_Curated_Holding"/>
+	<rdfs:subPropertyOf rdf:resource="P49i_is_former_or_current_keeper_of"/>
+<owl:inverseOf rdf:resource="P109_has_current_or_former_curator"/>
+</rdf:Property>
+
+
+</rdf:RDF>

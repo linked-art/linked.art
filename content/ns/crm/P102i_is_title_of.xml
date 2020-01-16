@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P102i_is_title_of">
+	<rdfs:label xml:lang="en">is title of</rdfs:label>
+    <rdfs:label xml:lang="de">ist der Titel von</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#964;&#943;&#964;&#955;&#959;&#962; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="fr">est le titre de</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1079;&#1072;&#1075;&#1086;&#1083;&#1086;&#1074;&#1082;&#1086;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; t&#237;tulo de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#29992;&#20026;&#26631;&#39064;&#26469;&#31216;&#21628;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E35_Title"/>
+	<rdfs:range rdf:resource="E71_Human-Made_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P1i_identifies"/>
+<owl:inverseOf rdf:resource="P102_has_title"/>
+</rdf:Property>
+
+
+</rdf:RDF>

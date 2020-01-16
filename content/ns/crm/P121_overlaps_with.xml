@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P121_overlaps_with">
+	<rdfs:label xml:lang="el">&#949;&#960;&#953;&#954;&#945;&#955;&#973;&#960;&#964;&#949;&#964;&#945;&#953; &#956;&#949;</rdfs:label>
+	<rdfs:label xml:lang="de">&#252;berlappt mit</rdfs:label>
+	<rdfs:label xml:lang="fr">chevauche</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1089;&#1077;&#1082;&#1072;&#1077;&#1090;&#1089;&#1103; &#1089;</rdfs:label>
+	<rdfs:label xml:lang="en">overlaps with</rdfs:label>
+	<rdfs:label xml:lang="pt">sobrep&#245;e com</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31354;&#38388;&#37325;&#21472;&#20110;</rdfs:label>
+	<rdfs:comment>This symmetric property allows the instances of E53 Place with overlapping geometric extents to be associated with each other. 
+It does not specify anything about the shared area. This property is purely spatial, in contrast to Allen operators, which are purely temporal.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E53_Place"/>
+	<rdfs:range rdf:resource="E53_Place"/>
+</rdf:Property>
+
+</rdf:RDF>

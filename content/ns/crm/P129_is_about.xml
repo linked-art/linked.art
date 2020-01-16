@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P129_is_about">
+	<rdfs:label xml:lang="fr">est au sujet de</rdfs:label>
+	<rdfs:label xml:lang="en">is about</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1082;&#1072;&#1089;&#1072;&#1077;&#1090;&#1089;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#969;&#962; &#952;&#941;&#956;&#945;</rdfs:label>
+    <rdfs:label xml:lang="de">handelt &#252;ber</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; sobre</rdfs:label>
+	<rdfs:label xml:lang="zh">&#38472;&#36848;&#20851;&#26044;</rdfs:label>
+	<rdfs:comment>This property documents that an E89 Propositional Object has as subject an instance of E1 CRM Entity. 
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E89_Propositional_Object"/>
+	<rdfs:range rdf:resource="E1_CRM_Entity"/>
+	<rdfs:subPropertyOf rdf:resource="P67_refers_to"/>
+<owl:inverseOf rdf:resource="P129i_is_subject_of"/>
+</rdf:Property>
+
+</rdf:RDF>

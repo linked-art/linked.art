@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P118_overlaps_in_time_with">
+	<rdfs:label xml:lang="en">overlaps in time with</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1082;&#1088;&#1099;&#1074;&#1072;&#1077;&#1090; &#1074;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</rdfs:label>
+	<rdfs:label xml:lang="el">&#960;&#961;&#959;&#951;&#947;&#949;&#943;&#964;&#945;&#953; &#956;&#949;&#961;&#953;&#954;&#974;&#962; &#949;&#960;&#953;&#954;&#945;&#955;&#973;&#960;&#964;&#959;&#957;&#964;&#945;&#962;</rdfs:label>
+	<rdfs:label xml:lang="de">&#252;berlappt zeitlich mit</rdfs:label>
+	<rdfs:label xml:lang="fr">est partiellement recouverte dans le temps par</rdfs:label>
+	<rdfs:label xml:lang="pt">sobrep&#245;e temporalmente</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26102;&#27573;&#37325;&#21472;&#20102;</rdfs:label>
+	<rdfs:comment>This property identifies an overlap between the instances of E52 Time-Span of two instances of E2 Temporal Entity. 
+It implies a temporal order between the two entities: if A overlaps in time B, then A must start before B, and B must end after A. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).
+This property is the same as the "overlaps / overlapped-by" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
+	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
+	<rdfs:subPropertyOf rdf:resource="P174i_ends_after_the_start_of"/>
+	<owl:inverseOf rdf:resource="P118i_is_overlapped_in_time_by"/>
+</rdf:Property>
+
+</rdf:RDF>

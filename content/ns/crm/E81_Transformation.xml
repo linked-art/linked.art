@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E81_Transformation">
+<rdfs:label xml:lang="ru">&#1058;&#1088;&#1072;&#1085;&#1089;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="en">Transformation</rdfs:label>
+    <rdfs:label xml:lang="fr">Transformation</rdfs:label>
+     <rdfs:label xml:lang="de">Umwandlung</rdfs:label>
+    <rdfs:label xml:lang="el">&#924;&#949;&#964;&#945;&#964;&#961;&#959;&#960;&#942;</rdfs:label>
+	<rdfs:label xml:lang="pt">Transforma&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#36716;&#21464;</rdfs:label>
+	<rdfs:comment>This class comprises the events that result in the simultaneous destruction of one or more than one E77 Persistent Item and the creation of one or more than one E77 Persistent Item that preserves recognizable substance from the first one(s) but has fundamentally different nature and identity. 
+Although the old and the new instances of E77 Persistent Item are treated as discrete entities having separate, unique identities, they are causally connected through the E81 Transformation; the destruction of the old E77 Persistent Item(s) directly causes the creation of the new one(s) using or preserving some relevant substance. Instances of E81 Transformation are therefore distinct from re-classifications (documented using E17 Type Assignment) or modifications (documented using E11 Modification) of objects that do not fundamentally change their nature or identity. Characteristic cases are reconstructions and repurposing of historical buildings or ruins, fires leaving buildings in ruins, taxidermy of specimen in natural history and the reorganization of a corporate body into a new one.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E63_Beginning_of_Existence"/>
+	<rdfs:subClassOf rdf:resource="E64_End_of_Existence"/>
+</rdfs:Class>
+
+</rdf:RDF>

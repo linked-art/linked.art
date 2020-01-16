@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P44_has_condition">
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1091;&#1089;&#1083;&#1086;&#1074;&#1080;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="de">hat Zustand</rdfs:label>
+	<rdfs:label xml:lang="fr">a pour &#233;tat mat&#233;riel</rdfs:label>
+    <rdfs:label xml:lang="en">has condition</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#954;&#945;&#964;&#940;&#963;&#964;&#945;&#963;&#951;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem estado material </rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#29366;&#24577;</rdfs:label>
+
+	<rdfs:comment>This property records an E3 Condition State for some E18 Physical Thing.
+It is a shortcut of the more fully developed path from E18 Physical Thing through P34 concerned (was assessed by), E14 Condition Assessment P35 has identified (was identified by) to E3 Condition State. It offers no information about how and when the E3 Condition State was established, nor by whom. 
+An instance of Condition State is specific to an instance of Physical Thing.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<rdfs:range rdf:resource="E3_Condition_State"/>
+<owl:inverseOf rdf:resource="P44i_is_condition_of"/>
+</rdf:Property>
+
+
+</rdf:RDF>

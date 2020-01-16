@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P134i_was_continued_by">
+	<rdfs:label xml:lang="de">wurde fortgesetzt durch</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1087;&#1088;&#1086;&#1076;&#1086;&#1083;&#1078;&#1077;&#1085;</rdfs:label>
+	<rdfs:label xml:lang="fr">a &#233;t&#233; continu&#233;e par</rdfs:label>
+	<rdfs:label xml:lang="en">was continued by</rdfs:label>
+	<rdfs:label xml:lang="el">&#963;&#965;&#957;&#949;&#967;&#943;&#963;&#964;&#951;&#954;&#949; &#945;&#960;&#972;</rdfs:label>
+	<rdfs:label xml:lang="pt">foi continuada por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#24310;&#32493;&#27963;&#21160;</rdfs:label>
+	<rdfs:domain rdf:resource="E7_Activity"/>
+	<rdfs:range rdf:resource="E7_Activity"/>
+	<rdfs:subPropertyOf rdf:resource="P15i_influenced"/>
+	<rdfs:subPropertyOf rdf:resource="P174i_ends_after_the_start_of"/>
+	<owl:inverseOf rdf:resource="P134_continued"/>
+</rdf:Property>
+
+</rdf:RDF>

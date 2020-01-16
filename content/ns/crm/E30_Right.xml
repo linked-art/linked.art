@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E30_Right">
+	<rdfs:label xml:lang="ru">&#1055;&#1088;&#1072;&#1074;&#1086;</rdfs:label>
+    <rdfs:label xml:lang="el">&#916;&#953;&#954;&#945;&#943;&#969;&#956;&#945;</rdfs:label>
+    <rdfs:label xml:lang="fr">Droit</rdfs:label>
+    <rdfs:label xml:lang="en">Right</rdfs:label>
+    <rdfs:label xml:lang="de">Recht</rdfs:label>
+    <rdfs:label xml:lang="pt">Direitos</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26435;&#38480;</rdfs:label>
+	<rdfs:comment>This class comprises legal privileges concerning material and immaterial things or their derivatives. 
+These include reproduction and property rights</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E89_Propositional_Object"/>
+</rdfs:Class>
+
+</rdf:RDF>

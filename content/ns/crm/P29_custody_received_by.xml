@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P29_custody_received_by">
+<rdfs:label xml:lang="el">&#956;&#949;&#964;&#949;&#946;&#943;&#946;&#945;&#963;&#949; &#954;&#945;&#964;&#959;&#967;&#942; &#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1086;&#1087;&#1077;&#1082;&#1072; &#1087;&#1086;&#1083;&#1091;&#1095;&#1077;&#1085;&#1072;</rdfs:label>
+    <rdfs:label xml:lang="en">custody received by</rdfs:label>
+    <rdfs:label xml:lang="fr">changement de d&#233;tenteur au profit de</rdfs:label>
+    <rdfs:label xml:lang="de">&#252;bertrug Gewahrsam auf</rdfs:label>
+	<rdfs:label xml:lang="pt">cust&#243;dia recebida por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31227;&#36716;&#20445;&#31649;&#20316;&#19994;&#32473;</rdfs:label>
+	
+	<rdfs:comment>This property identifies the E39 Actor or Actors who receive custody of an instance of E18 Physical Thing in an E10 Transfer of Custody activity. 
+The property will typically describe Actors receiving custody of an object when it is handed over from another Actor&#8217;s care. On occasion, physical custody may be received involuntarily or illegally &#8211; through accident, unsolicited donation, or theft.
+In reality, custody is either transferred to someone or from someone, or both.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E10_Transfer_of_Custody"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+	<rdfs:subPropertyOf rdf:resource="P14_carried_out_by"/>
+<owl:inverseOf rdf:resource="P29i_received_custody_through"/>
+</rdf:Property>
+
+</rdf:RDF>

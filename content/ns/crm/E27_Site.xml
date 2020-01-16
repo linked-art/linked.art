@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E27_Site">
+	<rdfs:label xml:lang="el">&#934;&#965;&#963;&#953;&#954;&#972;&#962; &#935;&#974;&#961;&#959;&#962;</rdfs:label>
+    <rdfs:label xml:lang="en">Site</rdfs:label>
+    <rdfs:label xml:lang="fr">Site</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1059;&#1095;&#1072;&#1089;&#1090;&#1086;&#1082;</rdfs:label>
+    <rdfs:label xml:lang="de">Gel&#228;nde</rdfs:label>
+	<rdfs:label xml:lang="pt">Lugar</rdfs:label>
+	<rdfs:label xml:lang="zh">&#22330;&#22320;</rdfs:label>
+	<rdfs:comment>This class comprises pieces of land or sea floor. 
+In contrast to the purely geometric notion of E53 Place, this class describes constellations of matter on the surface of the Earth or other celestial body, which can be represented by photographs, paintings and maps.
+ Instances of E27 Site are composed of relatively immobile material items and features in a particular configuration at a particular location</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E26_Physical_Feature"/>
+</rdfs:Class>
+
+</rdf:RDF>

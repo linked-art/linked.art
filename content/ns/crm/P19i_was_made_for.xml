@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P19i_was_made_for">
+	<rdfs:label xml:lang="fr">a &#233;t&#233; fabriqu&#233;e pour</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#947;&#953;&#957;&#949; &#947;&#953;&#945;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1089;&#1086;&#1079;&#1076;&#1072;&#1085; &#1076;&#1083;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="de">wurde hergestellt f&#252;r</rdfs:label>
+    <rdfs:label xml:lang="en">was made for</rdfs:label>
+	<rdfs:label xml:lang="pt">foi feito para</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#21046;&#36896;&#26469;&#29992;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E71_Human-Made_Thing"/>
+	<rdfs:range rdf:resource="E7_Activity"/>
+<owl:inverseOf rdf:resource="P19_was_intended_use_of"/>
+</rdf:Property>
+
+</rdf:RDF>

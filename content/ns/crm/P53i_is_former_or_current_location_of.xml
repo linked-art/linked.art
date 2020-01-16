@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P53i_is_former_or_current_location_of">
+	<rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1090;&#1077;&#1082;&#1091;&#1097;&#1080;&#1084; &#1080;&#1083;&#1080; &#1073;&#1099;&#1074;&#1096;&#1080;&#1084; &#1084;&#1077;&#1089;&#1090;&#1086;&#1087;&#1086;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1077;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="en">is former or current location of</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#942; &#942;&#964;&#945;&#957; &#952;&#941;&#963;&#951; &#964;&#959;&#965;</rdfs:label>
+	<rdfs:label xml:lang="de">ist fr&#252;herer oder derzeitiger Standort von</rdfs:label>
+	<rdfs:label xml:lang="fr">est ou a &#233;t&#233; localisation de</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; ou foi localiza&#231;&#227;o de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#30446;&#21069;&#25110;&#26366;&#32463;&#34987;&#32622;&#25918;&#20102;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E53_Place"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+<owl:inverseOf rdf:resource="P53_has_former_or_current_location"/>
+</rdf:Property>
+
+
+</rdf:RDF>

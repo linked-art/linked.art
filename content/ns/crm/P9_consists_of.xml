@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P9_consists_of">
+	<rdfs:label xml:lang="el">&#945;&#960;&#959;&#964;&#949;&#955;&#949;&#943;&#964;&#945;&#953; &#945;&#960;&#972;</rdfs:label>
+	<rdfs:label xml:lang="en">consists of</rdfs:label>
+	<rdfs:label xml:lang="de">setzt sich zusammen aus</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1089;&#1086;&#1089;&#1090;&#1086;&#1080;&#1090; &#1080;&#1079;</rdfs:label>
+	<rdfs:label xml:lang="fr">consiste en</rdfs:label>
+	<rdfs:label xml:lang="pt">consiste de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21253;&#21547;&#23376;&#26102;&#26399;</rdfs:label>
+	<rdfs:comment>This property associates an instance of E4 Period with another instance of E4 Period that is defined by a subset of the phenomena that define the former. Therefore the spacetime volume of the latter must fall within the spacetime volume of the former.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E4_Period"/>
+	<rdfs:range rdf:resource="E4_Period"/>
+	<rdfs:subPropertyOf rdf:resource="P10i_contains"/>
+	<owl:inverseOf rdf:resource="P9i_forms_part_of"/>
+</rdf:Property>
+
+</rdf:RDF>

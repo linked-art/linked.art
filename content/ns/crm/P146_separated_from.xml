@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P146_separated_from">
+	<rdfs:label xml:lang="en">separated from</rdfs:label>
+	<rdfs:label xml:lang="de">entlie&#223; von</rdfs:label>
+	<rdfs:label xml:lang="zh">&#33073;&#31163;&#20102;&#32676;&#32452;</rdfs:label>
+	<rdfs:comment>This property identifies the instance of E74 Group an instance of E39 Actor leaves through an instance of E86 Leaving.
+Although a Leaving activity normally concerns only one instance of E74 Group, it is possible to imagine circumstances under which leaving one E74 Group implies leaving another E74 Group as well.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E86_Leaving"/>
+	<rdfs:range rdf:resource="E74_Group"/>
+	<rdfs:subPropertyOf rdf:resource="P11_had_participant"/>
+<owl:inverseOf rdf:resource="P146i_lost_member_by"/>
+</rdf:Property>
+
+</rdf:RDF>

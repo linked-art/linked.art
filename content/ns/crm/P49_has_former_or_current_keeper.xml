@@ -1,0 +1,34 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P49_has_former_or_current_keeper">
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1073;&#1099;&#1074;&#1096;&#1077;&#1075;&#1086; &#1080;&#1083;&#1080; &#1090;&#1077;&#1082;&#1091;&#1097;&#1077;&#1075;&#1086; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090;&#1077;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#942; &#942;&#964;&#945;&#957; &#963;&#964;&#951;&#957; &#954;&#945;&#964;&#959;&#967;&#942; &#964;&#959;&#965;</rdfs:label>
+	<rdfs:label xml:lang="fr">est ou a &#233;t&#233; d&#233;tenu par</rdfs:label>
+	<rdfs:label xml:lang="de">hat fr&#252;heren oder derzeitigen Betreuer</rdfs:label>
+    <rdfs:label xml:lang="en">has former or current keeper</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; ou foi guardada por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#21069;&#20219;&#25110;&#29616;&#20219;&#20445;&#31649;&#32773;</rdfs:label>
+	<rdfs:comment>
+This property identifies the E39 Actor or Actors who have or have had custody of an instance of E18 Physical Thing at
+some time. This property leaves open the question if parts of this physical thing have
+been added or removed during the time-spans it has been under the custody of this
+actor, but it is required that at least a part which can unambiguously be identified as
+representing the whole has been under this custody for its whole time. The way, in
+which a representative part is defined, should ensure that it is unambiguous who keeps
+a part and who the whole and should be consistent with the identity criteria of the kept
+instance of E18 Physical Thing.
+The distinction with P50 has current keeper (is current keeper of) is that P49 has former or current
+keeper (is former or current keeper of) leaves open the question as to whether the specified keepers are
+current.
+P49 has former or current keeper (is former or current keeper of) is a shortcut for the more detailed
+path from E18 Physical Thing through P30 transferred custody of (custody transferred through), E10
+Transfer of Custody, P28 custody surrendered by (surrendered custody through) or P29 custody
+received by (received custody through) to E39 Actor.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+<owl:inverseOf rdf:resource="P49i_is_former_or_current_keeper_of"/>
+</rdf:Property>
+
+
+</rdf:RDF>

@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P110_augmented">
+	<rdfs:label xml:lang="ru">&#1091;&#1074;&#1077;&#1083;&#1080;&#1095;&#1080;&#1083;</rdfs:label>
+    <rdfs:label xml:lang="fr">a augment&#233;</rdfs:label>
+    <rdfs:label xml:lang="de">erweiterte</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#960;&#945;&#973;&#958;&#951;&#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="en">augmented</rdfs:label>
+	<rdfs:label xml:lang="pt">aumentou</rdfs:label>
+	<rdfs:label xml:lang="zh">&#25193;&#22686;&#20102;</rdfs:label>
+
+	<rdfs:comment>This property identifies the E24 Physical Human-Made Thing that is added to (augmented) in an E79 Part Addition.
+Although a Part Addition event normally concerns only one item of Physical Man-Made Thing, it is possible to imagine circumstances under which more than one item might be added to (augmented). For example, the artist Jackson Pollock trailing paint onto multiple canvasses.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E79_Part_Addition"/>
+	<rdfs:range rdf:resource="E24_Physical_Human-Made_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P31_has_modified"/>
+<owl:inverseOf rdf:resource="P110i_was_augmented_by"/>
+</rdf:Property>
+
+
+</rdf:RDF>

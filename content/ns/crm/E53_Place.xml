@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E53_Place">
+<rdfs:label xml:lang="fr">Lieu</rdfs:label>
+ <rdfs:label xml:lang="en">Place</rdfs:label>
+    <rdfs:label xml:lang="el">&#932;&#972;&#960;&#959;&#962;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1052;&#1077;&#1089;&#1090;&#1086;</rdfs:label>
+    <rdfs:label xml:lang="de">Ort</rdfs:label>
+	<rdfs:label xml:lang="pt">Local</rdfs:label>
+	<rdfs:label xml:lang="zh">&#22320;&#28857;</rdfs:label>
+	<rdfs:comment>This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter. 
+The instances of E53 Place are usually determined by reference to the position of &#8220;immobile&#8221; objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks. A Place can be determined by combining a frame of reference and a location with respect to this frame. It may be identified by one or more instances of E41 Appellation.
+ It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, we are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object &#8211; H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.
+Any object can serve as a frame of reference for E53 Place determination. The model foresees the notion of a "section" of an E19 Physical Object as a valid E53 Place determination.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E1_CRM_Entity"/>
+</rdfs:Class>
+</rdf:RDF>

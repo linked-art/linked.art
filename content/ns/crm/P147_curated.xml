@@ -1,0 +1,14 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P147_curated">
+	<rdfs:label xml:lang="en">curated</rdfs:label>
+	<rdfs:label xml:lang="de">betreute kuratorisch</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20856;&#34255;&#31649;&#29702;&#20102;</rdfs:label>
+	<rdfs:comment>This property associates an instance of E87 Curation Activity with the instance of E78 Collection that is subject of that  curation activity.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E87_Curation_Activity"/>
+	<rdfs:range rdf:resource="E78_Curated_Holding"/>
+<owl:inverseOf rdf:resource="P147i_was_curated_by"/>
+</rdf:Property>
+
+</rdf:RDF>

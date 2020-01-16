@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P123_resulted_in">
+	<rdfs:label xml:lang="fr">a eu pour r&#233;sultat</rdfs:label>
+	<rdfs:label xml:lang="de">ergab</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#943;&#967;&#949; &#969;&#962; &#945;&#960;&#959;&#964;&#941;&#955;&#949;&#963;&#956;&#945;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1074;&#1083;&#1077;&#1082; &#1087;&#1086;&#1103;&#1074;&#1083;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="en">resulted in</rdfs:label>
+	<rdfs:label xml:lang="pt">resultou em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#36716;&#21464;&#20986;</rdfs:label>
+	<rdfs:comment>This property identifies the E77 Persistent Item or items that are the result of an E81 Transformation. 
+New items replace the transformed item or items, which cease to exist as units of documentation. The physical continuity between the old and the new is expressed by the link to the common Transformation.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E81_Transformation"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P92_brought_into_existence"/>
+<owl:inverseOf rdf:resource="P123i_resulted_from"/>
+</rdf:Property>
+
+</rdf:RDF>

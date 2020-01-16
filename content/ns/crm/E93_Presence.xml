@@ -1,0 +1,12 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E93_Presence">
+	<rdfs:label xml:lang="en">Presence</rdfs:label>
+	<rdfs:comment>This class comprises instances of E92 Spacetime Volume that result from intersection of instances of E92 Spacetime Volume with an instance of E52 Time-Span.  The identity of an instance of this class is determined by the identities of the  constituing spacetime volume and the time-span. 
+	
+This class can be used to define temporal snapshots at a particular time-span, such as the extent of the Roman Empire at 33 B.C., or the extent occupied by a museum object at rest in an exhibit. In particular, it can be used to define the spatial projection of a spacetime volume during a particular time-span,  such as the maximal spatial extent of a flood at some particular hour, or all areas covered by the Poland within the 20th century AD.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E92_Spacetime_Volume"/>
+</rdfs:Class>
+
+</rdf:RDF>

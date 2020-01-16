@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E41_Appellation">
+<rdfs:label xml:lang="de">Benennung</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1054;&#1073;&#1086;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+    <rdfs:label xml:lang="en">Appellation</rdfs:label>
+    <rdfs:label xml:lang="fr">Appellation</rdfs:label>
+     <rdfs:label xml:lang="el">&#927;&#957;&#959;&#956;&#945;&#963;&#943;&#945;</rdfs:label>
+	 <rdfs:label xml:lang="pt">Designa&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31216;&#21495;</rdfs:label>
+	<rdfs:comment>This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context.
+Instances of E41 Appellation do not identify things by their meaning, even if they happen to have one, but instead by convention, tradition, or agreement. Instances of E41 Appellation are cultural constructs; as such, they have a context, a history, and a use in time and space by some group of users. A given instance of E41 Appellation can have alternative forms, i.e., other instances of E41 Appellation that are always regarded as equivalent independent from the thing it denotes. 
+Specific subclasses of E41 Appellation should be used when instances of E41 Appellation of a characteristic form are used for particular objects. 
+E41 Appellation should not be confused with the act of naming something. Cf. E15 Identifier Assignment
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E90_Symbolic_Object"/>
+</rdfs:Class>
+
+</rdf:RDF>

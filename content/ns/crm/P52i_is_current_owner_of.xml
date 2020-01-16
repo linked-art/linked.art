@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P52i_is_current_owner_of">
+	<rdfs:label xml:lang="de">ist derzeitiger Besitzer von</rdfs:label>
+   <rdfs:label xml:lang="fr">est le propri&#233;taire actuel de</rdfs:label>
+    <rdfs:label xml:lang="en">is current owner of</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1090;&#1077;&#1082;&#1091;&#1097;&#1080;&#1084; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1100;&#1094;&#1077;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#953;&#948;&#953;&#959;&#954;&#964;&#942;&#964;&#951;&#962; &#964;&#959;&#965;</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; propriet&#225;rio de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#30446;&#21069;&#25317;&#26377;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P51i_is_former_or_current_owner_of"/>
+	<rdfs:subPropertyOf rdf:resource="P105i_has_right_on"/>
+<owl:inverseOf rdf:resource="P52_has_current_owner"/>
+</rdf:Property>
+
+
+</rdf:RDF>

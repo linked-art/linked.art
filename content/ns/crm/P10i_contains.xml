@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P10i_contains">
+	<rdfs:label xml:lang="el">&#960;&#949;&#961;&#953;&#955;&#945;&#956;&#946;&#940;&#957;&#949;&#953;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1080;&#1090;</rdfs:label>
+	<rdfs:label xml:lang="en">contains</rdfs:label>
+    <rdfs:label xml:lang="fr">contient</rdfs:label>
+	<rdfs:label xml:lang="de">enth&#228;lt</rdfs:label>
+	<rdfs:label xml:lang="pt">cont&#233;m</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26102;&#38388;&#19978;&#28085;&#30422;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E92_Spacetime_Volume"/>
+	<rdfs:range rdf:resource="E92_Spacetime_Volume"/>
+	<owl:inverseOf rdf:resource="P10_falls_within"/>
+</rdf:Property>
+
+</rdf:RDF>

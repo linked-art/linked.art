@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P1_is_identified_by">
+	<rdfs:label xml:lang="el">&#945;&#957;&#945;&#947;&#957;&#969;&#961;&#943;&#950;&#949;&#964;&#945;&#953; &#969;&#962;</rdfs:label>
+    <rdfs:label xml:lang="de">wird bezeichnet als</rdfs:label>
+    <rdfs:label xml:lang="en">is identified by</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1094;&#1080;&#1088;&#1091;&#1077;&#1090;&#1089;&#1103; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+    <rdfs:label xml:lang="fr">est identifi&#233;e par</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; identificado por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#35782;&#21035;&#31216;&#21495;</rdfs:label>
+	<rdfs:comment>This property describes the naming or identification of any real world item by a name or any other identifier. 
+This property is intended for identifiers in general use, which form part of the world the model intends to describe, and not merely for internal database identifiers which are specific to a technical system, unless these latter also have a more general use outside the technical context. This property includes in particular identification by mathematical expressions such as coordinate systems used for the identification of instances of E53 Place. The property does not reveal anything about when, where and by whom this identifier was used. A more detailed representation can be made using the fully developed (i.e. indirect) path through E15 Identifier Assignment.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E41_Appellation"/>
+	<owl:inverseOf rdf:resource="P1i_identifies"/>
+</rdf:Property>
+
+</rdf:RDF>

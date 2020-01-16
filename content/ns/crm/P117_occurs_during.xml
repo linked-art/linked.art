@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P117_occurs_during">
+	<rdfs:label xml:lang="de">f&#228;llt in</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#956;&#966;&#945;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#954;&#945;&#964;&#940; &#964;&#951; &#948;&#953;&#940;&#961;&#954;&#949;&#953;&#945;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1074;&#1086; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="en">occurs during</rdfs:label>
+	<rdfs:label xml:lang="fr">a lieu pendant</rdfs:label>
+	<rdfs:label xml:lang="pt">ocorre durante</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26102;&#27573;&#34987;&#28085;&#30422;&#26044;</rdfs:label>
+	<rdfs:comment>This property allows the entire E52 Time-Span of an E2 Temporal Entity to be situated within the Time-Span of another temporal entity that starts before and ends after the included temporal entity.   
+This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the "during / includes" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
+	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
+<owl:inverseOf rdf:resource="P117i_includes"/>
+</rdf:Property>
+
+</rdf:RDF>

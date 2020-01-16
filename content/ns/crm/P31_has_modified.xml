@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P31_has_modified">
+	<rdfs:label xml:lang="de">ver&#228;nderte</rdfs:label>
+    <rdfs:label xml:lang="fr">a modifi&#233;</rdfs:label>
+    <rdfs:label xml:lang="en">has modified</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1079;&#1084;&#1077;&#1085;&#1080;&#1083;</rdfs:label>
+	<rdfs:label xml:lang="el">&#964;&#961;&#959;&#960;&#959;&#960;&#959;&#943;&#951;&#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="pt">modificou</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20462;&#25913;&#20102;</rdfs:label>
+	
+	<rdfs:comment>This property identifies the E24 Physical Human-Made Thing modified in an E11 Modification.
+If a modification is applied to a non-man-made object, it is regarded as an E22 Human-Made Object from that time onwards. 
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E11_Modification"/>
+	<rdfs:range rdf:resource="E24_Physical_Human-Made_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P12_occurred_in_the_presence_of"/>
+<owl:inverseOf rdf:resource="P31i_was_modified_by"/>
+</rdf:Property>
+
+
+</rdf:RDF>

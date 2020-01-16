@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E77_Persistent_Item">
+	<rdfs:label xml:lang="en">Persistent Item</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1055;&#1086;&#1089;&#1090;&#1086;&#1103;&#1085;&#1085;&#1072;&#1103; &#1057;&#1091;&#1097;&#1085;&#1086;&#1089;&#1090;&#1100;</rdfs:label>
+    <rdfs:label xml:lang="de">Seiendes</rdfs:label>
+    <rdfs:label xml:lang="el">&#927;&#957;</rdfs:label>
+    <rdfs:label xml:lang="fr">Entit&#233; persistante</rdfs:label>
+	<rdfs:label xml:lang="pt">Entidade Persistente</rdfs:label>
+	<rdfs:label xml:lang="zh">&#25345;&#32493;&#24615;&#39033;&#30446;</rdfs:label>
+	<rdfs:comment>This class comprises items that have a persistent identity, sometimes known as &#8220;endurants&#8221; in philosophy. 
+They can be repeatedly recognized within the duration of their existence by identity criteria rather than by continuity or observation. Persistent Items can be either physical entities, such as people, animals or things, or conceptual entities such as ideas, concepts, products of the imagination or common names.
+The criteria that determine the identity of an item are often difficult to establish -; the decision depends largely on the judgement of the observer. For example, a building is regarded as no longer existing if it is dismantled and the materials reused in a different configuration. On the other hand, human beings go through radical and profound changes during their life-span, affecting both material composition and form, yet preserve their identity by other criteria. Similarly, inanimate objects may be subject to exchange of parts and matter. The class E77 Persistent Item does not take any position about the nature of the applicable identity criteria and if actual knowledge about identity of an instance of this class exists. There may be cases, where the identity of an E77 Persistent Item is not decidable by a certain state of knowledge.
+The main classes of objects that fall outside the scope the E77 Persistent Item class are temporal objects such as periods, events and acts, and descriptive properties. </rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E1_CRM_Entity"/>
+</rdfs:Class>
+</rdf:RDF>

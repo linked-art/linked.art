@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P82b_end_of_the_end">
+	<rdfs:label xml:lang="en">end of the end</rdfs:label>
+	<rdfs:label xml:lang="fr">fin de la fin</rdfs:label>
+	<rdfs:label xml:lang="el">&#964;&#941;&#955;&#959;&#962; &#964;&#959;&#965; &#964;&#941;&#955;&#959;&#965;&#962;</rdfs:label>
+	<rdfs:label xml:lang="de">Ende vom Ende</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1082;&#1086;&#1085;&#1077;&#1094; &#1082;&#1086;&#1085;&#1077;&#1094;</rdfs:label>
+	<rdfs:label xml:lang="pt">fim do fim</rdfs:label>
+	<rdfs:comment>This is defined as the second boundary of the property P82</rdfs:comment>
+	<rdfs:domain rdf:resource="E52_Time-Span"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+	<rdfs:subPropertyOf rdf:resource="P82_at_some_time_within"/>	
+</rdf:Property>
+
+</rdf:RDF>

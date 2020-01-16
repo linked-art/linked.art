@@ -1,0 +1,12 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P184i_ends_with_or_after_the_end_of">
+    <rdfs:label xml:lang="en">ends with or after the end of</rdfs:label>
+    <rdfs:comment>Inverse of P184</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="P174i_ends_after_the_start_of"/>
+    <rdfs:domain rdf:resource="E2_Temporal_Entity"/>
+    <rdfs:range rdf:resource="E2_Temporal_Entity"/>
+<owl:inverseOf rdf:resource="P184_ends_before_or_with_the_end_of"/>
+</rdf:Property>
+
+</rdf:RDF>

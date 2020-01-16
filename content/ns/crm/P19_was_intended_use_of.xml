@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P19_was_intended_use_of">
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1087;&#1088;&#1077;&#1076;&#1087;&#1086;&#1083;&#1072;&#1075;&#1072;&#1077;&#1084;&#1099;&#1084; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1085;&#1080;&#1077;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="fr">&#233;tait l'utilisation pr&#233;vue de</rdfs:label>
+    <rdfs:label xml:lang="de">war beabsichtigteter Gebrauch von </rdfs:label>
+    <rdfs:label xml:lang="el">&#942;&#964;&#945;&#957; &#960;&#961;&#959;&#959;&#961;&#953;&#963;&#956;&#941;&#957;&#951; &#967;&#961;&#942;&#963;&#951; &#964;&#959;&#965;</rdfs:label>
+    <rdfs:label xml:lang="en">was intended use of</rdfs:label> 
+	<rdfs:label xml:lang="pt">era prevista a utiliza&#231;&#227;o de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#29305;&#21035;&#20351;&#29992;&#20102;</rdfs:label>
+	<rdfs:comment>This property relates an E7 Activity with objects created specifically for use in the activity. 
+This is distinct from the intended use of an item in some general type of activity such as the book of common prayer which was intended for use in Church of England services (see P101 had as general use (was use of)).</rdfs:comment>
+	<rdfs:domain rdf:resource="E7_Activity"/>
+	<rdfs:range rdf:resource="E71_Human-Made_Thing"/>
+<owl:inverseOf rdf:resource="P19i_was_made_for"/>
+</rdf:Property>
+
+</rdf:RDF>

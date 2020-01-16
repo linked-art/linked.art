@@ -1,0 +1,23 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E8_Acquisition">
+	<rdfs:label xml:lang="fr">Acquisition</rdfs:label>
+	<rdfs:label xml:lang="el">&#913;&#960;&#972;&#954;&#964;&#951;&#963;&#951;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1057;&#1086;&#1073;&#1099;&#1090;&#1080;&#1077; &#1055;&#1088;&#1080;&#1086;&#1073;&#1088;&#1077;&#1090;&#1077;&#1085;&#1080;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="en">Acquisition</rdfs:label>
+	<rdfs:label xml:lang="de">Erwerb</rdfs:label>
+	<rdfs:label xml:lang="pt">Aquisi&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#24449;&#38598;&#21462;&#24471;</rdfs:label>
+	<rdfs:comment>This class comprises transfers of legal ownership from one or more instances of E39 Actor to one or more other instances of E39 Actor. 
+The class also applies to the establishment or loss of ownership of instances of E18 Physical Thing. It does not, however, imply changes of any other kinds of right. The recording of the donor and/or recipient is optional. It is possible that in an instance of E8 Acquisition there is either no donor or no recipient. Depending on the circumstances, it may describe:
+1.	the beginning of ownership
+2.	the end of ownership
+3.	the transfer of ownership
+4.	the acquisition from an unknown source 
+5.	the loss of title due to destruction of the item
+It may also describe events where a collector appropriates legal title, for example by annexation or field collection. The interpretation of the museum notion of "accession" differs between institutions. The CRM therefore models legal ownership (E8 Acquisition) and physical custody (E10 Transfer of Custody) separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+</rdf:RDF>

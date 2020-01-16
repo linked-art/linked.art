@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P99_dissolved">
+	<rdfs:label xml:lang="el">&#948;&#953;&#941;&#955;&#965;&#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1088;&#1072;&#1089;&#1087;&#1091;&#1089;&#1090;&#1080;&#1083;</rdfs:label>
+	<rdfs:label xml:lang="fr">a dissous</rdfs:label>
+	<rdfs:label xml:lang="en">dissolved</rdfs:label>
+	<rdfs:label xml:lang="de">l&#246;ste auf</rdfs:label>
+	<rdfs:label xml:lang="pt">dissolveu</rdfs:label>
+	<rdfs:label xml:lang="zh">&#35299;&#25955;&#20102;</rdfs:label>
+
+	<rdfs:comment>This property links the disbanding or E68 Dissolution of an E74 Group to the Group itself.</rdfs:comment>
+	<rdfs:domain rdf:resource="E68_Dissolution"/>
+	<rdfs:range rdf:resource="E74_Group"/>
+	<rdfs:subPropertyOf rdf:resource="P11_had_participant"/>
+	<rdfs:subPropertyOf rdf:resource="P93_took_out_of_existence"/>
+<owl:inverseOf rdf:resource="P99i_was_dissolved_by"/>
+</rdf:Property>
+
+</rdf:RDF>

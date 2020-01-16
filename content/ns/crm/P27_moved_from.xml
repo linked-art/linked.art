@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P27_moved_from">
+	<rdfs:label xml:lang="el">&#956;&#949;&#964;&#945;&#954;&#953;&#957;&#942;&#952;&#951;&#954;&#949; &#945;&#960;&#972;</rdfs:label>
+	<rdfs:label xml:lang="en">moved from</rdfs:label>
+    <rdfs:label xml:lang="fr">a retir&#233; de</rdfs:label>
+	<rdfs:label xml:lang="de">bewegte weg von</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1084;&#1077;&#1097;&#1077;&#1085; &#1080;&#1079;</rdfs:label>
+	<rdfs:label xml:lang="pt">locomoveu de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#31227;&#20986;&#22320;</rdfs:label>
+	<rdfs:comment>This property identifies a starting E53 Place of an E9 Move.
+
+A move will be linked to an origin, such as the move of an artefact from storage to display. A move may be linked to many starting instances of E53 Place by multiple instances of this property. In this case the move describes the picking up of a set of objects. The area of the move includes the origin(s), route and destination(s).
+Therefore the described origin is an instance of E53 Place which P89 falls within (contains) the instance of E53 Place the move P7 took place at.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E9_Move"/>
+	<rdfs:range rdf:resource="E53_Place"/>
+<owl:inverseOf rdf:resource="P27i_was_origin_of"/>
+</rdf:Property>
+
+</rdf:RDF>

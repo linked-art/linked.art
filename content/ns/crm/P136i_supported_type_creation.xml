@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P136i_supported_type_creation">
+	<rdfs:label xml:lang="en">supported type creation</rdfs:label>
+	<rdfs:label xml:lang="el">&#965;&#960;&#959;&#963;&#964;&#942;&#961;&#953;&#958;&#949; &#964;&#951; &#948;&#951;&#956;&#953;&#959;&#965;&#961;&#947;&#943;&#945; &#964;&#973;&#960;&#959;&#965;</rdfs:label>
+	<rdfs:label xml:lang="fr">a justifi&#233; la cr&#233;ation de type</rdfs:label>
+	<rdfs:label xml:lang="de">belegte</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1076;&#1076;&#1077;&#1088;&#1078;&#1072;&#1083; &#1089;&#1086;&#1079;&#1076;&#1072;&#1085;&#1080;&#1077; &#1090;&#1080;&#1087;&#1072;</rdfs:label>
+	<rdfs:label xml:lang="pt">suportou a cria&#231;&#227;o de tipo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#25552;&#20379;&#35657;&#25818;&#32473;&#31867;&#22411;&#21019;&#36896;</rdfs:label>
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E83_Type_Creation"/>
+	<rdfs:subPropertyOf rdf:resource="P15i_influenced"/>
+<owl:inverseOf rdf:resource="P136_was_based_on"/>
+</rdf:Property>
+
+</rdf:RDF>

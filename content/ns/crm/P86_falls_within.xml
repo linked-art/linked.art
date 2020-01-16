@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P86_falls_within">
+<rdfs:label xml:lang="en">falls within</rdfs:label>
+  <rdfs:label xml:lang="ru">&#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1080;&#1090;&#1089;&#1103; &#1074;</rdfs:label>
+    <rdfs:label xml:lang="el">&#960;&#949;&#961;&#953;&#941;&#967;&#949;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="fr">s&#8217;ins&#232;re dans</rdfs:label>
+    <rdfs:label xml:lang="de">f&#228;llt in</rdfs:label>
+	<rdfs:label xml:lang="pt">est&#225; contido em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26102;&#38388;&#19978;&#34987;&#28085;&#30422;&#26044;</rdfs:label>
+	<rdfs:comment>This property describes the inclusion relationship between two instances of E52 Time-Span.
+This property supports the notion that a Time-Span&#8217;s temporal extent falls within the temporal extent of another Time-Span. It addresses temporal containment only, and no contextual link between the two instances of Time-Span is implied.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E52_Time-Span"/>
+	<rdfs:range rdf:resource="E52_Time-Span"/>
+<owl:inverseOf rdf:resource="P86i_contains"/>
+</rdf:Property>
+
+</rdf:RDF>

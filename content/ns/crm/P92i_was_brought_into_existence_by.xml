@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P92i_was_brought_into_existence_by">
+	<rdfs:label xml:lang="en">was brought into existence by</rdfs:label>
+    <rdfs:label xml:lang="el">&#947;&#949;&#957;&#957;&#942;&#952;&#951;&#954;&#949; &#945;&#960;&#972;</rdfs:label>
+    <rdfs:label xml:lang="de">wurde in Existenz gebracht durch</rdfs:label>
+    <rdfs:label xml:lang="fr">a commenc&#233; &#224; exister du fait de</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1089;&#1086;&#1079;&#1076;&#1072;&#1085; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+    <rdfs:label xml:lang="pt">passou a existir por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#24320;&#22987;&#26044;</rdfs:label>
+	
+	<rdfs:domain rdf:resource="E77_Persistent_Item"/>
+	<rdfs:range rdf:resource="E63_Beginning_of_Existence"/>
+	<rdfs:subPropertyOf rdf:resource="P12i_was_present_at"/>
+<owl:inverseOf rdf:resource="P92_brought_into_existence"/>
+</rdf:Property>
+
+</rdf:RDF>

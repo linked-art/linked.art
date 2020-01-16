@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E22_Human-Made_Object">
+	<rdfs:label xml:lang="fr">Objet fabriqu&#233;</rdfs:label>
+	<rdfs:label xml:lang="el">&#913;&#957;&#952;&#961;&#969;&#960;&#959;&#947;&#949;&#957;&#941;&#962; &#913;&#957;&#964;&#953;&#954;&#949;&#943;&#956;&#949;&#957;&#959;</rdfs:label>
+	<rdfs:label xml:lang="de">K&#252;nstlicher Gegenstand</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1056;&#1091;&#1082;&#1086;&#1090;&#1074;&#1086;&#1088;&#1085;&#1099;&#1081; &#1054;&#1073;&#1098;&#1077;&#1082;&#1090;</rdfs:label>
+	<rdfs:label xml:lang="en">Human-Made Object</rdfs:label>
+	<rdfs:label xml:lang="pt">Objeto Fabricado</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20154;&#36896;&#29289;&#20214;</rdfs:label>
+	<rdfs:comment>This class comprises physical objects purposely created by human activity.
+No assumptions are made as to the extent of modification required to justify regarding an object as man-made. For example, an inscribed piece of rock or a preserved butterfly are both regarded as instances of E22 Human-Made Object.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E19_Physical_Object"/>
+	<rdfs:subClassOf rdf:resource="E24_Physical_Human-Made_Thing"/>
+</rdfs:Class>
+
+</rdf:RDF>

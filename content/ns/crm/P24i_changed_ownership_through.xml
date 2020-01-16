@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P24i_changed_ownership_through">
+	<rdfs:label xml:lang="ru">&#1089;&#1084;&#1077;&#1085;&#1080;&#1083; &#1074;&#1083;&#1072;&#1076;&#1077;&#1083;&#1100;&#1094;&#1072; &#1095;&#1077;&#1088;&#1077;&#1079;</rdfs:label>
+    <rdfs:label xml:lang="en">changed ownership through</rdfs:label>
+    <rdfs:label xml:lang="de">ging &#252;ber in Besitz durch</rdfs:label>
+    <rdfs:label xml:lang="el">&#940;&#955;&#955;&#945;&#958;&#949; &#953;&#948;&#953;&#959;&#954;&#964;&#951;&#963;&#943;&#945; &#956;&#941;&#963;&#969;</rdfs:label>
+    <rdfs:label xml:lang="fr">a chang&#233; de mains du fait de</rdfs:label>
+	<rdfs:label xml:lang="pt">mudou de propriet&#225;rio por meio de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#36716;&#31227;&#20102;&#25152;&#26377;&#26435;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<rdfs:range rdf:resource="E8_Acquisition"/>
+<owl:inverseOf rdf:resource="P24_transferred_title_of"/>
+</rdf:Property>
+
+</rdf:RDF>

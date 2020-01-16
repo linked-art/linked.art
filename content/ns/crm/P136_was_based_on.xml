@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P136_was_based_on">
+	<rdfs:label xml:lang="fr">s&#8217;est fond&#233;e sur</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1086;&#1089;&#1085;&#1086;&#1074;&#1072;&#1085; &#1085;&#1072;</rdfs:label>
+	<rdfs:label xml:lang="de">st&#252;tzte sich auf</rdfs:label>
+	<rdfs:label xml:lang="el">&#946;&#945;&#963;&#943;&#963;&#964;&#951;&#954;&#949; &#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="en">was based on</rdfs:label>
+	<rdfs:label xml:lang="pt">foi baseado em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26681;&#25454;&#20102;</rdfs:label>
+	<rdfs:comment>This property identifies one or more items that were used as evidence to declare a new E55 Type.
+The examination of these items is often the only objective way to understand the precise characteristics of a new Type. Such items should be deposited in a museum or similar institution for that reason. The taxonomic role renders the specific relationship of each item to the Type, such as "holotype" or "original element".
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E83_Type_Creation"/>
+	<rdfs:range rdf:resource="E1_CRM_Entity"/>
+	<rdfs:subPropertyOf rdf:resource="P15_was_influenced_by"/>
+<owl:inverseOf rdf:resource="P136i_supported_type_creation"/>
+</rdf:Property>
+
+</rdf:RDF>

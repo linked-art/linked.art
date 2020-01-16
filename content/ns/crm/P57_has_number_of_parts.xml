@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P57_has_number_of_parts">
+	<rdfs:label xml:lang="en">has number of parts</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1095;&#1080;&#1089;&#1083;&#1086; &#1095;&#1072;&#1089;&#1090;&#1077;&#1081;</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#945;&#961;&#953;&#952;&#956;&#972; &#956;&#949;&#961;&#974;&#957;</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour nombre de parties</rdfs:label>
+   <rdfs:label xml:lang="de">hat Anzahl Teile</rdfs:label>
+   <rdfs:label xml:lang="pt">tem n&#250;mero de partes</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#32452;&#20214;&#25968;&#30446;</rdfs:label>
+
+	<rdfs:comment>This property documents the E60 Number of parts of which an instance of E19 Physical Object is composed.
+This may be used as a method of checking inventory counts with regard to aggregate or collective objects. What constitutes a part or component depends on the context and requirements of the documentation. Normally, the parts documented in this way would not be considered as worthy of individual attention.
+For a more complete description, objects may be decomposed into their components and constituents using P46 is composed of (forms parts of) and P45 consists of (is incorporated in). This allows each element to be described individually.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E19_Physical_Object"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+</rdf:Property>
+
+
+</rdf:RDF>

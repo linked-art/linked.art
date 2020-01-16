@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P128i_is_carried_by">
+	<rdfs:label xml:lang="el">&#966;&#941;&#961;&#949;&#964;&#945;&#953; &#945;&#960;&#972;</rdfs:label>
+	<rdfs:label xml:lang="en">is carried by</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1085;&#1086;&#1089;&#1080;&#1090;&#1089;&#1103; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+	<rdfs:label xml:lang="fr">a pour support</rdfs:label>
+	<rdfs:label xml:lang="de">wird getragen von</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; suportado por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#25215;&#36733;&#20110;</rdfs:label>
+	<rdfs:domain rdf:resource="E90_Symbolic_Object"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P130i_features_are_also_found_on"/>
+<owl:inverseOf rdf:resource="P128_carries"/>
+</rdf:Property>
+
+</rdf:RDF>

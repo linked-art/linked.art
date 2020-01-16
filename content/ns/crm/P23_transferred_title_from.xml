@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P23_transferred_title_from">
+	<rdfs:label xml:lang="el">&#956;&#949;&#964;&#949;&#946;&#943;&#946;&#945;&#963;&#949; &#964;&#959;&#957; &#964;&#943;&#964;&#955;&#959; &#945;&#960;&#972;</rdfs:label>
+   <rdfs:label xml:lang="fr">a fait passer le droit de propri&#233;t&#233; de</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1083; &#1087;&#1088;&#1072;&#1074;&#1086; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1089;&#1090;&#1080; &#1086;&#1090;</rdfs:label>
+    <rdfs:label xml:lang="de">&#252;bertrug Besitztitel von</rdfs:label>
+    <rdfs:label xml:lang="en">transferred title from</rdfs:label>
+	<rdfs:label xml:lang="pt">transferiu os direitos de propriedade de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21407;&#25152;&#26377;&#26435;&#32773;&#26159;</rdfs:label>
+
+	<rdfs:comment>This property identifies the E39 Actor or Actors who relinquish legal ownership as the result of an E8 Acquisition.
+The property will typically be used to describe a person donating or selling an object to a museum. In reality title is either transferred to or from someone, or both.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E8_Acquisition"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+	<rdfs:subPropertyOf rdf:resource="P14_carried_out_by"/>
+<owl:inverseOf rdf:resource="P23i_surrendered_title_through"/>
+</rdf:Property>
+
+
+</rdf:RDF>

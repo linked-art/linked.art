@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P104_is_subject_to">
+	<rdfs:label xml:lang="fr">est sujet &#224;</rdfs:label>
+    <rdfs:label xml:lang="en">is subject to</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1086;&#1073;&#1098;&#1077;&#1082;&#1090;&#1086;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="el">&#965;&#960;&#972;&#954;&#949;&#953;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="de">Gegenstand von</rdfs:label>
+	<rdfs:label xml:lang="pt">est&#225; sujeito &#224;</rdfs:label>
+
+	<rdfs:label xml:lang="zh">&#21463;&#21046;&#26044;</rdfs:label>
+	<rdfs:comment>This property links a particular E72 Legal Object to the instances of E30 Right to which it is subject.
+The Right is held by an E39 Actor as described by P75 possesses (is possessed by).
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E72_Legal_Object"/>
+	<rdfs:range rdf:resource="E30_Right"/>
+<owl:inverseOf rdf:resource="P104i_applies_to"/>
+</rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P30_transferred_custody_of">
+	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1083;&#1086; &#1086;&#1087;&#1077;&#1082;&#1091; &#1085;&#1072;</rdfs:label>
+    <rdfs:label xml:lang="en">transferred custody of</rdfs:label>
+    <rdfs:label xml:lang="fr">changement de d&#233;tenteur concernant</rdfs:label>
+    <rdfs:label xml:lang="de">&#252;bertrug Gewahrsam &#252;ber</rdfs:label>
+     <rdfs:label xml:lang="el">&#956;&#949;&#964;&#949;&#946;&#943;&#946;&#945;&#963;&#949; &#954;&#945;&#964;&#959;&#967;&#942; &#964;&#959;&#965;/&#964;&#951;&#962;/&#964;&#969;&#957;</rdfs:label>
+	 <rdfs:label xml:lang="pt">transferida cust&#243;dia de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#20445;&#31649;&#26631;&#30340;&#29289;</rdfs:label>
+
+	<rdfs:comment>This property identifies an item or items of E18 Physical Thing concerned in an E10 Transfer of Custody activity. 
+The property will typically describe the object that is handed over by an E39 Actor to another Actor&#8217;s custody. On occasion, physical custody may be transferred involuntarily or illegally &#8211; through accident, unsolicited donation, or theft.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E10_Transfer_of_Custody"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+<owl:inverseOf rdf:resource="P30i_custody_transferred_through"/>
+</rdf:Property>
+
+</rdf:RDF>

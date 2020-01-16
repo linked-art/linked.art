@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P98i_was_born">
+	<rdfs:label xml:lang="fr">est n&#233;</rdfs:label>
+    <rdfs:label xml:lang="el">&#947;&#949;&#957;&#957;&#942;&#952;&#951;&#954;&#949;</rdfs:label>
+    <rdfs:label xml:lang="de">wurde geboren durch</rdfs:label>
+    <rdfs:label xml:lang="en">was born</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1088;&#1086;&#1078;&#1076;&#1077;&#1085;</rdfs:label>
+	<rdfs:label xml:lang="pt">veio &#224; vida pelo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#35806;&#29983;&#26044;</rdfs:label>
+	
+	<rdfs:domain rdf:resource="E21_Person"/>
+	<rdfs:range rdf:resource="E67_Birth"/>
+	<rdfs:subPropertyOf rdf:resource="P92i_was_brought_into_existence_by"/>
+<owl:inverseOf rdf:resource="P98_brought_into_life"/>
+</rdf:Property>
+
+</rdf:RDF>

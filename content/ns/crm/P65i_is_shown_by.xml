@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P65i_is_shown_by">
+	<rdfs:label xml:lang="de">wird gezeigt durch</rdfs:label>
+    <rdfs:label xml:lang="fr">est pr&#233;sent&#233; par</rdfs:label>
+	<rdfs:label xml:lang="en">is shown by</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#956;&#966;&#945;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1087;&#1086;&#1082;&#1072;&#1079;&#1072;&#1085; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; apresentado por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#26174;&#31034;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E36_Visual_Item"/>
+	<rdfs:range rdf:resource="E24_Physical_Human-Made_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P128i_is_carried_by"/>
+<owl:inverseOf rdf:resource="P65_shows_visual_item"/>
+</rdf:Property>
+
+
+</rdf:RDF>

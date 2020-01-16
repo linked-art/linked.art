@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E55_Type">
+<rdfs:label xml:lang="el">&#932;&#973;&#960;&#959;&#962;</rdfs:label>
+    <rdfs:label xml:lang="en">Type</rdfs:label>
+    <rdfs:label xml:lang="fr">Type</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1058;&#1080;&#1087;</rdfs:label>
+    <rdfs:label xml:lang="de">Typus</rdfs:label>
+	<rdfs:label xml:lang="pt">Tipo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31867;&#22411;</rdfs:label>
+	<rdfs:comment>This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes. 
+E55 Type is the CRM&#8217;s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader  term (has narrower term). Such hierarchies may be extended with additional properties. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E28_Conceptual_Object"/>
+</rdfs:Class>
+</rdf:RDF>

@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P107_has_current_or_former_member">
+	<rdfs:label xml:lang="fr">a pour membre actuel ou ancien</rdfs:label>
+    <rdfs:label xml:lang="en">has current or former member</rdfs:label>
+	<rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#942; &#949;&#943;&#967;&#949; &#956;&#941;&#955;&#959;&#962;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1091;&#1102;&#1097;&#1077;&#1075;&#1086; &#1080;&#1083;&#1080; &#1073;&#1099;&#1074;&#1096;&#1077;&#1075;&#1086; &#1095;&#1083;&#1077;&#1085;&#1072;</rdfs:label>
+    <rdfs:label xml:lang="de">hat derzeitiges oder fr&#252;heres Mitglied</rdfs:label>
+	<rdfs:label xml:lang="pt">tem ou teve membro</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#29616;&#20219;&#25110;&#21069;&#20219;&#25104;&#21592;</rdfs:label>
+
+	<rdfs:comment>This property relates an E39 Actor to the E74 Group of which that E39 Actor is a member.
+Groups, Legal Bodies and Persons, may all be members of Groups. A Group necessarily consists of more than one member.
+This property is a shortcut of the more fully developed path from E74 Group through P144 joined with (gained member by), E85 Joining, P143 joined (was joined by) to E39 Actor
+The property P107.1 kind of member can be used to specify the type of membership or the role the member has in the group. 
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E74_Group"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+<owl:inverseOf rdf:resource="P107i_is_current_or_former_member_of"/>
+</rdf:Property>
+
+</rdf:RDF>

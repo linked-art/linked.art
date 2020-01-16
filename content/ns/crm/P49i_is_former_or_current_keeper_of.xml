@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P49i_is_former_or_current_keeper_of">
+	<rdfs:label xml:lang="en">is former or current keeper of</rdfs:label>
+    <rdfs:label xml:lang="el">&#954;&#945;&#964;&#941;&#967;&#949;&#953; &#942; &#954;&#945;&#964;&#949;&#943;&#967;&#949;</rdfs:label>
+    <rdfs:label xml:lang="fr">est ou a &#233;t&#233; d&#233;tenteur de</rdfs:label>
+	<rdfs:label xml:lang="de">ist fr&#252;herer oder derzeitiger Betreuer von</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1073;&#1099;&#1074;&#1096;&#1080;&#1084; &#1080;&#1083;&#1080; &#1090;&#1077;&#1082;&#1091;&#1097;&#1080;&#1084; &#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1090;&#1077;&#1083;&#1077;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="pt">&#233; ou foi guardador de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#30446;&#21069;&#25110;&#26366;&#32463;&#20445;&#31649;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+<owl:inverseOf rdf:resource="P49_has_former_or_current_keeper"/>
+</rdf:Property>
+
+
+</rdf:RDF>

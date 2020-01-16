@@ -1,0 +1,12 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P148i_is_component_of">
+	<rdfs:label xml:lang="en">is component of</rdfs:label>
+	<rdfs:label xml:lang="de">ist Bestandteil von</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#29992;&#26469;&#32452;&#25104;</rdfs:label>
+	<rdfs:domain rdf:resource="E89_Propositional_Object"/>
+	<rdfs:range rdf:resource="E89_Propositional_Object"/>
+<owl:inverseOf rdf:resource="P148_has_component"/>
+</rdf:Property>
+
+</rdf:RDF>

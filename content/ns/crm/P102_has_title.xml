@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P102_has_title">
+	<rdfs:label xml:lang="en">has title</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1079;&#1072;&#1075;&#1086;&#1083;&#1086;&#1074;&#1086;&#1082;</rdfs:label>
+    <rdfs:label xml:lang="de">tr&#228;gt den Titel</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour titre</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#964;&#943;&#964;&#955;&#959;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem t&#237;tulo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#26631;&#39064;</rdfs:label>
+	<rdfs:comment>This property describes the E35 Title applied to an instance of E71 Human-Made Thing. The E55 Type of Title is assigned in a sub property.
+The P102.1 has type property of the P102 has title (is title of) property enables the relationship between the Title and the thing to be further clarified, for example, if the Title was a given Title, a supplied Title etc.
+It allows any man-made material or immaterial thing to be given a Title. It is possible to imagine a Title being created without a specific object in mind.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E71_Human-Made_Thing"/>
+	<rdfs:range rdf:resource="E35_Title"/>
+	<rdfs:subPropertyOf rdf:resource="P1_is_identified_by"/>
+<owl:inverseOf rdf:resource="P102i_is_title_of"/>
+</rdf:Property>
+
+</rdf:RDF>

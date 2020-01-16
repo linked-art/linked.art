@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P73_has_translation">
+	<rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#956;&#949;&#964;&#940;&#966;&#961;&#945;&#963;&#951;</rdfs:label>
+	<rdfs:label xml:lang="de">hat &#220;bersetzung</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;</rdfs:label>
+	<rdfs:label xml:lang="en">has translation</rdfs:label>
+	<rdfs:label xml:lang="fr">a pour traduction</rdfs:label>
+	<rdfs:label xml:lang="pt">tem tradu&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#35793;&#25991;</rdfs:label>
+
+	<rdfs:comment>This property describes the source and target of instances of E33Linguistic Object involved in a translation.
+When a Linguistic Object is translated into a new language it becomes a new Linguistic Object, despite being conceptually similar to the source object.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E33_Linguistic_Object"/>
+	<rdfs:range rdf:resource="E33_Linguistic_Object"/>
+	<rdfs:subPropertyOf rdf:resource="P130_shows_features_of"/>
+<owl:inverseOf rdf:resource="P73i_is_translation_of"/>
+</rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P12_occurred_in_the_presence_of">
+	<rdfs:label xml:lang="en">occurred in the presence of</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1087;&#1086;&#1103;&#1074;&#1080;&#1083;&#1089;&#1103; &#1074; &#1087;&#1088;&#1080;&#1089;&#1091;&#1090;&#1089;&#1090;&#1074;&#1080;&#1080;</rdfs:label>
+    <rdfs:label xml:lang="de">fand statt im Beisein von</rdfs:label>
+    <rdfs:label xml:lang="el">&#963;&#965;&#957;&#941;&#946;&#951; &#960;&#945;&#961;&#959;&#965;&#963;&#943;&#945; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="fr">est arriv&#233; en pr&#233;sence de</rdfs:label>
+	<rdfs:label xml:lang="pt">ocorreu na presen&#231;a de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21457;&#29983;&#29616;&#22330;&#23384;&#22312;</rdfs:label>
+	<rdfs:comment>This property describes the active or passive presence of an E77 Persistent Item in an E5 Event without implying any specific role. 
+It connects the history of a thing with the E53 Place and E50 Date of an event. For example, an object may be the desk, now in a museum on which a treaty was signed. The presence of an immaterial thing implies the presence of at least one of its carriers.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E5_Event"/>
+	<rdfs:range rdf:resource="E77_Persistent_Item"/>
+<owl:inverseOf rdf:resource="P12i_was_present_at"/>
+</rdf:Property>
+
+</rdf:RDF>

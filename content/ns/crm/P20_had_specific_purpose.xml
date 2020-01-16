@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P20_had_specific_purpose">
+	<rdfs:label xml:lang="de">hatte den bestimmten Zweck</rdfs:label>
+    <rdfs:label xml:lang="fr">avait pour but sp&#233;cifique</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#967;&#949; &#963;&#965;&#947;&#954;&#949;&#954;&#961;&#953;&#956;&#941;&#957;&#959; &#963;&#954;&#959;&#960;&#972;</rdfs:label>
+    <rdfs:label xml:lang="en">had specific purpose</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1083; &#1082;&#1086;&#1085;&#1082;&#1088;&#1077;&#1090;&#1085;&#1091;&#1102; &#1094;&#1077;&#1083;&#1100;</rdfs:label>
+	<rdfs:label xml:lang="pt">tinha prop&#243;sito espec&#237;fico</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#29305;&#23450;&#30446;&#22320;</rdfs:label>
+	<rdfs:comment>This property identifies the relationship between a preparatory activity and the event it is intended to be preparation for.
+This includes activities, orders and other organisational actions, taken in preparation for other activities or events. 
+P20 had specific purpose (was purpose of) implies that an activity succeeded in achieving its aim. If it does not succeed, such as the setting of a trap that did not catch anything, one may document the unrealized intention using P21 had general purpose (was purpose of):E55 Type and/or  P33 used specific technique (was used by): E29 Design or Procedure.</rdfs:comment>
+	<rdfs:domain rdf:resource="E7_Activity"/>
+	<rdfs:range rdf:resource="E5_Event"/>
+<owl:inverseOf rdf:resource="P20i_was_purpose_of"/>
+</rdf:Property>
+
+</rdf:RDF>

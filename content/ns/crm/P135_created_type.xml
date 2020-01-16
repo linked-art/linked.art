@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P135_created_type">
+	<rdfs:label xml:lang="en">created type</rdfs:label>
+	<rdfs:label xml:lang="de">erschuf Typus</rdfs:label>
+	<rdfs:label xml:lang="el">&#948;&#951;&#956;&#953;&#959;&#973;&#961;&#947;&#951;&#963;&#949; &#964;&#973;&#960;&#959;</rdfs:label>
+	<rdfs:label xml:lang="fr">a cr&#233;&#233; le type</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1089;&#1086;&#1079;&#1076;&#1072;&#1083; &#1090;&#1080;&#1087;</rdfs:label>
+	<rdfs:label xml:lang="pt">criou tipo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21019;&#36896;&#20102;&#31867;&#22411;</rdfs:label>
+	<rdfs:comment>This property identifies the E55 Type, which is created in an E83Type Creation activity.</rdfs:comment>
+	<rdfs:domain rdf:resource="E83_Type_Creation"/>
+	<rdfs:range rdf:resource="E55_Type"/>
+	<rdfs:subPropertyOf rdf:resource="P94_has_created"/>
+<owl:inverseOf rdf:resource="P135i_was_created_by"/>
+</rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P120i_occurs_after">
+	<rdfs:label xml:lang="fr">a lieu apr&#232;s</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#956;&#966;&#945;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#956;&#949;&#964;&#940;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1087;&#1086;&#1089;&#1083;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="de">kommt nach</rdfs:label>
+	<rdfs:label xml:lang="en">occurs after</rdfs:label>
+	<rdfs:label xml:lang="pt">ocorre depois</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21457;&#29983;&#26102;&#27573;&#21518;&#26044;</rdfs:label>
+	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
+	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
+<owl:inverseOf rdf:resource="P120_occurs_before"/>
+</rdf:Property>
+
+</rdf:RDF>

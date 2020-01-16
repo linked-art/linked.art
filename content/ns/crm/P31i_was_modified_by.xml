@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P31i_was_modified_by">
+	<rdfs:label xml:lang="fr">a &#233;t&#233; modifi&#233; par</rdfs:label>
+    <rdfs:label xml:lang="de">wurde ver&#228;ndert durch</rdfs:label>
+    <rdfs:label xml:lang="el">&#964;&#961;&#959;&#960;&#959;&#960;&#959;&#953;&#942;&#952;&#951;&#954;&#949; &#945;&#960;&#972;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1080;&#1079;&#1084;&#1077;&#1085;&#1077;&#1085; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+     <rdfs:label xml:lang="en">was modified by</rdfs:label>
+	 <rdfs:label xml:lang="pt">foi modificada por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#20462;&#25913;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E24_Physical_Human-Made_Thing"/>
+	<rdfs:range rdf:resource="E11_Modification"/>
+	<rdfs:subPropertyOf rdf:resource="P12i_was_present_at"/>
+<owl:inverseOf rdf:resource="P31_has_modified"/>
+</rdf:Property>
+
+
+</rdf:RDF>

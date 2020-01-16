@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E54_Dimension">
+<rdfs:label xml:lang="en">Dimension</rdfs:label>
+    <rdfs:label xml:lang="fr">Dimensions</rdfs:label>
+     <rdfs:label xml:lang="el">&#924;&#941;&#947;&#949;&#952;&#959;&#962;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1042;&#1077;&#1083;&#1080;&#1095;&#1080;&#1085;&#1072;</rdfs:label>
+    <rdfs:label xml:lang="de">Ma&#223;</rdfs:label>
+	<rdfs:label xml:lang="pt">Dimens&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#35268;&#27169;&#25968;&#37327;</rdfs:label>
+	<rdfs:comment>This class comprises quantifiable properties that can be measured by some calibrated means and can be approximated by values, i.e. points or regions in a mathematical or conceptual space, such as natural or real numbers, RGB values etc.
+An instance of E54 Dimension represents the true quantity, independent from its numerical approximation, e.g. in inches or in cm. The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of an instance of E54 Dimension. If the true values belong to a non-discrete space, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that interoperability of values described in different units depends critically on the representation as value regions.
+Numerical approximations in archaic instances of E58 Measurement Unit used in historical records should be preserved. Equivalents corresponding to current knowledge should be recorded as additional instances of E54 Dimension as appropriate.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E1_CRM_Entity"/>
+</rdfs:Class>
+</rdf:RDF>

@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P9i_forms_part_of">
+	<rdfs:label xml:lang="el">&#945;&#960;&#959;&#964;&#949;&#955;&#949;&#943; &#956;&#941;&#961;&#959;&#962; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1092;&#1086;&#1088;&#1084;&#1080;&#1088;&#1091;&#1077;&#1090; &#1095;&#1072;&#1089;&#1090;&#1100;</rdfs:label>
+	<rdfs:label xml:lang="de">bildet Teil von</rdfs:label>
+	<rdfs:label xml:lang="fr">fait partie de</rdfs:label>
+	<rdfs:label xml:lang="en">forms part of</rdfs:label>
+	<rdfs:label xml:lang="pt">faz parte de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#38468;&#23646;&#26044;</rdfs:label>
+	<rdfs:domain rdf:resource="E4_Period"/>
+	<rdfs:range rdf:resource="E4_Period"/>
+	<rdfs:subPropertyOf rdf:resource="P10_falls_within"/>
+	<owl:inverseOf rdf:resource="P9_consists_of"/>
+</rdf:Property>
+
+</rdf:RDF>

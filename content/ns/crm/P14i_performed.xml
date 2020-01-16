@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P14i_performed">
+	<rdfs:label xml:lang="ru">&#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1083;</rdfs:label>
+   <rdfs:label xml:lang="el">&#960;&#961;&#945;&#947;&#956;&#945;&#964;&#959;&#960;&#959;&#943;&#951;&#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="de">f&#252;hrte aus</rdfs:label>
+	<rdfs:label xml:lang="en">performed</rdfs:label>
+    <rdfs:label xml:lang="fr">a ex&#233;cut&#233;</rdfs:label>
+	<rdfs:label xml:lang="pt">executou</rdfs:label>
+	<rdfs:label xml:lang="zh">&#25191;&#34892;&#20102;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E7_Activity"/>
+	<rdfs:subPropertyOf rdf:resource="P11i_participated_in"/>
+<owl:inverseOf rdf:resource="P14_carried_out_by"/>
+</rdf:Property>
+
+</rdf:RDF>

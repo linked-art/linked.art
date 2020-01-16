@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E72_Legal_Object">
+<rdfs:label xml:lang="fr">Objet juridique</rdfs:label>
+  <rdfs:label xml:lang="ru">&#1054;&#1073;&#1098;&#1077;&#1082;&#1090; &#1055;&#1088;&#1072;&#1074;&#1072;</rdfs:label>
+    <rdfs:label xml:lang="el">&#925;&#959;&#956;&#953;&#954;&#972; &#913;&#957;&#964;&#953;&#954;&#949;&#943;&#956;&#949;&#957;&#959;</rdfs:label>
+   <rdfs:label xml:lang="en">Legal Object</rdfs:label>
+    <rdfs:label xml:lang="de">Rechtsobjekt</rdfs:label>
+	<rdfs:label xml:lang="pt">Objeto Jur&#237;dico</rdfs:label>
+	<rdfs:label xml:lang="zh">&#27861;&#24459;&#29289;&#20214;</rdfs:label>
+	<rdfs:comment>This class comprises those material or immaterial items to which instances of E30 Right, such as the right of ownership or use, can be applied. 
+This is true for all E18 Physical Thing. In the case of instances of E28 Conceptual Object, however, the identity of the E28 Conceptual Object or the method of its use may be too ambiguous to reliably establish instances of E30 Right, as in the case of taxa and inspirations. Ownership of corporations is currently regarded as out of scope of the CRM. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E70_Thing"/>
+</rdfs:Class>
+</rdf:RDF>

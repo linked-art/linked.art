@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E65_Creation">
+	<rdfs:label xml:lang="el">&#916;&#951;&#956;&#953;&#959;&#965;&#961;&#947;&#943;&#945;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1057;&#1086;&#1073;&#1099;&#1090;&#1080;&#1077; &#1058;&#1074;&#1086;&#1088;&#1077;&#1085;&#1080;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="fr">Cr&#233;ation</rdfs:label>
+    <rdfs:label xml:lang="de">Begriffliche Sch&#246;pfung</rdfs:label>
+    <rdfs:label xml:lang="en">Creation</rdfs:label>
+	<rdfs:label xml:lang="pt">Cria&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21019;&#36896;</rdfs:label>
+	<rdfs:comment>This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E7_Activity"/>
+	<rdfs:subClassOf rdf:resource="E63_Beginning_of_Existence"/>
+</rdfs:Class>
+</rdf:RDF>

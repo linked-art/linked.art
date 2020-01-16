@@ -1,0 +1,13 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E89_Propositional_Object">
+	<rdfs:label xml:lang="de">Aussagenobjekt</rdfs:label>
+	<rdfs:label xml:lang="en">Propositional Object</rdfs:label>
+	<rdfs:label xml:lang="zh">&#38472;&#36848;&#24615;&#29289;&#20214;</rdfs:label>
+	<rdfs:comment>This class comprises immaterial items, including but not limited to stories, plots, procedural prescriptions, algorithms, laws of physics or images that are, or represent in some sense, sets of propositions about real or imaginary things and that are documented as single units or serve as topics of discourse. 
+	
+This class also comprises items that are &#8220;about&#8221; something in the sense of a subject. In the wider sense, this class includes expressions of psychological value such as non-figural art and musical themes. However, conceptual items such as types and classes are not instances of E89 Propositional Object. This should not be confused with the definition of a type, which is indeed an instance of E89 Propositional Object.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E28_Conceptual_Object"/>
+</rdfs:Class>
+</rdf:RDF>

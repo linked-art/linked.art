@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E24_Physical_Human-Made_Thing">
+	<rdfs:label xml:lang="ru">&#1060;&#1080;&#1079;&#1080;&#1095;&#1077;&#1089;&#1082;&#1072;&#1103; &#1056;&#1091;&#1082;&#1086;&#1090;&#1074;&#1086;&#1088;&#1085;&#1072;&#1103; &#1042;&#1077;&#1097;&#1100;</rdfs:label>
+    <rdfs:label xml:lang="en">Physical Human-Made Thing</rdfs:label>
+    <rdfs:label xml:lang="el">&#913;&#957;&#952;&#961;&#969;&#960;&#959;&#947;&#949;&#957;&#941;&#962; &#933;&#955;&#953;&#954;&#972; &#928;&#961;&#940;&#947;&#956;&#945;</rdfs:label>
+    <rdfs:label xml:lang="de">Hergestelltes</rdfs:label>
+    <rdfs:label xml:lang="fr">Chose mat&#233;rielle fabriqu&#233;e</rdfs:label>
+	<rdfs:label xml:lang="pt">Coisa Material Fabricada</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20154;&#36896;&#23454;&#20307;&#29289;</rdfs:label>
+	<rdfs:comment>This class comprises all persistent physical items that are purposely created by human activity.
+This class comprises man-made objects, such as a swords, and man-made features, such as rock art. No assumptions are made as to the extent of modification required to justify regarding an object as man-made. For example, a &#8220;cup and ring&#8221; carving on bedrock is regarded as instance of E24 Physical Human-Made Thing. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E18_Physical_Thing"/>
+	<rdfs:subClassOf rdf:resource="E71_Human-Made_Thing"/>
+</rdfs:Class>
+
+</rdf:RDF>

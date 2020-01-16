@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P99i_was_dissolved_by">
+	<rdfs:label xml:lang="de">wurde aufgel&#246;st durch</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1088;&#1072;&#1089;&#1087;&#1091;&#1097;&#1077;&#1085; &#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084;</rdfs:label>
+	<rdfs:label xml:lang="fr">a &#233;t&#233; dissous par</rdfs:label>
+	<rdfs:label xml:lang="el">&#948;&#953;&#945;&#955;&#973;&#952;&#951;&#954;&#949; &#945;&#960;&#972;</rdfs:label>
+	<rdfs:label xml:lang="en">was dissolved by</rdfs:label>
+	<rdfs:label xml:lang="pt">foi dissolvido por</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#35299;&#25955;&#26044;</rdfs:label>
+	
+	<rdfs:domain rdf:resource="E74_Group"/>
+	<rdfs:range rdf:resource="E68_Dissolution"/>
+	<rdfs:subPropertyOf rdf:resource="P11i_participated_in"/>
+	<rdfs:subPropertyOf rdf:resource="P93i_was_taken_out_of_existence_by"/>
+<owl:inverseOf rdf:resource="P99_dissolved"/>
+</rdf:Property>
+
+</rdf:RDF>

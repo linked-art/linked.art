@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P105_right_held_by">
+	<rdfs:label xml:lang="ru">&#1087;&#1088;&#1072;&#1074;&#1086; &#1087;&#1088;&#1080;&#1085;&#1072;&#1076;&#1083;&#1077;&#1078;&#1080;&#1090;</rdfs:label>
+   <rdfs:label xml:lang="fr">droit d&#233;tenu par</rdfs:label>
+    <rdfs:label xml:lang="de">Rechte stehen zu</rdfs:label>
+    <rdfs:label xml:lang="el">&#948;&#953;&#954;&#945;&#943;&#969;&#956;&#945; &#954;&#945;&#964;&#941;&#967;&#949;&#964;&#945;&#953; &#945;&#960;&#972;</rdfs:label>
+    <rdfs:label xml:lang="en">right held by</rdfs:label>
+	<rdfs:label xml:lang="pt">s&#227;o direitos de </rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#26435;&#38480;&#25345;&#26377;&#32773;</rdfs:label>
+
+	<rdfs:comment>This property identifies the E39 Actor who holds the instances of E30 Right to an E72 Legal Object.
+	It is a superproperty of P52 has current owner (is current owner of) because ownership is a right that is held on the owned object.
+P105 right held by (has right on) is a shortcut of the fully developed path from E72 Legal Object through P104 is subject to (applies to), E30 Right, P75 possesses (is possessed by) to E39 Actor.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E72_Legal_Object"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+<owl:inverseOf rdf:resource="P105i_has_right_on"/>
+</rdf:Property>
+
+</rdf:RDF>

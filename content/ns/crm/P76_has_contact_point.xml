@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P76_has_contact_point">
+ <rdfs:label xml:lang="en">has contact point</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1082;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour coordonn&#233;es individuelles</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#963;&#951;&#956;&#949;&#943;&#959; &#949;&#960;&#953;&#954;&#959;&#953;&#957;&#969;&#957;&#943;&#945;&#962;</rdfs:label>
+	<rdfs:label xml:lang="de">hat Kontaktpunkt</rdfs:label>
+	<rdfs:label xml:lang="pt">possui ponto de contato</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#32852;&#31995;&#26041;&#24335;</rdfs:label>
+	<rdfs:comment>This property identifies an E51 Contact Point of any type that provides access to an E39 Actor by any communication method, such as e-mail or fax.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E41_Appellation"/>
+<owl:inverseOf rdf:resource="P76i_provides_access_to"/>
+</rdf:Property>
+
+</rdf:RDF>

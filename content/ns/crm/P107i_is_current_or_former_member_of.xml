@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P107i_is_current_or_former_member_of">
+ <rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#942; &#942;&#964;&#945;&#957; &#956;&#941;&#955;&#959;&#962; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="en">is current or former member of</rdfs:label>
+    <rdfs:label xml:lang="de">ist derzeitiges oder fr&#252;heres Mitglied von</rdfs:label> 
+     <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1091;&#1102;&#1097;&#1080;&#1084; &#1080;&#1083;&#1080; &#1073;&#1099;&#1074;&#1096;&#1080;&#1084; &#1095;&#1083;&#1077;&#1085;&#1086;&#1084;</rdfs:label>
+    <rdfs:label xml:lang="fr">est actuel ou ancien membre de</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; ou foi membro de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#30446;&#21069;&#25110;&#26366;&#32463;&#21152;&#20837;&#32676;&#32452;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E74_Group"/>
+<owl:inverseOf rdf:resource="P107_has_current_or_former_member"/>
+</rdf:Property>
+
+</rdf:RDF>

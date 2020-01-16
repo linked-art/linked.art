@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P32i_was_technique_of">
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1090;&#1077;&#1093;&#1085;&#1080;&#1082;&#1086;&#1081; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="el">&#942;&#964;&#945;&#957; &#964;&#949;&#967;&#957;&#953;&#954;&#942; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="de">war Verfahren von</rdfs:label>
+    <rdfs:label xml:lang="en">was technique of</rdfs:label>
+    <rdfs:label xml:lang="fr">a &#233;t&#233; la technique mise en &#339;uvre dans</rdfs:label>
+	<rdfs:label xml:lang="pt">foi t&#233;cnica da</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#20351;&#29992;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E55_Type"/>
+	<rdfs:range rdf:resource="E7_Activity"/>
+	<rdfs:subPropertyOf rdf:resource="P125i_was_type_of_object_used_in"/>
+<owl:inverseOf rdf:resource="P32_used_general_technique"/>
+</rdf:Property>
+
+
+</rdf:RDF>

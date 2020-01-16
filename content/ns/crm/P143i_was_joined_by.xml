@@ -1,0 +1,13 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P143i_was_joined_by">
+	<rdfs:label xml:lang="en">was joined by</rdfs:label>
+	<rdfs:label xml:lang="de">wurde verbunden durch</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#21152;&#20837;&#20026;&#25104;&#21592;&#26044;</rdfs:label>
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E85_Joining"/>
+	<rdfs:subPropertyOf rdf:resource="P11i_participated_in"/>
+<owl:inverseOf rdf:resource="P143_joined"/>
+</rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P11_had_participant">
+	<rdfs:label xml:lang="fr">a eu pour participant</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1083; &#1091;&#1095;&#1072;&#1089;&#1090;&#1085;&#1080;&#1082;&#1072;</rdfs:label>
+	<rdfs:label xml:lang="de">hatte Teilnehmer</rdfs:label>
+	<rdfs:label xml:lang="en">had participant</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#967;&#949; &#963;&#965;&#956;&#956;&#941;&#964;&#959;&#967;&#959;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem participante</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#21442;&#19982;&#32773;</rdfs:label>
+	<rdfs:comment>This property describes the active or passive participation of instances of E39 Actors in an E5 Event. 
+It connects the life-line of the related E39 Actor with the E53 Place and E50 Date of the event. The property implies that the Actor was involved in the event but does not imply any causal relationship. The subject of a portrait can be said to have participated in the creation of the portrait.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E5_Event"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+	<rdfs:subPropertyOf rdf:resource="P12_occurred_in_the_presence_of"/>
+	
+<owl:inverseOf rdf:resource="P11i_participated_in"/>
+</rdf:Property>
+
+</rdf:RDF>

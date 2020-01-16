@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P53_has_former_or_current_location">
+	<rdfs:label xml:lang="fr">a ou a eu pour localisation</rdfs:label>
+    <rdfs:label xml:lang="el">&#946;&#961;&#943;&#963;&#954;&#949;&#964;&#945;&#953; &#942; &#946;&#961;&#953;&#963;&#954;&#972;&#964;&#945;&#957; &#963;&#949;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1090;&#1077;&#1082;&#1091;&#1097;&#1077;&#1077; &#1080;&#1083;&#1080; &#1073;&#1099;&#1074;&#1096;&#1077;&#1077; &#1084;&#1077;&#1089;&#1090;&#1086;&#1087;&#1086;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+    <rdfs:label xml:lang="en">has former or current location</rdfs:label>
+	<rdfs:label xml:lang="de">hat fr&#252;heren oder derzeitigen Standort</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; ou foi localizada em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#30446;&#21069;&#25110;&#26366;&#32463;&#34987;&#32622;&#25918;&#26044;</rdfs:label>
+	<rdfs:comment>This property allows an instance of E53 Place to be associated as the former or current location of an instance of E18 Physical Thing.
+In the case of E19 Physical Objects, the property does not allow any indication of the Time-Span during which the Physical Object was located at this Place, nor if this is the current location.
+In the case of immobile objects, the Place would normally correspond to the Place of creation.
+P53 has former or current location (is former or current location of) is a shortcut. A more detailed representation can make use of the fully developed (i.e. indirect) path from E19 Physical Object through P25 moved (moved by), E9 Move, P26 moved to (was destination of) or P27 moved from (was origin of) to E53 Place.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<rdfs:range rdf:resource="E53_Place"/>
+<owl:inverseOf rdf:resource="P53i_is_former_or_current_location_of"/>
+</rdf:Property>
+
+
+</rdf:RDF>

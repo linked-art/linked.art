@@ -1,0 +1,12 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P176i_starts_after_the_start_of">
+    <rdfs:label xml:lang="en">starts after the start of</rdfs:label>
+    <rdfs:comment>The inverse relationship of P176</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="P175i_starts_with_or_after_the_start_of"/>
+    <rdfs:domain rdf:resource="E2_Temporal_Entity"/>
+    <rdfs:range rdf:resource="E2_Temporal_Entity"/>
+<owl:inverseOf rdf:resource="P176_starts_before_the_start_of"/>
+</rdf:Property>
+
+</rdf:RDF>

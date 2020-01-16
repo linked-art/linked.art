@@ -1,0 +1,15 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P142_used_constituent">
+	<rdfs:label xml:lang="en">used constituent</rdfs:label>
+	<rdfs:label xml:lang="de">benutzte Bestandteil</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20351;&#29992;&#31216;&#21495;&#26500;&#25104;&#37096;&#20998;</rdfs:label>
+	<rdfs:comment>This property associates the event of assigning an instance of E42 Identifier to an entity, with  the instances of E41 Appellation that were used as elements of the identifier.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E15_Identifier_Assignment"/>
+	<rdfs:range rdf:resource="E90_Symbolic_Object"/>
+	<rdfs:subPropertyOf rdf:resource="P16_used_specific_object"/>
+<owl:inverseOf rdf:resource="P142i_was_used_in"/>
+</rdf:Property>
+
+</rdf:RDF>

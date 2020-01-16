@@ -1,0 +1,13 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P152_has_parent">
+	<rdfs:label xml:lang="en">has parent</rdfs:label>
+	<rdfs:comment>This property associates an instance of E21 Person with another instance of E21 Person who plays the role of the first instance&#8217;s parent, regardless of whether the relationship is biological parenthood, assumed or pretended biological parenthood or an equivalent legal status of rights and obligations obtained by a social or legal act. 
+	This property is, among others, a shortcut of the fully developed paths from &#8216;E21Person&#8217; through &#8216;P98i was born&#8217;, &#8216;E67 Birth&#8217;, &#8216;P96 by mother&#8217; to &#8216;E21 Person&#8217;, and from &#8216;E21Person&#8217; through &#8216;P98i was born&#8217;, &#8216;E67 Birth&#8217;, &#8216;P97 from father&#8217; to &#8216;E21 Person&#8217;.
+	</rdfs:comment>
+	<rdfs:domain rdf:resource="E21_Person"/>
+	<rdfs:range rdf:resource="E21_Person"/>
+<owl:inverseOf rdf:resource="P152i_is_parent_of"/>
+</rdf:Property>
+
+</rdf:RDF>

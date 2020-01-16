@@ -1,0 +1,11 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P160_has_temporal_projection">
+	<rdfs:label xml:lang="en">has temporal projection</rdfs:label>
+	<rdfs:comment>This property describes the temporal projection of an instance of an E92 Spacetime Volume. The property P4 has time-span is the same as P160 has temporal projection if it is used to document an instance of E4 Period or any subclass of it. 
+	</rdfs:comment>
+	<rdfs:domain rdf:resource="E92_Spacetime_Volume"/>
+	<rdfs:range rdf:resource="E52_Time-Span"/>
+</rdf:Property>
+
+</rdf:RDF>

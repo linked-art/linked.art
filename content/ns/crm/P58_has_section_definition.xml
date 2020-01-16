@@ -1,0 +1,21 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P58_has_section_definition">
+	<rdfs:label xml:lang="en">has section definition</rdfs:label>
+   <rdfs:label xml:lang="de">hat Abschittsdefinition</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1086;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1077;&#1085;&#1080;&#1077; &#1088;&#1072;&#1081;&#1086;&#1085;&#1072;</rdfs:label>
+   <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#959;&#961;&#953;&#963;&#956;&#972; &#964;&#956;&#942;&#956;&#945;&#964;&#959;&#962;</rdfs:label>
+	<rdfs:label xml:lang="fr">a pour d&#233;signation de section</rdfs:label>
+	<rdfs:label xml:lang="pt">tem designa&#231;&#227;o de se&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#21306;&#22495;&#23450;&#20041;</rdfs:label>
+	
+	<rdfs:comment>This property links an area (section) named by a E41 Appellation to the instance of E18 Physical Thing upon which it is found.
+The CRM handles sections as locations (instances of E53 Place) within or on E18 Physical Thing that are identified by E41 Appellations. Sections need not be discrete and separable components or parts of an object.
+This is part of a more developed path from E18 Physical Thing through P58, E41 Appellation, P87 is identified by (identifies) that allows a more precise definition of a location found on an object than the shortcut P59 has section (is located on or within).
+A particular instance of a section definition only applies to one instance of Physical Thing.</rdfs:comment>
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<rdfs:range rdf:resource="E41_Appellation"/>
+<owl:inverseOf rdf:resource="P58i_defines_section"/>
+</rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P8_took_place_on_or_within">
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1083; &#1084;&#1077;&#1089;&#1090;&#1086; &#1085;&#1072; &#1080;&#1083;&#1080; &#1074;</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#955;&#945;&#946;&#949; &#967;&#974;&#961;&#945; &#963;&#949; &#942; &#949;&#957;&#964;&#972;&#962;</rdfs:label>
+    <rdfs:label xml:lang="de">fand statt auf oder innerhalb von </rdfs:label>
+    <rdfs:label xml:lang="en">took place on or within</rdfs:label>
+    <rdfs:label xml:lang="fr">a eu lieu sur ou dans</rdfs:label>
+	<rdfs:label xml:lang="pt">ocorreu em ou dentro</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21457;&#29983;&#25152;&#22312;&#29289;&#20214;&#26159;</rdfs:label>
+	<rdfs:comment>This property describes the location of an instance of E4 Period with respect to an E19 Physical Object. 
+P8 took place on or within (witnessed) is a shortcut of the more fully developed path from E4 Period through P7 took place at, E53 Place, P156 occupies (is occupied by) to E18 Physical Thing.
+
+It describes a period that can be located with respect to the space defined by an E19 Physical Object such as a ship or a building. The precise geographical location of the object during the period in question may be unknown or unimportant. 
+For example, the French and German armistice of 22 June 1940 was signed in the same railway carriage as the armistice of 11 November 1918.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E4_Period"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<owl:inverseOf rdf:resource="P8i_witnessed"/>
+</rdf:Property>
+
+</rdf:RDF>

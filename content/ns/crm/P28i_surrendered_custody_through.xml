@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P28i_surrendered_custody_through">
+	<rdfs:label xml:lang="en">surrendered custody through</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1086;&#1087;&#1077;&#1082;&#1072; &#1086;&#1090;&#1076;&#1072;&#1085;&#1072; &#1095;&#1077;&#1088;&#1077;&#1079;</rdfs:label>
+	<rdfs:label xml:lang="fr">a cess&#233; d&#8217;&#234;tre d&#233;tenteur &#224; cause de</rdfs:label>
+	<rdfs:label xml:lang="el">&#960;&#945;&#961;&#941;&#948;&#969;&#963;&#949; &#954;&#945;&#964;&#959;&#967;&#942; &#956;&#941;&#963;&#969;</rdfs:label>
+    <rdfs:label xml:lang="de">wurde Gewahrsam &#252;bergeben durch</rdfs:label>
+	<rdfs:label xml:lang="pt">final da cust&#243;dia por meio de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20132;&#20986;&#20445;&#31649;&#20316;&#19994;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E10_Transfer_of_Custody"/>
+	<rdfs:subPropertyOf rdf:resource="P14i_performed"/>
+<owl:inverseOf rdf:resource="P28_custody_surrendered_by"/>
+</rdf:Property>
+
+</rdf:RDF>

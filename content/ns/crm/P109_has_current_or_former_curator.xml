@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P109_has_current_or_former_curator">
+	<rdfs:label xml:lang="fr">a pour conservateur actuel ou ancien</rdfs:label>
+    <rdfs:label xml:lang="de">hat derzeitigen oder fr&#252;heren Kurator</rdfs:label>
+    <rdfs:label xml:lang="en">has current or former curator</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#942; &#949;&#943;&#967;&#949; &#949;&#960;&#953;&#956;&#949;&#955;&#951;&#964;&#942;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1091;&#1102;&#1097;&#1077;&#1075;&#1086; &#1080;&#1083;&#1080; &#1073;&#1099;&#1074;&#1096;&#1077;&#1075;&#1086; &#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1077;&#1083;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem ou teve curador</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#29616;&#20219;&#25110;&#21069;&#20219;&#20856;&#34255;&#31649;&#29702;&#21592;</rdfs:label>
+
+	<rdfs:comment>This property identifies the E39 Actor or Actors who assume or have assumed overall curatorial responsibility for an E78 Collection.
+
+It does not allow a history of curation to be recorded. This would require use of an Event  initiating a curator being responsible for  a Collection.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E78_Curated_Holding"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+	<rdfs:subPropertyOf rdf:resource="P49_has_former_or_current_keeper"/>
+<owl:inverseOf rdf:resource="P109i_is_current_or_former_curator_of"/>
+</rdf:Property>
+
+</rdf:RDF>

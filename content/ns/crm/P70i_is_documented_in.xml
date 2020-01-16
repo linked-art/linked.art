@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P70i_is_documented_in">
+	<rdfs:label xml:lang="en">is documented in</rdfs:label>
+	<rdfs:label xml:lang="el">&#964;&#949;&#954;&#956;&#951;&#961;&#953;&#974;&#957;&#949;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="de">wird belegt in</rdfs:label>
+    <rdfs:label xml:lang="fr">est mentionn&#233;e dans</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1076;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085; &#1074;</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; documentado em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#35760;&#24405;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E31_Document"/>
+	<rdfs:subPropertyOf rdf:resource="P67i_is_referred_to_by"/>
+<owl:inverseOf rdf:resource="P70_documents"/>
+</rdf:Property>
+
+
+</rdf:RDF>

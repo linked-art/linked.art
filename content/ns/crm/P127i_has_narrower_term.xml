@@ -1,0 +1,15 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P127i_has_narrower_term">
+	<rdfs:label xml:lang="fr">a pour terme sp&#233;cifique</rdfs:label>
+	<rdfs:label xml:lang="de">hat den Unterbegriff</rdfs:label>
+	<rdfs:label xml:lang="en">has narrower term</rdfs:label>
+	<rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#963;&#964;&#949;&#957;&#972;&#964;&#949;&#961;&#959; &#972;&#961;&#959;</rdfs:label>
+	 <rdfs:label xml:lang="pt">tem termo espec&#237;fico</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#29421;&#20041;&#26415;&#35821;</rdfs:label>
+	<rdfs:domain rdf:resource="E55_Type"/>
+	<rdfs:range rdf:resource="E55_Type"/>
+<owl:inverseOf rdf:resource="P127_has_broader_term"/>
+</rdf:Property>
+
+</rdf:RDF>

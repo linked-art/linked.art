@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E26_Physical_Feature">
+	<rdfs:label xml:lang="el">&#933;&#955;&#953;&#954;&#972; &#924;&#972;&#961;&#966;&#969;&#956;&#945;</rdfs:label>
+    <rdfs:label xml:lang="en">Physical Feature</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1060;&#1080;&#1079;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1081; &#1055;&#1088;&#1080;&#1079;&#1085;&#1072;&#1082;</rdfs:label>
+	<rdfs:label xml:lang="de">Materielles Merkmal</rdfs:label>
+    <rdfs:label xml:lang="fr">Caract&#233;ristique mat&#233;rielle</rdfs:label>
+	<rdfs:label xml:lang="pt">Caracter&#237;stica Material</rdfs:label>
+	<rdfs:label xml:lang="zh">&#23454;&#20307;&#22806;&#35980;&#34920;&#24449;</rdfs:label>
+	<rdfs:comment>This class comprises identifiable features that are physically attached in an integral way to particular physical objects. 
+Instances of E26 Physical Feature share many of the attributes of instances of E19 Physical Object. They may have a one-, two- or three-dimensional geometric extent, but there are no natural borders that separate them completely in an objective way from the carrier objects. For example, a doorway is a feature but the door itself, being attached by hinges, is not. 
+Instances of E26 Physical Feature can be features in a narrower sense, such as scratches, holes, reliefs, surface colours, reflection zones in an opal crystal or a density change in a piece of wood. In the wider sense, they are portions of particular objects with partially imaginary borders, such as the core of the Earth, an area of property on the surface of the Earth, a landscape or the head of a contiguous marble statue. They can be measured and dated, and it is sometimes possible to state who or what is or was responsible for them. They cannot be separated from the carrier object, but a segment of the carrier object may be identified (or sometimes removed) carrying the complete feature. 
+This definition coincides with the definition of "fiat objects" (Smith &amp; Varzi, 2000, pp.401-420), with the exception of aggregates of &#8220;bona fide objects&#8221;. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E18_Physical_Thing"/>
+</rdfs:Class>
+
+</rdf:RDF>

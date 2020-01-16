@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P103_was_intended_for">
+	<rdfs:label xml:lang="fr">&#233;tait destin&#233; &#224;</rdfs:label>
+    <rdfs:label xml:lang="en">was intended for</rdfs:label>
+    <rdfs:label xml:lang="de">bestimmt f&#252;r</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1079;&#1072;&#1076;&#1091;&#1084;&#1072;&#1085; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="el">&#960;&#961;&#959;&#959;&#961;&#953;&#950;&#972;&#964;&#945;&#957; &#947;&#953;&#945;</rdfs:label>
+	<rdfs:label xml:lang="pt">era destinado &#224;</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#21046;&#20316;&#26469;&#29992;&#26044;</rdfs:label>
+
+	<rdfs:comment>This property links an instance of E71 Human-Made Thing to an E55 Type of usage. 
+It creates a property between specific man-made things, both physical and immaterial, to Types of intended methods and techniques of use. Note: A link between specific man-made things and a specific use activity should be expressed using P19 was intended use of (was made for).</rdfs:comment>
+	<rdfs:domain rdf:resource="E71_Human-Made_Thing"/>
+	<rdfs:range rdf:resource="E55_Type"/>
+<owl:inverseOf rdf:resource="P103i_was_intention_of"/>
+</rdf:Property>
+
+</rdf:RDF>

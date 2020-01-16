@@ -1,0 +1,24 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P48_has_preferred_identifier">
+	<rdfs:label xml:lang="en">has preferred identifier</rdfs:label>
+   <rdfs:label xml:lang="fr">a pour identificateur retenu</rdfs:label>
+   <rdfs:label xml:lang="de">hat bevorzugtes Kennzeichen</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1087;&#1088;&#1077;&#1076;&#1087;&#1086;&#1095;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1081; &#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088;</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#960;&#961;&#959;&#964;&#953;&#956;&#974;&#956;&#949;&#957;&#959; &#945;&#957;&#945;&#947;&#957;&#969;&#961;&#953;&#963;&#964;&#953;&#954;&#972;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem identificador preferido</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#39318;&#36873;&#26631;&#35782;&#31526;</rdfs:label>
+
+	<rdfs:comment>This property records the preferred E42 Identifier that was used to identify an instance of E1 CRM Entity at the time this property was recorded.
+More than one preferred identifier may have been assigned to an item over time.
+Use of this property requires an external mechanism for assigning temporal validity to the respective CRM instance.
+P48 has preferred identifier (is preferred identifier of), is a shortcut for the path from E1 CRM Entity through P140 assigned attribute to (was attributed by), E15 Identifier Assignment, P37 assigned (was assigned by) to E42 Identifier. The fact that an identifier is a preferred one for an organisation can be better expressed in a context independent form by assigning a suitable E55 Type to the respective instance of E15 Identifier Assignment using the P2 has type property.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E42_Identifier"/>
+	<rdfs:subPropertyOf rdf:resource="P1_is_identified_by"/>
+<owl:inverseOf rdf:resource="P48i_is_preferred_identifier_of"/>
+</rdf:Property>
+
+
+</rdf:RDF>

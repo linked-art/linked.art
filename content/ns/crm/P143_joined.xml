@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P143_joined">
+	<rdfs:label xml:lang="en">joined</rdfs:label>
+	<rdfs:label xml:lang="de">verband</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21152;&#20837;&#20102;&#25104;&#21592;</rdfs:label>
+	<rdfs:comment>This property identifies the instance of E39 Actor that becomes member of a E74 Group in an E85 Joining.
+ 	Joining events allow for describing people becoming members of a group with a more detailed path from E74 Group through P144 joined with (gained member by), E85 Joining, P143 joined (was joined by) to E39 Actor, compared to the shortcut offered by P107 has current or former member (is current or former member of).
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E85_Joining"/>
+	<rdfs:range rdf:resource="E39_Actor"/>
+	<rdfs:subPropertyOf rdf:resource="P11_had_participant"/>
+<owl:inverseOf rdf:resource="P143i_was_joined_by"/>
+</rdf:Property>
+
+</rdf:RDF>

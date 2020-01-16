@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E17_Type_Assignment">
+	<rdfs:label xml:lang="de">Typuszuweisung</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1055;&#1088;&#1080;&#1089;&#1074;&#1086;&#1077;&#1085;&#1080;&#1077; &#1058;&#1080;&#1087;&#1072;</rdfs:label>
+	<rdfs:label xml:lang="fr">Attribution de type</rdfs:label>
+	<rdfs:label xml:lang="en">Type Assignment</rdfs:label>
+	<rdfs:label xml:lang="el">&#913;&#960;&#972;&#948;&#959;&#963;&#951; &#932;&#973;&#960;&#959;&#965;</rdfs:label>
+	<rdfs:label xml:lang="pt">Atribui&#231;&#227;o de Tipo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31867;&#22411;&#25351;&#23450;</rdfs:label>
+	<rdfs:comment>This class comprises the actions of classifying items of whatever kind. Such items include objects, specimens, people, actions and concepts. 
+This class allows for the documentation of the context of classification acts in cases where the value of the classification depends on the personal opinion of the classifier, and the date that the classification was made. This class also encompasses the notion of "determination," i.e. the systematic and molecular identification of a specimen in biology. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E13_Attribute_Assignment"/>
+</rdfs:Class>
+
+</rdf:RDF>

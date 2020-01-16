@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P21i_was_purpose_of">
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1094;&#1077;&#1083;&#1100;&#1102; &#1076;&#1083;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="fr">&#233;tait le but de</rdfs:label>
+    <rdfs:label xml:lang="el">&#942;&#964;&#945;&#957; &#963;&#954;&#959;&#960;&#972;&#962; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="de">war Zweck von</rdfs:label>
+	<rdfs:label xml:lang="en">was purpose of</rdfs:label>
+	<rdfs:label xml:lang="pt">era o prop&#243;sito de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21487;&#21033;&#29992;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E55_Type"/>
+	<rdfs:range rdf:resource="E7_Activity"/>
+<owl:inverseOf rdf:resource="P21_had_general_purpose"/>
+</rdf:Property>
+
+</rdf:RDF>

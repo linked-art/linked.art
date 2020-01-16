@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P96_by_mother">
+	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1086;&#1084; &#1084;&#1072;&#1090;&#1077;&#1088;&#1080;</rdfs:label>
+    <rdfs:label xml:lang="de">durch Mutter</rdfs:label>
+	<rdfs:label xml:lang="fr">de m&#232;re</rdfs:label>
+	<rdfs:label xml:lang="en">by mother</rdfs:label>
+	<rdfs:label xml:lang="el">&#949;&#943;&#967;&#949; &#956;&#951;&#964;&#941;&#961;&#945;</rdfs:label>
+	<rdfs:label xml:lang="pt">pela m&#227;e</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26469;&#33258;&#29983;&#27597;</rdfs:label>
+
+	<rdfs:comment>This property links an E67 Birth event to an E21 Person as a participant in the role of birth-giving mother.
+
+Note that biological fathers are not necessarily participants in the Birth (see P97 from father (was father for)). The Person being born is linked to the Birth with the property P98 brought into life (was born). This is not intended for use with general natural history material, only people. There is no explicit method for modelling conception and gestation except by using extensions. This is a sub-property of P11 had participant (participated in).
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E67_Birth"/>
+	<rdfs:range rdf:resource="E21_Person"/>
+	<rdfs:subPropertyOf rdf:resource="P11_had_participant"/>
+<owl:inverseOf rdf:resource="P96i_gave_birth"/>
+</rdf:Property>
+
+</rdf:RDF>

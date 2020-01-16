@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P70_documents">
+	<rdfs:label xml:lang="fr">mentionne</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1076;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1080;&#1088;&#1091;&#1077;&#1090;</rdfs:label>
+    <rdfs:label xml:lang="el">&#964;&#949;&#954;&#956;&#951;&#961;&#953;&#974;&#957;&#949;&#953;</rdfs:label>
+	<rdfs:label xml:lang="en">documents</rdfs:label>
+    <rdfs:label xml:lang="de">belegt</rdfs:label>
+	<rdfs:label xml:lang="pt">documenta</rdfs:label>
+	<rdfs:label xml:lang="zh">&#35760;&#24405;&#20102;</rdfs:label>
+
+	<rdfs:comment>This property describes the CRM Entities documented by instances of E31 Document.
+Documents may describe any conceivable entity, hence the link to the highest-level entity in the CRM hierarchy. This property is intended for cases where a reference is regarded as being of a documentary character, in the scholarly or scientific sense.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E31_Document"/>
+	<rdfs:range rdf:resource="E1_CRM_Entity"/>
+	<rdfs:subPropertyOf rdf:resource="P67_refers_to"/>
+<owl:inverseOf rdf:resource="P70i_is_documented_in"/>
+</rdf:Property>
+
+
+</rdf:RDF>

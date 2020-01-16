@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P139_has_alternative_form">
+	<rdfs:label xml:lang="fr">a pour autre forme</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1072;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1091;&#1102; &#1092;&#1086;&#1088;&#1084;&#1091;</rdfs:label>
+	<rdfs:label xml:lang="en">has alternative form</rdfs:label>
+	<rdfs:label xml:lang="de">hat alternative Form</rdfs:label>
+	<rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#949;&#957;&#945;&#955;&#955;&#945;&#954;&#964;&#953;&#954;&#942; &#956;&#959;&#961;&#966;&#942;</rdfs:label>
+	<rdfs:label xml:lang="pt">tem forma alternativa</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#26367;&#20195;&#31216;&#21495;</rdfs:label>
+	<rdfs:comment>This property establishes a relationship of equivalence between two instances of E41 Appellation independent from any item identified by them. It is a dynamic asymmetric relationship, where the range expresses the derivative, if such a direction can be established. Otherwise, the relationship is symmetric. The relationship is not transitive.
+The equivalence applies to all cases of use of an instance of E41 Appellation. Multiple names assigned to an object, which are not equivalent for all things identified with a specific instance of E41 Appellation, should be modelled as repeated values of P1 is identified by (identifies). 
+P139.1 has type allows the type of derivation, such as &#8220;transliteration from Latin 1 to ASCII&#8221; be refined..
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E41_Appellation"/>
+	<rdfs:range rdf:resource="E41_Appellation"/>
+</rdf:Property>
+
+</rdf:RDF>

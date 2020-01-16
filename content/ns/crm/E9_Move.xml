@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E9_Move">
+	<rdfs:label xml:lang="en">Move</rdfs:label>
+	<rdfs:label xml:lang="el">&#924;&#949;&#964;&#945;&#954;&#943;&#957;&#951;&#963;&#951;</rdfs:label>
+	<rdfs:label xml:lang="de">Objektbewegung</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1055;&#1077;&#1088;&#1077;&#1084;&#1077;&#1097;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="fr">D&#233;placement</rdfs:label>
+	<rdfs:label xml:lang="pt">Locomo&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31227;&#21160;</rdfs:label>
+	<rdfs:comment>This class comprises changes of the physical location of the instances of E19 Physical Object. 
+Note, that the class E9 Move inherits the property P7 took place at (witnessed): E53 Place. This property should be used to describe the trajectory or a larger area within which a move takes place, whereas the properties P26 moved to (was destination of), P27 moved from (was origin of) describe the start and end points only. Moves may also be documented to consist of other moves (via P9 consists of (forms part of)), in order to describe intermediate stages on a trajectory. In that case, start and end points of the partial moves should match appropriately between each other and with the overall event.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+</rdf:RDF>

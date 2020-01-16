@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P96i_gave_birth">
+	<rdfs:label xml:lang="el">&#942;&#964;&#945;&#957; &#956;&#951;&#964;&#941;&#961;&#945; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+	<rdfs:label xml:lang="fr">a donn&#233; naissance &#224;</rdfs:label>
+    <rdfs:label xml:lang="en">gave birth</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1076;&#1072;&#1083; &#1088;&#1086;&#1078;&#1076;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
+    <rdfs:label xml:lang="de">gebar</rdfs:label>
+	<rdfs:label xml:lang="pt">deu nascimento</rdfs:label>
+	<rdfs:label xml:lang="zh">&#25104;&#20026;&#29983;&#27597;&#26044;</rdfs:label>
+	
+	<rdfs:domain rdf:resource="E21_Person"/>
+	<rdfs:range rdf:resource="E67_Birth"/>
+	<rdfs:subPropertyOf rdf:resource="P11i_participated_in"/>
+<owl:inverseOf rdf:resource="P96_by_mother"/>
+</rdf:Property>
+
+</rdf:RDF>

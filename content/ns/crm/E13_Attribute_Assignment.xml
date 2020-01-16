@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E13_Attribute_Assignment">
+	<rdfs:label xml:lang="ru">&#1055;&#1088;&#1080;&#1089;&#1074;&#1086;&#1077;&#1085;&#1080;&#1077; &#1040;&#1090;&#1088;&#1080;&#1073;&#1091;&#1090;&#1072;</rdfs:label>
+	<rdfs:label xml:lang="fr">Affectation d'attribut</rdfs:label>
+	<rdfs:label xml:lang="de">Merkmalszuweisung</rdfs:label>
+	<rdfs:label xml:lang="en">Attribute Assignment</rdfs:label>
+	<rdfs:label xml:lang="el">&#913;&#960;&#972;&#948;&#959;&#963;&#951; &#921;&#948;&#953;&#959;&#964;&#942;&#964;&#969;&#957;</rdfs:label>
+	<rdfs:label xml:lang="pt">Atribui&#231;&#227;o de Caracter&#237;stica</rdfs:label>
+	<rdfs:label xml:lang="zh">&#23660;&#24615;&#25351;&#23450;</rdfs:label>
+	<rdfs:comment>This class comprises the actions of making assertions about properties of an object or any relation between two items or concepts. 
+This class allows the documentation of how the respective assignment came about, and whose opinion it was. All the attributes or properties assigned in such an action can also be seen as directly attached to the respective item or concept, possibly as a collection of contradictory values. All cases of properties in this model that are also described indirectly through an action are characterised as "short cuts" of this action. This redundant modelling of two alternative views is preferred because many implementations may have good reasons to model either the action or the short cut, and the relation between both alternatives can be captured by simple rules. 
+In particular, the class describes the actions of people making propositions and statements during certain museum procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on if this information should be accessible by structured queries. 
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+</rdf:RDF>

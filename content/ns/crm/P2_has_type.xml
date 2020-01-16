@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P2_has_type">
+	<rdfs:label xml:lang="de">hat den Typus</rdfs:label>
+    <rdfs:label xml:lang="en">has type</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#964;&#973;&#960;&#959;</rdfs:label>
+    <rdfs:label xml:lang="fr">est de type</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1090;&#1080;&#1087;</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; do tipo</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#31867;&#22411;</rdfs:label>
+	<rdfs:comment>This property allows sub typing of CRM entities - a form of specialisation &#8211; through the use of a terminological hierarchy, or thesaurus. 
+The CRM is intended to focus on the high-level entities and relationships needed to describe data structures. Consequently, it does not specialise entities any further than is required for this immediate purpose. However, entities in the isA hierarchy of the CRM may by specialised into any number of sub entities, which can be defined in the E55 Type hierarchy. E51 Contact Point, for example, may be specialised into &#8220;e-mail address&#8221;, &#8220;telephone number&#8221;, &#8220;post office box&#8221;, &#8220;URL&#8221; etc. none of which figures explicitly in the CRM hierarchy. Sub typing obviously requires consistency between the meaning of the terms assigned and the more general intent of the CRM entity in question.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E1_CRM_Entity"/>
+	<rdfs:range rdf:resource="E55_Type"/>
+	<owl:inverseOf rdf:resource="P2i_is_type_of"/>
+</rdf:Property>
+
+</rdf:RDF>

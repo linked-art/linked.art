@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E5_Event">
+	<rdfs:label xml:lang="el">&#931;&#965;&#956;&#946;&#940;&#957;</rdfs:label>
+	<rdfs:label xml:lang="fr">&#201;v&#233;nement</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1057;&#1086;&#1073;&#1099;&#1090;&#1080;&#1077;</rdfs:label>
+	<rdfs:label xml:lang="en">Event</rdfs:label>
+	<rdfs:label xml:lang="de">Ereignis</rdfs:label>
+	<rdfs:label xml:lang="pt">Evento</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20107;&#20214;</rdfs:label>
+	<rdfs:comment>This class comprises changes of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena. Such changes of state will affect instances of E77 Persistent Item or its subclasses.
+The distinction between an E5 Event and an E4 Period is partly a question of the scale of observation. Viewed at a coarse level of detail, an E5 Event is an &#8216;instantaneous&#8217; change of state. At a fine level, the E5 Event can be analysed into its component phenomena within a space and time frame, and as such can be seen as an E4 Period. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy change of state.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E4_Period"/>
+</rdfs:Class>
+
+</rdf:RDF>

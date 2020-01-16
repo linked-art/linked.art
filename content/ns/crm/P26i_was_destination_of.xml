@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P26i_was_destination_of">
+	<rdfs:label xml:lang="en">was destination of</rdfs:label>
+    <rdfs:label xml:lang="de">war Zielort von</rdfs:label>
+    <rdfs:label xml:lang="el">&#942;&#964;&#945;&#957; &#960;&#961;&#959;&#959;&#961;&#953;&#963;&#956;&#972;&#962; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1087;&#1091;&#1085;&#1082;&#1090;&#1086;&#1084; &#1085;&#1072;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103; &#1076;&#1083;&#1103;</rdfs:label>
+    <rdfs:label xml:lang="fr">a &#233;t&#233; la destination de</rdfs:label>
+    <rdfs:label xml:lang="pt">era destina&#231;&#227;o de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#34987;&#20316;&#20026;&#31227;&#20837;&#22320;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E53_Place"/>
+	<rdfs:range rdf:resource="E9_Move"/>
+	<rdfs:subPropertyOf rdf:resource="P7i_witnessed"/>
+<owl:inverseOf rdf:resource="P26_moved_to"/>
+</rdf:Property>
+
+</rdf:RDF>

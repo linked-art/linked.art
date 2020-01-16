@@ -1,0 +1,17 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P101i_was_use_of">
+	<rdfs:label xml:lang="de">war die Verwendung von</rdfs:label>
+    <rdfs:label xml:lang="en">was use of</rdfs:label>
+	<rdfs:label xml:lang="fr">&#233;tait l&#8217;utilisation de</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1073;&#1099;&#1083; &#1087;&#1088;&#1080;&#1084;&#1077;&#1085;&#1077;&#1085;&#1080;&#1077;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+   <rdfs:label xml:lang="el">&#942;&#964;&#945;&#957; &#967;&#961;&#942;&#963;&#951; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+   <rdfs:label xml:lang="pt">foi uso de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#21487;&#20351;&#29992;</rdfs:label>
+   
+	<rdfs:domain rdf:resource="E55_Type"/>
+	<rdfs:range rdf:resource="E70_Thing"/>
+<owl:inverseOf rdf:resource="P101_had_as_general_use"/>
+</rdf:Property>
+
+</rdf:RDF>

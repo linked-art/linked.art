@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P91_has_unit">
+	<rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1077;&#1076;&#1080;&#1085;&#1080;&#1094;&#1091;</rdfs:label>
+    <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#956;&#959;&#957;&#940;&#948;&#945; &#956;&#941;&#964;&#961;&#951;&#963;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="fr">a pour unit&#233;</rdfs:label>
+    <rdfs:label xml:lang="de">hat Einheit</rdfs:label>
+    <rdfs:label xml:lang="en">has unit</rdfs:label>
+	<rdfs:label xml:lang="pt">tem unidade</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#21333;&#20301;</rdfs:label>
+
+	<rdfs:comment>This property shows the type of unit an E54 Dimension was expressed in.</rdfs:comment>
+	<rdfs:domain rdf:resource="E54_Dimension"/>
+	<rdfs:range rdf:resource="E58_Measurement_Unit"/>
+<owl:inverseOf rdf:resource="P91i_is_unit_of"/>
+</rdf:Property>
+
+</rdf:RDF>

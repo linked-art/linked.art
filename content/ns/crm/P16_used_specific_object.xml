@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P16_used_specific_object">
+	<rdfs:label xml:lang="fr">a utilis&#233; l'objet sp&#233;cifique</rdfs:label>
+    <rdfs:label xml:lang="el">&#967;&#961;&#951;&#963;&#953;&#956;&#959;&#960;&#959;&#943;&#951;&#963;&#949; &#945;&#957;&#964;&#953;&#954;&#949;&#943;&#956;&#949;&#957;&#959;</rdfs:label>
+    <rdfs:label xml:lang="en">used specific object</rdfs:label>
+	<rdfs:label xml:lang="de">benutzte das bestimmte Objekt</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1083; &#1086;&#1089;&#1086;&#1073;&#1099;&#1081; &#1086;&#1073;&#1098;&#1077;&#1082;&#1090;</rdfs:label>
+	<rdfs:label xml:lang="pt">usou objeto espec&#237;fico</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20351;&#29992;&#29305;&#23450;&#29289;</rdfs:label>
+	<rdfs:comment>This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an E7 Activity. 
+This property typically applies to tools, instruments, moulds, raw materials and items embedded in a product. It implies that the presence of the object in question was a necessary condition for the action. For example, the activity of writing this text required the use of a computer. An immaterial thing can be used if at least one of its carriers is present. For example, the software tools on a computer.
+Another example is the use of a particular name by a particular group of people over some span to identify a thing, such as a settlement. In this case, the physical carriers of this name are at least the people understanding its use.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E7_Activity"/>
+	<rdfs:range rdf:resource="E70_Thing"/>
+	<rdfs:subPropertyOf rdf:resource="P12_occurred_in_the_presence_of"/>
+	<rdfs:subPropertyOf rdf:resource="P15_was_influenced_by"/>
+<owl:inverseOf rdf:resource="P16i_was_used_for"/>
+</rdf:Property>
+
+</rdf:RDF>

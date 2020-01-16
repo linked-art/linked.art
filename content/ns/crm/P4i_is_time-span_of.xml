@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P4i_is_time-span_of">
+	<rdfs:label xml:lang="en">is time-span of</rdfs:label>
+    <rdfs:label xml:lang="el">&#949;&#943;&#957;&#945;&#953; &#967;&#961;&#959;&#957;&#953;&#954;&#972; &#948;&#953;&#940;&#963;&#964;&#951;&#956;&#945; &#964;&#959;&#965;/&#964;&#951;&#962;</rdfs:label>
+    <rdfs:label xml:lang="fr">est la dur&#233;e de</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1085;&#1099;&#1084; &#1086;&#1090;&#1088;&#1077;&#1079;&#1082;&#1086;&#1084; &#1076;&#1083;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="de">ist Zeitspanne von</rdfs:label>
+	<rdfs:label xml:lang="pt">&#233; o per&#237;odo de tempo de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#24320;&#22987;&#24182;&#23436;&#25104;&#20102;</rdfs:label>
+	<rdfs:domain rdf:resource="E52_Time-Span"/>
+	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
+	<owl:inverseOf rdf:resource="P4_has_time-span"/>
+</rdf:Property>
+
+</rdf:RDF>

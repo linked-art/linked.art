@@ -1,0 +1,19 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P22i_acquired_title_through">
+	<rdfs:label xml:lang="el">&#945;&#960;&#941;&#954;&#964;&#951;&#963;&#949; &#964;&#959;&#957; &#964;&#943;&#964;&#955;&#959; &#956;&#941;&#963;&#969;</rdfs:label>
+    <rdfs:label xml:lang="en">acquired title through</rdfs:label>
+    <rdfs:label xml:lang="de">erwarb Besitztitel durch</rdfs:label>
+    <rdfs:label xml:lang="fr">a acquis le droit de propri&#233;t&#233; du fait de</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1087;&#1086;&#1083;&#1091;&#1095;&#1080;&#1083; &#1087;&#1088;&#1072;&#1074;&#1086; &#1089;&#1086;&#1073;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1089;&#1090;&#1080; &#1095;&#1077;&#1088;&#1077;&#1079;</rdfs:label>
+	<rdfs:label xml:lang="pt">adquiriu os direitos de propriedade por meio da</rdfs:label>
+	<rdfs:label xml:lang="zh">&#33719;&#21462;&#25152;&#26377;&#26435;&#26044;</rdfs:label>
+
+	<rdfs:domain rdf:resource="E39_Actor"/>
+	<rdfs:range rdf:resource="E8_Acquisition"/>
+	<rdfs:subPropertyOf rdf:resource="P14i_performed"/>
+<owl:inverseOf rdf:resource="P22_transferred_title_to"/>
+</rdf:Property>
+
+
+</rdf:RDF>

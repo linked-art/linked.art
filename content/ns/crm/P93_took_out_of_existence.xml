@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P93_took_out_of_existence">
+	<rdfs:label xml:lang="fr">a fait cesser d&#8217;exister</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1087;&#1086;&#1083;&#1086;&#1078;&#1080;&#1083; &#1082;&#1086;&#1085;&#1077;&#1094; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1086;&#1074;&#1072;&#1085;&#1080;&#1102;</rdfs:label>
+    <rdfs:label xml:lang="de">beendete die Existenz von</rdfs:label>
+	<rdfs:label xml:lang="en">took out of existence</rdfs:label>
+	<rdfs:label xml:lang="el">&#945;&#957;&#945;&#943;&#961;&#949;&#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="pt">cessou a exist&#234;ncia de</rdfs:label>
+	<rdfs:label xml:lang="zh">&#32467;&#26463;&#20102;</rdfs:label>
+
+	<rdfs:comment>This property allows an E64 End of Existence event to be linked to the E77 Persistent Item taken out of existence by it.
+In the case of immaterial things, the E64 End of Existence is considered to take place with the destruction of the last physical carrier.
+This allows an &#8220;end&#8221; to be attached to any Persistent Item being documented i.e. E70 Thing, E72 Legal Object, E39 Actor, E41 Appellation, E51 Contact Point and E55 Type. For many Persistent Items we know the maximum life-span and can infer, that they must have ended to exist. We assume in that case an End of Existence, which may be as unnoticeable as forgetting the secret knowledge by the last representative of some indigenous nation.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E64_End_of_Existence"/>
+	<rdfs:range rdf:resource="E77_Persistent_Item"/>
+	<rdfs:subPropertyOf rdf:resource="P12_occurred_in_the_presence_of"/>
+<owl:inverseOf rdf:resource="P93i_was_taken_out_of_existence_by"/>
+</rdf:Property>
+
+</rdf:RDF>

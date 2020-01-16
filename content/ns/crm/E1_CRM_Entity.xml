@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E1_CRM_Entity">
+	<rdfs:label xml:lang="el">&#927;&#957;&#964;&#972;&#964;&#951;&#964;&#945; CIDOC CRM</rdfs:label>
+	<rdfs:label xml:lang="en">CRM Entity</rdfs:label>
+	<rdfs:label xml:lang="de">CRM Entit&#228;t</rdfs:label>
+	<rdfs:label xml:lang="ru">CRM &#1057;&#1091;&#1097;&#1085;&#1086;&#1089;&#1090;&#1100;</rdfs:label>
+	<rdfs:label xml:lang="fr">Entit&#233; CRM</rdfs:label>
+	<rdfs:label xml:lang="pt">Entidade CRM</rdfs:label>
+	<rdfs:label xml:lang="zh">CRM&#23454;&#20307;</rdfs:label>
+	<rdfs:comment>This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. 
+It is an abstract concept providing for three general properties:
+1.	Identification by name or appellation, and in particular by a preferred identifier
+2.	Classification by type, allowing further refinement of the specific subclass an instance belongs to 
+3.	Attachment of free text for the expression of anything not captured by formal properties
+With the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity. 
+</rdfs:comment>
+</rdfs:Class>
+
+</rdf:RDF>

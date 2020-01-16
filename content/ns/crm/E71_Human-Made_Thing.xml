@@ -1,0 +1,16 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E71_Human-Made_Thing">
+<rdfs:label xml:lang="de">K&#252;nstliches</rdfs:label>
+  <rdfs:label xml:lang="fr">Chose fabriqu&#233;e</rdfs:label>
+   <rdfs:label xml:lang="ru">&#1056;&#1091;&#1082;&#1086;&#1090;&#1074;&#1086;&#1088;&#1085;&#1072;&#1103; &#1042;&#1077;&#1097;&#1100;</rdfs:label>
+    <rdfs:label xml:lang="en">Human-Made Thing</rdfs:label>
+    <rdfs:label xml:lang="el">&#913;&#957;&#952;&#961;&#974;&#960;&#953;&#957;&#959; &#916;&#951;&#956;&#953;&#959;&#973;&#961;&#947;&#951;&#956;&#945;</rdfs:label>
+	<rdfs:label xml:lang="pt">Coisa Fabricada</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20154;&#36896;&#29289;</rdfs:label>
+	<rdfs:comment>This class comprises discrete, identifiable man-made items that are documented as single units. 
+These items are either intellectual products or man-made physical things, and are characterized by relative stability. They may for instance have a solid physical form, an electronic encoding, or they may be logical concepts or structures.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E70_Thing"/>
+</rdfs:Class>
+</rdf:RDF>

@@ -1,0 +1,20 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P89_falls_within">
+	<rdfs:label xml:lang="fr">s&#8217;ins&#232;re dans</rdfs:label>
+    <rdfs:label xml:lang="en">falls within</rdfs:label>
+    <rdfs:label xml:lang="ru">&#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1080;&#1090;&#1089;&#1103; &#1074;</rdfs:label>
+	<rdfs:label xml:lang="de">f&#228;llt in</rdfs:label>
+	<rdfs:label xml:lang="el">&#960;&#949;&#961;&#953;&#941;&#967;&#949;&#964;&#945;&#953; &#963;&#949;</rdfs:label>
+	<rdfs:label xml:lang="pt">est&#225; contido em</rdfs:label>
+	<rdfs:label xml:lang="zh">&#31354;&#38388;&#19978;&#34987;&#21253;&#22260;&#26044;</rdfs:label>
+
+	<rdfs:comment>This property identifies an instance of E53 Place that falls wholly within the extent of another E53 Place.
+It addresses spatial containment only, and does not imply any relationship between things or phenomena occupying these places.
+</rdfs:comment>
+	<rdfs:domain rdf:resource="E53_Place"/>
+	<rdfs:range rdf:resource="E53_Place"/>
+<owl:inverseOf rdf:resource="P89i_contains"/>
+</rdf:Property>
+
+</rdf:RDF>

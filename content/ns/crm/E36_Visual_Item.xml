@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E36_Visual_Item">
+	<rdfs:label xml:lang="ru">&#1042;&#1080;&#1079;&#1091;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081; &#1055;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;</rdfs:label>
+    <rdfs:label xml:lang="fr">Item visuel</rdfs:label>
+    <rdfs:label xml:lang="el">&#927;&#960;&#964;&#953;&#954;&#972; &#931;&#964;&#959;&#953;&#967;&#949;&#943;&#959;</rdfs:label>
+    <rdfs:label xml:lang="en">Visual Item</rdfs:label>
+    <rdfs:label xml:lang="de">Bildliches</rdfs:label>
+    <rdfs:label xml:lang="pt">Item Visual</rdfs:label>
+	<rdfs:label xml:lang="zh">&#35270;&#35273;&#39033;&#30446;</rdfs:label>
+	<rdfs:comment>This class comprises the intellectual or conceptual aspects of recognisable marks and images.
+This class does not intend to describe the idiosyncratic characteristics of an individual physical embodiment of a visual item, but the underlying prototype. For example, a mark such as the ICOM logo is generally considered to be the same logo when used on any number of publications. The size, orientation and colour may change, but the logo remains uniquely identifiable. The same is true of images that are reproduced many times. This means that visual items are independent of their physical support. 
+The class E36 Visual Item provides a means of identifying and linking together instances of E24 Physical Human-Made Thing that carry the same visual symbols, marks or images etc. The property P62 depicts (is depicted by) between E24 Physical Human-Made Thing and depicted subjects (E1 CRM Entity) can be regarded as a short-cut of the more fully developed path from E24 Physical Human-Made Thing through P65 shows visual item (is shown by), E36 Visual Item, P138 represents (has representation) to E1CRM Entity, which in addition captures the optical features of the depiction.  
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E73_Information_Object"/>
+</rdfs:Class>
+
+</rdf:RDF>

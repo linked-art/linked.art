@@ -1,0 +1,13 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="P148_has_component">
+	<rdfs:label xml:lang="en">has component</rdfs:label>
+	<rdfs:label xml:lang="de">hat Bestandteil</rdfs:label>
+	<rdfs:label xml:lang="zh">&#26377;&#32452;&#20214;</rdfs:label>
+	<rdfs:comment>This property associates an instance of E89 Propositional Object with a structural part of it that is by itself an instance of E89 Propositional Object.</rdfs:comment>
+	<rdfs:domain rdf:resource="E89_Propositional_Object"/>
+	<rdfs:range rdf:resource="E89_Propositional_Object"/>
+<owl:inverseOf rdf:resource="P148i_is_component_of"/>
+</rdf:Property>
+
+</rdf:RDF>

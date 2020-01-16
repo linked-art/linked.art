@@ -1,0 +1,24 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E10_Transfer_of_Custody">
+	<rdfs:label xml:lang="fr">Changement de d&#233;tenteur</rdfs:label>
+	<rdfs:label xml:lang="en">Transfer of Custody</rdfs:label>
+	<rdfs:label xml:lang="de">&#220;bertragung des Gewahrsams</rdfs:label>
+	<rdfs:label xml:lang="el">&#924;&#949;&#964;&#945;&#946;&#943;&#946;&#945;&#963;&#951;  &#922;&#945;&#964;&#959;&#967;&#942;&#962;</rdfs:label>
+	<rdfs:label xml:lang="ru">&#1055;&#1077;&#1088;&#1077;&#1076;&#1072;&#1095;&#1072; &#1054;&#1087;&#1077;&#1082;&#1080;</rdfs:label>
+	<rdfs:label xml:lang="pt">Transfer&#234;ncia de Cust&#243;dia</rdfs:label>
+	<rdfs:label xml:lang="zh">&#20445;&#31649;&#20316;&#19994;&#36716;&#31227;</rdfs:label>
+	<rdfs:comment>This class comprises transfers of physical custody of objects between instances of E39 Actor. 
+The recording of the donor and/or recipient is optional. It is possible that in an instance of E10 Transfer of Custody there is either no donor or no recipient. Depending on the circumstances it may describe:
+1.	the beginning of custody 
+2.	the end of custody 
+3.	the transfer of custody 
+4.	the receipt of custody from an unknown source
+5.	the declared loss of an object
+The distinction between the legal responsibility for custody and the actual physical possession of the object should be expressed using the property P2 has type (is type of). A specific case of transfer of custody is theft.
+The interpretation of the museum notion of "accession" differs between institutions. The CRM therefore models legal ownership and physical custody separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+</rdf:RDF>

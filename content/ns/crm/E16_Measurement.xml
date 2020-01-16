@@ -1,0 +1,18 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdfs:Class rdf:about="E16_Measurement">
+	<rdfs:label xml:lang="ru">&#1057;&#1086;&#1073;&#1099;&#1090;&#1080;&#1077; &#1048;&#1079;&#1084;&#1077;&#1088;&#1077;&#1085;&#1080;&#1103;</rdfs:label>
+	<rdfs:label xml:lang="el">&#924;&#941;&#964;&#961;&#951;&#963;&#951;</rdfs:label>
+	<rdfs:label xml:lang="de">Messung</rdfs:label>
+	<rdfs:label xml:lang="fr">Mesurage</rdfs:label>
+	<rdfs:label xml:lang="en">Measurement</rdfs:label>
+	<rdfs:label xml:lang="pt">Medi&#231;&#227;o</rdfs:label>
+	<rdfs:label xml:lang="zh">&#27979;&#37327;</rdfs:label>
+	<rdfs:comment>This class comprises actions measuring physical properties and other values that can be determined by a systematic procedure. 
+Examples include measuring the monetary value of a collection of coins or the running time of a specific video cassette. 
+The E16 Measurement may use simple counting or tools, such as yardsticks or radiation detection devices. The interest is in the method and care applied, so that the reliability of the result may be judged at a later stage, or research continued on the associated documents. The date of the event is important for dimensions, which may change value over time, such as the length of an object subject to shrinkage. Details of methods and devices are best handled as free text, whereas basic techniques such as "carbon 14 dating" should be encoded using P2 has type (is type of:) E55 Type.
+</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="E13_Attribute_Assignment"/>
+</rdfs:Class>
+
+</rdf:RDF>
