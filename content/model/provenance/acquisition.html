@@ -8,66 +8,65 @@ up_label: "Provenance"
 
 ## Introduction
 
-The majority of recorded provenance events are when the object changes ownership, and the various methods in which that happens.
+The majority of recorded provenance events are when the object changes ownership, and the various methods in which that happens.  In the descriptions below the terms 'seller' and 'buyer' are used to refer to the actor that is relinquishing ownership and the actor that is gaining ownership, even if there is no money or other goods or services changing hands. This is for clarity and conciseness of the descriptions, and not to imply that every transaction is a purchase.
 
 ## Object Acquisition
 
-The transfer of ownership from (`transferred_title_from`) one owner to (`transferred_title_to`) the next, starting with the artist as defacto first owner to the person or organization who owns it next. The object itself is the value of the `transferred_title_of` relationship. The ownership chain can then be expressed by repeating this same pattern of transferring title from the current owner to the next.
-
-If the previous or next owner is unknown, then the respective relationship can be omitted from the event. For example, if it is known that the object was sold between 1806 and 1809, but not to whom it was sold, this can be expresed by omitting `transferred_title_to` from the description.
-
-This pattern does not express any further detail about how the acquisition took place, just that the object's ownership was transferred.  For more detailed models of acquisition, the following sections include additional information.
+Acquisitions are used to describe the transfer of ownership of an object from one owner to the next. The first owner is typically the artist, who would then transfer it to the second owner, to the third owner and so on. The ownership chain can be expressed by repeating this same pattern with the buyer from one acquisition being the seller in the subsequent one.  It the previous owner (e.g. the seller if there is a value exchange) or the subsequent owner (e.g. the buyer) is not known for a particular acquisition, then the reference can be left out from the description.  
+  
+The model encodes this information with an `Acquisition` part of the overall Provenance Event. The acquisition is the transfer of the right of ownership of an object (referenced in `transferred_title_of`) from the seller (in `transferred_title_from`) to the buyer (in `transferred_title_to`). 
 
 ```crom
-top = Acquisition()
-seller = Actor()
-seller._label = "Seller"
-buyer = Actor()
-buyer._label = "Buyer"
-when = TimeSpan()
-when._label = "When"
-when.begin_of_the_begin = "1890-01-04T00:00:00Z"
-when.end_of_the_end = "1890-01-05T00:00:00Z"
-top.timespan = when
-where = Place()
-where._label = "Art Gallery"
-what = Sculpture(art=1)
-what._label = "Example Sculpture"
-top.took_place_at = where
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = buyer
+top = vocab.Procurement(label="Purchase of Sculpture")
+buyer = Person(label="Buyer")
+seller = Person(label="Seller")
+acq = Acquisition(label="Acquisition of Sculpture from Seller")
+top.part = acq
+what = Sculpture(label="Sculpture", art=1)
+acq.transferred_title_of = what
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
 ```
 
-### Purchase
+### Agents
 
-A purchase is a common type of acquisition in which money is exchanged for the object.  The main activity is the transfer of the title for the object from the seller to the buyer, exactly as for any `Acquisition`.  The activity then consists of one or more related payments, without which the purchase would not be concluded.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include payments to or from others such as for shared ownership or payment of debts owed.
+In some cases, it is known that an agent other than the buyer carried out the acquisition. This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. 
 
-The `Payment` activity has equivalent relationships for from (`paid_from`) and to (`paid_to`), as well as the amount of money paid (`paid_amount`).  The amount itself is a resource that has a value (`value`) and a currency (`currency`).  In the simple case, where the amount the object was offered for sale at (`offering_price`) is the same as it was sold for (`sales_price`) and there was a single transfer of money, for that amount.  However, these values might be different if in certain circumstances and are hence modeled separately. The `Acquisition` also has the aat classification of "purchasing" (_aat:300077989_) to ensure that even if there are no payments explicitly modeled, then it can still be distinguished from other types of acquisition such as inheritance or gifts.
+```crom
+top = vocab.Procurement(label="Purchase of Sculpture")
+buyer = Person(label="Buyer")
+seller = Person(label="Seller")
+agent = Person(label="Agent for the Buyer")
+acq = Acquisition(label="Acquisition of Sculpture from Seller")
+top.part = acq
+what = Sculpture(label="Sculpture", art=1)
+acq.transferred_title_of = what
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
+acq.carried_out_by = agent
+```
 
+
+
+## Payments
+
+A purchase is a common type of acquisition in which money is exchanged for the object.  The provenance event consists of the acquisition along with one or more related payments.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include further payments to or from others such as for shared ownership, payment of debts owed, or for services rendered as part of the overall activity.
+
+The `Payment` activity has equivalent relationships for the actor that the money is transferred from (`paid_from`), the actor the money is transferred to (`paid_to`), and the amount of money paid (`paid_amount`).  The amount itself is a `MonetaryAmount` that has a value (`value`) and a currency (`currency`).  
 
 !!! note "Diachronic Comparison of Monetary Amounts"
     The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
 
 ```crom
-top = Purchase()
-seller = Actor()
-seller._label = "Seller"
-buyer = Actor()
-buyer._label = "Buyer"
-what = Painting(art=1)
-what._label = "Example Painting"
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = buyer
+top = vocab.Procurement(label="Purchase of Sculpture")
+seller = Actor(label="Seller")
+buyer = Actor(label="Buyer")
 paymt = Payment()
 paymt.paid_from = buyer
 paymt.paid_to = seller
 amt = MonetaryAmount()
-amt.value = 100
-curr = Currency()
-curr._label = "dollars"
-amt.currency = curr
+amt.value = 1000
+amt.currency = vocab.instances['us dollars']
 paymt.paid_amount = amt
 top.part = paymt
 ```
@@ -110,33 +109,6 @@ top.part = paymt
 
 ### Agents and Commissions
 
-In some cases, an agent other than the eventual owner carries out the acquisition.  This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. If there was some known payment for this service, that can also be modeled as a payment that is part of the purchase, but instead where the recipient is the agent. In order to make it clear that this payment is a commission, it should have the type _aat:300393199_.
-
-```crom
-top = Purchase()
-seller = Actor()
-seller._label = "Seller"
-buyer = Actor()
-buyer._label = "Buyer"
-what = Painting(art=1)
-what._label = "Example Painting"
-agent = Actor()
-agent._label = "Agent for the Buyer"
-top.carried_out_by = agent
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = buyer
-paymt = vocab.CommissionPayment()
-paymt.paid_from = buyer
-paymt.paid_to = agent
-amt = MonetaryAmount()
-amt.value = 100
-curr = Currency()
-curr._label = "dollars"
-amt.currency = curr
-paymt.paid_amount = amt
-top.part = paymt
-```
 
 ### Auctions
 

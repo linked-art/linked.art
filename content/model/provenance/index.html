@@ -22,17 +22,21 @@ In particular, the relationships to actors, places and time reflect the overall 
 
 __Example:__
 
-The Museum made a purchase in late April 2002 of a painting. The details about the painting and payment would be given using parts (an `Acquisition` and a `Payment` respectively).
-
+The Museum made a purchase in late April 2002 of a painting. The details about the painting and payment would be given using parts (the `Acquisition` and a `Payment` respectively, and described in more detail in subsequent sections).
 
 ```crom
 top = vocab.Procurement(label="Purchase of Painting")
 top.identified_by = vocab.LocalNumber(value="acq-2002-0005")
-top.carried_out_by = vocab.MuseumOrg(label="Museum")
+museum = vocab.MuseumOrg(label="Museum")
+top.carried_out_by = museum
 ts = TimeSpan()
 ts.begin_of_the_begin = "2002-04-19T00:00:00Z"
 ts.end_of_the_end = "2002-04-26T00:00:00Z"
 top.timespan = ts
+acq = Acquisition(label="Acquisition of Painting from Seller")
+pay = Payment(label="Payment of Price to Seller")
+top.part = acq
+top.part = pay
 ```
 
 
