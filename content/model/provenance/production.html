@@ -143,8 +143,8 @@ We can use the `influenced_by` property on the `Formation` (the creation) of the
 
 __Example:__
 
+A painting is from the workshop of an artist named Franckz.
  
-
 ```crom
 top = Painting(label = "Painting from the workshop of Franckz", art=1)
 prod = Production()
@@ -229,6 +229,4 @@ act = Activity(label="Burning of the Painting")
 act.carried_out_by = Person(label="Painting Burner")
 dest.caused_by = act
 ```
-
-
 

@@ -127,11 +127,14 @@ code {
 a:hover, a:focus {
     text-decoration: underline;
 }
-.codehilite .nt { color: #559955; }
-.codehilite .p { color: #555555; }
-.codehilite .s2 { color: #995555; }
 
-.codehilite .n {color: #555599;}
+
+.codehilite .nt { color: #663399; }
+.codehilite .p { color: #000000; }
+.codehilite .s2 { color: #005500; }
+
+.codehilite .n {color: #aa2e00;}
+.codehilite .mi {color: #4183d7;}
 .codehilite .nb {color: #555599;}
 .codehilite .o {color: #559999;}
 .codehilite .k {color: #559955;}
