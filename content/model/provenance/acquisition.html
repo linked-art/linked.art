@@ -14,7 +14,11 @@ The majority of recorded provenance events are when the object changes ownership
 
 Acquisitions are used to describe the transfer of ownership of an object from one owner to the next. The first owner is typically the artist, who would then transfer it to the second owner, to the third owner and so on. The ownership chain can be expressed by repeating this same pattern with the buyer from one acquisition being the seller in the subsequent one.  It the previous owner (e.g. the seller if there is a value exchange) or the subsequent owner (e.g. the buyer) is not known for a particular acquisition, then the reference can be left out from the description.  
   
+The acquistion is not necessarily a purchase, it could be a gift, an inheritance or any other method of gaining the right of ownership of an object.
+
 The model encodes this information with an `Acquisition` part of the overall Provenance Event. The acquisition is the transfer of the right of ownership of an object (referenced in `transferred_title_of`) from the seller (in `transferred_title_from`) to the buyer (in `transferred_title_to`). 
+
+Each object has its own Acquisition as part of the provenance event, so if a collector buys three paintings from a dealer, then there would be a single Provenance Event with three Acquisitions, all of which transfer the title of a single painting from the dealer to the collector.
 
 ```crom
 top = vocab.Procurement(label="Purchase of Sculpture")
@@ -46,13 +50,35 @@ acq.transferred_title_to = buyer
 acq.carried_out_by = agent
 ```
 
+### Exchange of Objects
+
+This pattern allows for the exchange of objects between two parties by simply adding a second Acquisition.
+
+```crom
+top = vocab.Procurement(label="Exchange of Sculpture for Painting")
+buyer = Person(label="Buyer")
+seller = Person(label="Seller")
+acq = Acquisition(label="Acquisition of Sculpture from Seller")
+top.part = acq
+what = Sculpture(label="Sculpture", art=1)
+acq.transferred_title_of = what
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
+acq2 = Acquisition(label="Acquisition of Painting from Buyer")
+top.part = acq2
+what = Painting(label="Painting", art=1)
+acq.transferred_title_of = what
+acq.transferred_title_from = buyer
+acq.transferred_title_to = seller
+```
 
 
 ## Payments
 
 A purchase is a common type of acquisition in which money is exchanged for the object.  The provenance event consists of the acquisition along with one or more related payments.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include further payments to or from others such as for shared ownership, payment of debts owed, or for services rendered as part of the overall activity.
 
-The `Payment` activity has equivalent relationships for the actor that the money is transferred from (`paid_from`), the actor the money is transferred to (`paid_to`), and the amount of money paid (`paid_amount`).  The amount itself is a `MonetaryAmount` that has a value (`value`) and a currency (`currency`).  
+
+The `Payment` activity has equivalent relationships for the actor that the money is transferred from (`paid_from`), the actor the money is transferred to (`paid_to`), and the amount of money paid (`paid_amount`).  The amount itself is a `MonetaryAmount` that has a value (`value`) and a currency (`currency`).  Each separable monetary amount is modeled as an individual instance of `Payment`, and thus if the buyer paid a commission to the agent who carried out the purchase, and paid for the object, then there would be two Payments, one from the buyer to the seller and one from the buyer to the agent. Commissions to auction houses or for consignments would use the same pattern.
 
 !!! note "Diachronic Comparison of Monetary Amounts"
     The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
@@ -70,80 +96,4 @@ amt.currency = vocab.instances['us dollars']
 paymt.paid_amount = amt
 top.part = paymt
 ```
-
-### Multiple Owners
-
-In some circumstances, the same object can be owned by multiple parties at the same time.  For example, art dealers will pool resources in order to purchase an expensive object and later share the proceeds of sale amongst themselves, or informal groups of individuals contributing to a purchase, where there isn't a legal entity that becomes the sole owner.
-
-In these cases, there are simply multiple buyers or sellers for the `Purchase`. The object is owned by all of the individuals, and it is unknown as to whether the ownership is evenly distributed or not. Similarly the multiple actors working together might make a payment for the object, and it is unknown how much each actor contributed to the total.  It does not imply that each actor made the payment, that would be described as two separate `Payment` activities, one from each.
-
-For situations where the division of ownership is known (likely based on the division of payment), please [see the section on legal claims of rights](legalclaims.html).
-
-```crom
-top = Purchase()
-top._label = "Purchase of the Example Painting by two Art Dealers"
-seller = Actor()
-seller._label = "Seller"
-what = Painting(art=1)
-what._label = "Example Painting"
-d1 = Group()
-d1._label = "Art Dealership 1"
-d2 = Group()
-d2._label = "Art Dealership 2"
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = d1
-top.transferred_title_to = d2
-paymt = Payment()
-paymt.paid_from = d1
-paymt.paid_from = d2
-paymt.paid_to = seller
-amt = MonetaryAmount()
-amt.value = 1000
-curr = Currency()
-curr._label = "dollars"
-amt.currency = curr
-paymt.paid_amount = amt
-top.part = paymt
-```
-
-### Agents and Commissions
-
-
-### Auctions
-
-The individual purchase that is the result of auctioning an object is the same as the above model.  The auction event itself however is important for understanding the provenance of the object, and is described in [more detail here](auctions.html). 
-
-
-## Transfer of Custody
-
-The model makes a distinction between the transfer of legal ownership (e.g. by sale or gift) and the transfer of custody (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody only.
-
-Transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
-
-### Exhibitions
-
-Exhibitions are a common way that the custody of an object changes, while the ownership remains the same.  Exhibitions are described in more detail [here](/model/exhibition/).
-
-### Loss
-
-The loss of an object is the transfer of custody away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient might be able to be filled in.  If the object is then returned to the owner, there would be the reverse transfer of custody from the party that found it.  It might be that the owner simply loses track of it, and although it is still in their possession, they are not aware of it ... it has no custodian.
-
-```crom
-top = TransferOfCustody()
-what = Painting(art=1)
-what._label = "Example Lost Painting"
-top.transferred_custody_of = what
-who = Person()
-who._label = "Previous Owner"
-top.transferred_custody_from = who
-when = TimeSpan()
-when._label = "Time noticed as Lost"
-when.begin_of_the_begin = "1790-12-04T00:00:00Z"
-when.end_of_the_end = "1790-12-05T00:00:00Z"
-top.timespan = when
-```
-
-### Theft
-
-Theft, looting and other illegal acquisitions are covered more accurately under the [legal claims](legalclaims.html) pattern.  While CIDOC-CRM recommends the use of a Transfer of Custody as legal ownership does not change, there are serious drawbacks to this approach.  Notably when a stolen item is sold to an unwitting buyer, there is no outward appearance that there is anything untoward.  The ability to classify a legal claim as valid or invalid resolves this issue.
+ 
