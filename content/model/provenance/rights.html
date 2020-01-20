@@ -1,5 +1,5 @@
 ---
-title: Legal Issues of Ownership
+title: Transfer of Rights
 up_href: "/model/provenance/"
 up_label: "Provenance"
 ---
@@ -8,107 +8,20 @@ up_label: "Provenance"
 
 ## Introduction
 
-Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of shared ownership of an object, contested ownership, looting, theft and subsequent sale of the stolen object, as well as other legal claims such as copyright or restricted rights of reproduction. 
+Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of shared ownership of an object, and other scenarios in which a right is being transferred or created rather than the more specific case of the entire right of ownership.
+
+
+## Rights
+
+
+## Acquisition of a Right
+
+
+## Acquisition of Intellectual Property Rights
 
 
 
-# This needs to be rewritten
-
-
-## Claims of Rights
-
-In order to describe these situations, we introduce a new class called 'PropertyInterest'.  This is a claim of a particular legal right, such as ownership or copyright, and is claimed by an `Actor` within a legal jurisdiction modeled as a `Place`.  This class can then be used to describe any claim, valid or not, of any right.  
-
-The Claim is a Man Made Thing, rather than the activity of asserting the claim.  As such it can be created and destroyed.  It is not a physical thing, although there may be physical evidence such as a contract described using other parts of the model.  It is also not the same as a `ConceptualObject` which cannot be destroyed once conceived. It is the beginning and ending of the Property Interest that gives the period of asserted validity, rather than as properties of the Property Interest itself.
-
-The legal status that is claimed by the Property Interest is associated as a classification, like all other out-of-model classes.  Thus, the basic Property Interest model has the following structure:
-
-```
-top = vocab.OwnershipRight()
-top._label = "Claim of Ownership"
-who = Person()
-who._label = "Owner of Example Painting"
-what = Painting()
-what._label = "Example Painting"
-top.interest_for = what
-where = Place()
-where._label = "Legal jurisdiction of Claim"
-top.claimed_by = who
-# top.jurisdiction = where
-```
-
-### Effective Period
-
-The XXXXXXXXXXXXXXXXX class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
-
-
-```
-top = vocab.OwnershipPhase()
-pi = vocab.OwnershipRight()
-pi._label = "Claim of Ownership"
-top.related_entity = pi
-
-who = Person()
-who._label = "Owner of Example Painting"
-pi.claimed_by = who
-what = Painting()
-what._label = "Example Painting"
-pi.interest_for = what
-top.phase_of = what
-
-ts1 = TimeSpan()
-ts1.begin_of_the_begin = "1743-05-12T00:00:00"
-ts1.end_of_the_end = "1821-11-28T00:00:00"
-top.timespan = ts1
-```
-
-
-## Ownership Rights
-
-The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
-
-In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html). It would also terminate the previous Ownership Phase of the object claimed by the seller.
-
-We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object. It also makes no assertion about the legality of the claim, allowing it to be used for sale of stolen items.
-
-
-```
-top = Purchase()
-top._label = "Purchase of the Example Painting on Jan 1, 2010"
-ts = TimeSpan()
-ts.begin_of_the_begin = "2010-01-01T00:00:00Z" 
-ts.end_of_the_end = "2010-01-02T00:00:00Z"
-top.timespan = ts
-seller = Person()
-seller._label = "Seller"
-buyer = Person()
-buyer._label = "Buyer"
-what = Painting(art=1)
-what._label = "Example Painting"
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = buyer
-
-op = vocab.OwnershipPhase()
-op._label = "Ownership by Buyer"
-pi = vocab.OwnershipRight()
-pi._label = "Claim of Ownership"
-op.related_entity = pi
-pi.interest_for = what
-pi.claimed_by = buyer
-op.phase_of = what
-ts1 = TimeSpan()
-ts1.begin_of_the_begin = "2010-01-01T00:00:00Z"
-ts1.end_of_the_end = "2015-03-21T00:00:00Z"
-op.timespan = ts1
-top.initiated = op
-
-pop = vocab.OwnershipPhase()
-pop._label = "Ownership by Seller"
-top.terminated = pop
-```
-
-## Multiple Owners
+## Multiple Owners with Different Stakes
 
 A change in ownership might involve more than two parties, resulting in a state where multiple actors together own some share of the object.  Examples of this situation include when art dealers share the costs of purchasing an object and then share the proceeds of sale in the same proportions, when a donor gives part of the value of an object to an institution, or when a marriage is dissolved and the value of the object is split between the individuals.
 
@@ -245,38 +158,7 @@ pay.paid_amount = amnt
 top.part = pay
 ```
 
-## Theft
-
-Objects can change hands illegally, such as via theft (_aat:300055292_) or looting (_aat:300379554_). This is modeled as a new `PropertyInterest` that is marked as being actually illegal, via _aat:300055289_, that competes with the actual claim of the owner. This pattern means that when the thief then sells the stolen object to an unsuspecting buyer, the `Acquisition` is described the same way as any other. It also lets further claims of ownership be layered on top, where the situation is not so clear.  If the object is part of reparations or was looted by a government under some oppressive regime, then the Acquisition might be considered legitimate in some contexts and not in others.
 
 
-XXX Yup.
 
-```
-top = Theft()
-top._label = "Theft of Painting"
-what = Painting(art=1)
-what._label = "Example Stolen Painting"
-top.transferred_title_of = what
-who = Person()
-who._label = "Owner"
-top.transferred_title_from = who
-who = Person()
-who._label = "Unknown Thief"
-top.transferred_title_to = who
-when = TimeSpan()
-when._label = "Time of Theft"
-when.begin_of_the_begin = "1940-07-10T00:00:00Z"
-when.end_of_the_end = "1940-07-11T00:00:00Z"
 
-claim = vocab.OwnershipRight()
-claim.classified_as = instances['crime']
-claim.interest_for = what
-begin = BeginningOfExistence()
-begin.brought_into_existence = claim
-top.part = begin
-```
-
-!!! warning "Alternative Model to CIDOC-CRM recommendation"
-
-	A concern with the CIDOC model of using Transfers of Custody to model theft is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody in exchange for payment.  If it is not known that the object was stolen, then the data would incorrectly record it as a sale, which is an Acquisition rather than Transfer of Custody.

@@ -19,7 +19,7 @@ Long term loans or even "permanent" loans are just open ended pairs of activitie
 In the model, transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
 
 ```crom
-top = vocab.Procurement(label="Lending a Sculpture to Recipient")
+top = vocab.ProvenanceEntry(label="Lending a Sculpture to Recipient")
 loan = vocab.Loan()
 top.part = loan
 loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
@@ -30,15 +30,13 @@ loan.transferred_custody_to = Person(label="Recipient")
 Which would typically be followed by a later return:
 
 ```crom
-top = vocab.Procurement(label="Return of the Sculpture to Lender")
-loan = model.TransferOfCustody()
-# XXX This should have an AAT term but I can't find one
+top = vocab.ProvenanceEntry(label="Return of the Sculpture to Lender")
+loan = vocab.ReturnOfLoan(label="Return")
 top.part = loan
 loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
 loan.transferred_custody_from = Person(label="Recipient")
 loan.transferred_custody_to = Person(label="Lender")
 ```
-
 
 ## Loss
 
@@ -46,7 +44,7 @@ The loss of an object is the transfer of custody away from its current owner, wi
 
 
 ```crom
-top = vocab.Procurement(label="Loss of Painting")
+top = vocab.ProvenanceEntry(label="Loss of Painting")
 xfer = vocab.Loss()
 xfer.transferred_custody_of = Painting(label="Lost Painting", art=1)
 xfer.transferred_custody_from = Person(label="Owner")
@@ -54,23 +52,55 @@ when = TimeSpan(label="Time noticed as Lost")
 when.begin_of_the_begin = "1790-12-04T00:00:00Z"
 when.end_of_the_end = "1790-12-05T00:00:00Z"
 xfer.timespan = when
+top.part = xfer
 ```
 
 ## Theft
 
 The theft of an object is also the (illegal) transfer of custody of the object, rather than a transfer of ownership. If  the stolen object were recovered, then it would be restored to its owner. Stolen, or looted as a special case of theft, objects and their repatriation are an interesting and important part of the provenance of a work and frequently contested.
 
-FIXME Example
+A single theft event might involve stealing multiple objects, in the same way that the purchase of an auction lot might involve the acquisition of multiple objects for a combined payment. 
 
+```crom
+top = vocab.ProvenanceEntry(label="Theft of Two Paintings")
+own = Person(label="Owner")
+thf = Person(label="Thief")
+xfer = vocab.Theft()
+xfer.transferred_custody_of = Painting(label="Stolen Painting", art=1)
+xfer.transferred_custody_from = own
+xfer.transferred_custody_to = thf
+xfer2 = vocab.Theft()
+xfer2.transferred_custody_of = Painting(label="Stolen Painting 2" , art=1)
+xfer2.transferred_custody_from = own
+xfer2.transferred_custody_to = thf
+top.part = xfer
+top.part = xfer2
+```
 
 ### Sale of Stolen or Looted Objects
 
-If a stolen object is sold, then that purchase is actually just a transfer of custody in exchange for money (or other payment). Typically, of course, the nature of that transaction is not discovered until long after the fact. This can then have many effects on the provenance record for the object as suddenly many acquisitions would be retroactively changed to being transfers of custody.
+If a stolen object is sold, then that purchase is actually just a transfer of custody in exchange for money (or other payment). Typically, of course, the nature of that transaction is not discovered until long after the fact. This can then have many effects on the provenance record for the object as suddenly many acquisitions would be retroactively changed to being transfers of custody. This updating of the historical record is necessary without going to great lengths to model the belief that an acquisition is legal for the vast majority of cases when it is, indeed, legal in order to allow that belief to be incorrect for the few times when it is not.
 
-FIXME Example
-
+```crom
+top = vocab.ProvenanceEntry(label="Unknowing Purchase of Stolen Painting")
+thf = Person(label="Thief")
+mus = vocab.MuseumOrg(label="Museum")
+what = Painting(label="Stolen Painting", art=1)
+xfer = vocab.SaleOfStolenGoods(label="Obtaining Painting")
+top.part = xfer
+xfer.transferred_custody_of = what
+xfer.transferred_custody_from = thf
+xfer.transferred_custody_to = mus
+pay = Payment()
+xfer.paid_from = mus
+xfer.paid_to = thf
+amnt = MonetaryAmount(label="Payment to Thief")
+amnt.value = 10000
+amnt.currency = vocab.instances['gb pounds']
+xfer.paid_amount = amnt
+top.part = pay
+```
 
 ## Exhibitions
 
 Exhibitions are a common way that the custody of an object changes, while the ownership remains the same.  Exhibitions are described in more detail [here](/model/exhibition/).
-

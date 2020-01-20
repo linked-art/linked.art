@@ -25,7 +25,7 @@ __Example:__
 The Museum made a purchase in late April 2002 of a painting. The details about the painting and payment would be given using parts (the `Acquisition` and a `Payment` respectively, and described in more detail in subsequent sections).
 
 ```crom
-top = vocab.Procurement(label="Purchase of Painting")
+top = vocab.ProvenanceEntry(label="Purchase of Painting")
 top.identified_by = vocab.LocalNumber(value="acq-2002-0005")
 museum = vocab.MuseumOrg(label="Museum")
 top.carried_out_by = museum
@@ -60,9 +60,9 @@ __Example:__
 
 
 ```crom
-top = vocab.Procurement(label="Undated Purchase of Painting")
-top.starts_after_the_end_of = vocab.Procurement(label="Previous acquisition")
-top.ends_before_the_start_of = vocab.Procurement(label="Subsequent acquisition")
+top = vocab.ProvenanceEntry(label="Undated Purchase of Painting")
+top.starts_after_the_end_of = vocab.ProvenanceEntry(label="Previous acquisition")
+top.ends_before_the_start_of = vocab.ProvenanceEntry(label="Subsequent acquisition")
 ```
 
 
