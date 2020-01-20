@@ -92,12 +92,12 @@ xfer.transferred_custody_of = what
 xfer.transferred_custody_from = thf
 xfer.transferred_custody_to = mus
 pay = Payment()
-xfer.paid_from = mus
-xfer.paid_to = thf
+pay.paid_from = mus
+pay.paid_to = thf
 amnt = MonetaryAmount(label="Payment to Thief")
 amnt.value = 10000
 amnt.currency = vocab.instances['gb pounds']
-xfer.paid_amount = amnt
+pay.paid_amount = amnt
 top.part = pay
 ```
 
