@@ -11,13 +11,17 @@ up_label: "Provenance"
 Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of more complex scenarios that require explicitly describing the right that is held by a particular actor, such as for asymmetric shared ownership of an object. Other scenarios in which a right is being transferred or created rather than the more specific case of the entire right of ownership are also covered here, such as the intellectual property right to perform a work of time-based media or theatre.
 
 
-## Rights
+## Rights and their Acquisition
 
 The model for acquiring an object (by purchase, gift or other means) incorporates the specific right of ownership into the properties of the `Acquisition` resource.  The acquisition transfers the title of the object between parties, but that "title" could be expanded to a more completely modeled `Right`.  For some scenarios where we have more information about the interactions and legal status, we need to explicitly model these rights.
 
 Rights are conceptual things that apply to their real world subjects. They are not relative to time, but can be established and invalidated by various activities or events.  The simplest case would be that as part of the provenance event where an object is acquired, there is also the establishment of the right of ownership of that object by the new owner and the invalidation of the right of ownership of the previous owner.
 
 While it is possible and valid to have both the `Acquisition` and the `Right` in a single provenance entry, it is redundant as the acquisition model is simpler and more concise without losing any information. The sections below introduce scenarios in which information would be lost without the explicit modeling of the Right.
+
+In order to connect the `Right` to the provenance activity, we introduce a new `Activity` subclass called `RightAcquistion`.  It has two new properties: `establishes` links the `Right` that was established by this activity, and `invalidates` can optionally link to the `Right` that was rendered invalid by the activity.  
+
+Instances of `Right` have two properties: `possessed_by` refers to the actor (`Group` or `Person`) that has the right described, and `applies_to` refers to the thing over which the right pertains.
 
 ```crom
 top = vocab.ProvenanceEntry()
@@ -43,7 +47,7 @@ A change in ownership might involve more than two parties, resulting in a state 
 
 The base acquisition model allows for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party and the implicit assumption should be that all parties owned equal shares. In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `Right` into shares to be divided. These components are themselves `Right`s that are possessed by the respective parties.
 
-In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
+In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership. At any given time the total shares of an object should, of course, add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened.
 
 ```
 top = vocab.ProvenanceEntry(label="Purchase of Painting by Two Dealers")
@@ -76,23 +80,54 @@ right.part = r2
 ```
 
 
+### Transfer of Shares
 
-## Acquisition of a Right
+Once the share of an object has been established, that right can be traded as part of future provenance entries.  
 
 
-## Acquisition of Intellectual Property Rights
+```
+top = vocab.ProvenanceEntry(label="Trading Shares of Painting between Two Dealers")
+d1 = Group(label="Dealer 1")
+d2 = Group(label="Dealer 2")
+what = Painting(label="Painting")
+unit = MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+
+rx1 = model.RightAcquisition()
+top.part = rx1
+r1 = vocab.OwnershipRight(label="40% Ownership by Dealer 1")
+r1.possessed_by = d1
+r1.applies_to = what
+dim1 = Dimension()
+dim1.value = 40
+dim1.unit = unit
+r1.dimension = dim1
+rx1.establishes = r1
+
+rx2 = model.RightAcquisition()
+top.part= rx2
+r2 = vocab.OwnershipRight(label="60% Ownership by Dealer 2")
+r2.possessed_by = d2
+dim1 = Dimension()
+dim1.value = 70
+dim1.unit = unit
+r2.dimension = dim1
+rx2.establishes = r2
+
+```
+
+
+
 
 
 
 
 ### Transfer of Shares Amongst Owners
 
-In some situations, the set of owners does not change, however they trade the proportion of ownership of the object amongst themselves.  Two scenarios in which this occurs are when a group of dealers value without trading stock, and when individuals make partial gifts over time to a museum or other organization.
 
-As the owners do not change, there is no new `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the claimed ownership.  A new `PropertyInterest` is brought into effect with shares that include the new proportions, and the previous `PropertyInterest`'s effect ends.  This process likely also includes other transfers, perhaps of currency via a `Payment`.
+In some cases where the current owners trade value amongst themselves, the propotions change but not the set of owners. Common situations where this might occur include when art dealers want to buy or exchange objects for a greater share in an object that they believe is more likely to sell, or when a donor makes a gift to a museum with increasing value over time.
 
+As the owners do not change, there is no new `Acquisition` of the object and instead it is the reassignment of the proportions amongst the shares.
 
-XXX Still true
 
 ```
 top = Activity()
