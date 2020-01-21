@@ -8,16 +8,38 @@ up_label: "Provenance"
 
 ## Introduction
 
-Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of shared ownership of an object, and other scenarios in which a right is being transferred or created rather than the more specific case of the entire right of ownership.
+Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of more complex scenarios that require explicitly describing the right that is held by a particular actor, such as for asymmetric shared ownership of an object. Other scenarios in which a right is being transferred or created rather than the more specific case of the entire right of ownership are also covered here, such as the intellectual property right to perform a work of time-based media or theatre.
 
 
 ## Rights
 
+The model for acquiring an object (by purchase, gift or other means) incorporates the specific right of ownership into the properties of the `Acquisition` resource.  The acquisition transfers the title of the object between parties, but that "title" could be expanded to a more completely modeled `Right`.  For some scenarios where we have more information about the interactions and legal status, we need to explicitly model these rights.
 
-## Acquisition of a Right
+Rights are conceptual things that apply to their real world subjects. They are not relative to time, but can be established and invalidated by various activities or events.  The simplest case would be that as part of the provenance event where an object is acquired, there is also the establishment of the right of ownership of that object by the new owner and the invalidation of the right of ownership of the previous owner.
 
 
-## Acquisition of Intellectual Property Rights
+### Right of Ownership
+
+```crom
+top = vocab.ProvenanceEntry()
+what = vocab.Painting(label="Painting", art=1)
+who = vocab.MuseumOrg(label="Museum")
+xfer = Acquisition()
+xfer.transferred_title_of = what
+xfer.transferred_title_to = who
+top.part = xfer
+rxfer = model.RightAcquisition()
+right = vocab.OwnershipRight(label="Right of Ownership for Painting")
+rxfer.establishes = right
+right.held_by = who
+right.held_over = what
+top.part = rfxer
+```
+
+### Parts of Rights
+
+
+
 
 
 
@@ -75,6 +97,15 @@ dim2.unit = unit
 newclaim2.dimension = dim2
 newclaim.interest_part = newclaim2
 ```
+
+
+
+## Acquisition of a Right
+
+
+## Acquisition of Intellectual Property Rights
+
+
 
 
 ### Transfer of Shares Amongst Owners
