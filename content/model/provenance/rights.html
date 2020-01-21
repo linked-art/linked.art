@@ -49,7 +49,7 @@ The base acquisition model allows for ownership to be transferred to multiple ac
 
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership. At any given time the total shares of an object should, of course, add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened.
 
-```
+```crom
 top = vocab.ProvenanceEntry(label="Purchase of Painting by Two Dealers")
 d1 = Group(label="Dealer 1")
 d2 = Group(label="Dealer 2")
@@ -85,7 +85,7 @@ right.part = r2
 Once the share of an object has been established, that right can be traded as part of future provenance entries.  
 
 
-```
+```crom
 top = vocab.ProvenanceEntry(label="Trading Shares of Painting between Two Dealers")
 d1 = Group(label="Dealer 1")
 d2 = Group(label="Dealer 2")
