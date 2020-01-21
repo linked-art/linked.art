@@ -29,7 +29,7 @@ from cromulent.vocab import Painting, InformationObject, Department, SupportPart
 	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
 	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
 	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
-	DigitalImage, instances, add_art_setter, add_attribute_assignment_check
+	DigitalImage, instances
 
 HumanMadeObject._uri_segment = "object"
 Activity._uri_segment = "activity"
@@ -81,8 +81,9 @@ factory.base_dir = "content/%s" % egdir
 factory.context_uri = contextUrl
 # Ensure it's still int per segment
 factory.auto_id_type = "int-per-segment"
-add_art_setter()
-add_attribute_assignment_check()
+vocab.add_art_setter()
+vocab.add_attribute_assignment_check()
+vocab.conceptual_only_parts()
 factory.id_type_label = True
 
 # Try to load in the context only once
