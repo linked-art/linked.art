@@ -192,7 +192,8 @@ class IndexingPlugin(Plugin):
 			"Payment": "event",
 			"AttributeAssignment": "event",
 			"Phase": "event",
-			"Relationship": "dims"
+			"Relationship": "dims",
+			"RightAcquisition": "event"
 		}
 
 	def begin_site(self):

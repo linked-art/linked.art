@@ -17,13 +17,13 @@ The model for acquiring an object (by purchase, gift or other means) incorporate
 
 Rights are conceptual things that apply to their real world subjects. They are not relative to time, but can be established and invalidated by various activities or events.  The simplest case would be that as part of the provenance event where an object is acquired, there is also the establishment of the right of ownership of that object by the new owner and the invalidation of the right of ownership of the previous owner.
 
-
-### Right of Ownership
+While it is possible and valid to have both the `Acquisition` and the `Right` in a single provenance entry, it is redundant as the acquisition model is simpler and more concise without losing any information. The sections below introduce scenarios in which information would be lost without the explicit modeling of the Right.
 
 ```crom
 top = vocab.ProvenanceEntry()
-what = vocab.Painting(label="Painting", art=1)
-who = vocab.MuseumOrg(label="Museum")
+# Omit some classifications for readability
+what = model.HumanMadeObject(label="Painting")
+who = model.Group(label="Museum")
 xfer = Acquisition()
 xfer.transferred_title_of = what
 xfer.transferred_title_to = who
@@ -36,66 +36,43 @@ right.applies_to = what
 top.part = rxfer
 ```
 
-### Parts of Rights
-
-
-
-
-
 
 ## Multiple Owners with Different Stakes
 
 A change in ownership might involve more than two parties, resulting in a state where multiple actors together own some share of the object.  Examples of this situation include when art dealers share the costs of purchasing an object and then share the proceeds of sale in the same proportions, when a donor gives part of the value of an object to an institution, or when a marriage is dissolved and the value of the object is split between the individuals.
 
-The base provenance model does allow for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party.  The same is true for transfers of custody and for payments of monetary amounts.  The use of the `PropertyInterest` structure accommodates these cases.
-
-In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `PropertyInterest` into shares to be divided. These components are themselves `PropertyInterest`s that are claimed by the respective parties.
+The base acquisition model allows for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party and the implicit assumption should be that all parties owned equal shares. In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `Right` into shares to be divided. These components are themselves `Right`s that are possessed by the respective parties.
 
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
 
 ```
-top = Purchase()
-top._label = "Purchase of the Example Painting by two Art Dealers"
-seller = Actor()
-seller._label = "Seller"
-d1 = Group()
-d1._label = "Art Dealership 1"
-d2 = Group()
-d2._label = "Art Dealership 2"
-what = Painting()
-what._label = "Example Painting"
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = d1
-top.transferred_title_to = d2
-unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
-unit._label = "Percent"
+top = vocab.ProvenanceEntry(label="Purchase of Painting by Two Dealers")
+d1 = Group(label="Dealer 1")
+d2 = Group(label="Dealer 2")
+what = Painting(label="Painting")
+unit = MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+right = vocab.OwnershipRight(label="Total Right of Ownership")
 
-op = vocab.OwnershipPhase()
-top.initiated = op
+rxfer = model.RightAcquisition()
+top.part = rxfer
+rxfer.establishes = right
+right.applies_to = what
 
-newclaim = vocab.OwnershipRight()
-newclaim._label = "Total Claim of Ownership"
-newclaim.interest_for = what
-op.related_entity = newclaim
-
-newclaim1 = vocab.OwnershipRight()
-newclaim1._label = "Claim of 30% Ownership by Dealer 1"
-newclaim1.claimed_by = d1
+r1 = vocab.OwnershipRight(label="30% Ownership by Dealer 1")
+r1.possessed_by = d1
 dim1 = Dimension()
 dim1.value = 30
 dim1.unit = unit
-newclaim1.dimension = dim1
-newclaim.interest_part = newclaim1
+r1.dimension = dim1
+right.part = r1
 
-newclaim2 = vocab.OwnershipRight()
-newclaim2._label = "Claim of 70% Ownership by Dealer 2"
-newclaim2.claimed_by = d2
-dim2 = Dimension()
-dim2.value = 70
-dim2.unit = unit
-newclaim2.dimension = dim2
-newclaim.interest_part = newclaim2
+r2 = vocab.OwnershipRight(label="70% Ownership by Dealer 2")
+r2.possessed_by = d2
+dim1 = Dimension()
+dim1.value = 70
+dim1.unit = unit
+r2.dimension = dim1
+right.part = r2
 ```
 
 
