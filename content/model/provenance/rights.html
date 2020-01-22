@@ -84,6 +84,10 @@ right.part = r2
 
 Once the share of an object has been established, that right can be traded as part of future provenance entries.  
 
+In order to maintain consistency with the original establishment of the division of ownership, the difference between the initial state and the new state is not described, but instead the new state is described directly. If a 10% share is acquired from another owner, the 10% is not traded requiring the system to calculate the new total proportions, but instead the new total proportions are described. 
+
+If only existing owners are part of the entry, then there is no need to establish a new Right that is the new total ownership, it is simply a new division of the existing total. Ownership Rights are brought into existence by `Acquisition` events - the set of people who possess the right is fixed, and is the same set of actors as those referenced by `title_transferred_to`. Thus any new Acquisition by a new partial owner requires a new Ownership Right, as described above.
+
 
 ```crom
 top = vocab.ProvenanceEntry(label="Trading Shares of Painting between Two Dealers")
@@ -102,6 +106,7 @@ dim1.value = 40
 dim1.unit = unit
 r1.dimension = dim1
 rx1.establishes = r1
+rx1.invalidates = vocab.OwnershipRight(label="30% Ownership by Dealer 1")
 
 rx2 = model.RightAcquisition()
 top.part= rx2
@@ -112,96 +117,28 @@ dim1.value = 70
 dim1.unit = unit
 r2.dimension = dim1
 rx2.establishes = r2
-
+rx2.invalidates = vocab.OwnershipRight(label="70% Ownership by Dealer 2")
 ```
 
+## Intellectual Property Rights
+
+Other sorts of rights associated with art that can be acquired include the intellectual property rights, such as copyright for a text or image, separate from any physical carrier, or the right to perform some piece of time-based media such as a projected installation.  The manipulation of these rights also uses the `RightAcquisition` pattern.
+
+Many copyrights for images are owned by collective organizations rather than individuals, and these organizations can acquire and exchange those copyrights completely independently of any physical carrier of the image.
+
+__Example:__
+
+A copyright management organization, the Paintings Copyright Association, acquired the copyright for a particular painting in 2014.
 
 
-
-
-
-
-### Transfer of Shares Amongst Owners
-
-
-In some cases where the current owners trade value amongst themselves, the propotions change but not the set of owners. Common situations where this might occur include when art dealers want to buy or exchange objects for a greater share in an object that they believe is more likely to sell, or when a donor makes a gift to a museum with increasing value over time.
-
-As the owners do not change, there is no new `Acquisition` of the object and instead it is the reassignment of the proportions amongst the shares.
-
-
+```crom
+top = vocab.ProvenanceEntry(label="Copyright acquisition by PCA")
+pca = model.Group(label="Paintings Copyright Association")
+what = vocab.Painting(label="Painting", art=1)
+xfer = model.RightAcquisition()
+top.part = xfer
+right = vocab.CopyrightRight()
+xfer.establishes = right
+right.possessed_by = pca
+right.applies_to = what
 ```
-top = Activity()
-what = Painting()
-what._label = "Example Painting"
-d1 = Group()
-d1._label = "Art Dealership 1"
-d2 = Group()
-d2._label = "Art Dealership 2"
-unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
-unit._label = "Percent"
-
-newclaim = vocab.OwnershipRight()
-newclaim._label = "Previous Total Claim of Ownership"
-newclaim.interest_for = what
-
-newclaim1 = vocab.OwnershipRight()
-newclaim1._label = "Claim of 30% Ownership by Dealer 1"
-newclaim1.claimed_by = d1
-dim1 = Dimension()
-dim1.value = 30
-dim1.unit = unit
-newclaim1.dimension = dim1
-newclaim.interest_part = newclaim1
-
-newclaim2 = vocab.OwnershipRight()
-newclaim2._label = "Claim of 70% Ownership by Dealer 2"
-newclaim2.claimed_by = d2
-dim2 = Dimension()
-dim2.value = 70
-dim2.unit = unit
-newclaim2.dimension = dim2
-newclaim.interest_part = newclaim2
-
-oldclaim = vocab.OwnershipRight()
-oldclaim._label = "New Claim of Ownership"
-oldclaim.interest_for = what
-
-oldclaim1 = vocab.OwnershipRight()
-oldclaim1._label = "Claim of 40% Ownership by Dealer 1"
-oldclaim1.claimed_by = d1
-dim1 = Dimension()
-dim1.value = 40
-dim1.unit = unit
-oldclaim1.dimension = dim1
-oldclaim.interest_part = oldclaim1
-
-oldclaim2 = vocab.OwnershipRight()
-oldclaim2._label = "Claim of 60% Ownership by Dealer 2"
-oldclaim2.claimed_by = d2
-dim2 = Dimension()
-dim2.value = 60
-dim2.unit = unit
-oldclaim2.dimension = dim2
-oldclaim.interest_part = oldclaim2
-
-xform = Transformation()
-xform.transformed = oldclaim
-xform.resulted_in = newclaim
-top.part = xform
-
-pay = Payment()
-pay.paid_from = d1
-pay.paid_to = d2
-amnt = MonetaryAmount()
-amnt.value = 100000
-curr = Currency()
-curr._label = "dollars"
-amnt.currency = curr
-pay.paid_amount = amnt
-top.part = pay
-```
-
-
-
-
-
