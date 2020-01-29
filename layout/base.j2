@@ -15,6 +15,7 @@
         <script src="{{ media_url('vendor/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ media_url('vendor/underscore-min.js') }}"></script>
         <script src="{{ media_url('vendor/mermaid.min.js') }}"></script>
+        <script src="{{ media_url('vendor/screenfull.min.js') }}"></script>
 
         <title>{{ resource.meta.title }}</title>
 
@@ -56,6 +57,11 @@
       theme: 'neutral',
       logLevel: 3,
       flowchart: { curve: 'linear' }
+    });
+    $('.mermaid').on('click', event => {
+	    if (screenfull.isEnabled) {
+		    screenfull.toggle(event.target);
+	    }
     });
         </script>        
     </body>
