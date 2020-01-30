@@ -1,5 +1,5 @@
 ---
-title: Legal Issues of Ownership
+title: Transfer of Rights
 up_href: "/model/provenance/"
 up_label: "Provenance"
 ---
@@ -8,275 +8,137 @@ up_label: "Provenance"
 
 ## Introduction
 
-Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of shared ownership of an object, contested ownership, looting, theft and subsequent sale of the stolen object, as well as other legal claims such as copyright or restricted rights of reproduction. 
+Ownership is often more complicated than a single individual acquiring an object and immediately having both physical possession and the legal right of ownership.  This section deals with the description of more complex scenarios that require explicitly describing the right that is held by a particular actor, such as for asymmetric shared ownership of an object. Other scenarios in which a right is being transferred or created rather than the more specific case of the entire right of ownership are also covered here, such as the intellectual property right to perform a work of time-based media or theatre.
 
 
+## Rights and their Acquisition
 
-# This needs to be rewritten
+The model for acquiring an object (by purchase, gift or other means) incorporates the specific right of ownership into the properties of the `Acquisition` resource.  The acquisition transfers the title of the object between parties, but that "title" could be expanded to a more completely modeled `Right`.  For some scenarios where we have more information about the interactions and legal status, we need to explicitly model these rights.
 
+Rights are conceptual things that apply to their real world subjects. They are not relative to time, but can be established and invalidated by various activities or events.  The simplest case would be that as part of the provenance event where an object is acquired, there is also the establishment of the right of ownership of that object by the new owner and the invalidation of the right of ownership of the previous owner.
 
-## Claims of Rights
+While it is possible and valid to have both the `Acquisition` and the `Right` in a single provenance entry, it is redundant as the acquisition model is simpler and more concise without losing any information. The sections below introduce scenarios in which information would be lost without the explicit modeling of the Right.
 
-In order to describe these situations, we introduce a new class called 'PropertyInterest'.  This is a claim of a particular legal right, such as ownership or copyright, and is claimed by an `Actor` within a legal jurisdiction modeled as a `Place`.  This class can then be used to describe any claim, valid or not, of any right.  
+In order to connect the `Right` to the provenance activity, we introduce a new `Activity` subclass called `RightAcquistion`.  It has two new properties: `establishes` links the `Right` that was established by this activity, and `invalidates` can optionally link to the `Right` that was rendered invalid by the activity.  
 
-The Claim is a Man Made Thing, rather than the activity of asserting the claim.  As such it can be created and destroyed.  It is not a physical thing, although there may be physical evidence such as a contract described using other parts of the model.  It is also not the same as a `ConceptualObject` which cannot be destroyed once conceived. It is the beginning and ending of the Property Interest that gives the period of asserted validity, rather than as properties of the Property Interest itself.
+Instances of `Right` have two properties: `possessed_by` refers to the actor (`Group` or `Person`) that has the right described, and `applies_to` refers to the thing over which the right pertains.
 
-The legal status that is claimed by the Property Interest is associated as a classification, like all other out-of-model classes.  Thus, the basic Property Interest model has the following structure:
-
-```
-top = vocab.OwnershipRight()
-top._label = "Claim of Ownership"
-who = Person()
-who._label = "Owner of Example Painting"
-what = Painting()
-what._label = "Example Painting"
-top.interest_for = what
-where = Place()
-where._label = "Legal jurisdiction of Claim"
-top.claimed_by = who
-# top.jurisdiction = where
-```
-
-### Effective Period
-
-The XXXXXXXXXXXXXXXXX class does not have any relationship with a period or time span over which it is claimed.  This is because the Property Interest is modeled as a conceptual thing - the claim of ownership - rather than an activity. That claim is then associated with a Phase of the object, the phase in which that claim is related to the object. The Phase manages the time period in the same way as a regular ownership phase does, and can be initiated and terminated in the same way as other ownership phases.
-
-
-```
-top = vocab.OwnershipPhase()
-pi = vocab.OwnershipRight()
-pi._label = "Claim of Ownership"
-top.related_entity = pi
-
-who = Person()
-who._label = "Owner of Example Painting"
-pi.claimed_by = who
-what = Painting()
-what._label = "Example Painting"
-pi.interest_for = what
-top.phase_of = what
-
-ts1 = TimeSpan()
-ts1.begin_of_the_begin = "1743-05-12T00:00:00"
-ts1.end_of_the_end = "1821-11-28T00:00:00"
-top.timespan = ts1
+```crom
+top = vocab.ProvenanceEntry()
+# Omit some classifications for readability
+what = model.HumanMadeObject(label="Painting")
+who = model.Group(label="Museum")
+xfer = Acquisition()
+xfer.transferred_title_of = what
+xfer.transferred_title_to = who
+top.part = xfer
+rxfer = model.RightAcquisition()
+right = vocab.OwnershipRight(label="Right of Ownership for Painting")
+rxfer.establishes = right
+right.possessed_by = who
+right.applies_to = what
+top.part = rxfer
 ```
 
 
-## Ownership Rights
-
-The base [provenance model](/model/provenance/) and the `PropertyInterest` extension are completely compatible.  The activities that are described at that level have the beginning and ending of existence of the claims as parts.  The assertions that make up the `PropertyInterest` structure can be automatically generated to ensure a consistent model.
-
-In particular, an `Acquisition` of the object would initiate the Ownership Phase. This allows other curation activities to occur within that Phase that otherwise would not be connected to the notion of ownership, such as when an art dealer [takes inventory](/model/provenance/curation.html). It would also terminate the previous Ownership Phase of the object claimed by the seller.
-
-We classify the `PropertyInterest` as being one of ownership (_aat:300055603_), as opposed to any other legal status that might be applied to the object. It also makes no assertion about the legality of the claim, allowing it to be used for sale of stolen items.
-
-
-```
-top = Purchase()
-top._label = "Purchase of the Example Painting on Jan 1, 2010"
-ts = TimeSpan()
-ts.begin_of_the_begin = "2010-01-01T00:00:00Z" 
-ts.end_of_the_end = "2010-01-02T00:00:00Z"
-top.timespan = ts
-seller = Person()
-seller._label = "Seller"
-buyer = Person()
-buyer._label = "Buyer"
-what = Painting(art=1)
-what._label = "Example Painting"
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = buyer
-
-op = vocab.OwnershipPhase()
-op._label = "Ownership by Buyer"
-pi = vocab.OwnershipRight()
-pi._label = "Claim of Ownership"
-op.related_entity = pi
-pi.interest_for = what
-pi.claimed_by = buyer
-op.phase_of = what
-ts1 = TimeSpan()
-ts1.begin_of_the_begin = "2010-01-01T00:00:00Z"
-ts1.end_of_the_end = "2015-03-21T00:00:00Z"
-op.timespan = ts1
-top.initiated = op
-
-pop = vocab.OwnershipPhase()
-pop._label = "Ownership by Seller"
-top.terminated = pop
-```
-
-## Multiple Owners
+## Multiple Owners with Different Stakes
 
 A change in ownership might involve more than two parties, resulting in a state where multiple actors together own some share of the object.  Examples of this situation include when art dealers share the costs of purchasing an object and then share the proceeds of sale in the same proportions, when a donor gives part of the value of an object to an institution, or when a marriage is dissolved and the value of the object is split between the individuals.
 
-The base provenance model does allow for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party.  The same is true for transfers of custody and for payments of monetary amounts.  The use of the `PropertyInterest` structure accommodates these cases.
+The base acquisition model allows for ownership to be transferred to multiple actors, but it is impossible to then determine the share of the value that was owned by each party and the implicit assumption should be that all parties owned equal shares. In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `Right` into shares to be divided. These components are themselves `Right`s that are possessed by the respective parties.
 
-In order to allow for the description of different proportions of the object to be owned by different actors, we need partition the `PropertyInterest` into shares to be divided. These components are themselves `PropertyInterest`s that are claimed by the respective parties.
+In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership. At any given time the total shares of an object should, of course, add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened.
 
-In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership claim. At any given time, the total shares of an object should add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened to the remaining value.
+```crom
+top = vocab.ProvenanceEntry(label="Purchase of Painting by Two Dealers")
+d1 = Group(label="Dealer 1")
+d2 = Group(label="Dealer 2")
+what = Painting(label="Painting")
+unit = MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+right = vocab.OwnershipRight(label="Total Right of Ownership")
 
-```
-top = Purchase()
-top._label = "Purchase of the Example Painting by two Art Dealers"
-seller = Actor()
-seller._label = "Seller"
-d1 = Group()
-d1._label = "Art Dealership 1"
-d2 = Group()
-d2._label = "Art Dealership 2"
-what = Painting()
-what._label = "Example Painting"
-top.transferred_title_of = what
-top.transferred_title_from = seller
-top.transferred_title_to = d1
-top.transferred_title_to = d2
-unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
-unit._label = "Percent"
+rxfer = model.RightAcquisition()
+top.part = rxfer
+rxfer.establishes = right
+right.applies_to = what
 
-op = vocab.OwnershipPhase()
-top.initiated = op
-
-newclaim = vocab.OwnershipRight()
-newclaim._label = "Total Claim of Ownership"
-newclaim.interest_for = what
-op.related_entity = newclaim
-
-newclaim1 = vocab.OwnershipRight()
-newclaim1._label = "Claim of 30% Ownership by Dealer 1"
-newclaim1.claimed_by = d1
+r1 = vocab.OwnershipRight(label="30% Ownership by Dealer 1")
+r1.possessed_by = d1
 dim1 = Dimension()
 dim1.value = 30
 dim1.unit = unit
-newclaim1.dimension = dim1
-newclaim.interest_part = newclaim1
+r1.dimension = dim1
+right.part = r1
 
-newclaim2 = vocab.OwnershipRight()
-newclaim2._label = "Claim of 70% Ownership by Dealer 2"
-newclaim2.claimed_by = d2
-dim2 = Dimension()
-dim2.value = 70
-dim2.unit = unit
-newclaim2.dimension = dim2
-newclaim.interest_part = newclaim2
-```
-
-
-### Transfer of Shares Amongst Owners
-
-In some situations, the set of owners does not change, however they trade the proportion of ownership of the object amongst themselves.  Two scenarios in which this occurs are when a group of dealers value without trading stock, and when individuals make partial gifts over time to a museum or other organization.
-
-As the owners do not change, there is no new `Acquisition`.  Instead, it is the reassignment of the proportions amongst the shares of the claimed ownership.  A new `PropertyInterest` is brought into effect with shares that include the new proportions, and the previous `PropertyInterest`'s effect ends.  This process likely also includes other transfers, perhaps of currency via a `Payment`.
-
-
-XXX Still true
-
-```
-top = Activity()
-what = Painting()
-what._label = "Example Painting"
-d1 = Group()
-d1._label = "Art Dealership 1"
-d2 = Group()
-d2._label = "Art Dealership 2"
-unit = MeasurementUnit("http://qudt.org/1.1/vocab/unit/Percent")
-unit._label = "Percent"
-
-newclaim = vocab.OwnershipRight()
-newclaim._label = "Previous Total Claim of Ownership"
-newclaim.interest_for = what
-
-newclaim1 = vocab.OwnershipRight()
-newclaim1._label = "Claim of 30% Ownership by Dealer 1"
-newclaim1.claimed_by = d1
+r2 = vocab.OwnershipRight(label="70% Ownership by Dealer 2")
+r2.possessed_by = d2
 dim1 = Dimension()
-dim1.value = 30
+dim1.value = 70
 dim1.unit = unit
-newclaim1.dimension = dim1
-newclaim.interest_part = newclaim1
+r2.dimension = dim1
+right.part = r2
+```
 
-newclaim2 = vocab.OwnershipRight()
-newclaim2._label = "Claim of 70% Ownership by Dealer 2"
-newclaim2.claimed_by = d2
-dim2 = Dimension()
-dim2.value = 70
-dim2.unit = unit
-newclaim2.dimension = dim2
-newclaim.interest_part = newclaim2
 
-oldclaim = vocab.OwnershipRight()
-oldclaim._label = "New Claim of Ownership"
-oldclaim.interest_for = what
+### Transfer of Shares
 
-oldclaim1 = vocab.OwnershipRight()
-oldclaim1._label = "Claim of 40% Ownership by Dealer 1"
-oldclaim1.claimed_by = d1
+Once the share of an object has been established, that right can be traded as part of future provenance entries.  
+
+In order to maintain consistency with the original establishment of the division of ownership, the difference between the initial state and the new state is not described, but instead the new state is described directly. If a 10% share is acquired from another owner, the 10% is not traded requiring the system to calculate the new total proportions, but instead the new total proportions are described. 
+
+If only existing owners are part of the entry, then there is no need to establish a new Right that is the new total ownership, it is simply a new division of the existing total. Ownership Rights are brought into existence by `Acquisition` events - the set of people who possess the right is fixed, and is the same set of actors as those referenced by `title_transferred_to`. Thus any new Acquisition by a new partial owner requires a new Ownership Right, as described above.
+
+
+```crom
+top = vocab.ProvenanceEntry(label="Trading Shares of Painting between Two Dealers")
+d1 = Group(label="Dealer 1")
+d2 = Group(label="Dealer 2")
+what = Painting(label="Painting")
+unit = MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+
+rx1 = model.RightAcquisition()
+top.part = rx1
+r1 = vocab.OwnershipRight(label="40% Ownership by Dealer 1")
+r1.possessed_by = d1
+r1.applies_to = what
 dim1 = Dimension()
 dim1.value = 40
 dim1.unit = unit
-oldclaim1.dimension = dim1
-oldclaim.interest_part = oldclaim1
+r1.dimension = dim1
+rx1.establishes = r1
+rx1.invalidates = vocab.OwnershipRight(label="30% Ownership by Dealer 1")
 
-oldclaim2 = vocab.OwnershipRight()
-oldclaim2._label = "Claim of 60% Ownership by Dealer 2"
-oldclaim2.claimed_by = d2
-dim2 = Dimension()
-dim2.value = 60
-dim2.unit = unit
-oldclaim2.dimension = dim2
-oldclaim.interest_part = oldclaim2
-
-xform = Transformation()
-xform.transformed = oldclaim
-xform.resulted_in = newclaim
-top.part = xform
-
-pay = Payment()
-pay.paid_from = d1
-pay.paid_to = d2
-amnt = MonetaryAmount()
-amnt.value = 100000
-curr = Currency()
-curr._label = "dollars"
-amnt.currency = curr
-pay.paid_amount = amnt
-top.part = pay
+rx2 = model.RightAcquisition()
+top.part= rx2
+r2 = vocab.OwnershipRight(label="60% Ownership by Dealer 2")
+r2.possessed_by = d2
+dim1 = Dimension()
+dim1.value = 70
+dim1.unit = unit
+r2.dimension = dim1
+rx2.establishes = r2
+rx2.invalidates = vocab.OwnershipRight(label="70% Ownership by Dealer 2")
 ```
 
-## Theft
+## Intellectual Property Rights
 
-Objects can change hands illegally, such as via theft (_aat:300055292_) or looting (_aat:300379554_). This is modeled as a new `PropertyInterest` that is marked as being actually illegal, via _aat:300055289_, that competes with the actual claim of the owner. This pattern means that when the thief then sells the stolen object to an unsuspecting buyer, the `Acquisition` is described the same way as any other. It also lets further claims of ownership be layered on top, where the situation is not so clear.  If the object is part of reparations or was looted by a government under some oppressive regime, then the Acquisition might be considered legitimate in some contexts and not in others.
+Other sorts of rights associated with art that can be acquired include the intellectual property rights, such as copyright for a text or image, separate from any physical carrier, or the right to perform some piece of time-based media such as a projected installation.  The manipulation of these rights also uses the `RightAcquisition` pattern.
+
+Many copyrights for images are owned by collective organizations rather than individuals, and these organizations can acquire and exchange those copyrights completely independently of any physical carrier of the image.
+
+__Example:__
+
+A copyright management organization, the Paintings Copyright Association, acquired the copyright for a particular painting in 2014.
 
 
-XXX Yup.
-
+```crom
+top = vocab.ProvenanceEntry(label="Copyright acquisition by PCA")
+pca = model.Group(label="Paintings Copyright Association")
+what = vocab.Painting(label="Painting", art=1)
+xfer = model.RightAcquisition()
+top.part = xfer
+right = vocab.CopyrightRight()
+xfer.establishes = right
+right.possessed_by = pca
+right.applies_to = what
 ```
-top = Theft()
-top._label = "Theft of Painting"
-what = Painting(art=1)
-what._label = "Example Stolen Painting"
-top.transferred_title_of = what
-who = Person()
-who._label = "Owner"
-top.transferred_title_from = who
-who = Person()
-who._label = "Unknown Thief"
-top.transferred_title_to = who
-when = TimeSpan()
-when._label = "Time of Theft"
-when.begin_of_the_begin = "1940-07-10T00:00:00Z"
-when.end_of_the_end = "1940-07-11T00:00:00Z"
-
-claim = vocab.OwnershipRight()
-claim.classified_as = instances['crime']
-claim.interest_for = what
-begin = BeginningOfExistence()
-begin.brought_into_existence = claim
-top.part = begin
-```
-
-!!! warning "Alternative Model to CIDOC-CRM recommendation"
-
-	A concern with the CIDOC model of using Transfers of Custody to model theft is that if an object is stolen and only custody transferred, and the object is subsequently sold (illegally) by the thief, then the thief cannot transfer ownership, only further custody in exchange for payment.  If it is not known that the object was stolen, then the data would incorrectly record it as a sale, which is an Acquisition rather than Transfer of Custody.

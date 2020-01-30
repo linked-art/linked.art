@@ -21,7 +21,7 @@ The model encodes this information with an `Acquisition` part of the overall Pro
 Each object has its own Acquisition as part of the provenance event, so if a collector buys three paintings from a dealer, then there would be a single Provenance Event with three Acquisitions, all of which transfer the title of a single painting from the dealer to the collector.
 
 ```crom
-top = vocab.Procurement(label="Purchase of Sculpture")
+top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
 buyer = Person(label="Buyer")
 seller = Person(label="Seller")
 acq = Acquisition(label="Acquisition of Sculpture from Seller")
@@ -32,12 +32,34 @@ acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
 ```
 
+### Multiple Owners
+
+In the simple case of multiple simultaneous owners where either the division of the ownership is unknown or an even split, all of the owners can simply be listed with `transferred_title_from` (when the group is selling) or `transferred_title_to` (when the group is buying).  
+
+If there is additional information known about the exact nature of the ownership division, then it is worth considering the more complex and more expressive section on [rights](rights.html) to describe this in more detail.
+
+If there are multiple parties that have formally entered into a legal consortium or organization, and that consortium is the legal owner of the object, then the consortium should be modeled as a [`Group`](/model/actor/) with the parties as members, and be the sole owner of the object.
+
+```crom
+top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
+buyer = Person(label="Buyer")
+buyer2 = Person(label="Buyer 2")
+seller = Person(label="Seller")
+acq = Acquisition(label="Acquisition of Sculpture from Seller by two Buyers")
+top.part = acq
+what = Sculpture(label="Sculpture", art=1)
+acq.transferred_title_of = what
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
+acq.transferred_title_to = buyer2
+```
+
 ### Agents
 
 In some cases, it is known that an agent other than the buyer carried out the acquisition. This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. 
 
 ```crom
-top = vocab.Procurement(label="Purchase of Sculpture")
+top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
 buyer = Person(label="Buyer")
 seller = Person(label="Seller")
 agent = Person(label="Agent for the Buyer")
@@ -55,7 +77,7 @@ acq.carried_out_by = agent
 This pattern allows for the exchange of objects between two parties by simply adding a second Acquisition.
 
 ```crom
-top = vocab.Procurement(label="Exchange of Sculpture for Painting")
+top = vocab.ProvenanceEntry(label="Exchange of Sculpture for Painting")
 buyer = Person(label="Buyer")
 seller = Person(label="Seller")
 acq = Acquisition(label="Acquisition of Sculpture from Seller")
@@ -84,7 +106,7 @@ The `Payment` activity has equivalent relationships for the actor that the money
     The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
 
 ```crom
-top = vocab.Procurement(label="Purchase of Sculpture")
+top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
 seller = Actor(label="Seller")
 buyer = Actor(label="Buyer")
 paymt = Payment()
