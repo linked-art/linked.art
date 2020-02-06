@@ -60,7 +60,7 @@
     });
     $('.mermaid').on('click', event => {
 	    if (screenfull.isEnabled) {
-		    screenfull.toggle(event.target);
+		    screenfull.toggle(event.delegateTarget);
 	    }
     });
         </script>        

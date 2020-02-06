@@ -154,6 +154,10 @@ a:hover, a:focus {
   border-radius: 4px;
 }
 
+svg {
+  background: white;
+}
+
 
 /* ============ ADMONITIONS ============ */
 .admonition {
