@@ -145,6 +145,8 @@ a:hover, a:focus {
   padding-left: 10px;
 }
 
+.codehilite .hll {background-color: #ffff00}
+
 .mermaid {
   background: white;
   border: 1px dashed black;
