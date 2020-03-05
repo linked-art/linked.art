@@ -14,6 +14,8 @@ In between the events there are periods of time in which the ownership does not 
 
 The provenance of an object is described as a series of activities, built on top of the basic patterns. For a single entry in the chain of provenance there are frequently multiple activities bundled together into a "Provenance Event" of interest.  These bundled activities could be the transfer of ownership, the transfer of custody, physically moving the object, a payment of money or the promise of some future action. This section documents the basic framework in which provenance events are described and subsequent sections will document specific use cases.
 
+The chain of events starts with the production of the object by its creator, and ends only with its destruction. As there can only be one of each, they are focused on the object rather than on the activity and have a different pattern. This information is covered in the [Object](/model/object/production/) section of the model, as while the events are part of the lifecycle of the object, they are not modeled in the same way as other Provenance Events.
+
 ## Provenance Event
 
 Provenance Events are wrapper activities that have all of the regular properties and relationships, as documented in the [baseline patterns](/model/base/). 
@@ -64,13 +66,6 @@ top = vocab.ProvenanceEntry(label="Undated Purchase of Painting")
 top.starts_after_the_end_of = vocab.ProvenanceEntry(label="Previous acquisition")
 top.ends_before_the_start_of = vocab.ProvenanceEntry(label="Subsequent acquisition")
 ```
-
-
-## Production and Destruction
-
-The chain of events starts with the production of the object by its creator, and ends only with its destruction. As there can only be one of each, they are focused on the object rather than on the activity and have a different pattern.
-
-See the [Production, Destruction](production.html) section for details.
 
 
 ## Parts
