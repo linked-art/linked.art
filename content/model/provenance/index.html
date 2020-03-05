@@ -48,8 +48,16 @@ There are many different types of provenance activity that can be covered with t
 
 __Example:__
 
-(To Come)
+A benevolent donor gives two paintings to a museum.
 
+```crom
+top = vocab.ProvenanceEntry(label="Gift of two Paintings to Museum")
+top.classified_as = Type(ident="http://vocab.getty.edu/aat/300417637")
+acq = Acquisition(label="Acquisition of Painting 1")
+acq2 = Acquisition(label="Acquisition of Painting 2")
+top.part = acq
+top.part = acq2
+```
 
 ### Relative Times
 

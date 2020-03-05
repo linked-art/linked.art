@@ -10,25 +10,6 @@ up_label: "Objects"
 
 Tracking the provenance of an object is described in detail in the [Provenance](/model/provenance) section of the model. This section describes how to link the object's description into those events and entities.
 
-## Production
-
-In the same way that the `Production` event can reference the object that it `produced`, the object can reference its `Production` with `produced_by`.  The example below includes the artist's details in `carried_out_by`, but might also include all of the other properties of the event. The modeling details for the events are described in the [Provenance](/model/provenance/) section.
-
-__Example:__
-
-The painting is produced by its production.
-
-```crom
-top = Painting(art=1)
-top._label = "Painting"
-prod = Production()
-prod._label = "Production of Painting"
-who = Person()
-who._label = "Artist"
-prod.carried_out_by = who
-top.produced_by = prod
-```
-
 ## Ownership
 
 The current owner of the object should be referenced with `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object.  To make this easier to find from the object's description, the owner should also be referenced with `current_owner` from the object itself. There are further modeling details available about [People and Orgaizations](/model/actor) that might own objects.
