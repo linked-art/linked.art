@@ -404,8 +404,13 @@ title: Index of Classes, Properties, Authorities
 		factory.toFile(top, compact=False)
 		js = factory.toJSON(top)
 
+		# 2020-03-05 This now uses crom specific toHTML
+		# rather than vanilla code hiliting in markdown
+		# Now equivalent, but with more features possible
+		# down the line
+
 		factory.pipe_scoped_contexts = True
-		jsstr = factory.toString(top, compact=False, collapse=80)
+		jsstr = factory.toHtml(top)
 		factory.pipe_scoped_contexts = False
 
 		# Generate all our serializations
@@ -437,11 +442,12 @@ title: Index of Classes, Properties, Authorities
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
+
 		resp = """
 <a id="%s"></a>
-```json hl_lines="%s"
+<div class="jsonld">
 %s
-```
+<div>
 <div class="mermaid">
 %s
 </div>
@@ -451,7 +457,7 @@ Other Representations: [JSON-LD (Raw)](%s) |
 [Turtle (Styled)](%s)
 
 
-""" % (egid, highlight_lines, jsstr, mermaid, raw, playground, turtle, turtle_play)	
+""" % (egid, jsstr, mermaid, raw, playground, turtle, turtle_play)	
 		return resp
 
 	def traverse(self, what, top, res):
@@ -531,7 +537,10 @@ def aatlabel(source):
 
 def ctxtrepl(source):
 	full = source.group(0)
-	data = source.group(1)
+	try:
+		data = source.group(2)
+	except:
+		data = full
 
 	pidx = data.find("|")
 	if pidx > -1:
