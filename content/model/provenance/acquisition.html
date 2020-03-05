@@ -119,3 +119,36 @@ paymt.paid_amount = amt
 top.part = paymt
 ```
  
+### Payment for Services
+
+Beyond simply paying the previous owner for the object, there are many other reasons why money might change hands that are relevant to describe for art history.
+
+For example, it might be known how much commission went to an auction house or for the sale of objects by consignment, particularly if this comes from the stock books or records of the company. Artists might be paid a commission in advance for the production of an object, or agents might be paid a commission for finding and purchasing objects on behalf of the new owner.
+
+__Example:__
+
+The above payment might actually have been 900 dollars to the previous owner and 100 dollars to the auction house for its cut.
+
+```crom
+top = vocab.ProvenanceEntry(label="Purchase of Sculpture with Commission")
+seller = Actor(label="Seller")
+buyer = Actor(label="Buyer")
+house = vocab.AuctionHouseOrg(label="Auction House")
+pay1 = Payment()
+pay1.paid_from = buyer
+pay1.paid_to = seller
+amt1 = MonetaryAmount()
+amt1.value = 900
+amt1.currency = vocab.instances['us dollars']
+pay1.paid_amount = amt1
+top.part = pay1
+pay2 = vocab.CommissionPayment()
+pay2.paid_from = buyer
+pay2.paid_to = house
+amt2 = MonetaryAmount()
+amt2.value = 100
+amt2.currency = vocab.instances['us dollars']
+pay2.paid_amount = amt2
+top.part = pay2
+```
+
