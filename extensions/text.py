@@ -394,17 +394,25 @@ title: Index of Classes, Properties, Authorities
 
 	def generate_example(self, egtext, resource):
 		# Yes really... 
+		highlight_lines = ""
 		exec(egtext) 
+		# egtext can override hightlight_line
+		# but hard to calculate automatically
 
 		# Now in scope should be a top resource
 		factory.pipe_scoped_contexts = False
 		factory.toFile(top, compact=False)
+		js = factory.toJSON(top)
+
+		# 2020-03-05 This now uses crom specific toHTML
+		# rather than vanilla code hiliting in markdown
+		# Now equivalent, but with more features possible
+		# down the line
 
 		factory.pipe_scoped_contexts = True
-		jsstr = factory.toString(top, compact=False, collapse=80)
+		jsstr = factory.toHtml(top)
 		factory.pipe_scoped_contexts = False
 
-		js = factory.toJSON(top)
 		# Generate all our serializations
 		nq = to_rdf(js, {"format": "application/nquads"})
 		g = ConjunctiveGraph()
@@ -434,11 +442,12 @@ title: Index of Classes, Properties, Authorities
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
+
 		resp = """
 <a id="%s"></a>
-```json
+<div class="jsonld">
 %s
-```
+<div>
 <div class="mermaid">
 %s
 </div>
@@ -528,7 +537,10 @@ def aatlabel(source):
 
 def ctxtrepl(source):
 	full = source.group(0)
-	data = source.group(1)
+	try:
+		data = source.group(2)
+	except:
+		data = full
 
 	pidx = data.find("|")
 	if pidx > -1:

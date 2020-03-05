@@ -30,7 +30,7 @@
             <h1>{{ resource.meta.title }}</h1>
 
             <article id="content">
-            {% filter regex_replace_fn("&quot;([0-9A-Za-z_|:]+)&quot;", "ctxtrepl") -%}
+            {% filter regex_replace_fn('(&quot;|")([0-9A-Za-z_|:]+)(&quot;|")', "ctxtrepl") -%}
                 {% filter regex_replace_fn("aat:([0-9]+)", "aatlabel") -%}
                     {% filter markdown -%}
                         {% filter regex_replace_fn("`([A-Za-z_]+)`", "ctxtrepl") -%}
