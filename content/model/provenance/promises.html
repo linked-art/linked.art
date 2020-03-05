@@ -8,12 +8,31 @@ up_label: "Provenance"
 
 ## Introduction
 
-Part of provenance event if something is promised to happen.
+Many acquisitions are first long term loans, with a promise that ownership of the object will also be transferred after some conditions have been met. These promises are also typically enforced via a legal contract.
+
+There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, which would be a commission.
 
 
-## Promised Activities
 
-Activity that used_specific_technique of a Design or Procedure.
+## Promised Gift
 
-Might use Activity Plan from conservation in the future.
 
+A promise of a gift (or sale, or exchange) is an Activity which is carried out by the promising party.  It is a promise to some other actor to perform some further activity (the acquisition), however we lack the ontological machinery at the moment to make this explicit. Instead we can reference the promised party and the object being promised only via the more general properties of `participant` and `used_specific_object` respectively. 
+
+Further details and clarification about the promise should be given in a descriptive note on the promise activity.
+
+
+```crom
+top = vocab.ProvenanceEntry()
+promise = vocab.Promise(label="Promise of Gift")
+own = Person(label="Owner")
+mus = vocab.MuseumOrg(label="Museum")
+what = vocab.Painting(label="Painting")
+promise.carried_out_by = own
+promise.participant = mus
+promise.used_specific_object = what
+top.part = promise
+```
+
+!!! note "Model Subject to Change"
+	There is ongoing efforts to standardize how to describe social bonds between parties, activity plans that describe the conditions under which some activity would or did take place, and the management of ownership and other rights over time.  The model presented above has reduced fidelity compared to these efforts, and when they have stabilized, the modeling may be revisited with that new information.
