@@ -13,13 +13,12 @@ Many acquisitions are first long term loans, with a promise that ownership of th
 There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, which would be a commission.
 
 
-
 ## Promised Gift
 
 
 A promise of a gift (or sale, or exchange) is an Activity which is carried out by the promising party.  It is a promise to some other actor to perform some further activity (the acquisition), however we lack the ontological machinery at the moment to make this explicit. Instead we can reference the promised party and the object being promised only via the more general properties of `participant` and `used_specific_object` respectively. 
 
-Further details and clarification about the promise should be given in a descriptive note on the promise activity.
+Further details and clarification about the promise, including any description of the contract, should be given in a descriptive note on the promise activity.
 
 
 ```crom
@@ -28,6 +27,7 @@ promise = vocab.Promise(label="Promise of Gift")
 own = Person(label="Owner")
 mus = vocab.MuseumOrg(label="Museum")
 what = vocab.Painting(label="Painting")
+desc = vocab.Description(content="Contractual gift over time from Owner to be completed in 2032")
 promise.carried_out_by = own
 promise.participant = mus
 promise.used_specific_object = what
