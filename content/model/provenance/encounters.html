@@ -1,0 +1,31 @@
+---
+title: Promised Activities
+up_href: "/model/provenance/"
+up_label: "Provenance"
+---
+
+{% include "toc.html" %}
+
+## Introduction
+
+
+
+
+## Encounters
+
+
+```crom
+top = vocab.ProvenanceEntry()
+what = vocab.Sculpture(label="Lost Sculpture")
+who = model.Person("Fisherman")
+where = model.Place("At Sea")
+enc = model.Encounter("Encounter of Sculpture")
+enc.encountered = what
+enc.carried_out_by = who
+enc.took_place_at = where
+top.part =  enc
+acq = model.Acquisition()
+acq.transferred_title_of = what
+acq.transferred_title_to = who
+top.part = acq
+```
