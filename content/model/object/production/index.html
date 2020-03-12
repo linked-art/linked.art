@@ -186,6 +186,32 @@ ts.end_of_the_end = "1923-07-21"
 aa.timespan = ts
 ```
 
+## Production by Removal
+
+It is also possible for an object to come into documentary existence when it is removed from a larger object.  The production of the part is simply part of the production of the whole, but until it is removed, it does not need a separate identity or existence.
+
+This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created de novo in the present.
+
+A second scenario when this occurs is unfortunately common.  If an object, such as a medieval manuscript, can be sold for more by splitting it up into parts and selling each part individually, then unscrupulous sellers will do just that. Rather than sell an innocuous book of hours to a single buyer, instead each illumination can be sold individually and then the remaining text-bearing pages either dumped or sold over time at a greatly reduced price.  This dispersal of manuscripts still occurs today.
+
+
+In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, other than it has a `diminished` property that refers to the whole object from which the part was removed.
+
+
+__Example:__
+
+A seller removes a page of a manuscript for individual sale.
+
+```crom
+top = vocab.Page(label="Page of Manuscript")
+rm = model.PartRemoval()
+rm.carried_out_by = model.Person(label="Unscrupulous Seller")
+whole = vocab.Manuscript(label="Manuscript")
+rm.diminished = whole
+top.removed_by = rm
+```
+
+
 ## Destruction
 
 The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object leaves the chain open ended as it might be recovered in the future, however if the object is destroyed then there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
