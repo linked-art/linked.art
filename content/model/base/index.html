@@ -17,7 +17,7 @@ There are a few core properties that every resource should have for it to be a u
 * `@context` is a reference to the context mapping which determines how to interpret the JSON as Linked Open Data. It is not a property of the entity being described, but of the document. It must be present.
 * `id` captures the URI that identifies the object.  Every resource must have exactly one id, and it must be an HTTP URI.
 * `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
-* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every resource should have exactly one label, and must not have more than one.
+* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every resource should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
 
 __Example:__
 
