@@ -188,7 +188,7 @@ The general pattern is to create a resource for the `Activity` or `Event`, and a
 
 There are both subclasses of `Activity`, such as `Acquisition`, `Production` and `AttributeAssignment`, and classifications associated with them to be more specific, either as a `technique` like glassblowing _(aat:300053932)_, or via `classified_as` for more general terms like gift giving _(aat:aat:300404212)_ to clarify the sort of `Acquisition`.
 
-The pattern uses the terms and structure given in this example:
+The pattern uses the terms and structure given in this completely artificial example:
 
 ```crom
 top = Activity()
@@ -205,4 +205,38 @@ top.took_place_at = where
 top.timespan = when
 ```
 
+### Time Span Details
+
+The minimal timespan model is given above, with just the `begin_of_the_begin` and an `end_of_the_end` properties to record the beginning of the span, and the end of the span.  The end of the span is not included in the span, and thus if the `end_of_the_end` is `"1500-01-01T00:00:00Z"`, then the 1500 is not included, and the last mathematical moment of the last day of December 1499 is the very end. 
+
+It is very useful to have a `Name` for the `TimeSpan` that gives a human readable version of the machine readable timestamps and durations. This uses the pattern given above for naming things, and might be displayed to user directly, whereas the other properties could be used for matching a time-based search.
+
+There are other properties for `TimeSpan` instances that are useful when the exact span of time is not certain.
+
+* `end_of_the_begin`: This property is another datetime that gives the latest possible datetime for the beginning of the span.
+* `begin_of_the_end`: This property is yet another datetime that gives the earliest possible datetime for the end of the span. 
+* `duration`: This property refers to a `Dimension`, that describes the amount of time that the activity or event took, within the span of time.  As the property defines the type of dimension, the `Dimension` instance does not need to be `classified_as` any particular `Type` ... it is always a duration.
+
+
+__Example:__ 
+
+An auction that occured during April 1763 over a period of three consecutive days.
+
+
+```crom
+top = vocab.AuctionEvent(label="Auction")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1763-04-01T00:00:00Z"
+ts.end_of_the_begin = "1763-04-28T00:00:00Z"
+ts.begin_of_the_end = "1763-04-04T00:00:00Z"
+ts.end_of_the_end = "1763-05-01T00:00:00Z"
+dim = model.Dimension(value=3)
+dim.value = 3
+dim.unit = vocab.instances['days']
+ts.duration = dim
+n = model.Name()
+n.content = "Three days within April 1763"
+ts.identified_by = n
+top.timespan = ts 
+```
 
