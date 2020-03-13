@@ -17,7 +17,7 @@ Beyond dimensions and materials, the model allows for the description of parts o
 The physical dimensions of an object, such as height, width, diameter or weight, are included in the `dimension` property, and consist of three primary pieces of information:  
 
 * The numeric value in `value`.
-* The type of dimension (e.g. height vs width) in `classified_as, referencing an external vocabulary of dimension types.
+* The type of dimension (e.g. height vs width) in `classified_as`, referencing an external vocabulary of dimension types.
 * The `unit` used to align the value with the real world such as inches, pounds or seconds. The unit should also be given from a controlled vocabulary.
 
 __Example:__
@@ -27,12 +27,10 @@ A painting that measures 16 inches wide by 20 inches tall.
 ```crom
 top = Painting(art=1)
 top._label = "Example 16x20 Painting"
-w = Width()
-w.value = 16
+w = Width(value=16)
 w.unit = instances['inches']
 top.dimension = w
-h = Height()
-h.value = 20
+h = Height(value=20)
 h.unit = instances['inches']
 top.dimension = h
 ```
@@ -52,6 +50,28 @@ dims = DimensionStatement()
 dims.content = "The painting is approximately 16 inches wide, by 20 inches high"
 top.referred_to_by = dims
 ```
+
+### Measurements of Dimensions
+
+In some contexts, it is also important to have more information about how the dimensions were measured. This could be useful, for example, to distinguish the time and method by which the measurement was taken, or to know who used which instrument in a conservation research setting to promote accuracy and reusability of results. 
+
+In order to build upon the dimension model described above, the model adds an `AttributeAssignment` activity to the `Dimension` which is the measuring activity, following the [Assertion](/model/assertion/) pattern. The `Dimension` is `assigned_by` the `AttributeAssignment`, to the object which has the dimension.  In this particular case, as dimensions are specific to the object, and the `dimension` property is explicit in the model already, there is no need to link from the `AttributeAssignment` back to the object, or to give the property that is being assigned. It is permitted, but no new information is being added and hence it is not recommended.
+
+__Example:__
+
+A particular curator measured the painting to be 20 inches high.
+
+```crom
+top = Painting(label="Example Painting")
+h = vocab.Height(value=20)
+h.unit = vocab.instances['inches']
+aa = model.AttributeAssignment(label="Measurement of Painting")
+h.assigned_by = aa
+who = model.Person(label="Curator")
+aa.carried_out_by = who
+top.dimension = h
+```
+
 
 ### Colors
 
