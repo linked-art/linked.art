@@ -24,8 +24,7 @@ __Example:__
 The simplest possible object has a URI, a class and a label.
 
 ```crom
-top = HumanMadeObject()
-top._label = "Example Object"
+top = HumanMadeObject(label="Example Object")
 ```
 
 ## Types and Classifications
@@ -48,14 +47,29 @@ __Example:__
 The type of the object (an instance of the class `HumanMadeObject`) is a painting _(aat:300033618)_, and an artwork _(aat:300133025)_:
 
 ```crom
-top = Painting(art=1)
-top._label = "Simple Example Painting"
+top = model.HumanMadeObject(label="Simple Example Painting", art=1)
+top.classified_as = Type(ident="http://vocab.getty.edu/aat/300033618", label="Painting")
+top.classified_as = Type(ident="http://vocab.getty.edu/aat/300133025", label="Work of Art")
 ```
 
 ### Types of Types
 
-Would go here!
+A common pattern is to not only classify main entities, but also to classify the types themselves in order to know what sort of type it is, without recognizing all of them individually.
+This is important when the set of first degree types is not easily enumerable, such as classifications for the type of object or work. If the set of vocabulary terms that can normally be used without further extension can be established, then this pattern is not used. This is also not needed when the relationship from the entity to the first degree type clarifies this, such as the `motivation` or `about` properties. 
 
+Use cases for this pattern include:
+
+* The classification is the type of object or work (e.g. Painting)
+* The classification is the type of statement (e.g. Dimensions Statement)
+
+
+__Example:__
+
+The physical thing is classified as being a Painting, and the concept "Painting" is for classifying the type of object (as opposed to any other sort of classification).
+
+```crom
+top = Painting(label="Example Painting", art=1)
+```
 
 
 ## Names and Identifiers for a Resource
