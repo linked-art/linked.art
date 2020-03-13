@@ -55,8 +55,7 @@ top.referred_to_by = dims
 
 In some contexts, it is also important to have more information about how the dimensions were measured. This could be useful, for example, to distinguish the time and method by which the measurement was taken, or to know who used which instrument in a conservation research setting to promote accuracy and reusability of results. 
 
-In order to build upon the dimension model described above, the model adds an `AttributeAssignment` activity to the `Dimension` which is the measuring activity. The `Dimension` is `assigned_by` the `AttributeAssignment`, to the object which has the dimension.  In this particular case, as dimensions are specific to the object, and the `dimension` property is explicit in the model already, there is no need to link from the `AttributeAssignment` back to the object, or to give the property that is being assigned. It is permitted, but no new information is being added and hence it is not recommended.
-
+In order to build upon the dimension model described above, the model adds an `AttributeAssignment` activity to the `Dimension` which is the measuring activity, following the [Assertion](/model/assertion/) pattern. The `Dimension` is `assigned_by` the `AttributeAssignment`, to the object which has the dimension.  In this particular case, as dimensions are specific to the object, and the `dimension` property is explicit in the model already, there is no need to link from the `AttributeAssignment` back to the object, or to give the property that is being assigned. It is permitted, but no new information is being added and hence it is not recommended.
 
 __Example:__
 
