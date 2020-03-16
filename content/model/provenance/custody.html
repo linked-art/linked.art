@@ -10,11 +10,42 @@ up_label: "Provenance"
 
 When there is a change of who has physical possession of an object, but not who the legal owner of it is, that constitutes a change of custody rather than a change of ownership.  This pattern includes use cases such as lending an object to another party for some amount of time, the theft of an object (as the legal owner does not change), and losing track of the location of an object. 
 
+
+## Loans
+
+The model makes a distinction between the [transfer of legal ownership](acquisition.html) and the transfer of custody of an object (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody.  Note that the provenance activity here does not represent the entire duration of the change in custody, only the transfer of it.  Just like acquisitions, there would be a second provenance activity that would transfer the custody back to the original custodian or on to some other party.
+
+Long term loans or even "permanent" loans are just open ended pairs of activities -- the object has had its custody transferred, and the object has not been returned yet.
+
+In the model, these transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
+
+
+```crom
+top = vocab.ProvenanceEntry(label="Lending a Sculpture to Recipient")
+loan = vocab.Loan()
+top.part = loan
+loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
+loan.transferred_custody_from = Person(label="Lender")
+loan.transferred_custody_to = Person(label="Recipient")
+```
+
+Which would typically be followed by a later return:
+
+```crom
+top = vocab.ProvenanceEntry(label="Return of the Sculpture to Lender")
+loan = vocab.ReturnOfLoan(label="Return")
+top.part = loan
+loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
+loan.transferred_custody_from = Person(label="Recipient")
+loan.transferred_custody_to = Person(label="Lender")
+```
+
 ## Institutional Ownership, Departmental Custody
 
 Objects are owned by legal entities, such as museum organizations or individual people. However there may be more information about which department is responsible within a museum for the curation of the object. This is the division between acquisitions (the legal ownership of the object) and custody (the responsibility for looking after the object). If the department is known, then it should be either part of the Provenance Event in which the object is acquired, or a separate provenance event if the object was not accessioned by a department and later came under their care, or was transferred between departments. In these latter cases, the ownership does not change, only the custody of the object.
 
-In the model, these transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
+The department is the `current_keeper` of the object, whereas the institution is the `current_owner`.
+
 
 __Example:__
 
@@ -36,34 +67,6 @@ top.part = cust
 cust.transferred_custody_of = what
 cust.transferred_custody_from = seller
 cust.transferred_custody_to = dept
-```
-
-## Loans
-
-The model makes a distinction between the [transfer of legal ownership](acquisition.html) and the transfer of custody of an object (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody.  Note that the provenance activity here does not represent the entire duration of the change in custody, only the transfer of it.  Just like acquisitions, there would be a second provenance activity that would transfer the custody back to the original custodian or on to some other party.
-
-Long term loans or even "permanent" loans are just open ended pairs of activities -- the object has had its custody transferred, and the object has not been returned yet.
-
-
-
-```crom
-top = vocab.ProvenanceEntry(label="Lending a Sculpture to Recipient")
-loan = vocab.Loan()
-top.part = loan
-loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
-loan.transferred_custody_from = Person(label="Lender")
-loan.transferred_custody_to = Person(label="Recipient")
-```
-
-Which would typically be followed by a later return:
-
-```crom
-top = vocab.ProvenanceEntry(label="Return of the Sculpture to Lender")
-loan = vocab.ReturnOfLoan(label="Return")
-top.part = loan
-loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
-loan.transferred_custody_from = Person(label="Recipient")
-loan.transferred_custody_to = Person(label="Lender")
 ```
 
 ## Loss
