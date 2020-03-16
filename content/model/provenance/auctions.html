@@ -8,11 +8,31 @@ up_label: "Provenance"
 
 ## Introduction
 
-Auctions are a very common way for art objects to change ownership.  The description of the auction itself is valuable for historical context and to provide a sense of the changing value of the object.
+Auctions are a very common way for art objects to change ownership.  The description of the auction itself is valuable for historical context and to provide a sense of the changing value of the object. An auction is, generally speaking, any event in which there are one or more attemps to sell one or more objects, where the price is negotiated by a bidding process of would-be buyers offering progressively more money for the set of objects.
+
+There are various regional and temporal variations on auctions, some of which are covered below, however the overall pattern remains the same.
+
+There are established vocabulary entries for the different aspects of an auction:
+
+* Auction Activity: _aat:300054751_
+* Auction House Organization: _aat:300417515_
+* Auction House Premises: _aat:300005234_
+* Auction Lot (Set of Objects): _aat:300411307_
+* Auction of Lot Activity: _aat:300420001_
+* Auction Catalog (the text): _aat:300026068_
+
 
 ## Auction
 
-An auction (_aat:300054751_) is an activity which is performed by an organization (the auction house organization, _aat:300417515_), and for art objects typically takes place at the premises (_aat:300005234_) of the auction house.  It typically consists of many sets of objects, called Lots described below, being sold in separate sales to the highest bidder for each. The Auction description contains the information about the overall event (who, where, when) and is referenced by the sub-events in which the sales of the lots take place via `part_of`.
+The auction is the overall event, and a typical auction has the features described here. The auction might occur over multiple days, during which many auction of lots (the sale of one or more objects) will take place. It is performed by an organization, known as an auction house, and for movable art objects takes place at the premises of the organization. The auction of lot is each a separate sale, described in the following section.
+
+
+The auction is modeled as an `Activity`, and represents the overall event. It is `carried_out_by` the auction house (a `Group`), `took_place_at` the auction house premises (a `Place`), and has all of the regular properties of an `Activity`.
+It is referenced by the auction of lot activities via their `part_of` property.
+
+__Example:__
+
+An auction event takes place on March 12 and 13 at the London premises of the auction house.
 
 ```crom
 top = vocab.AuctionEvent(label="Example Auction in London 1875-03-12,13")
@@ -33,7 +53,7 @@ The sale of the Lot is an activity that can be carried out by one or more Auctio
 
 ```crom
 top = vocab.Auction(label="Auction of Lot J-1823-5")
-top.carried_out_by = vocab.Auctioneer(label="Example Auctioneer")
+top.carried_out_by = vocab.Person(label="Example Auctioneer")
 top.used_specific_object = vocab.AuctionLotSet(label="Set of Objects for Lot J-1823-5")
 top.part = vocab.Bidding(label="Bids on Lot J-1823-5")
 top.caused = vocab.ProvenanceEntry(label="Sale of Lot J-1823-5")
