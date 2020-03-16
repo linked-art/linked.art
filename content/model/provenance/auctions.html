@@ -12,47 +12,31 @@ Auctions are a very common way for art objects to change ownership.  The descrip
 
 ## Auction
 
-An auction (_aat:300054751_) is an activity which is performed by an organization, and for art objects typically takes place at an auction house (_aat:300005234_).  It (typically) consists of many sets of objects being sold in separate sales to the highest bidder, called Lots described below. The Auction description contains the information about the overall event (who, where, when) and references the sub-events in which the sales of the lots take place via `part`.
+An auction (_aat:300054751_) is an activity which is performed by an organization (the auction house organization, _aat:300417515_), and for art objects typically takes place at the premises (_aat:300005234_) of the auction house.  It typically consists of many sets of objects, called Lots described below, being sold in separate sales to the highest bidder for each. The Auction description contains the information about the overall event (who, where, when) and is referenced by the sub-events in which the sales of the lots take place via `part_of`.
 
 ```crom
-top = Auction()
-top._label = "Example Auction in London 1875-03-12,13"
-h = AuctionHouse()
-h._label = "Auction House, London"
-top.took_place_at = h
-org = Group()
-org._label = "Auction Company"
+top = vocab.AuctionEvent(label="Example Auction in London 1875-03-12,13")
+org = vocab.AuctionHouseOrg(label="Auction House")
+where = vocab.AuctionHouse(label="Auction House Premises, London")
+top.took_place_at = where
 top.carried_out_by = org
 t = TimeSpan()
 t._label = "12th and 13th of March, 1875"
 t.begin_of_the_begin = "1875-03-12T00:00:00Z"
 t.end_of_the_end = "1875-03-14T00:00:00Z"
 top.timespan = t
-lot = Activity()
-lot._label = "Auction of Lot 1"
-top.part = lot
 ```
 
 ## Sale of Lot
 
-The sale of the Lot is an activity that can be carried out by one or more Auctioneers (_aat:300025208_), though if the individual is not known, the company that performs the parent Auction can be inferred. The sale is for a specific object of the Lot, which is always a collection even if there is only one object being sold. The activity is further subdivided into two major sections -- the activity of the crowd of bidding, and the purchase of the Lot by the winner.  Typically the details of individual bids are not known, but often whether any bids occured or not is known.  Bidding without a purchase might occur if the reserve price was not met, for example. Note that the purchase is an `Acquisition` with the _aat:300077989_ classification.
+The sale of the Lot is an activity that can be carried out by one or more Auctioneers (_aat:300025208_), though if the individual is not known, the company that performs the parent Auction can be inferred. The sale is for a specific object of the Lot, which is always a collection even if there is only one object being sold. The activity is further subdivided into two major sections -- the activity of the crowd of bidding, and the purchase of the Lot by the winner.  Typically the details of individual bids are not known, but often whether any bids occured or not is known.  Bidding without a purchase might occur if the reserve price was not met, for example.
 
 ```crom
-top = Activity()
-top._label = "Auction of Lot J-1823-5"
-who = Auctioneer()
-who._label = "Example Auctioneer"
-top.carried_out_by = who
-lotset = AuctionLotSet()
-lotset._label = "Set of Objects for Lot J-1823-5"
-top.used_specific_object = lotset
-txn = Purchase()
-txn._label = "Purchase of Lot"
-top.part = txn
-bidset = Activity()
-bidset._label = "Bids made on Lot"
-top.part = bidset
-bidset.occurs_before = txn
+top = vocab.Auction(label="Auction of Lot J-1823-5")
+top.carried_out_by = vocab.Auctioneer(label="Example Auctioneer")
+top.used_specific_object = vocab.AuctionLotSet(label="Set of Objects for Lot J-1823-5")
+top.part = vocab.Bidding(label="Bids on Lot J-1823-5")
+top.caused = vocab.ProvenanceEntry("Sale of Lot J-1823-5")
 ```
 
 ## Set of Objects 
@@ -60,36 +44,34 @@ bidset.occurs_before = txn
 The Lot is a set of objects (_aat:300411307_) grouped together for the purposes of the sale, and may have come from different owners.  Information that is frequently known about the lot includes an identifying Lot Number (_aat:300404628_) assigned by the organization performing the auction and the objects that are part of it.  Other Lot specific information includes prices, which are discussed in further detail below.
 
 ```crom
-top = AuctionLotSet()
-top._label = "Set of Objects for Lot 812"
-ln = LotNumber()
-ln.content = "812"
-top.identified_by = ln
-obj = Painting(art=1)
-obj._label = "Example Painting"
-top.member = obj
+top = vocab.AuctionLotSet(label="Set of Objects for Lot 812")
+top.identified_by = LotNumber(content="812")
+top.member = Painting(label="Example Painting", art=1)
 ```
 
 ## Purchase
 
 The purchase of the lot is very similar to the purchase of any other object, however in order to ensure consistency, the individual transfers of ownership are explicitly stated as further child activities. As the lot is just the grouping of the objects together for the purposes of the auction, it doesn't make sense to transfer ownership of it, as the grouping is only for the purpose of the auction.
 
+Conversely, there is only a single payment for the entire lot.  Thus while there might be multiple Acquisitions as part of the Provenance Entry, there is likely to be only a single Payment.
+
 ```crom
-top = Purchase()
-seller = Actor()
-seller._label = "Seller"
-buyer = Actor()
-buyer._label = "Buyer"
-als = AuctionLotSet()
-als._label = "Set of Objects"
-top.used_specific_object = als 
-act = Purchase()
-top.part = act
-obj = Painting(art=1)
-obj._label = "Example Painting"
-act.transferred_title_of = obj
-act.transferred_title_from = seller
-act.transferred_title_to = buyer
+top = vocab.ProvenanceEntry(label="Purchase via Lot 812")
+top.used_specific_object = vocab.AuctionLotSet(label="Set of Objects for Lot 812")
+seller = Person(label="Seller")
+buyer = Person(label="Buyer")
+acq = Acquisition(label="Acquisition of Painting via Lot 812")
+top.part = acq
+acq.transferred_title_of = Painting(label="Example Painting", art=1)
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
+pay = Payment(label="Payment for Lot 812")
+ma = MonetaryAmount(value=4500)
+ma.currency = vocab.instances['us dollars']
+pay.paid_amount = ma
+pay.paid_from = buyer
+pay.paid_to = seller
+top.part = pay
 ```
 
 ## Monetary Values
@@ -106,64 +88,25 @@ There are three preset prices of interest:
 
 These prices are associated with the Set of Objects that the Lot is intended to sell.  In this way, even if the auction never takes place, there is still the set of objects to associate the prices with.  In order to associate a monetary value with an object, it is treated as an observed dimension.
 
-For example, a lot with a starting price of $500, a reserve price of $3000 and an estimated price of $4000:
+__Example:__
+
+A lot with a starting price of $500, a reserve price of $3000 and an estimated price of $4000:
 
 ```crom
-top = AuctionLotSet()
-top._label = "Set of Objects for Lot 812"
-ln = LotNumber()
-ln.content = "812"
-top.identified_by = ln
-obj = Painting()
-obj._label = "Example Painting"
-top.member = obj
-amnt = vocab.StartingPrice()
-amnt.value = 500
-curr = Currency()
-curr._label = "dollars"
-amnt.currency = curr
-amnt2 = vocab.EstimatedPrice()
-amnt2.value = 4000
-amnt2.currency = curr
-amnt3 = vocab.ReservePrice()
-amnt3.value = 3000
-amnt3.currency = curr
+top = AuctionLotSet(label = "Set of Objects for Lot 812")
+top.identified_by = LotNumber(content = "812")
+top.member = Painting(label = "Example Painting")
+amnt = vocab.StartingPrice(value = 500)
+amnt.currency = vocab.instances['us dollars']
+amnt2 = vocab.EstimatedPrice(value=4000)
+amnt2.currency = vocab.instances['us dollars']
+amnt3 = vocab.ReservePrice(value = 3000)
+amnt3.currency = vocab.instances['us dollars']
 top.dimension = amnt
 top.dimension = amnt2
 top.dimension = amnt3
 ```
 
-### Purchase / Hammer Price
-
-The purchase price follows the same pattern as for purchases outside of auctions.  It is the amount paid as part of the purchase.  There is typically a single purchase price for the lot, rather than each object having an individual value, and as such the `Payment` is associated with the purchase of the Lot resource.  Thus, if the interest is calculating the value of the individual objects over time, the number of objects in the Lot should be taken into account.  This information might be duplicated on the purchase of the object, in the situation where there is per-object price information, which should take precedence. 
-
-```crom
-top = Purchase()
-seller = Actor()
-seller._label = "Seller"
-buyer = Actor()
-buyer._label = "Buyer"
-als = AuctionLotSet()
-als._label = "Set of Objects"
-top.used_specific_object = als 
-act = Purchase()
-top.part = act
-obj = Painting(art=1)
-obj._label = "Example Painting"
-act.transferred_title_of = obj
-act.transferred_title_from = seller
-act.transferred_title_to = buyer
-paymt = Payment()
-paymt.paid_from = buyer
-paymt.paid_to = seller
-amt = MonetaryAmount()
-amt.value = 4500
-curr = Currency()
-curr._label = "dollars"
-amt.currency = curr
-paymt.paid_amount = amt
-top.part = paymt
-```
 
 ### Known Bid Amounts
 
