@@ -19,6 +19,9 @@ Long term loans or even "permanent" loans are just open ended pairs of activitie
 
 In the model, these transfers of custody use a different class, `TransferOfCustody` instead of `Acquisition`. The properties that capture the parties and object involved are also different, although equivalent, to those of `Acquisition`: `transferred_custody_of` the object, `transferred_custody_from` the previous custodian, and `transferred_custody_to` the new custodian.
 
+__Example:__
+
+A sculpture is lent from one person to another, and then later returned.
 
 ```crom
 top = vocab.ProvenanceEntry(label="Lending a Sculpture to Recipient")
@@ -29,7 +32,7 @@ loan.transferred_custody_from = Person(label="Lender")
 loan.transferred_custody_to = Person(label="Recipient")
 ```
 
-Which would typically be followed by a later return:
+Which would typically be followed by a later return with the same form:
 
 ```crom
 top = vocab.ProvenanceEntry(label="Return of the Sculpture to Lender")
@@ -44,8 +47,7 @@ loan.transferred_custody_to = Person(label="Lender")
 
 Objects are owned by legal entities, such as museum organizations or individual people. However there may be more information about which department is responsible within a museum for the curation of the object. This is the division between acquisitions (the legal ownership of the object) and custody (the responsibility for looking after the object). If the department is known, then it should be either part of the Provenance Event in which the object is acquired, or a separate provenance event if the object was not accessioned by a department and later came under their care, or was transferred between departments. In these latter cases, the ownership does not change, only the custody of the object.
 
-The department is the `current_keeper` of the object, whereas the institution is the `current_owner`.
-
+The department becomes the `current_keeper` of the object, whereas the institution is the `current_owner`, as described in the [object section](/model/object/ownership/). The transfer model is otherwise identical to other transfers of custody.
 
 __Example:__
 
