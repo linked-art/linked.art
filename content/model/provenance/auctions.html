@@ -166,7 +166,7 @@ Much of the information we have about historical auctions comes from Auction Cat
 
 ```crom
 top = vocab.AuctionCatalogText(label="Auction Catalog of Example Auction")
-entry = vocab.Paragraph(label="Entry for Lot 812")
+entry = vocab.ParagraphText(label="Entry for Lot 812")
 top.part = entry
 auc = vocab.AuctionEvent(label = "Example Auction, 1924")
 top.refers_to = auc
