@@ -160,27 +160,20 @@ top.part = pay
 ```
 
 
-
-
-
-
 ## Auction Catalog
 
-Much of the information we have about historical auctions comes from Auction Catalogs _(aat:300026068)_.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/) with the added AAT concept for being an auction catalog.
+Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/).
 
 ```crom
-top = AuctionCatalogText()
-top._label = "Auction Catalog of Example Auction"
-entry = LinguisticObject()
-entry._label = "Description of Lot 16"
+top = vocab.AuctionCatalogText(label="Auction Catalog of Example Auction")
+entry = vocab.Paragraph(label="Entry for Lot 812")
 top.part = entry
-auc = Auction()
-auc._label = "Example Auction, 1924"
+auc = vocab.AuctionEvent(label = "Example Auction, 1924")
 top.refers_to = auc
-lot = Activity()
-lot._label = "Auction of Lot 16"
+lot = vocab.Auction(label = "Auction of Lot 812")
+lotset = vocab.AuctionLotSet(label="Lot 812")
+top.refers_to = auc
 entry.refers_to = lot
-lotset = AuctionLotSet()
-lotset._label = "Lot 16"
 entry.refers_to = lotset
+
 ```
