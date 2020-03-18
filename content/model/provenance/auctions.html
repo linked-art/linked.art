@@ -161,11 +161,16 @@ top.part = pay
 
 Not every auction of lot results in a purchase, and not every lot that is advertised in an auction catalog is actually presented for sale. Objects can be withdrawn, reserve prices might not be met, the winner might not be able to pay, or the owner might bid on their own objects to determine or drive up their value. These scenarios are discussed in this section as to how they can be described using the model.
 
-### Withdrawn Before Event
+### Lot Withdrawn
 
 It is possible that an auction lot is withdrawn from the auction before the auction of lot occurs. The auction catalog will record the objects in the lot, and is valuable for the historical record to know that they were offered for sale and then withdrawn. 
 
 In this case, there should be a catalog entry and the auction lot set that the entry describes, but no corresponding auction of lot activity, as it did not take place. The date can be calculated from the dates of the auction event, to position the objects in time.  In some cases, where the auctioned objects are all from a single person or organization, this would also establish evidence of ownership at that time.
+
+
+### Object Withdrawn from Lot
+
+It can also be that a single object is withdrawn from a Lot with multiple objects, which is otherwise sold. In this case, the withdrawn object is returned to the owner as part of the provenance event that is caused by the auction of the lot which still takes place. That return has a specific purpose that can distinguish withdrawn objects from objects that are returned for other reasons below.
 
 
 ### Reserve Not Met
