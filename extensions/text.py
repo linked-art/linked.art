@@ -194,7 +194,9 @@ class IndexingPlugin(Plugin):
 			"AttributeAssignment": "event",
 			"Phase": "event",
 			"Relationship": "dims",
-			"RightAcquisition": "event"
+			"RightAcquisition": "event",
+			"PartRemoval": "event",
+			"PartAddition": "event"
 		}
 
 	def begin_site(self):
