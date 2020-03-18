@@ -72,7 +72,6 @@ Sometimes we also know the monetary amounts that were unsuccessfully bid for the
 
 Bids are modeled as the creation of a proposition that the bidder (or the person that an agent is bidding on behalf of) will pay a certain amount of money for the object. In the example below, a known bid is $10,000 but it is not stated whether there was a sale concluded.
 
-
 ```crom
 top = vocab.Auction(label="Auction of Lot J-1823-5")
 bidset = Activity(label="Bids on Lot J-1823-5")
@@ -88,7 +87,6 @@ amnt.value = 10000
 amnt.currency = vocab.instances["us dollars"]
 bidprop.refers_to = amnt
 ```
-
 
 ## Set of Objects 
 
@@ -178,7 +176,7 @@ In this case the auction of lot activity does occur, but there may or may not ha
 
 __Example:__
 
-A painting put up for auction is returned to the owner, as it was not sold to someone else.  This example is also appropriate to the following use cases as well.
+A painting put up for auction is returned to the owner, as it was not sold to someone else.  The Provenance Entry below would be `caused` by the Auction of Lot activity. This example is also appropriate to the following use cases as well. 
 
 ```crom
 top = vocab.ProvenanceEntry(label="Return to Owner from Auction House")
