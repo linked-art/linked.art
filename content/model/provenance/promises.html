@@ -24,8 +24,7 @@ Further details and clarification about the promise, including any description o
 
 __Example:__
 
-
-
+The owner of a painting promises to give it to a museum after a period of time.
 
 ```crom
 top = vocab.ProvenanceEntry()
@@ -46,6 +45,9 @@ Another type of promise can occur even before the artwork is produced: a commiss
 
 The description of the production of the commissioned object is taken care of by the regular production pattern, as described in the [object](/model/object/) section. The subsequent transfer of title to the new owner, and the payment of any monies due to the artist is a second provenance entry following all of the regular patterns.
 
+__Example__:
+
+The commissioner of the art promises to pay $1000, with 10% of that up front, for a painting to be produced. This involves three steps: the exchange of promised activities, the production of the object, and then the exchange of the ownership of the produced painting for the remainder of the money.
 
 ```crom
 top = vocab.ProvenanceEntry(label="Commission of Painting")
@@ -54,9 +56,6 @@ fromwho = Person(label="Commissioner")
 towho = Person(label="Artist")
 promise.carried_out_by = fromwho
 promise.participant = towho
-ma = model.MonetaryAmount(value=1000)
-ma.currency = vocab.instances['us dollars']
-promise.influenced_by = ma
 promise.referred_to_by = vocab.Description(content="Promise to pay $1000 for a painting to be created by the artist, with 10% in advance")
 top.part = promise
 promprod = vocab.Promise(label="Obligation to Produce Painting")
