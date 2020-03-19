@@ -84,6 +84,7 @@ And finally the painting is delivered to the commissioning party from the artist
 top = vocab.ProvenanceEntry(label="Delivery of Painting")
 artist = model.Person(label="Artist")
 owner = model.Person(label="Commissioner")
+what = model.HumanMadeObject(label="Painting")
 acq = model.Acquisition()
 acq.transferred_custody_of = what
 acq.transferred_custody_from = artist

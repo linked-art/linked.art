@@ -196,7 +196,8 @@ class IndexingPlugin(Plugin):
 			"Relationship": "dims",
 			"RightAcquisition": "event",
 			"PartRemoval": "event",
-			"PartAddition": "event"
+			"PartAddition": "event",
+			"Encounter": "event"
 		}
 
 	def begin_site(self):
