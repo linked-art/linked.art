@@ -29,9 +29,9 @@ The owner of a painting promises to give it to a museum after a period of time.
 ```crom
 top = vocab.ProvenanceEntry()
 promise = vocab.Promise(label="Promise of Gift")
-own = Person(label="Owner")
-mus = vocab.MuseumOrg(label="Museum")
-what = vocab.Painting(label="Painting")
+own = model.Person(label="Owner")
+mus = model.Group(label="Museum")
+what = model.HumanMadeObject(label="Painting")
 promise.referred_to_by = vocab.Description(content="Contractual gift over time from Owner to be completed in 2032")
 promise.carried_out_by = own
 promise.participant = mus
@@ -52,8 +52,8 @@ The commissioner of the art promises to pay $1000, with 10% of that up front, fo
 ```crom
 top = vocab.ProvenanceEntry(label="Commission of Painting")
 promise = vocab.Promise(label="Obligation to Pay Artist")  
-fromwho = Person(label="Commissioner")
-towho = Person(label="Artist")
+fromwho = model.Person(label="Commissioner")
+towho = model.Person(label="Artist")
 promise.carried_out_by = fromwho
 promise.participant = towho
 promise.referred_to_by = vocab.Description(content="Promise to pay $1000 for a painting to be created by the artist, with 10% in advance")
