@@ -10,7 +10,7 @@ up_label: "Provenance"
 
 Many acquisitions are first long term loans, with a promise that ownership of the object will also be transferred after some conditions have been met. These promises are also typically enforced via a legal contract.
 
-There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, which would be a commission.
+There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, typically called a commission.
 
 !!! note "Model Subject to Change"
 	There is ongoing efforts to standardize how to describe social bonds between parties, activity plans that describe the conditions under which some activity would or did take place, and the management of ownership and other rights over time.  The model presented here concerning promise activities has reduced fidelity compared to these efforts, and when they have stabilized, the modeling may be revised to take into account those new facilities.
@@ -21,6 +21,11 @@ There might also be other promised activities, with or without a contract, that 
 A promise of a gift (or sale, or exchange) is an Activity which is carried out by the promising party.  It is a promise to some other actor to perform some further activity (the acquisition), however we lack the ontological machinery at the moment to make this explicit. Instead we can reference the promised party and the object being promised only via the more general properties of `participant` and `used_specific_object` respectively. 
 
 Further details and clarification about the promise, including any description of the contract, should be given in a descriptive note on the promise activity.
+
+__Example:__
+
+
+
 
 ```crom
 top = vocab.ProvenanceEntry()
@@ -86,9 +91,9 @@ artist = model.Person(label="Artist")
 owner = model.Person(label="Commissioner")
 what = model.HumanMadeObject(label="Painting")
 acq = model.Acquisition()
-acq.transferred_custody_of = what
-acq.transferred_custody_from = artist
-acq.transferred_custody_to = owner
+acq.transferred_title_of = what
+acq.transferred_title_from = artist
+acq.transferred_title_to = owner
 top.part = acq
 pay = model.Payment(label="Payment")
 pay.paid_from = owner
