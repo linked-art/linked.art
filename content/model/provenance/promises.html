@@ -12,6 +12,9 @@ Many acquisitions are first long term loans, with a promise that ownership of th
 
 There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, which would be a commission.
 
+!!! note "Model Subject to Change"
+	There is ongoing efforts to standardize how to describe social bonds between parties, activity plans that describe the conditions under which some activity would or did take place, and the management of ownership and other rights over time.  The model presented here concerning promise activities has reduced fidelity compared to these efforts, and when they have stabilized, the modeling may be revised to take into account those new facilities.
+
 
 ## Promised Gift
 
@@ -34,11 +37,14 @@ top.part = promise
 
 ## Commissions for Artwork
 
-Another type of promise can occur even before the artwork is produced -- a commission from a sponsor for the production of the work.
+Another type of promise can occur even before the artwork is produced: a commission from a sponsor for the production of the work. This starts out with paired promises, where the artist promises to produce the work, and the commissioner promises to pay for it.  There might be some amount of money paid to the artist in advance, or other transfers of custody or ownership of objects, such as lending something to the artist to produce a copy of.  Given the potential for multiple exchanges of promises, money, and objects, the description of the commissioning activity fits cleanly into the broader Provenance Entry model.
+
+The description of the production of the commissioned object is taken care of by the regular production pattern, as described in the [object](/model/object/) section. The subsequent transfer of title to the new owner, and the payment of any monies due to the artist is a second provenance entry following all of the regular patterns.
+
 
 ```crom
 top = vocab.ProvenanceEntry(label="Commission of Painting")
-promise = vocab.Promise(label="Contract to Pay Artist")  
+promise = vocab.Promise(label="Obligation to Pay Artist")  
 fromwho = Person(label="Commissioner")
 towho = Person(label="Artist")
 promise.carried_out_by = fromwho
@@ -46,19 +52,50 @@ promise.participant = towho
 ma = model.MonetaryAmount(value=1000)
 ma.currency = vocab.instances['us dollars']
 promise.influenced_by = ma
-promise.referred_to_by = vocab.Description(content="Promise to pay $1000 for a painting to be created by the artist")
+promise.referred_to_by = vocab.Description(content="Promise to pay $1000 for a painting to be created by the artist, with 10% in advance")
 top.part = promise
+promprod = vocab.Promise(label="Obligation to Produce Painting")
+promprod.carried_out_by = towho
+promprod.participant = fromwho
+promprod.referred_to_by = vocab.Description(content="Promise to paint a landscape for the commissioning party")
+top.part = promprod
+pay = model.Payment(label="Down Payment")
+pay.paid_from = fromwho
+pay.paid_to = towho
+ma = model.MonetaryAmount(value=100)
+ma.currency = vocab.instances['us dollars']
+pay.paid_amount = ma
+top.part = pay
 ```
 
-And the resulting production activity has a cause, which is the above Provenance Event.
+The resulting production activity has a cause, which is the above Provenance Event.
 
 ```crom
-top = vocab.Painting(label="Commissioned Painting")
+top = vocab.Painting(label="Commissioned Landscape Painting")
 top.referred_to_by = vocab.Description(content="A commissioned painting by Artist")
 prod = model.Production()
 prod.carried_out_by = model.Person(label="Artist")
 prod.caused_by = vocab.ProvenanceEntry(label="Commission of Painting")
 ```
 
-!!! note "Model Subject to Change"
-	There is ongoing efforts to standardize how to describe social bonds between parties, activity plans that describe the conditions under which some activity would or did take place, and the management of ownership and other rights over time.  The model presented above has reduced fidelity compared to these efforts, and when they have stabilized, the modeling may be revisited with that new information.
+And finally the painting is delivered to the commissioning party from the artist in exchange for the remainder of the money.
+
+```crom
+top = vocab.ProvenanceEntry(label="Delivery of Painting")
+artist = model.Person(label="Artist")
+owner = model.Person(label="Commissioner")
+acq = model.Acquisition()
+acq.transferred_custody_of = what
+acq.transferred_custody_from = artist
+acq.transferred_custody_to = owner
+top.part = acq
+pay = model.Payment(label="Payment")
+pay.paid_from = owner
+pay.paid_to = artist
+ma = model.MonetaryAmount(value=900)
+ma.currency = vocab.instances['us dollars']
+pay.paid_amount = ma
+top.part = pay
+```
+
+
