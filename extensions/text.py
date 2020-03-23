@@ -210,14 +210,14 @@ class IndexingPlugin(Plugin):
 	def uri_to_label(self, uri):
 		if uri.startswith('http://vocab.getty.edu/'):
 			uri = uri.replace('http://vocab.getty.edu/', '')
-			uri = uri.replace('/', ': ')
+			uri = uri.replace('/', '&colon;')
 			return uri
 		elif uri.startswith('https://linked.art/example/'):
 			uri = uri.replace('https://linked.art/example/', '')
 			uri = uri.replace('/', '')
 			return uri
 		else:
-			print "Unhandled URI: %s" % uri
+			print("Unhandled URI: %s" % uri)
 			return uri
 
 	def walk(self, js, curr_int, id_map, mermaid):
@@ -259,7 +259,7 @@ class IndexingPlugin(Plugin):
 							(rng, curr_int, id_map) = self.walk(vi, curr_int, id_map, mermaid)
 							mermaid.append("%s-- %s -->%s" % (currid, k, rng))				
 						else:
-							print "Iterating a list and found %r" % vi
+							print("Iterating a list and found %r" % vi)
 				elif isinstance(v, dict):
 					(rng, curr_int, id_map) = self.walk(v, curr_int, id_map, mermaid)
 					line = "%s-- %s -->%s" % (currid, k, rng)
@@ -268,8 +268,8 @@ class IndexingPlugin(Plugin):
 				else:
 					if type(v) in [str, unicode]:
 						# :|
-						v = v.replace('"', "''")
-						v = "\"''%s''\""% v
+						v = v.replace('"', "&quot;")
+						v = "\"&quot;%s&quot;\""% v
 					line = "%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v)
 					if not line in mermaid:
 						mermaid.append(line)
