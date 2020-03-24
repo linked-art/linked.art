@@ -65,9 +65,12 @@
             $(function(){
                 var render_mm = function(i, element) {
                     var insertSvg = function(svgCode, bindFn) {
-                        // alert(svgCode);
                         element.innerHTML = svgCode;
-                        $("#" + element.id + " svg").attr('width', '')
+                        // trash height and width, as they're absolute.
+                        // This lets the page scale the image into the available space
+                        // Setting maxWidth means it won't upscale
+                        var w = $("#" + element.id + " svg").attr('width')
+                        $("#" + element.id + " svg").attr('width', '').attr('height', '').css("maxWidth", w + "px")
                         $(element).show()
                     }
                     var txt = element.innerHTML.replace(/&gt;/g, ">")
