@@ -216,6 +216,8 @@ class IndexingPlugin(Plugin):
 			uri = uri.replace('https://linked.art/example/', '')
 			uri = uri.replace('/', '')
 			return uri
+		elif uri.startswith('http://qudt.org/1.1/vocab/unit/'):
+			uri = uri.replace('http://qudt.org/1.1/vocab/unit/', 'qudt:')
 		else:
 			print("Unhandled URI: %s" % uri)
 			return uri
@@ -269,7 +271,7 @@ class IndexingPlugin(Plugin):
 					if type(v) in [str, unicode]:
 						# :|
 						v = v.replace('"', "&quot;")
-						v = "\"&quot;%s&quot;\""% v
+						v = "\"#quot;%s#quot;\""% v
 					line = "%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v)
 					if not line in mermaid:
 						mermaid.append(line)
@@ -445,22 +447,23 @@ title: Index of Classes, Properties, Authorities
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
-
+		mmid = self.uri_to_label(top.id)
 		resp = """
 <a id="%s"></a>
 <div class="jsonld">
 %s
 <div>
-<div class="mermaid">
+<div class="mermaid" id="mermaid_%s">
 %s
 </div>
+<div id="mermaid_%s_svg"></div>
 Other Representations: [JSON-LD (Raw)](%s) | 
 [JSON-LD (Playground)](%s) |
 [Turtle (Raw)](%s) |
 [Turtle (Styled)](%s)
 
 
-""" % (egid, jsstr, mermaid, raw, playground, turtle, turtle_play)	
+""" % (egid, jsstr, mmid, mermaid, mmid, raw, playground, turtle, turtle_play)	
 		return resp
 
 	def traverse(self, what, top, res):

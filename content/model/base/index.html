@@ -110,7 +110,7 @@ The accession number identifier for the painting is "P1998-27".
 
 ```crom
 top = Painting(art=1)
-top._label = "Painting: Pasture and Sheep"
+top._label = "Pasture and Sheep"
 id1 = AccessionNumber()
 id1.content = "P1998-27"
 top.identified_by = id1
@@ -139,7 +139,7 @@ Having only a textual description of the materials in English, the content `"Oil
 
 ```crom
 top = Painting(art=1)
-top._label = "Example Painting on Canvas"
+top._label = "Painting on Canvas"
 lo = MaterialStatement(top.id + "/statement/1")
 lo.content = "Oil on Canvas"
 lo.language = instances['english']
