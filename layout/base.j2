@@ -53,16 +53,38 @@
             }
         </script>
         <script>
-    mermaid.initialize({
-      theme: 'neutral',
-      logLevel: 3,
-      flowchart: { curve: 'linear' }
-    });
-    $('.mermaid').on('click', event => {
-	    if (screenfull.isEnabled) {
-		    screenfull.toggle(event.delegateTarget);
-	    }
-    });
+            // Latest mermaid adds explicit width on the SVG that causes overflow
+            // This also gives us control for now FOUC by hiding the mermaid code
+            // in css, and then showing only after rendering
+            mermaid.initialize({
+              startOnLoad: false,    
+              theme: 'neutral',
+              logLevel: 3,
+              flowchart: { curve: 'basis' }
+            });
+            $(function(){
+                var render_mm = function(i, element) {
+                    var insertSvg = function(svgCode, bindFn) {
+                        element.innerHTML = svgCode;
+                        // trash height and width, as they're absolute.
+                        // This lets the page scale the image into the available space
+                        // Setting maxWidth means it won't upscale
+                        var w = $("#" + element.id + " svg").attr('width')
+                        $("#" + element.id + " svg").attr('width', '').attr('height', '').css("maxWidth", w + "px")
+                        $(element).show()
+                    }
+                    var txt = element.innerHTML.replace(/&gt;/g, ">")
+                    var graph = mermaid.mermaidAPI.render(element.id + "_svg", txt, insertSvg)
+                };
+                $('.mermaid').each(render_mm)
+            })
+
+            $('.mermaid').on('click', event => {
+        	    if (screenfull.isEnabled) {
+        		    screenfull.toggle(event.delegateTarget);
+        	    }
+            });
+
         </script>        
     </body>
 </html>

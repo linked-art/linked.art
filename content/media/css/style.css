@@ -172,6 +172,7 @@ a:hover, a:focus {
 .jsonld .context + .sep + .str { font-size: 0.8em; }
 
 .mermaid {
+  display: none;
   background: white;
   border: 1px dashed black;
   margin-bottom: 10px;
@@ -184,6 +185,11 @@ svg {
   background: white;
 }
 
+
+span.edgeLabel {
+  padding-right: 5px;
+
+}
 
 /* ============ ADMONITIONS ============ */
 .admonition {

@@ -31,7 +31,7 @@ top = HumanMadeObject(label="Example Object")
 
 CIDOC-CRM is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the `classified_as` property, which refers to a term from a controlled vocabulary. This is in contrast to the `type` property described above, which is used for CIDOC-CRM defined classes, and a few extensions as needed. The `classified_as` property is thus a way to be more specific about the sort of entity, while maintaining the core information as the class using `type`. Controlled vocabulary entries should not be used with `type`, nor classes used with `classified_as`.
 
-While any external vocabulary of terms can be used, the [Getty's Art and Architecture Thesaurus][http://vocab.getty.edu/aat/] is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [community best-practices](/community/best-practices/vocabularies/) for recommendations, and within the documentation of the model when a particular choice is essential for interoperability.
+While any external vocabulary of terms can be used, the [Getty's Art and Architecture Thesaurus](http://vocab.getty.edu/aat/) is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [community best-practices](/community/best-practices/vocabularies/) for recommendations, and within the documentation of the model when a particular choice is essential for interoperability.
 
 Use cases for this pattern are in almost every example, but include:
 
@@ -47,7 +47,7 @@ __Example:__
 The type of the object (an instance of the class `HumanMadeObject`) is a painting _(aat:300033618)_, and an artwork _(aat:300133025)_:
 
 ```crom
-top = model.HumanMadeObject(label="Simple Example Painting", art=1)
+top = model.HumanMadeObject(label="Simple Example Painting")
 top.classified_as = Type(ident="http://vocab.getty.edu/aat/300033618", label="Painting")
 top.classified_as = Type(ident="http://vocab.getty.edu/aat/300133025", label="Work of Art")
 ```
@@ -110,7 +110,7 @@ The accession number identifier for the painting is "P1998-27".
 
 ```crom
 top = Painting(art=1)
-top._label = "Painting: Pasture and Sheep"
+top._label = "Pasture and Sheep"
 id1 = AccessionNumber()
 id1.content = "P1998-27"
 top.identified_by = id1
@@ -139,7 +139,7 @@ Having only a textual description of the materials in English, the content `"Oil
 
 ```crom
 top = Painting(art=1)
-top._label = "Example Painting on Canvas"
+top._label = "Painting on Canvas"
 lo = MaterialStatement(top.id + "/statement/1")
 lo.content = "Oil on Canvas"
 lo.language = instances['english']

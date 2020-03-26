@@ -210,15 +210,15 @@ class IndexingPlugin(Plugin):
 	def uri_to_label(self, uri):
 		if uri.startswith('http://vocab.getty.edu/'):
 			uri = uri.replace('http://vocab.getty.edu/', '')
-			uri = uri.replace('/', ': ')
-			return uri
+			uri = uri.replace('/', '&colon;')
 		elif uri.startswith('https://linked.art/example/'):
 			uri = uri.replace('https://linked.art/example/', '')
 			uri = uri.replace('/', '')
-			return uri
+		elif uri.startswith('http://qudt.org/1.1/vocab/unit/'):
+			uri = uri.replace('http://qudt.org/1.1/vocab/unit/', 'qudt:')
 		else:
-			print "Unhandled URI: %s" % uri
-			return uri
+			print("Unhandled URI: %s" % uri)
+		return uri
 
 	def walk(self, js, curr_int, id_map, mermaid):
 		if isinstance(js, dict):
@@ -259,7 +259,7 @@ class IndexingPlugin(Plugin):
 							(rng, curr_int, id_map) = self.walk(vi, curr_int, id_map, mermaid)
 							mermaid.append("%s-- %s -->%s" % (currid, k, rng))				
 						else:
-							print "Iterating a list and found %r" % vi
+							print("Iterating a list and found %r" % vi)
 				elif isinstance(v, dict):
 					(rng, curr_int, id_map) = self.walk(v, curr_int, id_map, mermaid)
 					line = "%s-- %s -->%s" % (currid, k, rng)
@@ -268,7 +268,7 @@ class IndexingPlugin(Plugin):
 				else:
 					if type(v) in [str, unicode]:
 						# :|
-						v = v.replace('"', "''")
+						v = v.replace('"', "&quot;")
 						v = "\"''%s''\""% v
 					line = "%s-- %s -->%s_%s(%s)" % (currid, k, currid, n, v)
 					if not line in mermaid:
@@ -445,22 +445,23 @@ title: Index of Classes, Properties, Authorities
 		turtle = top.id + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
-
+		mmid = self.uri_to_label(top.id)
 		resp = """
 <a id="%s"></a>
 <div class="jsonld">
 %s
 <div>
-<div class="mermaid">
+<div class="mermaid" id="mermaid_%s">
 %s
 </div>
+<div id="mermaid_%s_svg"></div>
 Other Representations: [JSON-LD (Raw)](%s) | 
 [JSON-LD (Playground)](%s) |
 [Turtle (Raw)](%s) |
 [Turtle (Styled)](%s)
 
 
-""" % (egid, jsstr, mermaid, raw, playground, turtle, turtle_play)	
+""" % (egid, jsstr, mmid, mermaid, mmid, raw, playground, turtle, turtle_play)	
 		return resp
 
 	def traverse(self, what, top, res):

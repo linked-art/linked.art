@@ -22,6 +22,8 @@ P42i | `type_assigned_by`
 P45 | `made_of`
 P46 | `part`
 P46i | `part_of`
+P50 | `current_custodian`
+P50i | `current_custodian_of`
 P56 | `bears`
 P65 | `shows`
 P74 | `residence`
@@ -53,6 +55,7 @@ P177 | `assigned_property`
 P186i | `type_produced_by`
 P190 | `content`
 skos:exactMatch | `exact_match`
+sci:O19_has_found_object | `encountered`
 sci:O13i_is_triggered_by | `caused_by`
 la:has_member | `member`
 la:member_of | `member_of`
@@ -60,6 +63,7 @@ rdfs:seeAlso | `see_also`
 dcterms:relation | `related`
 dcterms:conformsTo | `conforms_to`
 rdfs:label | `_label`
+sci:O19i_was_object_found_by | `encountered_by`
 skos:closeMatch | `close_match`
 sci:O13_triggers | `caused`
 schema:genre | `style`
