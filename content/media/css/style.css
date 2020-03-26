@@ -186,6 +186,11 @@ svg {
 }
 
 
+span.edgeLabel {
+  padding-right: 5px;
+
+}
+
 /* ============ ADMONITIONS ============ */
 .admonition {
       padding-top: 10px;
