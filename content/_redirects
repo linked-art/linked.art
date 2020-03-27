@@ -1,5 +1,5 @@
-
 /ns/terms/ /ns/terms/index.xml
 /ns/terms/:term /ns/terms/:term.xml
 /ns/crm/ /ns/terms/index.xml
 /ns/crm/:term /ns/crm/:term.xml
+/api/ /api/1.0/
