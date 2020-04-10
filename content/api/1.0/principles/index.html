@@ -1,6 +1,10 @@
 ---
 title: API Design Principles and Requirements
+up_href: "/api/1.0/"
+up_label: "Linked Art API 1.0"
 ---
+
+{% include "toc.html" %}
 
 The initial principles are derived from the [IIIF Design Patterns](https://iiif.io/api/annex/notes/design_patterns/), as a very successful approach to designing APIs in the cultural heritage domain.
 
@@ -64,53 +68,65 @@ Any networked information requires the network for access.  While basic informat
 
 The following requirements are expressed to clarify the principles in practical, implementation-based terms.
 
-## It must be possible to implement by just putting files on disk containing the data
+## Trivial to Implement
+
+
+__It must be possible to implement by just putting files on disk containing the data__
 
 Implementation of the core APIs must not require a database or any other dynamic or interactive system.  The availability of such a system might (indeed certainly would) make the implementation better and easier to maintain, but must not be required.  
 
-## It must be possible to hand create the data files
+__It must be possible to hand create the data files__
 
 The files on disk should not *require* code to create, even if this might make it significantly easier. Writing JSON in a text editor should be a methodology that works, even if it takes a lot of time. 
 
+__The number of responses and the responses themselves should both be as small as possible, while remaining consistent__
 
-## The number of responses and the responses themselves should both be as small as possible, while remaining consistent
-
-While consistency and availability of the data to the processor is more important than the size of the response, if it is possible to keep responses small, then that is advantageous in terms of network interaction speed and human-writable files from the previous two requirements.  
+While consistency and availability of the data to the processor is more important than the size of the response, if it is possible to keep responses small, then that is advantageous in terms of network interaction speed and human-writable files from the previous two requirements. 
 
 
-## Each statement should only be in one response document, if possible
+## Consistency across Representations
+
+__Each statement should only be in one response document, if possible__
 
 If the same statement can be in multiple places, then they can become out of sync without a dynamic database to manage the API data.  This requirement is a consequence of the first requirement to not require a database. Performance issues might require specific exceptions to this, especially regarding the Names of resources to be presented to end users, but should be extremely limited to avoid inconsistency of data.
 
 
-##  If a resource has references from multiple other resources, then it needs to be in its own response
+__If a resource has references from multiple other resources, then it needs to be in its own response__
 
 This is derived from the previous requirements. If the same resource is described in multiple locations, then it clearly is not only in one response document.
 
 
-## Inverse relations are a (special) case of the same information.
+__Inverse relations are a (special) case of the same information__
 
 Inverse relationships are very common in the ontology, as almost every relationship is bidirectional. For example, if a Person produced an Object, then the Object was produced by the Person.  However only one of these assertions is necessary, as otherwise we run afoul of the requirement to have as little redundancy as possible in terms of information repetition.
 
 Each relationship should be thus encoded only a single direction, however a separate API could retrieve the inverse relationships for a particular resource. There might also be performance oriented exceptions to this rule, in order to provide easy on-ramps into the data.
 
+## Division of Information
 
-## Partitioning, or other 1 to many relationships, should come from the many to the 1. 
+__Partitioning, or other 1 to many relationships, should come from the many to the 1__
 
 This requirement comes from keeping the responses manageable in terms of size.  If every page in a book is described with its own separate entity, as the pages were individually digitized and the image thus needs an entity that it depicts, then the book's representation would consist almost entirely of a list of links to the pages that it contains.  Instead, the page would refer to the book using a `part_of` relationship, and the book would have a separate API for inverses to discover the `part` relationships.
 
 
-## The rules for which representation a statement appears in should be as computationally deterministic and as simple as possible.
+__The rules for which representation a statement appears in should be as computationally deterministic and as simple as possible__
 
 This is to ensure that a system processing knowledge from a triplestore, rather than hand crafting the responses, can easily implement the API.
 
 
-## If a resource does not require incoming references, and is 1:1 with its parent resource, it is embedded in its parent
+__If a resource does not require incoming references, and is 1:1 with its parent resource, it is embedded in its parent__
 
 This notably includes the beginning and end of existence classes for all entities, as in the profile they only ever begin or end a single entity's existence. It also includes data constructs that are specific to the entity, such as Name, Identifier, Dimension, TimeSpan and MonetaryAmount.  This is to cut down the number of resources that need to be separately maintained at persistent URIs.
 
 
-## If a resource does not need to be dereferenced separately then it does not need to have its own URI
+## URI Requirements
+
+__If a resource does not need to be dereferenced separately then it does not need to have its own URI__
 
 Nodes embedded in the graph, such as Name and Dimension, do not need to have their own URI.  They can be, in RDF terms, blank nodes.  If they needed to be referenced separately, then they would have their own endpoints and API documentation.  They are able to have their own URIs, but this must not be necessary.
 
+__There are no requirements about the URI structure for the API endpoints__
+
+We do not make any hard requirements about the structure of any URI that is dereferenced (or not dereferenced). This enables a broad set of implementations to be layered into existing sites, or to be implemented with whatever technology backend is available.  Any absolute requirements that can be depended on by a consuming implementation for the construction of those URIs breaks the "opaque URI" best practice, and reduces implementation possibilities.
+
+Instead, there are [best practices](../best-practices/) for URIs that may be adopted for convenience, but must not be assumed to be adopted by implementations.
