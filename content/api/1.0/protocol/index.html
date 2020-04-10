@@ -1,6 +1,38 @@
 ---
-title: Linked Art API
+title: Linked Art API Protocol
+up_href: "/api/1.0/"
+up_label: "Linked Art API 1.0"
 ---
 
-Discussion about the API layer has not yet begun.  Please get involved or check back later.
+{% include "toc.html" %}
+
+## Introduction
+
+Interaction over the web.
+
+## REST
+
+What does it mean to be RESTful?
+
+## HTTP Implementation Details
+
+### HTTPS
+
+* Recommend HTTPS
+
+### Operations
+
+* Only GET
+
+### Content Negotiation
+
+* Clients should request json-ld explicitly
+* Servers may support other serializations
+
+
+## URI Structure Best Practices
+
+* One endpoint per response type, with consistent URI prefix
+* Opaque identifiers after prefix
+* (etc, see notes)
 

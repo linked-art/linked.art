@@ -42,7 +42,14 @@
             </article>
         </main>
         <footer>
-        &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:rsanderson@getty.edu">rsanderson@getty.edu</a>
+        &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:rsanderson@getty.edu">rsanderson@getty.edu</a><br/>
+        Have a comment or question about this page?
+        <form action="/sent" name="contact" method="POST" data-netlify="true">
+            <span>Name:</span><input type="text" name="name"/>
+            <span>Email:</span><input type="email" name="email"/>
+            <span>Comment:</span><input type="text" name="comment"/>
+            <button type="submit">Send</button>
+        </form>
         </footer>
         {% if site.config.mode == "production" -%}
             {% include "ga.j2" %}
