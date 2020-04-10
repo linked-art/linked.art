@@ -42,12 +42,10 @@
             </article>
         </main>
         <footer>
-        &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:rsanderson@getty.edu">rsanderson@getty.edu</a><br/>
-        Have a comment or question about this page?
-        <form action="/sent" name="contact" method="POST" data-netlify="true">
-            <span>Name:</span><input type="text" name="name"/>
-            <span>Email:</span><input type="email" name="email"/>
-            <span>Comment:</span><input type="text" name="comment"/>
+        &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:rsanderson@getty.edu">rsanderson@getty.edu</a>
+        <form name="contact" method="POST" data-netlify="true">
+            <span>Comment?</span> <input type="text" name="comment"/>
+            <input type="hidden" name="page" value=" {{ resource.relative_path }} "/>
             <button type="submit">Send</button>
         </form>
         </footer>
