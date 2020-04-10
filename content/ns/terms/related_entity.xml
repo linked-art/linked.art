@@ -1,11 +1,11 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
 
-<rdf:Property rdf:about="https://linked.art/ns/terms/relationship">
-    <rdfs:label xml:lang="en">related by</rdfs:label>
-    <rdfs:comment xml:lang="en"> The relationship between the Entity that the phase is of, and the defining entity. For an ownership phase, this would be P52 has current owner. For the size of painting phase, this would be P43 has dimension.</rdfs:comment>
+<rdf:Property rdf:about="https://linked.art/ns/terms/related_entity">
+    <rdfs:label xml:lang="en">related entity</rdfs:label>
+    <rdfs:comment xml:lang="en"> An E1 Entity that defines the nature of the Phase. For an ownership phase, this would be the owning E39 Actor. For the size of painting phase, this would be the E54 Dimension that describes the size.</rdfs:comment>
     <rdfs:domain rdf:resource="https://linked.art/ns/terms/Phase"/>
-    <rdfs:range rdf:resource="E55_Type"/>
-    <rdfs:subPropertyOf rdf:resource="P2_has_type"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/terminated"/>
 </rdf:Property>
 
 </rdf:RDF>
