@@ -21,7 +21,13 @@ The media type to use for representations in JSON-LD using the context is:
 
 > `application/ld+json;profile="{{ site.config.var.scheme }}://{{site.config.var.hostname}}{{site.config.base_url}}ns/v1/linked-art.json"`
 
-This would be the value of the `Content-Type` HTTP header on responses, and if there are other representations available via content negotiation, then it can be sent in requests in the `Accept` header,
+This would be the value of the `Content-Type` HTTP header on responses, and if there are other representations available via content negotiation, then it can be sent in requests in the `Accept` header.
+
+
+## Other Serialization Formats
+
+Other serialization formats of the underlying graph may also be available, such as [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), [Turtle](https://www.w3.org/TR/turtle/), other standardized formats, or even non-standardized representations. These are not required in order to fully conform with the Linked Art API, and should not be assumed to exist. How to request these alternative serializations is documented in the [protocol](../protocol/) section.
+
 
 ## Examples
 
