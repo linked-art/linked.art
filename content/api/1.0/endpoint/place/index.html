@@ -18,9 +18,9 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-## Model Overview
+Places are a foundational aspect of the Linked Art model for providing context as to where activities occur. They are extents in space described by a geometry, and independent of time or what object(s) may be present at the location. Places are a relatively simple model and therefore a relatively simple API, using the shared features and common patterns, along with a WKT based definition of the geometry.
 
-See [model](/model/place/)
+For more information about the usage of Places, please see the [Place model](/model/place/).
 
 ## Place Property Definitions
 
@@ -41,17 +41,25 @@ See [model](/model/place/)
 
 ## Example
 
+The location for the city of Los Angeles could be described as below.
+
+* It has a label "Los Angeles" for humans reading the JSON
+* It is classified as a City (_aat:300008389_)
+* It is called "Los Angeles"
+* It has an identifier "06-44000"
+* It is defined by a particular WKT Polygon
+* It has a description (_aat:300411780_) of "Los Angeles is the largest city ..."
+* It is approximated by the centroid place of Los Angeles
+* It is part of the place California
+* It is a member of the set of top 10 cities in the USA
+
 
 ```crom
 top = vocab.City(label="Los Angeles")
 top.identified_by = model.Name(content="Los Angeles")
 top.identified_by = model.Identifier(content="06-44000")
 top.referred_to_by = vocab.Description(content="Los Angeles is the largest city in California.")
-top.defined_by = """POLYGON((-118.574 34.185,
--117.558 34.185,
--117.5585 33.512,
--118.574 33.512,
--118.5745 34.185))"""
+top.defined_by = """POLYGON((-118.574 34.185,-117.558 34.185,-117.5585 33.512,-118.574 33.512,-118.5745 34.185))"""
 top.approximated_by = model.Place(label="Los Angeles Centroid")
 top.part_of = model.Place(label="California")
 top.member_of = model.Set(label="Top 10 Cities in USA")
