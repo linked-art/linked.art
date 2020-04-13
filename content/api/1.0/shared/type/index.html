@@ -1,0 +1,53 @@
+---
+title: "Linked Art API: Type Pattern"
+up_href: "/api/1.0/shared/"
+up_label: "Linked Art API 1.0 Shared Patterns"
+---
+
+<style>
+th, td {
+  padding: 5px 5px;
+  text-align: left;
+  border: 1px solid #D0D0D0; }
+th { background: #F0F0F0; }
+th:first-child, td:first-child { padding-left: 3px; }
+th:last-child, td:last-child { padding-right: 3px; }
+</style>
+
+{% include "toc.html" %}
+
+## Introduction
+
+
+## Property Definitions
+
+### Type
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `id`              | string        | Required    | The value MUST be a URI identifying the concept |  
+| `type`            | string        | Required    | The class of the place, which MUST be the value `"Type"` |
+| `_label`          | string        | Recommended | A human readable label for the place, intended for developers |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the Type and MUST follow these requirements for Type |
+
+
+## Example
+
+
+```crom
+o = vocab.Painting()
+top = o.classified_as[0]
+```
+
+
+## Extended Definition
+
+
+
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the Place and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Place and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Place and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Place is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
+
+
+
