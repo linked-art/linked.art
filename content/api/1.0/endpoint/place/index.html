@@ -24,19 +24,19 @@ See [model](/model/place/)
 
 ## Place Property Definitions
 
-| Property Name     | Datatype      | Required | Description | 
-|-------------------|---------------|----------|-------------|
-| `@context`        | string, array | Yes      | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
-| `id`              | string        | Yes      | The value MUST be the HTTP(S) URI at which the place's representation can be [dereferenced](../../protocol/) |  
-| `type`            | string        | Yes      | The class of the place, which MUST be the value `"Place"` |
-| `_label`          | string        | No       | A human readable label for the place, intended for developers |
-| `classified_as`   | array         | No       | An array of json objects, each of which is a classification of the Place and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | No       | An array of json objects, each of which is a name of the Place and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Place and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | No       | An array of json objects, each of which is a human readable statement about the Place and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `defined_by`      | string        | No       | A string containing the [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representation of the geometry of the Place |
-| `approximated_by` | array         | No       | An array of json objects, each of which is an approximation of the current Place and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
-| `part_of`         | array         | No       | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
-| `member_of`       | array         | No       | An array of json objects, each of which is a Set that the current Place is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the place's representation can be [dereferenced](../../protocol/) |  
+| `type`            | string        | Required    | The class of the place, which MUST be the value `"Place"` |
+| `_label`          | string        | Recommended | A human readable label for the place, intended for developers |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the Place and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the Place and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Place and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Place and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `defined_by`      | string        | Optional    | A string containing the [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representation of the geometry of the Place |
+| `approximated_by` | array         | Optional    | An array of json objects, each of which is an approximation of the current Place and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
+| `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Place is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
 
 
 ## Example
@@ -46,11 +46,13 @@ See [model](/model/place/)
 top = vocab.City(label="Los Angeles")
 top.identified_by = model.Name(content="Los Angeles")
 top.identified_by = model.Identifier(content="06-44000")
-top.referred_to_by = vocab.Description(content="Los Angeles is the largest city in California, and second largest metropolitan area in the USA.")
-top.defined_by = "POLYGON((-118.57486466386725 34.18579234820859,-117.55862931230475 34.18579234820859,-117.55862931230475 33.51288983196726,-118.57486466386725 33.51288983196726,-118.57486466386725 34.18579234820859))"
+top.referred_to_by = vocab.Description(content="Los Angeles is the largest city in California.")
+top.defined_by = """POLYGON((-118.574 34.185,
+-117.558 34.185,
+-117.5585 33.512,
+-118.574 33.512,
+-118.5745 34.185))"""
 top.approximated_by = model.Place(label="Los Angeles Centroid")
 top.part_of = model.Place(label="California")
 top.member_of = model.Set(label="Top 10 Cities in USA")
 ```
-
-
