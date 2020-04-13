@@ -16,20 +16,18 @@ See [model](/model/place/)
 
 | Property Name     | Datatype      | Required | Description |
 |-------------------|---------------|----------|-------------|
-| `@context`        | string, array | Yes      | The value MUST be the URI of the Linked Art context as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry | 
-| `id`              | string        | Yes      | The value MUST be the HTTP(S) URI at which the place's representation can be dereferenced |  
+| `@context`        | string, array | Yes      | The value MUST be the URI of the Linked Art context as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `id`              | string        | Yes      | The value MUST be the HTTP(S) URI at which the place's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Yes      | The class of the place, which MUST be the value `"Place"` |
 | `_label`          | string        | No       | A human readable label for the place, intended for developers |
 | `classified_as`   | array         | No       | An array of json objects, each of which follows the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | No       | An array of json objects, each of which follows the requirements for [Identifier](../../shared/identifier/) or [Name](../../shared/name/) |
 | `referred_to_by`  | array         | No       | An array of json objects, each of which follows the requirements for [Statement](../../shared/statement/) |
 | `defined_by`      | string        | No       | A string containing the WKT representation of the ... |
-| `approximated_by` | array         | No       | An array of json objects, each of which follows the requirements for an [entity reference](), and the entity must be a Place |
-| `part_of`         | array         | No       | An array of json objects, each of which follows the requirements for an [entity reference](), and the entity must be a Place |
+| `approximated_by` | array         | No       | An array of json objects, each of which follows the requirements for an [entity reference](../../shared/reference/), and the entity must be a Place |
+| `part_of`         | array         | No       | An array of json objects, each of which follows the requirements for an [entity reference](../../shared/reference/), and the entity must be a Place |
+| `member_of`       | array         | No       | An array of json objects, each of which follows the requirements for an [entity reference](../../shared/reference/), and the entity must be a [Set](../../endpoint/set/) |
 
-
-* _member_of_ ?
-* _representation_ ?
 
 ## Example
 
