@@ -41,6 +41,20 @@ For more information about the usage of Places, please see the [Place model](/mo
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Place is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
 
 
+### Incoming Properties
+
+Type instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to Places.
+
+| Property Name      | Source Class      | Description |
+|--------------------|-------------------|-------------|
+| `current_location` | `HumanMadeObject` | The current location of an object is managed by the object |
+| `current_permanent_location` | `HumanMadeObject` | The normal location of the object is also managed by the object |
+| `moved_from`       | `Move`            | In Provenance Activities, objects can be moved from one place ...| 
+| `moved_to`         | `Move`            | ... to another place |
+| `residence`        | `Person`, `Group` | People and Groups have Places at which they are or have been resident |
+| `took_place_at`    | `Event`+          | All Events and Activities can take place at a Place |
+
+
 ## Example
 
 The location for the city of Los Angeles could be described as below.
