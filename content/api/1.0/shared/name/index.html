@@ -28,16 +28,17 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |  
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` |
+| `_label`          | string        | Optional    | A human readable labe, intended for developers |
 | `content`         | string        | Required    | The string form of the Name |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) |
 | `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)|
-| `_label`          | string        | Optional    | A human readable labe, intended for developers |
 | `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| 
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | 
 
 <!--
-| `alternative`     | array         | Optional    | |
-| `translation_of`  | array         | Optional    | |
+| `alternative`     | array         | Optional    | Alternative forms of the name. No use cases. |
+| `translation_of`  | array         | Optional    | Translations of this form of the name. Also no use cases. |
+| `assigned_by`     | array         | Optional    | |
 -->
 
 ### Incoming Properties
@@ -46,9 +47,7 @@ Name instances are typically found as the object of the following properties, ot
 
 | Property Name   | Source Class      | Description |
 |-----------------|-------------------|-------------|
-| `identified_by` | All               | |
-| `contact_point` | `Person`, `Group` | |
-
+| `identified_by` | All               | Names are used to provide an identifying label to the entity via identified_by. |
 
 
 ## Example
