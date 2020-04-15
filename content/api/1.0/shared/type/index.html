@@ -18,6 +18,9 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
+Concepts, called Types, are a core part of the model and present in practically every resource description. They give access to external vocabularies, such as the Getty's Art and Architecture Thesaurus, in order to add classifications to entities described. As they are external entities, rather than the focus of the Linked Art documentation, they are only slightly more detailed than any other [entity reference](../reference/), allowing a meta-classification to be asserted about the type. 
+
+Types are described in the [base patterns](/model/base/#types-and-classifications) of the model documentation.
 
 ## Property Definitions
 
@@ -33,7 +36,7 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ### Incoming Properties
 
-Type instances are typically found as the object of the following properties:
+Type instances are typically found as the object of the following properties.  This list is not exhaustive, but is intended to cover the likely cases.
 
 | Property Name   | Source Class | Description |
 |-----------------|--------------|-------------|
@@ -41,10 +44,12 @@ Type instances are typically found as the object of the following properties:
 | `technique`     | Activity     | Activities (of all sorts) can have a technique, which is modeled as a Type |
 | `motivated_by`  | Activity     | Activities can also be motivated by a Type |
 | `about`         | Textual Work, Visual Work | Textual and Visual Works can have subjects, which are modeled as Types |
+| `assigned`      | Attribute Assignment | The classification of an object might be assigned as part of a documented Attribute Assignment |
 
 
 ## Example
 
+The concept "Painting" (_aat:300033618_) is a `Type`, has a label, and is classified as a Type of Work.
 
 ```crom
 top = vocab.Painting()
@@ -64,5 +69,14 @@ When the URI of the Type is dereferenced as if it were an endpoint, then the fol
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Type and MUST follow the requirements for [Statement](../../shared/statement/) |
 | `part_of`         | array         | Optional    | An array of json objects, each of which is a Type that the current Type is narrower than and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Type |
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Type is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
+
+
+### Extended Example
+
+```crom
+top = model.Type(label="")
+top.classified_as = vocab.instances['']
+
+
 
 
