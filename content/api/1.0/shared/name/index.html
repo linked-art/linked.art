@@ -1,0 +1,56 @@
+---
+title: "Linked Art API: Name Pattern"
+up_href: "/api/1.0/shared/"
+up_label: "Linked Art API 1.0 Shared Patterns"
+---
+
+<style>
+th, td {
+  padding: 5px 5px;
+  text-align: left;
+  border: 1px solid #D0D0D0; }
+th { background: #F0F0F0; }
+th:first-child, td:first-child { padding-left: 3px; }
+th:last-child, td:last-child { padding-right: 3px; }
+</style>
+
+{% include "toc.html" %}
+
+## Introduction
+
+Names are described in the [base patterns](/model/base/#types-and-classifications) of the model documentation, and examples are present for practically every class.
+
+## Property Definitions
+
+### Properties of Names
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |  
+| `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` |
+| `content`         | string        | Required    | The string form of the Name |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) |
+| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)|
+| `_label`          | string        | Optional    | A human readable labe, intended for developers |
+| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| 
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | 
+
+<!--
+| `alternative`     | array         | Optional    | |
+| `translation_of`  | array         | Optional    | |
+-->
+
+### Incoming Properties
+
+Name instances are typically found as the object of the following properties, other than the self-referential ones covered above.  This list is not exhaustive, but is intended to cover the likely cases.
+
+| Property Name   | Source Class      | Description |
+|-----------------|-------------------|-------------|
+| `identified_by` | All               | |
+| `contact_point` | `Person`, `Group` | |
+
+
+
+## Example
+
+
