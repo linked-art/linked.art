@@ -397,16 +397,21 @@ title: Index of Classes, Properties, Authorities
 
 	def generate_example(self, egtext, resource):
 		# Yes really... 
+		highlight_lines = ""
 		exec(egtext) 
+		# egtext can override hightlight_line
+		# but hard to calculate automatically
 
-		# Now in scope should be a top resource		
+		# Now in scope should be a top resource
 		factory.pipe_scoped_contexts = False
+		factory.toFile(top, compact=False)
 		js = factory.toJSON(top)
 
 		# 2020-03-05 This now uses crom specific toHTML
 		# rather than vanilla code hiliting in markdown
 		# Now equivalent, but with more features possible
 		# down the line
+
 		factory.pipe_scoped_contexts = True
 		jsstr = factory.toHtml(top)
 		factory.pipe_scoped_contexts = False
