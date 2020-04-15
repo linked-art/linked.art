@@ -4,6 +4,6 @@ hyde
 Jinja2
 pymdown_extensions<=5.0
 rdflib
-pyld
+pyld<=1.0.5
 requests
 lxml
