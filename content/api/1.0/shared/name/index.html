@@ -35,11 +35,6 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 | `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| 
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | 
 
-<!--
-| `alternative`     | array         | Optional    | Alternative forms of the name. No use cases. |
-| `translation_of`  | array         | Optional    | Translations of this form of the name. Also no use cases. |
-| `assigned_by`     | array         | Optional    | |
--->
 
 ### Incoming Properties
 
@@ -63,3 +58,10 @@ st.language = vocab.instances['english']
 n.part = st
 n.referred_to_by = vocab.Note(content="Name supplied by artist as 'hacha'")
 ```
+
+
+## Future Considerations
+
+* Explicit pairs of alternative names or translations of names. For example the name "Axe" is a translation of "Hacha", or "Æon Flux" has an alternative transliteration of "AEon Flux".
+* Assignments, as described for [Identifiers](../identifier/), could easily be added for Names, but there has not been a use case proposed.
+
