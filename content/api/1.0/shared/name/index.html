@@ -52,4 +52,14 @@ Name instances are typically found as the object of the following properties, ot
 
 ## Example
 
-
+```crom
+top = model.HumanMadeObject()
+n = vocab.PrimaryName(content="Hacha (Ceremonial Axe)")
+n.language = instances['spanish']
+n.language = instances['english']
+top.identified_by = n
+st = vocab.Subtitle(content="Ceremonial Axe")
+st.language = vocab.instances['english']
+n.part = st
+n.referred_to_by = vocab.Note(content="Name supplied by artist as 'hacha'")
+```
