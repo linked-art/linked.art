@@ -12,6 +12,14 @@ th, td {
 th { background: #F0F0F0; }
 th:first-child, td:first-child { padding-left: 3px; }
 th:last-child, td:last-child { padding-right: 3px; }
+
+.diagram_img {
+	background: white;
+	padding: 10px;
+	border: 1px solid black;
+
+}
+
 </style>
 
 {% include "toc.html" %}
@@ -39,6 +47,10 @@ For more information about the usage of Places, please see the [Place model](/mo
 | `approximated_by` | array         | Optional    | An array of json objects, each of which is an approximation of the current Place and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
 | `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Place is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
+
+### Property Diagram
+
+> ![diagram](place_properties.png){:.diagram_img width="600px"}
 
 
 ### Incoming Properties
