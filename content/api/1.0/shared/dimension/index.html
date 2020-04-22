@@ -18,9 +18,11 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-Dimensions are a combination of a numeric value, a unit for the value, and a classification as to what sort of value it is. They can be measured on the entity by some means, such as counting or using an instrument.  
+Dimensions are a combination of a numeric value, a unit for the value, and a classification as to what sort of value it is. They can be measured on the entity by some means, such as counting or using an instrument. The data structure is commonly used for physical things (e.g. height and width), but is also applicable to textual works (e.g. number of words) or even people (e.g. height, weight). If there is a countable feature, then that can be expressed as a dimension using this data structure. 
 
 ## Property Definitions
+
+The dimension data structure has the following properties.
 
 ### Properties of Dimensions
 
@@ -55,10 +57,10 @@ Dimensions are a combination of a numeric value, a unit for the value, and a cla
 
 Dimension instances are typically found as the object of the following properties.  This list is not exhaustive, but is intended to cover the likely cases.
 
-| Property Name   | Source Class      | Description |
+| Property Name   | Source Endpoint   | Description |
 |-----------------|-------------------|-------------|
-| `dimension`     | Non-Event classes | The dimension instance is a dimension of the source entity |
-| `duration`      | TimeSpan          | The dimension is the length of time (duration) of the actual time span, within the boundaries described in the TimeSpan instance |
+| `dimension`     | [Physical Object](../../endpoint/physical_object/), [Digital Object](../../endpoint/digital_object), and others | The dimension instance is a dimension of the source entity, especially for physical and digital objects |
+| `duration`      | TimeSpan in All   | The dimension is the length of time (duration) of the actual time span, within the boundaries described in the TimeSpan instance, which can be present in all endpoints |
 
 ## Example
 

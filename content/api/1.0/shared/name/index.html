@@ -1,5 +1,5 @@
 ---
-title: "Linked Art API: Name Pattern"
+title: "Linked Art API: Name Structure"
 up_href: "/api/1.0/shared/"
 up_label: "Linked Art API 1.0 Shared Data Structures"
 ---
@@ -38,14 +38,19 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 
 ### Incoming Properties
 
-Name instances are typically found as the object of the following properties, other than the self-referential ones covered above.  This list is not exhaustive, but is intended to cover the likely cases.
+Name instances are typically found as the object of the following properties.  This list is not exhaustive, but is intended to cover the likely cases.
 
 | Property Name   | Source Class      | Description |
 |-----------------|-------------------|-------------|
 | `identified_by` | All               | Names are used to provide an identifying label to the entity via identified_by. |
 
 
+(And that's all!)
+
 ## Example
+
+An object is given the name "Hacha (Ceremonial Axe)", with a note that the original form was 'hacha'.
+
 
 ```crom
 top = model.HumanMadeObject()
@@ -56,7 +61,7 @@ top.identified_by = n
 st = vocab.Subtitle(content="Ceremonial Axe")
 st.language = vocab.instances['english']
 n.part = st
-n.referred_to_by = vocab.Note(content="Name supplied by artist as 'hacha'")
+n.referred_to_by = vocab.Note(content="Title was originally given as 'hacha'")
 ```
 
 

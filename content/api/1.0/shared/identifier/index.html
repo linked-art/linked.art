@@ -1,5 +1,5 @@
 ---
-title: "Linked Art API: Identifier Pattern"
+title: "Linked Art API: Identifier Structure"
 up_href: "/api/1.0/shared/"
 up_label: "Linked Art API 1.0 Shared Data Structures"
 ---
@@ -18,9 +18,13 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-Names are described in the [base patterns](/model/base/#types-and-classifications) of the model documentation, and examples are present for practically every class.
+Identifiers are codes in string form assigned to some resource to identify it within a particular context. All of the different types of entity can have identifiers assigned to them.  Identifiers are very similar in structure to [Names](../name/), but are explicitly not part of natural langauge, and hence do not have a `language` property, nor can they be translated or have alternative forms and hence are documented separately.
+
+Identifiers are described in the [base patterns](/model/base/#types-and-classifications) of the model documentation, and examples are present for practically every class.
 
 ## Property Definitions
+
+Identifiers have the following properties.
 
 ### Properties of Identifiers
 
@@ -46,16 +50,16 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 | `carried_out_by`  | array         | Recommended | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) |
 | `timespan`        | json object   | Optional    | A json object which MUST follow the requirements for [timespans](../timespan/)|
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
-
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../reference/) to another endpoint that was instrumental in the assignment of the identifier |
 
 ### Incoming Properties
 
-Name instances are typically found as the object of the following properties, other than the self-referential ones covered above.  This list is not exhaustive, but is intended to cover the likely cases.
+Identifier instances are typically found as the object of the following properties.  This list is not exhaustive, but is intended to cover the likely cases.
 
-| Property Name   | Source Class      | Description |
+| Property Name   | Source Endpoint   | Description |
 |-----------------|-------------------|-------------|
-| `identified_by` | All               | |
-| `contact_point` | Person, Group     | |
+| `identified_by` | All               | The most common case is for a resource to be identified_by an Identifier, which can be found in every endpoint |
+| `contact_point` | [Person](../../endpoint/person/), [Group](../../endpoint/group/) | People and Groups can also have contact points, which are modeled as Identifiers. |
 
 ## Example
 

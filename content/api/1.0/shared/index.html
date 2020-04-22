@@ -21,3 +21,6 @@ These data structures are shared between many endpoints, within the main respons
 * [TimeSpans](timespan/) - Spans of time, with fuzziness at each end (e.g. 1950 to 1955)
 * [Types / Concepts](type/) - References to types that further clarify the entity (e.g. Painting rather than Object)
 
+## Notes
+
+Note that data structures, as they are embedded within the formats available from endpoints, do not have `@context` entries.  The examples for the data structures have `id` properties with identifying URIs, but these are not required.
