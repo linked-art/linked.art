@@ -1,5 +1,5 @@
 ---
-title: "Linked Art API: Identifier Pattern"
+title: "Linked Art API: Dimension Structure"
 up_href: "/api/1.0/shared/"
 up_label: "Linked Art API 1.0 Shared Data Structures"
 ---
@@ -18,7 +18,6 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-Names are described in the [base patterns](/model/base/#types-and-classifications) of the model documentation, and examples are present for practically every class.
 
 ## Property Definitions
 
@@ -27,15 +26,18 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the identifier, rather than the URI which is the identifier of the object |  
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"Identifier"` |
+| `type`            | string        | Required    | The class for the name, which MUST be the value `"Dimension"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
-| `content`         | string        | Required    | The string content of the identifier |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) |
+| `value`           | number        | Required    | The value of the dimension |
+| `unit`            | json object   | Required    | The unit for the dimension, which MUST follow the requirements for a [MeasurementUnit](../type/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the dimension and MUST follow the requirements for [Type](../type/) |
+| `identified_by`   | array         | Recommended | |
+| `upper_value_limit` | number      | Optional    | |
+| `lower_value_limit` | number      | Optional    | |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. |
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, as below |  
+| `assigned_by`     | array         | Optional    | An array of json objects, each of which is a measurement for the dimension, as below |  
 
-
-### Properties of Identifier Assignments
+### Properties of Measurements
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
@@ -54,23 +56,22 @@ Name instances are typically found as the object of the following properties, ot
 
 | Property Name   | Source Class      | Description |
 |-----------------|-------------------|-------------|
-| `identified_by` | All               | |
-| `contact_point` | Person, Group     | |
+| `dimension`     | Non-Event classes | |
+| `duration`      | TimeSpan          | |
 
 ## Example
 
-An accession number for an object, created and assigned by Example Museum at some point during 1997.
 
 ```crom
 top = model.HumanMadeObject()
-id = vocab.AccessionNumber(label="Example Museum Accession Number", content="1997-A1752")
-top.identified_by = id
-id.referred_to_by = vocab.Note(content="This is the original accession number from 1997")
-aa = model.AttributeAssignment(label="Assignment of 1997-A1752")
-id.assigned_by = aa
-aa.carried_out_by = model.Group(label="Example Museum")
-ts = model.TimeSpan(label="1997")
-aa.timespan = ts
-ts.begin_of_the_begin = "1997-01-01T00:00:00Z"
-ts.end_of_the_end = "1997-12-31T00:00:00Z"
+d = vocab.Height()
+d.value = 24
+d.unit = vocab.instances['inches']
+d.lower_value_limit = 22
+d.upper_value_limit = 26
+aa = vocab.Measuring()
+aa.carried_out_by = model.Person(label="Curator")
+d.assigned_by = aa
+d.identified_by =  vocab.DisplayName(content="24 inches high (+/- 2 inches)")
+top.dimension = d
 ```
