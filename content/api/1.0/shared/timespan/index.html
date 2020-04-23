@@ -58,6 +58,16 @@ Dimension instances are typically found as the object of the following propertie
 
 ```crom
 top = model.Activity()
-
-
+ts = model.TimeSpan(label="1 day, c. 1750")
+ts.identified_by = model.Name(content="1 day, during circa 1750")
+ts.referred_to_by = vocab.Description(content="About 1750, as estimated by C. U. Rata")
+ts.begin_of_the_begin = "1720-01-01T00:00:00Z"
+ts.end_of_the_begin = "1751-01-01T00:00:00Z"
+ts.begin_of_the_end = "1749-01-01T00:00:00Z"
+ts.end_of_the_end = "1780-01-01T00:00:00Z"
+dur = model.Dimension()
+dur.value = 1
+dur.unit = vocab.instances['days']
+ts.duration = dur
+top.timespan = ts
 ```
