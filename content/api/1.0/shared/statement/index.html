@@ -60,4 +60,5 @@ top = model.HumanMadeObject()
 d = vocab.Description(content="A small greenstone pendant surrounded by silver")
 d.language = vocab.instances['english']
 d.identified_by = vocab.DisplayName(content="Description")
+top.referred_to_by = d
 ```
