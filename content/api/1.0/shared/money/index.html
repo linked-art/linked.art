@@ -53,12 +53,21 @@ Dimension instances are typically found as the object of the following propertie
 
 ## Example
 
+An auction lot has a monetary amount which ...
 
-```
+* ... has a `type` of "MonetaryAmount"
+* ... is `classified_as` a starting price, with an `id` of _aat:_ and a `type` of "Type"
+* ... has a `value` of 500
+* ... and a `currency` of US dollars, with an `id` of _aat:_ and a `type` of "Currency"
+* ... has a display label with the content of "500 US Dollars"
+* ... and is `referred_to_by` a note, with the content "From personal correspondence"
+
+
+```crom
 top = model.Set(label = "Set of Objects for Lot 812")
 amnt = vocab.StartingPrice(label="$500", value=500)
 amnt.currency = vocab.instances['us dollars']
-amnt.identified_by = model.Name(content="500 US Dollars")
+amnt.identified_by = vocab.DisplayName(content="500 US Dollars")
 amnt.referred_to_by = vocab.Note(content="From personal correspondence")
 top.dimension = amnt
 ```
