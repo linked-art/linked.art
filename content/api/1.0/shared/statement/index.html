@@ -1,0 +1,63 @@
+---
+title: "Linked Art API: Statement Structure"
+up_href: "/api/1.0/shared/"
+up_label: "Linked Art API 1.0 Shared Data Structures"
+---
+
+<style>
+th, td {
+  padding: 5px 5px;
+  text-align: left;
+  border: 1px solid #D0D0D0; }
+th { background: #F0F0F0; }
+th:first-child, td:first-child { padding-left: 3px; }
+th:last-child, td:last-child { padding-right: 3px; }
+</style>
+
+{% include "toc.html" %}
+
+## Introduction
+
+...
+
+Statements are described in the [base patterns](/model/base/) of the model documentation, and examples are present for practically every class.
+
+## Property Definitions
+
+### Properties of Names
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |  
+| `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` |
+| `_label`          | string        | Optional    | A human readable labe, intended for developers |
+| `content`         | string        | Required    | The string form of the Name |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) |
+| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)|
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a textual representation of the structured data in the dimension, and MUST follow the requirements for [Name](../name/) |
+
+
+### Property Diagram
+
+> ![diagram](statement_properties.png){:.diagram_img width="600px"}
+
+
+### Incoming Properties
+
+Name instances are typically found as the object of the following properties.  This list is not exhaustive, but is intended to cover the likely cases.
+
+| Property Name    | Source Endpoint  | Description |
+|------------------|------------------|-------------|
+| `referred_to_by` | All              |  |
+
+(And that's all!)
+
+## Example
+
+
+```crom
+top = model.HumanMadeObject()
+d = vocab.Description(content="A small greenstone pendant surrounded by silver")
+d.language = vocab.instances['english']
+d.identified_by = vocab.DisplayName(content="Description")
+```
