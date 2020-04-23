@@ -26,6 +26,8 @@ It is very likely that more information about the referenced resource will be ne
 
 References can only have the three properties below, in order to make it clear that it is a reference to an external resource rather than one that is being embedded within the current JSON document.  The URI in `id` and the class in `type` MUST be the same as the referenced resource, once the URI has been dereferenced.  The label, however, MAY be different. 
 
+[Types](../type/) are a special case of a reference to an external entry in a vocabulary system. As noted in the type documentation, they may also have meta-classifications to ensure that they can be processed, as dereferencing the type's URI might not result in a Linked Art formatted description.
+
 ### Properties of References
 
 | Property Name     | Datatype      | Requirement | Description | 
@@ -34,8 +36,18 @@ References can only have the three properties below, in order to make it clear t
 | `type`            | string        | Required    | The value MUST be the same as the `type` of the referenced resource |
 | `_label`          | string        | Recommended | A human readable label for the referenced resource, intended for developers |
 
+There are too many incoming properties to try to list them all, as it amounts to the list of all properties for all classes.
 
 ## Example
+
+A human-made object ...
+
+* ... is `classified_as` a reference to a type, which is in turn `classified_as` a meta-type
+* ... is `referred_to_by` the textual content of a referenced article
+* ... is a `member_of` a referenced museum collection set
+* ... `shows` a particular referenced visual work
+* ... has a `current_owner` of a particular referenced person
+* ... and has a `current_location` of a referenced gallery.
 
 ```crom
 top = vocab.Painting(label="Example Painting")
