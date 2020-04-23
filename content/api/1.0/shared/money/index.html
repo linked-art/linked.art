@@ -48,8 +48,17 @@ Dimension instances are typically found as the object of the following propertie
 | Property Name   | Source Endpoint   | Description |
 |-----------------|-------------------|-------------|
 | `paid_amount`   | [Provenance Activity](../../endpoint/provenance_activity/) | Monetary amounts are mostly used to record the amount of money that changes hands in a transaction, referred to from a Payment in a Provenance Activity | 
-| `dimension`     | Others            | Monetary amounts can be used   |
+| `dimension`     | [Set](../../endpoint/set/)      | Monetary amounts can be associated with other entities, such as a Set of objects, with the dimension property  |
 
 
 ## Example
 
+
+```
+top = model.Set(label = "Set of Objects for Lot 812")
+amnt = vocab.StartingPrice(label="$500", value=500)
+amnt.currency = vocab.instances['us dollars']
+amnt.identified_by = model.Name(content="500 US Dollars")
+amnt.referred_to_by = vocab.Note(content="From personal correspondence")
+top.dimension = amnt
+```
