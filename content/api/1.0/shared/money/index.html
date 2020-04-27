@@ -18,6 +18,10 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
+Monetary Amounts are similar to [Dimensions](../dimension/) in that they are primarily a `value` with a unit to clarify what the number refers to, but in this case the unit is a `currency`.  The amount is a particular instance of a value/currency combination, so there can be multiple amounts each of which have the same value and currency, but are used in different models.  This is the same as the way there can be multiple dimensions with the same classification, value and unit used in different models.
+
+In the Linked Art API and model, amounts are only used in the [Provenance Activity](../../endpoint/provenance_activity/) structure, as described in the [Provenance](/model/provenance/) model documentation.
+
 ## Property Definitions
 
 The monetary amount data structure has the following properties.
@@ -56,9 +60,9 @@ Dimension instances are typically found as the object of the following propertie
 An auction lot has a monetary amount which ...
 
 * ... has a `type` of "MonetaryAmount"
-* ... is `classified_as` a starting price, with an `id` of _aat:_ and a `type` of "Type"
+* ... is `classified_as` a starting price, with an `id` of _aat:300417242_ and a `type` of "Type"
 * ... has a `value` of 500
-* ... and a `currency` of US dollars, with an `id` of _aat:_ and a `type` of "Currency"
+* ... and a `currency` of US dollars, with an `id` of _aat:300411994_ and a `type` of "Currency"
 * ... has a display label with the content of "500 US Dollars"
 * ... and is `referred_to_by` a note, with the content "From personal correspondence"
 
