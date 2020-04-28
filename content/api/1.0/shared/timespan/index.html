@@ -57,6 +57,20 @@ Dimension instances are typically found as the object of the following propertie
 
 ## Example
 
+An activity has a time span which ...
+
+* ... has a `type` of "TimeSpan"
+* ... has a `_label` which briefly describes it as "1 day, c. 1750"
+* ... is `identified_by` a Name, with `content` of "1 day, during circa 1750"
+* ... is `referred_to_by` a description statement, with the `content` of "About 1750, as estimated by C. U. Rata"
+* ... has a `begin_of_the_begin` earliest start date of 1720
+* ... has a `end_of_the_begin` latest start date of 1751
+* ... has a `begin_of_the_end` earliest end date of 1749
+* ... has a `end_of_the_end` latest end date of 1780
+* ... took a `duration` of time which ...
+  * ... has a `type` of "Dimension"
+  * ... has a `value` of 1
+  * ... has a `unit` of days, which has an `id` of _aat:300379242_ and has a `type` of "MeasurementUnit"
 
 ```crom
 top = model.Activity()
