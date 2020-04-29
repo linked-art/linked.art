@@ -191,6 +191,13 @@ span.edgeLabel {
 
 }
 
+.diagram_img {
+  background: white;
+  padding: 10px;
+  border: 1px solid black;
+
+}
+
 /* ============ ADMONITIONS ============ */
 .admonition {
       padding-top: 10px;

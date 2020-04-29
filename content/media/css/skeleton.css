@@ -43,14 +43,14 @@
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
-    width: 85%;
+    width: 95%;
     padding: 0; }
 }
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
-    width: 80%; }
+    width: 90%; }
   .column,
   .columns {
     margin-left: 4%; }
@@ -131,7 +131,7 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   font-weight: 300; }
@@ -144,9 +144,9 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-  h1 { font-size: 5.0rem; }
-  h2 { font-size: 3.0rem; }
-  h3 { font-size: 2.4rem; }
+  h1 { font-size: 4.0rem; }
+  h2 { font-size: 2.6rem; }
+  h3 { font-size: 2.2rem; }
   h4 { font-size: 2.0rem; }
   h5 { font-size: 1.8rem; }
   h6 { font-size: 1.5rem; }
@@ -172,13 +172,12 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: #555;
+  height: 20px;
+  padding: 0 15px;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
-  line-height: 38px;
+  line-height: 20px;
   letter-spacing: .1rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -235,8 +234,10 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-  height: 38px;
+  height: 20px;
+  width: 400px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  color: #000;
   background-color: #fff;
   border: 1px solid #D1D1D1;
   border-radius: 4px;

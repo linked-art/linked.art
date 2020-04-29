@@ -18,7 +18,7 @@ Provenance activities exist in a larger context -- the ownership of the object b
 
 Between acquisitions, the object is owned and, presumably, looked after by its owner.  This activity of looking after the object _(aat:300054277)_ is modeled as a continuation of the ownership chain which is punctuated by the acquisition activities.
  
-```crom
+```
 top = model.Phase()
 top._label = "Ownership of the Painting"
 start = Acquisition()
@@ -45,7 +45,7 @@ top.terminated_by = end
 
 One such activity is taking inventory _(aat:300077506)_ by the owner of all their objects, including the one being described. This is routinely carried out by art dealers, collectors or museums, in order to ensure that they still have custody of all of the objects that they believe they do.  This establishes the existence and presence of the object at a certain place and time, and is thus useful in tracking the object through history.
 
-```crom
+```
 top = model.Phase()
 top._label = "Ownership of the Painting"
 inv = Inventorying()
@@ -57,7 +57,7 @@ top.part = inv
 
 The entire provenance of an object _(aat:300055863)_ is also an activity, that consists of all of all of the above events, from production through to destruction or the present day ownership.  All of the transfers of ownership and the resulting ownership periods are included, giving a single place to associate and thereby discover the events.
 
-```crom
+```
 top = model.Phase()
 what = Painting(art=1)
 top._label = "Lifetime of Painting"
