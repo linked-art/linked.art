@@ -68,16 +68,18 @@ However it is acknowledged that there are some good practices for the constructi
 
 __URIs should be as persistent as possible.__ Anything in the URI that might be required to change in the future should be avoided, including specific technology references, technology specific identifiers that cannot be maintained, institutional departments that might be renamed, and so forth.
 
-__URIs should be short and readable, within reason.__ 
+__URIs should be short and readable, within reason.__ Shorter URIs are frequently preferred to longer ones, as they are more memorable and easier to copy or type out. Linked Art API URIs should thus be able to be short and readable ... within reason, given that they are almost certainly managed by automated systems through a database, and persistence is more important than readability.
 
-__URIs should be treated as if they were opaque strings.__ 
+__URIs should enable sensible data management and trivial implementations.__ As implementation should be possible by putting files on disk in a webserver, the URIs must be able to reflect this strategy without causing undue burdens.
+
+__URIs must still be treated as if they were opaque strings.__ Regardless of the above features for the structure and components of a URI, they MUST still be treated as if they were completely opaque strings containing no useful information. The encoded patterns are there to facilitate software engineers understanding the API, not to facilitate software to interact with it.
 
 
 ### Preferred URI Structure
 
 The preferred structure to meet the desiderata outlined above is
 
-> `scheme://hostname/__prefix/__endpoint/identifier`
+> `scheme://hostname/ _prefix/_ endpoint/identifier`
 
 where
 
