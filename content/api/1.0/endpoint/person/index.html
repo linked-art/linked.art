@@ -1,6 +1,80 @@
 ---
-title: Linked Art API
+title: "Linked Art API: Person"
+up_href: "/api/1.0/endpoint/"
+up_label: "Linked Art API 1.0 Endpoints"
 ---
 
-Discussion about the API layer has not yet begun.  Please get involved or check back later.
+<style>
+th, td {
+  padding: 5px 5px;
+  text-align: left;
+  border: 1px solid #D0D0D0; }
+th { background: #F0F0F0; }
+th:first-child, td:first-child { padding-left: 3px; }
+th:last-child, td:last-child { padding-right: 3px; }
+</style>
 
+{% include "toc.html" %}
+
+## Introduction
+
+
+## Property Definitions
+
+Dereferencing an entity via the Person endpoint would result in a JSON-LD document containing a single JSON object with the following properties.
+
+### Properties of Places
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the person's representation can be [dereferenced](../../protocol/) |  
+| `type`            | string        | Required    | The class for the person, which MUST be the value `"Person"` |
+| `_label`          | string        | Recommended | A human readable label for the person, intended for developers |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the person and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the person and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the person and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the person and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `born` | json object | Optional | A json object | 
+| `died` | json object | Optional | A json object |
+| `carried_out` | array | Optional | An array of json objects, each of which is |
+| `contact_point` | array | Optional | An array of json objects, each of which is an address at which the person is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
+
+| `residence` | array | Optional | |
+
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Group that the current person is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a **[Group](../../endpoint/group/)** |
+
+### Property Diagram
+
+> ![diagram](person_properties.png){:.diagram_img width="600px"}
+
+### Incoming Properties
+
+Type instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to people.
+
+| Property Name      | Source Endpoint | Description |
+|--------------------|-----------------|-------------|
+| `carried_out_by`   |  |  |
+| `transferred_custody_to` | | |
+| `transferred_custody_from` | | |
+| `transferred_title_to` | | |
+| `transferred_title_from` | | |
+| `paid_to` | | |
+| `paid_from` | | |
+| `current_owner` | | |
+| `current_custodian` | | |
+| `represents` | | |
+| `about` | | |
+| `possessed_by` | | |
+
+
+
+
+
+
+## Example
+
+
+```crom
+top = model.Person(label="Rembrandt")
+
+```
