@@ -104,7 +104,8 @@ p = model.Place(label="Amsterdam")
 d.took_place_at = p
 top.died = d
 
-top.referred_to_by = vocab.Biography(content="Rembrandt was a Dutch draughtsman, painter and printmaker.")
+top.referred_to_by = vocab.BiographyStatement(
+	content="Rembrandt was a Dutch draughtsman, painter and printmaker.")
 
 top.classified_as = vocab.instances['male']
 top.classified_as = vocab.instances['dutch nationality']
