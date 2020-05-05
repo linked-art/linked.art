@@ -438,14 +438,15 @@ title: Index of Classes, Properties, Authorities
 		self.traverse(js, top.id, resource)
 
 		# And return the JSON plus links, to be substed by the top level filter
-		raw = top.id + ".json"
+		raw = top.id
+		jsuri = raw + ".json"
 		self.example_list.append(raw)
 		rawq = urllib.quote(raw).replace('/', "%2F")
 		playground = "http://json-ld.org/playground-dev/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
-		turtle = top.id + ".ttl" 
+		turtle = raw + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
-		mmid = self.uri_to_label(top.id)
+		mmid = self.uri_to_label(raw)
 		resp = """
 <a id="%s"></a>
 <div class="jsonld">
