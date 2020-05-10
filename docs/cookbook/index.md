@@ -12,9 +12,12 @@ In order to provide examples of how to apply the [data model](/model/), this sec
   Each folder must have a meta.yaml with a title property
 -->
 
+{# RPP - commented out as resource not avail in mkdocs 
 {% for folder in resource.node.child_nodes %}
   * {{ folder.meta.title }}
   {% for recipe in folder.child_nodes %}
     * [{{ recipe.meta.title }}]({{ recipe.full_url }}/)
   {% endfor %}
 {% endfor %}
+#}
+

@@ -1,0 +1,9 @@
+
+{% macro render_basic_menu() -%}
+<ul id="main_nav_list">
+{% for nav_item in nav %}
+    <li><a {% if nav_item.active %}class="selected" {% endif -%}
+        href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+{% endfor %}
+</ul>
+{%- endmacro %}

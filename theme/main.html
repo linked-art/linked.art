@@ -6,18 +6,18 @@
 
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600|Roboto:300" rel="stylesheet" type="text/css">
 
-        <link rel="stylesheet" href="{{ media_url('css/normalize.css') }}">
-        <link rel="stylesheet" href="{{ media_url('css/skeleton.css') }}">
-        <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+        <link rel="stylesheet" href="{{ 'media/css/normalize.css'|url }}">
+        <link rel="stylesheet" href="{{ 'media/css/skeleton.css'|url }}">
+        <link rel="stylesheet" href="{{ 'media/css/style.css'|url }}">
 
-        <link rel="stylesheet" href="{{ media_url('vendor/opentip.css') }}">
-        <script src="{{ media_url('vendor/opentip.js') }}"></script>
-        <script src="{{ media_url('vendor/jquery-3.2.1.min.js') }}"></script>
-        <script src="{{ media_url('vendor/underscore-min.js') }}"></script>
-        <script src="{{ media_url('vendor/mermaid.min.js') }}"></script>
-        <script src="{{ media_url('vendor/screenfull.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ 'media/vendor/opentip.css'|url }}">
+        <script src="{{ 'media/vendor/opentip.js'|url }}"></script>
+        <script src="{{ 'media/vendor/jquery-3.2.1.min.js'|url }}"></script>
+        <script src="{{ 'media/vendor/underscore-min.js'|url }}"></script>
+        <script src="{{ 'media/vendor/mermaid.min.js'|url }}"></script>
+        <script src="{{ 'media/vendor/screenfull.min.js'|url }}"></script>
 
-        <title>{{ resource.meta.title }}</title>
+        <title>{{ page.title }}</title>
 
     </head>
     <body>
@@ -27,29 +27,32 @@
         </nav>
         <main class="container">
 
-            <h1>{{ resource.meta.title }}</h1>
+            <h1>{{ page.title }}</h1>
 
             <article id="content">
+                            {{ page.content }}
+{# RDP to deal with
             {% filter regex_replace_fn('(&quot;|")([0-9A-Za-z_|:]+)(&quot;|")', "ctxtrepl") -%}
                 {% filter regex_replace_fn("aat:([0-9]+)", "aatlabel") -%}
                     {% filter markdown -%}
                         {% filter regex_replace_fn("`([A-Za-z_]+)`", "ctxtrepl") -%}
-                            {% block content %}{% endblock %}
+                            {{ page.content }}
                         {%- endfilter %}
                     {%- endfilter %}
                 {%- endfilter %}
             {%- endfilter %}
+#}
             </article>
         </main>
         <footer>
         &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:rsanderson@getty.edu">rsanderson@getty.edu</a>
         <form name="contact" method="POST" data-netlify="true">
             <span>Comment?</span> <input type="text" name="comment"/>
-            <input type="hidden" name="page" value=" {{ resource.relative_path }} "/>
+            <input type="hidden" name="page" value=" {{ page.url|url }} "/>
             <button type="submit">Send</button>
         </form>
         </footer>
-        {% if site.config.mode == "production" -%}
+        {% if build == "production" -%}
             {% include "ga.j2" %}
         {%- endif %}
         <script>

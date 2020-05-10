@@ -1,6 +1,5 @@
 import re
-from hyde.plugin import Plugin
-from hyde.site import Resource
+from mkdocs.plugins import BasePlugin
 import json, yaml
 import os
 import requests
@@ -60,21 +59,6 @@ Phase._uri_segment = "activity"
 Birth._uri_segment = "activity"
 Death._uri_segment = "activity"
 
-fh = file('site.yaml')
-siteData = fh.read()
-fh.close()
-site = yaml.load(siteData)
-
-scheme = site['var']['scheme']
-port = site['var'].get('port', '')
-host = site['var']['hostname']
-if port:
-	port = ":%s" % port
-
-basedir = site['base_url']
-egdir = site['var']['exampleDir']
-baseUrl = "%s://%s%s%s%s/" % (scheme, host, port, basedir, egdir)
-contextUrl = "%s://%s%s%sns/v1/linked-art.json" % (scheme, host, port, basedir)
 
 factory.base_url = baseUrl
 factory.base_dir = "content/%s" % egdir
@@ -148,7 +132,10 @@ def fetch_aat_label(what):
 			break
 	return label
 
-class IndexingPlugin(Plugin):
+class IndexingPlugin(BasePlugin):
+
+        baseUrl = ""
+        contextUrl = ""
 
 	def __init__(self, site):
 		super(IndexingPlugin, self).__init__(site)
@@ -200,14 +187,27 @@ class IndexingPlugin(Plugin):
 			"Encounter": "event"
 		}
 
-	def begin_site(self):
-		self.index = {}
-		self.aat_hash = {}
-		self.prop_hash = {}
-		self.class_hash = {}		
-		self.aat_label_len = len(aat_labels)
+        def on_pre_build(self, config):
 
-	def uri_to_label(self, uri):
+             scheme = self.config.get('scheme')
+             port = self.config.get('port', '')
+             host = self.config.get('hostname')
+             if port:
+            	port = ":%s" % port
+
+             basedir = self.config.get('base_url')
+             egdir = self.config.get('exampleDir')
+
+             self.baseUrl = "%s://%s%s%s%s/" % (scheme, host, port, basedir, egdir)
+             self.contextUrl = "%s://%s%s%sns/v1/linked-art.json" % (scheme, host, port, basedir)
+
+	     self.index = {}
+	     self.aat_hash = {}
+	     self.prop_hash = {}
+	     self.class_hash = {}		
+	     self.aat_label_len = len(aat_labels)
+
+	def __uri_to_label(self, uri):
 		if uri.startswith('http://vocab.getty.edu/'):
 			uri = uri.replace('http://vocab.getty.edu/', '')
 			uri = uri.replace('/', '&colon;')
@@ -220,7 +220,7 @@ class IndexingPlugin(Plugin):
 			print("Unhandled URI: %s" % uri)
 		return uri
 
-	def walk(self, js, curr_int, id_map, mermaid):
+	def __walk(self, js, curr_int, id_map, mermaid):
 		if isinstance(js, dict):
 			# Resource
 			curr = js.get('id', str(uuid.uuid4()))
@@ -276,7 +276,7 @@ class IndexingPlugin(Plugin):
 						mermaid.append("class %s_%s literal;" % (currid, n))
 			return (currid, curr_int, id_map)
 
-	def build_mermaid(self, js):
+	def __build_mermaid(self, js):
 		curr_int = 1
 		mermaid = []
 		id_map = {}
@@ -295,6 +295,7 @@ class IndexingPlugin(Plugin):
 		self.walk(js, curr_int, id_map, mermaid)
 		return "\n".join(mermaid)
 
+# RDP - hyde call, find equiv
 	def begin_text_resource(self, resource, text):
 		if resource.relative_path.endswith('.html'):
 
@@ -323,7 +324,8 @@ class IndexingPlugin(Plugin):
 				text = text.replace(h[0], eg)
 		return text
 
-	def site_complete(self):
+# RDP - rename done
+	def on_post_build(self):
 		# Just write the document in markdown
 		top = """---
 extends: base.j2
@@ -395,7 +397,7 @@ title: Index of Classes, Properties, Authorities
 			fh.write(listjs)
 			fh.close()
 
-	def generate_example(self, egtext, resource):
+	def __generate_example(self, egtext, resource):
 		# Yes really... 
 		highlight_lines = ""
 		exec(egtext) 
@@ -464,7 +466,7 @@ Other Representations: [JSON-LD (Raw)](%s) |
 """ % (egid, jsstr, mmid, mermaid, mmid, raw, playground, turtle, turtle_play)	
 		return resp
 
-	def traverse(self, what, top, res):
+	def __traverse(self, what, top, res):
 		for (k,v) in what.items():
 			if k == 'type':
 				which = "class_hash"

@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: mkdocs-linkedart-plugin
+Version: 0.0.1
+Summary: Linked Art documentation support
+Home-page: https://github.com/linked.art/
+Author: Rob Sanderson
+Author-email: rsanderson@example.org
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6

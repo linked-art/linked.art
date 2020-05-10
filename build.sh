@@ -26,6 +26,7 @@ rm content/ns/terms/*
 python scripts/split_ontology.py
 
 # And now generate the site from scratch
-hyde gen -r
+mkdocs build --clean
 # Once more incrementally to catch the new index file we built
-hyde gen
+# RDP ??
+mkdocs build

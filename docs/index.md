@@ -1,7 +1,5 @@
 ---
-extends: base.j2
 title: Linked Art
-default_block: content
 ---
 
 Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on Linked Open Data to describe Art.  We then implement that model in [Software](/software/) and use it to provide valuable content.  It is under active development and we welcome additional partners and collaborators.
