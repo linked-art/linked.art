@@ -1,0 +1,37 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+click = "==7.1.2"
+future = "==0.18.2"
+importlib-metadata = "==1.6.0"
+joblib = "==0.14.1"
+livereload = "==2.6.1"
+lunr = "==0.5.8"
+mkdocs = "==1.1.1"
+mkdocs-macros-plugin = "==0.4.6"
+mkdocs-markdownextradata-plugin = "==0.1.5"
+mkdocs-material = "==5.1.6"
+mkdocs-material-extensions = "==1.0b2"
+nltk = "==3.5"
+pymdown-extensions = "==7.1"
+regex = "==2020.5.7"
+repackage = "==0.7.3"
+six = "==1.14.0"
+termcolor = "==1.1.0"
+tornado = "==6.0.4"
+tqdm = "==4.46.0"
+zipp = "==3.1.0"
+cromulent = {editable = true,git = "git://github.com/thegetty/crom.git"}
+Jinja2 = "==2.11.2"
+Markdown = "==3.2.2"
+MarkupSafe = "==1.1.1"
+Pygments = "==2.6.1"
+PyYAML = "==5.3.1"
+
+[requires]
+python_version = "3.7"
