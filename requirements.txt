@@ -1,18 +1,21 @@
 click==7.1.2
-future==0.18.2
+-e git://github.com/thegetty/crom.git@3d3905e5d027d87147da15d23e96fa4e9f1f3ca0#egg=cromulent
+importlib-metadata==1.6.0
 Jinja2==2.11.2
-joblib==0.14.1
 livereload==2.6.1
-lunr==0.5.6
-Markdown==3.2.1
+Markdown==3.2.2
 MarkupSafe==1.1.1
-mkdocs==1.1
-nltk==3.5
+mkdocs==1.0.4
+mkdocs-macros-plugin==0.3.3
+mkdocs-markdownextradata-plugin==0.1.5
+mkdocs-material==5.1.6
+mkdocs-material-extensions==1.0b2
 pkg-resources==0.0.0
+Pygments==2.6.1
+pymdown-extensions==7.1
 PyYAML==5.3.1
-regex==2020.5.7
+repackage==0.7.3
 six==1.14.0
+termcolor==1.1.0
 tornado==6.0.4
-tqdm==4.46.0
-pymdown_extensions<=5.0
--e git://github.com/thegetty/crom.git#egg=cromulent
+zipp==3.1.0
