@@ -1,5 +1,6 @@
 site_name: Museum Linked Open Data
 site_url: "https://linked.art/"
+site_dir: ".site"
 repo_url: "https://github.com/linked-art/linked.art"
 site_author: "Rob Sanderson"
 site_description: "Museum Linked Open Data"
