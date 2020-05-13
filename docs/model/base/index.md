@@ -4,7 +4,7 @@ up_href: "/model/"
 up_label: "Model Overview"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with datasets from across many different museums, the following patterns have been agreed on as useful ways to think about our cultural data.
 
