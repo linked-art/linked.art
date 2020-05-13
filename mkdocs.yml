@@ -28,7 +28,8 @@ markdown_extensions:
         - abbr
         - attr_list
         - admonition
-        - toc
+        - toc:
+            title: "Table of Contents"
 #        - pymdownx.smartsymbols
         - pymdownx.tasklist
 
