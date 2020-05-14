@@ -2,7 +2,7 @@
 title: Previously-Held or Context-Specific Assertions
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

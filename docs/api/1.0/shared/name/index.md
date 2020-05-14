@@ -14,7 +14,7 @@ th:first-child, td:first-child { padding-left: 3px; }
 th:last-child, td:last-child { padding-right: 3px; }
 </style>
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

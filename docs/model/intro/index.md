@@ -4,7 +4,7 @@ up_href: "/model/"
 up_label: "Model Overview"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

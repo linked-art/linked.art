@@ -2,7 +2,7 @@
 title: "Places"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

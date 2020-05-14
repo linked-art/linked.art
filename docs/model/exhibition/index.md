@@ -2,7 +2,7 @@
 title: "Exhibitions"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

@@ -4,7 +4,7 @@ up_href: "/model/provenance/"
 up_label: "Provenance"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

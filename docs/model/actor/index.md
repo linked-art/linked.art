@@ -2,7 +2,7 @@
 title: "Actors: People and Organizations"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

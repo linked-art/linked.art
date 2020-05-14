@@ -2,7 +2,7 @@
 title: "Collections and Sets"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

@@ -4,7 +4,7 @@ default_block: content
 title: Index of Classes, Properties, Authorities
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 
 ## Class Index

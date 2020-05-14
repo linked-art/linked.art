@@ -4,7 +4,7 @@ up_href: "/api/1.0/"
 up_label: "Linked Art API"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 
