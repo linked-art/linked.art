@@ -1521,12 +1521,12 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "current_keeper": {
+    "current_custodian": {
       "@id": "crm:P50_has_current_keeper", 
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "current_keeper_of": {
+    "current_custodian_of": {
       "@id": "crm:P50i_is_current_keeper_of", 
       "@type": "@id", 
       "@container": "@set"
@@ -2569,6 +2569,25 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "represents_instance_of_type": {
+      "@id": "la:represents_instance_of_type", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "instance_represented_by": {
+      "@id": "la:instance_represented_by", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "current_permanent_custodian": {
+      "@id": "la:current_permanent_custodian", 
+      "@type": "@id"
+    }, 
+    "current_permanent_custodian_of": {
+      "@id": "la:current_permanent_custodian_of", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
     "paid_amount": {
       "@id": "la:paid_amount", 
       "@type": "@id"
@@ -2735,6 +2754,9 @@
     "CoordinateSystem": {
       "@id": "geo:SP4_Spatial_Coordinate_Reference_System"
     }, 
+    "Encounter": {
+      "@id": "sci:S19_Encounter_Event"
+    }, 
     "Q9_is_expressed_in_terms_of": {
       "@id": "geo:Q9_is_expressed_in_terms_of", 
       "@type": "@id"
@@ -2750,6 +2772,16 @@
     }, 
     "caused_by": {
       "@id": "sci:O13i_is_triggered_by", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "encountered": {
+      "@id": "sci:O19_has_found_object", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "encountered_by": {
+      "@id": "sci:O19i_was_object_found_by", 
       "@type": "@id", 
       "@container": "@set"
     }, 
