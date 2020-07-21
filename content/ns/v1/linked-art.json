@@ -297,6 +297,18 @@
       "@id": "crm:E20_Biological_Object"
     }, 
     "Person": {
+      "@context": {
+        "member": {
+          "@id": "crm:P107_has_current_or_former_member", 
+          "@type": "@id", 
+          "@container": "@set"
+        }, 
+        "member_of": {
+          "@id": "crm:P107i_is_current_or_former_member_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }
+      }, 
       "@id": "crm:E21_Person"
     }, 
     "HumanMadeObject": {
