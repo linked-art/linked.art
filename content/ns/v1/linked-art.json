@@ -2570,9 +2570,6 @@
     "Removal": {
       "@id": "la:Removal"
     }, 
-    "Relationship": {
-      "@id": "la:Relationship"
-    }, 
     "DigitalService": {
       "@id": "la:DigitalService"
     }, 
@@ -2597,6 +2594,11 @@
     }, 
     "current_permanent_custodian_of": {
       "@id": "la:current_permanent_custodian_of", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "equivalent": {
+      "@id": "la:equivalent", 
       "@type": "@id", 
       "@container": "@set"
     }, 
@@ -2709,24 +2711,6 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "relates_to": {
-      "@id": "la:relates_to", 
-      "@type": "@id"
-    }, 
-    "related_to_by": {
-      "@id": "la:related_to_by", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "relates_from": {
-      "@id": "la:relates_from", 
-      "@type": "@id"
-    }, 
-    "related_from_by": {
-      "@id": "la:related_from_by", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
     "digitally_carries": {
       "@id": "la:digitally_carries", 
       "@type": "@id", 
@@ -2760,22 +2744,8 @@
     "DigitalObject": {
       "@id": "dig:D1_Digital_Object"
     }, 
-    "Geometry": {
-      "@id": "geo:SP5_Geometric_Place_Expression"
-    }, 
-    "CoordinateSystem": {
-      "@id": "geo:SP4_Spatial_Coordinate_Reference_System"
-    }, 
     "Encounter": {
       "@id": "sci:S19_Encounter_Event"
-    }, 
-    "Q9_is_expressed_in_terms_of": {
-      "@id": "geo:Q9_is_expressed_in_terms_of", 
-      "@type": "@id"
-    }, 
-    "Q9i_terms_express": {
-      "@id": "geo:Q9i_terms_express", 
-      "@type": "@id"
     }, 
     "caused": {
       "@id": "sci:O13_triggers", 
@@ -2807,6 +2777,31 @@
     }, 
     "close_match": {
       "@id": "skos:closeMatch", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "narrower": {
+      "@id": "skos:narrower", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "broader": {
+      "@id": "skos:broader", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "topConceptOf": {
+      "@id": "skos:topConceptOf", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "inScheme": {
+      "@id": "skos:inScheme", 
       "@type": "@id", 
       "@container": "@set"
     }, 
