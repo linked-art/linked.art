@@ -89,7 +89,7 @@ When the URI of the Type is dereferenced as if it were an endpoint, then the fol
 |-------------------|---------------|-------------|-------------|
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is either a name of the Type and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Type and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Type and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `part_of`         | array         | Optional    | An array of json objects, each of which is a Type that the current Type is narrower than and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Type |
+| `broader`         | array         | Optional    | An array of json objects, each of which is a Type that the current Type is narrower than and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Type |
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Type is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
 
 
@@ -103,5 +103,5 @@ nm = vocab.PrimaryName(content="Generative Adversarial Network (GAN) Generated A
 nm.language = vocab.instances['english']
 top.identified_by = nm
 top.referred_to_by = vocab.Description(content="The generation of art by a process of training a machine learning algorithm to create the art, and a second algorithm to classify it, and then picking the higest classified image.")
-top.part_of = model.Type(ident="http://vocab.getty.edu/aat/300069478", label="Computer Art")
+top.broader = model.Type(ident="http://vocab.getty.edu/aat/300069478", label="Computer Art")
 ```
