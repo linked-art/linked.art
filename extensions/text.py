@@ -18,7 +18,7 @@ from cromulent.model import factory, BaseResource, Production, Acquisition, \
     AttributeAssignment, Formation, Material, MeasurementUnit, \
     HumanMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
     Payment, Creation, Destruction, \
-    PropositionalObject, Language, Geometry, CoordinateSystem, Phase, Birth, Death
+    PropositionalObject, Language, Geometry, Phase, Birth, Death
 from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
 	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
 	TimeSpan, HumanMadeObject, MonetaryAmount, Curating, Inventorying, \
@@ -193,7 +193,6 @@ class IndexingPlugin(Plugin):
 			"Payment": "event",
 			"AttributeAssignment": "event",
 			"Phase": "event",
-			"Relationship": "dims",
 			"RightAcquisition": "event",
 			"PartRemoval": "event",
 			"PartAddition": "event",
