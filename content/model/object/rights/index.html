@@ -19,9 +19,8 @@ __Example:__
 The painting was a donation of a Ms J. Smith.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
-crdt = CreditStatement()
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
+crdt = vocab.CreditStatement()
 crdt.content = "Donation of Ms J. Smith; Example Organization"
 top.referred_to_by = crdt
 ```

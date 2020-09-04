@@ -74,7 +74,7 @@ A painting is classified as a painting, which is in turn classified as a type of
   * ... and has a human readable `_label` of "Type of Work"
 
 ```crom
-top = vocab.Painting()
+top = vocab.Painting(ident="auto int-per-segment")
 ```
 
 
@@ -96,7 +96,7 @@ When the URI of the Type is dereferenced as if it were an endpoint, then the fol
 ### Extended Example
 
 ```crom
-top = model.Type(label="GAN Art")
+top = model.Type(ident="auto int-per-segment", label="GAN Art")
 top.classified_as = vocab.instances['work type']
 top.identified_by = vocab.LocalNumber(content="186_gan_art")
 nm = vocab.PrimaryName(content="Generative Adversarial Network (GAN) Generated Art")

@@ -10,19 +10,32 @@ up_label: "Model"
 
 It is very unlikely that the descriptions provided in this model are the only digital representations of the resources that they describe.  For building human readable representations, or just for linking to existing web pages, these other digital resources should be referenced.
 
-## Image 
+## Depicted Entities
 
-The most common scenario is if there are one or more images available of the object. This is described by using the `representation` property, which has a `VisualItem` as its value. The `id` of the image is the URI at which it is available, and additional properties to describe the image should also be given, such as a `label` and its media type (sometimes called a MIME type) in `format`. The digital image should be classified as such using _aat:300215302_.
+```crom
+top = model.Person(ident="auto int-per-segment", label="E.G. Person")
+vi = model.VisualItem()
+img = vocab.DigitalImage(label="Image of Person")
+img.format = "image/jpeg"
+img.access_point = "http://example.org/egperson/image.jpg"
+top.representation = vi
+vi.digitally_carried_by = img
+```
+
+### Digital Surrogates
 
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "Painting"
-# img = DigitalImage("http://example.org/images/image.jpg")
-# img._label = "Image of Painting"
-# img.format = "image/jpeg"
-# top.representation = img
+vi = model.VisualItem()
+img = vocab.DigitalImage("http://example.org/images/image.jpg")
+img._label = "Image of Painting"
+img.format = "image/jpeg"
+top.shows = vi
+vi.digitally_carried_by = img
 ```
+
 
 ## Home Page
 

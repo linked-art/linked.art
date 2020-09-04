@@ -19,11 +19,11 @@ __Example:__
 A painting is created by an artist, in their studio, in March 1780.
 
 ```crom
-top = Painting(label="Painting", art=1)
-prod = Production()
-prod.carried_out_by = Actor(label="Artist")
-prod.took_place_at = Place(label="Artist's Studio")
-when = TimeSpan()
+top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
+prod = model.Production()
+prod.carried_out_by = model.Actor(label="Artist")
+prod.took_place_at = model.Place(label="Artist's Studio")
+when = model.TimeSpan()
 when.begin_of_the_begin = "1780-03-05T00:00:00Z"
 when.end_of_the_end = "1780-03-06T00:00:00Z"
 prod.timespan = when
@@ -43,9 +43,9 @@ __Example:__
 A glass sculpture is created using the glassblowing technique, which is identified by _aat:300053932_.
 
 ```crom
-top = Sculpture(label="Glass Sculpture", art=1)
-prod = Production()
-prod.carried_out_by = Actor(label = "Glassblowing Artist")
+top = vocab.Sculpture(ident="auto int-per-segment",label="Glass Sculpture", art=1)
+prod = model.Production()
+prod.carried_out_by = model.Person(label = "Glassblowing Artist")
 prod.technique = instances['glassblowing']
 top.produced_by = prod
 ```
@@ -59,8 +59,8 @@ __Example:__
 Grafitti artwork is created using the "spraypainting" technique, and could also be considered "vandalism", but vandalism is not a technique.
 
 ```crom
-top = HumanMadeObject(label="Graffiti", art=1)
-prod = Production(label="Production of Graffiti")
+top = model.HumanMadeObject(ident="auto int-per-segment",label="Graffiti", art=1)
+prod = model.Production(label="Production of Graffiti")
 prod.technique = vocab.instances['spraypainting']
 prod.classified_as = vocab.instances['vandalism']
 top.produced_by = prod
@@ -77,14 +77,14 @@ __Example:__
 A sculpture that is then painted by another artist, would be produced by the overall activity, with two parts, one for each artist's activities.
 
 ```crom
-top = Sculpture(label = "Painted Sculpture", art=1)
-prod = Production()
+top = vocab.Sculpture(ident="auto int-per-segment", label = "Painted Sculpture", art=1)
+prod = model.Production()
 top.produced_by = prod
-act1 = Production()
+act1 = model.Production()
 act1.technique = instances['sculpting']
 act1.carried_out_by = Actor(label="Sculptor")
 prod.part = act1
-act2 = Production()
+act2 = model.Production()
 act2.carried_out_by = Actor(label="Painter")
 act2.technique = instances['painting']
 prod.part = act2
@@ -103,12 +103,12 @@ __Example:__
 
 
 ```crom
-top = Painting(label="Copy of Painting of a Fish", art=1)
-prod = Production()
+top = vocab.Painting(ident="auto int-per-segment", label="Copy of Painting of a Fish", art=1)
+prod = model.Production()
 top.produced_by = prod
-copied = Painting(label="Painting of a Fish", art=1)
+copied = vocab.Painting(label="Painting of a Fish", art=1)
 prod.influenced_by = copied
-prod.carried_out_by = Person(label="Copyist")
+prod.carried_out_by = model.Person(label="Copyist")
 ```
 
 ### Reproduction from an Identifiable Source
@@ -123,12 +123,12 @@ A photograph is printed using a Negative. Both the positive and the negative sho
 
 
 ```crom
-top = Photograph(label = "Photograph")
-prod = Production(label = "Printing of Photograph")
+top = vocab.Photograph(ident="auto int-per-segment",label = "Photograph")
+prod = model.Production(label = "Printing of Photograph")
 top.produced_by = prod
-negative = Negative(label = "Negative of Photograph")
+negative = vocab.Negative(label = "Negative of Photograph")
 prod.used_specific_object = negative
-vi = VisualItem(label="Visual Content of Photographs and Negative")
+vi = model.VisualItem(label="Visual Content of Photographs and Negative")
 top.shows = vi
 negative.shows = vi
 ```
@@ -146,14 +146,14 @@ __Example:__
 A painting is from the workshop of an artist named Franckz.
  
 ```crom
-top = Painting(label = "Painting from the workshop of Franckz", art=1)
-prod = Production()
+top = vocab.Painting(ident="auto int-per-segment", label = "Painting from the workshop of Franckz", art=1)
+prod = model.Production()
 top.produced_by = prod
-grp = Group(label = "Workshop of Franckz")
+grp = model.Group(label = "Workshop of Franckz")
 prod.carried_out_by = grp
-f = Formation()
+f = model.Formation()
 grp.formed_by = f
-f.influenced_by = Person(label = "Franckz")
+f.influenced_by = model.Person(label = "Franckz")
 ```
 
 ### Uncertain or Changing Attributions
@@ -169,18 +169,18 @@ __Example:__
 It was previously thought that J. Artist produced the painting, by Paintings Curator in 1923, but that is no longer held to be correct.
 
 ```crom
-top = Painting(label="Painting", art=1)
-prod = Production()
+top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
+prod = model.Production()
 top.produced_by = prod
 aa = vocab.ObsoleteAssignment()
-who = Person(label="J. Artist")
-prod2 = Production()
+who = model.Person(label="J. Artist")
+prod2 = model.Production()
 prod2.carried_out_by = who
 prod.assigned_by = aa
 aa.assigned = prod2
 aa.assigned_property = "part_of"
-aa.carried_out_by = Person(label = "Paintings Curator")
-ts = TimeSpan()
+aa.carried_out_by = model.Person(label = "Paintings Curator")
+ts = model.TimeSpan()
 ts.begin_of_the_begin = "1923-07-20"
 ts.end_of_the_end = "1923-07-21"
 aa.timespan = ts
@@ -203,7 +203,7 @@ __Example:__
 A seller removes a page of a manuscript for individual sale.
 
 ```crom
-top = vocab.Page(label="Page of Manuscript")
+top = vocab.Page(ident="auto int-per-segment",label="Page of Manuscript")
 rm = model.PartRemoval()
 rm.carried_out_by = model.Person(label="Unscrupulous Seller")
 whole = vocab.Manuscript(label="Manuscript")
@@ -223,10 +223,10 @@ __Example:__
 The Painting was destroyed in 1823.
 
 ```crom
-top = Painting(label="Example Destroyed Painting", art=1)
-dest = Destruction(label="Destruction of Painting")
+top = vocab.Painting(ident="auto int-per-segment",label="Example Destroyed Painting", art=1)
+dest = model.Destruction(label="Destruction of Painting")
 top.destroyed_by = dest
-when = TimeSpan()
+when = model.TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
 dest.timespan = when
@@ -244,15 +244,14 @@ __Example:__
 The Painting was destroyed in 1823, due to being burnt by someone.
 
 ```crom
-top = Painting(label="Example Destroyed Painting", art=1)
-dest = Destruction(label="Destruction of Painting")
+top = vocab.Painting(ident="auto int-per-segment", label="Example Destroyed Painting", art=1)
+dest = model.Destruction(label="Destruction of Painting")
 top.destroyed_by = dest
-when = TimeSpan()
+when = model.TimeSpan()
 when.begin_of_the_begin = "1823-03-01T00:00:00Z"
 when.end_of_the_end = "1823-03-31T00:00:00Z"
 dest.timespan = when
-act = Activity(label="Burning of the Painting")
-act.carried_out_by = Person(label="Painting Burner")
+act = model.Activity(label="Burning of the Painting")
+act.carried_out_by = model.Person(label="Painting Burner")
 dest.caused_by = act
 ```
-
