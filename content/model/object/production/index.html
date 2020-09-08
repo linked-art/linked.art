@@ -21,7 +21,7 @@ A painting is created by an artist, in their studio, in March 1780.
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
 prod = model.Production()
-prod.carried_out_by = model.Actor(label="Artist")
+prod.carried_out_by = model.Person(label="Artist")
 prod.took_place_at = model.Place(label="Artist's Studio")
 when = model.TimeSpan()
 when.begin_of_the_begin = "1780-03-05T00:00:00Z"
@@ -82,10 +82,10 @@ prod = model.Production()
 top.produced_by = prod
 act1 = model.Production()
 act1.technique = instances['sculpting']
-act1.carried_out_by = Actor(label="Sculptor")
+act1.carried_out_by = model.Person(label="Sculptor")
 prod.part = act1
 act2 = model.Production()
-act2.carried_out_by = Actor(label="Painter")
+act2.carried_out_by = model.Person(label="Painter")
 act2.technique = instances['painting']
 prod.part = act2
 ```

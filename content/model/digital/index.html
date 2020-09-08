@@ -31,7 +31,7 @@ top = vocab.WebPage(ident="auto int-per-segment", label="Digital Object")
 top.access_point = model.DigitalObject("https://www.eg.museum/edu/page1.html")
 top.format = "text/html"
 top.conforms_to = model.InformationObject("http://w3.org/TR/html")
-top.identified_by = Name(content="Informative Web Page")
+top.identified_by = model.Name(content="Informative Web Page")
 dim = model.Dimension(label="100 kb")
 dim.unit = instances['kilobytes']
 dim.value = 100
@@ -61,7 +61,7 @@ A Person (E.G. Person) is depicted in a digital image, and thus has a representa
 
 
 ```crom
-top = model.Person(, label="E.G. Person")
+top = model.Person(ident="auto int-per-segment", label="E.G. Person")
 vi = model.VisualItem()
 img = vocab.DigitalImage(label="Image of Person")
 img.format = "image/jpeg"

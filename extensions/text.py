@@ -42,6 +42,9 @@ model.PropositionalObject._uri_segment = "concept"  # For Exhibition concept and
 model.Destruction._uri_segment = "activity"
 model.Birth._uri_segment = "activity"
 model.Death._uri_segment = "activity"
+model.DigitalObject._uri_segment = "digital"
+model.DigitalService._uri_segment = "digital"
+model.Type._uri_segment = "concept"
 
 fh = file('site.yaml')
 siteData = fh.read()
@@ -186,6 +189,7 @@ class IndexingPlugin(Plugin):
 			"PartAddition": "event",
 			"Encounter": "event",
 			"DigitalObject": "digital",
+			"DigitalService": "digital",
 			"Addition": "event",
 			"Removal": "event"
 		}

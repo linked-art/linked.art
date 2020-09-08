@@ -84,7 +84,7 @@ __Example:__
 A particular curator measured the painting to be 20 inches high.
 
 ```crom
-top = Painting(ident="auto int-per-segment", label="Example Painting", art=1)
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 h = vocab.Height(value=20)
 h.unit = vocab.instances['inches']
 aa = model.AttributeAssignment(label="Measurement of Painting")
@@ -160,7 +160,7 @@ A multi-media painting, with a description of the materials in human-readable te
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Multi-material Painting", art=1)
-mats = MaterialStatement()
+mats = vocab.MaterialStatement()
 mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
 top.referred_to_by = mats
 ```
@@ -180,7 +180,7 @@ A watercolor painting, that has a part which is the support and is made of canva
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 top.made_of = instances['watercolor']
-part = SupportPart(label="Canvas Support")
+part = vocab.SupportPart(label="Canvas Support")
 part.made_of = instances['canvas']
 top.part = part
 ```

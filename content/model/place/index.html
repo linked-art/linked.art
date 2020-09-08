@@ -21,8 +21,8 @@ __Example:__
 There is a city called Los Angeles, in California.
 
 ```crom
-top = vocab.City(label="Los Angeles, CA")
-top.identified_by = Name(content="Los Angeles")
+top = vocab.City(ident="auto int-per-segment", label="Los Angeles, CA")
+top.identified_by = model.Name(content="Los Angeles")
 top.referred_to_by = vocab.Description(content="Los Angeles is a city in California, USA.")
 top.part_of = vocab.Province(label="California")
 ```
@@ -40,7 +40,7 @@ __Example:__
 A polygon that (approximately) defines the country New Zealand.
 
 ```crom
-top = vocab.Nation(label="New Zealand")
+top = vocab.Nation(ident="auto int-per-segment", label="New Zealand")
 top.defined_by = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
 ```
 
@@ -56,7 +56,7 @@ __Example:__
 Many art sales take place in auction houses over time, and while the city might be known, the exact address within the city might not be and it would be wrong to collect all of the art sales within the entire city together.
 
 ```crom
-top = model.Place(label="True Auction House Location")
+top = model.Place(ident="auto int-per-segment", label="True Auction House Location")
 p2 = model.Place(label="Auction House Location Approximation")
 p2.defined_by = "POINT(-0.0032937526703165 51.515107154846)"
 top.approximated_by = p2
@@ -75,6 +75,6 @@ __Example:__
 The [Frank Lloyd Wright House](https://crystalbridges.org/frank-lloyd-wright/) was originally built in New Jersey, and subsequently moved to its current location in Arkansas.
 
 ```crom
-top = vocab.Building(label="Frank Lloyd Wright House")
-top.current_location = Place(label="Current Location in Arkansas at Crystal Bridges");
+top = vocab.Building(ident="auto int-per-segment", label="Frank Lloyd Wright House")
+top.current_location = model.Place(label="Current Location in Arkansas at Crystal Bridges");
 ```
