@@ -12,6 +12,7 @@ It is very unlikely that the descriptions provided in this model are the only di
 
 ## Depicted Entities
 
+
 ```crom
 top = model.Person(ident="auto int-per-segment", label="E.G. Person")
 vi = model.VisualItem()
@@ -29,11 +30,12 @@ vi.digitally_carried_by = img
 top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "Painting"
 vi = model.VisualItem()
-img = vocab.DigitalImage("http://example.org/images/image.jpg")
+img = vocab.DigitalImage()
 img._label = "Image of Painting"
 img.format = "image/jpeg"
+img.access_point = "http://example.org/painting/image.jpg"
 top.shows = vi
-vi.digitally_carried_by = img
+vi.digitally_shown_by = img
 ```
 
 
@@ -42,12 +44,12 @@ vi.digitally_carried_by = img
 Another very common scenario is that there is a web page about the object, perhaps managed by a collections management system. For humans, this page is much more useful than the data intended for machines.  It can be referenced with the `subject_of` property, and points to a `LinguisticObject` which is `classified_as` a web page, or _aat:300264578_.  As with digital images, the homepage should have a `format` of "text/html", the media type for HTML.
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "Painting"
-page = WebPage("http://example.org/collection/1/painting")
-page.classified_as = instances['primary']
+page = vocab.WebPage()
 page._label = "Homepage for Painting"
 page.format = "text/html"
+page.access_point = "http://example.org/collection/1/painting/index.html"
 top.subject_of = page
 ```
 
@@ -56,11 +58,12 @@ top.subject_of = page
 While the publishing organization might have a home page for their object as above, there are likely to be many other web pages about the object as well in different systems.  These pages follow the same model of being a `LinguisticObject`, but instead use the `referred_to_by` property for the link. 
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "Painting"
-page = WebPage("http://example.org/journal/article")
+page = vocab.WebPage()
 page._label = "Webpage that discusses Painting, but is not its homepage"
 page.format = "text/html"
+page.access_point = "http://example.org/journal/article"
 top.referred_to_by = page
 ```
 
@@ -73,12 +76,17 @@ top.referred_to_by = page
 The [IIIF Image API](http://iiif.io/api/image/) in CRM can be considered a `VisualItem`, even though it is a service for obtaining them, and can thus be referenced with the same `representation` property. In order to know that the URI is an Image API endpoint, it should not have a `format` and instead have a `conforms_to` property with the value "http://iiif.io/api/image".  This follows the `protocol` pattern in IIIF Image Information documents.
 
 ```crom
-top = Sculpture(art=1)
+top = vocab.Sculpture(art=1)
 top._label = "Sculpture"
-img = VisualItem("http://iiif.example.org/image/1")
-img._label = "IIIF Image API for Sculpture"
-img.conforms_to = BaseResource("http://iiif.io/api/image")
-top.representation = img
+img = model.VisualItem(label="Visual content shown by sculpture")
+top.shows = img
+do = vocab.DigitalImage()
+img.digitally_shown_by = do
+do.access_point = "http://example.org/iiif/img/full/max/0/default.jpg"
+svc = model.DigitalService()
+svc.access_point = "http://example.org/iiif/img"
+svc.conforms_to = "http://iiif.io/api/image"
+do.digitally_available_via = svc
 ```
 
 ### IIIF Manifests 
