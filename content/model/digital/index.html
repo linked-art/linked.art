@@ -17,7 +17,7 @@ All Digital Objects share some basic characteristics, regardless of their partic
 
 * Access Point - The URLs where the object is available. These may also treated as Digital Objects in their own right, but typically only the URL is given.
 * Format - The `format` of a digital object is its media type, often called a MIME type, given as a string
-* Standard - Many digital objects further conform to standard specifications, which can be referenced using the `conforms_to` property
+* Standard - Many digital objects further conform to standard specifications, which can be referenced using the `conforms_to` property. This differs from `format`, as there may not be a media type for the specification, and from `classified_as` which is a broader classification (Image, rather than conforming to the standard for JPEG 2000)
 * Dimensions - Digital dimensions follow the same pattern as [physical dimensions](/model/object/physical/#dimensions), but might use different types (file size) or the same (height, width for images) and different units (bytes, pixels).
 * Creation - Digital Objects are created by `Creation` events rather than `Production` events, but otherwise have the same activity model.
 
