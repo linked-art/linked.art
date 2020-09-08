@@ -19,21 +19,21 @@ The value of the assignment is given using `assigned`, and it can be any resourc
 The example below demonstrates associating a previous title with an object.
 
 ```crom
-obj = Painting(art=1)
-obj._label = "Current Painting Title"
-top = AttributeAssignment()
-top.assigned_property = "identified_by"
-name = Name()
+top = vocab.Painting(ident="auto int-per-segment",art=1)
+top._label = "Current Painting Title"
+aa = model.AttributeAssignment()
+aa.assigned_property = "identified_by"
+name = model.Name()
 name.content = "Previous Painting Title"
-top.assigned = name
-top.assigned_to = obj
-who = Person()
+aa.assigned = name
+top.assigned_by = aa
+who = model.Person()
 who._label = "Painting Curator"
-top.carried_out_by = who
-ts = TimeSpan()
+aa.carried_out_by = who
+ts = model.TimeSpan()
 ts.begin_of_the_begin = "1804-05-19"
 ts.end_of_the_end = "1804-05-19"
-top.timespan = ts
+aa.timespan = ts
 ```
 
 ### "Style Of" Attribution
@@ -45,20 +45,20 @@ The approach taken for this case is to use an `AttributeAssignment` that associa
 This would also apply to cases where there is a "workshop of", "studio of", "circle of" and similar attributions in which there is doubt that there really was such a group, and thus there is reluctance to give that hypothetical group an identity.  Instead of using the "style of" aat concept, it would use "workshop of" (_aat:300404274_), or other [attribution qualifiers](http://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300404264) from AAT.
 
 ```crom
-top = AttributeAssignment()
-top.assigned_property = "produced_by"
-obj = Painting(art=1)
-obj._label = "Example Painting"
-who = Person()
+top = vocab.Painting(ident="auto int-per-segment",art=1)
+top._label = "Example Painting"
+aa = model.AttributeAssignment()
+aa.assigned_property = "produced_by"
+who = model.Person()
 who._label = "Well Known Artist"
-prod = Production()
+prod = model.Production()
 prod.influenced_by = who
 prod.classified_as = instances['style of']
-top.assigned = prod
-top.assigned_to = obj
-by = Person()
+aa.assigned = prod
+top.assigned_by = aa
+by = model.Person()
 by._label = "Painting Curator"
-top.carried_out_by = by
+aa.carried_out_by = by
 ```
 
 ## Context Specific Assertions
@@ -68,22 +68,21 @@ The basic pattern for making an assertion within some context is to reuse the `A
 There are two relationships to note with this pattern.  The first is that the broader activity has a `part` which is the `AttributeAssignment`.  This gives some basic temporal context for the assignment. There is also in many cases a set of objects or other resources that provide additional context. In the Exhibition case, the set of objects and their labels in the exhibit is `involved` in the provision of the `Name` of the individual object.
 
 
-
 ```crom
-top = Exhibition()
+top = vocab.Exhibition(ident="auto int-per-segment")
 top._label = "Example Exhibition"
 agg = model.Set()
 top.used_specific_object = agg
-obj = Painting(art=1)
+obj = vocab.Painting(art=1)
 obj._label = "Real Painting Name"
 agg.member = obj
-aa = AttributeAssignment()
+aa = model.AttributeAssignment()
 aa.assigned_property = "identified_by"
-name = Name()
+name = model.Name()
 name.content = "Exhibition Specific Name"
 aa.assigned = name
 aa.assigned_to = obj
-curator = Person()
+curator = model.Person()
 curator._label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
@@ -97,10 +96,10 @@ Some assertions, or even entire resources, are computationally inferred from oth
 The way that this can be signalled in the data is to add the "computer-generated" concept _aat:300202389_ to the resource in the `classified_as` field.  
 
 ```crom
-top = Activity()
+top = model.Activity(ident="auto int-per-segment")
 top._label = "Inferred Activity"
 top.classified_as = instances['computer generated']
-a = Actor()
+a = model.Actor()
 a._label = "Performer of inferred activity"
 top.carried_out_by = a
 ```

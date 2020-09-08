@@ -63,7 +63,7 @@ A particular museum object is `referred_to_by` a statement which ...
 * ... has a `language` of English, which has an `id` of _aat:300388277_
 
 ```crom
-top = model.HumanMadeObject()
+top = model.HumanMadeObject(ident="auto int-per-segment")
 d = vocab.Description(content="A small greenstone pendant surrounded by silver")
 d.language = vocab.instances['english']
 d.identified_by = vocab.DisplayName(content="Description")

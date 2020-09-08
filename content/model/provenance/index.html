@@ -27,16 +27,16 @@ __Example:__
 The Museum made a purchase in late April 2002 of a painting. The details about the painting and payment would be given using parts (the `Acquisition` and a `Payment` respectively, and described in more detail in subsequent sections).
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Painting")
 top.identified_by = vocab.LocalNumber(value="acq-2002-0005")
 museum = vocab.MuseumOrg(label="Museum")
 top.carried_out_by = museum
-ts = TimeSpan()
+ts = model.TimeSpan()
 ts.begin_of_the_begin = "2002-04-19T00:00:00Z"
 ts.end_of_the_end = "2002-04-26T00:00:00Z"
 top.timespan = ts
-acq = Acquisition(label="Acquisition of Painting from Seller")
-pay = Payment(label="Payment of Price to Seller")
+acq = model.Acquisition(label="Acquisition of Painting from Seller")
+pay = model.Payment(label="Payment of Price to Seller")
 top.part = acq
 top.part = pay
 ```
@@ -51,10 +51,10 @@ __Example:__
 A benevolent donor gives two paintings to a museum.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Gift of two Paintings to Museum")
-top.classified_as = Type(ident="http://vocab.getty.edu/aat/300417637")
-acq = Acquisition(label="Acquisition of Painting 1")
-acq2 = Acquisition(label="Acquisition of Painting 2")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Gift of two Paintings to Museum")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300417637")
+acq = model.Acquisition(label="Acquisition of Painting 1")
+acq2 = model.Acquisition(label="Acquisition of Painting 2")
 top.part = acq
 top.part = acq2
 ```
@@ -70,7 +70,7 @@ __Example:__
 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Undated Purchase of Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Undated Purchase of Painting")
 top.starts_after_the_end_of = vocab.ProvenanceEntry(label="Previous Owner's Acquisition")
 top.ends_before_the_start_of = vocab.ProvenanceEntry(label="Subsequent Owner's Acquisition")
 ```

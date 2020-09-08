@@ -50,7 +50,7 @@ A human-made object ...
 * ... and has a `current_location` of a referenced gallery.
 
 ```crom
-top = vocab.Painting(label="Example Painting")
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting")
 top.current_owner = model.Person(label="Owner")
 top.current_location = model.Place(label="Gallery")
 top.shows = model.VisualItem(label="Visual Work of Example Painting")

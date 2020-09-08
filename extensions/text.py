@@ -12,53 +12,39 @@ from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
 
 import cromulent
 from cromulent import model, vocab
-from cromulent.model import factory, BaseResource, Production, Acquisition, \
-    Currency, Identifier, Person, TransferOfCustody, Identifier, VisualItem, \
-    LinguisticObject, OrderedDict, Appellation, \
-    AttributeAssignment, Formation, Material, MeasurementUnit, \
-    HumanMadeFeature, Dimension, PhysicalObject, Name, Move, Language, Transformation, \
-    Payment, Creation, Destruction, \
-    PropositionalObject, Language, Phase, Birth, Death
-from cromulent.vocab import Painting, InformationObject, Department, SupportPart, Type, \
-	Auction, MuseumOrg, Place, Gallery, Activity, Actor, Group, MaterialStatement, \
-	TimeSpan, HumanMadeObject, MonetaryAmount, Curating, Inventorying, \
-	AuctionHouse, Auction, Bidding, AuctionCatalogText, \
-	LotNumber, Auctioneer, Bidding, AuctionLotSet, Theft, LocalNumber, AccessionNumber, \
-	Sculpture, Description, Width, Height, DimensionStatement, Photograph, Negative, \
-	CreditStatement, RightsStatement, WebPage, PrimaryName, GivenName, FamilyName, \
-	NamePrefix, NameSuffix, MiddleName, BiographyStatement, Nationality, Gender, \
-	Exhibition, MuseumPlace, MultiExhibition, CollectionSet, \
-	PhotographBW, PhotographColor, ProvenanceStatement, Purchase, FramePart, GivenName, \
-	DigitalImage, instances
+from cromulent.model import factory, OrderedDict
+from cromulent.vocab import instances
 
-HumanMadeObject._uri_segment = "object"
-Activity._uri_segment = "activity"
-Place._uri_segment = "place"
-InformationObject._uri_segment = "info"
-Group._uri_segment = "group"
-Actor._uri_segment = "actor"
-Person._uri_segment = "person"
-TimeSpan._uri_segment = "time"
-Production._uri_segment = "activity"
-Acquisition._uri_segment = "activity"
-Purchase._uri_segment = "activity"
-Payment._uri_segment = "activity"
-MonetaryAmount._uri_segment = "money"
-Currency._uri_segment = "money"
-PhysicalObject._uri_segment = "object"
-Identifier._uri_segment = "identifier"
-TransferOfCustody._uri_segment = "activity"
-Move._uri_segment = "activity"
-LinguisticObject._uri_segment = "text"
-Appellation._uri_segment = "name"
-Name._uri_segment = "name"
-AttributeAssignment._uri_segment = "activity"
-Dimension._uri_segment = "value"
-PropositionalObject._uri_segment = "concept"  # For Exhibition concept and bid
-Destruction._uri_segment = "activity"
-Phase._uri_segment = "activity"
-Birth._uri_segment = "activity"
-Death._uri_segment = "activity"
+model.HumanMadeObject._uri_segment = "object"
+model.Activity._uri_segment = "activity"
+model.Place._uri_segment = "place"
+model.InformationObject._uri_segment = "info"
+model.Group._uri_segment = "group"
+model.Actor._uri_segment = "actor"
+model.Person._uri_segment = "person"
+model.TimeSpan._uri_segment = "time"
+model.Production._uri_segment = "activity"
+model.Acquisition._uri_segment = "activity"
+model.Purchase._uri_segment = "activity"
+model.Payment._uri_segment = "activity"
+model.MonetaryAmount._uri_segment = "money"
+model.Currency._uri_segment = "money"
+model.PhysicalObject._uri_segment = "object"
+model.Identifier._uri_segment = "identifier"
+model.TransferOfCustody._uri_segment = "activity"
+model.Move._uri_segment = "activity"
+model.LinguisticObject._uri_segment = "text"
+model.Appellation._uri_segment = "name"
+model.Name._uri_segment = "name"
+model.AttributeAssignment._uri_segment = "activity"
+model.Dimension._uri_segment = "value"
+model.PropositionalObject._uri_segment = "concept"  # For Exhibition concept and bid
+model.Destruction._uri_segment = "activity"
+model.Birth._uri_segment = "activity"
+model.Death._uri_segment = "activity"
+model.DigitalObject._uri_segment = "digital"
+model.DigitalService._uri_segment = "digital"
+model.Type._uri_segment = "concept"
 
 fh = file('site.yaml')
 siteData = fh.read()
@@ -79,8 +65,13 @@ contextUrl = "%s://%s%s%sns/v1/linked-art.json" % (scheme, host, port, basedir)
 factory.base_url = baseUrl
 factory.base_dir = "content/%s" % egdir
 factory.context_uri = contextUrl
-# Ensure it's still int per segment
+
+# The vast majority of nodes should be blank nodes
+# only the top node needs an id
+# So use ident="auto int-per-segment" on top
+factory.auto_assign_id = False
 factory.auto_id_type = "int-per-segment"
+
 vocab.add_art_setter()
 vocab.add_attribute_assignment_check()
 vocab.conceptual_only_parts()
@@ -196,7 +187,11 @@ class IndexingPlugin(Plugin):
 			"RightAcquisition": "event",
 			"PartRemoval": "event",
 			"PartAddition": "event",
-			"Encounter": "event"
+			"Encounter": "event",
+			"DigitalObject": "digital",
+			"DigitalService": "digital",
+			"Addition": "event",
+			"Removal": "event"
 		}
 
 	def begin_site(self):
@@ -222,14 +217,18 @@ class IndexingPlugin(Plugin):
 	def walk(self, js, curr_int, id_map, mermaid):
 		if isinstance(js, dict):
 			# Resource
-			curr = js.get('id', str(uuid.uuid4()))
+			if 'id' in js:
+				curr = js['id']
+				lbl = self.uri_to_label(curr)
+			else:
+				curr = str(uuid.uuid4())
+				lbl = ""
 			if curr in id_map:
 				currid = id_map[curr]
 			else:
 				currid = "O%s" % curr_int
 				curr_int += 1
 				id_map[curr] = currid
-			lbl = self.uri_to_label(curr)
 			line = "%s(%s)" % (currid, lbl)
 			if not line in mermaid:
 				mermaid.append(line)
@@ -289,6 +288,7 @@ class IndexingPlugin(Plugin):
 		mermaid.append("classDef timespan stroke:blue,fill:#ddfffe,rx:20px,ry:20px")
 		mermaid.append("classDef place stroke:#3a7a3a,fill:#aff090,rx:20px,ry:20px")
 		mermaid.append("classDef event stroke:blue,fill:#96e0f6,rx:20px,ry:20px")
+		mermaid.append("classDef event stroke:blue,fill:purple,rx:20px,ry:20px")		
 		mermaid.append("classDef literal stroke:black,fill:#f0f0e0;")
 		mermaid.append("classDef classstyle stroke:black,fill:white;")
 		self.walk(js, curr_int, id_map, mermaid)
@@ -316,9 +316,9 @@ class IndexingPlugin(Plugin):
 					eg = self.generate_example(h[1], resource)
 				except Exception as e:
 					print(">>> In %s" % resource.relative_path)
-					print("Caught Exception: %s" % e)
+					print("Caught Exception: %r" % e)
 					print("Failed to execute example:\n%s" % h[1])
-					raise
+					# raise
 				text = text.replace(h[0], eg)
 		return text
 
@@ -405,11 +405,6 @@ title: Index of Classes, Properties, Authorities
 		factory.pipe_scoped_contexts = False
 		factory.toFile(top, compact=False)
 		js = factory.toJSON(top)
-
-		# 2020-03-05 This now uses crom specific toHTML
-		# rather than vanilla code hiliting in markdown
-		# Now equivalent, but with more features possible
-		# down the line
 
 		factory.pipe_scoped_contexts = True
 		jsstr = factory.toHtml(top)

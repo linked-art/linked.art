@@ -21,12 +21,12 @@ The model encodes this information with an `Acquisition` part of the overall Pro
 Each object has its own Acquisition as part of the provenance event, so if a collector buys three paintings from a dealer, then there would be a single Provenance Event with three Acquisitions, all of which transfer the title of a single painting from the dealer to the collector.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
-buyer = Person(label="Buyer")
-seller = Person(label="Seller")
-acq = Acquisition(label="Acquisition of Sculpture from Seller")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
+buyer = model.Person(label="Buyer")
+seller = model.Person(label="Seller")
+acq = model.Acquisition(label="Acquisition of Sculpture from Seller")
 top.part = acq
-what = Sculpture(label="Sculpture", art=1)
+what = vocab.Sculpture(label="Sculpture", art=1)
 acq.transferred_title_of = what
 acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
@@ -41,13 +41,13 @@ If there is additional information known about the exact nature of the ownership
 If there are multiple parties that have formally entered into a legal consortium or organization, and that consortium is the legal owner of the object, then the consortium should be modeled as a [`Group`](/model/actor/) with the parties as members, and be the sole owner of the object.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
-buyer = Person(label="Buyer")
-buyer2 = Person(label="Buyer 2")
-seller = Person(label="Seller")
-acq = Acquisition(label="Acquisition of Sculpture from Seller by two Buyers")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
+buyer = model.Person(label="Buyer")
+buyer2 = model.Person(label="Buyer 2")
+seller = model.Person(label="Seller")
+acq = model.Acquisition(label="Acquisition of Sculpture from Seller by two Buyers")
 top.part = acq
-what = Sculpture(label="Sculpture", art=1)
+what = vocab.Sculpture(label="Sculpture", art=1)
 acq.transferred_title_of = what
 acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
@@ -59,13 +59,13 @@ acq.transferred_title_to = buyer2
 In some cases, it is known that an agent other than the buyer carried out the acquisition. This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
-buyer = Person(label="Buyer")
-seller = Person(label="Seller")
-agent = Person(label="Agent for the Buyer")
-acq = Acquisition(label="Acquisition of Sculpture from Seller")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
+buyer = model.Person(label="Buyer")
+seller = model.Person(label="Seller")
+agent = model.Person(label="Agent for the Buyer")
+acq = model.Acquisition(label="Acquisition of Sculpture from Seller")
 top.part = acq
-what = Sculpture(label="Sculpture", art=1)
+what = vocab.Sculpture(label="Sculpture", art=1)
 acq.transferred_title_of = what
 acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
@@ -77,18 +77,18 @@ acq.carried_out_by = agent
 This pattern allows for the exchange of objects between two parties by simply adding a second Acquisition.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Exchange of Sculpture for Painting")
-buyer = Person(label="Buyer")
-seller = Person(label="Seller")
-acq = Acquisition(label="Acquisition of Sculpture from Seller")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Exchange of Sculpture for Painting")
+buyer = model.Person(label="Buyer")
+seller = model.Person(label="Seller")
+acq = model.Acquisition(label="Acquisition of Sculpture from Seller")
 top.part = acq
-what = Sculpture(label="Sculpture", art=1)
+what = vocab.Sculpture(label="Sculpture", art=1)
 acq.transferred_title_of = what
 acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
-acq2 = Acquisition(label="Acquisition of Painting from Buyer")
+acq2 = model.Acquisition(label="Acquisition of Painting from Buyer")
 top.part = acq2
-what = Painting(label="Painting", art=1)
+what = vocab.Painting(label="Painting", art=1)
 acq.transferred_title_of = what
 acq.transferred_title_from = buyer
 acq.transferred_title_to = seller
@@ -106,13 +106,13 @@ The `Payment` activity has equivalent relationships for the actor that the money
     The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Sculpture")
-seller = Actor(label="Seller")
-buyer = Actor(label="Buyer")
-paymt = Payment()
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
+seller = model.Person(label="Seller")
+buyer = model.Person(label="Buyer")
+paymt = model.Payment()
 paymt.paid_from = buyer
 paymt.paid_to = seller
-amt = MonetaryAmount()
+amt = model.MonetaryAmount()
 amt.value = 1000
 amt.currency = vocab.instances['us dollars']
 paymt.paid_amount = amt
@@ -130,14 +130,14 @@ __Example:__
 The above payment might actually have been 900 dollars to the previous owner and 100 dollars to the auction house for its cut.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Sculpture with Commission")
-seller = Actor(label="Seller")
-buyer = Actor(label="Buyer")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture with Commission")
+seller = model.Person(label="Seller")
+buyer = model.Person(label="Buyer")
 house = vocab.AuctionHouseOrg(label="Auction House")
-pay1 = Payment()
+pay1 = model.Payment()
 pay1.paid_from = buyer
 pay1.paid_to = seller
-amt1 = MonetaryAmount()
+amt1 = model.MonetaryAmount()
 amt1.value = 900
 amt1.currency = vocab.instances['us dollars']
 pay1.paid_amount = amt1
@@ -145,7 +145,7 @@ top.part = pay1
 pay2 = vocab.CommissionPayment()
 pay2.paid_from = buyer
 pay2.paid_to = house
-amt2 = MonetaryAmount()
+amt2 = model.MonetaryAmount()
 amt2.value = 100
 amt2.currency = vocab.instances['us dollars']
 pay2.paid_amount = amt2

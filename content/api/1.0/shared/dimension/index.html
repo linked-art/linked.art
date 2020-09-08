@@ -82,7 +82,7 @@ A Human-Made Object [instance](../../endpoint/physical_thing/) has a dimension o
   * ... is `carried_out_by` the curator, being a [reference](../reference/) to an instance in a [person endpoint](../../endpoint/person/)
 
 ```crom
-top = model.HumanMadeObject()
+top = model.HumanMadeObject(ident="auto int-per-segment")
 d = vocab.Height()
 d.value = 24
 d.unit = vocab.instances['inches']
