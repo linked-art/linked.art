@@ -2731,6 +2731,11 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "access_point": {
+      "@id": "la:access_point", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
     "digitally_available_via": {
       "@id": "la:digitally_available_via", 
       "@type": "@id", 
