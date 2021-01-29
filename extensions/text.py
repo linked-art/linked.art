@@ -222,7 +222,7 @@ class IndexingPlugin(Plugin):
 				lbl = self.uri_to_label(curr)
 			else:
 				curr = str(uuid.uuid4())
-				lbl = " "
+				lbl = "      "
 			if curr in id_map:
 				currid = id_map[curr]
 			else:
@@ -287,8 +287,7 @@ class IndexingPlugin(Plugin):
 		mermaid.append("classDef infoobj stroke:#907010,fill:#fffa40,rx:20px,ry:20px")
 		mermaid.append("classDef timespan stroke:blue,fill:#ddfffe,rx:20px,ry:20px")
 		mermaid.append("classDef place stroke:#3a7a3a,fill:#aff090,rx:20px,ry:20px")
-		mermaid.append("classDef event stroke:blue,fill:#96e0f6,rx:20px,ry:20px")
-		mermaid.append("classDef event stroke:blue,fill:purple,rx:20px,ry:20px")		
+		mermaid.append("classDef event stroke:blue,fill:#96e0f6,rx:20px,ry:20px")	
 		mermaid.append("classDef literal stroke:black,fill:#f0f0e0;")
 		mermaid.append("classDef classstyle stroke:black,fill:white;")
 		self.walk(js, curr_int, id_map, mermaid)
