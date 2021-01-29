@@ -222,7 +222,7 @@ class IndexingPlugin(Plugin):
 				lbl = self.uri_to_label(curr)
 			else:
 				curr = str(uuid.uuid4())
-				lbl = ""
+				lbl = " "
 			if curr in id_map:
 				currid = id_map[curr]
 			else:
