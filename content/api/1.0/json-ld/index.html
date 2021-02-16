@@ -44,11 +44,9 @@ The examples throughout the documentation use the JSON-LD serialization.  Each h
 An example of the JSON-LD serialization for a painting, that is made of watercolor on a canvas support:
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 top.made_of = instances['watercolor']
-part = SupportPart(top.id + "/part/1")
-part._label = "Canvas Support"
+part = vocab.SupportPart(label="Canvas Support")
 part.made_of = instances['canvas']
 top.part = part
 ```

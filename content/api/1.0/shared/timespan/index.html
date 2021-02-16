@@ -73,7 +73,7 @@ An activity has a time span which ...
   * ... has a `unit` of days, which has an `id` of _aat:300379242_ and has a `type` of "MeasurementUnit"
 
 ```crom
-top = model.Activity()
+top = model.Activity(ident="auto int-per-segment")
 ts = model.TimeSpan(label="1 day, c. 1750")
 ts.identified_by = model.Name(content="1 day, during circa 1750")
 ts.referred_to_by = vocab.Description(content="About 1750, as estimated by C. U. Rata")

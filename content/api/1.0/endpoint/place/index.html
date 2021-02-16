@@ -79,7 +79,7 @@ The JSON for a Place entry for the city of Los Angeles could be as below.
 
 
 ```crom
-top = vocab.City(label="Los Angeles")
+top = vocab.City(ident="auto int-per-segment", label="Los Angeles")
 top.identified_by = model.Name(content="Los Angeles")
 top.identified_by = model.Identifier(content="06-44000")
 top.referred_to_by = vocab.Description(content="Los Angeles is the largest city in California")
@@ -95,7 +95,7 @@ top.member_of = model.Set(label="Top 10 Cities in USA")
 A [Physical Object](../physical_object/) referring to two places via the `current_location` and the location that it was created.
 
 ```crom
-top = model.HumanMadeObject(label="Van Gogh Painting")
+top = model.HumanMadeObject(ident="auto int-per-segment",label="Van Gogh Painting")
 top.current_location = model.Place(label="Rijksmuseum Gallery")
 top.produced_by = model.Production(label="Production of Painting")
 top.produced_by.took_place_at = model.Place(label="Amsterdam")

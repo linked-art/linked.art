@@ -69,7 +69,7 @@ An object is given the name "Hacha (Ceremonial Axe)", with a note that the origi
   * ... and a language of English, as above. 
 
 ```crom
-top = model.HumanMadeObject()
+top = model.HumanMadeObject(ident="auto int-per-segment")
 n = vocab.PrimaryName(content="Hacha (Ceremonial Axe)")
 n.language = instances['spanish']
 n.language = instances['english']

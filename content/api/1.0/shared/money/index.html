@@ -68,7 +68,7 @@ An auction lot has a monetary amount which ...
 
 
 ```crom
-top = model.Set(label = "Set of Objects for Lot 812")
+top = model.Set(ident="auto int-per-segment", label = "Set of Objects for Lot 812")
 amnt = vocab.StartingPrice(label="$500", value=500)
 amnt.currency = vocab.instances['us dollars']
 amnt.identified_by = vocab.DisplayName(content="500 US Dollars")

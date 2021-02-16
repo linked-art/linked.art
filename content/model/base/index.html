@@ -24,7 +24,7 @@ __Example:__
 The simplest possible object has a URI, a class and a label.
 
 ```crom
-top = HumanMadeObject(label="Example Object")
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Example Object")
 ```
 
 ## Types and Classifications
@@ -47,9 +47,9 @@ __Example:__
 The type of the object (an instance of the class `HumanMadeObject`) is a painting _(aat:300033618)_, and an artwork _(aat:300133025)_:
 
 ```crom
-top = model.HumanMadeObject(label="Simple Example Painting")
-top.classified_as = Type(ident="http://vocab.getty.edu/aat/300033618", label="Painting")
-top.classified_as = Type(ident="http://vocab.getty.edu/aat/300133025", label="Work of Art")
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Simple Example Painting")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300033618", label="Painting")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300133025", label="Work of Art")
 ```
 
 ### Types of Types
@@ -69,7 +69,7 @@ __Example:__
 The physical thing is classified as being a Painting, and the concept "Painting" is for classifying the type of object (as opposed to any other sort of classification).
 
 ```crom
-top = Painting(label="Example Painting", art=1)
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 ```
 
 
@@ -90,9 +90,8 @@ __Example:__
 The primary name for the painting is "Pasture and Sheep", which is in English.
 
 ```crom
-top = Painting(art=1)
-top._label = "Painting: Pasture and Sheep"
-ttl = PrimaryName()
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting: Pasture and Sheep")
+ttl = vocab.PrimaryName()
 ttl.content = "Pasture and Sheep"
 ttl.language = instances['english']
 top.identified_by = ttl
@@ -109,12 +108,11 @@ __Example:__
 The accession number identifier for the painting is "P1998-27".
 
 ```crom
-top = Painting(art=1)
-top._label = "Pasture and Sheep"
-id1 = AccessionNumber()
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting: Pasture and Sheep")
+id1 = vocab.AccessionNumber()
 id1.content = "P1998-27"
 top.identified_by = id1
-ttl = PrimaryName()
+ttl = vocab.PrimaryName()
 ttl.content = "Pasture and Sheep"
 top.identified_by = ttl
 ```
@@ -138,9 +136,8 @@ __Example:__
 Having only a textual description of the materials in English, the content `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300435429)_ statement:
 
 ```crom
-top = Painting(art=1)
-top._label = "Painting on Canvas"
-lo = MaterialStatement(top.id + "/statement/1")
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting on Canvas")
+lo = vocab.MaterialStatement()
 lo.content = "Oil on Canvas"
 lo.language = instances['english']
 top.referred_to_by = lo
@@ -163,11 +160,9 @@ __Example:__
 The canvas support is part of the overall watercolor painting.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Example Painting")
 top.made_of = instances['watercolor']
-part = SupportPart(top.id + "/part/1")
-part._label = "Canvas Support"
+part = vocab.SupportPart(label="Canvas Support")
 part.made_of = instances['canvas']
 top.part = part
 ```
@@ -187,10 +182,8 @@ __Example:__
 The curator is a member of the paintings department.
 
 ```crom
-top = vocab.Department()
-top._label = "Paintings Department"
-who = Person()
-who._label = "Curator"
+top = vocab.Department(ident="auto int-per-segment", label = "Paintings Department")
+who = model.Person(label="Curator")
 top.member = who
 ```
 
@@ -212,15 +205,12 @@ There are both subclasses of `Activity`, such as `Acquisition`, `Production` and
 The pattern uses the terms and structure given in this completely artificial example:
 
 ```crom
-top = Activity()
-who = Actor()
-who._label = "Who"
-when = TimeSpan()
-when._label = "When"
+top = model.Activity(ident="auto int-per-segment")
+who = model.Actor(label="Who")
+when = model.TimeSpan(label="When")
 when.begin_of_the_begin = "earliest-start-datetime"
 when.end_of_the_end = "latest-end-datetime"
-where = Place()
-where._label = "Where"
+where = model.Place(label="Where")
 top.carried_out_by = who
 top.took_place_at = where
 top.timespan = when
@@ -245,7 +235,7 @@ An auction that occured during April 1763 over a period of three consecutive day
 
 
 ```crom
-top = vocab.AuctionEvent(label="Auction")
+top = vocab.AuctionEvent(ident="auto int-per-segment", label="Auction")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "1763-04-01T00:00:00Z"
 ts.end_of_the_begin = "1763-04-28T00:00:00Z"
