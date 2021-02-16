@@ -89,7 +89,7 @@ Type instances are typically found as the object of the following properties, ot
 
 
 ```crom
-top = model.Person(label="Rembrandt")
+top = model.Person(ident="auto int-per-segment", label="Rembrandt")
 n = model.Name(content="Rembrandt Harmenszoon van Rijn")
 top.identified_by = n
 b = model.Birth(label="Birth of Rembrandt")
