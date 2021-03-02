@@ -99,32 +99,30 @@ Group instances are typically found as the object of the following properties, o
 
 
 ```crom
-top = model.Person(ident="auto int-per-segment", label="Rembrandt")
-n = model.Name(content="Rembrandt Harmenszoon van Rijn")
+top = model.Group(ident="auto int-per-segment", label="")
+n = model.Name(content="")
 top.identified_by = n
-b = model.Birth(label="Birth of Rembrandt")
+
+b = model.Formation(label="")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "1606-07-15T00:00:00Z"
 ts.end_of_the_end = "1606-07-16T00:00:00Z"
 b.timespan = ts
 p = model.Place(label="Leiden")
 b.took_place_at = p
-top.born = b
+top.formed_by = b
 
-d = model.Death(label="Death of Rembrandt")
+d = model.Dissolution(label="")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "1669-10-04T00:00:00Z"
 ts.end_of_the_end = "1669-10-05T00:00:00Z"
 d.timespan = ts
 p = model.Place(label="Amsterdam")
 d.took_place_at = p
-top.died = d
+top.dissolved_by = d
 
 top.referred_to_by = vocab.BiographyStatement(
-	content="Rembrandt was a Dutch draughtsman, painter and printmaker.")
-
-top.classified_as = vocab.instances['male']
-top.classified_as = vocab.instances['dutch nationality']
+	content="")
 
 act = vocab.Active(label="Active Dates")
 ts = model.TimeSpan()
@@ -136,7 +134,7 @@ top.carried_out = act
 
 top.residence = model.Place(label="Nieuwe Doelenstraat")
 top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011NK Amsterdam")
-top.equivalent = model.Person(ident="http://vocab.getty.edu/ulan/500011051", label="Rembrandt")
+top.equivalent = model.Group(ident="http://vocab.getty.edu/ulan/500011051", label="Rembrandt")
 
 
 ```
