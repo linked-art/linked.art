@@ -19,6 +19,7 @@ These data structures are shared between many endpoints, within the main respons
 * [Statements](statement/) - Human readable texts that describe the resource (e.g. a Materials statement)
 * [TimeSpans](timespan/) - Spans of time, with fuzziness at each end (e.g. 1950 to 1955)
 * [Types / Concepts](type/) - References to types that further clarify the entity (e.g. Painting rather than Object)
+* [Relationships](assignment/) - Relationship assignments between entities (e.g. related works, family relations)
 * [Entity References](reference/) - References to another entity in the system (e.g. the reference from a painting to the artist's information)
 
 ## Notes
