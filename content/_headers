@@ -2,13 +2,13 @@
 /example/*
   Access-Control-Allow-Origin: *
 
-/ns/*
-  Access-Control-Allow-Origin: *
-  Cache-Control: public, max-age=86400
-
 /ns/v1/linked-art.json
   Access-Control-Allow-Origin: *
   Content-Type: application/ld+json  
+
+/ns/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
 
 /*.jsonld
   Access-Control-Allow-Origin: *
