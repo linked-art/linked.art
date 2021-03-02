@@ -6,8 +6,18 @@
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400
 
+/ns/v1/linked-art.json
+  Access-Control-Allow-Origin: *
+  Content-Type: application/ld+json  
+
 /*.jsonld
+  Access-Control-Allow-Origin: *
   Content-Type: application/ld+json
 
+/*.json
+  Access-Control-Allow-Origin: *
+  Content-Type: application/json
+
 /*.ttl
+  Access-Control-Allow-Origin: *
   Content-Type: text/turtle
