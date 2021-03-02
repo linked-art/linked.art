@@ -61,9 +61,9 @@ A Human-Made Object [instance](../../endpoint/physical_thing/):
 ```crom
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting of a Fish")
 aa = model.AttributeAssignment()
-aa.carried_out_by = model.Person(label="Curator")
-aa.identified_by = vocab.DisplayName(content="Related Object: Painting of a Fish")
-aa.classified_as = model.Type(label="Recommendation")
+aa.carried_out_by = model.Person(ident="auto int-per-segment", label="Curator")
+aa.identified_by = vocab.DisplayName(content="Related Object: Another Painting of a Fish")
+aa.classified_as = model.Type(ident="http://example.org/types/recommending", label="Recommendation")
 aa.assigned = model.HumanMadeObject(ident="auto int-per-segment", label="Another Painting of a Fish")
 top.attributed_by = aa
 ```
