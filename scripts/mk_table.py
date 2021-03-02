@@ -5,7 +5,7 @@ import os
 
 lines = ["Property | Key", "-------- | ---"]
 fn = os.path.join(cromulent.__path__[0], 'data', 'overrides.json')
-fh = file(fn)
+fh = open(fn)
 data = fh.read()
 fh.close()
 overs = json.loads(data)
@@ -21,12 +21,13 @@ def sorter(x):
 	except:
 		return 1000
 
+its = list(its)
 its.sort(key=sorter)
 for (k,v) in its:
 	lines.append("%s | `%s`" % (k, v))
 
 table = '\n'.join(lines)
-fh = file('content/_include/prop_key_map.md', 'w')
+fh = open('content/_include/prop_key_map.md', 'w')
 fh.write(table)
 fh.close()
 

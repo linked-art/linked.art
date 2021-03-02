@@ -6,6 +6,7 @@ import os
 import requests
 import urllib
 import uuid
+import sys
 
 from rdflib import ConjunctiveGraph, URIRef
 from pyld.jsonld import expand, to_rdf, JsonLdProcessor, set_document_loader
@@ -311,13 +312,7 @@ class IndexingPlugin(Plugin):
 			# Look for ```crom ... ```
 			hits = self.matcher.findall(text)
 			for h in hits:
-				try:
-					eg = self.generate_example(h[1], resource)
-				except Exception as e:
-					print(">>> In %s" % resource.relative_path)
-					print("Caught Exception: %r" % e)
-					print("Failed to execute example:\n%s" % h[1])
-					# raise
+				eg = self.generate_example(h[1], resource)
 				text = text.replace(h[0], eg)
 		return text
 
@@ -395,50 +390,65 @@ title: Index of Classes, Properties, Authorities
 
 	def generate_example(self, egtext, resource):
 		# Yes really... 
-		highlight_lines = ""
-		exec(egtext) 
-		# egtext can override hightlight_line
-		# but hard to calculate automatically
 
-		# Now in scope should be a top resource
-		factory.pipe_scoped_contexts = False
-		factory.toFile(top, compact=False)
-		js = factory.toJSON(top)
+		try:
+			exec(egtext) 
+		except Exception as e:
+			print(">>> In %s" % resource.relative_path)
+			print("Caught Exception from example code at %s: %r" % (sys.exc_info()[2].tb_lineno, e))
+			print("Failed to execute example:\n%s" % h[1])
+			return ""
 
-		factory.pipe_scoped_contexts = True
-		jsstr = factory.toHtml(top)
-		factory.pipe_scoped_contexts = False
+		try:
+			# Now in scope should be a top resource
+			factory.pipe_scoped_contexts = False
+			factory.toFile(top, compact=False)
+			js = factory.toJSON(top)
 
-		# Generate all our serializations
-		nq = to_rdf(js, {"format": "application/nquads"})
-		g = ConjunctiveGraph()
-		for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'la']:
-			g.bind(ns, ctxt[ns])
-		g.parse(data=nq, format="nt")
-		out = g.serialize(format="turtle")
+			factory.pipe_scoped_contexts = True
+			jsstr = factory.toHtml(top)
+			factory.pipe_scoped_contexts = False
 
-		fp = js['id'][len(factory.base_url):]
-		fp2 = fp + ".ttl"	
-		fh = open(os.path.join(factory.base_dir, fp2), 'w')
-		fh.write(out)
-		fh.close()
+			# Generate all our serializations
+			nq = to_rdf(js, {"format": "application/nquads"})
+			g = ConjunctiveGraph()
+			for ns in ['crm', 'dc', 'schema', 'dcterms', 'skos', 'la']:
+				g.bind(ns, ctxt[ns])
+			g.parse(data=nq, format="nt")
+			out = g.serialize(format="turtle")
 
-		# And build mermaid description
+			fp = js['id'][len(factory.base_url):]
+			fp2 = fp + ".ttl"	
+			fh = open(os.path.join(factory.base_dir, fp2), 'w')
+			fh.write(out)
+			fh.close()
+		except Exception as e:
+			print(">>> In %s" % resource.relative_path)
+			print("Caught Exception from serialization code at %s: %r" % (sys.exc_info()[2].tb_lineno, e))
+			print("Failed to execute example:\n%s" % h[1])
+			return ""
 
-		mermaid = self.build_mermaid(js)
-
-		# Build index references
-		self.traverse(js, top.id, resource)
+		try:
+			# And build mermaid description
+			mermaid = self.build_mermaid(js)
+			# Build index references
+			self.traverse(js, top.id, resource)
+		except Exception as e:
+			print(">>> In %s" % resource.relative_path)
+			print("Caught Exception from mermaid/indexing code at %s: %r" % (sys.exc_info()[2].tb_lineno, e))
+			print("Failed to execute example:\n%s" % h[1])
+			return ""			
 
 		# And return the JSON plus links, to be substed by the top level filter
-		raw = top.id + ".json"
+		raw = top.id
+		jsuri = raw + ".json"
 		self.example_list.append(raw)
 		rawq = urllib.quote(raw).replace('/', "%2F")
 		playground = "http://json-ld.org/playground-dev/#startTab=tab-expanded&copyContext=true&json-ld=%s" % rawq
-		turtle = top.id + ".ttl" 
+		turtle = raw + ".ttl" 
 		turtle_play = "http://cdn.rawgit.com/niklasl/ldtr/v0.2.2/demo/?edit=true&url=%s" % turtle 
 		egid = fp.replace('/', '_')
-		mmid = self.uri_to_label(top.id)
+		mmid = self.uri_to_label(raw)
 		resp = """
 <a id="%s"></a>
 <div class="jsonld">

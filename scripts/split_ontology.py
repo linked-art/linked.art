@@ -21,7 +21,12 @@ fh = open('content/ns/terms/index.xml')
 data = fh.read()
 fh.close()
 
-dom = etree.XML(data)
+try:
+	dom = etree.XML(data)
+except:
+	data = data.encode('utf-8')
+	dom = etree.XML(data)
+
 out = """<rdf:RDF xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.cidoc-crm.org/cidoc-crm/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/">
 
 </rdf:RDF>"""
@@ -33,7 +38,7 @@ for c in classes:
 	name = name.replace(NS['la'], '')
 	odom = etree.XML(out)
 	odom.append(c)
-	o = etree.tostring(odom, pretty_print=True)
+	o = etree.tostring(odom, pretty_print=True).decode('utf-8')
 	fh = open('content/ns/terms/%s.xml' % name, 'w')
 	fh.write(o)
 	fh.close()
@@ -44,7 +49,7 @@ for p in props:
 	name = name.replace(NS['la'], '')
 	odom = etree.XML(out)
 	odom.append(p)
-	o = etree.tostring(odom, pretty_print=True)
+	o = etree.tostring(odom, pretty_print=True).decode('utf-8')
 	fh = open('content/ns/terms/%s.xml' % name, 'w')
 	fh.write(o)
 	fh.close()

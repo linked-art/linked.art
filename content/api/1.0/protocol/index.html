@@ -22,7 +22,7 @@ The encrypted form of HTTP, called HTTPS, is strongly recommended to publishing 
 
 For example, this documentation uses https, resulting in endpoints like:
 
-> `https://linked.art/example/object/1.json`
+> `https://linked.art/example/object/1`
 
 There is a great advantage in terms of network interaction speed to support the latest version of the HTTP protocol, called `HTTP/2`. Supporting HTTP 2 allows many concurrent requests to take place, improving the time to complete page loads and avoiding the browser-imposed limit on the number of concurrent connections per site.  Web servers MUST support HTTP 1.1 and SHOULD support HTTP 2.
 
@@ -48,6 +48,8 @@ The server will then respond with the right format, and echo back the media type
 Servers MAY support other serializations as well as Linked Art JSON-LD at the same URIs, which would be requested by changing the media type given in the `Accept` header.
 
 Linked Art does not specify a mechanism by which the set of other supported formats can be discovered.
+
+In the future, new major versions of the Model and API will have a different profile URI, thus enabling applications to ask for the same entity using different versions of the specification.
 
 ### CORS
 

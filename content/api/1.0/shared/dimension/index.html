@@ -45,8 +45,8 @@ The dimension data structure has the following properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the measurement |  
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"AttributeAssignment"` |
-| `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
+| `type`            | string        | Required    | The class for the measurement, which MUST be the value `"AttributeAssignment"` |
+| `_label`          | string        | Recommended | A human readable label for the measurement, intended for developers |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the measurement and MUST follow the requirements for [Type](../type/) |
 | `carried_out_by`  | array         | Recommended | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) |
 | `timespan`        | json object   | Optional    | A json object which MUST follow the requirements for [timespans](../timespan/)|
