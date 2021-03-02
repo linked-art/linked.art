@@ -31,11 +31,11 @@ The assignment data structure has the following properties.
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment |  
 | `type`            | string        | Required    | The class for the assignment, which MUST be the value `"AttributeAssignment"` |
 | `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
-| `identified_by`   | array         | Recommended | |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the assignment and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the assignment and MUST follow the requirements for [Identifier](../../shared/identifier/)|
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the assignment and MUST follow the requirements for [Type](../type/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which made the assignment|
 | `timespan`        | json object   | Optional    | A json object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
 | `assigned`        | array         | Required    | An array of json objects, each of which is a [reference](../reference/) to another entity that is related to the current one |
 | `assigned_property` | string      | Optional    | A string which is either a URI, or resolves to a URI via a context document, for the specific relationship between the main entity and the entity referenced in `assigned` |
 
@@ -62,6 +62,8 @@ A Human-Made Object [instance](../../endpoint/physical_thing/):
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting of a Fish")
 aa = model.AttributeAssignment()
 aa.carried_out_by = model.Person(label="Curator")
+aa.identified_by = vocab.DisplayName(content="Related Object: Painting of a Fish")
+aa.classified_as = model.Type(label="Recommendation")
 aa.assigned = model.HumanMadeObject(ident="auto int-per-segment", label="Another Painting of a Fish")
 top.attributed_by = aa
 ```
