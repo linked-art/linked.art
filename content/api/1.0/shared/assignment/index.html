@@ -1,0 +1,67 @@
+---
+title: "Linked Art API: Assigned Relationship Structure"
+up_href: "/api/1.0/shared/"
+up_label: "Linked Art API 1.0 Shared Data Structures"
+---
+
+<style>
+th, td {
+  padding: 5px 5px;
+  text-align: left;
+  border: 1px solid #D0D0D0; }
+th { background: #F0F0F0; }
+th:first-child, td:first-child { padding-left: 3px; }
+th:last-child, td:last-child { padding-right: 3px; }
+</style>
+
+{% include "toc.html" %}
+
+## Introduction
+
+It is often useful to have direct relationships between entities, such as 
+
+## Property Definitions
+
+The assignment data structure has the following properties.
+
+### Properties of Assignments
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment |  
+| `type`            | string        | Required    | The class for the assignment, which MUST be the value `"AttributeAssignment"` |
+| `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
+| `identified_by`   | array         | Recommended | |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the assignment and MUST follow the requirements for [Type](../type/) |
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which made the assignment|
+| `timespan`        | json object   | Optional    | A json object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
+| `assigned`        | array         | Required    | An array of json objects, each of which is a [reference](../reference/) to another entity that is related to the current one |
+| `assigned_property` | string      | Optional    | A string which is either a URI, or resolves to a URI via a context document, for the specific relationship between the main entity and the entity referenced in `assigned` |
+
+
+### Property Diagram
+
+> ![diagram](assignment_properties.png){:.diagram_img width="600px"}
+
+### Incoming Properties
+
+Relationship Assignment instances are typically found as the object of the following properties.  This list is not exhaustive, but is intended to cover the likely cases.
+
+| Property Name   | Source Endpoint   | Description |
+|-----------------|-------------------|-------------|
+| `attributed_by` | All Endpoints     | A list of Assignments for the entity |
+
+
+## Example
+
+A Human-Made Object [instance](../../endpoint/physical_thing/):
+
+
+```crom
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting of a Fish")
+aa = model.AttributeAssignment()
+aa.carried_out_by = model.Person(label="Curator")
+aa.assigned = model.HumanMadeObject(ident="auto int-per-segment", label="Another Painting of a Fish")
+top.attributed_by = aa
+```
