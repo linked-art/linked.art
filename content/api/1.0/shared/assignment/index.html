@@ -18,11 +18,11 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-It is often useful to have direct relationships between entities, such as 
+It is often useful to have direct relationships between entities, such as objects that have some (unstated) relationship to each other, inter-personal relationships that are too convoluted to express semantically, or just an arbitrary set of recommendations for other entities that might be of interest to a consuming application and its users. In order to manage such arbitrary, non-semantic relationships, the AttributeAssignment activity is used with the optional `assigned_property` to give an identifier for the relationship, if known. 
 
 ## Property Definitions
 
-The assignment data structure has the following properties.
+The relationship assignment data structure has the following properties.
 
 ### Properties of Assignments
 
@@ -50,7 +50,7 @@ Relationship Assignment instances are typically found as the object of the follo
 
 | Property Name   | Source Endpoint   | Description |
 |-----------------|-------------------|-------------|
-| `attributed_by` | All Endpoints     | A list of Assignments for the entity |
+| `attributed_by` | All Endpoints     | A list of Relationship Assignments for the entity |
 
 
 ## Example
