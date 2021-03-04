@@ -21,6 +21,8 @@ python scripts/mk_table.py
 rm content/ns/terms/*
 python scripts/split_ontology.py
 
+# checkout the schema and build the documentation
+
 # And now generate the site from scratch
 hyde gen -r
 # Once more incrementally to catch the new index file we just built

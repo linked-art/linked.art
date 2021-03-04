@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600|Roboto:300" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="{{ media_url('css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ media_url('css/skeleton.css') }}">
+        <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+
+        <link rel=stylesheet type=text/css href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+        <script src=https://code.jquery.com/jquery-3.4.1.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+        <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js integrity=sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM crossorigin=anonymous></script>
+
+        <link rel=stylesheet type=text/css href=schema_doc.css>
+        <script src=https://use.fontawesome.com/facf9fa52c.js></script>
+        <script src=schema_doc.min.js></script>
+
+        <script src="{{ media_url('vendor/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ media_url('vendor/underscore-min.js') }}"></script>
+
+
+        <title>{{ resource.meta.title }}</title>
+
+    </head>
+    <body>
+        <nav>
+            {% import "macros.j2" as macros with context %}
+            {{ macros.render_basic_menu() }}
+        </nav>
+        <main class="container">
+
+            <h1>{{ resource.meta.title }}</h1>
+
+            <article id="content">
+            {% filter regex_replace_fn('(&quot;|")([0-9A-Za-z_|:]+)(&quot;|")', "ctxtrepl") -%}
+                {% filter regex_replace_fn("aat:([0-9]+)", "aatlabel") -%}
+                    {% filter markdown -%}
+                        {% filter regex_replace_fn("`([A-Za-z_]+)`", "ctxtrepl") -%}
+                            {% block content %}{% endblock %}
+                        {%- endfilter %}
+                    {%- endfilter %}
+                {%- endfilter %}
+            {%- endfilter %}
+            </article>
+        </main>
+        <footer>
+        &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:robert.sanderson@yale.edu">robert.sanderson@yale.edu</a>
+        <form name="contact" method="POST" data-netlify="true">
+            <span>Comment?</span> <input type="text" name="comment"/>
+            <input type="hidden" name="page" value=" {{ resource.relative_path }} "/>
+            <button type="submit">Send</button>
+        </form>
+        </footer>
+        {% if site.config.mode == "production" -%}
+            {% include "ga.j2" %}
+        {%- endif %}
+        <script>
+            if (window.location.hostname != "linked.art") {
+                $("#main_nav_list").prepend('<span class="nav_warning">Preview Of <a href="https://linked.art/">linked.art</a> Change</span>');
+            }
+        </script>
+        <script>
+            // Latest mermaid adds explicit width on the SVG that causes overflow
+            // This also gives us control for now FOUC by hiding the mermaid code
+            // in css, and then showing only after rendering
+            mermaid.initialize({
+              startOnLoad: false,    
+              theme: 'neutral',
+              logLevel: 3,
+              flowchart: { curve: 'basis' }
+            });
+            $(function(){
+                var render_mm = function(i, element) {
+                    var insertSvg = function(svgCode, bindFn) {
+                        element.innerHTML = svgCode;
+                        // trash height and width, as they're absolute.
+                        // This lets the page scale the image into the available space
+                        // Setting maxWidth means it won't upscale
+                        var w = $("#" + element.id + " svg").attr('width')
+                        $("#" + element.id + " svg").attr('width', '').attr('height', '').css("maxWidth", w + "px")
+                        $(element).show()
+                    }
+                    var txt = element.innerHTML.replace(/&gt;/g, ">")
+                    var graph = mermaid.mermaidAPI.render(element.id + "_svg", txt, insertSvg)
+                };
+                $('.mermaid').each(render_mm)
+            })
+
+            $('.mermaid').on('click', event => {
+        	    if (screenfull.isEnabled) {
+        		    screenfull.toggle(event.delegateTarget);
+        	    }
+            });
+
+        </script>        
+    </body>
+</html>

@@ -1,23 +1,29 @@
 
 /example/*
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
 
 /ns/*
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
   Cache-Control: public, max-age=86400
 
 /*.jsonld
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
   Content-Type: application/ld+json
 
 /*.json
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
   Content-Type: application/json
 
 /*.ttl
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
   Content-Type: text/turtle
 
 /ns/v1/linked-art.json
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
   Content-Type: application/ld+json  
