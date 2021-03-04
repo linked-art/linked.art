@@ -19,11 +19,12 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 
 		"part_of": {"$ref": "core.json#/definitions/LinguisticObjectRef"},
         "content": {"$ref": "core.json#/definitions/contentProp"},
+        "format": {"$ref": "core.json#/definitions/formatProp"},
 		"language": {"$ref": "core.json#/definitions/languageProp"},
 
 		"digitally_carried_by": {"title": "la:digitally_carried_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/DigitalObjectRef"}},

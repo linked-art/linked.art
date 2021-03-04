@@ -80,7 +80,7 @@ See the [schema documentation](../../schema_docs/image.html) and the [schema its
 
 ### Incoming Properties
 
-Textual Work instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to groups.
+Visual Work instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to groups.
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
@@ -91,7 +91,7 @@ Textual Work instances are typically found as the object of the following proper
 
 
 ```crom
-top = model.LinguisticObject(ident="auto int-per-segment", label="")
+top = model.VisualItem(ident="auto int-per-segment", label="")
 n = model.Name(content="")
 top.identified_by = n
 

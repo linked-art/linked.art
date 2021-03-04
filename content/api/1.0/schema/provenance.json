@@ -18,7 +18,7 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 
 		"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
 		"timespan": {"$ref": "core.json#/definitions/timespanProp"},

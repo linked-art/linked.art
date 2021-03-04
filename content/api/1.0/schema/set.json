@@ -18,7 +18,7 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 
 		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"}

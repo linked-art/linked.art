@@ -18,7 +18,7 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofGroupProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 
 		"carried_out": {"$ref": "core.json#/definitions/carried_outProp"},
 		"contact_point": {"$ref": "core.json#/definitions/contact_pointProp"},

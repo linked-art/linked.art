@@ -15,10 +15,9 @@
 		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
 		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
 			{"title": "Specific", "description": "List of equivalent `VisualItem` entities", "type": "array", "items": {"$ref": "core.json#/definitions/VisualItemRef"}}]},
-		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 
 		"part_of": {"$ref": "core.json#/definitions/VisualItemRef"},
