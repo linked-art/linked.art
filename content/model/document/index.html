@@ -72,7 +72,7 @@ top.used_for = pub
 
 ## Structure
 
-The textual structure can be modeled with the partitioning of `LinguisticObject`s via the `includes` property, in the same way that the parts of a physical object can be described using the `part` property.  Thus the content of an Article can be included in the containing Issue, which is included within a Volume, which is within the Journal or other periodical.  Similarly Chapters can be included within a Book or Proceedings, particular entries within a catalog, and so forth. 
+The textual structure can be modeled with the partitioning of `LinguisticObject`s via the `part_of` property, in the same way that the parts of a physical object can be partitioned.  Thus the content of an Article can be part of the containing Issue, which is part of a Volume, which is part of the Journal or other periodical.  Similarly Chapters can be part of a Book or Proceedings, particular entries within a catalog, and so forth. 
 
 ```crom
 top = vocab.MonographText(ident="auto int-per-segment")
