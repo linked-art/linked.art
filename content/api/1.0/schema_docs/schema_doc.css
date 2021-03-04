@@ -109,6 +109,11 @@ body {
     margin-bottom: 0;
 }
 
+.jumbotron {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 .highlight.jumbotron {
     padding: 1rem !important;
 }
