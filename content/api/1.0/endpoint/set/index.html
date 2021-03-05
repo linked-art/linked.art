@@ -18,7 +18,7 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-The Set API is a method of getting access to descriptions of sets or collections of any sort of entity, including especially objects, texts and images.  The Set model is relatively simple with many familiar properties and patterns, and very few additions.  
+The Set API is a method of getting access to descriptions of sets or collections of any sort of entity, including especially objects, texts and images.  The Set model is relatively simple with the common properties and patterns, and very few additions. It must be noted that, like the [Group API](../group/), the Set API does not list its members, to avoid the potential for very long lists. Instead the individual entities are members of the set, and discovering others is left to APIs to be determined.
 
 For more information about the usage of Set data, please see the [Collection model](/model/collection/) description.
 
@@ -79,17 +79,24 @@ Set instances are typically found as the object of the following properties, oth
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `member_of`                |  |  |
+| `member_of`                | All             | Entities other than People or Groups can be members of sets. (People and Groups are members of Groups instead) |
+| `used_specific_object`     | Event           | Events can use sets of things, for example the set of objects in an exhibition or auction lot |
 
 
 ## Example
 
 
 ```crom
-top = model.Set(ident="auto int-per-segment", label="")
-n = model.Name(content="")
+top = vocab.CollectionSet(ident="auto int-per-segment", label="Collection of the Met")
+n = model.Name(content="Art Collection of the Metropolitan Museum of Art")
 top.identified_by = n
-
-
-
+top.referred_to_by = vocab.Description(content="Over 2 million works, divided into 17 curatorial departments")
+cre = model.Creation()
+ts = model.TimeSpan()
+ts._label = "April 13th, 1870"
+ts.begin_of_the_begin = "1870-04-13T00:00:00Z"
+ts.end_of_the_end = "1870-04-13T23:59:59Z"
+cre.timespan = ts
+top.created_by = cre
 ```
+
