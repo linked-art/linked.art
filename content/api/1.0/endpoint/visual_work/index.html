@@ -48,6 +48,7 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `shown_by` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Physical Object](../object/), such as a painting, that physically shows this visual work |
 | `about` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
 | `represents` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
+| `represents_entity_of_type` | array | Optional | An array of json objects, each of which is a `Type` of another entity that this visual work represents or depicts, but where the individual is not known |
 | `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
 | `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below |
 
@@ -84,17 +85,29 @@ Visual Work instances are typically found as the object of the following propert
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `part_of`                  |  |  |
+| `shows`                    | Physical Object |  |
+| `digitally_shows`          | Digital Object  |  | 
 
 
 ## Example
 
 
 ```crom
-top = model.VisualItem(ident="auto int-per-segment", label="")
-n = model.Name(content="")
+top = model.VisualItem(ident="auto int-per-segment", label="Appearance of Miro's The Farm")
+n = model.Name(content="Appearance of The Farm")
 top.identified_by = n
-
-
-
+c = model.Type(ident="http://vocab.getty.edu/aat/300021495", label="Cubist")
+c.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300015646", label="Style")
+top.classified_as = c
+top.referred_to_by = vocab.Description(content="A brilliant amalgamation of an intense, even primitive, realism with the formal vocabulary of cubism.")
+top.represents = model.Place(ident="http://vocab.getty.edu/tgn/7300934", label="Mont-roig del Camp")
+top.represents_entity_of_type = model.Type(ident="http://vocab.getty.edu/aat/300132410", label="Tree")
+top.shown_by = model.HumanMadeObject(ident="https://www.nga.gov/collection/art-object-69660", label="The Farm")
+cre = model.Creation()
+cre.carried_out_by = model.Person(ident="http://vocab.getty.edu/ulan/500014094", label="Miro")
+ts = model.TimeSpan(label="1921-1922")
+ts.begin_of_the_begin = "1921-01-01T00:00:00Z"
+ts.end_of_the_end = "1922-12-31T23:59:59Z"
+cre.timespan = ts
+top.created_by = cre
 ```
