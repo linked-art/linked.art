@@ -27,6 +27,7 @@
 		"about": {"title": "crm:P129_is_about", "description": "The main topic(s) of the content", "type": "array", "items": {"$ref": "core.json#/definitions/AnyRef"}},
 		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"},
 		"represents": {"title": "crm:P138_represents", "description": "An entity which is represented in this image content", "type": "array", "items": {"$ref": "core.json#/definitions/AnyRef"}},
+		"represents_instance_of_type": {"title": "la:represents_instance_of_type", "description": "A Type of an entity, which is represented in this image content", "type": "array", "items": {"$ref": "core.json#/definitions/Concept"}},
 		"used_for": {"title": "crm:P16i_was_used_for", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/Activity"}}
 
 	},
