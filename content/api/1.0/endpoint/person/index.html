@@ -96,6 +96,24 @@ Person instances are typically found as the object of the following properties, 
 ## Example
 
 
+The JSON for a Person entry for the artist Rembrandt could be as below.
+
+* It has the Linked Art context reference in `@context`
+* It self-documents its URI in `id`
+* It has a `type` of "Person"
+* It has a `_label` with the value "Rembrandt" for humans reading the JSON
+* It has a `classified_as` property with entries for :
+  * Male, which is in turn `classified_as` a Gender
+  * Dutch, which is in turn `classified_as` a Nationality
+* It has an `identified_by` property, with a `Name` for his full name of "Rembrandt Harmenszoon van Rijn"
+* It has a `referred_to_by` for a statement, `classified_as` a Biography
+* It has a `born` property for his birth, with a `timespan` and a location in `took_place_at`.
+* It has a `died` property for his death, with a `timespan` and a location in `took_place_at`.
+* It has a `carried_out` for his professional activity, again with `timespan` and `took_place_at` properties, but also `classified_as` being professional activities
+* It has an `equivalent` to his ULAN identity
+* It has a `residence` with a reference to the Place where he lived
+* It has a `contact_point` for his former street address 
+
 ```crom
 top = model.Person(ident="auto int-per-segment", label="Rembrandt")
 n = model.Name(content="Rembrandt Harmenszoon van Rijn")

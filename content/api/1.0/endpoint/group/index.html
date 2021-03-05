@@ -81,60 +81,66 @@ Group instances are typically found as the object of the following properties, o
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `carried_out_by`           |  |  |
-| `transferred_custody_to`   | | |
-| `transferred_custody_from` | | |
-| `transferred_title_to`     | | |
-| `transferred_title_from`   | | |
-| `paid_to`                  | | |
-| `paid_from`                | | |
-| `current_owner`            | | |
-| `current_custodian`        | | |
-| `represents`               | | |
-| `about`                    | | |
-| `possessed_by`             | | |
+| `member_of`                | Person, Group   | People that are members of the current Group are recorded in the Person record |
+| `carried_out_by`           | All             | An activity that the Group carried out |
+| `current_owner`            | [Object](../physical_object/) | An object owned by the Group |
+| `current_custodian`        | [Object](../physical_object/) | An object in the custody of the Group |
+| `represents`               | Visual Work     | Image content which represents the Group (the inverse of `representation`) |
+| `about`                    | Textual Work    | Textual content that is about the Group |
+| `transferred_custody_to`   | Provenance      | The activity of transferring custody of an object to the Group |
+| `transferred_custody_from` | Provenance      | The activity of transferring custody of an object away from the Group |
+| `transferred_title_to`     | Provenance      | The activity of transferring ownership of an object to the Group |
+| `transferred_title_from`   | Provenance      | The activity of transferring ownership of an object away from the Group |
+| `paid_to`                  | Provenance      | The activity of paying money to the Group from someone else |
+| `paid_from`                | Provenance      | The activity of paying money from the Group to someone else |
 
 
 ## Example
 
 
 ```crom
-top = model.Group(ident="auto int-per-segment", label="")
-n = model.Name(content="")
+top = model.Group(ident="auto int-per-segment", label="Camden Town Group")
+n = model.Name(content="Camden Town Group")
+n.language = model.Language(ident="http://vocab.getty.edu/aat/300388277", label="English")
 top.identified_by = n
 
-b = model.Formation(label="")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300026009", label="Society")
+top.classified_as = vocab.instances['british nationality']
+
+b = model.Formation(label="Formation of the Group")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1606-07-15T00:00:00Z"
-ts.end_of_the_end = "1606-07-16T00:00:00Z"
+ts._label = "1911"
+ts.begin_of_the_begin = "1911-01-01T00:00:00Z"
+ts.end_of_the_end = "1911-12-31T23:59:59Z"
 b.timespan = ts
-p = model.Place(label="Leiden")
+p = model.Place(label="London")
 b.took_place_at = p
 top.formed_by = b
 
-d = model.Dissolution(label="")
+d = model.Dissolution(label="Dissolution of the Group")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1669-10-04T00:00:00Z"
-ts.end_of_the_end = "1669-10-05T00:00:00Z"
+ts._label = "1913"
+ts.begin_of_the_begin = "1913-01-01T00:00:00Z"
+ts.end_of_the_end = "1913-12-31T23:59:59Z"
 d.timespan = ts
-p = model.Place(label="Amsterdam")
 d.took_place_at = p
 top.dissolved_by = d
 
 top.referred_to_by = vocab.BiographyStatement(
-	content="")
+	content="A group of British painters formed in 1911; although it only lasted two years, its name is used in a broader sense to characterize a particular strain of British painting from about 1905 to 1920.")
 
 act = vocab.Active(label="Active Dates")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1631-01-01T00:00:00Z"
-ts.end_of_the_end = "1669-10-05T00:00:00Z"
+ts.begin_of_the_begin = "1911-01-01T00:00:00Z"
+ts.end_of_the_end = "1913-12-31T23:59:59Z"
 act.timespan = ts
-act.took_place_at = p
 top.carried_out = act
 
-top.residence = model.Place(label="Nieuwe Doelenstraat")
-top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011NK Amsterdam")
-top.equivalent = model.Group(ident="http://vocab.getty.edu/ulan/500011051", label="Rembrandt")
+top.residence = p
+top.equivalent = model.Group(ident="http://vocab.getty.edu/ulan/500117318", label="Camden Town Group")
 
+aa = model.AttributeAssignment(label="Related Group")
+aa.assigned = model.Group(ident="http://vocab.getty.edu/ulan/500117319", label="London Group")
+top.attributed_by = aa
 
 ```
