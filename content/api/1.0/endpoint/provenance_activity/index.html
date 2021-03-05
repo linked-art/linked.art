@@ -74,25 +74,25 @@ Each of the activities in the `part` property can have the properties in the tab
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
-| `transferred_title_of` | | | |
-| `transferred_title_from` | | | |
-| `transferred_title_to` | | | |
+| `transferred_title_of`   | json object | Required | A json object which is a [reference](../../shared/reference) to the [Object](../object/) for which the ownership is transferred |
+| `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred |
+| `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred |
 
 
 #### Properties of Part: Payment
 
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
-| `paid_amount` | | | |
-| `paid_from` | | | |
-| `paid_to` | | | |
+| Property Name     | Datatype    | Requirement | Description | 
+|-------------------|-------------|-------------|-------------|
+| `type`            | string      | Required | The class for the part, which MUST be the value `"Payment"` |
+| `paid_amount`     | json object | Optional | A Monetary Amount |
+| `paid_from`       | array       | Optional | |
+| `paid_to`         | array       | Optional | |
 
 #### Properties of Part: Transfer of Custody
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
+| `type`            | string        | Required    | The class for the part, which MUST be the value `"TransferOfCustody"` |
 | `transferred_custody_of` | | | |
 | `transferred_custody_from` | | | |
 | `transferred_custody_to` | | | |
@@ -101,14 +101,14 @@ Each of the activities in the `part` property can have the properties in the tab
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
+| `type`            | string        | Required    | The class for the part, which MUST be the value `"Encounter"` |
 | `encountered` | | | |
 
 #### Properties of Part: Right Acquisition
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
+| `type`            | string        | Required    | The class for the part, which MUST be the value `"RightAcquisition"` |
 | `establishes` | | | |
 | `invalidates` | | | |
 
@@ -116,7 +116,7 @@ Each of the activities in the `part` property can have the properties in the tab
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
+| `type`            | string        | Required    | The class for the part, which MUST be the value `"Move"` |
 | `moved` | | | |
 | `moved_from` | | | |
 | `moved_to` | | | |
@@ -126,7 +126,8 @@ Each of the activities in the `part` property can have the properties in the tab
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
+| `type`            | string        | Required    | The class for the part, which MUST be the value `"Activity"` |
+
 
 
 ### Property Diagram
