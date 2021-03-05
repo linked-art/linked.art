@@ -62,12 +62,13 @@ Place instances are typically found as the object of the following properties, o
 
 | Property Name      | Source Endpoint | Description |
 |--------------------|-----------------|-------------|
-| `current_location` | [Physical Object](../physical_object/) | The current location of an object is managed by the object |
-| `current_permanent_location` | [Physical Object](../physical_object/) | The normal location of the object is also managed by the object |
-| `moved_from`       | [Provenance Activity](../provenance_activity/) | In Provenance Activities, objects can be moved in a `Move` activity from one place ...| 
-| `moved_to`         | [Provenance Activity](../provenance_activity/) | ... to another place |
-| `residence`        | [Person](../person/), [Group](../group/) | People and Groups have Places at which they are or have been resident |
 | `took_place_at`    | All | All Events and Activities can take place at a Place, which appear in most of the endpoints such as the location of the birth of a person, or the location of the assignment of an identifier  |
+| `current_location` | [Object](../physical_object/) | The current location of an object is recorded in the object API |
+| `current_permanent_location` | [Physical Object](../physical_object/) | The normal location of the object is also recorded in the object API |
+| `moved_from`       | [Provenance](../provenance_activity/) | In Provenance Activities, objects can be moved in a `Move` activity from one place ...| 
+| `moved_to`         | [Provenance](../provenance_activity/) | ... to another place |
+| `residence`        | [Person](../person/), [Group](../group/) | People and Groups have Places at which they are, or have been, resident |
+
 
 ## Example
 
