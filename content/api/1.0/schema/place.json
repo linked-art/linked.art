@@ -22,9 +22,9 @@
 
 		"defined_by": {
 			"title": "crm:P168_place_is_defined_by",
-			"type": "string", 
-			"title": "Geospatial Area", 
-			"description": "A string with a WKT or GeoJSON definition of the area of the Place"
+			"description": "A string with a WKT or GeoJSON definition of the area of the Place",
+			"type": "string"
+
 		},
 		"approximated_by": {
 			"title": "crm:P189i_is_approximated_by",
