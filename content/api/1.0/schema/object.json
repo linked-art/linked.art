@@ -22,7 +22,7 @@
 
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 		"made_of": {"$ref": "core.json#/definitions/made_ofProp"},
-		"part_of": {"$ref": "core.json#/definitions/HumanMadeObjectRef"},
+		"part_of": {"title": "crm:P46i_forms_part_of", "description": "Another Human-Made Object of which this Object is part", "$ref": "core.json#/definitions/HumanMadeObjectRef"},
 
         "part": {"title": "**Should objects have any parts embedded?**", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectPart"}},
 
@@ -70,8 +70,8 @@
 				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
-
-				"part": {"type": "array", "items": {"$ref": "#/definitions/Production"}}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"},
+				"part": {"title":"crm:P46_is_composed_of", "description": "", "type": "array", "items": {"$ref": "#/definitions/Production"}}
 			}
 		},
 		"Destruction": {
@@ -87,7 +87,8 @@
 				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
 				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
 				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
-				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"}
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this event is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 			}
 		},
 		"PartRemoval": {
@@ -108,8 +109,8 @@
 				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
-
-				"diminished": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"},
+				"diminished": {"title": "crm:P112_diminished", "description": "A reference to the object which the object was removed from", "$ref": "core.json#/definitions/HumanMadeObjectRef"}
 			}
 		}				
 	},

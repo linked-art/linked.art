@@ -28,7 +28,7 @@
 		"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 		"technique": {"$ref": "core.json#/definitions/techniqueProp"},
 
-		"part_of": {"$ref": "core.json#/definitions/EventRefOrActivityRef"}
+		"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this one is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 	},
 	"required": ["@context", "id", "type", "_label"],
 	"additionalProperties": false
