@@ -32,23 +32,31 @@ Dereferencing an entity via the Provenance Activity endpoint would result in a J
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the event's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the event, which MUST be the value `"Event"` or the value `"Activity"` |
 | `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
+| `classified_as`   | array         | Required    | An array of json objects, each of which is a classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the event and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference) to an external identity and description of the current event |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current event, and MUST follow the requirements for an [entity reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current event is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or a [Textual Work](../textual_work/), the content of which focuses on the current event, and MUST follow the requirements for an [entity reference](../../shared/reference/) |
+| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current event |
+| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current event is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or a [Textual Work](../textual_work/), the content of which focuses on the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
-| `part_of` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another event that the current event is a part of. |
+| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another event that the current event is a part of. |
 | `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../timespan/)|
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Place](../place/) where the event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
-| `part` | array | Required | |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
+| `part` | array | Required | The more detailed changes that the activity consists of, described below|
 
+
+#### Required Classification
+
+In order to determine that the activity is a Provenance Activity, rather than a more general Event or Activity, which would follow the [event](../event/) API instead, the Activity MUST have a `classified_as` entry with an `id` of `"http://vocab.getty.edu/aat/300055863"`.
+
+```crom
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Provenance Activity")
+```
 
 
 ### Properties of All Parts
@@ -64,10 +72,10 @@ Each of the activities in the `part` property can have the properties in the tab
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../type/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
 | `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../timespan/)|
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
 
 #### Properties of Part: Acquisition
 
@@ -160,14 +168,14 @@ Provenance Activity instances are typically found as the object of the following
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `part_of`                  |  |  |
+|                 |  |  |
 
 
 ## Example
 
 
 ```crom
-top = model.Activity(ident="auto int-per-segment", label="")
+top = vocab.ProvenanceActivity(ident="auto int-per-segment", label="")
 n = model.Name(content="")
 top.identified_by = n
 
