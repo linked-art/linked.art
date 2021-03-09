@@ -44,10 +44,10 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `part_of` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
 | `format` | string | Optional | The media type of the described digital object available |
 | `conforms_to` | array | Optional | |
-| `digitally_carries` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Digital Object](../digital/), such as a PDF, that digitally carries the text of this work |
-| `digitally_shows` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Physical Object](../object/), such as a book, that physically carries the text of this work |
-| `digitally_available_via` |
-| `access_point` |
+| `digitally_carries` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
+| `digitally_shows` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
+| `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined below |
+| `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the digital object can be retrieved |
 | `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
 | `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below |
 
@@ -67,6 +67,18 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
+
+### Properties of Digital Services
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the digital object's description can be [dereferenced](../../protocol/) |  
+| `type`            | string        | Required    | The class for the digital object, which MUST be the value `"DigitalService"` |
+| `_label`          | string        | Recommended | A human readable label for the digital object, intended for developers |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
 
 
 ### Property Diagram
