@@ -51,7 +51,7 @@ Dereferencing an entity via the Provenance Activity endpoint would result in a J
 
 
 
-### Properties of Parts
+### Properties of All Parts
 
 Each of the activities in the `part` property can have the properties in the table below.  The different classes of activity have their own `type` and other properties, which are defined in the following subsections.
 
@@ -74,7 +74,7 @@ Each of the activities in the `part` property can have the properties in the tab
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
-| `transferred_title_of`   | json object | Required | A json object which is a [reference](../../shared/reference) to the [Object](../object/) for which the ownership is transferred |
+| `transferred_title_of`   | array | Required | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) of which the ownership is transferred |
 | `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred |
 | `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred |
 
@@ -84,42 +84,42 @@ Each of the activities in the `part` property can have the properties in the tab
 | Property Name     | Datatype    | Requirement | Description | 
 |-------------------|-------------|-------------|-------------|
 | `type`            | string      | Required | The class for the part, which MUST be the value `"Payment"` |
-| `paid_amount`     | json object | Optional | A Monetary Amount |
-| `paid_from`       | array       | Optional | |
-| `paid_to`         | array       | Optional | |
+| `paid_amount`     | json object | Optional | A [Monetary Amount](../../shared/money/) structure encoding the amount that was transferred |
+| `paid_from`       | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which provided some part of the monetary amount |
+| `paid_to`         | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which received some part of the monetary amount |
 
 #### Properties of Part: Transfer of Custody
 
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the part, which MUST be the value `"TransferOfCustody"` |
-| `transferred_custody_of` | | | |
-| `transferred_custody_from` | | | |
-| `transferred_custody_to` | | | |
+| Property Name     | Datatype       | Requirement | Description | 
+|-------------------|----------------|-------------|-------------|
+| `type`            | string         | Required    | The class for the part, which MUST be the value `"TransferOfCustody"` |
+| `transferred_custody_of`   | array | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) of which the custody is transferred |
+| `transferred_custody_from` | array | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
+| `transferred_custody_to`   | array | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
 
 #### Properties of Part: Encounter 
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Encounter"` |
-| `encountered` | | | |
+| `encountered`     | array         | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was encountered |
 
 #### Properties of Part: Right Acquisition
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"RightAcquisition"` |
-| `establishes` | | | |
-| `invalidates` | | | |
+| `establishes`     | array         | Required    | An array of json objects, each of which is a `Right` structure, described below |
+| `invalidates`     | array         | Optional    | An array of json objects, each of which is a `Right` structure, described below |
 
 #### Properties of Part: Move
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Move"` |
-| `moved` | | | |
-| `moved_from` | | | |
-| `moved_to` | | | |
+| `moved`           | array         | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to an [Object](../object) that was moved by this activity |
+| `moved_from`      | json object   | Optional    | An [reference](../../shared/reference/) to a [Place](../place/) where all of the objects were moved from |
+| `moved_to`        | json object   | Optional    | An [reference](../../shared/reference/) to a [Place](../place/) where all of the objects where moved to |
 
 
 #### Properties of Part: Promise
@@ -128,6 +128,21 @@ Each of the activities in the `part` property can have the properties in the tab
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Activity"` |
 
+
+### Properties of Rights
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the right  |  
+| `type`            | string        | Required    | The class for the right, which MUST be the value `"Right"` |
+| `_label`          | string        | Recommended | A human readable label for the right, intended for developers |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the right and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the right and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../type/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the right |
+| `dimension`       | array         | Optional    | An array of json objects, each of which is [Dimension](../../shared/dimension/) structure |
+| `possessed_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/) that possessed the right |
+| `applies_to`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an [Object](../object) that the right pertains to |
+| `part`            | array         | Optional    | An array of json objects, each of which is a right, and MUST follow the requirements of this definition of rights |
 
 
 ### Property Diagram
