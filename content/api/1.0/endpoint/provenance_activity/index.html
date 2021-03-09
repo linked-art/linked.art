@@ -26,6 +26,8 @@ Dereferencing an entity via the Provenance Activity endpoint would result in a J
 
 ### Properties of Provenance Activities
 
+The top level Activity has the following properties.
+
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
@@ -79,6 +81,8 @@ Each of the activities in the `part` property can have the properties in the tab
 
 #### Properties of Part: Acquisition
 
+Parts which are Acquisitions have the following additional properties.
+
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
@@ -89,6 +93,8 @@ Each of the activities in the `part` property can have the properties in the tab
 
 #### Properties of Part: Payment
 
+Parts which are Payments have the following additional properties.
+
 | Property Name     | Datatype    | Requirement | Description | 
 |-------------------|-------------|-------------|-------------|
 | `type`            | string      | Required | The class for the part, which MUST be the value `"Payment"` |
@@ -97,6 +103,8 @@ Each of the activities in the `part` property can have the properties in the tab
 | `paid_to`         | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which received some part of the monetary amount |
 
 #### Properties of Part: Transfer of Custody
+
+Parts which are Transfers of Custody have the following additional properties.
 
 | Property Name     | Datatype       | Requirement | Description | 
 |-------------------|----------------|-------------|-------------|
@@ -107,12 +115,16 @@ Each of the activities in the `part` property can have the properties in the tab
 
 #### Properties of Part: Encounter 
 
+Parts which are Encounters have the following additional properties.
+
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Encounter"` |
 | `encountered`     | array         | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was encountered |
 
 #### Properties of Part: Right Acquisition
+
+Parts which are Right Acquisitions have the following additional properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
@@ -121,6 +133,8 @@ Each of the activities in the `part` property can have the properties in the tab
 | `invalidates`     | array         | Optional    | An array of json objects, each of which is a `Right` structure, described below |
 
 #### Properties of Part: Move
+
+Parts which are Moves have the following additional properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
@@ -132,9 +146,12 @@ Each of the activities in the `part` property can have the properties in the tab
 
 #### Properties of Part: Promise
 
+Parts which are Promises have the following additional properties.
+
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Activity"` |
+| `classified_as`   | array         | Required    | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../type/), and one entry in the array MUST have have an `id` with the value "http://vocab.getty.edu/aat/300435599", in order to distinguish this activity as a promise |
 
 
 ### Properties of Rights
@@ -175,10 +192,35 @@ Provenance Activity instances are typically found as the object of the following
 
 
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="")
-n = model.Name(content="")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="St George from Simpson to Adams")
+n = model.Name(content="Purchase of Lot 0055a, Durer's St George and the Dragon")
 top.identified_by = n
+ts = model.TimeSpan(label="1820 Mar 09")
+ts.begin_of_the_begin = "1820-03-09T00:00:00Z"
+ts.end_of_the_end = "1820-03-09T23:59:59Z"
+top.timespan = ts
+top.carried_out_by = model.Group(ident="", label="Edward Foster & Son")
+top.took_place_at = model.Place(ident="", label="London")
+top.caused_by = model.Activity(ident="", label="Auction of Lot 0055")
+top.used_specific_object = model.Set(ident="", label="Set of Objects for Lot 0055")
 
+what = model.HumanMadeObject(ident="", label="St George and the Dragon")
+buyer = model.Person(ident="", label="Adams")
+seller = model.Person(ident="", label="Simpson")
+amnt = model.MonetaryAmount(label="8.8 pounds")
+amnt.value = 8.8
+amnt.currency = vocab.instances['gb pounds']
 
+acq = model.Acquisition()
+top.part = acq
+pay = model.Payment()
+top.part = pay
+
+acq.transferred_title_of = what
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
+pay.paid_amount = amnt
+pay.paid_from = buyer
+pay.paid_to = seller
 
 ```
