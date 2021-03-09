@@ -181,11 +181,7 @@ See the [schema documentation](../../schema_docs/provenance.html) and the [schem
 
 ### Incoming Properties
 
-Provenance Activity instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to groups.
-
-| Property Name              | Source Endpoint | Description |
-|----------------------------|-----------------|-------------|
-|                 |  |  |
+Provenance Activities do not have any incoming references in the current set of APIs, instead they link out to many different entities.
 
 
 ## Example
@@ -199,14 +195,14 @@ ts = model.TimeSpan(label="1820 Mar 09")
 ts.begin_of_the_begin = "1820-03-09T00:00:00Z"
 ts.end_of_the_end = "1820-03-09T23:59:59Z"
 top.timespan = ts
-top.carried_out_by = model.Group(ident="", label="Edward Foster & Son")
-top.took_place_at = model.Place(ident="", label="London")
-top.caused_by = model.Activity(ident="", label="Auction of Lot 0055")
-top.used_specific_object = model.Set(ident="", label="Set of Objects for Lot 0055")
+top.carried_out_by = model.Group(ident="http://vocab.getty.edu/ulan/500451765", label="Edward Foster & Son")
+top.took_place_at = model.Place(ident="http://vocab.getty.edu/tgn/7011781", label="London")
+top.caused_by = model.Activity(ident="http://example.org/auction/Br1908/0055", label="Auction of Lot 0055")
+top.used_specific_object = model.Set(ident="http://example.org/set/Br1908/0055", label="Set of Objects for Lot 0055")
 
-what = model.HumanMadeObject(ident="", label="St George and the Dragon")
-buyer = model.Person(ident="", label="Adams")
-seller = model.Person(ident="", label="Simpson")
+what = model.HumanMadeObject(ident="http://example.museum/object/1", label="St George and the Dragon")
+buyer = model.Person(ident="http://example.museum/person/1", label="Adams")
+seller = model.Person(ident="http://example.museum/person/2", label="Simpson")
 amnt = model.MonetaryAmount(label="8.8 pounds")
 amnt.value = 8.8
 amnt.currency = vocab.instances['gb pounds']
