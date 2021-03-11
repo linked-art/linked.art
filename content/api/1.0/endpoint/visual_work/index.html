@@ -38,16 +38,16 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the visual work and MUST follow the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the visual work and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the visual work and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the visual work and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference) to an external identity and description of the current visual work |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current visual work is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or a [Textual Work](../textual_work/), the content of which focuses on the current visual work, and MUST follow the requirements for an [entity reference](../../shared/reference/) |
+| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current visual work |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current visual work is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or a [Textual Work](../textual_work/), the content of which focuses on the current visual work, and MUST follow the requirements for a [reference](../../shared/reference/) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current visual work to another entity |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as abstract height or width, of the current visual work |
-| `part_of` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another Visual Work that the current visual work is a part of |
-| `digitally_shown_by` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Digital Object](../digital/), such as a JPEG image, that digitally shows this visual work |
-| `shown_by` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Physical Object](../object/), such as a painting, that physically shows this visual work |
-| `about` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
-| `represents` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
+| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Visual Work that the current visual work is a part of |
+| `digitally_shown_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Digital Object](../digital/), such as a JPEG image, that digitally shows this visual work |
+| `shown_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Physical Object](../object/), such as a painting, that physically shows this visual work |
+| `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
+| `represents` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
 | `represents_entity_of_type` | array | Optional | An array of json objects, each of which is a `Type` of another entity that this visual work represents or depicts, but where the individual is not known |
 | `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
 | `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below |
@@ -64,10 +64,10 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../type/) |
 | `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../timespan/)|
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
 
 
 ### Property Diagram

@@ -37,15 +37,15 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference) to an external identity and description of the current digital object |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current digital object is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Set |
+| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current digital object |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current digital object is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current digital object to another entity |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height, width or total number of bytes, of the described digital object |
-| `part_of` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
+| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
 | `format` | string | Optional | The media type of the described digital object available |
 | `conforms_to` | array | Optional | |
-| `digitally_carries` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
-| `digitally_shows` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
+| `digitally_carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
+| `digitally_shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
 | `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined below |
 | `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the digital object can be retrieved |
 | `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
@@ -63,10 +63,10 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../type/) |
 | `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../timespan/)|
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
 
 ### Properties of Digital Services
 
