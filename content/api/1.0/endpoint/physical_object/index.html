@@ -8,8 +8,83 @@ up_label: "Linked Art API 1.0 Endpoints"
 
 ## Introduction
 
-## Model Overview
+
+
 
 ## Property Definitions
 
+Dereferencing an entity via the Physical Object endpoint would result in a JSON-LD document containing a single JSON object with the following properties.
+
+### Properties of Physical Objects
+
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the object's representation can be [dereferenced](../../protocol/) |  
+| `type`            | string        | Required    | The class for the object, which MUST be the value `"HumanMadeObject"` |
+| `_label`          | string        | Recommended | A human readable label for the object, intended for developers |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the object and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the object and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the object and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of json objects, each of which is an [reference](../../shared/reference) to an external identity and description of the current object |
+| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current object is a member of and MUST follow the requirements for an [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or another Textual Work, the content of which focuses on the current text, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current object to another entity |
+| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Physical Object that the current object is a part of. |
+| `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height or width, of the current object |
+| `made_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a material that the object is made_of and MUST follow the requirements for [Material](../../shared/type) |
+| `current_owner` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that currently owns the object |
+| `current_custodian` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that currently has custody of the object|
+| `current_permanent_custodian` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that normally has custody of the object, but might not at the present time |
+| `current_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is currently located |
+| `current_permanent_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is normally located, but might not be at the present time |
+| `carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that this object carries the text of |
+| `shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that this object shows a rendition of |
+| `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for Productions described below | 
+| `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for Destructions described below | 
+| `removed_by` | json object | Optional | A json object representing the removal of the current object from a larger one it was previously part of, which follows the requirements for PartRemovals described below | 
+
+
+### Properties of Productions, Destructions, PartRemovals
+
+| Property Name     | Datatype      | Requirement | Description | 
+|-------------------|---------------|-------------|-------------|
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the production, destruction or part removal (henceforth "event")  |  
+| `type`            | string        | Required    | The class for the event, which MUST be the value `"Production"`, `"Destruction"` or `"PartRemoval"` |
+| `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the event and MUST follow the requirements for [Type](../type/) |
+| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../timespan/)|
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the event |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Place](../place/) where the event occured |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an [Event](../event/) that caused this event to occur |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out this event. **Only usable when the `type` is `"Production"` or `"PartRemoval"` |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../reference/) to an entity that was instrumental in the carrying out of this event |
+| `technique` | array | Optional | |
+| `part` | array | Optional | | 
+| `diminished` | array | Optional | |
+
+### Property Diagram
+
+> ![diagram](object_properties.png){:.diagram_img width="600px"}
+
+### JSON Schema
+
+See the [schema documentation](../../schema_docs/object.html) and the [schema itself](../../schema/object.json)
+
+
+### Incoming Properties
+
+Textual Work instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to groups.
+
+| Property Name              | Source Endpoint | Description |
+|----------------------------|-----------------|-------------|
+| `subject_of`               | All             |  |
+
+
 ## Example
+
+

@@ -18,7 +18,7 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-The Event API is a method of getting access to descriptions of events or activities that are not directly associated with other entities, nor are provenance activities or exhibitions, but are still noteworthy occurences related to artwork.  Examples might include a fire that burnt down a museum, thereby causing the destruction of many works of art, or a project that researched aspects of works of art. The Event API is of average complexity with many familiar properties and patterns of other endpoints, plus the event and activity properties familiar from embedded events.  
+The Event API is a method of getting access to descriptions of periods of time, events or activities that are not directly associated with other entities, nor are provenance activities or exhibitions, but are still noteworthy occurences somehow related to artwork.  Examples might include a fire that burnt down a museum, thereby causing the destruction of many works of art, a project that researched aspects of works of art, or a named period during which objects were created. Although these are different classes, they are so similar in this usage that they are grouped together into a single endpoint from the perspective of the API. The Event API is of average complexity with many familiar properties and patterns of other endpoints, plus the event and activity properties familiar from embedded events.  
 
 ## Property Definitions
 
@@ -30,7 +30,7 @@ Dereferencing an entity via the Event endpoint would result in a JSON-LD documen
 |-------------------|---------------|-------------|-------------|
 | `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the event's representation can be [dereferenced](../../protocol/) |  
-| `type`            | string        | Required    | The class for the event, which MUST be the value `"Event"` or the value `"Activity"` |
+| `type`            | string        | Required    | The class for the event, which MUST be the value `"Period"`, `"Event"` or `"Activity"` |
 | `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
@@ -40,11 +40,11 @@ Dereferencing an entity via the Event endpoint would result in a JSON-LD documen
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current event is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Set |
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or a [Textual Work](../textual_work/), the content of which focuses on the current event, and MUST follow the requirements for an [entity reference](../../shared/reference/) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
-| `part_of` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another event that the current event is a part of. |
+| `part_of` | array | Optional | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another Event that the current event is a part of. |
 | `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../timespan/)|
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Place](../place/) where the event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to another Event that caused this event to occur. **Only usable when the `type` is `"Event"` or `"Activity"` |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion.  **Only usable when the `type` is `"Activity"`** | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity. **Only usable when the `type` is `"Activity"`** |
 | `used_specific_object` | array    | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity. **Only usable when the `type` is `"Activity"`** |
 
@@ -64,7 +64,7 @@ Event instances are typically found as the object of the following properties, o
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `part_of`                  |  |  |
+| `part_of`                  | All             | Any other event or activity can be part_of a broader period, event or activity. This implies that the spatial and temporal constraints of the broader event apply also to the referencing event. |
 
 
 ## Example
