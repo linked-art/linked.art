@@ -103,10 +103,25 @@ Digital Object instances are typically found as the object of the following prop
 
 
 ```crom
-top = model.DigitalObject(ident="auto int-per-segment", label="")
-n = model.Name(content="")
-top.identified_by = n
+top = vocab.DigitalImage(ident="auto int-per-segment", label="Digital Image of Self-Portrait of Van Gogh")
+top.identified_by = model.Name(content="Self-Portrait Dedicated to Paul Gauguin")
+top.identified_by = vocab.LocalNumber(content="47174896")
 
-
-
+top.access_point = model.DigitalObject(ident="https://ids.lib.harvard.edu/ids/iiif/47174896/full/full/0/default.jpg")
+top.digitally_shows = model.VisualItem(ident="", label="Visual Content of Self-Portrait of Van Gogh")
+top.format = "image/jpeg"
+h = vocab.Height(value=2550)
+w = vocab.Width(value=2087)
+h.unit = vocab.instances['pixels']
+w.unit = vocab.instances['pixels']
+top.dimension = h
+top.dimension = w
+svc = model.DigitalService(label="IIIF Service")
+svc.access_point = model.DigitalObject(ident="https://ids.lib.harvard.edu/ids/iiif/47174896")
+svc.conforms_to = model.InformationObject(ident="https://iiif.io/api/image/2/context.json")
+top.digitally_available_via = svc
+cre = model.Creation()
+cre.carried_out_by = model.Group(ident="harvardartmuseums.org", label="Harvard Art Museums")
+top.member_of = model.Collection(ident="auto int-per-segment", label="Images of Self-Portraits of Van Gogh")
+top.part_of = model.DigitalObject(ident="https://iiif.harvardartmuseums.org/manifests/object/299843", label="IIIF Manifest")
 ```
