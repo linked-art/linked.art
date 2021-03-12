@@ -71,10 +71,19 @@ Event instances are typically found as the object of the following properties, o
 
 
 ```crom
-top = model.Activity(ident="auto int-per-segment", label="")
-n = model.Name(content="")
-top.identified_by = n
-
-
-
+top = vocab.AuctionEvent(ident="http://example.org/auction/Br1908", label="Foster Auction of March 1820")
+n = 
+top.identified_by = model.Name(content="Edward Foster Auction of March 1820")
+top.identified_by = vocab.LocalNumber(content="Br1908")
+top.carried_out_by = model.Group(ident="http://vocab.getty.edu/ulan/500451765", label="Edward Foster & Son")
+top.took_place_at = model.Place(ident="http://vocab.getty.edu/tgn/7011781", label="London")
+top.referred_to_by = vocab.Description(content="Besides paintings, this sale included a few lots with musical instruments and watches. The owners were a number of dealers who regularly consigned their wares to this auctioneer, despite the fact that the title page names "A Gentleman" as the owner.")
+top.equivalent = model.Activity(ident="http://example.auction/past/foster/1820/03/1")
+top.subject_of = model.LinguisticObject(ident="http://example.org/catalog/Br1908", label="Sales Catalog of Br-1908")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1820-03-09T00:00:00Z"
+ts.end_of_the_end = "1820-03-09T23:59:59Z"
+ts.identified_by = vocab.DisplayName(content="1820 Mar 09")
+top.timespan = ts
+top.used_specific_object = model.Set(ident="http://example.org/sets/Br1908", label="All Auction Lots of Br1908")
 ```

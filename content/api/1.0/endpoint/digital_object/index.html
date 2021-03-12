@@ -67,6 +67,10 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that was used in the creation or publication |
+| `technique` | array | Optional | An array of json objects, each of which is a technique used in this event and MUST follow the requirements for [Type](../../shared/type) |
+| `part` | array | Optional | An array of json objects, each of which is another instance of this same type for describing different aspects of the creation or publication | 
+
 
 ### Properties of Digital Services
 
@@ -96,8 +100,8 @@ Digital Object instances are typically found as the object of the following prop
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `digitally_carried_by`     |  |  |
-| `digitally_shown_by`       |  |  |
+| `digitally_carried_by`     | Textual Work    |  |
+| `digitally_shown_by`       | Visual Work     |  |
 
 
 ## Example
