@@ -103,7 +103,7 @@ top.identified_by = vocab.AccessionNumber(content="INV. 779")
 top.referred_to_by = vocab.Description(content="This portrait was doubtless started in Florence around 1503. It is thought to be of Lisa Gherardini, wife of a Florentine cloth merchant ...")
 top.equivalent = model.HumanMadeObject(ident="http://wikidata.org/entity/Q12418", label="Mona Lisa")
 top.member_of = model.Set(ident="", label="Most expensive paintings in the world")
-top.member_of = model.Set(ident="", label="Holdings of the Louvre")
+top.member_of = model.Set(ident="http://data.louvre.example/all_holdings", label="Holdings of the Louvre")
 
 h = vocab.Height(value=0.77)
 h.unit = vocab.instances['meters']
