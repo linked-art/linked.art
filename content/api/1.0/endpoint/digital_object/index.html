@@ -43,13 +43,13 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height, width or total number of bytes, of the described digital object |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
 | `format` | string | Optional | The media type of the described digital object available |
-| `conforms_to` | array | Optional | |
+| `conforms_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an external specification that the current digital object conforms to. The `type` value of the reference MUST be `"InformationObject"` |
 | `digitally_carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
 | `digitally_shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
 | `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined below |
 | `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the digital object can be retrieved |
-| `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
-| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below |
+| `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below, for when the digital object was first created | 
+| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below, for when the digital object was made available |
 
 
 ### Properties of Creations, Publication Activities
@@ -79,7 +79,8 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
-
+| `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI at which the service can be interacted with |
+| `conforms_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an external specification that the digital service conforms to. The `type` value of the reference MUST be `"InformationObject"` |
 
 ### Property Diagram
 
