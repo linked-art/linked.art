@@ -30,7 +30,7 @@ Dereferencing an entity via the Physical Object endpoint would result in a JSON-
 | `equivalent`      | array         | Optional    | An array of json objects, each of which is an [reference](../../shared/reference) to an external identity and description of the current object |
 | `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current object is a member of and MUST follow the requirements for an [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or another Textual Work, the content of which focuses on the current text, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current object to another entity |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Physical Object that the current object is a part of. |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height or width, of the current object |
@@ -86,5 +86,46 @@ Textual Work instances are typically found as the object of the following proper
 
 
 ## Example
+
+
+```crom
+top = vocab.Painting(ident="http://data.louvre.example/object/mona_lisa", label="Mona Lisa")
+en = vocab.PrimaryName(value="Mona Lisa")
+en.language = vocab.instances['english']
+it = vocab.PrimaryName(value="La Gioconda")
+it.language = vocab.instances['italian']
+fr = vocab.PrimaryName(value="La Joconde")
+fr.language = vocab.instances['french']
+top.identified_by = en
+top.identified_by = fr
+top.identified_by = it
+top.identified_by = vocab.AccessionNumber(content="INV. 779")
+top.referred_to_by = vocab.Description(content="This portrait was doubtless started in Florence around 1503. It is thought to be of Lisa Gherardini, wife of a Florentine cloth merchant ...")
+top.equivalent = model.HumanMadeObject(ident="http://wikidata.org/entity/Q12418", label="Mona Lisa")
+top.member_of = model.Set(ident="", label="Most expensive paintings in the world")
+top.member_of = model.Set(ident="", label="Holdings of the Louvre")
+
+h = vocab.Height(value=0.77)
+h.unit = vocab.instances['meters']
+w = vocab.Width(value=0.53)
+w.unit = vocab.instances['meters']
+top.dimension = h
+top.dimension = w
+top.made_of = Type(ident="http://vocab.getty.edu/aat/300012363", label="Poplar (wood)")
+top.made_of = Type(ident="http://vocab.getty.edu/aat/", label="Oil Paint")
+top.current_owner = model.Group(ident="http://louvre.fr/", label="The Louvre")
+top.current_location = model.Place(ident="http://galleries.example/louvre/711", "Room 711, Denon Wing, The Louvre, Paris")
+top.shows = model.VisualItem(ident="http://data.louvre.example/visual/mona_lisa", label="Visual Work of the Mona Lisa")
+
+prod = model.Production()
+prod.carried_out_by = model.Person(ident="http://vocab.getty.edu/ulan/", label="Leonardo da Vinci")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1503-01-01T00:00:00Z"
+ts.end_of_the_end = "1506-12-31T23:59:59Z"
+ts.identified_by = vocab.DisplayName(content="1503-1506")
+prod.timespan = ts
+prod.took_place_at = model.Place(ident="http://vocab.getty.edu/tgn/", label="Florence, Italy")
+top.produced_by = prod
+```
 
 
