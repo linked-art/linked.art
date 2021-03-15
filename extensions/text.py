@@ -134,7 +134,7 @@ def fetch_aat_label(what):
 	prefs = aatjs[0]["http://www.w3.org/2004/02/skos/core#prefLabel"]
 	label = ""
 	for p in prefs:
-		if p['@language'] in ['en', 'en-us']:
+		if '@language' in p and p['@language'] in ['en', 'en-us']:
 			label = p['@value']
 			aat_labels[what] = label
 			break
