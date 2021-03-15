@@ -71,12 +71,12 @@ Event instances are typically found as the object of the following properties, o
 
 
 ```crom
-top = vocab.AuctionEvent(ident="http://example.org/auction/Br1908", label="Foster Auction of March 1820")
+top = vocab.AuctionEvent(ident="auto int-per-segment", label="Foster Auction of March 1820")
 top.identified_by = model.Name(content="Edward Foster Auction of March 1820")
 top.identified_by = vocab.LocalNumber(content="Br1908")
 top.carried_out_by = model.Group(ident="http://vocab.getty.edu/ulan/500451765", label="Edward Foster & Son")
 top.took_place_at = model.Place(ident="http://vocab.getty.edu/tgn/7011781", label="London")
-top.referred_to_by = vocab.Description(content="Besides paintings, this sale included a few lots with musical instruments and watches. The owners were a number of dealers who regularly consigned their wares to this auctioneer, despite the fact that the title page names "A Gentleman" as the owner.")
+top.referred_to_by = vocab.Description(content="Besides paintings, this sale included a few lots with musical instruments and watches. The owners were a number of dealers who regularly consigned their wares to this auctioneer, despite the fact that the title page names \"A Gentleman\" as the owner.")
 top.equivalent = model.Activity(ident="http://example.auction/past/foster/1820/03/1")
 top.subject_of = model.LinguisticObject(ident="http://example.org/catalog/Br1908", label="Sales Catalog of Br-1908")
 ts = model.TimeSpan()

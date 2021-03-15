@@ -89,7 +89,7 @@ Textual Work instances are typically found as the object of the following proper
 
 
 ```crom
-top = vocab.Painting(ident="http://data.louvre.example/object/mona_lisa", label="Mona Lisa")
+top = vocab.Painting(ident="auto int-per-segment", label="Mona Lisa")
 en = vocab.PrimaryName(value="Mona Lisa")
 en.language = vocab.instances['english']
 it = vocab.PrimaryName(value="La Gioconda")
@@ -111,10 +111,10 @@ w = vocab.Width(value=0.53)
 w.unit = vocab.instances['meters']
 top.dimension = h
 top.dimension = w
-top.made_of = Type(ident="http://vocab.getty.edu/aat/300012363", label="Poplar (wood)")
-top.made_of = Type(ident="http://vocab.getty.edu/aat/", label="Oil Paint")
+top.made_of = model.Material(ident="http://vocab.getty.edu/aat/300012363", label="Poplar (wood)")
+top.made_of = model.Material(ident="http://vocab.getty.edu/aat/", label="Oil Paint")
 top.current_owner = model.Group(ident="http://louvre.fr/", label="The Louvre")
-top.current_location = model.Place(ident="http://galleries.example/louvre/711", "Room 711, Denon Wing, The Louvre, Paris")
+top.current_location = model.Place(ident="http://galleries.example/louvre/711", label="Room 711, Denon Wing, The Louvre, Paris")
 top.shows = model.VisualItem(ident="http://data.louvre.example/visual/mona_lisa", label="Visual Work of the Mona Lisa")
 
 prod = model.Production()
