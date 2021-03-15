@@ -106,6 +106,31 @@ Digital Object instances are typically found as the object of the following prop
 
 ## Example
 
+The JSON for a Digital Object entry for a digital image of a self-portrait by Van Gogh could be as below.
+
+* It has the Linked Art context document reference in `@context`
+* It self-documents its URI in `id`
+* It has a `type` of "DigitalObject"
+* It has a `_label` with the value "Digital Image of Self-Portrait of Van Gogh" for people reading the JSON
+* It is `classified_as` a "Digital Image", which has an `id` of "aat:300215302"
+* It is `identified_by` ...
+  * ... a `Name`, with the content "Self-Portrait Dedicated to Paul Gauguin"
+  * ... and an `Identifier`, with the content "47174896", which is `classified_as` an Owner-Assigned number
+* It has two `Dimension` entries ...
+  * ... a height ("aat:300055644") of 2550 pixels ("aat:300266190")
+  * ... a width ("aat:300055647") of 2087 pixels ("aat:300266190")
+* It is a `member_of` a Set of Van Gogh self-portraits (possibly both digital and physical)
+* It is available to be retrieved from the URI in `access_point` 
+* It has a media type (or MIME type) of "image/jpeg"
+* It `digitally_shows` the same visual content as the physical painting
+* It is `part_of` another Digital Object, in this case a IIIF Manifest
+* It is `digitally_available_via` a Digital Service which ...
+  * ... `conforms_to` the IIIF Image API
+  * ... is available to be interacted with at the URI in `access_point`
+* It was `created_by` a Creation which ...
+  * ... was `carried_out_by` the Harvard Art Museums
+  * ... `used_specific_object` of the physical painting
+
 
 ```crom
 top = vocab.DigitalImage(ident="auto int-per-segment", label="Digital Image of Self-Portrait of Van Gogh")
@@ -127,6 +152,9 @@ svc.conforms_to = model.InformationObject(ident="https://iiif.io/api/image/2/con
 top.digitally_available_via = svc
 cre = model.Creation()
 cre.carried_out_by = model.Group(ident="harvardartmuseums.org", label="Harvard Art Museums")
+cre.used_specific_object = model.HumanMadeObject(ident="https://harvardartmuseums.org/collections/object/299843", label="Self-Portrait of Van Gogh")
+top.created_by = cre
 top.member_of = model.Set(ident="auto int-per-segment", label="Images of Self-Portraits of Van Gogh")
 top.part_of = model.DigitalObject(ident="https://iiif.harvardartmuseums.org/manifests/object/299843", label="IIIF Manifest")
+
 ```

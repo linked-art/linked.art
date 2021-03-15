@@ -69,6 +69,29 @@ Event instances are typically found as the object of the following properties, o
 
 ## Example
 
+The JSON for an Event describing an auction in 1820 could be as below.
+
+* It has the Linked Art context document reference in `@context`
+* It self-documents its URI in `id`
+* It has a `type` of "Activity" (as it is carried out by some Group, thus it is not an Event or Period)
+* It has a `_label` with the value "Foster Auction of March 1820" for people reading the JSON
+* It is `classified_as` an "Auction Event", which has an `id` of "aat:300054751"
+* It is `identified_by` ...
+  * ... a `Name`, with the content "Edward Foster Auction of March 1820"
+  * ... and an `Identifier`, with the content "Br1908", which is `classified_as` an Owner-Assigned number
+* It is `referred_to_by` a statement which ...
+  * ... has `content` of "Besides paintings, this sale ..."
+  * ... is `classified_as` a Description ("aat:300411780")
+* It has a `timespan` which ...
+  * ... has a display title, with the `content` "1820 Mar 09"
+  * ... has a `begin_of_the_begin` with the value "1820-03-09T00:00:00Z"  (the earliest possible time on March 9th)
+  * ... has an `end_of_the_end` with the value "1820-03-09T23:59:59Z" (the latest possible time on March 9th)
+* It `took_place_at` London
+* It was `carried_out_by` the Group "Edward Foster & Son"
+* It `used_specific_object` of a Set, encompassing all of the auction lots
+* It is `equivalent` to another description of the same event at example.auction
+* It is the `subject_of` the text of a Sales Catalog
+
 
 ```crom
 top = vocab.AuctionEvent(ident="auto int-per-segment", label="Foster Auction of March 1820")
