@@ -95,12 +95,34 @@ Textual Work instances are typically found as the object of the following proper
 
 ## Example
 
+The JSON for a Textual Work entry for a text of a book about Gainsborough's works could be as below.
+
+* It has the Linked Art context document reference in `@context`
+* It self-documents its URI in `id`
+* It has a `type` of "LinguisticObject"
+* It has a `_label` with the value "Gainsborough by Hayes" for people reading the JSON
+* It is `classified_as` a "Monograph", which has an `id` of "aat:300060417"
+* It is `identified_by` ...
+  * ... a `Name`, with the content "Gainsborough: Paintings and Drawings"
+  * ... an `Identifier` with the content "0714816396", which is `classified_as` an ISBN ("aat:300417443")
+* It is `referred_to_by` a statement which ...
+  * ... has `content` of "A thorough analysis of the artist's life and work"
+  * ... is `classified_as` an Abstract ("aat:")
+* It has a `language` of English ("aat:300388277")
+* It is `about` Gainsborough, a Person with `id` "ulan:500115200"
+* It was `created_by` a Creation which ...
+  * ... was `carried_out_by` John Hayes, a Person
+* It was `used_for` an Activity ...
+  * ... which is `classified_as` Publishing ("aat:300054686")
+  * ... `took_place_at` New York
+  * ... and was `carried_out_by` Phaidon, a Group
+
 
 ```crom
 top = vocab.MonographText(ident="auto int-per-segment", label="Gainsborough by Hayes")
 top.identified_by = vocab.PrimaryName(content="Gainsborough: Paintings and Drawings")
 top.identified_by = vocab.IsbnIdentifier(content="0714816396")
-top.referred_to_by = vocab.PhysicalStatement(content="232 p. : ill. (some col.) ; 29 cm.")
+top.referred_to_by = vocab.Abstract(content="A thorough analysis of the artist's life and work")
 top.language = vocab.instances['english']
 top.about = model.Person(ident="http://vocab.getty.edu/ulan/500115200", label="Gainsborough, Thomas")
 pub = vocab.Publishing()

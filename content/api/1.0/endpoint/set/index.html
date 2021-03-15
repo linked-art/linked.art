@@ -80,10 +80,24 @@ Set instances are typically found as the object of the following properties, oth
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
 | `member_of`                | All             | Entities other than People or Groups can be members of sets. (People and Groups are members of Groups instead) |
-| `used_specific_object`     | Event           | Events can use sets of things, for example the set of objects in an exhibition or auction lot |
+| `used_specific_object`     | Event           | [Events](../event/) can use sets of things, for example the set of objects in an exhibition or auction lot |
 
 
 ## Example
+
+The JSON for a Set entry for the Met's Collection could be as below.
+
+* It has the Linked Art context document reference in `@context`
+* It self-documents its URI in `id`
+* It has a `type` of "Set"
+* It has a `_label` with the value "Collection of the Met" for people reading the JSON
+* It is `classified_as` a "Collection", which has an `id` of "aat:300025976"
+* It is `identified_by` a `Name`, with the content "Art Collection of the Metropolitan Museum of Art"
+* It is `referred_to_by` a statement which ...
+  * ... has `content` of "Over 2 million works ..."
+  * ... is `classified_as` a Description ("aat:300411780")
+* It was `created_by` a Creation which ...
+  * ... has a `timespan` between "1870-04-13T00:00:00Z" and "1870-04-13T23:59:59Z"
 
 
 ```crom
