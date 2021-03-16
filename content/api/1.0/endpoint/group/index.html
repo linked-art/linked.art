@@ -105,25 +105,24 @@ The JSON for a Group entry for the Camden Town Group could be as below.
 * It has a `type` of "Group"
 * It has a `_label` with the value "Camden Town Group" for people reading the JSON
 * It is `classified_as` ...
-  * ... a "Society", which has an `id` of "aat:300026009"
-  * ... "British", which as an `id` of "aat:300111159" and a meta-type of "Nationality", which has an `id` of "aat:300379842"
+    * ... a "Society", which has an `id` of "aat:300026009"
+    * ... "British", which as an `id` of "aat:300111159" and a meta-type of "Nationality", which has an `id` of "aat:300379842"
 * It is `identified_by` a `Name`, with the content "Camden Town Group", and `language` of English ("aat:300388277")
 * It is `referred_to_by` a statement which ...
-  * ... has `content` of "A group of British painters formed in 1911 ..."
-  * ... is `classified_as` a Biography ("aat:300435422")
+    * ... has `content` of "A group of British painters formed in 1911 ..."
+    * ... is `classified_as` a Biography ("aat:300435422")
 * It `carried_out` its professional activities ...
-  * ... in a `timespan` between "1911-01-01" and "1913-12-31"
+    * ... in a `timespan` between "1911-01-01" and "1913-12-31"
 * It is `attributed_by` an "AttributeAssignment" relationship
-  * ... to the London Group, with `id` "ulan:500117319"
+    * ... to the London Group, with `id` "ulan:500117319"
 * It has a `residence` of London
 * It is `equivalent` to the ULAN entry `"ulan:500117318"
 * It was `formed_by` a Formation which ...
-  * ... `took_place_at` London
-  * ... in a `timespan` between "1911-01-01" and "1911-12-31"
+    * ... `took_place_at` London
+    * ... in a `timespan` between "1911-01-01" and "1911-12-31"
 * It was `dissolved_by` a Dissolution which ...
-  * ... `took_place_at` London again
-  * ... in a `timespan` between "1913-01-01" and "1913-12-31"  
-
+    * ... `took_place_at` London again
+    * ... in a `timespan` between "1913-01-01" and "1913-12-31"  
 
 ```crom
 top = model.Group(ident="auto int-per-segment", label="Camden Town Group")

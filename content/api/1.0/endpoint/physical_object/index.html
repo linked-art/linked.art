@@ -101,31 +101,30 @@ The JSON for a Physical Object entry for the Mona Lisa could be as below.
 * It has a `type` of "HumanMadeObject"
 * It has a `_label` with the value "Mona Lisa" for people reading the JSON
 * It is `classified_as` ...
-  * ... a "Painting", which has an `id` of "aat:300033618", which is in turn classified as a "Type of Work" ("aat:300435443")
-  * ... a "Work of Art, which as an `id` of "aat:300111159"
+    * ... a "Painting", which has an `id` of "aat:300033618", which is in turn classified as a "Type of Work" ("aat:300435443")
+    * ... a "Work of Art, which as an `id` of "aat:300111159"
 * It is `identified_by` ...
-  * ... a `Name`, with the content "Mona Lisa", `language` of English ("aat:300388277"), and `classified_as` a Primary Name (for English)
-  * ... a `Name`, with the content "La Joconde", and `language` of French ("aat:300388306"), and `classified_as` a Primary Name (for French)
-  * ... a `Name`, with the content "La Gioconda", and `language` of Italian ("aat:300388474"), and again `classified_as` a Primary Name (for Italian)
-  * ... an `Identifier`, with the content "INV. 779", and `classified_as` an Accession Number ("aat:300312355") 
+    * ... a `Name`, with the content "Mona Lisa", `language` of English ("aat:300388277"), and `classified_as` a Primary Name (for English)
+    * ... a `Name`, with the content "La Joconde", and `language` of French ("aat:300388306"), and `classified_as` a Primary Name (for French)
+    * ... a `Name`, with the content "La Gioconda", and `language` of Italian ("aat:300388474"), and again `classified_as` a Primary Name (for Italian)
+    * ... an `Identifier`, with the content "INV. 779", and `classified_as` an Accession Number ("aat:300312355") 
 * It is `referred_to_by` a statement which ...
-  * ... has `content` of "This portrait was doubtless started in Florence around 1503 ..."
-  * ... is `classified_as` a Description ("aat:300411780")
+    * ... has `content` of "This portrait was doubtless started in Florence around 1503 ..."
+    * ... is `classified_as` a Description ("aat:300411780")
 * It has two `dimension` entries ...
-  * ... a Height ("aat:300055644") of 0.77 meters ("aat:300379099")
-  * ... a Width ("aat:300055647") of 0.53 meters ("aat:300379099")
+    * ... a Height ("aat:300055644") of 0.77 meters ("aat:300379099")
+    * ... a Width ("aat:300055647") of 0.53 meters ("aat:300379099")
 * It is `made_of` two Materials ...
-  * ... Poplar ("aat:300012363")
-  * ... and Oil Paint ("aat:300015050")
+    * ... Poplar ("aat:300012363")
+    * ... and Oil Paint ("aat:300015050")
 * It is `equivalent` to the Wikidata entity "Q12418"
 * It has a `current_owner` of The Louvre museum (a Group)
 * It has a `current_location` of the gallery (a Place) in the museum (which would be another Place, not the same entity as the Group)
 * It `shows` the very famous visual content
 * It was `produced_by` a Production which ...
-  * ... was `carried_out_by` Leonardo da Vinci
-  * ... `took_place_at` Florence, Italy
-  * ... occured in a `timespan` between "1503-01-01" and "1506-12-31"
-
+    * ... was `carried_out_by` Leonardo da Vinci
+    * ... `took_place_at` Florence, Italy
+    * ... occured in a `timespan` between "1503-01-01" and "1506-12-31"
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Mona Lisa", art=1)
