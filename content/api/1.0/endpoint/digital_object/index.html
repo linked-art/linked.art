@@ -42,7 +42,7 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current digital object to another entity |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height, width or total number of bytes, of the described digital object |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
-| `format` | string | Optional | The media type of the described digital object available |
+| `format` | string | Optional | The media type of the described digital object, for example "image/jpeg" |
 | `conforms_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an external specification that the current digital object conforms to. The `type` value of the reference MUST be `"InformationObject"` |
 | `digitally_carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
 | `digitally_shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
