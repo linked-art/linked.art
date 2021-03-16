@@ -79,12 +79,18 @@ See the [schema documentation](../../schema_docs/object.html) and the [schema it
 
 ### Incoming Properties
 
-Textual Work instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to groups.
+Physical Object instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to physical objects.
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `subject_of`               | All             |  |
-
+| `used_specific_object`     | All             | Various activities can be carried out using a specific physical object as a instrument, tool or other integral component such as a negative in the printing of a photograph |
+| `influenced_by`            | All             | Various activities are influenced by a physical object such as the inspiration for a copy |
+| `transferred_title_of`     | Provenance Activity | The title of objects can be transferred in provenance activities |
+| `transferred_custody_of`   | Provenance Activity | The custody of objects can also be transferred |
+| `moved`                    | Provenance Activity | And the objects can be moved between locations |
+| `applies_to`               | Provenance Activity | Rights can apply to objects |
+| `carried_by`               | Textual Work        | Textual works are carried by objects |
+| `shown_by`                 | Visual Work         | And Visual works are shown by objects |
 
 ## Example
 

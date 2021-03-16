@@ -60,11 +60,11 @@ See the [schema documentation](../../schema_docs/event.html) and the [schema its
 
 ### Incoming Properties
 
-Event instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to groups.
+Event instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to events.
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `part_of`                  | All             | Any other event or activity can be part_of a broader period, event or activity. This implies that the spatial and temporal constraints of the broader event apply also to the referencing event. |
+| `part_of`                  | All             | Any other event or activity in any of the end points can be `part_of` a broader period, event or activity. This implies that the spatial and temporal constraints of the broader event apply also to the referencing event. |
 
 
 ## Example
