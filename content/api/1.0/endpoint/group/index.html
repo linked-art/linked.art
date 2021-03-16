@@ -81,19 +81,19 @@ Group instances are typically found as the object of the following properties, o
 
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
-| `member_of`                | Person, Group   | People that are members of the current Group are recorded in the Person record |
+| `member_of`                | [Person](../person/), [Group](../group/)   | People that are members of the current Group are recorded in the Person record |
 | `carried_out_by`           | All             | An activity that the Group carried out |
 | `current_owner`            | [Object](../physical_object/) | An object owned by the Group |
 | `current_custodian`        | [Object](../physical_object/) | An object in the custody of the Group |
 | `current_permanent_custodian` | [Object](../physical_object/) | An object that is normally in the custody of the Group |
-| `represents`               | Visual Work     | Image content which represents the Group (the inverse of `representation`) |
-| `about`                    | Textual Work    | Textual content that is about the Group |
-| `transferred_custody_to`   | Provenance      | The activity of transferring custody of an object to the Group |
-| `transferred_custody_from` | Provenance      | The activity of transferring custody of an object away from the Group |
-| `transferred_title_to`     | Provenance      | The activity of transferring ownership of an object to the Group |
-| `transferred_title_from`   | Provenance      | The activity of transferring ownership of an object away from the Group |
-| `paid_to`                  | Provenance      | The activity of paying money to the Group from someone else |
-| `paid_from`                | Provenance      | The activity of paying money from the Group to someone else |
+| `represents`               | [Visual Work](../visual_work/)     | Image content which represents the Group (the inverse of `representation`) |
+| `about`                    | [Textual Work](../textual_work/)    | Textual content that is about the Group |
+| `transferred_custody_to`   | [Provenance](../provenance_activity/)     | The activity of transferring custody of an object to the Group |
+| `transferred_custody_from` | [Provenance](../provenance_activity/)     | The activity of transferring custody of an object away from the Group |
+| `transferred_title_to`     | [Provenance](../provenance_activity/)     | The activity of transferring ownership of an object to the Group |
+| `transferred_title_from`   | [Provenance](../provenance_activity/)     | The activity of transferring ownership of an object away from the Group |
+| `paid_to`                  | [Provenance](../provenance_activity/)     | The activity of paying money to the Group from someone else |
+| `paid_from`                | [Provenance](../provenance_activity/)    | The activity of paying money from the Group to someone else |
 
 
 ## Example
