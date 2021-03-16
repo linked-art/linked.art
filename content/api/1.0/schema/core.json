@@ -81,7 +81,7 @@
             "description": "A reference to one or more `VisualItem` entities which depict this entity",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/VisualItem"
+                "$ref": "#/definitions/VisualItemRef"
             }
         },
         "member_ofSetProp": {
@@ -279,6 +279,12 @@
 			"items": {"$ref": "#/definitions/DigitalObjectRef"}
 		},
         "attributed_byProp": {
+            "title": "crm:P140i_was_attributed_by",
+            "description": "One or more AttributeAssignments that relate some other entity to this one",
+            "type": "array", 
+            "items": {"$ref": "#/definitions/AttributeAssignment"}
+        },
+        "attributed_byRelProp": {
             "title": "crm:P140i_was_attributed_by",
             "description": "One or more AttributeAssignments that relate some other entity to this one",
             "type": "array", 
@@ -856,8 +862,13 @@
                 },
                 "assigned": {
                     "title": "*",
-                    "description": "Attribute Assignments can assign any entity or structure",
-                    "type": "object"
+                    "description": "Attribute Assignments can assign any entity, structure or value"
+                },
+                "assigned_property": {
+                    "title": "crm:P177_assigned_property_type",
+                    "description": "The relationship from the attributed entity to the assigned entity, given as a string which resolves to a relationship in the context definition",
+                    "type": "string"
+
                 }
             },
             "required": [
@@ -865,9 +876,9 @@
             ],
             "additionalProperties": false
         },
-        "VisualItem": {
-            "title": "crm:E36_Visual_Item",
-            "description": "The visual form of an entity",            
+        "RelationshipAssignment": {
+            "title": "crm:E13_Attribute_Assignment",
+            "description": "An activity which relates two entities together, optionally with a specific relationship",
             "type": "object",
             "properties": {
                 "type": {
@@ -879,7 +890,7 @@
                         {
                             "title": "Specific",
                             "type": "string",
-                            "const": "VisualItem"
+                            "const": "AttributeAssignment"
                         }
                     ]
                 },
@@ -894,9 +905,34 @@
                 },
                 "referred_to_by": {
                     "$ref": "#/definitions/referred_to_byProp"
+                },
+                "timespan": {
+                    "$ref": "#/definitions/timespanProp"
+                },
+                "carried_out_by": {
+                    "$ref": "#/definitions/carried_out_byProp"
+                },
+                "assigned": {
+                    "title": "*",
+                    "description": "Attribute Assignments can assign any entity or structure",
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/AnyRef"}
+                },
+                "assigned_property": {
+                    "title": "crm:P177_assigned_property_type",
+                    "description": "The relationship from the attributed entity to the assigned entity, given as a string which resolves to a relationship in the context definition",
+                    "type": "string"
                 }
-            }
+            },
+            "required": [
+                "type",
+                "assigned"
+            ],
+            "additionalProperties": false
         },
+
+
+
         "DigitalService": {
             "title": "la:DigitalService",
             "type": "object",
@@ -996,7 +1032,7 @@
                 "representation": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/VisualItem"
+                        "$ref": "#/definitions/VisualItemRef"
                     }
                 }
             },

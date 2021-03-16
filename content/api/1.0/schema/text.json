@@ -5,7 +5,6 @@
 	"description": "_crm:E33\\_Linguistic\\_Object_\nTextual content expressed in one or more human languages, which might or might not be written down on any physical carrier.\nSee: [API](https://linked.art/api/1.0/endpoint/textual_work/) | [Model](https://linked.art/model/document/)",
 	"type": "object",
 	"properties": {
-
 		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
 		"id": {"$ref": "core.json#/definitions/idProp"},				
 		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
@@ -19,11 +18,12 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 
-		"part_of": {"$ref": "core.json#/definitions/LinguisticObjectRef"},
+		"part_of": {"title": "crm:P106i_forms_part_of", "description": "Reference to another Linguistic Object of which this is part", "$ref": "core.json#/definitions/LinguisticObjectRef"},
         "content": {"$ref": "core.json#/definitions/contentProp"},
+        "format": {"$ref": "core.json#/definitions/formatProp"},
 		"language": {"$ref": "core.json#/definitions/languageProp"},
 
 		"digitally_carried_by": {"title": "la:digitally_carried_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/DigitalObjectRef"}},
@@ -53,7 +53,7 @@
 				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
-				"part_of": {"$ref": "core.json#/definitions/EventRefOrActivityRef"}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this creation is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 			}
 		}
 	},

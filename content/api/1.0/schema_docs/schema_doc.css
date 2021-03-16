@@ -1,8 +1,13 @@
+
+html {
+  font-size: 100%; }
+
 body {
   font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
   color: #333;
   font-weight: 300;
   padding: 40px;
+  font-size: 16px;
 }
 
 .btn.btn-link {
@@ -102,6 +107,11 @@ body {
 
 .examples pre {
     margin-bottom: 0;
+}
+
+.jumbotron {
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .highlight.jumbotron {

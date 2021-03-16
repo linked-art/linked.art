@@ -37,13 +37,13 @@ Dereferencing an entity via the Place endpoint would result in a JSON-LD documen
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the Place and MUST follow the requirements for [Type](../../shared/type/) |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the Place and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Place and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Place and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is an [entity reference](../../shared/reference) to an external identity and description of the current Place |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current Place, and MUST follow the requirements for an [entity reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a reference to a [Set](../set/) that the current Place is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to either a [Digital Object](../digital_object/) or a [Textual Work](../textual_work/), the content of which focuses on the current Place, and MUST follow the requirements for an [entity reference](../../shared/reference) |
+| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current Place |
+| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current Place, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of json objects, each of which is a reference to a [Set](../set/) that the current Place is a member of and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Place, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Place to another entity |
-| `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
-| `approximated_by` | array         | Optional    | An array of json objects, each of which is an approximation of the current Place and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Place |
+| `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for a [reference](../../shared/reference/) to a Place |
+| `approximated_by` | array         | Optional    | An array of json objects, each of which is an approximation of the current Place and MUST follow the requirements for a [reference](../../shared/reference/) to a Place |
 | `defined_by`      | string        | Optional    | A string containing the [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representation of the geometry of the Place |
 
 
@@ -53,7 +53,7 @@ Dereferencing an entity via the Place endpoint would result in a JSON-LD documen
 
 ### JSON Schema
 
-See the [schema documentation](../../schema/place.html) and the [schema itself](../../schema/place.json)
+See the [schema documentation](../../schema_docs/place.html) and the [schema itself](../../schema/place.json)
 
 
 ### Incoming Properties
@@ -62,12 +62,13 @@ Place instances are typically found as the object of the following properties, o
 
 | Property Name      | Source Endpoint | Description |
 |--------------------|-----------------|-------------|
-| `current_location` | [Physical Object](../physical_object/) | The current location of an object is managed by the object |
-| `current_permanent_location` | [Physical Object](../physical_object/) | The normal location of the object is also managed by the object |
-| `moved_from`       | [Provenance Activity](../provenance_activity/) | In Provenance Activities, objects can be moved in a `Move` activity from one place ...| 
-| `moved_to`         | [Provenance Activity](../provenance_activity/) | ... to another place |
-| `residence`        | [Person](../person/), [Group](../group/) | People and Groups have Places at which they are or have been resident |
 | `took_place_at`    | All | All Events and Activities can take place at a Place, which appear in most of the endpoints such as the location of the birth of a person, or the location of the assignment of an identifier  |
+| `current_location` | [Object](../physical_object/) | The current location of an object is recorded in the object API |
+| `current_permanent_location` | [Physical Object](../physical_object/) | The normal location of the object is also recorded in the object API |
+| `moved_from`       | [Provenance](../provenance_activity/) | In Provenance Activities, objects can be moved in a `Move` activity from one place ...| 
+| `moved_to`         | [Provenance](../provenance_activity/) | ... to another place |
+| `residence`        | [Person](../person/), [Group](../group/) | People and Groups have Places at which they are, or have been, resident |
+
 
 ## Example
 

@@ -18,7 +18,7 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 
 		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"}
@@ -43,7 +43,7 @@
 				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
-				"part_of": {"$ref": "core.json#/definitions/EventRefOrActivityRef"}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 			}
 		}
 	},

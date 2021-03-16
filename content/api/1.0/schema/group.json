@@ -18,7 +18,7 @@
 		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofGroupProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 
 		"carried_out": {"$ref": "core.json#/definitions/carried_outProp"},
 		"contact_point": {"$ref": "core.json#/definitions/contact_pointProp"},
@@ -57,7 +57,7 @@
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
 
-				"part_of": {"$ref": "core.json#/definitions/EventRefOrActivityRef"}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this formation is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 			}
 		},
 		"Dissolution": {
@@ -75,7 +75,7 @@
 				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
 				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
-				"part_of": {"$ref": "core.json#/definitions/EventRefOrActivityRef"}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this dissolution is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 			}
 		}
 	},

@@ -40,14 +40,14 @@ There are too many incoming properties to try to list them all, as it amounts to
 
 ## Example
 
-A human-made object ...
+A Painting, which has several references to other entities:
 
-* ... is `classified_as` a reference to a type, which is in turn `classified_as` a meta-type
-* ... is `referred_to_by` the textual content of a referenced article
-* ... is a `member_of` a referenced museum collection set
-* ... `shows` a particular referenced visual work
-* ... has a `current_owner` of a particular referenced person
-* ... and has a `current_location` of a referenced gallery.
+* It is `classified_as` a reference to a type, which is in turn `classified_as` a meta-type
+* It is `referred_to_by` the textual content of a referenced article
+* It is a `member_of` a referenced museum collection set
+* It `shows` a particular referenced visual work
+* It has a `current_owner` of a particular referenced person
+* It has a `current_location` of a referenced gallery
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Example Painting")

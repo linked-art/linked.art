@@ -15,19 +15,18 @@
 		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
 		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
 			{"title": "Specific", "description": "List of equivalent `VisualItem` entities", "type": "array", "items": {"$ref": "core.json#/definitions/VisualItemRef"}}]},
-		"representation": {"$ref": "core.json#/definitions/representationProp"},
 		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
-		"attributed_by": {"$ref": "core.json#/definitions/attributed_byProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
 
-		"part_of": {"$ref": "core.json#/definitions/VisualItemRef"},
-
+		"part_of": {"title": "crm:P106i_forms_part_of", "description": "Another Visual Item which this Visual Item is part of", "$ref": "core.json#/definitions/VisualItemRef"},
 		"digitally_shown_by": {"title": "la:digitally_carried_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/DigitalObjectRef"}},
 		"shown_by": {"title": "crm:P128i_is_carried_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}},
 		"about": {"title": "crm:P129_is_about", "description": "The main topic(s) of the content", "type": "array", "items": {"$ref": "core.json#/definitions/AnyRef"}},
 		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"},
 		"represents": {"title": "crm:P138_represents", "description": "An entity which is represented in this image content", "type": "array", "items": {"$ref": "core.json#/definitions/AnyRef"}},
+		"represents_instance_of_type": {"title": "la:represents_instance_of_type", "description": "A Type of an entity, which is represented in this image content", "type": "array", "items": {"$ref": "core.json#/definitions/Concept"}},
 		"used_for": {"title": "crm:P16i_was_used_for", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/Activity"}}
 
 	},
@@ -50,7 +49,7 @@
 				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
-				"part_of": {"$ref": "core.json#/definitions/EventRefOrActivityRef"}
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this creation is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
 			}
 		}
 	},
