@@ -200,6 +200,19 @@ In order to model this, instead of a `Production`, the object is `removed_by` a 
 
 __Example:__
 
+A conservator removes a paint sample from a painting.
+
+```crom
+top = model.HumanMadeObject(ident="auto int-per-segment",label="Paint sample")
+rm = model.PartRemoval()
+rm.carried_out_by = model.Person(label="Conservator")
+whole = vocab.Painting(label="Painting")
+rm.diminished = whole
+top.removed_by = rm
+```
+
+__Example:__
+
 A seller removes a page of a manuscript for individual sale.
 
 ```crom
@@ -210,7 +223,6 @@ whole = vocab.Manuscript(label="Manuscript")
 rm.diminished = whole
 top.removed_by = rm
 ```
-
 
 ## Destruction
 
