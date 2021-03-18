@@ -203,7 +203,7 @@ __Example:__
 Sampling in conservation
 
 ```crom
-top = vocab.Sample(ident="auto int-per-segment",label="Paint sample")
+top = model.HumanMadeObject(ident="auto int-per-segment",label="Paint sample")
 rm = model.PartRemoval()
 rm.carried_out_by = model.Person(label="Conservator")
 whole = vocab.Painting(label="Painting")
