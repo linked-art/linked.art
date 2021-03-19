@@ -165,6 +165,21 @@ mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, wi
 top.referred_to_by = mats
 ```
 
+## Environmental conditions
+
+Depending on their material, objects need to be kept in appropriate environmental conditions so that they do not deteriorate. Such conditions are often recommendations by conservators and collection care experts and can be documented using a `LinguisticObject` classified as being about the environmental conditions of the object via _aat:300229535_.
+
+__Example:__
+
+A painting with a description of the recommended environmental conditions.
+
+```crom
+top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
+env = vocab.EnvironmentStatement()
+env.content = "Light level: 150 ± 50 lux; Relative humidity: 55 ± 5%; Temperature 21 ±1 °C."
+top.referred_to_by = env
+```
+
 ## Parts
 
 As described in the [baseline patterns](/model/base/), one of the main modeling paradigms used is to separate parts of resources from the whole. Physical objects are particularly amenable to this, and allows reuse of the rest of the model as needed.  The parts do not need to be physically separable without destroying the object, but do need to be objectively definable in terms of the matter that makes it up.  For example, the arm of a sculpture could have dimensions and materials, but while an arch-shaped space in a rock formation might have dimensions, it could not be removed, nor is it made of anything, and thus it is not a part.
