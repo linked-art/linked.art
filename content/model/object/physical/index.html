@@ -174,17 +174,12 @@ mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, wi
 top.referred_to_by = mats
 ```
 
-### Hazardous Materials Statement 
-
-Apart from flagging hazardous material as shown under [Materials](#materials) a separate statement can be made using `LinguisticObject` classified as being about the hazardous materials of the object via _aat:300138222_.
-
 __Example:__
 
-A multi-media painting, with a description of the materials in human-readable text only.
+A photographic negative made of flammable nitrocellulose.
 
 ```crom
 top = vocab.Negative(ident="auto int-per-segment", label="Photographic Negative", art=1)
-mats = vocab.HazardousStatement()
 mats.content = "Extremely flammable nitrocellulose."
 top.referred_to_by = mats
 ```
