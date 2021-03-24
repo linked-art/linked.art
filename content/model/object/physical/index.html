@@ -137,7 +137,7 @@ top.classified_as = instances['oval']
 
 ## Materials
 
-Objects are created using different materials, such as canvas or marble.  These are recorded using the `made_of` property on the object directly. The materials are the type of material, rather than the specific bits of matter and therefore refer to entries in external vocabularies.  When possible, it is good to use this model, and combined with the parts model described in the next section, allows for a comprehensive set of information about which parts are which sizes, shapes, colors, and made of which materials.
+Objects are created using different materials, such as canvas or marble.  These are recorded using the `made_of` property on the object directly. The materials are the type of material, rather than the specific bits of matter and therefore refer to entries in external vocabularies.  When possible, it is good to use this model, and combined with the parts model described in the next section, allows for a comprehensive set of information about which parts are which sizes, shapes, colors, and made of which materials.  A special example is noted below for flagging objects made of hazardous material.
 
 Note that the type-of-type pattern is not needed for materials, like it is for shape, as they have their own `Material` class that is used to distinguish them.
 
@@ -148,6 +148,15 @@ A statue made of marble.
 ```crom
 top = vocab.Sculpture(ident="auto int-per-segment", label="Marble Sculpture", art=1)
 top.made_of = instances['marble']
+```
+
+__Example:__
+
+A negative made of nitrocellulose is flagged as made of a hazardous material.
+
+```crom
+top = vocab.Negative(ident="auto int-per-segment", label="Photographic Negative", art=1)
+top.made_of = instances['hazardous']
 ```
 
 ### Materials Statement 
@@ -165,6 +174,16 @@ mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, wi
 top.referred_to_by = mats
 ```
 
+__Example:__
+
+A photographic negative made of flammable nitrocellulose.
+
+```crom
+top = vocab.Negative(ident="auto int-per-segment", label="Photographic Negative", art=1)
+mats.content = "Extremely flammable nitrocellulose."
+top.referred_to_by = mats
+```
+
 ## Environmental conditions
 
 Depending on their material, objects need to be kept in appropriate environmental conditions so that they do not deteriorate. Such conditions are often recommendations by conservators and collection care experts and can be documented using a `LinguisticObject` classified as being about the environmental conditions of the object via _aat:300229535_.
@@ -176,7 +195,7 @@ A painting with a description of the recommended environmental conditions.
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
 env = vocab.EnvironmentStatement()
-env.content = "Light level: 150 &#177;50 lux; Relative humidity: 55 &#177;5%; Temperature 21 &#177;1 &deg;C."
+env.content = u"Light level: 150 ± 50 lux; Relative humidity: 55 ± 5%; Temperature 21 ±1 °C."
 top.referred_to_by = env
 ```
 
