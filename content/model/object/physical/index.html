@@ -180,6 +180,7 @@ A photographic negative made of flammable nitrocellulose.
 
 ```crom
 top = vocab.Negative(ident="auto int-per-segment", label="Photographic Negative", art=1)
+mats = vocab.MaterialStatement()
 mats.content = "Extremely flammable nitrocellulose."
 top.referred_to_by = mats
 ```
