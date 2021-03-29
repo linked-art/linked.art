@@ -57,13 +57,20 @@ ts.end_of_the_end = "2002-04-26T00:00:00Z"
 top.timespan = ts
 actor = model.Person(label="Conservator")
 top.carried_out_by = actor
-top.has_note = "Regular condition check"
+
+# Should this be a Type ?
+top.referred_to_by = vocab.Description(content="Regular condition check")
+
+# Should this be Description, or assigned?
 conds = vocab.ConditionStatement()
 conds.content = "Fine cracks throughout the object (crizzling)"
 top.referred_to_by = conds
 doc = vocab.ConditionReport(label="Condition Assessment Report")
 top.documented_in = doc
 top.assigned = vocab.instances['crizzling']
+
+# Should there be top.assigned_property_type "some-property-here?" ?
+
 obj = model.HumanMadeObject(label="Glass Vessel")
 top.assigned_to = obj
 
@@ -85,7 +92,8 @@ ts.end_of_the_end = "2002-04-26T00:00:00Z"
 top.timespan = ts
 actor = model.Person(label="Conservator")
 top.carried_out_by = actor
-top.has_note = "Planned conservation work in response to earlier survey"
+# See previous example's comments
+top.referred_to_by = vocab.Description(content="Planned conservation work in response to earlier survey")
 cons = vocab.ConservationStatement()
 cons.content = "Board consolidation and re-attachment"
 top.referred_to_by = cons
