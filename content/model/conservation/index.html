@@ -59,6 +59,7 @@ actor = model.Person(label="Conservator")
 top.carried_out_by = actor
 
 # Should this be a Type ?
+# Replaced has_note, which is by and large, terrible
 top.referred_to_by = vocab.Description(content="Regular condition check")
 
 # Should this be Description, or assigned?
@@ -66,7 +67,8 @@ conds = vocab.ConditionStatement()
 conds.content = "Fine cracks throughout the object (crizzling)"
 top.referred_to_by = conds
 doc = vocab.ConditionReport(label="Condition Assessment Report")
-top.documented_in = doc
+# Reduced documented_in --> subject_of
+top.subject_of = doc
 top.assigned = vocab.instances['crizzling']
 
 # Should there be top.assigned_property_type "some-property-here?" ?
@@ -98,7 +100,7 @@ cons = vocab.ConservationStatement()
 cons.content = "Board consolidation and re-attachment"
 top.referred_to_by = cons
 doc = vocab.ConservationReport(label="Conservation Report")
-top.documented_in = doc
+top.subject_of = doc
 top.employed = vocab.instances['thread']
 obj = model.HumanMadeObject(label="Manuscript")
 top.modified = obj
