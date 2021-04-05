@@ -59,14 +59,15 @@ actor = model.Person(label="Conservator")
 top.carried_out_by = actor
 
 # Should this be a Type ?
-# Replaced has_note, which is by and large, terrible
+# Replaced has_note, which is terrible
 top.referred_to_by = vocab.Description(content="Regular condition check")
 
 # Should this be Description, or assigned?
-conds = vocab.ConditionStatement()
+# -- replaced ConservationStatement to get it to deploy
+conds = vocab.Description()
 conds.content = "Fine cracks throughout the object (crizzling)"
 top.referred_to_by = conds
-doc = vocab.ConditionReport(label="Condition Assessment Report")
+doc = vocab.Description(label="Condition Assessment Report")
 # Reduced documented_in --> subject_of
 top.subject_of = doc
 top.assigned = vocab.instances['crizzling']
@@ -96,10 +97,10 @@ actor = model.Person(label="Conservator")
 top.carried_out_by = actor
 # See previous example's comments
 top.referred_to_by = vocab.Description(content="Planned conservation work in response to earlier survey")
-cons = vocab.ConservationStatement()
+cons = vocab.Description()
 cons.content = "Board consolidation and re-attachment"
 top.referred_to_by = cons
-doc = vocab.ConservationReport(label="Conservation Report")
+doc = vocab.Description(label="Conservation Report")
 top.subject_of = doc
 top.employed = vocab.instances['thread']
 obj = model.HumanMadeObject(label="Manuscript")
