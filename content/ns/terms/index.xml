@@ -15,24 +15,8 @@
         <rdfs:range rdf:resource="E55_Type"/>
 </rdf:Property>
 
-
-<!-- depicts_entity_of_type -->
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/represents_instance_of_type">
-    <rdfs:label xml:lang="en">Represents Instance of Type</rdfs:label>
-    <rdfs:comment xml:lang="en">This property establishes the relationship between an E36 Visual Item and an E55 Type that represents the class of entity which it visually represents.  This property is used when the specific entity being represented is either unknown, or not of documentary interest.</rdfs:comment>
-    <rdfs:domain rdf:resource="E36_Visual_Item"/>
-    <rdfs:range rdf:resource="E55_Type"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/instance_represented_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/instance_represented_by">
-    <rdfs:label xml:lang="en">Represents Instance of Type</rdfs:label>
-    <rdfs:comment xml:lang="en">Inverse of represents instance of type</rdfs:comment>
-    <rdfs:domain rdf:resource="E55_Type"/>
-    <rdfs:range rdf:resource="E36_Visual_Item"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/represents_instance_of_type"/>
-</rdf:Property>
+<!-- permanent_custodian -->
+<!-- CRM turned down the inclusion of this at CRM SIG in March 2021 -->
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/current_permanent_custodian">
     <rdfs:label xml:lang="en">Current Permanent Custodian</rdfs:label>
@@ -50,8 +34,17 @@
     <owl:inverseOf rdf:resource="https://linked.art/ns/terms/current_permanent_custodian"/>
 </rdf:Property>
 
+<!-- Equivalence -->
 
-<!-- Many of these will go to CRM SOC in the future -->
+<rdf:Property rdf:about="https://linked.art/ns/terms/equivalent">
+    <rdfs:label xml:lang="en">has equivalent instance</rdfs:label>
+    <rdfs:comment xml:lang="en">Similar to skos:exactMatch, the referenced entity is an equivalent instance to the referencing entity. This would not have the same inference issue as exactMatch, whereby the domain and range become skos:Concept, which is equivalent to E55_Type ... and thus everything becomes a Type.</rdfs:comment>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+
+<!-- Many of these will go to CRM SOC in the future, hopefully -->
 
 <rdfs:Class rdf:about="https://linked.art/ns/terms/Payment">
     <rdfs:label xml:lang="en">Payment</rdfs:label>
@@ -119,7 +112,8 @@
 
 
 <!-- Phase -->
-<!-- This looks like S16 State, but state is only for physical states not social ones like ownership. State is deprecated in latest CRMsci, per G.B. -->
+<!-- This looks like S16 State, but state is only for physical states not social ones like ownership. -->
+<!-- We don't currently use Phase in the profile, but leaving it here for the future -->
 
 <rdfs:Class rdf:about="https://linked.art/ns/terms/Phase">
     <rdfs:label xml:lang="en">Phase</rdfs:label>
@@ -199,8 +193,8 @@
     <rdfs:subPropertyOf rdf:resource="P2_has_type"/>
 </rdf:Property>
 
-<!-- caused / caused_by is O13_triggered / O13i_triggered_by -->
 
+<!-- caused / caused_by is O13_triggered / O13i_triggered_by -->
 
 
 <!-- Set of Things, as potential superclass of Group and Collection -->
@@ -307,47 +301,6 @@
 </rdf:Property>
 
 
-<!-- Reified Relationship class -->
-
-<rdfs:Class rdf:about="https://linked.art/ns/terms/Relationship">
-    <rdfs:label xml:lang="en">Relationship</rdfs:label>
-    <rdfs:comment></rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E28_Conceptual_Object"/>
-</rdfs:Class>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/relates_to">
-        <rdfs:label xml:lang="en">related to</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Relationship"/>
-        <rdfs:range rdf:resource="E1_CRM_Entity"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/related_to_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/related_to_by">
-        <rdfs:label xml:lang="en">related to by</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
-        <rdfs:range rdf:resource="https://linked.art/ns/terms/Relationship"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/relates_to"/>
-</rdf:Property>            
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/relates_from">
-        <rdfs:label xml:lang="en">related from</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Relationship"/>
-        <rdfs:range rdf:resource="E1_CRM_Entity"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/related_from_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/related_from_by">
-        <rdfs:label xml:lang="en">related from by</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
-        <rdfs:range rdf:resource="https://linked.art/ns/terms/Relationship"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/relates_from"/>
-</rdf:Property> 
-
-
 <!-- Temporary (ish) digital relationships until update of CRMDig -->
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/digitally_carries">
@@ -382,14 +335,22 @@
         <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_shows"/>        
 </rdf:Property>
 
+<rdf:Property rdf:about="https://linked.art/ns/terms/access_point">
+    <rdfs:label xml:lang="en">access point</rdfs:label>
+    <rdfs:comment xml:lang="en">From an ur- digital object to a single concrete representation.
+        A locator as opposed to an identifier, similar to the approximated_by for Place.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+    <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+</rdf:Property>
+
 <rdfs:Class rdf:about="https://linked.art/ns/terms/DigitalService">
     <rdfs:label xml:lang="en">Digital Service</rdfs:label>
     <rdfs:comment></rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E73_Information_Object"/>
+    <rdfs:subClassOf rdf:resource="dig:D1_Digital_Object"/>
 </rdfs:Class>
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/digitally_available_via">
-        <rdfs:label xml:lang="en">digitally shows</rdfs:label>
+        <rdfs:label xml:lang="en">digitally available via</rdfs:label>
         <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
         <rdfs:range rdf:resource="https://linked.art/ns/terms/DigitalService"/>
@@ -397,7 +358,7 @@
 </rdf:Property>
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/digitally_makes_available">
-        <rdfs:label xml:lang="en">digitally shown by</rdfs:label>
+        <rdfs:label xml:lang="en">digitally makes available</rdfs:label>
         <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:range rdf:resource="https://linked.art/ns/terms/DigitalService"/>
         <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>

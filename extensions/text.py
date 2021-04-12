@@ -46,6 +46,8 @@ model.Death._uri_segment = "activity"
 model.DigitalObject._uri_segment = "digital"
 model.DigitalService._uri_segment = "digital"
 model.Type._uri_segment = "concept"
+model.Modification._uri_segment = "activity"
+
 
 fh = file('site.yaml')
 siteData = fh.read()
@@ -189,6 +191,7 @@ class IndexingPlugin(Plugin):
 			"PartRemoval": "event",
 			"PartAddition": "event",
 			"Encounter": "event",
+			"Modification": "event",
 			"DigitalObject": "digital",
 			"DigitalService": "digital",
 			"Addition": "event",
