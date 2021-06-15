@@ -8,4 +8,5 @@
     <rdfs:subPropertyOf rdf:resource="P2_has_type"/>
 </rdf:Property>
 
+
 </rdf:RDF>

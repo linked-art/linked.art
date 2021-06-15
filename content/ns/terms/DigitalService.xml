@@ -3,7 +3,7 @@
 <rdfs:Class rdf:about="https://linked.art/ns/terms/DigitalService">
     <rdfs:label xml:lang="en">Digital Service</rdfs:label>
     <rdfs:comment/>
-    <rdfs:subClassOf rdf:resource="E73_Information_Object"/>
+    <rdfs:subClassOf rdf:resource="dig:D1_Digital_Object"/>
 </rdfs:Class>
 
 </rdf:RDF>

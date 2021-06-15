@@ -14,10 +14,7 @@ NS = {'rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 
 # Copy the full file out of model, into ns
 
-
-shutil.copyfile('content/model/profile/ontologies/linkedart.xml', 'content/ns/terms/index.xml')
-
-fh = open('content/ns/terms/index.xml')
+fh = open('../content/ns/terms/index.xml')
 data = fh.read()
 fh.close()
 
@@ -39,7 +36,7 @@ for c in classes:
 	odom = etree.XML(out)
 	odom.append(c)
 	o = etree.tostring(odom, pretty_print=True).decode('utf-8')
-	fh = open('content/ns/terms/%s.xml' % name, 'w')
+	fh = open('../content/ns/terms/%s.xml' % name, 'w')
 	fh.write(o)
 	fh.close()
 
@@ -50,6 +47,6 @@ for p in props:
 	odom = etree.XML(out)
 	odom.append(p)
 	o = etree.tostring(odom, pretty_print=True).decode('utf-8')
-	fh = open('content/ns/terms/%s.xml' % name, 'w')
+	fh = open('../content/ns/terms/%s.xml' % name, 'w')
 	fh.write(o)
 	fh.close()

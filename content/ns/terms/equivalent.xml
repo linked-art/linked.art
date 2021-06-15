@@ -1,0 +1,11 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/equivalent">
+    <rdfs:label xml:lang="en">has equivalent instance</rdfs:label>
+    <rdfs:comment xml:lang="en">Similar to skos:exactMatch, the referenced entity is an equivalent instance to the referencing entity. This would not have the same inference issue as exactMatch, whereby the domain and range become skos:Concept, which is equivalent to E55_Type ... and thus everything becomes a Type.</rdfs:comment>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+
+</rdf:RDF>
