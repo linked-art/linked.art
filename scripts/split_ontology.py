@@ -1,6 +1,8 @@
 
 from lxml import etree
 import shutil
+import sys
+import os 
 
 NS = {'rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 	'xsd':"http://www.w3.org/2001/XMLSchema#",
@@ -12,9 +14,16 @@ NS = {'rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 	'la': "https://linked.art/ns/terms/"
 }
 
-# Copy the full file out of model, into ns
+# Copy it to ns/terms/
+try:
+	os.chdir('scripts')
+except:
+	pass
+shutil.copy('index.xml', '../content/ns/terms/')
 
-fh = open('../content/ns/terms/index.xml')
+
+# And split it
+fh = open('index.xml')
 data = fh.read()
 fh.close()
 
