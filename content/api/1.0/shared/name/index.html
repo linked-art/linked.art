@@ -28,14 +28,14 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |  
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` |
-| `_label`          | string        | Optional    | A human readable label, intended for developers |
-| `content`         | string        | Required    | The string form of the Name |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) |
-| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)|
-| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | 
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |   <!--  -->
+| `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` | 
+| `_label`          | string        | Optional    | A human readable label, intended for developers | <!-- LAF.4 -->
+| `content`         | string        | Required    | The string form of the Name | <!-- LAF.6 -->
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) | <!-- LAF.5 -->
+| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)| <!-- LAF.7 -->
+| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | <!-- -->
 
 ### Property Diagram
 
