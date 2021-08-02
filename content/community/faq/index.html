@@ -6,7 +6,7 @@ title: Linked Art FAQ
 
 ### Model Questions
 
-#### Why the Aggregation model for Collections?
+
 
 
 
