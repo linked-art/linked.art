@@ -13,20 +13,21 @@ This section of the website documents the web-based API, or Application Programm
 
 We follow the notion of [Semantic Versioning](https://semver.org/spec/v2.0.0.html), with a structure of _Major.Minor.Patch_ in the version numbers.  All minor releases are backwards compatible with their major version, but may add new features or clarify technical aspects that were not well defined. Patch releases are only for documentation changes that do not affect functionality, and will be made in-place without a change to the documentation's URI. Major releases are reserved for backwards incompatible changes, and will be made sparingly.
 
-The current version is **0.7.0**
+The current version is **0.8.0**
 
 Versions before 1.0 are considered to be **unstable**. This means that any changes may be made at any time, without concern for compatibility. Version 0.9 is reserved for implementation feedback, and is considered as a release candidate for 1.0.
 
-Version 1.0 is expected by the end of calendar year 2020.
+Version 1.0 is expected by the end of calendar year 2021 (delayed due to COVID and other related circumstances).
 
 
 ## The Linked Art API
 
   * [Design Principles](principles/) - The underlying principles guiding decisions for the design of the API
   * [Protocol](protocol/) - The use of HTTP for interacting with the API over the web
-  * Representations
+  * API Format
     * [JSON-LD Considerations](json-ld/) - Core JSON and JSON-LD details
     * [Shared Constructs](shared/) - Constructions that are used by many endpoints
     * [Entity Endpoints](endpoint/) - The entities of interest, exposed at JSON-LD endpoints
+    * [JSON Schema](schema_docs/) - JSON Schema for the API, and derived alternate documentation
     * [Ecosystem Endpoints](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions
     * [Class Reference](classes.html) - Which ontology class is which end point?

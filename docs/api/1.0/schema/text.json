@@ -1,0 +1,62 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"title": "Text Schema",
+	"description": "_crm:E33\\_Linguistic\\_Object_\nTextual content expressed in one or more human languages, which might or might not be written down on any physical carrier.\nSee: [API](https://linked.art/api/1.0/endpoint/textual_work/) | [Model](https://linked.art/model/document/)",
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/definitions/idProp"},				
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+			{"title": "Specific", "type": "string", "const": "LinguisticObject"}]},
+		"_label": {"$ref": "core.json#/definitions/labelProp"},
+		"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
+			{"title": "Specific", "description": "List of equivalent `LinguisticObject` entities", "type": "array", "items": {"$ref": "core.json#/definitions/LinguisticObjectRef"}}]},
+		"representation": {"$ref": "core.json#/definitions/representationProp"},
+		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
+		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
+
+		"part_of": {"title": "crm:P106i_forms_part_of", "description": "Reference to another Linguistic Object of which this is part", "$ref": "core.json#/definitions/LinguisticObjectRef"},
+        "content": {"$ref": "core.json#/definitions/contentProp"},
+        "format": {"$ref": "core.json#/definitions/formatProp"},
+		"language": {"$ref": "core.json#/definitions/languageProp"},
+
+		"digitally_carried_by": {"title": "la:digitally_carried_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/DigitalObjectRef"}},
+		"carried_by": {"title": "crm:P128i_is_carried_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}},
+		"about": {"title": "crm:P129_is_about", "description": "The main topic(s) of the content", "type": "array", "items": {"$ref": "core.json#/definitions/AnyRef"}},
+		"refers_to": {"title": "crm:P67_refers_to", "description": "Entities referred to by the content, but are not the main topic", "type": "array", "items": {"$ref": "core.json#/definitions/AnyRef"}},
+		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"},
+		"used_for": {"title": "crm:P16i_was_used_for", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/Activity"}}
+
+	},
+	"definitions": {
+		"Creation": {
+			"title": "crm:E65_Creation",
+			"description": "The creation / writing of the text",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Creation"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this creation is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
+			}
+		}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

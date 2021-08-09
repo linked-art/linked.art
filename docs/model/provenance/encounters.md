@@ -27,7 +27,7 @@ A sculpture was lost at sea, and then later rediscovered by a commercial fisher 
 
 
 ```crom
-top = vocab.ProvenanceEntry()
+top = vocab.ProvenanceEntry(ident="auto int-per-segment")
 what = vocab.Sculpture(label="Lost Sculpture")
 who = model.Person(label="Fisher")
 where = model.Place(label="At Sea")

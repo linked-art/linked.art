@@ -21,7 +21,7 @@ __Example:__
 The current owner of the painting is a Museum.
 
 ```crom
-top = Painting(label="Painting", art=1)
+top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
 top.current_owner = vocab.MuseumOrg(label="Museum")
 ```
 
@@ -32,7 +32,7 @@ Similarly, the current custodian of the object should be referenced with the `tr
 Note that objects are owned by legal entities, such as people or organizations. If there is a department or person that is not the owner but is responsible for the object, then that actor is the `current_custodian`.
 
 ```crom
-top = Painting(label="Painting", art=1)
+top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
 top.current_owner = vocab.MuseumOrg(label="Museum")
 top.current_custodian = vocab.Department(label="Paintings Department")
 ```
@@ -47,9 +47,7 @@ __Example:__
 The current location of the painting is Gallery W6.
 
 ```crom
-top = Painting(art=1)
-top._label = "Painting"
-where = Place()
-where._label = "Gallery W6"
+top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
+where = model.Place(label="Gallery W6")
 top.current_location = where
 ```

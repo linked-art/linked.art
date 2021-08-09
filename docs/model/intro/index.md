@@ -34,6 +34,6 @@ For each example there is also a set of links to other representations, includin
 | Blue          | Events and Activities. Classes include: `Event`, `Activity`, `Acquisition`, `Production`, `Creation`, and so on |
 | Pale Blue     | Timespans. Classes: `TimeSpan` |
 | Gray          | Dimensions and other data structures. Classes: `Dimension`, `MonetaryUnit` |
-| Purple        | Digital Objects. Classes: `DigitalObject` |
+| Purple        | Digital Objects. Classes: `DigitalObject`, `DigitalService` |
 | White         | The class itself, presented in a rectangle with square corners |
 | Pale Gray     | Literal values, presented in a rectangle with slightly rounded corners |

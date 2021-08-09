@@ -35,12 +35,12 @@ __Example:__
 An auction event takes place on March 12 and 13 at the London premises of the auction house.
 
 ```crom
-top = vocab.AuctionEvent(label="Example Auction in London 1875-03-12,13")
+top = vocab.AuctionEvent(ident="auto int-per-segment", label="Example Auction in London 1875-03-12,13")
 org = vocab.AuctionHouseOrg(label="Auction House")
 where = vocab.AuctionHouse(label="Auction House Premises, London")
 top.took_place_at = where
 top.carried_out_by = org
-t = TimeSpan()
+t = model.TimeSpan()
 t._label = "12th and 13th of March, 1875"
 t.begin_of_the_begin = "1875-03-12T00:00:00Z"
 t.end_of_the_end = "1875-03-14T00:00:00Z"
@@ -58,7 +58,7 @@ __Example:__
 The lot "J-1823-5" was auctioned as part of the Example Auction above, and resulted in a sale.
 
 ```crom
-top = vocab.Auction(label="Auction of Lot J-1823-5")
+top = vocab.Auction(ident="auto int-per-segment", label="Auction of Lot J-1823-5")
 top.carried_out_by = vocab.Person(label="Example Auctioneer")
 top.used_specific_object = model.Set(label="Set of Objects for Lot J-1823-5")
 top.part_of = vocab.Activity(label="Example Auction")
@@ -73,16 +73,16 @@ Sometimes we also know the monetary amounts that were unsuccessfully bid for the
 Bids are modeled as the creation of a proposition that the bidder (or the person that an agent is bidding on behalf of) will pay a certain amount of money for the object. In the example below, a known bid is $10,000 but it is not stated whether there was a sale concluded.
 
 ```crom
-top = vocab.Auction(label="Auction of Lot J-1823-5")
-bidset = Activity(label="Bids on Lot J-1823-5")
+top = vocab.Auction(ident="auto int-per-segment", label="Auction of Lot J-1823-5")
+bidset = model.Activity(label="Bids on Lot J-1823-5")
 top.part = bidset
 bid = vocab.Bidding(label="Bid of 10000 dollars")
 bidset.part = bid
-who = Person(label="Example Bidder")
+who = model.Person(label="Example Bidder")
 bid.carried_out_by = who
-bidprop = PropositionalObject()
+bidprop = model.PropositionalObject()
 bid.created = bidprop
-amnt = MonetaryAmount()
+amnt = model.MonetaryAmount()
 amnt.value = 10000
 amnt.currency = vocab.instances["us dollars"]
 bidprop.refers_to = amnt
@@ -97,7 +97,7 @@ __Example:__
 Lot "812" consists of a single painting.
 
 ```crom
-top = vocab.AuctionLotSet(label="Set of Objects for Lot 812")
+top = vocab.AuctionLotSet(ident="auto int-per-segment", label="Set of Objects for Lot 812")
 top.identified_by = vocab.LotNumber(content="812")
 top.identified_by = model.Name(content="One Example Painting")
 top.member = model.HumanMadeObject(label="Example Painting")
@@ -120,7 +120,7 @@ __Example:__
 A lot with a starting price of $500, a reserve price of $3000 and an estimated price of $4000:
 
 ```crom
-top = AuctionLotSet(label = "Set of Objects for Lot 812")
+top = vocab.AuctionLotSet(ident="auto int-per-segment", label = "Set of Objects for Lot 812")
 top.member = model.HumanMadeObject(label = "Example Painting")
 amnt = vocab.StartingPrice(value = 500)
 amnt.currency = vocab.instances['us dollars']
@@ -139,17 +139,17 @@ The purchase of the lot is very similar to the purchase of any other object, how
 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase via Lot 812")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase via Lot 812")
 top.used_specific_object = model.Set(label="Set of Objects for Lot 812")
-seller = Person(label="Seller")
-buyer = Person(label="Buyer")
-acq = Acquisition(label="Acquisition of Painting via Lot 812")
+seller = model.Person(label="Seller")
+buyer = model.Person(label="Buyer")
+acq = model.Acquisition(label="Acquisition of Painting via Lot 812")
 top.part = acq
 acq.transferred_title_of = model.HumanMadeObject(label="Example Painting")
 acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
-pay = Payment(label="Payment for Lot 812")
-ma = MonetaryAmount(value=4500)
+pay = model.Payment(label="Payment for Lot 812")
+ma = model.MonetaryAmount(value=4500)
 ma.currency = vocab.instances['us dollars']
 pay.paid_amount = ma
 pay.paid_from = buyer
@@ -184,7 +184,7 @@ __Example:__
 A painting put up for auction is returned to the owner, as it was not sold to someone else.  The Provenance Entry below would be `caused` by the Auction of Lot activity. This example is also appropriate to the following use cases as well. 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Return to Owner from Auction House")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Return to Owner from Auction House")
 xf = vocab.ReturnOfLoan()
 what = model.HumanMadeObject(label="Painting")
 owner = model.Person(label="Owner")
@@ -214,7 +214,7 @@ It is not often to know that this has occured, unless the information is coming 
 Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/).
 
 ```crom
-top = vocab.AuctionCatalogText(label="Auction Catalog of Example Auction")
+top = vocab.AuctionCatalogText(ident="auto int-per-segment", label="Auction Catalog of Example Auction")
 entry = vocab.ParagraphText(label="Entry for Lot 812")
 top.part = entry
 auc = vocab.AuctionEvent(label = "Example Auction, 1924")

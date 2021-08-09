@@ -1,0 +1,48 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/VisualItem/0> a crm:E36_Visual_Item ;
+    rdfs:label "Appearance of Miro's The Farm" ;
+    crm:P138_represents <http://vocab.getty.edu/tgn/7300934> ;
+    crm:P199_represents_instance_of_type <http://vocab.getty.edu/aat/300132410> ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Appearance of The Farm" ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300021495> ;
+    crm:P65i_is_shown_by <https://www.nga.gov/collection/art-object-69660> ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "A brilliant amalgamation of an intense, even primitive, realism with the formal vocabulary of cubism." ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ] ;
+    crm:P94i_was_created_by [ a crm:E65_Creation ;
+            crm:P14_carried_out_by <http://vocab.getty.edu/ulan/500014094> ;
+            crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                    rdfs:label "1921-1922" ;
+                    crm:P82a_begin_of_the_begin "1921-01-01T00:00:00+00:00"^^xsd:dateTime ;
+                    crm:P82b_end_of_the_end "1922-12-31T23:59:59+00:00"^^xsd:dateTime ] ] .
+
+<http://vocab.getty.edu/aat/300015646> a crm:E55_Type ;
+    rdfs:label "Style" .
+
+<http://vocab.getty.edu/aat/300021495> a crm:E55_Type ;
+    rdfs:label "Cubist" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300015646> .
+
+<http://vocab.getty.edu/aat/300132410> a crm:E55_Type ;
+    rdfs:label "Tree" .
+
+<http://vocab.getty.edu/aat/300418049> a crm:E55_Type ;
+    rdfs:label "Brief Text" .
+
+<http://vocab.getty.edu/aat/300435416> a crm:E55_Type ;
+    rdfs:label "Description" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300418049> .
+
+<http://vocab.getty.edu/tgn/7300934> a crm:E53_Place ;
+    rdfs:label "Mont-roig del Camp" .
+
+<http://vocab.getty.edu/ulan/500014094> a crm:E21_Person ;
+    rdfs:label "Miro" .
+
+<https://www.nga.gov/collection/art-object-69660> a crm:E22_Human-Made_Object ;
+    rdfs:label "The Farm" .
+

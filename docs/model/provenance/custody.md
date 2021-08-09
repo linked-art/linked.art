@@ -24,23 +24,23 @@ __Example:__
 A sculpture is lent from one person to another, and then later returned.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Lending a Sculpture to Recipient")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Lending a Sculpture to Recipient")
 loan = vocab.Loan()
 top.part = loan
-loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
-loan.transferred_custody_from = Person(label="Lender")
-loan.transferred_custody_to = Person(label="Recipient")
+loan.transferred_custody_of = vocab.Sculpture(label="Sculpture", art=1)
+loan.transferred_custody_from = model.Person(label="Lender")
+loan.transferred_custody_to = model.Person(label="Recipient")
 ```
 
 Which would typically be followed by a later return with the same form:
 
 ```crom
-top = vocab.ProvenanceEntry(label="Return of the Sculpture to Lender")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Return of the Sculpture to Lender")
 loan = vocab.ReturnOfLoan(label="Return")
 top.part = loan
-loan.transferred_custody_of = Sculpture(label="Sculpture", art=1)
-loan.transferred_custody_from = Person(label="Recipient")
-loan.transferred_custody_to = Person(label="Lender")
+loan.transferred_custody_of = vocab.Sculpture(label="Sculpture", art=1)
+loan.transferred_custody_from = model.Person(label="Recipient")
+loan.transferred_custody_to = model.Person(label="Lender")
 ```
 
 ## Institutional Ownership, Departmental Custody
@@ -54,17 +54,17 @@ __Example:__
 An object is acquired by the museum and the custody of the painting is transferred to a particular department.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Painting")
 buyer = vocab.MuseumOrg(label="Museum")
-seller = Person(label="Seller")
+seller = model.Person(label="Seller")
 dept = vocab.Department(label="Paintings Department of Museum")
 what = vocab.Painting(label="Painting", art=1)
-acq = Acquisition(label="Acquisition of Painting")
+acq = model.Acquisition(label="Acquisition of Painting")
 top.part = acq
 acq.transferred_title_of = what
 acq.transferred_title_from = seller
 acq.transferred_title_to = buyer
-cust = TransferOfCustody(label="Custody by Department")
+cust = model.TransferOfCustody(label="Custody by Department")
 top.part = cust
 cust.transferred_custody_of = what
 cust.transferred_custody_from = seller
@@ -77,11 +77,11 @@ The loss of an object is the transfer of custody away from its current owner, wi
 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Loss of Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Loss of Painting")
 xfer = vocab.Loss()
-xfer.transferred_custody_of = Painting(label="Lost Painting", art=1)
-xfer.transferred_custody_from = Person(label="Owner")
-when = TimeSpan(label="Time noticed as Lost")
+xfer.transferred_custody_of = vocab.Painting(label="Lost Painting", art=1)
+xfer.transferred_custody_from = model.Person(label="Owner")
+when = model.TimeSpan(label="Time noticed as Lost")
 when.begin_of_the_begin = "1790-12-04T00:00:00Z"
 when.end_of_the_end = "1790-12-05T00:00:00Z"
 xfer.timespan = when
@@ -95,15 +95,15 @@ The theft of an object is also the (illegal) transfer of custody of the object, 
 A single theft event might involve stealing multiple objects, in the same way that the purchase of an auction lot might involve the acquisition of multiple objects for a combined payment. 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Theft of Two Paintings")
-own = Person(label="Owner")
-thf = Person(label="Thief")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Theft of Two Paintings")
+own = model.Person(label="Owner")
+thf = model.Person(label="Thief")
 xfer = vocab.Theft()
-xfer.transferred_custody_of = Painting(label="Stolen Painting", art=1)
+xfer.transferred_custody_of = vocab.Painting(label="Stolen Painting", art=1)
 xfer.transferred_custody_from = own
 xfer.transferred_custody_to = thf
 xfer2 = vocab.Theft()
-xfer2.transferred_custody_of = Painting(label="Stolen Painting 2" , art=1)
+xfer2.transferred_custody_of = vocab.Painting(label="Stolen Painting 2" , art=1)
 xfer2.transferred_custody_from = own
 xfer2.transferred_custody_to = thf
 top.part = xfer
@@ -115,19 +115,19 @@ top.part = xfer2
 If a stolen object is sold, then that purchase is actually just a transfer of custody in exchange for money (or other payment). Typically, of course, the nature of that transaction is not discovered until long after the fact. This can then have many effects on the provenance record for the object as suddenly many acquisitions would be retroactively changed to being transfers of custody. This updating of the historical record is necessary without going to great lengths to model the belief that an acquisition is legal for the vast majority of cases when it is, indeed, legal in order to allow that belief to be incorrect for the few times when it is not.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Unknowing Purchase of Stolen Painting")
-thf = Person(label="Thief")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Unknowing Purchase of Stolen Painting")
+thf = model.Person(label="Thief")
 mus = vocab.MuseumOrg(label="Museum")
-what = Painting(label="Stolen Painting", art=1)
+what = vocab.Painting(label="Stolen Painting", art=1)
 xfer = vocab.SaleOfStolenGoods(label="Obtaining Painting")
 top.part = xfer
 xfer.transferred_custody_of = what
 xfer.transferred_custody_from = thf
 xfer.transferred_custody_to = mus
-pay = Payment()
+pay = model.Payment()
 pay.paid_from = mus
 pay.paid_to = thf
-amnt = MonetaryAmount(label="Payment to Thief")
+amnt = model.MonetaryAmount(label="Payment to Thief")
 amnt.value = 10000
 amnt.currency = vocab.instances['gb pounds']
 pay.paid_amount = amnt

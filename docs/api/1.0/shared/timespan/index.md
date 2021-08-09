@@ -57,23 +57,23 @@ Dimension instances are typically found as the object of the following propertie
 
 ## Example
 
-An activity has a time span which ...
+An activity has a time span with a duration of 1 day, sometime circa 1750
 
-* ... has a `type` of "TimeSpan"
-* ... has a `_label` which briefly describes it as "1 day, c. 1750"
-* ... is `identified_by` a Name, with `content` of "1 day, during circa 1750"
-* ... is `referred_to_by` a description statement, with the `content` of "About 1750, as estimated by C. U. Rata"
-* ... has a `begin_of_the_begin` earliest start date of 1720
-* ... has a `end_of_the_begin` latest start date of 1751
-* ... has a `begin_of_the_end` earliest end date of 1749
-* ... has a `end_of_the_end` latest end date of 1780
-* ... took a `duration` of time which ...
-  * ... has a `type` of "Dimension"
-  * ... has a `value` of 1
-  * ... has a `unit` of days, which has an `id` of _aat:300379242_ and has a `type` of "MeasurementUnit"
+* It has a `type` of "TimeSpan"
+* It has a `_label` which briefly describes it as "1 day, c. 1750"
+* It is `identified_by` a Name, with `content` of "1 day, during circa 1750"
+* It is `referred_to_by` a description statement, with the `content` of "About 1750, as estimated by C. U. Rata"
+* It has a `begin_of_the_begin` earliest start date of 1720
+* It has a `end_of_the_begin` latest start date of 1751
+* It has a `begin_of_the_end` earliest end date of 1749
+* It has a `end_of_the_end` latest end date of 1780
+* It took a `duration` of time which ...
+    * ... has a `type` of "Dimension"
+    * ... has a `value` of 1
+    * ... has a `unit` of days, which has an `id` of _aat:300379242_ and has a `type` of "MeasurementUnit"
 
 ```crom
-top = model.Activity()
+top = model.Activity(ident="auto int-per-segment")
 ts = model.TimeSpan(label="1 day, c. 1750")
 ts.identified_by = model.Name(content="1 day, during circa 1750")
 ts.referred_to_by = vocab.Description(content="About 1750, as estimated by C. U. Rata")

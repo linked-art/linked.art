@@ -1,0 +1,74 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json", 
+  "id": "https://linked.art/example/Modification/0", 
+  "type": "Modification", 
+  "_label": "Condition Assessment of Object", 
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject", 
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416", 
+          "type": "Type", 
+          "_label": "Description", 
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049", 
+              "type": "Type", 
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ], 
+      "content": "Planned conservation work in response to earlier survey"
+    }, 
+    {
+      "type": "LinguisticObject", 
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416", 
+          "type": "Type", 
+          "_label": "Description"
+        }
+      ], 
+      "content": "Board consolidation and re-attachment"
+    }
+  ], 
+  "timespan": {
+    "type": "TimeSpan", 
+    "begin_of_the_begin": "2002-04-19T00:00:00Z", 
+    "end_of_the_end": "2002-04-26T00:00:00Z"
+  }, 
+  "carried_out_by": [
+    {
+      "type": "Person", 
+      "_label": "Conservator"
+    }
+  ], 
+  "modified": [
+    {
+      "type": "HumanMadeObject", 
+      "_label": "Manuscript"
+    }
+  ], 
+  "subject_of": [
+    {
+      "type": "LinguisticObject", 
+      "_label": "Conservation Report", 
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416", 
+          "type": "Type", 
+          "_label": "Description"
+        }
+      ]
+    }
+  ], 
+  "employed": [
+    {
+      "id": "http://vocab.getty.edu/aat/300014250", 
+      "type": "Material", 
+      "_label": "Thread"
+    }
+  ]
+}

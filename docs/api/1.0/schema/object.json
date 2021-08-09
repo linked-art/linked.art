@@ -1,0 +1,119 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"title": "Human-Made Object Schema",
+	"description": "_crm:E22\\_Human-Made\\_Object_\nA human-made object, part thereof, or a natural object with value imbued through interaction with human culture.\nSee: [API](https://linked.art/api/1.0/endpoint/object/) | [Model](https://linked.art/model/object/)",	
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/definitions/idProp"},				
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+			{"title": "Specific", "type": "string", "const": "HumanMadeObject"}]},
+		"_label": {"$ref": "core.json#/definitions/labelProp"},
+		"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
+			{"title": "Specific", "description": "List of `HumanMadeObject` entities", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}]},
+		"representation": {"$ref": "core.json#/definitions/representationProp"},
+		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
+
+		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
+		"made_of": {"$ref": "core.json#/definitions/made_ofProp"},
+		"part_of": {"title": "crm:P46i_forms_part_of", "description": "Another Human-Made Object of which this Object is part", "$ref": "core.json#/definitions/HumanMadeObjectRef"},
+
+        "part": {"title": "**Should objects have any parts embedded?**", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectPart"}},
+
+		"current_owner": {"$ref": "core.json#/definitions/current_ownerProp"},
+		"current_custodian": {"$ref": "core.json#/definitions/current_custodianProp"},
+		"current_permanent_custodian": {"$ref": "core.json#/definitions/current_permanent_custodianProp"},
+		"current_location": {"$ref": "core.json#/definitions/current_locationProp"},
+		"used_for": {"$ref": "core.json#/definitions/used_forProp"},
+		"shows": {"$ref": "core.json#/definitions/showsProp"},
+		"carries": {"$ref": "core.json#/definitions/carriesProp"},
+
+		"produced_by": {
+			"title": "crm:P108i_was_produced_by",
+			"description": "The `Production` activity which created this object",
+			"$ref": "#/definitions/Production"},
+		"destroyed_by": {
+			"title": "crm:P13i_was_destroyed_by",
+			"description": "The `Destruction` event in which this object was destroyed",
+			"$ref": "#/definitions/Destruction"},
+		"removed_by": {
+			"title": "crm:P113i_was_removed_by",
+			"description": "One or more `PartRemoval` activities in which this object was removed from another object",
+			"type": "array", 
+			"items": {"$ref": "#/definitions/PartRemoval"}}
+
+	},
+
+	"definitions": {
+		"Production": {
+			"title": "crm:E12_Production",
+			"description": "The production/creation of the object",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Production"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"},
+				"part": {"title":"crm:P46_is_composed_of", "description": "", "type": "array", "items": {"$ref": "#/definitions/Production"}}
+			}
+		},
+		"Destruction": {
+			"title": "crm:E6_Destruction",
+			"description": "The destruction of the object (separate from any cause of that end of existence)",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Destruction"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this event is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
+			}
+		},
+		"PartRemoval": {
+			"title": "crm:E80_Part_Removal",
+			"description": "The activity of removing this object from some other object.",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "PartRemoval"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"},
+				"diminished": {"title": "crm:P112_diminished", "description": "A reference to the object which the object was removed from", "$ref": "core.json#/definitions/HumanMadeObjectRef"}
+			}
+		}				
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

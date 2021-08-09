@@ -1,0 +1,9 @@
+ordereddict
+-e git://github.com/linked-art/crom.git#egg=cromulent
+hyde
+Jinja2
+pymdown_extensions<=5.0
+rdflib
+pyld<2.0
+requests
+lxml

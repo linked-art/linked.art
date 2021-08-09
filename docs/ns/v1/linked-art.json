@@ -297,6 +297,18 @@
       "@id": "crm:E20_Biological_Object"
     }, 
     "Person": {
+      "@context": {
+        "member": {
+          "@id": "crm:P107_has_current_or_former_member", 
+          "@type": "@id", 
+          "@container": "@set"
+        }, 
+        "member_of": {
+          "@id": "crm:P107i_is_current_or_former_member_of", 
+          "@type": "@id", 
+          "@container": "@set"
+        }
+      }, 
       "@id": "crm:E21_Person"
     }, 
     "HumanMadeObject": {
@@ -1521,12 +1533,12 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "current_keeper": {
+    "current_custodian": {
       "@id": "crm:P50_has_current_keeper", 
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "current_keeper_of": {
+    "current_custodian_of": {
       "@id": "crm:P50i_is_current_keeper_of", 
       "@type": "@id", 
       "@container": "@set"
@@ -2379,7 +2391,7 @@
       "@type": "@id"
     }, 
     "assigned_property": {
-      "@id": "crm:P177_assigned_property_type", 
+      "@id": "crm:P177_assigned_property_of_type", 
       "@type": "@vocab"
     }, 
     "sales_price": {
@@ -2558,14 +2570,35 @@
     "Removal": {
       "@id": "la:Removal"
     }, 
-    "Relationship": {
-      "@id": "la:Relationship"
-    }, 
     "DigitalService": {
       "@id": "la:DigitalService"
     }, 
     "property_classified_as": {
       "@id": "la:property_classified_as", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "represents_instance_of_type": {
+      "@id": "la:represents_instance_of_type", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "instance_represented_by": {
+      "@id": "la:instance_represented_by", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "current_permanent_custodian": {
+      "@id": "la:current_permanent_custodian", 
+      "@type": "@id"
+    }, 
+    "current_permanent_custodian_of": {
+      "@id": "la:current_permanent_custodian_of", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "equivalent": {
+      "@id": "la:equivalent", 
       "@type": "@id", 
       "@container": "@set"
     }, 
@@ -2678,24 +2711,6 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
-    "relates_to": {
-      "@id": "la:relates_to", 
-      "@type": "@id"
-    }, 
-    "related_to_by": {
-      "@id": "la:related_to_by", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
-    "relates_from": {
-      "@id": "la:relates_from", 
-      "@type": "@id"
-    }, 
-    "related_from_by": {
-      "@id": "la:related_from_by", 
-      "@type": "@id", 
-      "@container": "@set"
-    }, 
     "digitally_carries": {
       "@id": "la:digitally_carries", 
       "@type": "@id", 
@@ -2716,6 +2731,11 @@
       "@type": "@id", 
       "@container": "@set"
     }, 
+    "access_point": {
+      "@id": "la:access_point", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
     "digitally_available_via": {
       "@id": "la:digitally_available_via", 
       "@type": "@id", 
@@ -2729,19 +2749,8 @@
     "DigitalObject": {
       "@id": "dig:D1_Digital_Object"
     }, 
-    "Geometry": {
-      "@id": "geo:SP5_Geometric_Place_Expression"
-    }, 
-    "CoordinateSystem": {
-      "@id": "geo:SP4_Spatial_Coordinate_Reference_System"
-    }, 
-    "Q9_is_expressed_in_terms_of": {
-      "@id": "geo:Q9_is_expressed_in_terms_of", 
-      "@type": "@id"
-    }, 
-    "Q9i_terms_express": {
-      "@id": "geo:Q9i_terms_express", 
-      "@type": "@id"
+    "Encounter": {
+      "@id": "sci:S19_Encounter_Event"
     }, 
     "caused": {
       "@id": "sci:O13_triggers", 
@@ -2750,6 +2759,16 @@
     }, 
     "caused_by": {
       "@id": "sci:O13i_is_triggered_by", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "encountered": {
+      "@id": "sci:O19_has_found_object", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "encountered_by": {
+      "@id": "sci:O19i_was_object_found_by", 
       "@type": "@id", 
       "@container": "@set"
     }, 
@@ -2763,6 +2782,31 @@
     }, 
     "close_match": {
       "@id": "skos:closeMatch", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "narrower": {
+      "@id": "skos:narrower", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "broader": {
+      "@id": "skos:broader", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "topConceptOf": {
+      "@id": "skos:topConceptOf", 
+      "@type": "@id", 
+      "@container": "@set"
+    }, 
+    "inScheme": {
+      "@id": "skos:inScheme", 
       "@type": "@id", 
       "@container": "@set"
     }, 

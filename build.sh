@@ -4,6 +4,7 @@
 rm -rf .site/*
 
 # Clear any old example copies
+
 #rm content/example/activity/*
 #rm content/example/concept/*
 #rm content/example/group/*
@@ -18,6 +19,7 @@ rm -rf .site/*
 #rm content/example/value/*
 #rm content/model/example_index.html
 
+
 # Remake the table, still separate
 #python scripts/mk_table.py
 
@@ -25,8 +27,12 @@ rm -rf .site/*
 #rm content/ns/terms/*
 #python scripts/split_ontology.py
 
+# checkout the schema and build the documentation
+
 # And now generate the site from scratch
+
 mkdocs build --clean
 # Once more incrementally to catch the new index file we built
 # RDP ??
-mkdocs build
+# mkdocs build
+

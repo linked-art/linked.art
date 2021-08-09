@@ -1,0 +1,27 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://linked.art/example/concept/1> a crm:E89_Propositional_Object ;
+    rdfs:label "Example Exhibition" ;
+    crm:P129_is_about <http://vocab.getty.edu/aat/300233686> ;
+    crm:P17i_motivated [ a crm:E7_Activity ;
+            rdfs:label "Exhibition at Venue" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300054766> ] ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Example Exhibition" ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "exh-2010-eg-a" ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300417531> ;
+    crm:P94i_was_created_by [ a crm:E65_Creation ;
+            crm:P14_carried_out_by [ a crm:E21_Person ;
+                    rdfs:label "Curator" ] ] .
+
+<http://vocab.getty.edu/aat/300054766> a crm:E55_Type ;
+    rdfs:label "Exhibiting" .
+
+<http://vocab.getty.edu/aat/300233686> a crm:E55_Type ;
+    rdfs:label "Gender Issues" .
+
+<http://vocab.getty.edu/aat/300417531> a crm:E55_Type ;
+    rdfs:label "Exhibition" .
+

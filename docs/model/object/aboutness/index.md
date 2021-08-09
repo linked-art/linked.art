@@ -19,9 +19,8 @@ __Example:__
 A painting the has the description "The Example Painting is a great example of exampleness".
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
-desc = Description()
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
+desc = vocab.Description()
 desc.content = "The Example Painting is a great example of exampleness."
 top.referred_to_by = desc
 ```
@@ -45,14 +44,12 @@ __Example:__
 A self portrait is both produced by the artist and has visual content that represents the artist.
 
 ```crom
-top = Painting(art=1)
-top._label = "Self Portrait"
-who = Actor()
-who._label = "Artist"
-vi = VisualItem()
+top = vocab.Painting(ident="auto int-per-segment", label="Self Portrait", art=1)
+who = model.Actor(label="Artist")
+vi = model.VisualItem()
 top.shows = vi
 vi.represents = who 
-prd = Production()
+prd = model.Production()
 prd.carried_out_by = who
 top.produced_by = prd
 ```
@@ -68,9 +65,8 @@ __Example:__
 A visual content of a portrait of Lord Nelson has the conceptual subject of "war". It would also represent Lord Nelson, following the example above, however this is not included in the example.
 
 ```crom
-top = Painting(art=1)
-top._label = "Portrait of Lord Nelson"
-vi = VisualItem()
+top = vocab.Painting(ident="auto int-per-segment",label="Portrait of Lord Nelson", art=1)
+vi = model.VisualItem()
 top.shows = vi
 vi.about = instances['war']
 ```
@@ -89,9 +85,8 @@ __Example:__
 An impressionist painting is classified as impressionism, which is classified as being a type of style.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Impressionist Painting"
-vi = VisualItem()
+top = vocab.Painting(ident="auto int-per-segment", label="Impressionist Painting", art=1)
+vi = model.VisualItem()
 top.shows = vi
 vi.classified_as = instances['style impressionism']
 ```
@@ -101,9 +96,8 @@ vi.classified_as = instances['style impressionism']
 Other classifications can also be assigned to the object's content. If it is possible to say that "the artistic content of this object is an X", then X can be included in the set of classifications using the `classified_as` property on the `VisualItem`.  This could include classifications such as "Landscape" or "Allusion", compared to classifications that are derived from the physical nature of the object such as a "Painting", "Photograph" or "Sculpture" which are associated with the object.  
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Allusion Painting"
-vi = VisualItem()
+top = vocab.Painting(ident="auto int-per-segment", label="Allusion Painting", art=1)
+vi = model.VisualItem()
 top.shows = vi
 vi.classified_as = instances['allusion']
 ```
@@ -120,9 +114,9 @@ __Example:__
 Example Painting is related, in some unknown way, to Yet Another Example Painting. Perhaps the relationship is that they are both examples.
 
 ```crom
-top = Painting(art=1, label="Example Painting")
-p2 = Painting(art=1, label="Yet Another Example Painting")
-aa = AttributeAssignment()
+top = vocab.Painting(ident="auto int-per-segment", art=1, label="Example Painting")
+p2 = vocab.Painting(ident="auto int-per-segment", art=1, label="Yet Another Example Painting")
+aa = model.AttributeAssignment()
 aa.assigned = p2
 top.attributed_by = aa
 ```

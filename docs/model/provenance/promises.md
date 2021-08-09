@@ -33,7 +33,7 @@ __Example:__
 The owner of a painting promises to give it to a museum after a period of time.
 
 ```crom
-top = vocab.ProvenanceEntry()
+top = vocab.ProvenanceEntry(ident="auto int-per-segment")
 promise = vocab.Promise(label="Promise of Gift")
 own = model.Person(label="Owner")
 mus = model.Group(label="Museum")
@@ -56,7 +56,7 @@ __Example__:
 The commissioner of the art promises to pay $1000, with 10% of that up front, for a painting to be produced. This involves three steps: the exchange of promised activities, the production of the object, and then the exchange of the ownership of the produced painting for the remainder of the money.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Commission of Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Commission of Painting")
 promise = vocab.Promise(label="Obligation to Pay Artist")  
 fromwho = model.Person(label="Commissioner")
 towho = model.Person(label="Artist")
@@ -81,7 +81,7 @@ top.part = pay
 The resulting production activity has a cause, which is the above Provenance Event.
 
 ```crom
-top = vocab.Painting(label="Commissioned Landscape Painting")
+top = vocab.Painting(ident="auto int-per-segment", label="Commissioned Landscape Painting")
 top.referred_to_by = vocab.Description(content="A commissioned painting by Artist")
 prod = model.Production()
 prod.carried_out_by = model.Person(label="Artist")
@@ -91,7 +91,7 @@ prod.caused_by = vocab.ProvenanceEntry(label="Commission of Painting")
 And finally the painting is delivered to the commissioning party from the artist in exchange for the remainder of the money.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Delivery of Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Delivery of Painting")
 artist = model.Person(label="Artist")
 owner = model.Person(label="Commissioner")
 what = model.HumanMadeObject(label="Painting")

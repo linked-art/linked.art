@@ -1,0 +1,62 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/digital/0> a <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+    rdfs:label "Digital Image of Self-Portrait of Van Gogh" ;
+    dc:format "image/jpeg" ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Self-Portrait Dedicated to Paul Gauguin" ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "47174896" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300404621> ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300215302> ;
+    crm:P43_has_dimension [ a crm:E54_Dimension ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300055647> ;
+            crm:P90_has_value 2087 ;
+            crm:P91_has_unit <http://vocab.getty.edu/aat/300266190> ],
+        [ a crm:E54_Dimension ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300055644> ;
+            crm:P90_has_value 2550 ;
+            crm:P91_has_unit <http://vocab.getty.edu/aat/300266190> ] ;
+    crm:P94i_was_created_by [ a crm:E65_Creation ;
+            crm:P14_carried_out_by <https://linked.art/example/group/harvardartmuseums.org> ;
+            crm:P16_used_specific_object <https://harvardartmuseums.org/collections/object/299843> ] ;
+    la:access_point <https://ids.lib.harvard.edu/ids/iiif/47174896/full/full/0/default.jpg> ;
+    la:digitally_available_via [ a la:DigitalService ;
+            rdfs:label "IIIF Service" ;
+            dcterms:conformsTo <https://iiif.io/api/image/2/context.json> ;
+            la:access_point <https://ids.lib.harvard.edu/ids/iiif/47174896> ] ;
+    la:digitally_shows [ a crm:E36_Visual_Item ;
+            rdfs:label "Visual Content of Self-Portrait of Van Gogh" ] .
+
+<http://vocab.getty.edu/aat/300055644> a crm:E55_Type ;
+    rdfs:label "Height" .
+
+<http://vocab.getty.edu/aat/300055647> a crm:E55_Type ;
+    rdfs:label "Width" .
+
+<http://vocab.getty.edu/aat/300215302> a crm:E55_Type ;
+    rdfs:label "Digital Image" .
+
+<http://vocab.getty.edu/aat/300404621> a crm:E55_Type ;
+    rdfs:label "Owner-Assigned Number" .
+
+<https://harvardartmuseums.org/collections/object/299843> a crm:E22_Human-Made_Object ;
+    rdfs:label "Self-Portrait of Van Gogh" .
+
+<https://ids.lib.harvard.edu/ids/iiif/47174896> a <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> .
+
+<https://ids.lib.harvard.edu/ids/iiif/47174896/full/full/0/default.jpg> a <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> .
+
+<https://iiif.io/api/image/2/context.json> a crm:E73_Information_Object .
+
+<https://linked.art/example/group/harvardartmuseums.org> a crm:E74_Group ;
+    rdfs:label "Harvard Art Museums" .
+
+<http://vocab.getty.edu/aat/300266190> a crm:E58_Measurement_Unit ;
+    rdfs:label "pixels" .
+

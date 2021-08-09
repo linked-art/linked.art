@@ -1,0 +1,1645 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "title": "Core Schema Definitions",
+    "description": "Core definitions that are used to compose the Linked Art JSON-LD API",
+    "type": "object",
+    "definitions": {
+        "idProp": {
+            "title": "the subject uri",
+            "description": "The URI of the entity",
+            "type": "string",
+            "format": "uri"
+        },
+        "labelProp": {
+            "title": "rdfs:label",
+            "description": "A human readable name or label for the entity, intended for developers",
+            "type": "string",
+            "examples": [
+                "Georgia O'Keeffe",
+                "Blue by Georgia O'Keeffe",
+                "New Haven, CT"
+            ]
+        },
+        "typeProp": {
+            "title": "rdf:type",
+            "description": "The class of the entity",
+            "type": "string",
+            "examples": [
+                "Person",
+                "Place",
+                "Type",
+                "HumanMadeObject"
+            ]
+        },
+        "identified_byProp": {
+            "title": "crm:P1_is_identified_by",
+            "description": "A `Name` or `Identifier` that identifies the entity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/NameOrIdentifier"
+            }
+        },
+        "classified_asProp": {
+            "title": "crm:P2_has_type",
+            "description": "A `Type` which classifies this entity beyond the class given in the `type` property",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Concept"
+            }
+        },
+        "contentProp": {
+            "title": "crm:P190_has_symbolic_content",
+            "description": "The string representation of a `Name`, `Identifier`, `Statement` or other text",
+            "type": "string"
+        },
+        "referred_to_byProp": {
+            "title": "crm:P67i_is_referred_to_by",
+            "description": "An embedded statement about this entity, or a reference to a text that refers to the entity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/LingObjOrDigitalObjOrStatement"
+            }
+        },
+        "languageProp": {
+            "title": "crm:P72_has_language",
+            "description": "A reference to one or more `Language` entities in which the `content` of this text is written",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/LanguageRef"
+            }
+        },
+        "equivalentProp": {
+            "title": "la:equivalent",
+            "description": "A reference to one or more other identities for this entity, such as in external vocabularies or systems",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/AnyRef"
+            }
+        },
+        "representationProp": {
+            "title": "crm:P138i_has_representation",
+            "description": "A reference to one or more `VisualItem` entities which depict this entity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/VisualItemRef"
+            }
+        },
+        "member_ofSetProp": {
+            "title": "la:member_of",
+            "description": "A reference to one or more `Set` entities of which this entity is a member",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/SetRef"
+            }
+        },
+        "member_ofGroupProp": {
+            "title": "crm:P107i_is_current_or_former_member_of",
+            "description": "A reference to one or more `Group` entities of which this entity is a member",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/GroupRef"
+            }
+        },
+        "valueProp": {
+            "title": "crm:P90_has_value",
+            "description": "The numeric value of a `Dimension` or `MonetaryAmount`",
+            "type": "number",
+            "examples": [
+                10,
+                0.5,
+                42.75
+            ]
+        },
+        "upper_value_limitProp": {
+            "title": "crm:P90a_has_upper_value_limit",
+            "description": "The highest possible value for the `Dimension` or `MonetaryAmount`",
+            "type": "number",
+            "examples": [
+                100
+            ]
+        },
+        "lower_value_limitProp": {
+            "title": "crm:P90a_has_lower_value_limit",
+            "description": "The lowest possible value for the `Dimension` or `MonetaryAmount`",
+            "type": "number",
+            "examples": [
+                5
+            ]
+        },
+        "took_place_atProp": {
+            "title": "crm:P7_took_place_at",
+            "description": "A `Place` at which this event occured",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PlaceRef"
+            }
+        },
+        "timespanProp": {
+            "title": "crm:P4_has_time-span",
+            "description": "A `TimeSpan` which describes the date-time range during which this event occured",
+            "$ref": "#/definitions/TimeSpan"
+        },
+        "caused_byProp": {
+            "title": "sci:O13i_is_triggered_by",
+            "description": "Another event which caused this event to occur",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/EventRefOrActivityRef"
+            }
+        },
+        "carried_out_byProp": {
+            "title": "crm:P14_carried_out_by",
+            "description": "A reference to a Person or Group which carried out this activity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PersonRefOrGroupRef"
+            }
+        },
+        "techniqueProp": {
+            "title": "crm:P32_used_general_technique",
+            "description": "A general technique that was employed to carry out this activity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Concept"
+            }
+        },
+        "used_specific_objectProp": {
+            "title": "crm:P16_used_specific_object",
+            "description": "An object or set of things which was used to carry out this activity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/HumanMadeObjectRefOrSetRef"
+            }
+        },
+        "influenced_byProp": {
+            "title": "crm:P15_was_influenced_by",
+            "description": "A Person, Group or Object that influenced the activity in some way",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/HumanMadeObjectRefOrPersonRefOrGroupRef"
+            }
+        },
+        "carried_outProp": {
+            "title": "crm:P14i_performed",
+            "description": "One or more activities which this entity carried out or performed",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Activity"
+            }
+        },
+        "contact_pointProp": {
+            "title": "crm:P76_has_contact_point",
+            "description": "An identifier which can be used as a contact point or address for the entity, such as an email address",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Identifier"
+            }
+        },
+        "residenceProp": {
+            "title": "crm:P74_has_current_or_former_residence",
+            "description": "A `Place` where this entity has resided or done business",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PlaceRef"
+            }
+        },
+        "dimensionProp": {
+            "title": "crm:P43_has_dimension",
+            "description": "One or more `Dimension` structures that describe this entity",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Dimension"
+            }
+        },
+        "made_ofProp": {
+            "title": "crm:P45_consists_of",
+            "description": "One or more `Material` types of which this object is made",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/MaterialRef"
+            }
+        },
+        "current_ownerProp": {
+            "title": "crm:P52_has_current_owner",
+            "description": "The current owner (a `Person` or `Group`) of this object",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PersonRefOrGroupRef"
+            }
+        },
+        "current_custodianProp": {
+            "title": "crm:P50_has_current_keeper",
+            "description": "The current custodian (a `Person` or `Group`) of this object, if different from its owner",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PersonRefOrGroupRef"
+            }
+        },
+        "current_permanent_custodianProp": {
+            "title": "la:current_permanent_custodian",
+            "description": "The current normal custodian (a `Person` or `Group`) if different from the current custodian, for example an object that is owned by an individual, currently in an exhibition, and normally under the custody of an organization",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/PersonRefOrGroupRef"
+            }
+        },
+        "current_locationProp": {
+            "title": "crm:P55_has_current_location",
+            "description": "The current location (a `Place`) of this object",
+            "$ref": "#/definitions/PlaceRef"
+        },
+        "used_forProp": {
+            "title": "crm:P16i_was_used_for",
+            "description": "Activities that this entity was used for.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Activity"
+            }
+        },
+        "showsProp": {
+            "title": "crm:P65_shows_visual_item",
+            "description": "A reference to a `VisualItem` that this object shows the image content of",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/VisualItemRef"
+            }
+        },
+        "carriesProp": {
+            "title": "crm:P128_carries",
+            "description": "A reference to a `LinguisticObject` that this object carries the textual content of",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/LinguisticObjectRef"
+            }
+        },
+		"subject_ofProp": {
+            "title": "crm:P129i_is_subject_of",
+            "description": "One or more human-readable web pages or other digital objects where the focus of the content is this entity",
+			"type": "array", 
+			"items": {"$ref": "#/definitions/DigitalObjectRef"}
+		},
+        "attributed_byProp": {
+            "title": "crm:P140i_was_attributed_by",
+            "description": "One or more AttributeAssignments that relate some other entity to this one",
+            "type": "array", 
+            "items": {"$ref": "#/definitions/AttributeAssignment"}
+        },
+        "attributed_byRelProp": {
+            "title": "crm:P140i_was_attributed_by",
+            "description": "One or more AttributeAssignments that relate some other entity to this one",
+            "type": "array", 
+            "items": {"$ref": "#/definitions/AttributeAssignment"}
+        },
+        "formatProp": {
+            "title": "dc:format",
+            "description": "The media type of the content of the embedded text, e.g. text/plain",
+            "type": "string",
+            "examples": [
+                "text/html",
+                "image/jpeg"
+            ]
+        },
+        "conforms_toProp": {
+            "title": "dcterms:conformsTo",
+            "description": "A standard or specification that this entity conforms to or embodies",
+            "type": "array",
+            "items": {"$ref": "#/definitions/InfoObjectRef"}
+        },
+        "access_pointProp": {
+            "title": "la:access_point",
+            "description": "A URL from which the digital object is able to be retrieved",
+            "type": "array",
+            "items": {"$ref": "#/definitions/DigitalObjectRef"}
+        },
+        "digitally_available_viaProp": {
+            "title": "la:digitally_available_via",
+            "description": "A digital service that may be interacted with in order to retrieve or act upon the digital object",
+            "type": "array",
+            "items": {"$ref": "#/definitions/DigitalService"}
+        },
+
+        "Name": {
+            "title": "crm:E33_E41_Linguistic_Appellation",
+            "description": "A name of an entity\nSee: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art/model/base/#names)",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Name"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "content": {
+                    "$ref": "#/definitions/contentProp"
+                },
+                "language": {
+                    "$ref": "#/definitions/languageProp"
+                },
+                "part": {
+                    "description": "A list of one or more `Name` structures, which are parts of this `Name`",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Name"
+                    }
+                }
+            },
+            "required": [
+                "type",
+                "content"
+            ],
+            "additionalProperties": false,
+            "examples": [
+                {
+                    "type": "Name",
+                    "content": "Georgia O'Keeffe"
+                },
+                {
+                    "type": "Name",
+                    "content": "Blue",
+                    "classified_as": [
+                        {
+                            "id": "http://vocab.getty.edu/aat/300404670",
+                            "type": "Type",
+                            "_label": "Primary Name"
+                        }
+                    ],
+                    "language": [
+                        {
+                            "id": "http://vocab.getty.edu/aat/300388277",
+                            "type": "Language",
+                            "_label": "English"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Identifier": {
+            "title": "crm:E42_Identifier",
+            "description": "An identifier for an entity\nSee: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://linked.art/model/base/#identifiers)",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Identifier"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "content": {
+                    "$ref": "#/definitions/contentProp"
+                },
+                "part": {
+                    "description": "A list of one or more `Identifier` structures, which are parts of this `Identifier`",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Identifier"
+                    }
+                },
+                "assigned_by": {
+                    "description": "The activity through which this `Identifier` was assigned to the entity",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttributeAssignment"
+                    }
+                }
+            },
+            "required": [
+                "type",
+                "content"
+            ],
+            "additionalProperties": false
+        },
+        "Statement": {
+            "title": "crm:E33_Linguistic_Object",
+            "description": "An embedded, relatively short piece of textual content\nSee: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linked.art/model/base/#statements-about-a-resource)",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "LinguisticObject"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "content": {
+                    "$ref": "#/definitions/contentProp"
+                },
+                "language": {
+                    "$ref": "#/definitions/languageProp"
+                },
+                "format": {
+                    "$ref": "#/definitions/formatProp"
+                }
+            },
+            "required": [
+                "type",
+                "content"
+            ],
+            "additionalProperties": false
+        },
+        "TimeSpan": {
+            "title": "crm:E52_Time-Span",
+            "description": "A data structure for recording a span of time\nSee: [API](https://linked.art/api/1.0/shared/timespan/) | [Model](https://linked.art/model/base/#time-span-details)",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "TimeSpan"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "begin_of_the_begin": {
+                    "title": "crm:P82a_begin_of_the_begin",
+                    "description": "The earliest possible date-time at which the timespan could have started",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "end_of_the_begin": {
+                    "title": "crm:P81a_end_of_the_begin",
+                    "description": "The latest possible date-time at which the timespan could have started",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "begin_of_the_end": {
+                    "title": "crm:P81b_begin_of_the_end",
+                    "description": "The earliest possible date-time at which the timespan could have ended",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "end_of_the_end": {
+                    "title": "crm:P82b_end_of_the_end",
+                    "description": "The latest possible date-time at which the timespan could have ended",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "duration": {
+                    "title": "crm:P191_had_duration",
+                    "description": "A `Dimension` that describes the duration of the timespan within any given date-times",
+                    "$ref": "#/definitions/Dimension"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "Dimension": {
+            "title": "crm:E54_Dimension",
+            "description": "A measurable aspect of an entity, with a numeric value, a unit for that value, and a type relative to the entity\nSee: [API](https://linked.art/api/1.0/shared/dimension/) | [Model](https://linked.art/model/object/physical/#dimensions)",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Dimension"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "value": {
+                    "$ref": "#/definitions/valueProp"
+                },
+                "lower_value_limit": {
+                    "$ref": "#/definitions/lower_value_limitProp"
+                },
+                "upper_value_limit": {
+                    "$ref": "#/definitions/upper_value_limitProp"
+                },
+                "unit": {
+                    "title": "crm:P91_has_unit",
+                    "description": "Reference to the MeasurementUnit for this dimension",
+                    "$ref": "#/definitions/UnitRef"
+                },
+                "assigned_by": {
+                    "title": "crm:P141i_was_assigned_by",
+                    "description": "The Measurement(s) that led to the assigning of this dimension",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AttributeAssignment"
+                    }
+                }
+            },
+            "required": [
+                "type",
+                "value",
+                "unit"
+            ],
+            "additionalProperties": false
+        },
+        "MonetaryAmount": {
+            "title": "crm:E97_Monetary_Amount",
+            "description": "An amount of money, with a value and a currency\nSee: [API](https://linked.art/api/1.0/shared/money/) | [Model](https://linked.art/model/provenance/acquisition.html#payments)",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "MonetaryAmount"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "value": {
+                    "$ref": "#/definitions/valueProp"
+                },
+                "lower_value_limit": {
+                    "$ref": "#/definitions/lower_value_limitProp"
+                },
+                "upper_value_limit": {
+                    "$ref": "#/definitions/upper_value_limitProp"
+                },
+                "currency": {
+                    "$ref": "#/definitions/CurrencyRef"
+                }
+            },
+            "required": [
+                "type",
+                "value",
+                "currency"
+            ],
+            "additionalProperties": false
+        },
+        "LegalRight": {
+            "title": "crm:E30_Right",
+            "description": "A legal right that can be held by some party over some entity",
+            "type": "object",
+            "properties": {
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Right"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "possessed_by": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PersonRefOrGroupRef"
+                    }
+                },
+                "applies_to": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HumanMadeObjectRef"
+                    }
+                },
+                "dimension": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Dimension"
+                    }
+                },
+                "part": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LegalRight"
+                    }
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "Concept": {
+            "title": "crm:E55_Type",
+            "description": "A concept or 'Type' in the taxonomic sense\nSee: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art/model/base/#types-and-classifications)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Type"
+                        }
+                    ]
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "Activity": {
+            "title": "crm:E7_Activity",
+            "description": "An activity carried out by some person or group",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Activity"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "took_place_at": {
+                    "$ref": "#/definitions/took_place_atProp"
+                },
+                "timespan": {
+                    "$ref": "#/definitions/timespanProp"
+                },
+                "caused_by": {
+                    "$ref": "#/definitions/caused_byProp"
+                },
+                "carried_out_by": {
+                    "$ref": "#/definitions/carried_out_byProp"
+                },
+                "used_specific_object": {
+                    "$ref": "#/definitions/used_specific_objectProp"
+                },
+                "influenced_by": {
+                    "$ref": "#/definitions/influenced_byProp"
+                },
+                "technique": {
+                    "$ref": "#/definitions/techniqueProp"
+                },
+                "part_of": {
+                    "$ref": "#/definitions/EventRefOrActivityRef"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "AttributeAssignment": {
+            "title": "crm:E13_Attribute_Assignment",
+            "description": "An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "AttributeAssignment"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "took_place_at": {
+                    "$ref": "#/definitions/took_place_atProp"
+                },
+                "timespan": {
+                    "$ref": "#/definitions/timespanProp"
+                },
+                "caused_by": {
+                    "$ref": "#/definitions/caused_byProp"
+                },
+                "carried_out_by": {
+                    "$ref": "#/definitions/carried_out_byProp"
+                },
+                "used_specific_object": {
+                    "$ref": "#/definitions/used_specific_objectProp"
+                },
+                "influenced_by": {
+                    "$ref": "#/definitions/influenced_byProp"
+                },
+                "technique": {
+                    "$ref": "#/definitions/techniqueProp"
+                },
+                "part_of": {
+                    "$ref": "#/definitions/EventRefOrActivityRef"
+                },
+                "assigned": {
+                    "title": "*",
+                    "description": "Attribute Assignments can assign any entity, structure or value"
+                },
+                "assigned_property": {
+                    "title": "crm:P177_assigned_property_type",
+                    "description": "The relationship from the attributed entity to the assigned entity, given as a string which resolves to a relationship in the context definition",
+                    "type": "string"
+
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "RelationshipAssignment": {
+            "title": "crm:E13_Attribute_Assignment",
+            "description": "An activity which relates two entities together, optionally with a specific relationship",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "AttributeAssignment"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "timespan": {
+                    "$ref": "#/definitions/timespanProp"
+                },
+                "carried_out_by": {
+                    "$ref": "#/definitions/carried_out_byProp"
+                },
+                "assigned": {
+                    "title": "*",
+                    "description": "Attribute Assignments can assign any entity or structure",
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/AnyRef"}
+                },
+                "assigned_property": {
+                    "title": "crm:P177_assigned_property_type",
+                    "description": "The relationship from the attributed entity to the assigned entity, given as a string which resolves to a relationship in the context definition",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "assigned"
+            ],
+            "additionalProperties": false
+        },
+
+
+
+        "DigitalService": {
+            "title": "la:DigitalService",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "DigitalService"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "access_point": {
+                    "$ref": "#/definitions/access_pointProp"
+                },
+                "conforms_to": {
+                    "$ref": "#/definitions/conforms_toProp"                    
+                }
+            }
+        },
+        "HumanMadeObjectPart": {
+            "title": "crm:E22_Human-Made_Object",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "HumanMadeObject"
+                },
+                "_label": {
+                    "type": "string"
+                },
+                "identified_by": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NameOrIdentifier"
+                    }
+                },
+                "classified_as": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Concept"
+                    }
+                },
+                "referred_to_by": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LingObjOrStatement"
+                    }
+                },
+                "dimension": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Dimension"
+                    }
+                },
+                "made_of": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MaterialRef"
+                    }
+                },
+                "part": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HumanMadeObjectPart"
+                    }
+                },
+                "shows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VisualItemRef"
+                    }
+                },
+                "carries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinguisticObjectRef"
+                    }
+                },
+                "representation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VisualItemRef"
+                    }
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "NameOrIdentifier": {
+            "description": "A Name or an Identifier",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/Name"
+                },
+                {
+                    "$ref": "#/definitions/Identifier"
+                }
+            ]
+        },
+        "LingObjOrStatement": {
+            "description": "A Linguistic Object Reference or Statement",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/Statement"
+                },
+                {
+                    "$ref": "#/definitions/LinguisticObjectRef"
+                }
+            ]
+        },
+        "LingObjOrDigitalObjOrStatement": {
+            "description": "A Linguistic Object Reference, Digitial Object Reference or Statement",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/Statement"
+                },
+                {
+                    "$ref": "#/definitions/DigitalObjectRef"
+                },
+                {
+                    "$ref": "#/definitions/LinguisticObjectRef"
+                }
+            ]
+        },
+        "PersonRefOrGroupRef": {
+            "description": "A Reference to a Person or Group",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/PersonRef"
+                },
+                {
+                    "$ref": "#/definitions/GroupRef"
+                }
+            ]
+        },
+        "EventRefOrActivityRef": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/EventRef"
+                },
+                {
+                    "$ref": "#/definitions/ActivityRef"
+                }
+            ]
+        },
+        "HumanMadeObjectRefOrSetRef": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/HumanMadeObjectRef"
+                },
+                {
+                    "$ref": "#/definitions/SetRef"
+                }
+            ]
+        },
+        "HumanMadeObjectRefOrPersonRefOrGroupRef": {
+            "description": "A Reference to a Human Made Object,Person or Group",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/HumanMadeObjectRef"
+                },
+                {
+                    "$ref": "#/definitions/PersonRef"
+                },
+                {
+                    "$ref": "#/definitions/GroupRef"
+                }
+            ]
+        },
+        "ContextStringOrArray": {
+            "title": "JSON-LD Context",
+            "description": "Either an array of contexts, or a string containing the Linked Art context URI",
+            "anyOf": [
+                {
+                    "title": "Linked Art",
+                    "type": "string",
+                    "const": "https://linked.art/ns/v1/linked-art.json"
+                },
+                {
+                    "title": "Linked Art with Extensions",
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    ]
+                }
+            ]
+        },
+        "AnyRef": {
+            "title": "*",
+            "description": "Reference to another primary entity\nSee: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "Title": "Specific",
+                            "type": "string",
+                            "enum": [
+                                "HumanMadeObject",
+                                "Person",
+                                "Group",
+                                "VisualItem",
+                                "LinguisticObject",
+                                "Set",
+                                "Place",
+                                "DigitalObject",
+                                "Type",
+                                "Event",
+                                "Activity",
+                                "Period"
+                            ]
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "PlaceRef": {
+            "title": "crm:E53_Place",
+            "description": "Reference to a `Place` entity\nSee: [Schema](place.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Place"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "PersonRef": {
+            "title": "E21_Person",
+            "description": "Reference to a `Person`\nSee: [Schema](person.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Person"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "GroupRef": {
+            "title": "crm:E74_Group",
+            "description": "Reference to a `Group`\nSee: [Schema](group.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "Group"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "HumanMadeObjectRef": {
+            "title": "crm:E22_Human-Made_Object",
+            "description": "Reference to a `HumanMadeObject`\nSee: [Schema](object.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "HumanMadeObject"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "DigitalObjectRef": {
+            "title": "dig:D1_Digital_Object\nSee: [Schema](digital.html)",
+            "description": "Reference to a `DigitalObject`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "DigitalObject"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "LinguisticObjectRef": {
+            "title": "crm:E33_Linguistic_Object",
+            "description": "Reference to a `LinguisticObject`\nSee: [Schema](text.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "LinguisticObject"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "SetRef": {
+            "title": "la:Set",
+            "description": "Reference to a `Set`\nSee: [Schema](set.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Set"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "InfoObjectRef": {
+            "title": "crm:E73_Information_Object",
+            "description": "Reference to an `InformationObject`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "InformationObject"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "EventRef": {
+            "title": "crm:E6_Event",
+            "description": "Reference to an `Event`\nSee: [Schema](event.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Event"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "ActivityRef": {
+            "title": "crm:E7_Activity",
+            "description": "Reference to an `Activity`\nSee: [Schema](event.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Activity"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "VisualItemRef": {
+            "title": "crm:E36_Visual_Item",
+            "description": "Reference to a `VisualItem`\nSee: [Schema](image.html)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "VisualItem"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "UnitRef": {
+            "title": "crm:E58_Measurement_Unit",
+            "description": "Reference to a `MeasurementUnit`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "MeasurementUnit"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "CurrencyRef": {
+            "title": "crm:E98_Currency",
+            "description": "Reference to a `Currency`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Currency"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "MaterialRef": {
+            "title": "crm:E57_Material",
+            "description": "Reference to a `Material`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Material"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "LanguageRef": {
+            "title": "crm:E56_Language",
+            "description": "Reference to a `Language`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Language"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

@@ -24,6 +24,14 @@ The media type to use for representations in JSON-LD using the context is:
 This would be the value of the `Content-Type` HTTP header on responses, and if there are other representations available via content negotiation, then it can be sent in requests in the `Accept` header.
 
 
+## Core Requirements
+
+There are several core requirements to keep in mind for JSON and JSON-LD representations:
+
+* Terms are case sensitive.  `Type` (the class `crm:E55_Type`), and `type` (the property `rdf:type`) are different terms, separated only by the upper case of the initial letter. As described below, the JSON representation of the names of classes and properties is as consistent as possible.
+* Properties cannot be repeated on a single object.  Instead, if there are multiple values for a property or multiple instances of a relationship, then the JSON will have an array as the value where each entry is considered to have that property. Linked Art does not use ordered lists (such as `rdf:List`).
+
+
 ## Other Serialization Formats
 
 Other serialization formats of the underlying graph may also be available, such as [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), [Turtle](https://www.w3.org/TR/turtle/), other standardized formats, or even non-standardized representations. These are not required in order to fully conform with the Linked Art API, and should not be assumed to exist. How to request these alternative serializations is documented in the [protocol](../protocol/) section.
@@ -36,11 +44,9 @@ The examples throughout the documentation use the JSON-LD serialization.  Each h
 An example of the JSON-LD serialization for a painting, that is made of watercolor on a canvas support:
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 top.made_of = instances['watercolor']
-part = SupportPart(top.id + "/part/1")
-part._label = "Canvas Support"
+part = vocab.SupportPart(label="Canvas Support")
 part.made_of = instances['canvas']
 top.part = part
 ```
@@ -69,9 +75,9 @@ The following process is used to create the JSON-LD keys from the CIDOC-CRM onto
 
 * Remove `@` symbols (`id` not `@id`) as a JSON-LD best practice
 * Remove namespaces from classes and properties (`E22_Man-Made_Object` not `crm:E22_Man-Made_Object`) as unnecessary with the context mapping
-* Remove the prefix numbers (`Man-Made_Object` not `E22_Man-Made_Object`) as impossible to remember
-* Remove dashes (`ManMade_Object` not `Man-Made_Object`) as invalid in class names
-* Use upper CamelCase for classes (`ManMadeObject` not `ManMade_Object`) as common practice
+* Remove the prefix numbers (`Human-Made_Object` not `E22_Human-Made_Object`) as impossible to remember
+* Remove dashes (`HumanMade_Object` not `Human-Made_Object`) as invalid in class names
+* Use upper CamelCase for classes (`HumanMadeObject` not `HumanMade_Object`) as common practice
 * Use lower snake_case for properties (`is_identified_by`) as generating camelCase is difficult automatically for such a broad set of terms
 * Remove `is_`, `was_`, `has_` and `had_` from the beginning of properties, as being inconsistently applied in the ontology and hard to remember (`identified_by` not `is_identified_by` ; compare the `created` and `destroyed` properties, which are not of the form `was_created` in the ontology)
 * Rename properties with collisions, from furthest down the hierarchy first, with a first effort of adding the range's class to the predicate name, but preferring a human understandable term 

@@ -42,7 +42,7 @@ You can never intuit all of the rules for the data. Documentation clarifies the 
 Every exception that you have in an API (and hence ontology) is another rule that the developer needs to learn in order to use the system. Every exception is jarring, and requires additional code to manage. While not everything is homogenous, a set of patterns that manage exceptions well is better than many custom fields.
 
 
-## Examples of LOUD
+## Examples of systems following the LOUD principles
 
 * [IIIF](https://iiif.io/) and especially the [Presentation API, version 3.0](https://iiif.io/api/presentation/3.0/)
 * [Web Annotation](http://www.w3.org/TR/annotation-model)
@@ -50,5 +50,19 @@ Every exception that you have in an API (and hence ontology) is another rule tha
 
 ## Further Resources
 
-You can listen to [Rob's Keynote for EuropeanaTech](https://www.youtube.com/watch?v=r4afi8mGVAY) from May 2018. Or read through [the slides](https://www.slideshare.net/Europeana/shout-it-out-loud-by-rob-sanderson-europeanatech-conference-2018-98225909) at your own pace.
+Videos:
+
+Watch Rob's LOUD keynote at Europeana Tech in 2018:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r4afi8mGVAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Or check out some relevant slidedecks:
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/BMdlmZ7ewadpGr" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/azaroth42/the-importance-of-being-loud" title="The Importance of being LOUD" target="_blank">The Importance of being LOUD</a> </strong> from <strong><a href="https://www.slideshare.net/azaroth42" target="_blank">Robert Sanderson</a></strong> </div>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/bopQK4FdYcUDpp" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/azaroth42/standards-and-communities-connected-people-consistent-data-usable-applications" title="Standards and Communities: Connected People, Consistent Data, Usable Applications" target="_blank">Standards and Communities: Connected People, Consistent Data, Usable Applications</a> </strong> from <strong><a href="https://www.slideshare.net/azaroth42" target="_blank">Robert Sanderson</a></strong> </div>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/uo5ilgP1YF9uPV" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/azaroth42/illusions-of-grandeur-trust-and-belief-in-cultural-heritage-linked-open-data" title="Illusions of Grandeur: Trust and Belief in Cultural Heritage Linked Open Data" target="_blank">Illusions of Grandeur: Trust and Belief in Cultural Heritage Linked Open Data</a> </strong> from <strong><a href="https://www.slideshare.net/azaroth42" target="_blank">Robert Sanderson</a></strong> </div> 
+
 

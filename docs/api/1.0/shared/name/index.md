@@ -28,14 +28,14 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |  
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` |
-| `_label`          | string        | Optional    | A human readable labe, intended for developers |
-| `content`         | string        | Required    | The string form of the Name |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) |
-| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)|
-| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | 
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |   <!--  -->
+| `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` | 
+| `_label`          | string        | Optional    | A human readable label, intended for developers | <!-- LAF.4 -->
+| `content`         | string        | Required    | The string form of the Name | <!-- LAF.6 -->
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) | <!-- LAF.5 -->
+| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)| <!-- LAF.7 -->
+| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | <!-- -->
 
 ### Property Diagram
 
@@ -63,13 +63,13 @@ An object is given the name "Hacha (Ceremonial Axe)", with a note that the origi
 * It is `referred_to_by` a statement, with a `type` of "LinguisticObject", `classified_as` a note with `id` of _aat:300027200_ and with `content` of "Title was originally ..."
 * It has languages of English, with an `id` of _aat:300388277_ and `type` of "Language", and Spanish, with an `id` of _aat:300389311_ and `type` of "Language"
 * It has a specific `part`, which ...
-  * ... also has a `type` of "Name"
-  * ... is `classified_as` a subtitle, with an `id` of _aat:300312006_
-  * ... has `content` of "Ceremonial Axe"
-  * ... and a language of English, as above. 
+    * ... also has a `type` of "Name"
+    * ... is `classified_as` a subtitle, with an `id` of _aat:300312006_
+    * ... has `content` of "Ceremonial Axe"
+    * ... and a language of English, as above. 
 
 ```crom
-top = model.HumanMadeObject()
+top = model.HumanMadeObject(ident="auto int-per-segment")
 n = vocab.PrimaryName(content="Hacha (Ceremonial Axe)")
 n.language = instances['spanish']
 n.language = instances['english']

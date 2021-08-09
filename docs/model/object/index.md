@@ -21,6 +21,6 @@ The following sections are uniquely about physical objects, and specifically art
 * [Ownership](ownership/) -- The current owner and location of the artwork
 * [Rights Information](rights/) -- Rights information, other than ownership
 * [Digital](/model/digital/) -- For digital representations of objects, see the top level section
-* ["Immovable" Objects](/model/place/) -- Objects that are too large to conveniently move
+* ["Immovable" Objects](/model/place/) -- Objects that are too large to conveniently move are covered in the section on Places
 
 

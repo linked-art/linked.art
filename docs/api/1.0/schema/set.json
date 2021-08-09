@@ -1,0 +1,52 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"title": "Collection Schema",
+	"description": "_la:Set_\nA collection of other resources, such as a set of objects or places.\n[API](https://linked.art/api/1.0/endpoint/set/) | [Model](https://linked.art/model/collection/)",
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/definitions/idProp"},				
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+			{"title": "Specific", "type": "string", "const": "Set"}]},
+		"_label": {"$ref": "core.json#/definitions/labelProp"},
+		"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
+			{"title": "Specific", "description": "List of equivalent `Set` entities", "type": "array", "items": {"$ref": "core.json#/definitions/SetRef"}}]},
+		"representation": {"$ref": "core.json#/definitions/representationProp"},
+		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
+		"dimension": {"$ref": "core.json#/definitions/dimensionProp"},
+
+		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"}
+
+	},
+	"definitions": {
+		"Creation": {
+			"title": "crm:E65_Creation",
+			"description": "The creation of the Set, potentially before any members were added",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Creation"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
+			}
+		}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

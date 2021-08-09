@@ -1,0 +1,226 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"title": "Provenance Activity Schema",
+	"description": "_crm:E7\\_Activity_\nA broad activity during which the ownership, custody, location or other rights related to one or more objects are changed\nSee: [API](https://linked.art/api/1.0/endpoint/provenance/) | [Model](https://linked.art/model/provenance/)",
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/definitions/idProp"},				
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+			{"title": "Specific", "type": "string", "const": "Activity"}]},
+		"_label": {"$ref": "core.json#/definitions/labelProp"},
+		"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
+			{"title": "Specific", "description": "List of equivalent `Activity` entities", "type": "array", "items": {"$ref": "core.json#/definitions/ActivityRef"}}]},
+		"representation": {"$ref": "core.json#/definitions/representationProp"},
+		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
+
+		"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+		"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+		"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+		"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+		"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+		"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+		"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+		"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"},
+		"part": {"title": "crm:P9_consists_of", "description": "More specific parts of the event", "type": "array", "items": {"$ref": "#/definitions/PartOptions"}}
+	},
+
+	"definitions": {
+		"PartOptions": {
+			"anyOf": [
+				{"$ref": "#/definitions/Acquisition"},
+				{"$ref": "#/definitions/RightAcquisition"},
+				{"$ref": "#/definitions/TransferOfCustody"},				
+				{"$ref": "#/definitions/Payment"},	
+				{"$ref": "#/definitions/Encounter"},	
+				{"$ref": "#/definitions/Move"},	
+				{"$ref": "#/definitions/Promise"}
+			]
+		},
+
+		"Acquisition": {
+			"title": "crm:E8_Acquisition",
+			"description": "The transfer of ownership of a physical object between parties",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Acquisition"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"transferred_title_from": {"title": "crm:P23_transferred_title_from", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/PersonRefOrGroupRef"}},
+				"transferred_title_to": {"title": "crm:P22_transferred_title_to", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/PersonRefOrGroupRef"}},
+				"transferred_title_of": {"title": "crm:P24_transferred_title_of", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
+			},
+			"required": ["type", "transferred_title_of"],
+			"additionalProperties": false
+		},
+		"TransferOfCustody": {
+			"title": "crm:E10_Transfer_of_Custody",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "TransferOfCustody"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"transferred_custody_from": {"title": "crm:P28_custody_surrendered_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/PersonRefOrGroupRef"}},
+				"transferred_custody_to": {"title": "crm:P29_custody_received_by", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/PersonRefOrGroupRef"}},
+				"transferred_custody_of": {"title": "crm:P30_transferred_custody_of", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
+			},
+			"required": ["type", "transferred_custody_of"],
+			"additionalProperties": false			
+		},
+		"Payment": {
+			"title": "la:Payment",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Payment"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"paid_from": {"title": "la:paid_from", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/PersonRefOrGroupRef"}},
+				"paid_to": {"title": "la:paid_to", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/PersonRefOrGroupRef"}},
+				"paid_amount": {"title": "la:paid_amount", "description": "", "$ref": "core.json#/definitions/MonetaryAmount"}
+			},
+			"required": ["type"],
+			"additionalProperties": false			
+		},
+		"RightAcquisition": {
+			"title": "la:RightAcquisition",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "RightAcquisition"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"establishes": {"title": "la:establishes", "description": "", "$ref": "core.json#/definitions/LegalRight"},
+				"invalidates": {"title": "la:invalidates", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/LegalRight"}}
+			},
+			"required": ["type", "establishes"],
+			"additionalProperties": false	
+		},
+		"Move": {
+			"title": "crm:E9_Move",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Move"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"moved_from": {"title": "crm:P27_moved_from", "description": "", "$ref": "core.json#/definitions/PlaceRef"},
+				"moved_to": {"title": "crm:P26_moved_to", "description": "", "$ref": "core.json#/definitions/PlaceRef"},
+				"moved": {"title": "crm:P25_moved", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
+			},
+			"required": ["type", "moved"],
+			"additionalProperties": false	
+		},		
+		"Encounter": {
+			"title": "sci:S19_Encounter_Event",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Encounter"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"encountered": {"title": "sci:O19_has_found_object", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
+			},
+			"required": ["type", "encountered"],
+			"additionalProperties": false	
+		},
+		"Promise": {
+			"title": "crm:E7_Activity",
+			"description": "",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Activity"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"}
+			},
+			"required": ["type", "classified_as"],
+			"additionalProperties": false	
+		}
+	},
+	"required": ["@context", "id", "type", "_label", "classified_as"],
+	"additionalProperties": false
+}

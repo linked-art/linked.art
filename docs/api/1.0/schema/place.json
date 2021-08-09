@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"title": "Place Schema",
+	"description": "_crm:E53\\_Place_\nGeographic locations where activities occur.\nSee: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.art/model/place/)",
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/definitions/idProp"},				
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+			{"title": "Specific", "type": "string", "const": "Place"}]},
+		"_label": {"$ref": "core.json#/definitions/labelProp"},
+		"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+		"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
+			{"title": "Specific", "description": "List of `Place` entities", "type": "array", "items": {"$ref": "core.json#/definitions/PlaceRef"}}]},
+		"representation": {"$ref": "core.json#/definitions/representationProp"},
+		"member_of": {"$ref": "core.json#/definitions/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
+
+		"defined_by": {
+			"title": "crm:P168_place_is_defined_by",
+			"description": "A string with a WKT or GeoJSON definition of the area of the Place",
+			"type": "string"
+
+		},
+		"approximated_by": {
+			"title": "crm:P189i_is_approximated_by",
+			"description": "This `Place` is approximately the same area as the given entities",  
+			"type": "array", 
+			"items": {"$ref": "core.json#/definitions/PlaceRef"}
+		},
+		"part_of": {
+			"title": "crm:P89_falls_within",
+			"description": "This `Place` is contained within one or more larger `Place` entities",
+			"type": "array", 
+			"items": {"$ref": "core.json#/definitions/PlaceRef"}
+		}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

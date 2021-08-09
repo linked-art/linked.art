@@ -1,0 +1,84 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"title": "Group Schema",
+	"description": "_crm:E74\\_Group_\nA Group of People and/or other Groups.\nSee: [API](https://linked.art/api/1.0/endpoint/group/) | [Model](https://linked.art/model/actor/)",	
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/definitions/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/definitions/idProp"},				
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+			{"title": "Specific", "type": "string", "const": "Group"}]},
+		"_label": {"$ref": "core.json#/definitions/labelProp"},
+		"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/equivalentProp"}, 
+			{"title": "Specific", "description": "List of `Group` entities", "type": "array", "items": {"$ref": "core.json#/definitions/GroupRef"}}]},
+		"representation": {"$ref": "core.json#/definitions/representationProp"},
+		"member_of": {"$ref": "core.json#/definitions/member_ofGroupProp"},
+		"subject_of": {"$ref": "core.json#/definitions/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/definitions/attributed_byRelProp"},
+
+		"carried_out": {"$ref": "core.json#/definitions/carried_outProp"},
+		"contact_point": {"$ref": "core.json#/definitions/contact_pointProp"},
+		"residence": {"$ref": "core.json#/definitions/residenceProp"},
+
+		"formed_by": {
+			"title": "crm:P95i_was_formed_by",
+			"description": "The activity of forming or creating the Group",
+			"$ref": "#/definitions/Formation"
+		},
+		"dissolved_by": {
+			"title": "crm:P99i_was_dissolved_by",
+			"description": "The activity of dissolving or ending the Group",
+			"$ref": "#/definitions/Dissolution"
+		}
+
+	},
+	"definitions": {
+		"Formation": {
+			"title": "crm:E66_Formation",
+			"description": "The activity which formed or created the Group",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Formation"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this formation is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
+			}
+		},
+		"Dissolution": {
+			"title": "crm:E68_Dissolution",
+			"description": "The event which dissolved or ended the Group",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Dissolution"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this dissolution is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
+			}
+		}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

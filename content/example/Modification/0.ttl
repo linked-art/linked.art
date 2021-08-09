@@ -1,0 +1,34 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/Modification/0> a crm:E11_Modification ;
+    rdfs:label "Condition Assessment of Object" ;
+    crm:P126_employed <http://vocab.getty.edu/aat/300014250> ;
+    crm:P129i_is_subject_of [ a crm:E33_Linguistic_Object ;
+            rdfs:label "Conservation Report" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ] ;
+    crm:P14_carried_out_by [ a crm:E21_Person ;
+            rdfs:label "Conservator" ] ;
+    crm:P31_has_modified [ a crm:E22_Human-Made_Object ;
+            rdfs:label "Manuscript" ] ;
+    crm:P4_has_time-span [ a crm:E52_Time-Span ;
+            crm:P82a_begin_of_the_begin "2002-04-19T00:00:00+00:00"^^xsd:dateTime ;
+            crm:P82b_end_of_the_end "2002-04-26T00:00:00+00:00"^^xsd:dateTime ] ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Planned conservation work in response to earlier survey" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ],
+        [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Board consolidation and re-attachment" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ] .
+
+<http://vocab.getty.edu/aat/300014250> a crm:E57_Material ;
+    rdfs:label "Thread" .
+
+<http://vocab.getty.edu/aat/300418049> a crm:E55_Type ;
+    rdfs:label "Brief Text" .
+
+<http://vocab.getty.edu/aat/300435416> a crm:E55_Type ;
+    rdfs:label "Description" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300418049> .
+

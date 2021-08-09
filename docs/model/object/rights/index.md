@@ -19,9 +19,8 @@ __Example:__
 The painting was a donation of a Ms J. Smith.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
-crdt = CreditStatement()
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
+crdt = vocab.CreditStatement()
 crdt.content = "Donation of Ms J. Smith; Example Organization"
 top.referred_to_by = crdt
 ```
@@ -35,9 +34,9 @@ __Example:__
 An assertion that the copyright status of an object has not been assessed, and is thus unknown.
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "Example Painting"
-crdt = RightsStatement()
+crdt = vocab.RightsStatement()
 crdt.content = "Copyright of this object has not yet been assessed"
 top.referred_to_by = crdt
 ```
@@ -57,7 +56,7 @@ __Example:__
 The painting has no known copyright.
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "Painting"
 r = model.Right()
 t = model.Type(ident="http://rightsstatements.org/vocab/NKC/1.0/")

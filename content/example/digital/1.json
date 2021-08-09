@@ -1,0 +1,65 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json", 
+  "id": "https://linked.art/example/digital/1", 
+  "type": "DigitalObject", 
+  "_label": "Digital Object", 
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300264578", 
+      "type": "Type", 
+      "_label": "Web Page"
+    }
+  ], 
+  "identified_by": [
+    {
+      "type": "Name", 
+      "content": "Informative Web Page"
+    }
+  ], 
+  "dimension": [
+    {
+      "type": "Dimension", 
+      "_label": "100 kb", 
+      "classified_as": [
+        {
+          "id": "https://linked.art/example/concept/aat:300265863", 
+          "type": "Type", 
+          "_label": "File Size"
+        }
+      ], 
+      "value": 100, 
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300265870", 
+        "type": "MeasurementUnit", 
+        "_label": "kilobytes"
+      }
+    }
+  ], 
+  "conforms_to": [
+    {
+      "id": "http://w3.org/TR/html", 
+      "type": "InformationObject"
+    }
+  ], 
+  "access_point": [
+    {
+      "id": "https://www.eg.museum/edu/page1.html", 
+      "type": "DigitalObject"
+    }
+  ], 
+  "format": "text/html", 
+  "created_by": {
+    "type": "Creation", 
+    "timespan": {
+      "type": "TimeSpan", 
+      "begin_of_the_begin": "2007-01-20T13:53:00Z", 
+      "end_of_the_end": "2007-01-20T13:54:00Z"
+    }, 
+    "carried_out_by": [
+      {
+        "type": "Group", 
+        "_label": "Museum Education Department"
+      }
+    ]
+  }
+}

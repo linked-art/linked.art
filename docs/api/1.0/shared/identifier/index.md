@@ -32,11 +32,11 @@ Identifiers have the following properties.
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the identifier, rather than the URI which is the identifier of the object |  
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Identifier"` |
-| `_label`          | string        | Recommended | A human readable label, intended for developers |
-| `content`         | string        | Required    | The string content of the identifier |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. |
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, as below |  
+| `_label`          | string        | Recommended | A human readable label, intended for developers | <!-- LAF.8 -->
+| `content`         | string        | Required    | The string content of the identifier | <!-- LAF.10 -->
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) | <!-- LAF.9 -->
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. | <!-- LAF.45 -->
+| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, as below |   <!-- -->
 
 
 ### Properties of Identifier Assignments
@@ -78,13 +78,13 @@ An accession number for an object, created and assigned by Example Museum at som
 * It is `referred_to_by` a statement, with a `type` of "LinguisticObject" and `content` of "This is the original...". The LinguisticObject is `classified_as` a note, with an `id` of _aat:300418049_ and `type` of Type
 * It has `content` of the value "1997-A1752"
 * It was `assigned_by` an identifier assignment, which ...
-  * ... has a URI given in `id` (which identifies the assignment)
-  * ... has a `type` of "AttributeAssignment"
-  * ... has a `timespan` structure, with a `begin_of_the_begin` date of Jan 1 1997 and an `end_of_the_end` date of Dec 31 1997
-  * ... was `carried_out_by` a [reference](../reference/) to the organization that created the identifer, with a `type` of "Group"
+    * ... has a URI given in `id` (which identifies the assignment)
+    * ... has a `type` of "AttributeAssignment"
+    * ... has a `timespan` structure, with a `begin_of_the_begin` date of Jan 1 1997 and an `end_of_the_end` date of Dec 31 1997
+    * ... was `carried_out_by` a [reference](../reference/) to the organization that created the identifer, with a `type` of "Group"
 
 ```crom
-top = model.HumanMadeObject()
+top = model.HumanMadeObject(ident="auto int-per-segment")
 id = vocab.AccessionNumber(label="Example Museum Accession Number", content="1997-A1752")
 top.identified_by = id
 id.referred_to_by = vocab.Note(content="This is the original accession number from 1997")

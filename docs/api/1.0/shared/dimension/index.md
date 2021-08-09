@@ -45,8 +45,8 @@ The dimension data structure has the following properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the measurement |  
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"AttributeAssignment"` |
-| `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
+| `type`            | string        | Required    | The class for the measurement, which MUST be the value `"AttributeAssignment"` |
+| `_label`          | string        | Recommended | A human readable label for the measurement, intended for developers |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the measurement and MUST follow the requirements for [Type](../type/) |
 | `carried_out_by`  | array         | Recommended | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) |
 | `timespan`        | json object   | Optional    | A json object which MUST follow the requirements for [timespans](../timespan/)|
@@ -76,13 +76,13 @@ A Human-Made Object [instance](../../endpoint/physical_thing/) has a dimension o
 * It has a `unit` of inches, with `id` of _aat:300379100_ and a `type` of `MeasurementUnit`
 * It is `identified_by` a Name, which is `classified_as` a display title, with an `id` of _aat:300404669_ and `type` of Type.  The Name has `content` of the string "24 inches high (+/- 2 inches)"
 * It is `assigned_by` a measurement, which...
-  * ... has a URI given in `id`
-  * ... has a `type` of `AttributeAssignment`
-  * ... is `classified_as` measuring, with `id` of _aat:300053578_ and a `type` of Type
-  * ... is `carried_out_by` the curator, being a [reference](../reference/) to an instance in a [person endpoint](../../endpoint/person/)
+    * ... has a URI given in `id`
+    * ... has a `type` of `AttributeAssignment`
+    * ... is `classified_as` measuring, with `id` of _aat:300053578_ and a `type` of Type
+    * ... is `carried_out_by` the curator, being a [reference](../reference/) to an instance in a [person endpoint](../../endpoint/person/)
 
 ```crom
-top = model.HumanMadeObject()
+top = model.HumanMadeObject(ident="auto int-per-segment")
 d = vocab.Height()
 d.value = 24
 d.unit = vocab.instances['inches']

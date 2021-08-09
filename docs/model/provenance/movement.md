@@ -25,7 +25,7 @@ If the institution is subdivided into departments, these moves may also coincide
 The model for moving an object is very similar to that of an Acquisition, Transfer of Custody or Payment.  There is an activity, which can be `carried_out_by` an actor and all of the other basic activity features, that `moved` the object between two locations, from the place given in `moved_from` and to the place given in `moved_to`.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Exhibiting a Painting")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Exhibiting a Painting")
 what = vocab.Painting(label="Example Painting")
 storage = vocab.StoragePlace(label="Storage Venue")
 display = vocab.Gallery(label="Gallery")

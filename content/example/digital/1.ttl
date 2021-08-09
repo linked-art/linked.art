@@ -1,0 +1,40 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/digital/1> a <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> ;
+    rdfs:label "Digital Object" ;
+    dc:format "text/html" ;
+    dcterms:conformsTo <http://w3.org/TR/html> ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Informative Web Page" ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300264578> ;
+    crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "100 kb" ;
+            crm:P2_has_type <https://linked.art/example/concept/aat:300265863> ;
+            crm:P90_has_value 100 ;
+            crm:P91_has_unit <http://vocab.getty.edu/aat/300265870> ] ;
+    crm:P94i_was_created_by [ a crm:E65_Creation ;
+            crm:P14_carried_out_by [ a crm:E74_Group ;
+                    rdfs:label "Museum Education Department" ] ;
+            crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                    crm:P82a_begin_of_the_begin "2007-01-20T13:53:00+00:00"^^xsd:dateTime ;
+                    crm:P82b_end_of_the_end "2007-01-20T13:54:00+00:00"^^xsd:dateTime ] ] ;
+    la:access_point <https://www.eg.museum/edu/page1.html> .
+
+<http://vocab.getty.edu/aat/300264578> a crm:E55_Type ;
+    rdfs:label "Web Page" .
+
+<http://vocab.getty.edu/aat/300265870> a crm:E58_Measurement_Unit ;
+    rdfs:label "kilobytes" .
+
+<http://w3.org/TR/html> a crm:E73_Information_Object .
+
+<https://linked.art/example/concept/aat:300265863> a crm:E55_Type ;
+    rdfs:label "File Size" .
+
+<https://www.eg.museum/edu/page1.html> a <http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object> .
+

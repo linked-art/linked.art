@@ -10,11 +10,18 @@ There are many ways to get involved:
 
 * Attend a Linked Art [Event](/community/events/)
 * Join the Discussion Group: <https://groups.google.com/forum/#!forum/linked-art>
-* Join the Slack (email [rsanderson@getty.edu](mailto:rsanderson@getty.edu) for an invitation)
+* Join the Slack (email [robert.sanderson@yale.edu](mailto:robert.sanderson@yale.edu) for an invitation)
 * Add to Issues / Questions: <https://github.com/linked-art/linked.art/issues>
 * Edit the website source in Github: <https://github.com/linked-art/linked.art/>
-* Listen to our recorded discussions: <https://www.youtube.com/channel/UCNASnutgByTdQHGehoOUlSA>
+* Listen to some of our recorded discussions: <https://www.youtube.com/channel/UCNASnutgByTdQHGehoOUlSA>
 
+## Funded Projects and Supporters
+
+The Linked Art initiative is supported, directly and indirectly, by a number of projects and their funders:
+
+* [Linked Art: Networking Digital Collections and Scholarship](/community/projects/researchnetwork/) (project reference AH/S012419/1) an Research Network funded by the UK [Arts and Humanities Research Council](https://ahrc.ukri.org/) (AHRC) based at the University of Oxford
+* [Linked Art II: Developing Community, Practice, and Scholarship](/community/projects/linkedartii/) (project reference AH/T013117/1), also funded by the UK [AHRC](https://ahrc.ukri.org/) at the University of Oxford
+* An grant from the [Samuel H. Kress Foundation](http://www.kressfoundation.org) supporting the work of the Editorial Board
 
 ## Community Participants
 
@@ -27,6 +34,7 @@ The following participants are some of the many institutions, organizations and 
 * [Pre-Raphaelites Online](https://preraphaelitesonline.org/)
 * [Linked Conservation Data](https://www.ligatus.org.uk/project/linked-conservation-data)
 
+And several others. If you would like to be listed here, please let us know!
 
 ### Institutions
 
@@ -63,7 +71,7 @@ The following participants are some of the many institutions, organizations and 
 
 Starting in January 2019, the linked.art project will be managed by an editorial board, currently consisting of the following people:
 
-* Robert Sanderson (co-chair, J. Paul Getty Trust)
+* Robert Sanderson (co-chair, Yale University)
 * Emmanuelle Delmas-Glass (co-chair, Yale Center for British Art)
 * Edward Anderson (Rijksmuseum)
 * David Beaudet (National Gallery of Art (US))
@@ -76,7 +84,6 @@ Starting in January 2019, the linked.art project will be managed by an editorial
 * Ethan Gruber (American Numismatics Society)
 * Thomas Hansli (ETH Zurich)
 * Antoine Isaac (Europeana)
-* Lukas Klic (I Tatti)
 * John McQuaid (Frick)
 * Philippe Michon (Canadian Heritage Information Network)
 * David Newbury (J. Paul Getty Trust)

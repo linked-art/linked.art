@@ -25,12 +25,11 @@ __Example:__
 A painting that measures 16 inches wide by 20 inches tall.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example 16x20 Painting"
-w = Width(value=16)
+top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
+w = vocab.Width(value=16)
 w.unit = instances['inches']
 top.dimension = w
-h = Height(value=20)
+h = vocab.Height(value=20)
 h.unit = instances['inches']
 top.dimension = h
 ```
@@ -44,12 +43,35 @@ __Example:__
 The same 16 by 20 inch painting, described only in a human-readable text.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
-dims = DimensionStatement()
+top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
+dims = vocab.DimensionStatement()
 dims.content = "The painting is approximately 16 inches wide, by 20 inches high"
 top.referred_to_by = dims
 ```
+
+### Dimension Display Labels
+
+Another method is to have the dimensions in the data include a human readable label for the value that the dimension is representing.  This allows clients to present the data in a particular style, rather than having to generate the text from the dimension value, unit and type.
+
+This same approach can be used on many data structures and is merely being called out here to compare with the machine oriented view of just the data structure, and the human oriented view of just the full description as a statement.
+
+__Example:__
+
+The same 16 by 20 inch painting once more, described with human readable labels on each dimension.
+
+```crom
+top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
+w = vocab.Width(value=16)
+w.unit = instances['inches']
+w.identified_by = vocab.DisplayName(value="16 inches wide")
+top.dimension = w
+h = vocab.Height(value=20)
+h.unit = instances['inches']
+h.identified_by = vocab.DisplayName(value="20 inches high")
+top.dimension = h
+```
+
+
 
 ### Measurements of Dimensions
 
@@ -62,7 +84,7 @@ __Example:__
 A particular curator measured the painting to be 20 inches high.
 
 ```crom
-top = Painting(label="Example Painting")
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 h = vocab.Height(value=20)
 h.unit = vocab.instances['inches']
 aa = model.AttributeAssignment(label="Measurement of Painting")
@@ -84,8 +106,7 @@ __Example:__
 A green painting has a vivid (`00FF00`) green color, and is also categorized as being green (_aat:300128438_)
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Green Painting"
+top = vocab.Painting(ident="auto int-per-segment", label="Green Painting", art=1)
 c = vocab.Color()
 c._label = "green"
 c.classified_as = vocab.instances['color green']
@@ -110,9 +131,8 @@ __Example:__
 An oval-shaped painting.
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", label="Oval Painting", art=1)
 top.classified_as = instances['oval']
-top._label = "Example Oval Painting"
 ```
 
 ## Materials
@@ -126,8 +146,7 @@ __Example:__
 A statue made of marble.
 
 ```crom
-top = Sculpture(art=1)
-top._label = "Example Marble Sculpture"
+top = vocab.Sculpture(ident="auto int-per-segment", label="Marble Sculpture", art=1)
 top.made_of = instances['marble']
 ```
 
@@ -140,11 +159,25 @@ __Example:__
 A multi-media painting, with a description of the materials in human-readable text only.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Multi-Media Painting"
-mats = MaterialStatement()
+top = vocab.Painting(ident="auto int-per-segment", label="Multi-material Painting", art=1)
+mats = vocab.MaterialStatement()
 mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
 top.referred_to_by = mats
+```
+
+## Environmental conditions
+
+Depending on their material, objects need to be kept in appropriate environmental conditions so that they do not deteriorate. Such conditions are often recommendations by conservators and collection care experts and can be documented using a `LinguisticObject` classified as being about the environmental conditions of the object via _aat:300229535_.
+
+__Example:__
+
+A painting with a description of the recommended environmental conditions.
+
+```crom
+top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
+env = vocab.EnvironmentStatement()
+env.content = "Light level: 150 &#177;50 lux; Relative humidity: 55 &#177;5%; Temperature 21 &#177;1 &deg;C."
+top.referred_to_by = env
 ```
 
 ## Parts
@@ -160,11 +193,9 @@ __Example:__
 A watercolor painting, that has a part which is the support and is made of canvas.
 
 ```crom
-top = Painting(art=1)
-top._label = "Example Painting"
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
 top.made_of = instances['watercolor']
-part = SupportPart(top.id + "/part/1")
-part._label = "Canvas Support"
+part = vocab.SupportPart(label="Canvas Support")
 part.made_of = instances['canvas']
 top.part = part
 ```
@@ -182,23 +213,19 @@ The use of the classification of being an artwork applies only to the front of t
 
 
 ```crom
-top = vocab.PhotographColor()
-top._label = "Photograph of Example Artwork"
+top = vocab.PhotographColor(ident="auto int-per-segment",label="Photograph of Example Painting")
 
-recto = vocab.FrontPart(art=1)
-recto._label = "Front of Photograph"
-verso = vocab.BackPart()
-verso._label = "Back of Photograph"
+recto = vocab.FrontPart(label="Front of Photograph", art=1)
+verso = vocab.BackPart(label="Back of Photograph")
 top.part = recto
 top.part = verso
 
-what = Painting(art=1)
-what._label = "Example Painting"
-vi = VisualItem()
+what = vocab.Painting(label="Example Painting", art=1)
+vi = model.VisualItem()
 vi.represents = what
 recto.shows = vi
 
-txt = LinguisticObject()
+txt = model.LinguisticObject()
 txt.content = "Photograph of Example Painting, taken 1932"
 verso.carries = txt
 ```

@@ -24,11 +24,11 @@ In order to connect the `Right` to the provenance activity, we introduce a new `
 Instances of `Right` have two properties: `possessed_by` refers to the actor (`Group` or `Person`) that has the right described, and `applies_to` refers to the thing over which the right pertains.
 
 ```crom
-top = vocab.ProvenanceEntry()
+top = vocab.ProvenanceEntry(ident="auto int-per-segment")
 # Omit some classifications for readability
 what = model.HumanMadeObject(label="Painting")
 who = model.Group(label="Museum")
-xfer = Acquisition()
+xfer = model.Acquisition()
 xfer.transferred_title_of = what
 xfer.transferred_title_to = who
 top.part = xfer
@@ -50,11 +50,11 @@ The base acquisition model allows for ownership to be transferred to multiple ac
 In the same way as describing the physical extent of a physical object, we can use a `Dimension` to describe the logical extent of the ownership. At any given time the total shares of an object should, of course, add up to the entire object.  If this is not true, then it might signify either that the accounting is wrong (more than 100% of the object is claimed as being owned), theft (multiple claims of ownership at the same time, some of which are illegal), or just that it is now unknown what happened.
 
 ```crom
-top = vocab.ProvenanceEntry(label="Purchase of Painting by Two Dealers")
-d1 = Group(label="Dealer 1")
-d2 = Group(label="Dealer 2")
-what = Painting(label="Painting")
-unit = MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Painting by Two Dealers")
+d1 = model.Group(label="Dealer 1")
+d2 = model.Group(label="Dealer 2")
+what = vocab.Painting(label="Painting")
+unit = model.MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
 right = vocab.OwnershipRight(label="Total Right of Ownership")
 
 rxfer = model.RightAcquisition()
@@ -64,7 +64,7 @@ right.applies_to = what
 
 r1 = vocab.OwnershipRight(label="30% Ownership by Dealer 1")
 r1.possessed_by = d1
-dim1 = Dimension()
+dim1 = model.Dimension()
 dim1.value = 30
 dim1.unit = unit
 r1.dimension = dim1
@@ -72,7 +72,7 @@ right.part = r1
 
 r2 = vocab.OwnershipRight(label="70% Ownership by Dealer 2")
 r2.possessed_by = d2
-dim1 = Dimension()
+dim1 = model.Dimension()
 dim1.value = 70
 dim1.unit = unit
 r2.dimension = dim1
@@ -90,18 +90,18 @@ If only existing owners are part of the entry, then there is no need to establis
 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Trading Shares of Painting between Two Dealers")
-d1 = Group(label="Dealer 1")
-d2 = Group(label="Dealer 2")
-what = Painting(label="Painting")
-unit = MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Trading Shares of Painting between Two Dealers")
+d1 = model.Group(label="Dealer 1")
+d2 = model.Group(label="Dealer 2")
+what = vocab.Painting(label="Painting")
+unit = model.MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
 
 rx1 = model.RightAcquisition()
 top.part = rx1
 r1 = vocab.OwnershipRight(label="40% Ownership by Dealer 1")
 r1.possessed_by = d1
 r1.applies_to = what
-dim1 = Dimension()
+dim1 = model.Dimension()
 dim1.value = 40
 dim1.unit = unit
 r1.dimension = dim1
@@ -112,7 +112,7 @@ rx2 = model.RightAcquisition()
 top.part= rx2
 r2 = vocab.OwnershipRight(label="60% Ownership by Dealer 2")
 r2.possessed_by = d2
-dim1 = Dimension()
+dim1 = model.Dimension()
 dim1.value = 70
 dim1.unit = unit
 r2.dimension = dim1
@@ -132,7 +132,7 @@ A copyright management organization, the Paintings Copyright Association, acquir
 
 
 ```crom
-top = vocab.ProvenanceEntry(label="Copyright acquisition by PCA")
+top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Copyright acquisition by PCA")
 pca = model.Group(label="Paintings Copyright Association")
 what = vocab.Painting(label="Painting", art=1)
 xfer = model.RightAcquisition()
