@@ -107,14 +107,14 @@ We create a `ManMadeObject` to represent the photograph, by checking the `photo_
 We construct a label for the photograph based on this type and the name of the object depicted.
 
 ```crom
-top = vocab.PhotographBW()
+top = vocab.PhotographBW(ident="auto int-per-segment")
 top._label = "Black and White Photograph of 'St. Sebastian'"
 ```
 
 We create an Identifier for the Accession Number, and type it as  _(aat:300312355)_. This is referenced from the photograph with the `identified_by` property.
 
 ```crom
-top = vocab.AccessionNumber()
+top = vocab.AccessionNumber(ident="auto int-per-segment")
 top.content = "292221"
 ```
 
@@ -122,7 +122,7 @@ A second `Identifier` for Anderson's identifier is created. This identifier is a
 
 ```crom
 
-top = vocab.PhotographBW()
+top = vocab.PhotographBW(ident="auto int-per-segment")
 top._label = "Black and White Photograph of 'St. Sebastian'"
 srccoll = vocab.CollectionSet()
 srccoll._label = "Collection of Anderson"
@@ -148,7 +148,7 @@ The above needs work, as the Anderson Collection does not *currently* aggregate 
 Plus we link the, as of yet unconfigured, Painting resource to it via a `VisualItem`.
 
 ```crom
-top = vocab.PhotographBW()
+top = vocab.PhotographBW(ident="auto int-per-segment")
 top._label = "Black and White Photograph of 'St. Sebastian'"
 coll = vocab.CollectionSet()
 coll._label = "Erwin Panofsky Collection"
@@ -170,7 +170,7 @@ We can thus fill in the data about the photograph to our model:
 We can fill out a lot of details about the object itself.  In particular, it has a Title (which we also associate with the object directly as a label), height and width dimensions in centimetres, and a parseable materials statement.  We record both the statement as a `LinguisticObject`, as well as breaking the information out into machine readable material and part resources.
 
 ```crom
-top = vocab.Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "St. Sebastian"
 apl = model.Name()
 apl.content = "St. Sebastian"
@@ -178,11 +178,11 @@ top.identified_by = apl
 h = vocab.Height()
 h._label = "Height"
 h.value = 153
-h.unit = instances['cm']
+h.unit = vocab.instances['cm']
 w = vocab.Width()
 w._label = "Width"
 w.value = 118
-w.unit = instances['cm']
+w.unit = vocab.instances['cm']
 top.dimension = h
 top.dimension = w
 mats = vocab.MaterialStatement()
@@ -198,7 +198,7 @@ top.part = part
 Now we can tackle the creation of the painting.  The activity is a `Production`, which was carried out by the artist at a particular point in time.  We know the artist's name and their birth and death dates, and an approximate date for the activity.
 
 ```crom
-top = model.Production()
+top = model.Production(ident="auto int-per-segment")
 artist = model.Person()
 artist._label = "Rubens, Peter Paul"
 birth = model.Birth()
@@ -230,10 +230,10 @@ top.timespan = ts
 Due to research by the photo archive catalogers, we know a relatively recent (if not necessarily absolutely current) owner, location and identifier for the object. The owner and identifer follow the same pattern as for the identifiers of the photograph.
 
 ```crom
-top = vocab.Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "St. Sebastian"
 coll = vocab.CollectionSet()
-coll.classified_as = instances['public collection']
+coll.classified_as = vocab.instances['public collection']
 own = model.Group()
 own._label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
 cre = model.Creation()
@@ -257,7 +257,7 @@ laz = model.Place()
 laz._label = "Lazio"
 rom = model.Place()
 rom._label = "Roma"
-top = model.Place()
+top = model.Place(ident="auto int-per-segment")
 top._label = "Rome"
 top.part_of = rom
 rom.part_of = laz
@@ -267,7 +267,7 @@ laz.part_of = itl
 And a few additional features for the provenance statement, a brief citation and a category:
 
 ```crom
-top = vocab.Painting(art=1)
+top = vocab.Painting(ident="auto int-per-segment", art=1)
 top._label = "St. Sebastian"
 ps = vocab.ProvenanceStatement()
 ps.content = "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)"

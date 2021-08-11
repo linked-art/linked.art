@@ -24,7 +24,7 @@ top._label = "Physical Book"
 li = model.LinguisticObject()
 li._label = "Textual content of the Book"
 li.content = "Once upon a time, ..."
-li.language = instances['english']
+li.language = vocab.instances['english']
 top.carries = li
 ```
 
@@ -37,7 +37,7 @@ The title of a text is captured using the `Name` pattern, and assigned identifie
 ```crom
 top = vocab.ArticleText(ident="auto int-per-segment",)
 top._label = "Example Article"
-top.language = instances['english']
+top.language = vocab.instances['english']
 title = model.Name()
 title.content = "Title of Article"
 id = model.Identifier()
@@ -139,10 +139,10 @@ One Linguistic Object, be it captured in the model as a Statement or as the full
 ```crom
 top = vocab.ArticleText(ident="auto int-per-segment")
 top._label = "The Birth of Artistic Conception in China"
-top.language = instances['english']
+top.language = vocab.instances['english']
 orig = vocab.ArticleText()
 orig._label =  "Zhongguo yishu yijing zhi dansheng"
-orig.language = instances['chinese']
+orig.language = vocab.instances['chinese']
 top.translation_of = orig
 
 

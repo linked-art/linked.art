@@ -13,7 +13,7 @@ When there is a change of who has physical possession of an object, but not who 
 
 ## Loans
 
-The model makes a distinction between the [transfer of legal ownership](acquisition.html) and the transfer of custody of an object (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody.  Note that the provenance activity here does not represent the entire duration of the change in custody, only the transfer of it.  Just like acquisitions, there would be a second provenance activity that would transfer the custody back to the original custodian or on to some other party.
+The model makes a distinction between the [transfer of legal ownership](../acquisition) and the transfer of custody of an object (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody.  Note that the provenance activity here does not represent the entire duration of the change in custody, only the transfer of it.  Just like acquisitions, there would be a second provenance activity that would transfer the custody back to the original custodian or on to some other party.
 
 Long term loans or even "permanent" loans are just open ended pairs of activities -- the object has had its custody transferred, and the object has not been returned yet.
 

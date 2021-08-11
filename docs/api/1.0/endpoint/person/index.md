@@ -31,7 +31,7 @@ Dereferencing an entity via the Person endpoint would result in a JSON-LD docume
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the person's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the person, which MUST be the value `"Person"` |
 | `_label`          | string        | Recommended | A human readable label for the person, intended for developers |
@@ -71,7 +71,7 @@ Dereferencing an entity via the Person endpoint would result in a JSON-LD docume
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/person.html) and the [schema itself](../../schema/person.json)
+See the [schema documentation](../../schema_docs/person) and the [schema itself](../../schema/person.json)
 
 
 ### Incoming Properties

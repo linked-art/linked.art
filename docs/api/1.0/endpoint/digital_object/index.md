@@ -30,7 +30,7 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the digital object's description can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the digital object, which MUST be the value `"DigitalObject"` |
 | `_label`          | string        | Recommended | A human readable label for the digital object, intended for developers |
@@ -76,7 +76,7 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the digital object's description can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the digital object, which MUST be the value `"DigitalService"` |
 | `_label`          | string        | Recommended | A human readable label for the digital object, intended for developers |
@@ -92,7 +92,7 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/digital.html) and the [schema itself](../../schema/digital.json)
+See the [schema documentation](../../schema_docs/digital) and the [schema itself](../../schema/digital.json)
 
 ### Incoming Properties
 

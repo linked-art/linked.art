@@ -10,7 +10,7 @@ up_label: "Model Overview"
 
 The general model for describing the provenance of an object is to track the events in which the object of interest is created or discovered, transferred between owners or custodians, until it is lost, destroyed or in its present location.  For example a painting's provenance starts when the artist paints it, and then there are events in which ownership of the painting is transferred from the artist to its first owner, and then on to subsequent owners. The details of those transfers are the primary data to be collected in the provenance part of the model.
 
-In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody, such as when the painting is loaned out for an [exhibition](../exhibition/) or [curation activities](curation.html), such as taking inventory, conservation or revaluation.
+In between the events there are periods of time in which the ownership does not change, but other interesting events may still occur, including change of custody, such as when the painting is loaned out for an [exhibition](../exhibition/) or [curation activities](curation), such as taking inventory, conservation or revaluation.
 
 The provenance of an object is described as a series of activities, built on top of the basic patterns. For a single entry in the chain of provenance there are frequently multiple activities bundled together into a "Provenance Event" of interest.  These bundled activities could be the transfer of ownership, the transfer of custody, physically moving the object, a payment of money or the promise of some future action. This section documents the basic framework in which provenance events are described and subsequent sections will document specific use cases.
 
@@ -85,43 +85,43 @@ The Provenance Event likely includes some number of further, more specific aspec
 
 The majority of provenance events include the change of ownership of an object, or its acquisition.  Many of these acquisitions involve the payment of money, or the exchange of another object, for the transfer of ownership - a purchase rather than a gift.
 
-These sorts of provenance events are documented in the [Acquisition](acquisition.html) section.
+These sorts of provenance events are documented in the [Acquisition](acquisition) section.
 
 ### Transfers of Custody
 
 There are also provenance events that do not involve a transfer of legal ownership, only the transfer of custody or guardianship. Use cases for this include permanent loans, that might otherwise seem like ownership, and temporary loans, such as for exhibitions.  Theft or looting are both illegal transfers of custody, as the object should be restituted to its rightful owner, and the simple loss of an object is the transfer of custody to no entity in particular.
 
-These sorts of provenance events are documented in the [Custody](custody.html) section.
+These sorts of provenance events are documented in the [Custody](custody) section.
 
 ### Acquisition of a Right
 
 Some transfers of ownership are more complex than simply acquiring an object and involve the transfer of shares of ownership, possibly being traded amongst a network of owners over time. In this case, it is necessary to model the right of ownership, and how it is being divided and managed. Other scenarios where this pattern is important is when the "thing" being acquired is not a physical object, but an intellectual property right, such as the right to perform a work of theatre or other time-based media.
 
-These sorts of provenance events are documented in the [Rights](rights.html) section.
+These sorts of provenance events are documented in the [Rights](rights) section.
 
 ### Rediscovery of an Object
 
 Objects can be lost, sometimes for very long periods of time, and then encountered by a different culture or set of people than the ones that lost it. As this might happen several times in the history of an object, and there are ownership and custody implications of the rediscovery, encounters of these sorts are part of the provenance record of the object. Knowledge about previous encounters or the production of the object may not be known, meaning that it is possible that this is the first known entry in the provenance chain.
 
-These sorts of provenance events are documented in the [Encountering an Object](encounters.html) section.
+These sorts of provenance events are documented in the [Encountering an Object](encounters) section.
 
 ### Promise of Activity
 
 A promise of an activity is also interesting to capture as part of a provenance event.  This includes situations where an object is on loan to an organization, but there is a promise that ownership will be given in the future according to some conditions.  Equally, a commision for an object involves a promise on the part of the artist to create an artwork, and may involve the lending of items to copy or be inspired by, and pre-payment of financial compensation. Finally, a bid at an auction is the promise to acquire the object (or objects) if it is the highest such bid.
 
-Promises are documented in the [Promises](promises.html) section, and bids are auction specific uses of this, documented in the [Auctions](auctions.html) section.
+Promises are documented in the [Promises](promises) section, and bids are auction specific uses of this, documented in the [Auctions](auctions) section.
 
 ### Movement of Object
 
 Although not often explicitly documented, most provenance activities also involve the physical relocation of the acquired object. This is especially interesting for use with describing exhibitions, where the location is explicitly known over a period of time, or in cases where such movement is extraordinary in some way, such as the relocation of a building or other "immovable" piece of art.
 
-These sorts of provenance events are documented in the [Movement](movement.html) section.
+These sorts of provenance events are documented in the [Movement](movement) section.
 
 
 ## Specific Uses
 
 There are some common scenarios that can be described using Linked Art's Provenance modeling, with some additional vocabulary for precision:
 
-* [Auctions](auctions.html)
-* [Curatorial Activities during Ownership](curation.html)
+* [Auctions](auctions)
+* [Curatorial Activities during Ownership](curation)
 

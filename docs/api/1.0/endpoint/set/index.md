@@ -31,7 +31,7 @@ Dereferencing an entity via the Set endpoint would result in a JSON-LD document 
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the set's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the set, which MUST be the value `"Set"` |
 | `_label`          | string        | Recommended | A human readable label for the set, intended for developers |
@@ -70,7 +70,7 @@ Dereferencing an entity via the Set endpoint would result in a JSON-LD document 
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/set.html) and the [schema itself](../../schema/set.json)
+See the [schema documentation](../../schema_docs/set) and the [schema itself](../../schema/set.json)
 
 
 ### Incoming Properties

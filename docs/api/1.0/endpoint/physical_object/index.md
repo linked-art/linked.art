@@ -18,7 +18,7 @@ For more information about the Physical Object data, please see the [Object mode
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the object's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the object, which MUST be the value `"HumanMadeObject"` |
 | `_label`          | string        | Recommended | A human readable label for the object, intended for developers |
@@ -71,7 +71,7 @@ For more information about the Physical Object data, please see the [Object mode
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/object.html) and the [schema itself](../../schema/object.json)
+See the [schema documentation](../../schema_docs/object) and the [schema itself](../../schema/object.json)
 
 
 ### Incoming Properties

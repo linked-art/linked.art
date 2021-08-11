@@ -46,7 +46,7 @@ A glass sculpture is created using the glassblowing technique, which is identifi
 top = vocab.Sculpture(ident="auto int-per-segment",label="Glass Sculpture", art=1)
 prod = model.Production()
 prod.carried_out_by = model.Person(label = "Glassblowing Artist")
-prod.technique = instances['glassblowing']
+prod.technique = vocab.instances['glassblowing']
 top.produced_by = prod
 ```
 
@@ -81,12 +81,12 @@ top = vocab.Sculpture(ident="auto int-per-segment", label = "Painted Sculpture",
 prod = model.Production()
 top.produced_by = prod
 act1 = model.Production()
-act1.technique = instances['sculpting']
+act1.technique = vocab.instances['sculpting']
 act1.carried_out_by = model.Person(label="Sculptor")
 prod.part = act1
 act2 = model.Production()
 act2.carried_out_by = model.Person(label="Painter")
-act2.technique = instances['painting']
+act2.technique = vocab.instances['painting']
 prod.part = act2
 ```
 

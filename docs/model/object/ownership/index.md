@@ -12,7 +12,7 @@ Tracking the provenance of an object is described in detail in the [Provenance](
 
 ## Ownership
 
-The current owner of the object should be referenced with `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object. These transfers are described in detail in the [Acquistion](/model/provenance/acquisition.html) section.
+The current owner of the object should be referenced with `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object. These transfers are described in detail in the [Acquistion](/model/provenance/acquisition) section.
 
 To make the current owner easier to find from the object's description, the owner should also be referenced with `current_owner` from the object itself. There are further modeling details available about [People and Orgaizations](/model/actor) that might own objects.
 
@@ -27,7 +27,7 @@ top.current_owner = vocab.MuseumOrg(label="Museum")
 
 ## Custody
 
-Similarly, the current custodian of the object should be referenced with the `transferred_custody_to` in the most recent `TransferOfCustody`, in the same way as the current owner is referenced from the most recent `Acquisition`. There is an equivalent property to `current_owner` for custody, which is `current_custodian`.  This is described in more detail in the section on [custody](/model/provenance/custody.html).
+Similarly, the current custodian of the object should be referenced with the `transferred_custody_to` in the most recent `TransferOfCustody`, in the same way as the current owner is referenced from the most recent `Acquisition`. There is an equivalent property to `current_owner` for custody, which is `current_custodian`.  This is described in more detail in the section on [custody](/model/provenance/custody).
 
 Note that objects are owned by legal entities, such as people or organizations. If there is a department or person that is not the owner but is responsible for the object, then that actor is the `current_custodian`.
 

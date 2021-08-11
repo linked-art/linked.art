@@ -30,4 +30,4 @@ Version 1.0 is expected by the end of calendar year 2021 (delayed due to COVID a
     * [Entity Endpoints](endpoint/) - The entities of interest, exposed at JSON-LD endpoints
     * [JSON Schema](schema_docs/) - JSON Schema for the API, and derived alternate documentation
     * [Ecosystem Endpoints](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions
-    * [Class Reference](classes.html) - Which ontology class is which end point?
+    * [Class Reference](classes) - Which ontology class is which end point?

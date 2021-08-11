@@ -199,7 +199,7 @@ top.carried_out = active
 
 ### Biography
 
-Biographical descriptions follow the `LinguisticObject` [pattern](/model/base/index.html), with biography _(aat:300080102)_ as the classification.  In all other respects, it is a vanilla usage of a resource being `referred_to_by` a particular text.
+Biographical descriptions follow the `LinguisticObject` [pattern](/model/base/), with biography _(aat:300080102)_ as the classification.  In all other respects, it is a vanilla usage of a resource being `referred_to_by` a particular text.
 
 Example: David E. Frederickson's very short example biography.
 

@@ -31,7 +31,7 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the visual work's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the visual work, which MUST be the value `"VisualItem"` |
 | `_label`          | string        | Recommended | A human readable label for the visual work, intended for developers |
@@ -76,7 +76,7 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/image.html) and the [schema itself](../../schema/image.json)
+See the [schema documentation](../../schema_docs/image) and the [schema itself](../../schema/image.json)
 
 
 ### Incoming Properties

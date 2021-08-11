@@ -36,7 +36,7 @@ acq.transferred_title_to = buyer
 
 In the simple case of multiple simultaneous owners where either the division of the ownership is unknown or an even split, all of the owners can simply be listed with `transferred_title_from` (when the group is selling) or `transferred_title_to` (when the group is buying).  
 
-If there is additional information known about the exact nature of the ownership division, then it is worth considering the more complex and more expressive section on [rights](rights.html) to describe this in more detail.
+If there is additional information known about the exact nature of the ownership division, then it is worth considering the more complex and more expressive section on [rights](../rights) to describe this in more detail.
 
 If there are multiple parties that have formally entered into a legal consortium or organization, and that consortium is the legal owner of the object, then the consortium should be modeled as a [`Group`](/model/actor/) with the parties as members, and be the sole owner of the object.
 

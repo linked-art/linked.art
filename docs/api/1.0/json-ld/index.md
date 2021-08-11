@@ -13,13 +13,13 @@ JSON-LD is a Linked Open Data serialization using the popular JSON (Javascript O
 The serialization for JSON-LD is friendly to developers through the use of context documents that specify the mapping between the key used in the json object and the RDF predicate used in the model.  This abstraction allows the developer to work with existing patterns and frameworks, while the data is still managed as a graph underneath.  This document describes the context used for CIDOC-CRM and other ontologies.
 
 The context that provides the mapping of the terms used in the model is published as:
-> `{{ site.config.var.scheme }}://{{site.config.var.hostname}}{{site.config.base_url}}ns/v1/linked-art.json`
+> `https://linked.art/ns/v1/linked-art.json`
 
 ## Media Type
 
 The media type to use for representations in JSON-LD using the context is:
 
-> `application/ld+json;profile="{{ site.config.var.scheme }}://{{site.config.var.hostname}}{{site.config.base_url}}ns/v1/linked-art.json"`
+> `application/ld+json;profile="https://linked.art/ns/v1/linked-art.json"`
 
 This would be the value of the `Content-Type` HTTP header on responses, and if there are other representations available via content negotiation, then it can be sent in requests in the `Accept` header.
 
@@ -45,9 +45,9 @@ An example of the JSON-LD serialization for a painting, that is made of watercol
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-top.made_of = instances['watercolor']
+top.made_of = vocab.instances['watercolor']
 part = vocab.SupportPart(label="Canvas Support")
-part.made_of = instances['canvas']
+part.made_of = vocab.instances['canvas']
 top.part = part
 ```
 

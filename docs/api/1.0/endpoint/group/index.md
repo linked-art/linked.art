@@ -31,7 +31,7 @@ Dereferencing an entity via the Group endpoint would result in a JSON-LD documen
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the group's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the group, which MUST be the value `"Group"` |
 | `_label`          | string        | Recommended | A human readable label for the group, intended for developers |
@@ -72,7 +72,7 @@ Dereferencing an entity via the Group endpoint would result in a JSON-LD documen
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/group.html) and the [schema itself](../../schema/group.json)
+See the [schema documentation](../../schema_docs/group) and the [schema itself](../../schema/group.json)
 
 
 ### Incoming Properties

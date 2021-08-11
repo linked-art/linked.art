@@ -31,7 +31,7 @@ Dereferencing an entity via the Textual Work endpoint would result in a JSON-LD 
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions.html) | 
+| `@context`        | string, array | Required    | The value MUST be the URI of the [Linked Art context](../../json-ld/) as a string, `"https://linked.art/ns/v1/linked-art.json"` or an array in which the URI is the last entry to allow for [extensions](../../json-ld/extensions) | 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the text's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the text, which MUST be the value `"LinguisticObject"` |
 | `_label`          | string        | Recommended | A human readable label for the text, intended for developers |
@@ -79,7 +79,7 @@ Dereferencing an entity via the Textual Work endpoint would result in a JSON-LD 
 
 ### JSON Schema
 
-See the [schema documentation](../../schema_docs/text.html) and the [schema itself](../../schema/text.json)
+See the [schema documentation](../../schema_docs/text) and the [schema itself](../../schema/text.json)
 
 
 ### Incoming Properties

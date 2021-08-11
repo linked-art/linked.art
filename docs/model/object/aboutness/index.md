@@ -68,7 +68,7 @@ A visual content of a portrait of Lord Nelson has the conceptual subject of "war
 top = vocab.Painting(ident="auto int-per-segment",label="Portrait of Lord Nelson", art=1)
 vi = model.VisualItem()
 top.shows = vi
-vi.about = instances['war']
+vi.about = vocab.instances['war']
 ```
 
 
@@ -88,7 +88,7 @@ An impressionist painting is classified as impressionism, which is classified as
 top = vocab.Painting(ident="auto int-per-segment", label="Impressionist Painting", art=1)
 vi = model.VisualItem()
 top.shows = vi
-vi.classified_as = instances['style impressionism']
+vi.classified_as = vocab.instances['style impressionism']
 ```
 
 ### Other Classifications
@@ -99,7 +99,7 @@ Other classifications can also be assigned to the object's content. If it is pos
 top = vocab.Painting(ident="auto int-per-segment", label="Allusion Painting", art=1)
 vi = model.VisualItem()
 top.shows = vi
-vi.classified_as = instances['allusion']
+vi.classified_as = vocab.instances['allusion']
 ```
 
 ## Related Objects

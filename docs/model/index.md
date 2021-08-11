@@ -43,7 +43,7 @@ The model can be treated as interlinking components that describe aspects of the
 
 An index of all of the classes, properties and identities used:
 
-* [Index of Examples](example_index.html)
+* [Index of Examples](example_index)
 
 ## Scope and Process
 

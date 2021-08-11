@@ -27,10 +27,10 @@ A painting that measures 16 inches wide by 20 inches tall.
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
 w = vocab.Width(value=16)
-w.unit = instances['inches']
+w.unit = vocab.instances['inches']
 top.dimension = w
 h = vocab.Height(value=20)
-h.unit = instances['inches']
+h.unit = vocab.instances['inches']
 top.dimension = h
 ```
 
@@ -62,11 +62,11 @@ The same 16 by 20 inch painting once more, described with human readable labels 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
 w = vocab.Width(value=16)
-w.unit = instances['inches']
+w.unit = vocab.instances['inches']
 w.identified_by = vocab.DisplayName(value="16 inches wide")
 top.dimension = w
 h = vocab.Height(value=20)
-h.unit = instances['inches']
+h.unit = vocab.instances['inches']
 h.identified_by = vocab.DisplayName(value="20 inches high")
 top.dimension = h
 ```
@@ -132,7 +132,7 @@ An oval-shaped painting.
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Oval Painting", art=1)
-top.classified_as = instances['oval']
+top.classified_as = vocab.instances['oval']
 ```
 
 ## Materials
@@ -147,7 +147,7 @@ A statue made of marble.
 
 ```crom
 top = vocab.Sculpture(ident="auto int-per-segment", label="Marble Sculpture", art=1)
-top.made_of = instances['marble']
+top.made_of = vocab.instances['marble']
 ```
 
 ### Materials Statement 
@@ -194,9 +194,9 @@ A watercolor painting, that has a part which is the support and is made of canva
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-top.made_of = instances['watercolor']
+top.made_of = vocab.instances['watercolor']
 part = vocab.SupportPart(label="Canvas Support")
-part.made_of = instances['canvas']
+part.made_of = vocab.instances['canvas']
 top.part = part
 ```
 

@@ -3,20 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600|Roboto:300" rel="stylesheet" type="text/css">
-
         <link rel="stylesheet" href="{{ 'media/css/normalize.css'|url }}">
         <link rel="stylesheet" href="{{ 'media/css/skeleton.css'|url }}">
         <link rel="stylesheet" href="{{ 'media/css/style.css'|url }}">
-
         <link rel="stylesheet" href="{{ 'media/vendor/opentip.css'|url }}">
-        <script src="{{ 'media/vendor/opentip.js'|url }}"></script>
-        <script src="{{ 'media/vendor/jquery-3.2.1.min.js'|url }}"></script>
-        <script src="{{ 'media/vendor/underscore-min.js'|url }}"></script>
-        <script src="{{ 'media/vendor/mermaid.min.js'|url }}"></script>
-        <script src="{{ 'media/vendor/screenfull.min.js'|url }}"></script>
-
         <title>{{ page.title }}</title>
 
     </head>
@@ -54,45 +45,7 @@
         </footer>
         {% if build == "production" -%}
             {% include "ga.j2" %}
-        {%- endif %}
-        <script>
-            if (window.location.hostname != "linked.art") {
-                $("#main_nav_list").prepend('<span class="nav_warning">Preview Of <a href="https://linked.art/">linked.art</a> Change</span>');
-            }
-        </script>
-        <script>
-            // Latest mermaid adds explicit width on the SVG that causes overflow
-            // This also gives us control for now FOUC by hiding the mermaid code
-            // in css, and then showing only after rendering
-            mermaid.initialize({
-              startOnLoad: false,    
-              theme: 'neutral',
-              logLevel: 3,
-              flowchart: { curve: 'basis' }
-            });
-            $(function(){
-                var render_mm = function(i, element) {
-                    var insertSvg = function(svgCode, bindFn) {
-                        element.innerHTML = svgCode;
-                        // trash height and width, as they're absolute.
-                        // This lets the page scale the image into the available space
-                        // Setting maxWidth means it won't upscale
-                        var w = $("#" + element.id + " svg").attr('width')
-                        $("#" + element.id + " svg").attr('width', '').attr('height', '').css("maxWidth", w + "px")
-                        $(element).show()
-                    }
-                    var txt = element.innerHTML.replace(/&gt;/g, ">")
-                    var graph = mermaid.mermaidAPI.render(element.id + "_svg", txt, insertSvg)
-                };
-                $('.mermaid').each(render_mm)
-            })
+        {%- endif %}      
 
-            $('.mermaid').on('click', event => {
-        	    if (screenfull.isEnabled) {
-        		    screenfull.toggle(event.delegateTarget);
-        	    }
-            });
-
-        </script>        
     </body>
 </html>

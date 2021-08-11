@@ -46,8 +46,12 @@ plugins:
     - search
     - macros
     - mermaid2:
+        version: '8.11.4'
         arguments:
-          theme: 'light'
+          theme: 'neutral'
+          logLevel: 1
+          flowchart: 
+            curve: 'basis'
           securityLevel: 'loose'
     - linkedart
 

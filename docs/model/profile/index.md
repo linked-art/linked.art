@@ -108,7 +108,7 @@ Implications:
 
 Some (iterative, ongoing) analysis of the CIDOC-CRM ontology that both contributes to and is derived from the work on the profile:
 
-* [Class Analysis](class_analysis.html)
+* [Class Analysis](class_analysis)
 * Relationship Analysis to come.
 
 
