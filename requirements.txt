@@ -1,10 +1,11 @@
 -e git://github.com/linked-art/crom.git#egg=cromulent
 mkdocs
-pymdown_extensions<=5.0
+pymdown_extensions
 rdflib
 pyld
 requests
 lxml
+mkdocs-material-extensions
 mkdocs-mermaid2-plugin
 mkdocs-macros-plugin
 -e git://github.com/linked-art/mkdocs-linkedart-plugin.git#egg=mkdocs-linkedart-plugin
