@@ -44,7 +44,7 @@ extra:
 
 plugins:
     - search
-    - macros
+#    - macros
     - mermaid2:
         version: '8.11.4'
         arguments:

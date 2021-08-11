@@ -5,7 +5,7 @@ rm -rf .site/*
 
 # Clear any old example copies
 
-rm docs/example/*/*
+# rm docs/example/*/*
 
 # Remake the table, still separate
 #python scripts/mk_table.py
