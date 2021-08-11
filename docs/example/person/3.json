@@ -1,0 +1,54 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/3",
+  "type": "Person",
+  "_label": "Joan A. Smith",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Joan A. Smith",
+      "part": [
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404651",
+              "type": "Type",
+              "_label": "Given Name"
+            }
+          ],
+          "content": "Joan"
+        },
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404654",
+              "type": "Type",
+              "_label": "Middle Name"
+            }
+          ],
+          "content": "A."
+        },
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404652",
+              "type": "Type",
+              "_label": "Family Name"
+            }
+          ],
+          "content": "Smith"
+        }
+      ]
+    }
+  ]
+}

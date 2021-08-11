@@ -1,0 +1,44 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/set/2> a la:Set ;
+    rdfs:label "Set of Objects for Lot 812" ;
+    crm:P43_has_dimension [ a crm:E97_Monetary_Amount ;
+            rdfs:label "$500" ;
+            crm:P180_has_currency <http://vocab.getty.edu/aat/300411994> ;
+            crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+                    crm:P190_has_symbolic_content "500 US Dollars" ;
+                    crm:P2_has_type <http://vocab.getty.edu/aat/300404669> ] ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300417242> ;
+            crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+                    crm:P190_has_symbolic_content "From personal correspondence" ;
+                    crm:P2_has_type <http://vocab.getty.edu/aat/300027200> ] ;
+            crm:P90_has_value 500 ] .
+
+<http://vocab.getty.edu/aat/300027200> a crm:E55_Type ;
+    rdfs:label "Note" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300418049> .
+
+<http://vocab.getty.edu/aat/300404669> a crm:E55_Type ;
+    rdfs:label "Display Title" .
+
+<http://vocab.getty.edu/aat/300411994> a crm:E98_Currency ;
+    rdfs:label "US Dollars" .
+
+<http://vocab.getty.edu/aat/300417242> a crm:E55_Type ;
+    rdfs:label "Starting Price" .
+
+<http://vocab.getty.edu/aat/300418049> a crm:E55_Type ;
+    rdfs:label "Brief Text" .
+

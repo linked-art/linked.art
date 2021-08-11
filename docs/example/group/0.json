@@ -1,0 +1,132 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/group/0",
+  "type": "Group",
+  "_label": "Camden Town Group",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300026009",
+      "type": "Type",
+      "_label": "Society"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300111159",
+      "type": "Type",
+      "_label": "British",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300379842",
+          "type": "Type",
+          "_label": "Nationality"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Camden Town Group",
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388277",
+          "type": "Language",
+          "_label": "English"
+        }
+      ]
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435422",
+          "type": "Type",
+          "_label": "Biography Statement",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "A group of British painters formed in 1911; although it only lasted two years, its name is used in a broader sense to characterize a particular strain of British painting from about 1905 to 1920."
+    }
+  ],
+  "carried_out": [
+    {
+      "type": "Activity",
+      "_label": "Active Dates",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300393177",
+          "type": "Type",
+          "_label": "Professional Activities"
+        }
+      ],
+      "timespan": {
+        "type": "TimeSpan",
+        "begin_of_the_begin": "1911-01-01T00:00:00Z",
+        "end_of_the_end": "1913-12-31T23:59:59Z"
+      }
+    }
+  ],
+  "formed_by": {
+    "type": "Formation",
+    "_label": "Formation of the Group",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "1911",
+      "begin_of_the_begin": "1911-01-01T00:00:00Z",
+      "end_of_the_end": "1911-12-31T23:59:59Z"
+    },
+    "took_place_at": [
+      {
+        "type": "Place",
+        "_label": "London"
+      }
+    ]
+  },
+  "dissolved_by": {
+    "type": "Dissolution",
+    "_label": "Dissolution of the Group",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "1913",
+      "begin_of_the_begin": "1913-01-01T00:00:00Z",
+      "end_of_the_end": "1913-12-31T23:59:59Z"
+    },
+    "took_place_at": [
+      {
+        "type": "Place",
+        "_label": "London"
+      }
+    ]
+  },
+  "residence": [
+    {
+      "type": "Place",
+      "_label": "London"
+    }
+  ],
+  "equivalent": [
+    {
+      "id": "http://vocab.getty.edu/ulan/500117318",
+      "type": "Group",
+      "_label": "Camden Town Group"
+    }
+  ],
+  "attributed_by": [
+    {
+      "type": "AttributeAssignment",
+      "_label": "Related Group",
+      "assigned": {
+        "id": "http://vocab.getty.edu/ulan/500117319",
+        "type": "Group",
+        "_label": "London Group"
+      }
+    }
+  ]
+}

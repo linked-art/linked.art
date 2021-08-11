@@ -12,12 +12,6 @@ The Physical Object API is a method of getting access to descriptions of physica
 
 For more information about the Physical Object data, please see the [Object model](/model/object/) description.
 
-## Property Definitions
-
-<<<<<<< HEAD:docs/api/1.0/endpoint/physical_object/index.md
-## Example
-=======
-Dereferencing an entity via the Physical Object endpoint would result in a JSON-LD document containing a single JSON object with the following properties.
 
 ### Properties of Physical Objects
 
@@ -170,5 +164,3 @@ prod.took_place_at = model.Place(ident="http://vocab.getty.edu/tgn/7000457", lab
 top.produced_by = prod
 ```
 
-
->>>>>>> master:content/api/1.0/endpoint/physical_object/index.html

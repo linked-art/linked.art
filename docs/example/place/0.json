@@ -1,0 +1,69 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/place/0",
+  "type": "Place",
+  "_label": "Los Angeles",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300008389",
+      "type": "Type",
+      "_label": "City"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Los Angeles"
+    },
+    {
+      "type": "Identifier",
+      "content": "06-44000"
+    }
+  ],
+  "defined_by": "POLYGON((-118.574 34.185,-117.558 34.185,-117.5585 33.512,-118.574 33.512,-118.5745 34.185))",
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "Los Angeles is the largest city in California"
+    }
+  ],
+  "part_of": [
+    {
+      "type": "Place",
+      "_label": "California"
+    }
+  ],
+  "approximated_by": [
+    {
+      "type": "Place",
+      "_label": "Los Angeles Centroid"
+    }
+  ],
+  "member_of": [
+    {
+      "type": "Set",
+      "_label": "Top 10 Cities in USA"
+    }
+  ],
+  "equivalent": [
+    {
+      "id": "http://vocab.getty.edu/tgn/7023900",
+      "type": "Place",
+      "_label": "Los Angeles"
+    }
+  ]
+}

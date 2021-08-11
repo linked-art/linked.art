@@ -55,7 +55,7 @@ who = model.Person()
 who._label = "Well Known Artist"
 prod = model.Production()
 prod.influenced_by = who
-prod.classified_as = instances['style of']
+prod.classified_as = vocab.instances['style of']
 aa.assigned = prod
 top.assigned_by = aa
 by = model.Person()
@@ -100,7 +100,7 @@ The way that this can be signalled in the data is to add the "computer-generated
 ```crom
 top = model.Activity(ident="auto int-per-segment")
 top._label = "Inferred Activity"
-top.classified_as = instances['computer generated']
+top.classified_as = vocab.instances['computer generated']
 a = model.Actor()
 a._label = "Performer of inferred activity"
 top.carried_out_by = a

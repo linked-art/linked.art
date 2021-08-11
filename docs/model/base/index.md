@@ -93,7 +93,7 @@ The primary name for the painting is "Pasture and Sheep", which is in English.
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting: Pasture and Sheep")
 ttl = vocab.PrimaryName()
 ttl.content = "Pasture and Sheep"
-ttl.language = instances['english']
+ttl.language = vocab.instances['english']
 top.identified_by = ttl
 ```
 
@@ -139,7 +139,7 @@ Having only a textual description of the materials in English, the content `"Oil
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting on Canvas")
 lo = vocab.MaterialStatement()
 lo.content = "Oil on Canvas"
-lo.language = instances['english']
+lo.language = vocab.instances['english']
 top.referred_to_by = lo
 ```
 
@@ -161,9 +161,9 @@ The canvas support is part of the overall watercolor painting.
 
 ```crom
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Example Painting")
-top.made_of = instances['watercolor']
+top.made_of = vocab.instances['watercolor']
 part = vocab.SupportPart(label="Canvas Support")
-part.made_of = instances['canvas']
+part.made_of = vocab.instances['canvas']
 top.part = part
 ```
 

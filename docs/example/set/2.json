@@ -1,0 +1,58 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/2",
+  "type": "Set",
+  "_label": "Set of Objects for Lot 812",
+  "dimension": [
+    {
+      "type": "MonetaryAmount",
+      "_label": "$500",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417242",
+          "type": "Type",
+          "_label": "Starting Price"
+        }
+      ],
+      "value": 500,
+      "identified_by": [
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404669",
+              "type": "Type",
+              "_label": "Display Title"
+            }
+          ],
+          "content": "500 US Dollars"
+        }
+      ],
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300027200",
+              "type": "Type",
+              "_label": "Note",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ]
+            }
+          ],
+          "content": "From personal correspondence"
+        }
+      ],
+      "currency": {
+        "id": "http://vocab.getty.edu/aat/300411994",
+        "type": "Currency",
+        "_label": "US Dollars"
+      }
+    }
+  ]
+}

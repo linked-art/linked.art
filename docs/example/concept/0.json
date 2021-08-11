@@ -1,0 +1,71 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/concept/0",
+  "type": "Type",
+  "_label": "GAN Art",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300435443",
+      "type": "Type",
+      "_label": "Type of Work"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404621",
+          "type": "Type",
+          "_label": "Owner-Assigned Number"
+        }
+      ],
+      "content": "186_gan_art"
+    },
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Generative Adversarial Network (GAN) Generated Art",
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388277",
+          "type": "Language",
+          "_label": "English"
+        }
+      ]
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "The generation of art by a process of training a machine learning algorithm to create the art, and a second algorithm to classify it, and then picking the higest classified image."
+    }
+  ],
+  "broader": [
+    {
+      "id": "http://vocab.getty.edu/aat/300069478",
+      "type": "Type",
+      "_label": "Computer Art"
+    }
+  ]
+}

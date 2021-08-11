@@ -1,0 +1,57 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/3",
+  "type": "HumanMadeObject",
+  "identified_by": [
+    {
+      "type": "Identifier",
+      "_label": "Example Museum Accession Number",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "Accession Number"
+        }
+      ],
+      "content": "1997-A1752",
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300027200",
+              "type": "Type",
+              "_label": "Note",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ]
+            }
+          ],
+          "content": "This is the original accession number from 1997"
+        }
+      ],
+      "assigned_by": [
+        {
+          "type": "AttributeAssignment",
+          "_label": "Assignment of 1997-A1752",
+          "timespan": {
+            "type": "TimeSpan",
+            "_label": "1997",
+            "begin_of_the_begin": "1997-01-01T00:00:00Z",
+            "end_of_the_end": "1997-12-31T00:00:00Z"
+          },
+          "carried_out_by": [
+            {
+              "type": "Group",
+              "_label": "Example Museum"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

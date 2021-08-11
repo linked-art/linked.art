@@ -1,3 +1,0 @@
-[mkdocs.plugins]
-linkedartindexing = linkedart.plugin:IndexingPlugin
-

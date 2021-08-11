@@ -1,0 +1,68 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/activity/0",
+  "type": "Activity",
+  "_label": "Example Exhibition",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300054766",
+      "type": "Type",
+      "_label": "Exhibiting"
+    }
+  ],
+  "used_specific_object": [
+    {
+      "type": "Set",
+      "member": [
+        {
+          "type": "HumanMadeObject",
+          "_label": "Real Painting Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300033618",
+              "type": "Type",
+              "_label": "Painting",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300435443",
+                  "type": "Type",
+                  "_label": "Type of Work"
+                }
+              ]
+            },
+            {
+              "id": "http://vocab.getty.edu/aat/300133025",
+              "type": "Type",
+              "_label": "Artwork"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "part": [
+    {
+      "type": "AttributeAssignment",
+      "carried_out_by": [
+        {
+          "type": "Person",
+          "_label": "A. Curator"
+        }
+      ],
+      "assigned_property": "identified_by",
+      "assigned": {
+        "type": "Name",
+        "content": "Exhibition Specific Name"
+      },
+      "assigned_to": {
+        "type": "HumanMadeObject",
+        "_label": "Real Painting Name"
+      },
+      "involved": [
+        {
+          "type": "Set"
+        }
+      ]
+    }
+  ]
+}

@@ -33,7 +33,7 @@ top.format = "text/html"
 top.conforms_to = model.InformationObject("http://w3.org/TR/html")
 top.identified_by = model.Name(content="Informative Web Page")
 dim = model.Dimension(label="100 kb")
-dim.unit = instances['kilobytes']
+dim.unit = vocab.instances['kilobytes']
 dim.value = 100
 dim.classified_as = model.Type(ident="aat:300265863", label="File Size")
 top.dimension = dim

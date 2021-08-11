@@ -1,0 +1,67 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/3",
+  "type": "Set",
+  "_label": "Example Collection",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300025976",
+      "type": "Type",
+      "_label": "Collection"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Example Collection"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "This is a lovely little collection"
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "timespan": {
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1954-01-01",
+      "end_of_the_end": "1955-01-01"
+    }
+  },
+  "member": [
+    {
+      "type": "HumanMadeObject",
+      "_label": "Example Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300033618",
+          "type": "Type",
+          "_label": "Painting",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300435443",
+              "type": "Type",
+              "_label": "Type of Work"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

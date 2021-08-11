@@ -1,0 +1,68 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/provenance/1> a crm:E7_Activity ;
+    rdfs:label "St George from Simpson to Adams" ;
+    crm:P14_carried_out_by <http://vocab.getty.edu/ulan/500451765> ;
+    crm:P16_used_specific_object <http://example.org/set/Br1908/0055> ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Purchase of Lot 0055a, Durer's St George and the Dragon" ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "0055a" ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300055863> ;
+    crm:P4_has_time-span [ a crm:E52_Time-Span ;
+            rdfs:label "1820 Mar 09" ;
+            crm:P82a_begin_of_the_begin "1820-03-09T00:00:00Z" ;
+            crm:P82b_end_of_the_end "1820-03-09T23:59:59Z" ] ;
+    crm:P7_took_place_at <http://vocab.getty.edu/tgn/7011781> ;
+    crm:P9_consists_of [ a crm:E8_Acquisition ;
+            crm:P22_transferred_title_to <http://example.museum/person/1> ;
+            crm:P23_transferred_title_from <http://example.museum/person/2> ;
+            crm:P24_transferred_title_of <http://example.museum/object/1> ],
+        [ a la:Payment ;
+            la:paid_amount [ a crm:E97_Monetary_Amount ;
+                    rdfs:label "8.8 pounds" ;
+                    crm:P180_has_currency <http://vocab.getty.edu/aat/300411998> ;
+                    crm:P90_has_value 8.8e+00 ] ;
+            la:paid_from <http://example.museum/person/1> ;
+            la:paid_to <http://example.museum/person/2> ] ;
+    sci:O13i_is_triggered_by <http://example.org/auction/Br1908/0055> .
+
+<http://example.museum/object/1> a crm:E22_Human-Made_Object ;
+    rdfs:label "St George and the Dragon" .
+
+<http://example.org/auction/Br1908/0055> a crm:E7_Activity ;
+    rdfs:label "Auction of Lot 0055" .
+
+<http://example.org/set/Br1908/0055> a la:Set ;
+    rdfs:label "Set of Objects for Lot 0055" .
+
+<http://vocab.getty.edu/aat/300055863> a crm:E55_Type ;
+    rdfs:label "Provenance Activity" .
+
+<http://vocab.getty.edu/aat/300411998> a crm:E98_Currency ;
+    rdfs:label "British Pounds" .
+
+<http://vocab.getty.edu/tgn/7011781> a crm:E53_Place ;
+    rdfs:label "London" .
+
+<http://vocab.getty.edu/ulan/500451765> a crm:E74_Group ;
+    rdfs:label "Edward Foster & Son" .
+
+<http://example.museum/person/1> a crm:E21_Person ;
+    rdfs:label "Adams" .
+
+<http://example.museum/person/2> a crm:E21_Person ;
+    rdfs:label "Simpson" .
+

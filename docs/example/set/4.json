@@ -1,0 +1,49 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/4",
+  "type": "Set",
+  "_label": "Collection of Example Museum",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300025976",
+      "type": "Type",
+      "_label": "Collection"
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "carried_out_by": [
+      {
+        "type": "Group",
+        "_label": "Example Museum",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300312281",
+            "type": "Type",
+            "_label": "Museum"
+          }
+        ]
+      }
+    ]
+  },
+  "member": [
+    {
+      "type": "HumanMadeObject",
+      "_label": "Example Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300033618",
+          "type": "Type",
+          "_label": "Painting",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300435443",
+              "type": "Type",
+              "_label": "Type of Work"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

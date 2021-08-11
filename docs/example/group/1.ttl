@@ -1,0 +1,27 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/group/1> a crm:E74_Group ;
+    rdfs:label "Example Organization" ;
+    crm:P95i_was_formed_by [ a crm:E66_Formation ;
+            rdfs:label "Formation of Example Organization" ;
+            crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                    crm:P82a_begin_of_the_begin "1639-12-01T00:00:00" ;
+                    crm:P82b_end_of_the_end "1639-12-31T23:59:59" ] ] ;
+    crm:P99i_was_dissolved_by [ a crm:E68_Dissolution ;
+            rdfs:label "Dissolution of Example Organization" ;
+            crm:P4_has_time-span [ a crm:E52_Time-Span ;
+                    crm:P82a_begin_of_the_begin "1790-06-12T00:00:00" ;
+                    crm:P82b_end_of_the_end "1790-06-12T23:59:59" ] ] .
+

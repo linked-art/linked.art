@@ -1,0 +1,230 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/0",
+  "type": "HumanMadeObject",
+  "_label": "Mona Lisa",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300133025",
+      "type": "Type",
+      "_label": "Artwork"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Mona Lisa",
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388277",
+          "type": "Language",
+          "_label": "English"
+        }
+      ]
+    },
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "La Joconde",
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388306",
+          "type": "Language",
+          "_label": "French"
+        }
+      ]
+    },
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "La Gioconda",
+      "language": [
+        {
+          "id": "http://vocab.getty.edu/aat/300388474",
+          "type": "Language",
+          "_label": "Italian"
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "Accession Number"
+        }
+      ],
+      "content": "INV. 779"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "This portrait was doubtless started in Florence around 1503. It is thought to be of Lisa Gherardini, wife of a Florentine cloth merchant ..."
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055644",
+          "type": "Type",
+          "_label": "Height"
+        }
+      ],
+      "value": 0.77,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379099",
+        "type": "MeasurementUnit",
+        "_label": "meters"
+      }
+    },
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055647",
+          "type": "Type",
+          "_label": "Width"
+        }
+      ],
+      "value": 0.53,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379099",
+        "type": "MeasurementUnit",
+        "_label": "meters"
+      }
+    }
+  ],
+  "made_of": [
+    {
+      "id": "http://vocab.getty.edu/aat/300012363",
+      "type": "Material",
+      "_label": "Poplar (wood)"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300015050",
+      "type": "Material",
+      "_label": "Oil Paint"
+    }
+  ],
+  "member_of": [
+    {
+      "type": "Set",
+      "_label": "Most expensive paintings in the world"
+    },
+    {
+      "id": "http://data.louvre.example/all_holdings",
+      "type": "Set",
+      "_label": "Holdings of the Louvre"
+    }
+  ],
+  "shows": [
+    {
+      "id": "http://data.louvre.example/visual/mona_lisa",
+      "type": "VisualItem",
+      "_label": "Visual Work of the Mona Lisa"
+    }
+  ],
+  "equivalent": [
+    {
+      "id": "http://wikidata.org/entity/Q12418",
+      "type": "HumanMadeObject",
+      "_label": "Mona Lisa"
+    }
+  ],
+  "current_owner": [
+    {
+      "id": "http://louvre.fr/",
+      "type": "Group",
+      "_label": "The Louvre"
+    }
+  ],
+  "current_location": {
+    "id": "http://galleries.example/louvre/711",
+    "type": "Place",
+    "_label": "Room 711, Denon Wing, The Louvre, Paris"
+  },
+  "produced_by": {
+    "type": "Production",
+    "timespan": {
+      "type": "TimeSpan",
+      "identified_by": [
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404669",
+              "type": "Type",
+              "_label": "Display Title"
+            }
+          ],
+          "content": "1503-1506"
+        }
+      ],
+      "begin_of_the_begin": "1503-01-01T00:00:00Z",
+      "end_of_the_end": "1506-12-31T23:59:59Z"
+    },
+    "took_place_at": [
+      {
+        "id": "http://vocab.getty.edu/tgn/7000457",
+        "type": "Place",
+        "_label": "Florence, Italy"
+      }
+    ],
+    "carried_out_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500010879",
+        "type": "Person",
+        "_label": "Leonardo da Vinci"
+      }
+    ]
+  }
+}

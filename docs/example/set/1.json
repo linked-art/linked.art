@@ -1,0 +1,48 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/1",
+  "type": "Set",
+  "_label": "Collection of the Met",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300025976",
+      "type": "Type",
+      "_label": "Collection"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Art Collection of the Metropolitan Museum of Art"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "Over 2 million works, divided into 17 curatorial departments"
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "April 13th, 1870",
+      "begin_of_the_begin": "1870-04-13T00:00:00Z",
+      "end_of_the_end": "1870-04-13T23:59:59Z"
+    }
+  }
+}

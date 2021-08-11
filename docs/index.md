@@ -1,8 +1,4 @@
 ---
-<<<<<<< HEAD:docs/index.md
-=======
-extends: homepage.j2
->>>>>>> master:content/index.html
 title: Linked Art
 ---
 

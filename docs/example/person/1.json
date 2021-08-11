@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/1",
+  "type": "Person",
+  "_label": "J. Smith",
+  "member_of": [
+    {
+      "type": "Group",
+      "_label": "Museum Organization",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312281",
+          "type": "Type",
+          "_label": "Museum"
+        }
+      ]
+    }
+  ]
+}

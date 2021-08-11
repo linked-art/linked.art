@@ -12,7 +12,7 @@ table {
 }
 </style>
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 

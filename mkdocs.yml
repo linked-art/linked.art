@@ -1,9 +1,9 @@
-site_name: Museum Linked Open Data
+site_name: Linked Art
 site_url: "https://linked.art/"
 site_dir: ".site"
 repo_url: "https://github.com/linked-art/linked.art"
 site_author: "Rob Sanderson"
-site_description: "Museum Linked Open Data"
+site_description: "Linked Open Usable Data for Cultural Heritage"
 theme:
     name: null
     custom_dir: "theme/"
@@ -18,23 +18,23 @@ nav:
     - Recipes: 'cookbook/index.md'
     - Software: 'software/index.md'
 
-
 markdown_extensions:
         - fenced_code
         - def_list
         - tables
-#        - headerid
-        - codehilite
         - abbr
         - attr_list
         - admonition
         - toc:
             title: "Table of Contents"
-#        - pymdownx.smartsymbols
         - pymdownx.tasklist
+        - pymdownx.superfences:
+            custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:mermaid2.fence_mermaid        
 
 # Custom vars to our template
-
 
 extra:
     project:
@@ -43,43 +43,11 @@ extra:
     ga_tracking_code: XX-XXXXXXXX-X
 
 plugins:
+    - search
     - macros
-    - markdownextradata
-#    - linkedartindexing:
-#         schema: https
-#         hostname: linked.art
-#         exampleDir: example
-#         version: 1
-     
-# Not used ?
-#    - hyde.ext.plugins.text.SyntextPlugin
-#    - hyde.ext.plugins.meta.TaggerPlugin
-# Not used - adds extends if layout is set
-#    - hyde.ext.plugins.meta.AutoExtendPlugin
-# No equiv of meta.yaml loading
-#    - hyde.ext.plugins.meta.MetaPlugin
-
-#------
-# Non mkdocs equiv
-#meta:
-    # 'nodemeta' will tell Hyde what file to look for inside a folder from
-    # which to apply meta data to all files (resources) inside it. This is
-    # a great way of simply adding or modifying properties of a very large
-    # number of files.
-#    nodemeta: meta.yaml
-
-
-#var:
-#    scheme: https
-
-#mode: debug
-#base_url: /
-#deploy_root: .site
-
-#template: hyde.ext.templates.jinja.Jinja2Template
-
-#jinja2:
-#    filters:
-#        regex_replace: extensions.text.regex_replace
-#        regex_replace_fn: extensions.text.regex_replace_fn
+    - mermaid2:
+        arguments:
+          theme: 'light'
+          securityLevel: 'loose'
+    - linkedart
 

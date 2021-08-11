@@ -71,8 +71,8 @@ An object is given the name "Hacha (Ceremonial Axe)", with a note that the origi
 ```crom
 top = model.HumanMadeObject(ident="auto int-per-segment")
 n = vocab.PrimaryName(content="Hacha (Ceremonial Axe)")
-n.language = instances['spanish']
-n.language = instances['english']
+n.language = vocab.instances['spanish']
+n.language = vocab.instances['english']
 top.identified_by = n
 st = vocab.Subtitle(content="Ceremonial Axe")
 st.language = vocab.instances['english']

@@ -10,7 +10,7 @@ table tr td {
 
 </style>
 
-{% include "toc.html" %}
+[TOC]
 
 ### ManMadeObject
 

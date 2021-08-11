@@ -2,7 +2,7 @@
 title: "Getty Photo Archive Mapping"
 ---
 
-{% include "toc.html" %}
+[TOC]
 
 ## Introduction
 
@@ -107,14 +107,14 @@ We create a `ManMadeObject` to represent the photograph, by checking the `photo_
 We construct a label for the photograph based on this type and the name of the object depicted.
 
 ```crom
-top = PhotographBW()
+top = vocab.PhotographBW()
 top._label = "Black and White Photograph of 'St. Sebastian'"
 ```
 
 We create an Identifier for the Accession Number, and type it as  _(aat:300312355)_. This is referenced from the photograph with the `identified_by` property.
 
 ```crom
-top = AccessionNumber()
+top = vocab.AccessionNumber()
 top.content = "292221"
 ```
 
@@ -122,17 +122,17 @@ A second `Identifier` for Anderson's identifier is created. This identifier is a
 
 ```crom
 
-top = PhotographBW()
+top = vocab.PhotographBW()
 top._label = "Black and White Photograph of 'St. Sebastian'"
-srccoll = CollectionSet()
+srccoll = vocab.CollectionSet()
 srccoll._label = "Collection of Anderson"
-who = Actor()
+who = model.Actor()
 who._label = "Anderson"
-cre = Creation()
+cre = model.Creation()
 cre.carried_out_by = who
 srccoll.created_by = cre
 top.member_of = srccoll
-idr = Identifier()
+idr = model.Identifier()
 idr.content = "1195" 
 #proxy = Proxy()
 #proxy.proxyFor = top
@@ -148,14 +148,14 @@ The above needs work, as the Anderson Collection does not *currently* aggregate 
 Plus we link the, as of yet unconfigured, Painting resource to it via a `VisualItem`.
 
 ```crom
-top = PhotographBW()
+top = vocab.PhotographBW()
 top._label = "Black and White Photograph of 'St. Sebastian'"
-coll = CollectionSet()
+coll = vocab.CollectionSet()
 coll._label = "Erwin Panofsky Collection"
 top.member_of = coll
-vi = VisualItem()
+vi = model.VisualItem()
 vi._label = "Image on Photograph"
-art = Painting(art=1)
+art = vocab.Painting(art=1)
 vi.represents = art
 top.shows = vi
 ```
@@ -170,47 +170,47 @@ We can thus fill in the data about the photograph to our model:
 We can fill out a lot of details about the object itself.  In particular, it has a Title (which we also associate with the object directly as a label), height and width dimensions in centimetres, and a parseable materials statement.  We record both the statement as a `LinguisticObject`, as well as breaking the information out into machine readable material and part resources.
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(art=1)
 top._label = "St. Sebastian"
-apl = Name()
+apl = model.Name()
 apl.content = "St. Sebastian"
 top.identified_by = apl
-h = Height()
+h = vocab.Height()
 h._label = "Height"
 h.value = 153
 h.unit = instances['cm']
-w = Width()
+w = vocab.Width()
 w._label = "Width"
 w.value = 118
 w.unit = instances['cm']
 top.dimension = h
 top.dimension = w
-mats = MaterialStatement()
+mats = vocab.MaterialStatement()
 mats.content = "Oil on canvas"
 top.referred_to_by = mats
-top.made_of = instances['oil']
-part = SupportPart()
+top.made_of = vocab.instances['oil']
+part = vocab.SupportPart()
 part._label = "Canvas Support"
-part.made_of = instances['canvas']
+part.made_of = vocab.instances['canvas']
 top.part = part
 ```
 
 Now we can tackle the creation of the painting.  The activity is a `Production`, which was carried out by the artist at a particular point in time.  We know the artist's name and their birth and death dates, and an approximate date for the activity.
 
 ```crom
-top = Production()
-artist = Person()
+top = model.Production()
+artist = model.Person()
 artist._label = "Rubens, Peter Paul"
-birth = Birth()
-bt = TimeSpan()
+birth = model.Birth()
+bt = model.TimeSpan()
 bt._label = "1577"
 bd = "1577-01-01T00:00:00Z"
 bt.begin_of_the_begin = bd
 be = "1578-01-01T00:00:00Z"
 bt.end_of_the_end = be
 birth.timespan = bt
-death = Death()
-dt = TimeSpan()
+death = model.Death()
+dt = model.TimeSpan()
 dt._label = "1640"
 dd = "1640-01-01T00:00:00Z"
 dt.begin_of_the_begin = dd 
@@ -220,7 +220,7 @@ death.timespan = dt
 artist.born = birth
 artist.died = death
 top.carried_out_by = artist
-ts = TimeSpan()
+ts = model.TimeSpan()
 ts._label = "ca. 1604"
 ts.begin_of_the_begin = "1603-01-01T00:00:00Z" 
 ts.end_of_the_end = "1606-01-01T00:00:00Z"
@@ -230,13 +230,13 @@ top.timespan = ts
 Due to research by the photo archive catalogers, we know a relatively recent (if not necessarily absolutely current) owner, location and identifier for the object. The owner and identifer follow the same pattern as for the identifiers of the photograph.
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(art=1)
 top._label = "St. Sebastian"
-coll = CollectionSet()
+coll = vocab.CollectionSet()
 coll.classified_as = instances['public collection']
-own = Group()
+own = model.Group()
 own._label = "Galleria Nazionale d'Arte Antica, Palazzo Corsini"
-cre = Creation()
+cre = model.Creation()
 cre.carried_out_by = own
 coll.created_by = cre
 top.member_of = coll
@@ -251,13 +251,13 @@ top.member_of = coll
 And its current location is very well described in the data, so we map all of it in this example.  However, this is not a recommended pattern and instead a gazetter or vocabulary such as TGN or Geonames should be used instead.  Only places that do not have existing identities should have new identities created.  Instead, the city of Rome should be identified as `tgn:7000874-place` and then the TGN hierarchy used for the province, region, and country.
 
 ```crom
-itl = Place()
+itl = model.Place()
 itl._label = "Italy"
-laz = Place()
+laz = model.Place()
 laz._label = "Lazio"
-rom = Place()
+rom = model.Place()
 rom._label = "Roma"
-top = Place()
+top = model.Place()
 top._label = "Rome"
 top.part_of = rom
 rom.part_of = laz
@@ -267,16 +267,16 @@ laz.part_of = itl
 And a few additional features for the provenance statement, a brief citation and a category:
 
 ```crom
-top = Painting(art=1)
+top = vocab.Painting(art=1)
 top._label = "St. Sebastian"
-ps = ProvenanceStatement()
+ps = vocab.ProvenanceStatement()
 ps.content = "Cardinal Neri Corsini (1685-1770); Purchased by the Italian government form Prince Tommaso Corsini (1884)"
 top.referred_to_by = ps
-bc = LinguisticObject()
+bc = vocab.LinguisticObject()
 bc._label = "Vlieghe, CorpRub 8 (1972-73), no.144."
 top.referred_to_by = bc
-io = InformationObject()
-t = Type() # NB Explicitly no id to generate local identifier
+io = model.InformationObject()
+t = model.Type() # NB Explicitly no id to generate local identifier
 t._label = "Religious, Devotional"
 io.about = t
 top.carries = io

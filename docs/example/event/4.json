@@ -1,0 +1,35 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/4",
+  "type": "Activity",
+  "_label": "Auction",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300054751",
+      "type": "Type",
+      "_label": "Auction Event"
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "identified_by": [
+      {
+        "type": "Name",
+        "content": "Three days within April 1763"
+      }
+    ],
+    "begin_of_the_begin": "1763-04-01T00:00:00Z",
+    "end_of_the_begin": "1763-04-28T00:00:00Z",
+    "begin_of_the_end": "1763-04-04T00:00:00Z",
+    "end_of_the_end": "1763-05-01T00:00:00Z",
+    "duration": {
+      "type": "Dimension",
+      "value": 3,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379242",
+        "type": "MeasurementUnit",
+        "_label": "days"
+      }
+    }
+  }
+}

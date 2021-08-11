@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/group/2",
+  "type": "Group",
+  "_label": "Paintings Department",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300263534",
+      "type": "Type",
+      "_label": "Department"
+    }
+  ],
+  "member": [
+    {
+      "type": "Person",
+      "_label": "Curator"
+    }
+  ]
+}

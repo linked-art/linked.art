@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/2",
+  "type": "Activity",
+  "_label": "Inferred Activity",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300202389",
+      "type": "Type",
+      "_label": "Computer Generated"
+    }
+  ],
+  "carried_out_by": [
+    {
+      "type": "Actor",
+      "_label": "Performer of inferred activity"
+    }
+  ]
+}

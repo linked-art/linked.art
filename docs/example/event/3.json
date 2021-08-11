@@ -1,0 +1,23 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/3",
+  "type": "Activity",
+  "timespan": {
+    "type": "TimeSpan",
+    "_label": "When",
+    "begin_of_the_begin": "earliest-start-datetime",
+    "end_of_the_end": "latest-end-datetime"
+  },
+  "took_place_at": [
+    {
+      "type": "Place",
+      "_label": "Where"
+    }
+  ],
+  "carried_out_by": [
+    {
+      "type": "Actor",
+      "_label": "Who"
+    }
+  ]
+}

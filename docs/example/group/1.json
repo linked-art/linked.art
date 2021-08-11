@@ -1,0 +1,24 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/group/1",
+  "type": "Group",
+  "_label": "Example Organization",
+  "formed_by": {
+    "type": "Formation",
+    "_label": "Formation of Example Organization",
+    "timespan": {
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1639-12-01T00:00:00",
+      "end_of_the_end": "1639-12-31T23:59:59"
+    }
+  },
+  "dissolved_by": {
+    "type": "Dissolution",
+    "_label": "Dissolution of Example Organization",
+    "timespan": {
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1790-06-12T00:00:00",
+      "end_of_the_end": "1790-06-12T23:59:59"
+    }
+  }
+}

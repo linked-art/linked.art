@@ -1,0 +1,110 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/1",
+  "type": "Activity",
+  "_label": "St George from Simpson to Adams",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Purchase of Lot 0055a, Durer's St George and the Dragon"
+    },
+    {
+      "type": "Identifier",
+      "content": "0055a"
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "_label": "1820 Mar 09",
+    "begin_of_the_begin": "1820-03-09T00:00:00Z",
+    "end_of_the_end": "1820-03-09T23:59:59Z"
+  },
+  "took_place_at": [
+    {
+      "id": "http://vocab.getty.edu/tgn/7011781",
+      "type": "Place",
+      "_label": "London"
+    }
+  ],
+  "carried_out_by": [
+    {
+      "id": "http://vocab.getty.edu/ulan/500451765",
+      "type": "Group",
+      "_label": "Edward Foster & Son"
+    }
+  ],
+  "used_specific_object": [
+    {
+      "id": "http://example.org/set/Br1908/0055",
+      "type": "Set",
+      "_label": "Set of Objects for Lot 0055"
+    }
+  ],
+  "caused_by": [
+    {
+      "id": "http://example.org/auction/Br1908/0055",
+      "type": "Activity",
+      "_label": "Auction of Lot 0055"
+    }
+  ],
+  "part": [
+    {
+      "type": "Acquisition",
+      "transferred_title_of": [
+        {
+          "id": "http://example.museum/object/1",
+          "type": "HumanMadeObject",
+          "_label": "St George and the Dragon"
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "http://example.museum/person/2",
+          "type": "Person",
+          "_label": "Simpson"
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "http://example.museum/person/1",
+          "type": "Person",
+          "_label": "Adams"
+        }
+      ]
+    },
+    {
+      "type": "Payment",
+      "paid_amount": {
+        "type": "MonetaryAmount",
+        "_label": "8.8 pounds",
+        "value": 8.8,
+        "currency": {
+          "id": "http://vocab.getty.edu/aat/300411998",
+          "type": "Currency",
+          "_label": "British Pounds"
+        }
+      },
+      "paid_from": [
+        {
+          "id": "http://example.museum/person/1",
+          "type": "Person",
+          "_label": "Adams"
+        }
+      ],
+      "paid_to": [
+        {
+          "id": "http://example.museum/person/2",
+          "type": "Person",
+          "_label": "Simpson"
+        }
+      ]
+    }
+  ]
+}

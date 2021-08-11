@@ -1,0 +1,46 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/place/0> a crm:E53_Place ;
+    rdfs:label "Los Angeles" ;
+    crm:P168_place_is_defined_by "POLYGON((-118.574 34.185,-117.558 34.185,-117.5585 33.512,-118.574 33.512,-118.5745 34.185))" ;
+    crm:P189i_is_approximated_by [ a crm:E53_Place ;
+            rdfs:label "Los Angeles Centroid" ] ;
+    crm:P1_is_identified_by [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Los Angeles" ],
+        [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "06-44000" ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300008389> ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "Los Angeles is the largest city in California" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ] ;
+    crm:P89_falls_within [ a crm:E53_Place ;
+            rdfs:label "California" ] ;
+    la:equivalent <http://vocab.getty.edu/tgn/7023900> ;
+    la:member_of [ a la:Set ;
+            rdfs:label "Top 10 Cities in USA" ] .
+
+<http://vocab.getty.edu/aat/300008389> a crm:E55_Type ;
+    rdfs:label "City" .
+
+<http://vocab.getty.edu/aat/300418049> a crm:E55_Type ;
+    rdfs:label "Brief Text" .
+
+<http://vocab.getty.edu/aat/300435416> a crm:E55_Type ;
+    rdfs:label "Description" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300418049> .
+
+<http://vocab.getty.edu/tgn/7023900> a crm:E53_Place ;
+    rdfs:label "Los Angeles" .
+

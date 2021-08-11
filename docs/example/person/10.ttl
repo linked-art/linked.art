@@ -1,0 +1,25 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/person/10> a crm:E21_Person ;
+    rdfs:label "Jeremy K. Lintott" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300111159> .
+
+<http://vocab.getty.edu/aat/300111159> a crm:E55_Type ;
+    rdfs:label "British" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300379842> .
+
+<http://vocab.getty.edu/aat/300379842> a crm:E55_Type ;
+    rdfs:label "Nationality" .
+

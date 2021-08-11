@@ -1,0 +1,51 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/concept/0> a crm:E55_Type ;
+    rdfs:label "GAN Art" ;
+    crm:P1_is_identified_by [ a crm:E42_Identifier ;
+            crm:P190_has_symbolic_content "186_gan_art" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300404621> ],
+        [ a crm:E33_E41_Linguistic_Appellation ;
+            crm:P190_has_symbolic_content "Generative Adversarial Network (GAN) Generated Art" ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300404670> ;
+            crm:P72_has_language <http://vocab.getty.edu/aat/300388277> ] ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300435443> ;
+    crm:P67i_is_referred_to_by [ a crm:E33_Linguistic_Object ;
+            crm:P190_has_symbolic_content "The generation of art by a process of training a machine learning algorithm to create the art, and a second algorithm to classify it, and then picking the higest classified image." ;
+            crm:P2_has_type <http://vocab.getty.edu/aat/300435416> ] ;
+    skos:broader <http://vocab.getty.edu/aat/300069478> .
+
+<http://vocab.getty.edu/aat/300069478> a crm:E55_Type ;
+    rdfs:label "Computer Art" .
+
+<http://vocab.getty.edu/aat/300388277> a crm:E56_Language ;
+    rdfs:label "English" .
+
+<http://vocab.getty.edu/aat/300404621> a crm:E55_Type ;
+    rdfs:label "Owner-Assigned Number" .
+
+<http://vocab.getty.edu/aat/300404670> a crm:E55_Type ;
+    rdfs:label "Primary Name" .
+
+<http://vocab.getty.edu/aat/300418049> a crm:E55_Type ;
+    rdfs:label "Brief Text" .
+
+<http://vocab.getty.edu/aat/300435416> a crm:E55_Type ;
+    rdfs:label "Description" ;
+    crm:P2_has_type <http://vocab.getty.edu/aat/300418049> .
+
+<http://vocab.getty.edu/aat/300435443> a crm:E55_Type ;
+    rdfs:label "Type of Work" .
+

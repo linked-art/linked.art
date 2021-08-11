@@ -1,0 +1,110 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/text/0",
+  "type": "LinguisticObject",
+  "_label": "Gainsborough by Hayes",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300060417",
+      "type": "Type",
+      "_label": "Monograph"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Gainsborough: Paintings and Drawings"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417443",
+          "type": "Type",
+          "_label": "ISBN Identifier"
+        }
+      ],
+      "content": "0714816396"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300026032",
+          "type": "Type",
+          "_label": "Abstract",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "A thorough analysis of the artist's life and work"
+    }
+  ],
+  "about": [
+    {
+      "id": "http://vocab.getty.edu/ulan/500115200",
+      "type": "Person",
+      "_label": "Gainsborough, Thomas"
+    }
+  ],
+  "language": [
+    {
+      "id": "http://vocab.getty.edu/aat/300388277",
+      "type": "Language",
+      "_label": "English"
+    }
+  ],
+  "used_for": [
+    {
+      "type": "Activity",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300054686",
+          "type": "Type",
+          "_label": "Publishing"
+        }
+      ],
+      "timespan": {
+        "type": "TimeSpan",
+        "_label": "1975",
+        "begin_of_the_begin": "1975-01-01T00:00:00Z",
+        "end_of_the_end": "1975-12-31T23:59:59Z"
+      },
+      "took_place_at": [
+        {
+          "type": "Place",
+          "_label": "New York"
+        }
+      ],
+      "carried_out_by": [
+        {
+          "type": "Group",
+          "_label": "Phaidon"
+        }
+      ]
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "carried_out_by": [
+      {
+        "type": "Person",
+        "_label": "Hayes, John"
+      }
+    ]
+  }
+}

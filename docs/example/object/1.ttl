@@ -1,0 +1,23 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix la: <https://linked.art/ns/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.art/example/object/1> a crm:E22_Human-Made_Object ;
+    rdfs:label "Van Gogh Painting" ;
+    crm:P108i_was_produced_by [ a crm:E12_Production ;
+            rdfs:label "Production of Painting" ;
+            crm:P7_took_place_at [ a crm:E53_Place ;
+                    rdfs:label "Amsterdam" ] ] ;
+    crm:P55_has_current_location [ a crm:E53_Place ;
+            rdfs:label "Rijksmuseum Gallery" ] .
+
