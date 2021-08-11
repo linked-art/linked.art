@@ -5,6 +5,7 @@ rdflib
 pyld
 requests
 lxml
-mkdocs-mermaid2-plugin
-mkdocs-macros-plugin
+# mkdocs-mermaid2-plugin
+-e git://github.com/fralau/mkdocs-mermaid2-plugin#egg=mkdocs-mermaid2-plugin
+# mkdocs-macros-plugin
 -e git://github.com/linked-art/mkdocs-linkedart-plugin.git#egg=mkdocs-linkedart-plugin
