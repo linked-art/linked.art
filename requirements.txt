@@ -5,7 +5,6 @@ rdflib
 pyld
 requests
 lxml
-mkdocs-material-extensions
 mkdocs-mermaid2-plugin
 mkdocs-macros-plugin
 -e git://github.com/linked-art/mkdocs-linkedart-plugin.git#egg=mkdocs-linkedart-plugin
