@@ -35,7 +35,7 @@ top.identified_by = model.Name(content="Informative Web Page")
 dim = model.Dimension(label="100 kb")
 dim.unit = vocab.instances['kilobytes']
 dim.value = 100
-dim.classified_as = model.Type(ident="aat:300265863", label="File Size")
+dim.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300265863", label="File Size")
 top.dimension = dim
 cre = model.Creation()
 cre.carried_out_by = model.Group(label="Museum Education Department")
