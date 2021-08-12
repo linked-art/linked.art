@@ -150,7 +150,7 @@ a:hover, a:focus {
 }
 
 
-.jsonld > pre {
+pre {
   display: block;
   padding: 1rem 1.5rem;
   white-space: pre; 
@@ -158,18 +158,18 @@ a:hover, a:focus {
   border-color: #C0C0B0;
 }
 
-.jsonld .str { color: #663399; }
-.jsonld .str a { color: #005500; text-decoration: none; }
-.jsonld .sep { color: black }
-.jsonld .asep { color: red; }
-.jsonld .bsep { color: black; }
-.jsonld .int { color: #aa2e00; }
+.str { color: #663399; }
+.str a { color: #005500; text-decoration: none; }
+.sep { color: black }
+.asep { color: red; }
+.bsep { color: black; }
+.int { color: #aa2e00; }
 
-.jsonld .sep + .str { color: #005500; }
+.sep + .str { color: #005500; }
 
-.jsonld .context { font-size: 0.8em; }
-.jsonld .context + .sep { font-size: 0.8em; }
-.jsonld .context + .sep + .str { font-size: 0.8em; }
+.context { font-size: 0.8em; }
+.context + .sep { font-size: 0.8em; }
+.context + .sep + .str { font-size: 0.8em; }
 
 .mermaid {
   background: white;

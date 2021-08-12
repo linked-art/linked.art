@@ -5,7 +5,7 @@ up_label: "Model Overview"
 ---
 
 [TOC]
-
+ 
 It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with datasets from across many different museums, the following patterns have been agreed on as useful ways to think about our cultural data.
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
