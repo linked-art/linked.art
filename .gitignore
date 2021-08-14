@@ -3,16 +3,4 @@ scripts/*.pyc
 scripts/.hyde_deps
 extensions/*.pyc
 .hyde_deps
-content/example/object/*
-content/example/person/*
-content/example/activity/*
-content/example/place/*
-content/example/info/*
-content/example/group/*
-content/example/identifier/*
-content/example/name/*
-content/example/value/*
-content/example/text/*
-content/example/legal/*
-content/example/set/*
-content/model/example_index.html
+content/example/*
