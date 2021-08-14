@@ -1,8 +1,10 @@
 ---
 title: "Linked Art Schema: Digital"
-up_href: "/api/1.0/"
-up_label: "Linked Art API 1.0"
 ---
+
+        <link rel=stylesheet type=text/css href="https://linked.art/api/1.0/schema_docs/schema_doc.css">
+        <script src=https://use.fontawesome.com/facf9fa52c.js></script>
+        <script src="schema_doc.min.js"></script>
 
  <div onload=anchorOnLoad(); id=root> <span class="badge badge-dark value-type">Type: object</span><br><!--
         <span style="color:red;font-weight:normal;font-style:oblique;font-size:-1;">None / Digital Object Schema  ->  </span>--> <span class=description><p><em>dig:D1_Digital_Object</em><br> A digital resource, such as a web page or image.<br> See: <a href=https://linked.art/api/1.0/endpoint/digital_object/ >API</a> | <a href=https://linked.art/model/digital/ >Model</a></p> </span> <span class="badge badge-info no-additional">No Additional Properties</span> <div class=accordion id=accordiona_context> <div class=card> <div class=card-header id=headinga_context> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#a_context aria-expanded aria-controls=a_context onclick="setAnchor('#a_context')"><span class=property-name>@context</span><span style=color:black;font-weight:normal;font-style:oblique;font-size:-1;> (JSON-LD Context) </span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=a_context class="collapse property-definition-div" aria-labelledby=headinga_context data-parent=#accordiona_context> <div class="card-body pl-5"> <span class="badge badge-dark value-type">Type: object</span><br><!--
