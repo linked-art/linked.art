@@ -16,14 +16,14 @@ In the situation where there is an inconsistency between this documentation and 
 
 The following JSON schemas are available for use in validating data, and understanding the structure.
 
-* Digital Object [documentation](digital.html) / [schema](../schema/digital.json)
-* Event [documentation](event.html) / [schema](../schema/event.json) 
-* Group [documentation](group.html) / [schema](../schema/group.json)
-* Person [documentation](person.html) / [schema](../schema/person.json)
-* Physical Object [documentation](object.html) / [schema](../schema/object.json)
-* Place [documentation](place.html) / [schema](../schema/place.json)
-* Provenance Activity [documentation](provenance.html) / [schema](../schema/provenance.json)
-* Set [documentation](set.html) / [schema](../schema/set.json)
-* Textual Work [documentation](text.html) / [schema](../schema/text.json)
-* Visual Work [documentation](image.html) / [schema](../schema/image.json)
+* Digital Object [documentation](digital) / [schema](../schema/digital.json)
+* Event [documentation](event) / [schema](../schema/event.json) 
+* Group [documentation](group) / [schema](../schema/group.json)
+* Person [documentation](person) / [schema](../schema/person.json)
+* Physical Object [documentation](object) / [schema](../schema/object.json)
+* Place [documentation](place) / [schema](../schema/place.json)
+* Provenance Activity [documentation](provenance) / [schema](../schema/provenance.json)
+* Set [documentation](set) / [schema](../schema/set.json)
+* Textual Work [documentation](text) / [schema](../schema/text.json)
+* Visual Work [documentation](image) / [schema](../schema/image.json)
 

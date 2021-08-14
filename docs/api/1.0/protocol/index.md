@@ -53,7 +53,7 @@ In the future, new major versions of the Model and API will have a different pro
 
 ### CORS
 
-In order to allow browser-based applications to interact with the data, publishers MUST ensure that the Cross-Origin Resource Sharing, or [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), headers are correctly set. In particular, the `Access-Control-Allow-Origin` header on the responses MUST be set to "*" on every response.
+In order to allow browser-based applications to interact with the data, publishers MUST ensure that the Cross-Origin Resource Sharing, or [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), headers are correctly set. In particular, the `Access-Control-Allow-Origin` header on the responses MUST be set to "*" on every response. 
 
 > `Access-Control-Allow-Origin: *`
 
