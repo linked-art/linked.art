@@ -20,5 +20,5 @@ rm -rf .site/*
 
 mkdocs build --clean
 # Once more incrementally to catch the new index file we built
-mkdocs build
+# mkdocs build
 
