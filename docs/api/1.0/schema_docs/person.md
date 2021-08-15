@@ -1,7 +1,6 @@
 ---
 title: "Linked Art Schema: Person"
-up_href: "/api/1.0/"
-up_label: "Linked Art API 1.0"
+template: "schema_docs.html"
 ---
 
  <div onload=anchorOnLoad(); id=root> <span class="badge badge-dark value-type">Type: object</span><br><!--
