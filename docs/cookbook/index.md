@@ -9,6 +9,6 @@ In order to provide examples of how to apply the [data model](/model/), this sec
 ## Recipes
 
 * Getty
-  * [Photo Archive](getty/photoarchive/)
+    * [Photo Archive](getty/photoarchive/)
 * Yale
-  * [Lux](yale/lux/)
+    * [Lux](yale/lux/)
