@@ -1,7 +1,5 @@
 ---
 title: "Linked Art API: Assigned Relationship Structure"
-up_href: "/api/1.0/shared/"
-up_label: "Linked Art API 1.0 Shared Data Structures"
 ---
 
 <style>
