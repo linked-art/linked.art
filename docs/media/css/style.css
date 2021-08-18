@@ -1,0 +1,325 @@
+html {
+    background-color: #fdfbf2;
+    height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+hr {
+  border-color: #e4e0cd;
+}
+
+h1 {
+  border-bottom: 1px solid #e4e0cd;
+}
+
+main {
+  flex: 1;
+}
+
+
+/* ============ TOP LEVEL NAVIGATION ============ */
+nav {
+    font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: right;
+    background-color: #302803;
+    color: #E7E8D1;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 1rem 0;
+    margin-bottom: 6rem;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 110%;
+}
+
+nav a.selected {
+    color: #D3CEAA;
+}
+
+nav a:hover {
+    color: #E7E8D1;
+}
+
+nav ul {
+    list-style: none;
+    padding-right: 2rem;
+    margin-bottom: 0;
+}
+
+nav ul li {
+    display: inline;
+    list-style-type: none;
+    padding-left: 25px;
+    padding-right: 5px;
+}
+
+nav .nav_warning {
+  font-weight: bold;
+  color: red;
+  border: 1px dashed red;
+  padding: 3px;
+  margin: 3px;
+}
+
+.container {
+  margin-top: 60px;
+}
+
+
+/* ============ TABLE OF CONTENTS ============ */
+.toc {
+  padding-left: 2rem;
+}
+
+.toc ul {
+  list-style: none;
+}
+.toc li {
+  margin-bottom: 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #000;
+}
+.toc ul ul {
+  margin: 0.5rem 0 0rem 2rem;
+}
+
+
+/* ============ PAGE FOOTER ============ */
+
+footer {
+    font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #302803;
+    color: #E7E8D1;
+    font-size: 80%;
+    text-align: center;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+ }
+
+/* ============ CODE BLOCKS ============ */
+code {
+  background-color: #fbf8e9;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+
+/* In case we have other code blocks */
+/* leave these definitions in place */
+
+.codehilite > pre {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; 
+  background-color: #F6F0E0;
+  border-color: #C0C0B0;
+}
+.codehilite .nt { color: #663399; }
+.codehilite .p { color: #000000; }
+.codehilite .s2 { color: #005500; }
+.codehilite .n {color: #aa2e00;}
+.codehilite .mi {color: #4183d7;}
+.codehilite .nb {color: #555599;}
+.codehilite .o {color: #559999;}
+.codehilite .k {color: #559955;}
+.codehilite .ow {color: #995599;}
+.codehilite + p {
+  margin-top: -22px;
+  padding-left: 10px;
+}
+.codehilite .hll {
+  background-color: #ffff00;
+  font-weight: bold;
+}
+
+
+pre {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; 
+  background-color: #F6F0E0;
+  border-color: #C0C0B0;
+}
+
+.str { color: #663399; }
+.str a { color: #005500; text-decoration: none; }
+.sep { color: black }
+.asep { color: red; }
+.bsep { color: black; }
+.int { color: #aa2e00; }
+
+.sep + .str { color: #005500; }
+
+.context { font-size: 0.8em; }
+.context + .sep { font-size: 0.8em; }
+.context + .sep + .str { font-size: 0.8em; }
+
+.mermaid {
+  background: white;
+  border: 1px dashed black;
+  margin-bottom: 10px;
+  padding: 3px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+svg {
+  background: white;
+}
+
+
+span.edgeLabel {
+  padding-right: 5px;
+
+}
+
+.diagram_img {
+  background: white;
+  padding: 10px;
+  border: 1px solid black;
+
+}
+
+/* ============ ADMONITIONS ============ */
+.admonition {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 24px; 
+      border-left: 4px solid black;   
+      background: #c0c0c0;
+      margin-bottom: 1rem;
+}
+
+.note {
+      border-left: 4px solid #52E052;
+      background: #D0FCD0;    
+}
+
+.note .admonition-title {
+        font-weight: bold;
+        color: #32C032;
+        margin-right: 10px;    
+}
+
+.warning {
+      border-left: 4px solid #E25252;
+      background: #FCD0D0; 
+      margin-bottom: 8px;
+}
+
+.warning .admonition-title {
+        font-weight: bold;
+        color: #C03232;
+        margin-right: 10px;  
+}
+
+
+
+/* ============ INDENTATION ============ */
+
+.indent {
+  margin-left: 25px;
+}
+
+/* ============ ABBREVIATIONS ============ */
+
+abbr {
+  cursor: help;
+}
+
+
+/* ============ ANCHOR LINKS ============ */
+
+
+article .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -15px;
+}
+
+article .headeranchor-link:focus {
+  outline: none;
+}
+
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  position: relative;
+}
+
+article h2 .headeranchor,
+article h3 .headeranchor,
+article h4 .headeranchor,
+article h5 .headeranchor,
+article h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+article h2:hover .headeranchor-link,
+article h3:hover .headeranchor-link,
+article h4:hover .headeranchor-link,
+article h5:hover .headeranchor-link,
+article h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -1.5em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+article h2:hover .headeranchor-link .headeranchor,
+article h3:hover .headeranchor-link .headeranchor,
+article h4:hover .headeranchor-link .headeranchor,
+article h5:hover .headeranchor-link .headeranchor,
+article h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+article .headeranchor {
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+article h2:hover .headeranchor-link .headeranchor:before,
+article h3:hover .headeranchor-link .headeranchor:before,
+article h4:hover .headeranchor-link .headeranchor:before,
+article h5:hover .headeranchor-link .headeranchor:before,
+article h6:hover .headeranchor-link .headeranchor:before {
+  font-family: inherit;
+  font-size: 85%;
+  content: '🔗';
+}

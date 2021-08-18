@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600|Roboto:300" rel="stylesheet" type="text/css">
+
+
+        <link rel="stylesheet" href="{{ 'media/css/normalize.css'|url }}">
+<!--
+        <link rel="stylesheet" href="{{ 'media/css/skeleton.css'|url }}">
+-->
+        <link rel="stylesheet" href="{{ 'media/css/style.css'|url }}">
+
+
+
+        <link rel="stylesheet" href="{{ 'media/vendor/opentip.css'|url }}">
+        <script src="/media/vendor/opentip.js"></script>
+
+        <title>{{ page.title }}</title>
+
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600|Roboto:300" rel="stylesheet" type="text/css">
+        <link rel=stylesheet type=text/css href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+
+        <script src=https://code.jquery.com/jquery-3.4.1.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+        <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js integrity=sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM crossorigin=anonymous></script>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel=stylesheet type=text/css href="/media/vendor/schema_doc.css">
+        <script src=https://use.fontawesome.com/facf9fa52c.js></script>
+        <script src="/media/vendor/schema_doc.min.js"></script>
+        <script src="/media/vendor/underscore-min.js"></script>
+
+        <style>
+            html {
+                    font-size: 100%;
+            }
+
+            .jumbotron {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .examples pre {
+                margin-bottom: 0;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <nav>
+            {% import "macros.j2" as macros with context %}
+            {{ macros.render_basic_menu() }}
+        </nav>
+        <main class="container">
+            <h1>{{ page.title }}</h1>
+            <article id="content">
+                {{ page.content }}
+            </article>
+        </main>
+        <footer>
+        &copy; Linked Art Contributors ; Content published under CC-BY licence ; Contact: <a href="mailto:robert.sanderson@yale.edu">robert.sanderson@yale.edu</a>
+        <form name="contact" method="POST" data-netlify="true">
+            <span>Comment?</span> <input type="text" name="comment"/>
+            <input type="hidden" name="page" value=" {{ page.url|url }} "/>
+            <button type="submit">Send</button>
+        </form>
+        </footer>
+        {% if build == "production" -%}
+            {% include "ga.j2" %}
+        {%- endif %}       
+    </body>
+</html>

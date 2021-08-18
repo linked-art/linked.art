@@ -1,9 +1,11 @@
-ordereddict
 -e git://github.com/linked-art/crom.git#egg=cromulent
-hyde
-Jinja2
-pymdown_extensions<=5.0
+mkdocs
+pymdown_extensions
 rdflib
-pyld<2.0
+pyld
 requests
 lxml
+# mkdocs-mermaid2-plugin
+-e git://github.com/fralau/mkdocs-mermaid2-plugin#egg=mkdocs-mermaid2-plugin
+# mkdocs-macros-plugin
+-e git://github.com/linked-art/mkdocs-linkedart-plugin.git#egg=mkdocs-linkedart-plugin
