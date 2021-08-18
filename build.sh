@@ -19,6 +19,6 @@ rm -rf .site/*
 # And now generate the site from scratch
 
 mkdocs build --clean
-# Once more incrementally to catch the new index file we built
-# mkdocs build
+# Once more incrementally to catch new files
+mkdocs build
 
