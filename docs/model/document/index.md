@@ -144,8 +144,4 @@ orig = vocab.ArticleText()
 orig._label =  "Zhongguo yishu yijing zhi dansheng"
 orig.language = vocab.instances['chinese']
 top.translation_of = orig
-
-
-
-
-
+```
