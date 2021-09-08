@@ -249,7 +249,7 @@ Images of the person can also be provided, following the common pattern for [dig
 top = model.Person(ident="auto int-per-segment",label = "Gertrude H. Ingram")
 vi = model.VisualItem()
 img = vocab.DigitalImage("http://example.org/images/gertrude.jpg")
-vi.digitally_carried_by = img
+vi.digitally_shown_by = img
 top.representation = vi
 ```
 
