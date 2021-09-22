@@ -14,7 +14,7 @@ All interactions in the Linked Art community, in person or online, are covered b
 
 * Further events postponed due to COVID-19
 * Editorial Face to Face 3 (January 28th-30th, Philadelphia Museum of Art, USA)
-* [Linked Art workshops and panel](2020/cidoc.html) at the CIDOC 2020 conference
+* [Linked Art workshops and panel](2020/cidoc) at the CIDOC 2020 conference
 
 ## 2019
 
