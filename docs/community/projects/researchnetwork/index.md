@@ -20,7 +20,7 @@ title: "Linked Art: Networking Digital Collections and Scholarship"
 
 - Editorial Board face-to-face meeting, 4th-6th March 2019, Getty Center, Los Angeles, USA
 - *Linked Data for the Humanities* workshop at [Dream Lab](http://web.sas.upenn.edu/dream-lab/), 10th-14th June 2019, University of Pennsylvania, Philadelphia, USA
-- Outreach event and workshop [*Linked Art: Networking Digital Collections and Scholarship*](/community/events/2019/outreach_london.html), 1st October 2019, Victoria and Albert Museum, London, UK
+- Outreach event and workshop [*Linked Art: Networking Digital Collections and Scholarship*](/community/events/2019/outreach_london), 1st October 2019, Victoria and Albert Museum, London, UK
 - Editorial Board face-to-face meeting, 2nd-4th October 2019, University of Oxford e-Research Centre, Oxford, UK
 - Editorial Board face-to-face meeting, 28th-30th January 2020, Philadelphia Museum of Art, Philadelphia, USA
 - Panel [*Linked Art - Networking Digital Collections and Scholarship*](https://dh2020.adho.org/wp-content/uploads/2020/07/139_LinkedArtNetworkingDigitalCollectionsandScholarship.html) at the [Digital Humanities 2020](https://dh2020.adho.org/) conference, 22nd-24th July 2020 (online)
