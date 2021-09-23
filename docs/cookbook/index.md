@@ -14,3 +14,8 @@ In order to provide examples of how to apply the [data model](/model/), this sec
     * [CSV Artwork transformation to Linked Art Data Model](nga)
 * Yale
     * [Lux](yale/lux/)
+
+
+## Data Sources
+
+A [list of open data sources](data-sources) that would be beneficial to map and transform into Linked Art.
