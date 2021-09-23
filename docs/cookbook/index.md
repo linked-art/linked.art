@@ -10,5 +10,7 @@ In order to provide examples of how to apply the [data model](/model/), this sec
 
 * Getty
     * [Photo Archive](getty/photoarchive/)
+* National Gallery of Art
+    * [CSV Artwork transformation to Linked Art Data Model](nga)
 * Yale
     * [Lux](yale/lux/)
