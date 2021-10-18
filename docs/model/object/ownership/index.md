@@ -14,7 +14,7 @@ Tracking the provenance of an object is described in detail in the [Provenance](
 
 The current owner of the object should be referenced with `transferred_title_to` in the most recent `Acquisition` that `transferred_title_of` the object. These transfers are described in detail in the [Acquistion](/model/provenance/acquisition) section.
 
-To make the current owner easier to find from the object's description, the owner should also be referenced with `current_owner` from the object itself. There are further modeling details available about [People and Orgaizations](/model/actor) that might own objects.
+To make the current owner easier to find from the object's description, the owner should also be referenced with `current_owner` from the object itself. There are further modeling details available about [People and Organizations](/model/actor) that might own objects.
 
 __Example:__
 
