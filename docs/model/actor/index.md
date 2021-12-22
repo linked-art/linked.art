@@ -272,6 +272,23 @@ vi.digitally_shown_by = img
 top.representation = vi
 ```
 
+## Social Relationships
+
+Social relationships or bonds are very important for understanding how an individual fits in to society, tracing influences and interactions. That said, they are not a core part of the Linked Art model, as there are many (many!) different types of relationship that are both recorded and interesting. Instead, we use the extension pattern of an `AttributeAssignment` to assert that a relationship exists or existed, with a reference to a vocabulary term to make the type of relationship explicit.
+
+For more information about Attribute Assignments, please see the [assertions](/model/assertion) page.
+
+Example: Mary is the student of Henrietta
+
+```crom
+top = model.Person(ident="auto int-per-segment", label="Henrietta I. Little")
+student = model.Person(ident="auto int-per-segment", label="Mary N. Oppleton")
+aa = model.AttributeAssignment(label="Assign Mary as Student of Henrietta")
+top.attributed_by = aa
+aa.assigned = student
+aa.assigned_property = model.Type(ident="http://vocab.getty.edu/aat/300025909", label="Student")
+```
+
 
 ## Organization Membership
 

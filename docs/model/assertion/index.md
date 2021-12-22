@@ -1,5 +1,5 @@
 ---
-title: Previously-Held or Context-Specific Assertions
+title: Extensions, Relationships and Assertions
 ---
 
 [TOC]
@@ -16,25 +16,25 @@ The use of context specific assertions or other attribute assignments should be 
 
 The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the subject of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
-The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `assigned_to` property, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  
+The value of the assignment (the thing being assigned) is given using `assigned`, and it can be a reference to any resource or entity. It cannot be a string or numeric value. The resource that the value is assigned to is given using the `assigned_to` property on the `AttributeAssignment` or on the entity being attributed using the `attributed_by` property. The relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  
 
-The example below demonstrates associating a previous title with an object.
+The example below demonstrates associating a title with an object by a curator.
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment",art=1)
-top._label = "Current Painting Title"
+top._label = "Painting"
 aa = model.AttributeAssignment()
 aa.assigned_property = "identified_by"
 name = model.Name()
-name.content = "Previous Painting Title"
+name.content = "Assigned Painting Title"
 aa.assigned = name
-top.assigned_by = aa
+top.attributed_by = aa
 who = model.Person()
 who._label = "Painting Curator"
 aa.carried_out_by = who
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1804-05-19"
-ts.end_of_the_end = "1804-05-19"
+ts.begin_of_the_begin = "1980-05-19"
+ts.end_of_the_end = "1980-05-19"
 aa.timespan = ts
 ```
 
@@ -57,7 +57,7 @@ prod = model.Production()
 prod.influenced_by = who
 prod.classified_as = vocab.instances['style of']
 aa.assigned = prod
-top.assigned_by = aa
+top.attributed_by = aa
 by = model.Person()
 by._label = "Painting Curator"
 aa.carried_out_by = by
