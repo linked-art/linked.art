@@ -209,7 +209,7 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "1879-10-14T00:00:00"
 ts.end_of_the_end = "1879-10-14T23:59:59"
 event.timespan = ts
-top.participatedin = event
+top.participated_in = event
 ```
 
 
@@ -267,8 +267,8 @@ Images of the person can also be provided, following the common pattern for [dig
 top = model.Person(ident="auto int-per-segment",label = "Gertrude H. Ingram")
 vi = model.VisualItem()
 img = vocab.DigitalImage()
-img.access_point = "http://example.org/images/gertrude.jpg"
 vi.digitally_shown_by = img
+img.access_point = model.DigitalObject(ident="http://example.org/images/gertrude.jpg")
 top.representation = vi
 ```
 
