@@ -142,13 +142,13 @@ Example:  The birth and death of Amanda B. Curtlett.
 top = model.Person(ident="auto int-per-segment",label = "Amanda B. Curtlett")
 birth = model.Birth()
 bts = model.TimeSpan()
-bts.begin_of_the_begin = "1767-01-09"
-bts.end_of_the_end = "1767-01-12"
+bts.begin_of_the_begin = "1767-01-09T00:00:00"
+bts.end_of_the_end = "1767-01-09T23:59:59"
 birth.timespan = bts
 death = model.Death()
 dts = model.TimeSpan()
-dts.begin_of_the_begin = "1824-08-21"
-dts.end_of_the_end = "1824-08-21"
+dts.begin_of_the_begin = "1824-08-21T00:00:00"
+dts.end_of_the_end = "1824-08-21T23:59:59"
 death.timespan = dts
 dloc = model.Place()
 dloc._label = "Death Place"
@@ -189,15 +189,33 @@ Example: Patrick Q. Robertson was active between 1910-01-01 and 1934-03-21
 top = model.Person(ident="auto int-per-segment",label = "Patrick Q. Robertson")
 active = vocab.Active()
 ats = model.TimeSpan()
-ats.begin_of_the_begin = "1910-01-01"
-ats.end_of_the_end = "1934-03-21"
+ats.begin_of_the_begin = "1910-01-01T00:00:00"
+ats.end_of_the_end = "1934-03-21T00:00:00"
 active.timespan = ats
 top.carried_out = active
 ```
 
-## Descriptive Information
+### Participation in Events
 
-### Biography
+As well as activities which are carried out by the person, there are also events in which the person participates, but it would not be correct to say that they were solely responsible for them. In these cases we can use a similar term: `participated_in`. This would be useful for baptisms, engagements, weddings, traveling such as a "Grand Tour", and so forth.
+
+Example: Baby C. D'Ernesto was baptized on 1879-10-14.
+
+```crom
+top=model.Person(ident="auto int-per-segment", label="Baby C. D'Ernesto")
+event = model.Event()
+event.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300069030", label="Baptism")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1879-10-14T00:00:00"
+ts.end_of_the_end = "1879-10-14T23:59:59"
+event.timespan = ts
+top.participatedin = event
+```
+
+
+## Biographical Information
+
+### Biography Note
 
 Biographical descriptions follow the `LinguisticObject` [pattern](/model/base/), with biography _(aat:300080102)_ as the classification.  In all other respects, it is a vanilla usage of a resource being `referred_to_by` a particular text.
 
@@ -241,14 +259,15 @@ gender = vocab.Gender("http://vocab.getty.edu/aat/300189557", label="Feminine")
 top.classified_as = gender
 ```
 
-### Digital Integration
+## Digital Integration
 
 Images of the person can also be provided, following the common pattern for [digital resources](/model/digital). Only the basic image case is shown below, the other scenarios can easily be determined from the referenced digital integration for objects.
 
 ```crom
 top = model.Person(ident="auto int-per-segment",label = "Gertrude H. Ingram")
 vi = model.VisualItem()
-img = vocab.DigitalImage("http://example.org/images/gertrude.jpg")
+img = vocab.DigitalImage()
+img.access_point = "http://example.org/images/gertrude.jpg"
 vi.digitally_shown_by = img
 top.representation = vi
 ```
