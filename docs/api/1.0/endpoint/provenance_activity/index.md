@@ -43,7 +43,7 @@ The top level Activity has the following properties.
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another event that the current event is a part of. |
-| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../timespan/)|
+| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
@@ -71,9 +71,9 @@ Each of the activities in the `part` property can have the properties in the tab
 | `type`            | string        | Required    | The class for the part, which MUST be the value given in the subsections below |
 | `_label`          | string        | Recommended | A human readable label for the creation or publication, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation or publication and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation or publication and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../type/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
-| `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../timespan/)|
+| `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
@@ -151,7 +151,7 @@ Parts which are Promises have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Activity"` |
-| `classified_as`   | array         | Required    | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../type/), and one entry in the array MUST have have an `id` with the value "http://vocab.getty.edu/aat/300435599", in order to distinguish this activity as a promise |
+| `classified_as`   | array         | Required    | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/), and one entry in the array MUST have have an `id` with the value "http://vocab.getty.edu/aat/300435599", in order to distinguish this activity as a promise |
 
 
 ### Properties of Rights
@@ -162,7 +162,7 @@ Parts which are Promises have the following additional properties.
 | `type`            | string        | Required    | The class for the right, which MUST be the value `"Right"` |
 | `_label`          | string        | Recommended | A human readable label for the right, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the right and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the right and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../type/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../../shared/type/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the right |
 | `dimension`       | array         | Optional    | An array of json objects, each of which is [Dimension](../../shared/dimension/) structure |
 | `possessed_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/) that possessed the right |
