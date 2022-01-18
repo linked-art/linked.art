@@ -55,8 +55,8 @@ Dereferencing an entity via the Set endpoint would result in a JSON-LD document 
 | `type`            | string        | Required    | The class for the creation, which MUST be the value `"Creation"` |
 | `_label`          | string        | Recommended | A human readable label for the creation, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation and MUST follow the requirements for [Type](../type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the creation occured, which MUST follow the requirements for [timespans](../timespan/)|
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation and MUST follow the requirements for [Type](../../shared/type/) |
+| `timespan`        | json object   | Recommended | A json object recording when the creation occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation |
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation to occur |
