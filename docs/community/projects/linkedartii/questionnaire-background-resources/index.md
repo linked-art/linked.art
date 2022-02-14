@@ -63,9 +63,9 @@ Video length is 7 minutes.
 For convenience, here is an annotated list of all the code notebooks from Section 2 of the questionnaire.
 
 The different types of Jupyter notebooks:
-- Transform - transformations using real-world collections data
-- Reconcile - reconciliation of collections data with authoritative data on geographical place names
-- Visualise - visualisation using Linked Art JSON-LD
+* Transform - transformations using real-world collections data
+* Reconcile - reconciliation of collections data with authoritative data on geographical place names
+* Visualise - visualisation using Linked Art JSON-LD
   
 
 |Notebook type | Notebook  | Download | nbviewer | Binder |
