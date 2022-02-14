@@ -29,8 +29,8 @@ Due to the impact of COVID-19, the planned Editorial Board meeting and Community
 - The project will support Linked Art community presentations and workshops at the virtual [CIDOC 2020 conference](https://cidoc.mahgeneve.news/en/home/), 7th-10th December 2020 (free registration required)
 - Online workshops to support the community exemplar call will now take place in January/February 2021
 
-### Questionnaire
-As part of the Linked Art II project a questionnaire will be published in Spring 2022 seeking views on the use and adoption of Linked Art, particularly of any opportunities and challenges that can be forseen. Some [background resources](./questionnaire-background-resources/) available including videos to support the questionnaire.
+### Linked Art II - Questionnaire
+As part of the Linked Art II project a [questionnaire](./questionnaire/) will be published in Spring 2022 seeking views on the use and adoption of Linked Art, particularly of any opportunities and challenges that can be forseen. 
 
 ## Project Abstract
 
