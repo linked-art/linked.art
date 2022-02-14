@@ -9,11 +9,11 @@ This page provides additional background material for the [Linked Art questionna
 Linked Art ran a 2 hour [workshop at the CIDOC 2020](https://linked.art/community/events/2020/cidoc/) conference providing a wealth of background motivation and detail, a recording of which can be found below.
 
 The workshop included:
-- An overview of the Linked Art initiative and community (00:00)
-- A technical introduction to the Linked Art profile and overview of the core principles (from 00:14) (also available separately in the next section)
-- The Van Gogh Worldwide project and its use of the Linked Art model (from 00:34)
+* An overview of the Linked Art initiative and community (00:00)
+* A technical introduction to the Linked Art profile and overview of the core principles (from 00:14) (also available separately in the next section)
+* The Van Gogh Worldwide project and its use of the Linked Art model (from 00:34)
 Followed by audience Q&A
-- A live encoding of data from the Rijksmuseum into Linked Art (from 01:35)
+* A live encoding of data from the Rijksmuseum into Linked Art (from 01:35)
 
 [![Watch the video](https://img.youtube.com/vi/afO7KEysda8/default.jpg)](https://youtu.be/afO7KEysda8)
 
@@ -59,9 +59,9 @@ Video length is 7 minutes.
 For convenience, here is an annotated list of all the code notebooks from Section 2 of the questionnaire.
 
 The different types of Jupyter notebooks:
-- Transform - transformations using real-world collections data
-- Reconcile - reconciliation of collections data with authoritative data on geographical place names
-- Visualise - visualisation using Linked Art JSON-LD
+* Transform - transformations using real-world collections data
+* Reconcile - reconciliation of collections data with authoritative data on geographical place names
+* Visualise - visualisation using Linked Art JSON-LD
   
 
 |Notebook type | Notebook  | Download | nbviewer | Binder |
