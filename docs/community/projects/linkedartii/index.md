@@ -29,6 +29,9 @@ Due to the impact of COVID-19, the planned Editorial Board meeting and Community
 - The project will support Linked Art community presentations and workshops at the virtual [CIDOC 2020 conference](https://cidoc.mahgeneve.news/en/home/), 7th-10th December 2020 (free registration required)
 - Online workshops to support the community exemplar call will now take place in January/February 2021
 
+### Questionnaire
+As part of the Linked Art II project a questionnaire will be published in Spring 2022 seeking views on the use and adoption of Linked Art, particularly of any opportunities and challenges that can be forseen. Some [background resources](./questionnaire-background-resources/) available including videos to support the questionnaire.
+
 ## Project Abstract
 
 *Linked Art II: Developing Community, Practice, and Scholarship* brings together University researchers with experts from some of the leading art museums in the UK and US. The project will engage with scholars and practitioners to highlight the opportunities afforded by connected collections as data, and establish where new digital methods and tools are needed to enable novel research. Linked Art II will engage with cultural institutions to examine how structured data can contribute towards digital challenges, including improving the accessibility of collections, and increasing the range and diversity of institutions and material available to the public.
