@@ -2,24 +2,20 @@
 title: "Linked Art II: Questionnaire - Background Resources"
 ---
 
-This page provides additional background material for the Linked Art questionnaire open until 7 April 2022.
+This page provides additional background material for the [Linked Art questionnaire](https://oxford.onlinesurveys.ac.uk/linked-art-adoption-opportunities-and-challenges) open until 7 April 2022.
 
 # Linked Art workshop
 
-Linked Art ran a 2 hour workshop at the CIDOC 2020 conference providing a wealth of background motivation and detail, a recording of which can be found below.
+Linked Art ran a 2 hour [workshop at the CIDOC 2020](https://linked.art/community/events/2020/cidoc/) conference providing a wealth of background motivation and detail, a recording of which can be found below.
 
 The workshop included:
 - An overview of the Linked Art initiative and community (00:00)
-- A technical introduction to the Linked Art profile and overview of the core principles (from HH:MM) (also available in separately in the next section)
-- The Van Gogh Worldwide project and its use of the Linked Art model (from HH:MM)
+- A technical introduction to the Linked Art profile and overview of the core principles (from 00:14) (also available separately in the next section)
+- The Van Gogh Worldwide project and its use of the Linked Art model (from 00:34)
 Followed by audience Q&A
-- A live encoding of data from the Rijksmuseum into Linked Art (from HH:MM)
+- A live encoding of data from the Rijksmuseum into Linked Art (from 01:35)
 
 [![Watch the video](https://img.youtube.com/vi/afO7KEysda8/default.jpg)](https://youtu.be/afO7KEysda8)
-
-
-
-
 
 
 Video length is 1 hour 53 minutes. 
@@ -42,7 +38,7 @@ Video length is 12 minutes.
 
 # JSON-LD 
 
-JSON-LD is serialization format for Linked Data that is used to represent descriptions of artworks as Linked Art. This video gives a quick 13 minute introduction to JSON-LD:
+JSON-LD is serialisation format for Linked Data that is used to represent descriptions of artworks as Linked Art. This video gives a quick 13 minute introduction to JSON-LD:
 
 [![Watch the video](https://img.youtube.com/vi/vioCbTo3C-4/default.jpg)](https://youtu.be/vioCbTo3C-4)
 
