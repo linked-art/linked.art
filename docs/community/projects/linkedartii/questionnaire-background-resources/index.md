@@ -9,11 +9,11 @@ This page provides additional background material for the Linked Art questionnai
 Linked Art ran a 2 hour workshop at the CIDOC 2020 conference providing a wealth of background motivation and detail, a recording of which can be found below.
 
 The workshop included:
-- An overview of the Linked Art initiative and community (00:00)
-- A technical introduction to the Linked Art profile and overview of the core principles (from HH:MM) (also available in separately in the next section)
-- The Van Gogh Worldwide project and its use of the Linked Art model (from HH:MM)
+* An overview of the Linked Art initiative and community (00:00)
+* A technical introduction to the Linked Art profile and overview of the core principles (from HH:MM) (also available in separately in the next section)
+* The Van Gogh Worldwide project and its use of the Linked Art model (from HH:MM)
 Followed by audience Q&A
-- A live encoding of data from the Rijksmuseum into Linked Art (from HH:MM)
+* A live encoding of data from the Rijksmuseum into Linked Art (from HH:MM)
 
 [![Watch the video](https://img.youtube.com/vi/afO7KEysda8/default.jpg)](https://youtu.be/afO7KEysda8)
 
