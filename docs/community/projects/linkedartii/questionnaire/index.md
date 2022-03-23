@@ -32,7 +32,7 @@ Some [background resources](./background-resources/) are available to support pe
 
 ## Webinar
 
-A webinar to be held on 3rd May 2022, will desribe the code notebooks referenced in the questionnaire, and will take questions and answers on the notebooks and the questionnaire. 
+A webinar to be held on 3rd May 2022, will describe the code notebooks referenced in the questionnaire, and will take questions and answers on the notebooks and the questionnaire. 
 
 Further information including how to register for this free webinar is available [here](../webinar/).
 
