@@ -6,6 +6,14 @@ title: "Linked Art II: Background Resources"
 
 This page provides additional background material for the [Linked Art questionnaire](../questionnaire/).
 
+# Code Notebooks webinar presentations
+The AHRC-funded Linked Art II project and Digital Scholarship at Oxford held a webinar on Tuesday 3 May 2022. In this webinar, Research Software Engineer Tanya Gray guided attendees through a practical exploration of transforming, reconciling, and visualising Linked Art, using real-world data from museums and galleries worldwide. These were be demonstrated using ‘code notebooks’ developed during the Linked Art II project and implemented in Jupyter. The notebooks provide step-by-step illustration and explanation, and can provide a foundation for further customisation.
+
+The slides from the webinar are available:
+
+- [Slides - introduction - Dr Kevin Page](./webinar/webinar-slides-intro-kp.pdf)
+- [Slides - Linked Art code notebooks - Tanya Gray](./webinar/webinar-slides-tg.pdf)
+
 # Linked Art workshop
 
 Linked Art ran a 2 hour [workshop at the CIDOC 2020](https://linked.art/community/events/2020/cidoc/) conference providing a wealth of background motivation and detail, a recording of which can be found below.
