@@ -28,7 +28,7 @@ The questionnaire will be available via the following link:
 
 ## Background Resources
 
-Some [background resources](./background-resources/) are available to support people with the questionnaire and the associated Linked Art code notebooks.
+Some [background resources](../background-resources/) are available to support people with the questionnaire and the associated Linked Art code notebooks.
 
 ## Webinar
 
