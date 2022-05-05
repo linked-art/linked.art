@@ -24,11 +24,11 @@ To help us understand your background and motivations.
 
 The questionnaire will be available via the following link:
 
-[Linked Art questionnaire](https://oxford.onlinesurveys.ac.uk/linked-art-adoption-opportunities-and-challenges)
+[Linked Art questionnaire](https://oxford.onlinesurveys.ac.uk/linked-art-ii)
 
 ## Background Resources
 
-Some [background resources](../background-resources/) are available to support people with the questionnaire and the associated Linked Art code notebooks.
+Some [background resources](./resources/) are available to support people with the questionnaire and the associated Linked Art code notebooks.
 
 ## Webinar
 
