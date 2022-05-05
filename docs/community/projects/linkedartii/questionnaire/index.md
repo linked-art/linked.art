@@ -22,14 +22,16 @@ Your ideas for specific applications of Linked Art which could support your coll
 * Section 4 - About Yourself
 To help us understand your background and motivations.
 
-The questionnaire will be available via the following link:
+The questionnaire is expected to go live in April/May 2022 and will be available via the following link:
 
 [Linked Art questionnaire](https://oxford.onlinesurveys.ac.uk/linked-art-adoption-opportunities-and-challenges)
 
 ## Background Resources
 
-Some [background resources](../background-resources/) are available to support people with the questionnaire and the associated Linked Art code notebooks.
+Some [background resources](./background-resources/) are available to support people with the questionnaire and the associated Linked Art code notebooks.
 
 ## Webinar
 
-A webinar on 3rd May 2022 describes the code notebooks referenced in the questionnaire. Further information including how to register for this free webinar is [available here](../webinar/).
+A [webinar](../webinar) held on 3rd May 2022, described the code notebooks referenced in the questionnaire, and took questions and answers on the notebooks and the questionnaire. Slides from the webinar are [available](../webinar/).
+
+
