@@ -11,8 +11,8 @@ The AHRC-funded Linked Art II project and Digital Scholarship at Oxford held a w
 
 The slides from the webinar are available:
 
-- [Slides - introduction - Dr Kevin Page](./webinar/webinar-slides-intro-kp.pdf)
-- [Slides - Linked Art code notebooks - Tanya Gray](./webinar/webinar-slides-tg.pdf)
+- [Slides - introduction - Dr Kevin Page](../webinar/webinar-slides-intro-kp.pdf)
+- [Slides - Linked Art code notebooks - Tanya Gray](../webinar/webinar-slides-tg.pdf)
 
 # Linked Art workshop
 
