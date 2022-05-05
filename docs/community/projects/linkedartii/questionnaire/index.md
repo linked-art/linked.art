@@ -6,7 +6,7 @@ title: "Linked Art II: Questionnaire"
 
 # Questionnaire
 
-The Linked Art questionnaire seek views from all interested persons on the use and adoption of Linked Art, particularly of any opportunities and challenges that can be forseen. 
+The Linked Art questionnaire seeks views from all interested persons on the use and adoption of Linked Art, particularly of any opportunities and challenges that can be forseen. 
 
 The questionnaire has been produced by the Linked Art II project at the University of Oxford, and comprises four sections:
 
@@ -22,7 +22,7 @@ Your ideas for specific applications of Linked Art which could support your coll
 * Section 4 - About Yourself
 To help us understand your background and motivations.
 
-The questionnaire is expected to go live in April/May 2022 and will be available via the following link:
+The questionnaire will be available via the following link:
 
 [Linked Art questionnaire](https://oxford.onlinesurveys.ac.uk/linked-art-adoption-opportunities-and-challenges)
 
