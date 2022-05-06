@@ -2,19 +2,17 @@
 title: "Linked Art II: Questionnaire"
 ---
 
-[TOC]
-
 
 [Linked Art](https://linked.art) is a new data standard being developed to describe artworks and facilitate connections between cultural heritage collections, thereby creating new opportunities for digital discovery and research using this interlinked data.
  
 The ‘Linked Art II’ project at the University of Oxford invites you to participate in our questionnaire to share your views on the use and adoption of Linked Art, including any opportunities and challenges you can foresee. We are interested in receiving feedback from all those who create, support, or do research using art collections data.
  
-The questionnaire will close at midnight AOE (anywhere on earth) on 13 June 2022.
+** The questionnaire will close at midnight AOE (anywhere on earth) on 13 June 2022. **
  
 An information sheet about the questionnaire can be found below, which is also copied within the questionnaire.
  
-Please follow this link to participate in the survey: 
-[https://oxford.onlinesurveys.ac.uk/linked-art-ii](https://oxford.onlinesurveys.ac.uk/linked-art-ii)
+** Please follow this link to participate in the survey: 
+[https://oxford.onlinesurveys.ac.uk/linked-art-ii](https://oxford.onlinesurveys.ac.uk/linked-art-ii) **
  
 As part of the questionnaire you will be given the opportunity to try out some ‘code notebooks’ which help illustrate the technical steps involved in transforming, reconciling, and visualising Linked Art data. [This follows the online webinar demonstrating the code notebooks we held on 3 May 2022](../webinar/index.md).
  
