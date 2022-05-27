@@ -76,37 +76,3 @@ A painting is classified as a painting, which is in turn classified as a type of
 ```crom
 top = vocab.Painting(ident="auto int-per-segment")
 ```
-
-
-## Extended Definition
-
-If a Type is created by the publishing institution rather than referring to a commonly used, existing vocabulary, then it is useful to provide an extended description of the Type at the URI given in `id`. This is not part of the Linked Art API, but is provided as a recommendation. 
-
-When the URI of the Type is dereferenced as if it were an endpoint, then the following properties are also available in addition to those above.
-
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is either a name of the Type and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Type and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Type and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `broader`         | array         | Optional    | An array of json objects, each of which is a Type that the current Type is narrower than and MUST follow the requirements for an [entity reference](../../shared/reference/) to a Type |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current Type is a member of and MUST follow the requirements for an [entity reference](../../shared/reference/) to a [Set](../../endpoint/set/) |
-
-
-If an endpoint name is needed, then `concept` is recommended, resulting in a URIs similar to:
-
-> `https://linked.art/example/concept/1`
-
-
-### Extended Example
-
-```crom
-top = model.Type(ident="auto int-per-segment", label="GAN Art")
-top.classified_as = vocab.instances['work type']
-top.identified_by = vocab.LocalNumber(content="186_gan_art")
-nm = vocab.PrimaryName(content="Generative Adversarial Network (GAN) Generated Art")
-nm.language = vocab.instances['english']
-top.identified_by = nm
-top.referred_to_by = vocab.Description(content="The generation of art by a process of training a machine learning algorithm to create the art, and a second algorithm to classify it, and then picking the higest classified image.")
-top.broader = model.Type(ident="http://vocab.getty.edu/aat/300069478", label="Computer Art")
-```

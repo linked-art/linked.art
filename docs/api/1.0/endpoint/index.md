@@ -12,6 +12,7 @@ The Linked Art API is made up of different endpoints, each of which has a define
 
 ## Endpoints
 
+* [Concepts](concept/) - Types, Materials, Languages, and others, as full records rather than external references
 * [Digital Objects](digital_object/) - Images, services and other digital objects
 * [Events](event/) - Events and other non-specific activities that are related but not part of other entities
 * [Groups](group/) - Groups and Organizations
