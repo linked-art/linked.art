@@ -59,6 +59,7 @@ And several others. If you would like to be listed here, please let us know!
 * Princeton Art Museum
 * Rijksmuseum (NL)
 * The Smithsonian Institution
+* University of Basel (Digital Humanities Lab)
 * The Victoria and Albert Museum
 * Yale Center for British Art
 * The Zeri Foundation
