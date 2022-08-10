@@ -98,6 +98,7 @@ Thus an example might be:
 
 Preferred endpoint path names:
 
+* `concept` - [Concepts](../endpoint/concept/)
 * `digital` - [Digital Objects](../endpoint/digital_object/)
 * `event` - [Events](../endpoint/event/)
 * `group` - [Groups](../endpoint/group/)
@@ -106,6 +107,5 @@ Preferred endpoint path names:
 * `place` - [Places](../endpoint/place/)
 * `provenance` - [Provenance Activities](../endpoint/provenance_activity/)
 * `set` - [Collections and Sets](../endpoint/set/)
-* `textual_work` - [Textual Works](../endpoint/textual_work/)
-* `visual_work` - [Visual Works](../endpoint/visual_work/)
-
+* `text` - [Textual Works](../endpoint/textual_work/)
+* `visual` - [Visual Works](../endpoint/visual_work/)
