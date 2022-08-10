@@ -97,7 +97,3 @@ The JSON for a Concept entry for ... could be as below.
 * It has a `_label` with the value " ... " for people reading the JSON
 
 
-
-```crom
-top = model.Type()
-```
