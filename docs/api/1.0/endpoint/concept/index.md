@@ -97,7 +97,7 @@ The JSON for a Concept entry for ... could be as below.
 * It has a `_label` with the value "History of France" for people reading the JSON
 
 
-```
+```crom
 top = model.Type(ident="auto int-per-segment", label="History of France")
 top.identified_by = vocab.PrimaryName(content="History of France")
 top.broader = model.Type(label="History of Europe")
