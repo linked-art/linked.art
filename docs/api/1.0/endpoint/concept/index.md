@@ -95,6 +95,14 @@ The JSON for a Concept entry for ... could be as below.
 * It self-documents its URI in `id`
 * It has a `type` of "Type"
 * It has a `_label` with the value "History of France" for people reading the JSON
+* It has an `identified_by` property, with a `Name` that gives is Primary Name of "History of France"
+* It has a `member_of` property, conveying that it is a member of a set, with the label "Useful History Concepts"
+* It has a `broader` property, conveying that the broader term is a `Type` with the label "History of Europe"
+* It has an `equivalent` property, conveying that it is generally equivalent to the LCSH heading sh85051256
+* It was created in a `Creation`, which ...
+  * ... was `influenced_by` two other entities ...
+    * ... a `Type` with the label "History"
+    * ... and a `Place` with the label "France"
 
 
 ```crom
