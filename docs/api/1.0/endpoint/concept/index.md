@@ -71,7 +71,7 @@ See the [schema documentation](../../schema_docs/concept) and the [schema itself
 
 ### Incoming Properties
 
-Set instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to sets.
+Set instances are typically found as the object of the following properties, other than the self-referential properties above.  This list is not exhaustive, but is intended to cover the likely cases where other endpoints refer to concepts.
 
 
 | Property Name   | Source Class   | Description |
@@ -94,6 +94,20 @@ The JSON for a Concept entry for ... could be as below.
 * It has the Linked Art context document reference in `@context`
 * It self-documents its URI in `id`
 * It has a `type` of "Type"
-* It has a `_label` with the value " ... " for people reading the JSON
+* It has a `_label` with the value "History of France" for people reading the JSON
+
+
+```
+top = model.Type(ident="auto int-per-segment", label="History of France")
+top.identified_by = vocab.PrimaryName(content="History of France")
+top.broader = model.Type(label="History of Europe")
+top.member_of = model.Set(label="Useful History Concepts")
+top.equivalent = model.Type(ident="http://id.loc.gov/authorities/subjects/sh85051256")
+cre = model.Creation(label="Concept Creation")
+top.created_by = cre
+cre.influenced_by = model.Type(label="History")
+cre.influenced_by = model.Place(label="France")
+```
+
 
 
