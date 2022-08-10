@@ -18,7 +18,7 @@ th:last-child, td:last-child { padding-right: 3px; }
 
 ## Introduction
 
-The Concept API is a method of getting access to descriptions of concepts, including Types, Materials, Languages, Units and Currencies. The Concept model is relatively simple with the common properties and patterns, and very few additions.
+The Concept API is a method of getting access to descriptions of concepts, including Types, Materials, Languages, MeasurementUnits and Currencies. The Concept model is relatively simple with the common properties and patterns, and very few additions.
 
 
 ## Property Definitions
