@@ -29,6 +29,8 @@ The Type pattern is also used for more specific concept types:
 
 Types are described in the [base patterns](/model/base/#types-and-classifications) of the model documentation, and examples are present for practically every class.
 
+For full records that describe a Type, please see the [Concept Endpoint](../../endpoint/concept/) documentation.
+
 ## Property Definitions
 
 ### Properties of Types
