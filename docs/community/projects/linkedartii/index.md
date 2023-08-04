@@ -73,6 +73,7 @@ We identified a general need for an ‘exhibition browser’ which can present d
 We decided to explore and prototype these ideas for an ‘exhibition browser’ through its application to a dataset curated by Jonathan which documents the alternative exhibition spaces of New York, data which has no institutional owner or support for maintenance. The idea was to create software which would make  the information about these exhibitions more easily accessible and explorable by a wider audience, published on the web in a form which is simple to host and maintain (e.g. on a platform such as github).
 
 We designed the Exhibition Browser tool:
+
 1. To ingest an exhibition dataset as Linked Art, or in a semi-structured format (e.g. CSV from a spreadsheet) which could be converted to Linked Art using variants of our existing Jupyter notebooks;
 2. Allow the ‘curator’ to investigate the ‘shape’ of the data -- the relative quantities and density of links between different aspects of the data (e.g. artists, venues, exhibition dates) -- to inform decisions about how to prioritise lists, views, and navigational links between them. This enables a general viewer of the resultant Exhibition Browser (e.g. member of the public) to benefit from the expertise of the curator when first exploring an exhibition dataset, while retaining the freedom to explore all the data once they are familiar with it. This pre-publication data investigation stage is realised as a separate tool extending and enhancing the project’s Jupyter notebook approach through the Mercury platform. Here the curator is assisted in identifying patterns and quantifications, which are then used to create configuration files used to structure the published Exhibition Browser.
 3. Use these configuration files to generate a standalone website for the exhibition dataset, including outwards links to other web resources where available. This Exhibition Browser can be exported as a ‘static’ website, which does not need a database or complex content management system, and can be easily hosted using the simplest of website providers. Unlike insitutally hosted online gallery interfaces, the Exhibition Browser tool does not assume a dynamically updated and maintained dataset. It is assumed the curator will regenerate a new version of the Exhibition Browser for publishing as and when this is required.
@@ -82,7 +83,8 @@ In this video a published Exhibition Browser website for the ‘alternative spac
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/93pVD9LQ_9k" title="Linked Art II Exhibition Browser: Alternative Spaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
-This video shows the precursor analysis step for the same dataset:
+
+This video shows the preceeding analysis step for the same dataset:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RgkRf6dbTy8" title="Linked Art II Exhibition Browser: Alternative Spaces data analysis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
