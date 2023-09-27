@@ -1,6 +1,6 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://linked.art/api/1.0/schema/group.json",
 	"title": "Group Schema",
 	"description": "_crm:E74\\_Group_\nA Group of People and/or other Groups.\nSee: [API](https://linked.art/api/1.0/endpoint/group/) | [Model](https://linked.art/model/actor/)",	
 	"type": "object",

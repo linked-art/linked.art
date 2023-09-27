@@ -1,5 +1,6 @@
 {
-    "$schema": "http://json-schema.org/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://linked.art/api/1.0/schema/core.json",
     "title": "Core Schema Definitions",
     "description": "Core definitions that are used to compose the Linked Art JSON-LD API",
     "type": "object",
@@ -60,6 +61,14 @@
                 "$ref": "#/definitions/LingObjOrDigitalObjOrStatement"
             }
         },
+        "aboutProp": {
+            "title": "crm:P129_is_about", 
+            "description": "The main topic(s) of the content", 
+            "type": "array", 
+            "items": {
+                "$ref": "core.json#/definitions/AnyRef"
+            }
+        },
         "languageProp": {
             "title": "crm:P72_has_language",
             "description": "A reference to one or more `Language` entities in which the `content` of this text is written",
@@ -78,10 +87,10 @@
         },
         "representationProp": {
             "title": "crm:P138i_has_representation",
-            "description": "A reference to one or more `VisualItem` entities which depict this entity",
+            "description": "An embedded link through a VisualItem to a Digital Object",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/VisualItemRef"
+                "$ref": "#/definitions/VisualItemEmbed"
             }
         },
         "member_ofSetProp": {
@@ -173,10 +182,10 @@
         },
         "influenced_byProp": {
             "title": "crm:P15_was_influenced_by",
-            "description": "A Person, Group or Object that influenced the activity in some way",
+            "description": "An entity that influenced the activity in some way",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/HumanMadeObjectRefOrPersonRefOrGroupRef"
+                "$ref": "#/definitions/AnyRef"
             }
         },
         "carried_outProp": {
@@ -276,8 +285,14 @@
             "title": "crm:P129i_is_subject_of",
             "description": "One or more human-readable web pages or other digital objects where the focus of the content is this entity",
 			"type": "array", 
-			"items": {"$ref": "#/definitions/DigitalObjectRef"}
+			"items": {"$ref": "#/definitions/LinguisticObjectEmbed"}
 		},
+        "subject_toProp": {
+            "title": "crm:P104i_is_subject_to",
+            "description": "One or more Rights that this object is subject to",
+            "type": "array", 
+            "items": {"$ref": "#/definitions/Right"}
+        },
         "attributed_byProp": {
             "title": "crm:P140i_was_attributed_by",
             "description": "One or more AttributeAssignments that relate some other entity to this one",
@@ -310,6 +325,18 @@
             "description": "A URL from which the digital object is able to be retrieved",
             "type": "array",
             "items": {"$ref": "#/definitions/DigitalObjectRef"}
+        },
+        "digitally_shown_byProp": {
+            "title": "la:digitally_shown_by",
+            "description": "A digital object that shows the current visual item",
+            "type": "array",
+            "items": {"$ref": "#/definitions/DigitalObjectEmbed"}
+        },
+        "digitally_carried_byProp": {
+            "title": "la:digitally_carried_by",
+            "description": "A digital object that carries the current linguistic object",
+            "type": "array",
+            "items": {"$ref": "#/definitions/DigitalObjectEmbed"}
         },
         "digitally_available_viaProp": {
             "title": "la:digitally_available_via",
@@ -649,7 +676,7 @@
             ],
             "additionalProperties": false
         },
-        "LegalRight": {
+        "Right": {
             "title": "crm:E30_Right",
             "description": "A legal right that can be held by some party over some entity",
             "type": "object",
@@ -679,28 +706,13 @@
                 "referred_to_by": {
                     "$ref": "#/definitions/referred_to_byProp"
                 },
+                "created_by": {
+                    "title": "crm:P94i_was_created_by", "$ref": "#/definitions/Creation"
+                },
                 "possessed_by": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/PersonRefOrGroupRef"
-                    }
-                },
-                "applies_to": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/HumanMadeObjectRef"
-                    }
-                },
-                "dimension": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Dimension"
-                    }
-                },
-                "part": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/LegalRight"
                     }
                 }
             },
@@ -708,6 +720,27 @@
                 "type"
             ],
             "additionalProperties": false
+        },
+        "Creation": {
+            "title": "crm:E65_Creation",
+            "description": "The creation of the intellectual/conceptual entity",
+            "type": "object",
+            "properties": {
+                "type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+                    {"title": "Specific", "type": "string", "const": "Creation"}]},
+                "_label": {"$ref": "core.json#/definitions/labelProp"},
+                "identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+                "classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+                "referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+                "took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+                "timespan": {"$ref": "core.json#/definitions/timespanProp"},
+                "caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+                "carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+                "used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+                "influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+                "technique": {"$ref": "core.json#/definitions/techniqueProp"},
+                "part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this creation is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}
+            }
         },
         "Concept": {
             "title": "crm:E55_Type",
@@ -931,8 +964,6 @@
             "additionalProperties": false
         },
 
-
-
         "DigitalService": {
             "title": "la:DigitalService",
             "type": "object",
@@ -970,6 +1001,132 @@
                 }
             }
         },
+
+        "DigitalObjectEmbed": {
+            "title": "dig:D1_Digital_Object",
+            "description": "An embedded Digital Object, such as a home page reference",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "DigitalObject"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "access_point": {
+                    "$ref": "#/definitions/access_pointProp"
+                },
+                "format": {
+                    "$ref": "#/definitions/formatProp"
+                },
+                "conforms_to": {
+                    "$ref": "#/definitions/conforms_toProp"                    
+                }                                
+            }
+        },
+
+        "VisualItemEmbed": {
+            "title": "crm:E36_Visual_Item",
+            "description": "An embedded Visual Item, such as the content of a digital image",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "VisualItem"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "digitally_shown_by": {
+                    "$ref": "#/definitions/digitally_shown_byProp"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false  
+        },
+
+        "LinguisticObjectEmbed": {
+            "title": "crm:E33_Linguistic_Object",
+            "description": "An embedded Linguistic Object, such as the content of a web page",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "title": "Specific",
+                            "type": "string",
+                            "const": "LinguisticObject"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                },
+                "identified_by": {
+                    "$ref": "#/definitions/identified_byProp"
+                },
+                "classified_as": {
+                    "$ref": "#/definitions/classified_asProp"
+                },
+                "referred_to_by": {
+                    "$ref": "#/definitions/referred_to_byProp"
+                },
+                "language": {
+                    "$ref": "#/definitions/languageProp"
+                },
+                "digitally_carried_by": {
+                    "$ref": "#/definitions/digitally_carried_byProp"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false            
+        },
+
         "HumanMadeObjectPart": {
             "title": "crm:E22_Human-Made_Object",
             "type": "object",
@@ -1105,20 +1262,6 @@
                 },
                 {
                     "$ref": "#/definitions/SetRef"
-                }
-            ]
-        },
-        "HumanMadeObjectRefOrPersonRefOrGroupRef": {
-            "description": "A Reference to a Human Made Object,Person or Group",
-            "anyOf": [
-                {
-                    "$ref": "#/definitions/HumanMadeObjectRef"
-                },
-                {
-                    "$ref": "#/definitions/PersonRef"
-                },
-                {
-                    "$ref": "#/definitions/GroupRef"
                 }
             ]
         },
@@ -1640,6 +1783,66 @@
                 "type"
             ],
             "additionalProperties": false
+        },
+        "TypeRef": {
+            "title": "crm:E55_Type",
+            "description": "Reference to a `Type`",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "const": "Type"
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "AnyTypeRef": {
+            "title": "crm:E55_Type, or subclass",
+            "description": "Reference to a Type or any subclass (Language, Material, Currency, MeasurementUnit)",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/idProp"
+                },
+                "type": {
+                    "allOf": [
+                        {
+                            "title": "General",
+                            "$ref": "#/definitions/typeProp"
+                        },
+                        {
+                            "type": "string",
+                            "enum": ["Type", "Language", "Material", "Currency", "MeasurementUnit"]
+                        }
+                    ]
+                },
+                "_label": {
+                    "$ref": "#/definitions/labelProp"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "additionalProperties": false            
         }
-    }
+    }        
 }

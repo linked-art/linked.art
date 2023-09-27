@@ -1,6 +1,6 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://linked.art/api/1.0/schema/object.json",
 	"title": "Human-Made Object Schema",
 	"description": "_crm:E22\\_Human-Made\\_Object_\nA human-made object, part thereof, or a natural object with value imbued through interaction with human culture.\nSee: [API](https://linked.art/api/1.0/endpoint/object/) | [Model](https://linked.art/model/object/)",	
 	"type": "object",
@@ -24,8 +24,6 @@
 		"made_of": {"$ref": "core.json#/definitions/made_ofProp"},
 		"part_of": {"title": "crm:P46i_forms_part_of", "description": "Another Human-Made Object of which this Object is part", "$ref": "core.json#/definitions/HumanMadeObjectRef"},
 
-        "part": {"title": "**Should objects have any parts embedded?**", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectPart"}},
-
 		"current_owner": {"$ref": "core.json#/definitions/current_ownerProp"},
 		"current_custodian": {"$ref": "core.json#/definitions/current_custodianProp"},
 		"current_permanent_custodian": {"$ref": "core.json#/definitions/current_permanent_custodianProp"},
@@ -46,8 +44,12 @@
 			"title": "crm:P113i_was_removed_by",
 			"description": "One or more `PartRemoval` activities in which this object was removed from another object",
 			"type": "array", 
-			"items": {"$ref": "#/definitions/PartRemoval"}}
-
+			"items": {"$ref": "#/definitions/PartRemoval"}},
+		"encountered_by": {
+			"title": "sci:O19i_was_object_encountered_at",
+			"description": "One or more Encounter activities in which this object was encountered",
+			"type": "array",
+			"items": {"$ref": "#/definitions/Encounter"}}
 	},
 
 	"definitions": {
@@ -111,6 +113,27 @@
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
 				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"},
 				"diminished": {"title": "crm:P112_diminished", "description": "A reference to the object which the object was removed from", "$ref": "core.json#/definitions/HumanMadeObjectRef"}
+			}
+		},
+		"Encounter": {
+			"title": "sci:S19_Encounter_Event",
+			"description": "The activity during which this object was encountered, found or discovered.",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/definitions/typeProp"}, 
+					{"title": "Specific", "type": "string", "const": "Encounter"}]},
+				"_label": {"$ref": "core.json#/definitions/labelProp"},
+				"identified_by": {"$ref": "core.json#/definitions/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/definitions/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/definitions/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/definitions/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/definitions/timespanProp"},
+				"caused_by": {"$ref": "core.json#/definitions/caused_byProp"},
+				"carried_out_by": {"$ref": "core.json#/definitions/carried_out_byProp"},
+				"used_specific_object": {"$ref": "core.json#/definitions/used_specific_objectProp"},
+				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
+				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
+				"part_of": {"title": "crm:P9i_forms_part_of", "description": "An identified event or activity which this activity is part of", "$ref": "core.json#/definitions/EventRefOrActivityRef"}				
 			}
 		}				
 	},

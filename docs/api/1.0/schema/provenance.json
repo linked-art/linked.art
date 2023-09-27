@@ -1,6 +1,6 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"$id": "file:///Users/rs2668/Development/other/linked-art/json-validator/schema/",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://linked.art/api/1.0/schema/provenance.json",
 	"title": "Provenance Activity Schema",
 	"description": "_crm:E7\\_Activity_\nA broad activity during which the ownership, custody, location or other rights related to one or more objects are changed\nSee: [API](https://linked.art/api/1.0/endpoint/provenance/) | [Model](https://linked.art/model/provenance/)",
 	"type": "object",
@@ -142,7 +142,7 @@
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
 
-				"establishes": {"title": "la:establishes", "description": "", "$ref": "core.json#/definitions/LegalRight"},
+				"establishes": {"title": "la:establishes", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/LegalRight"}},
 				"invalidates": {"title": "la:invalidates", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/LegalRight"}}
 			},
 			"required": ["type", "establishes"],
@@ -167,9 +167,9 @@
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
 
-				"moved_from": {"title": "crm:P27_moved_from", "description": "", "$ref": "core.json#/definitions/PlaceRef"},
-				"moved_to": {"title": "crm:P26_moved_to", "description": "", "$ref": "core.json#/definitions/PlaceRef"},
-				"moved": {"title": "crm:P25_moved", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
+				"moved_from": {"title": "crm:P27_moved_from", "description": "Reference to the Place where the objects were moved from", "$ref": "core.json#/definitions/PlaceRef"},
+				"moved_to": {"title": "crm:P26_moved_to", "description": "Reference to the Place where the objects were moved to", "$ref": "core.json#/definitions/PlaceRef"},
+				"moved": {"title": "crm:P25_moved", "description": "The objects that were moved", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
 			},
 			"required": ["type", "moved"],
 			"additionalProperties": false	
@@ -193,7 +193,7 @@
 				"influenced_by": {"$ref": "core.json#/definitions/influenced_byProp"},
 				"technique": {"$ref": "core.json#/definitions/techniqueProp"},
 
-				"encountered": {"title": "sci:O19_has_found_object", "description": "", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
+				"encountered": {"title": "sci:O19_has_found_object", "description": "The objects that were encountered during this event", "type": "array", "items": {"$ref": "core.json#/definitions/HumanMadeObjectRef"}}
 			},
 			"required": ["type", "encountered"],
 			"additionalProperties": false	
