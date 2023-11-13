@@ -43,7 +43,6 @@ Dereferencing an entity via the Place endpoint would result in a JSON-LD documen
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Place, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Place to another entity |
 | `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for a [reference](../../shared/reference/) to a Place |
-| `approximated_by` | array         | Optional    | An array of json objects, each of which is an approximation of the current Place and MUST follow the requirements for a [reference](../../shared/reference/) to a Place |
 | `defined_by`      | string        | Optional    | A string containing the [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representation of the geometry of the Place |
 
 
@@ -83,7 +82,6 @@ The JSON for a Place entry for the city of Los Angeles could be as below.
 * It is `identified_by` an `Identifier`, with the `content` "06-44000"
 * It is `defined_by` a particular WKT Polygon
 * It is `referred_to_by` a `LinguisticObject`, which is `classified_as` a Description (_aat:300411780_), and has `content` of "Los Angeles is the largest city in California"
-* It is `approximated_by` another `Place`, which is the centroid of Los Angeles
 * It is `part_of` another `Place`, which is the state California
 * It is a `member_of` the `Set` of top 10 cities in the USA
 * It is equivalent to the TGN entry 
@@ -95,7 +93,6 @@ top.identified_by = model.Name(content="Los Angeles")
 top.identified_by = model.Identifier(content="06-44000")
 top.referred_to_by = vocab.Description(content="Los Angeles is the largest city in California")
 top.defined_by = "POLYGON((-118.574 34.185,-117.558 34.185,-117.5585 33.512,-118.574 33.512,-118.5745 34.185))"
-top.approximated_by = model.Place(label="Los Angeles Centroid")
 top.part_of = model.Place(label="California")
 top.member_of = model.Set(label="Top 10 Cities in USA")
 top.equivalent = model.Place(ident="http://vocab.getty.edu/tgn/7023900", label="Los Angeles")
