@@ -45,7 +45,7 @@ Dereferencing an entity via the Textual Work endpoint would result in a JSON-LD 
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current text to another entity |
 | `language` | array | Optional | An array of json objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of words, of the current text |
-| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Textual Work that the current text is a part of. |
+| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Textual Work or a [Visual Work](../visual_work/) that the current text is a part of. |
 | `content` | string | Optional | The string representation of the textual content of the work |
 | `format` | string | Optional | The media type of the encoding of the string representation given in the `content` property |
 | `digitally_carried_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Digital Object](../digital/), such as a PDF, that digitally carries the text of this work |
