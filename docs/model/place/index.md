@@ -46,20 +46,17 @@ top.defined_by = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 
 
 ### Geospatial Approximation
 
-All recorded locations are approximate to some degree. It may be desirable to capture this approximation separately from the actual place, especially when that approximation is very uncertain. Especially if the place is the exact location of several events, and perhaps an address or other information is known, but not the exact geospatial coordinates.  
-
-Secondly, as a place is defined by exactly one definition, but there might be multiple approximations such as a polygon as well as the central point, the real place that an activity occured at can be related to multiple approximate places to capture these different approximations.
-
-
+All recorded locations are approximate to some degree. It may be desirable to capture the exact location separately from a broader area that is known, especially when that approximation is very uncertain. If the place is the exact location of several events, and a name for the place is available but not exact geospatial coordinates or a full address, then this pattern is especially valuable. This is managed using the `part_of` construction -- the specific place is somewhere within the broader area.
+ 
 __Example:__
 
 Many art sales take place in auction houses over time, and while the city might be known, the exact address within the city might not be and it would be wrong to collect all of the art sales within the entire city together.
 
 ```crom
-top = model.Place(ident="auto int-per-segment", label="True Auction House Location")
-p2 = model.Place(label="Auction House Location Approximation")
+top = model.Place(ident="auto int-per-segment", label="Auction House Location")
+p2 = model.Place(label="City of the Auction House")
 p2.defined_by = "POINT(-0.0032937526703165 51.515107154846)"
-top.approximated_by = p2
+top.part_of = p2
 ```
 
 
