@@ -25,8 +25,7 @@ The relationship assignment data structure has the following properties.
 ### Properties of Assignments
 
 | Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment |  
+|-------------------|---------------|-------------|-------------| 
 | `type`            | string        | Required    | The class for the assignment, which MUST be the value `"AttributeAssignment"` |
 | `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the assignment and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the assignment and MUST follow the requirements for [Identifier](../../shared/identifier/)|

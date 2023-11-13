@@ -29,8 +29,7 @@ The monetary amount data structure has the following properties.
 ### Properties of Monetary Amounts
 
 | Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the monetary amount |  
+|-------------------|---------------|-------------|-------------| 
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"MonetaryAmount"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
 | `value`           | number        | Required    | The numeric value of the amount |

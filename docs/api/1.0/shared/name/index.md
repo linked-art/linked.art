@@ -28,13 +28,13 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the name |   <!--  -->
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Name"` | 
 | `_label`          | string        | Optional    | A human readable label, intended for developers | <!-- LAF.4 -->
 | `content`         | string        | Required    | The string form of the Name | <!-- LAF.6 -->
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) | <!-- LAF.5 -->
 | `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)| <!-- LAF.7 -->
 | `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
+| `identified_by`   | array         | Optional    | An array of json objects, each of which is a name for this Name and follows the Name pattern |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | <!-- -->
 
 ### Property Diagram
@@ -60,6 +60,7 @@ An object is given the name "Hacha (Ceremonial Axe)", with a note that the origi
 * It has a `type` of "Name"
 * It is `classified_as` a primary name, with `id` of _aat:300404670_ and a `type` of "Type"
 * It has `content` of "Hacha (Ceremonial Axe)"
+* It has a display label of "Assigned Title"
 * It is `referred_to_by` a statement, with a `type` of "LinguisticObject", `classified_as` a note with `id` of _aat:300027200_ and with `content` of "Title was originally ..."
 * It has languages of English, with an `id` of _aat:300388277_ and `type` of "Language", and Spanish, with an `id` of _aat:300389311_ and `type` of "Language"
 * It has a specific `part`, which ...
@@ -77,12 +78,12 @@ top.identified_by = n
 st = vocab.Subtitle(content="Ceremonial Axe")
 st.language = vocab.instances['english']
 n.part = st
+n.identified_by = vocab.DisplayName(content="Assigned Title")
 n.referred_to_by = vocab.Note(content="Title was originally given as 'hacha'")
 ```
 
 
 ## Future Considerations
 
-* Explicit pairs of alternative names or translations of names. For example the name "Axe" is a translation of "Hacha", or "Æon Flux" has an alternative transliteration of "AEon Flux".
 * Assignments, as described for [Identifiers](../identifier/), could easily be added for Names, but there has not been a use case proposed.
 
