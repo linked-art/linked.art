@@ -29,8 +29,7 @@ Identifiers have the following properties.
 ### Properties of Identifiers
 
 | Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the identifier, rather than the URI which is the identifier of the object |  
+|-------------------|---------------|-------------|-------------| 
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Identifier"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers | <!-- LAF.8 -->
 | `content`         | string        | Required    | The string content of the identifier | <!-- LAF.10 -->
@@ -43,7 +42,6 @@ Identifiers have the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment |  
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"AttributeAssignment"` |
 | `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the assignment and MUST follow the requirements for [Type](../type/) |

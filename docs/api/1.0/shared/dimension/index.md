@@ -28,7 +28,6 @@ The dimension data structure has the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the dimension |  
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Dimension"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
 | `value`           | number        | Required    | The numeric value of the dimension |
@@ -44,7 +43,6 @@ The dimension data structure has the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the measurement |  
 | `type`            | string        | Required    | The class for the measurement, which MUST be the value `"AttributeAssignment"` |
 | `_label`          | string        | Recommended | A human readable label for the measurement, intended for developers |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the measurement and MUST follow the requirements for [Type](../type/) |

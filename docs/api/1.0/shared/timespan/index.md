@@ -30,7 +30,6 @@ The time span data structure has the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the time span |  
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"TimeSpan"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the time span and MUST follow the requirements for [Type](../type/) |
