@@ -38,18 +38,19 @@ For more information about the Physical Object data, please see the [Object mode
 | `current_permanent_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is normally located, but might not be at the present time |
 | `carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that this object carries the text of |
 | `shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that this object shows a rendition of |
+| `used_for`    | array | Optional | An array of json objects, each of which represents an activity that the object was instumental in, but does not have its own identity |
 | `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for Productions described below | 
 | `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for Destructions described below | 
 | `removed_by` | json object | Optional | A json object representing the removal of the current object from a larger one it was previously part of, which follows the requirements for PartRemovals described below | 
 | `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for Encounters described below |
 
 
-### Properties of Productions, Destructions, PartRemovals
+### Properties of Productions, Destructions, PartRemovals and general Activities
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the production, destruction or part removal (henceforth "event")  |  
-| `type`            | string        | Required    | The class for the event, which MUST be the value `"Production"`, `"Destruction"` or `"PartRemoval"` |
+| `type`            | string        | Required    | The class for the event, which MUST be the value `"Production"`, `"Destruction"`, `"PartRemoval"` or `"Activity"`|
 | `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
