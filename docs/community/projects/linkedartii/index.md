@@ -59,10 +59,11 @@ In addition to sections on the broader implications of Linked Art adoption, the 
 Once the questionnaire was closed the project team analysed questionnaire responses and long-listed exemplar proposals broadly consistent and representative with trends across the community. The project team then consulted with a shortlist of respondents who had suggested exemplars.  Finally, two exemplars were selected for development during the final stages of the project, in collaboration with their proposers; these are described below.
 
 ## Co-created Exemplar: Enabling Participatory Data Perspectives for Image Archives through a Linked Art Workflow
-Collaborating with Julien A. Raemy from the Swiss ‘Participatory Knowledge Practices in Analogue and Digital Image Archives’ (PIA), the project developed a reconfigurable Python-based workflow to transform photographic collections (specifically the Family Kreis and Ernst Brunner collections) into Linked Open Usable Data, as a foundation for varied participatory interfaces supporting scholarship. The resultant workflow further developed and refined the principles and practice established in the code notebooks (described above), applying them within the specific context and needs of PIA.
+Collaborating with Julien A. Raemy from the Swiss [Participatory Knowledge Practices in Analogue and Digital Image Archives](https://about.participatory-archives.ch) (PIA), the project developed a reconfigurable Python-based workflow to transform photographic collections (specifically the Family Kreis and Ernst Brunner collections) into Linked Open Usable Data, as a foundation for varied participatory interfaces supporting scholarship. The resultant workflow further developed and refined the principles and practice established in the code notebooks (described above), applying them within the specific context and needs of PIA.
 
-This exemplar was published and presented at the Digital Humanities 2023 conference. Further information can be found at [https://doi.org/10.5281/zenodo.7878358](https://doi.org/10.5281/zenodo.7878358)
-
+This exemplar was published and presented at the Digital Humanities 2023 conference in Graz, Austria. Further information can be found at:
+- [https://doi.org/10.5281/zenodo.7878358](https://doi.org/10.5281/zenodo.7878358) (Poster)
+- [https://doi.org/10.5451/unibas-ep95099](https://doi.org/10.5451/unibas-ep95099) (Extend abstract in the Book of Abstracts)
 
 ## Co-created Exemplar: New York Alternative Spaces Exhibitions Browser
 
