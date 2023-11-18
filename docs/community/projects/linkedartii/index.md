@@ -62,6 +62,7 @@ Once the questionnaire was closed the project team analysed questionnaire respon
 Collaborating with Julien A. Raemy from the Swiss [Participatory Knowledge Practices in Analogue and Digital Image Archives](https://about.participatory-archives.ch) (PIA), the project developed a reconfigurable Python-based workflow to transform photographic collections (specifically the Family Kreis and Ernst Brunner collections) into Linked Open Usable Data, as a foundation for varied participatory interfaces supporting scholarship. The resultant workflow further developed and refined the principles and practice established in the code notebooks (described above), applying them within the specific context and needs of PIA.
 
 This exemplar was published and presented at the Digital Humanities 2023 conference in Graz, Austria. Further information can be found at:
+
 - [https://doi.org/10.5281/zenodo.7878358](https://doi.org/10.5281/zenodo.7878358) (Poster)
 - [https://doi.org/10.5451/unibas-ep95099](https://doi.org/10.5451/unibas-ep95099) (Extend abstract in the Book of Abstracts)
 
