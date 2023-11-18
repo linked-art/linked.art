@@ -63,8 +63,8 @@ Collaborating with Julien A. Raemy from the Swiss [Participatory Knowledge Pract
 
 This exemplar was published and presented at the Digital Humanities 2023 conference in Graz, Austria. Further information can be found at:
 
-- [https://doi.org/10.5281/zenodo.7878358](https://doi.org/10.5281/zenodo.7878358) (Poster)
-- [https://doi.org/10.5451/unibas-ep95099](https://doi.org/10.5451/unibas-ep95099) (Extend abstract in the Book of Abstracts)
+- **Extended abstract**: Raemy, J. A., Gray, T., Collinson, A., & Page, K. R. (2023a). Enabling Participatory Data Perspectives for Image Archives through a Linked Art Workflow. In A. Baillot, W. Scholger, T. Tasovac, & G. Vogeler (Eds.), _Digital Humanities 2023 Book of Abstracts_ (Vol. 2023, pp. 515–516). Alliance of Digital Humanities Organizations (ADHO). [https://doi.org/10.5451/unibas-ep95099](https://doi.org/10.5451/unibas-ep95099)
+- **Poster**: Raemy, J. A., Gray, T., Collinson, A., & Page, K. R. (2023b). Enabling Participatory Data Perspectives for Image Archives through a Linked Art Workflow (Poster). _Digital Humanities 2023 Posters_. Digital Humanities 2023, Graz, Austria. [https://doi.org/10.5281/zenodo.7878358](https://doi.org/10.5281/zenodo.7878358)
 
 ## Co-created Exemplar: New York Alternative Spaces Exhibitions Browser
 
