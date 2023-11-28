@@ -131,6 +131,8 @@ Use cases for this pattern include:
 * Biography for a person
 * Dimensions statement for a part of an object
 
+Note that both Names and Statements can have Names (e.g. "Former Title", "Supplied Description") and Statements (such as the source of the name or statement), however best practice is to only use these sparingly.
+
 __Example:__
 
 Having only a textual description of the materials in English, the content `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300435429)_ statement:

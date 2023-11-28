@@ -26,6 +26,7 @@ The relationship assignment data structure has the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------| 
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment, from which a representation of the assignment can be retrieved |  
 | `type`            | string        | Required    | The class for the assignment, which MUST be the value `"AttributeAssignment"` |
 | `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the assignment and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the assignment and MUST follow the requirements for [Identifier](../../shared/identifier/)|
@@ -35,6 +36,7 @@ The relationship assignment data structure has the following properties.
 | `timespan`        | json object   | Optional    | A json object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
 | `assigned`        | array         | Required    | An array of json objects, each of which is a [reference](../reference/) to another entity that is related to the current one |
 | `assigned_property` | string      | Optional    | A string which is either a URI, or resolves to a URI via a context document, for the specific relationship between the main entity and the entity referenced in `assigned` |
+| `motivated_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to another entity which caused or motivated the assignment |
 
 
 ### Property Diagram
