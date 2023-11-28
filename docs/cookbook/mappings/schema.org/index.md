@@ -34,6 +34,7 @@ title: Linked Art / Schema.org Mapping
 ## Group
 
 * type = Organization
+* /contact_point[classified_as=EMAIL]/content --> /email
 * /contact_point[classified_as=ADDRESS]/content --> /address
 * /dissolved_by/timespan/begin_of_the_begin --> /dissolutionDate
 * /formed_by/timespan/begin_of_the_begin --> /foundingDate
@@ -81,7 +82,7 @@ title: Linked Art / Schema.org Mapping
 * /current_owner --> /holdingArchive
 * /current_location --> /itemLocation
 
-## Digital Object Strawperson
+## Digital Object 
 
 * /type = CreativeWork, DataSet
 * /digitally_shows|digitally_carries --> /exampleOfWork
@@ -109,4 +110,27 @@ title: Linked Art / Schema.org Mapping
 * /content --> /text
 * /dimension --> /size
 * /format --> /encodingFormat
+
+## Event
+
+* type = Event (ExhibitionEvent)
+* /carried_out_by --> /organizer, /performer or /contributor
+* /took_place_at --> /location
+* /part_of --> /superEvent
+* /timespan/begin_of_the_begin --> /startDate
+* /timespan/end_of_the_end --> /endDate
+* /used_specific_object --> /workFeatured
+* /influenced_by --> /about (?)
+* /caused_by --> ?
+
+## Set
+
+* type = ArchiveComponent (for Archives) or type = Collection (for other Sets)
+
+* /member_of --> /isPartOf
+* /created_by/part*/carried_out_by --> /author, /artist, or /creator
+* /used_for[./classified_as/id=PUBLISHING]/carried_out_by --> /publisher
+* /about --> /about
+* /dimension --> /size
+
 
