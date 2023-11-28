@@ -126,7 +126,6 @@ title: Linked Art / Schema.org Mapping
 ## Set
 
 * type = ArchiveComponent (for Archives) or type = Collection (for other Sets)
-
 * /member_of --> /isPartOf
 * /created_by/part*/carried_out_by --> /author, /artist, or /creator
 * /used_for[./classified_as/id=PUBLISHING]/carried_out_by --> /publisher
