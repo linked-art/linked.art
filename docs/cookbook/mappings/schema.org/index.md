@@ -19,7 +19,6 @@ title: Linked Art / Schema.org Mapping
 ## Person
 
 * type = Person
-
 * /born/timespan/begin_of_the_begin --> /birthDate
 * /born/took_place_at/id --> /birthPlace
 * /died/timespan/begin_of_the_begin --> /deathDate
@@ -35,7 +34,6 @@ title: Linked Art / Schema.org Mapping
 ## Group
 
 * type = Organization
-
 * /contact_point[classified_as=ADDRESS]/content --> /address
 * /dissolved_by/timespan/begin_of_the_begin --> /dissolutionDate
 * /formed_by/timespan/begin_of_the_begin --> /foundingDate
@@ -48,7 +46,6 @@ title: Linked Art / Schema.org Mapping
 ## Place
 
 * type = Place
-
 * /part_of/id --> /containedInPlace
 * /defined_by --> /geo ; or /latitude and /longitude if a point
 * (If a particular image is known to be a map, use /hasMap not /image)
@@ -57,14 +54,12 @@ title: Linked Art / Schema.org Mapping
 
 * Type = DefinedTerm, CreativeWork
 * Additional Types: Language
-
 * /broader --> /isPartOf
 * /member_of --> /inDefinedTermSet
 
 ## Human Made Object
 
 * type = VisualArtwork, ArchiveComponent 
-
 * /classified_as/id --> /artform (painting, sculpture, etc)
 * /referred_to_by[classified_as/id=DESCRIPTION]/content --> /abstract  (other classes use /description)
 * /referred_to_by[classified_as/id=RIGHTS_STMT]/content --> /copyrightNotice
@@ -89,7 +84,6 @@ title: Linked Art / Schema.org Mapping
 ## Digital Object Strawperson
 
 * /type = CreativeWork, DataSet
-
 * /digitally_shows|digitally_carries --> /exampleOfWork
 * /dimension[classified_as/id=HEIGHT]/value --> /height
 * /dimension[classified_as/id=WIDTH]/value --> /width
@@ -105,7 +99,6 @@ title: Linked Art / Schema.org Mapping
 ## Visual Item / Linguistic Object
 
 * type = CreativeWork (for both Visual and Linguistic)
-
 * /about --> /about
 * /represents[./type=Place] --> /contentLocation
 * /represents (for all) --> /mainEntity
@@ -116,5 +109,4 @@ title: Linked Art / Schema.org Mapping
 * /content --> /text
 * /dimension --> /size
 * /format --> /encodingFormat
-
 
