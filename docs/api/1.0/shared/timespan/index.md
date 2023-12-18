@@ -30,10 +30,10 @@ The time span data structure has the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment, from which a representation of the assignment can be retrieved | 
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the timespan, from which a representation of the timespan can be retrieved | 
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"TimeSpan"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
-| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the attribute assignment available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
+| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the timespan available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the time span and MUST follow the requirements for [Type](../type/) |
 | `identified_by`   | array         | Recommended * | An array of json objects, each of which is a textual representation of the structured data in the time span, and MUST follow the requirements for [Name](../name/) |
 | `begin_of_the_begin` | date       | Recommended * | A string containing an ISO8601 formatted date-time, representing the earliest possible date at which the timespan could have started |

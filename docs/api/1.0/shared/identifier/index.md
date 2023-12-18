@@ -30,10 +30,10 @@ Identifiers have the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------| 
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment, from which a representation of the assignment can be retrieved | 
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the identifier, from which a representation of the assignment can be retrieved | 
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Identifier"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers | <!-- LAF.8 -->
-| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the attribute assignment available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
+| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the identifier available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `content`         | string        | Required    | The string content of the identifier | <!-- LAF.10 -->
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) | <!-- LAF.9 -->
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. | <!-- LAF.45 -->
