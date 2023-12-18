@@ -121,7 +121,7 @@ top.carries = vocab.MonographText(ident="auto int-per-segment", label="Text of t
 
 A single object might carry both significant textual content and separate visual works. For example an exhibition catalog carries its text and, via its illustrations, the visual content of the objects that were exhibited. In this case we would simply list each of the works.
 
-```
+```crom
 top = vocab.ExhibitionCatalog(ident="auto int-per-segment", label="Exhibition Catalog Copy")
 top.carries = vocab.ExhibitionCatalogText(ident="auto int-per-segment", label="Exhibition Catalog Text")
 top.shows = model.VisualItem(label="Work of Painting 1")
@@ -132,7 +132,7 @@ top.shows = model.VisualItem(label="Work of Painting 2")
 
 However, in the poster case, there is only a single work that has both important visual and textual attributes. In this case we do not want to give the impression that they are separate and instead use the partitioning pattern.
 
-```
+```crom
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Poster Item")
 top.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300027221", label="Poster")
 vi = model.VisualItem(label="Image shown by Poster")
