@@ -56,8 +56,8 @@ aa2 = model.AttributeAssignment()
 aa2.carried_out_by = vocab.MuseumOrg(label="Another Owning Museum")
 acc1.assigned_by = aa1
 acc2.assigned_by = aa2
-top.identified_by = aa1
-top.identified_by = aa2
+top.identified_by = acc1
+top.identified_by = acc2
 ```
 
 ### "Style Of" Attribution
