@@ -64,6 +64,11 @@ The intent of adopting this principle is to enable experimentation by implemente
 Any networked information requires the network for access.  While basic information must be available relatively quickly to ensure a good user experience for human users, the management of information and the ease of producing a data-publishing implementation must also be considered.  As demonstrated by the adoption of IIIF, the importance of having many possible publishing environments outweighs the complexity of having easy to implement consuming implementations.  The few consuming implementations need to be good, but good does not imply being able to be written in a weekend.  There are many more concerns to writing good client-side implementations than just network access.
 
 
+## 10. Solve at the right layer
+
+If the challenge is related to client interaction with the data, then the solution should be at the API layer, rather than in the semantic model. And vice versa, if the challenge to be solved is describing the world, then the solution should be in the model and not exclusively in the API. While this seems obvious, it is easy to forget.
+
+
 # Requirements and Design Specifics
 
 The following requirements are expressed to clarify the principles in practical, implementation-based terms.
