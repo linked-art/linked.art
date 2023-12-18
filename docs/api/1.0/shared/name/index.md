@@ -37,7 +37,7 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 | `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)| <!-- LAF.7 -->
 | `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
 | `identified_by`   | array         | Optional    | An array of json objects, each of which is a name for this Name and follows the Name pattern |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the name. | <!-- -->
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the Name. | <!-- -->
 
 ### Property Diagram
 

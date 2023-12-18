@@ -102,6 +102,46 @@ top.shows = vi
 vi.classified_as = vocab.instances['allusion']
 ```
 
+
+## Textual and Visual Works
+
+While the primary use case for Linked Art is visual works, there is also a need to be able to describe textual works: works containing content in a human readable language. Some works are solely textual (which we call linguistic), and some are solely visual. A single object might carry more than one visual work, and/or more than one textual work. There can also be single works that have both visual and textual components, but cannot be separated. For example, a poster with specific layout, fonts, colors and other stylistic choices cannot truly separate the linguistic from the visual.
+
+### Objects Carrying Textual Works
+
+The description of textual works are covered in detail in the [Document](../../document/) section of the model. 
+
+```crom
+top = vocab.Book(ident="auto int-per-segment", label="Example Physical Book")
+top.carries = vocab.MonographText(ident="auto int-per-segment", label="Text of the book")
+```
+
+
+### Single Object, Multiple Works
+
+A single object might carry both significant textual content and separate visual works. For example an exhibition catalog carries its text and, via its illustrations, the visual content of the objects that were exhibited. In this case we would simply list each of the works.
+
+```crom
+top = vocab.ExhibitionCatalog(ident="auto int-per-segment", label="Exhibition Catalog Copy")
+top.carries = vocab.ExhibitionCatalogText(ident="auto int-per-segment", label="Exhibition Catalog Text")
+top.shows = model.VisualItem(label="Work of Painting 1")
+top.shows = model.VisualItem(label="Work of Painting 2")
+```
+
+### Single Object, Single Textual and Visual Work
+
+However, in the poster case, there is only a single work that has both important visual and textual attributes. In this case we do not want to give the impression that they are separate and instead use the partitioning pattern.
+
+```crom
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Poster Item")
+top.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300027221", label="Poster")
+vi = model.VisualItem(label="Image shown by Poster")
+top.shows = vi
+lo = model.LinguisticObject(label="Text which is part of the Image")
+vi.part = lo
+```
+
+
 ## Related Objects
 
 A list of related objects is often known for any given object, however the reason for the relation is not recorded. These objects might be physically similar, they may have been created by the same artist, they might have been exhibited together or they might just be both highlights of the current institution and share no observable features. In this circumstance, the best that can be done is to record that there is some relationship without any specificity as to the details.  If there are more details known about the relationship then more specific patterns should be used instead.
