@@ -1,9 +1,12 @@
 
 {% macro render_basic_menu() -%}
+<span>
+<img src="/media/logo/Linked_Art_logo.png" style="height:40px">
 <ul id="main_nav_list">
 {% for nav_item in nav %}
     <li><a {% if nav_item.active %}class="selected" {% endif -%}
         href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
 {% endfor %}
 </ul>
+<span>
 {%- endmacro %}
