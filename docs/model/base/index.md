@@ -145,6 +145,7 @@ lo.language = vocab.instances['english']
 top.referred_to_by = lo
 ```
 
+
 ## Parts
 
 Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part` (from the whole to the part) or `part_of` (from the part to the whole).
