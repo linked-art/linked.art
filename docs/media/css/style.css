@@ -37,6 +37,10 @@ nav {
     z-index: 1000;
 }
 
+nav .logo {
+  float: left;
+}
+
 nav a,
 nav a:visited {
     text-decoration: none;
