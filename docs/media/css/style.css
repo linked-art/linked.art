@@ -38,7 +38,9 @@ nav {
 }
 
 nav img {
+  height: 45px;
   float: left;
+  padding-left: 20px;
 }
 
 nav a,
