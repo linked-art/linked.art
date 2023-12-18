@@ -41,17 +41,13 @@ Dereferencing an entity via the Textual Work endpoint would result in a JSON-LD 
 | `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current text |
 | `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current text, and MUST follow the requirements for a [reference](../../shared/reference/) |
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current text is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to another Textual Work, the content of which focuses on the current text, and MUST follow the requirements for a [reference](../../shared/reference/) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current text to another entity |
 | `language` | array | Optional | An array of json objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of words, of the current text |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Textual Work or a [Visual Work](../visual_work/) that the current text is a part of. |
 | `content` | string | Optional | The string representation of the textual content of the work |
 | `format` | string | Optional | The media type of the encoding of the string representation given in the `content` property |
-| `digitally_carried_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Digital Object](../digital/), such as a PDF, that digitally carries the text of this work |
-| `carried_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Physical Object](../object/), such as a book, that physically carries the text of this work |
 | `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
-| `refers_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text references in some way, but is not necessarily the primary topic of the work |
 | `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
 | `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below |
 
