@@ -79,7 +79,7 @@ prod = model.Production()
 prod.influenced_by = who
 prod.classified_as = vocab.instances['style of']
 aa.assigned = prod
-top.assigned_by = aa
+top.attributed_by = aa
 by = model.Person()
 by._label = "Painting Curator"
 aa.carried_out_by = by
@@ -105,12 +105,12 @@ aa.assigned_property = "identified_by"
 name = model.Name()
 name.content = "Exhibition Specific Name"
 aa.assigned = name
-aa.assigned_to = obj
+obj.attributed_by = aa
 curator = model.Person()
 curator._label = "A. Curator"
 aa.carried_out_by = curator
 aa.involved = agg
-top.part = aa
+aa.part_of = top
 ```
 
 ## Inferred Data
