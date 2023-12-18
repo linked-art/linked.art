@@ -43,25 +43,26 @@ Dereferencing an entity via the Set endpoint would result in a JSON-LD document 
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current set is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current set, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current set to another entity |
-| `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of members, of the current set |
-| `created_by` | json object | Optional | A json object representing the creation of the set, which follows the requirements for Creations described below. | 
+| `dimension`       | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of members, of the current set |
+| `created_by`      | json object | Optional | A json object representing the creation of the set, which follows the requirements for Creations described below | 
+| `used_for`        | array | Optional | An array of json objects, each of which is a Publication or similar Activity which follows the requirements for Publications below | 
 
 
-### Properties of Creations
+### Properties of Creations, Publications or other Activities
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the creation  |  
-| `type`            | string        | Required    | The class for the creation, which MUST be the value `"Creation"` |
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the creation or activity  |  
+| `type`            | string        | Required    | The class for the creation or activity, which MUST be the value `"Creation"` or `"Activity"` |
 | `_label`          | string        | Recommended | A human readable label for the creation, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation and MUST follow the requirements for [Type](../../shared/type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the creation occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that created the set |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation or activity and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or activity and MUST follow the requirements for [Type](../../shared/type/) |
+| `timespan`        | json object   | Recommended | A json object recording when the creation or activity occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or activity |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or activity occured |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation or activity to occur |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or activity in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or activity |
 
 
 ### Property Diagram
