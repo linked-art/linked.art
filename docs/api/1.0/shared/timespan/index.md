@@ -30,16 +30,21 @@ The time span data structure has the following properties.
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment, from which a representation of the assignment can be retrieved | 
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"TimeSpan"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
+| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the attribute assignment available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the time span and MUST follow the requirements for [Type](../type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a textual representation of the structured data in the time span, and MUST follow the requirements for [Name](../name/) |
-| `begin_of_the_begin` | date       | Recommended | A string containing an ISO8601 formatted date-time, representing the earliest possible date at which the timespan could have started |
-| `end_of_the_end`  | date          | Recommended | A string containing an ISO8601 formatted date-time, representing the latest possible date at which the timespan could have ended |
+| `identified_by`   | array         | Recommended * | An array of json objects, each of which is a textual representation of the structured data in the time span, and MUST follow the requirements for [Name](../name/) |
+| `begin_of_the_begin` | date       | Recommended * | A string containing an ISO8601 formatted date-time, representing the earliest possible date at which the timespan could have started |
+| `end_of_the_end`  | date          | Recommended * | A string containing an ISO8601 formatted date-time, representing the latest possible date at which the timespan could have ended |
 | `end_of_the_begin` | date         | Optional    | A string containing an ISO8601 formatted date-time, representing the latest possible date at which the timespan could have started |
 | `begin_of_the_end` | date         | Optional    | A string containing an ISO8601 formatted date-time, representing the earliest possible date at which the timespan could have ended |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the time span, or an embedded [statement](../statement/) about the time span. |
 | `duration`        | json object   | Optional    | A json object representing the length of time for the time span within the date range, which MUST follow the requirements for [Dimensions](../dimension/) | 
+
+
+* * Note Well that TimeSpans MUST have at least one of `identified_by`, `begin_of_the_begin` and `end_of_the_end`. Without these, there is no information to convey to the consuming application, and it becomes impossible to distinguish with a reference if the `id` is given, as there are no other properties that would be present.
 
 ### Property Diagram
 

@@ -28,6 +28,8 @@ References can only have the three properties below, in order to make it clear t
 
 [Types](../type/) are a special case of a reference to an external entry in a vocabulary system. As noted in the type documentation, they may also have meta-classifications to ensure that they can be processed, as dereferencing the type's URI might not result in a Linked Art formatted description.
 
+Note that references inherently have the `_complete` property with a value of `false`. They can be detected as references as all other structures have mandatory fields beyond `id`, `type` and `_label`. The `_complete` property would thus be clutter in the most common scenario of shared constructions being fully included, and data for references not being included at all.
+
 ### Properties of References
 
 | Property Name     | Datatype      | Requirement | Description | 
