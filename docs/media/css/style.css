@@ -37,6 +37,12 @@ nav {
     z-index: 1000;
 }
 
+nav img {
+  height: 45px;
+  float: left;
+  padding-left: 20px;
+}
+
 nav a,
 nav a:visited {
     text-decoration: none;
