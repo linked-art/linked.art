@@ -14,9 +14,11 @@ The use of context specific assertions or other attribute assignments should be 
 
 ## Assignment of Attributes
 
-The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the subject of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
+The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the _subject_ of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
-The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `assigned_to` property, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  
+This pattern is useful when you do not want to assert the relationship directly, such as for a name that was previously given to the object but is no longer actively used. Or an attribution of an artist that is possibly true, but might only be an informed guess.
+
+The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `attributed_by` property on that resource, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  In terms of the relationship that the `AttributeAssignment` expresses, the resource with the `attributed_by` property is the subject of the relationship, the relationship itself is given in `assigned_property`, and the object of the relationship is given in `assigned`, thereby making up a regular 'triple' of subject, predicate, object.
 
 The example below demonstrates associating a previous title with an object.
 
@@ -28,7 +30,7 @@ aa.assigned_property = "identified_by"
 name = model.Name()
 name.content = "Previous Painting Title"
 aa.assigned = name
-top.assigned_by = aa
+top.attributed_by = aa
 who = model.Person()
 who._label = "Painting Curator"
 aa.carried_out_by = who
@@ -36,6 +38,26 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "1804-05-19"
 ts.end_of_the_end = "1804-05-19"
 aa.timespan = ts
+```
+
+### Assigned Value as Resource
+
+In other situations the assigned value is the appropriate resource with which to associate the `AttributeAssignment`. In this case we flip the `AttributeAssignment` around and use `assigned_by` on the value of the assignment (the object of the relationship), and do not specify the subject of the relationship as it's the resource which refers to the value. For example, it is very useful to be able to assert which organization created and assigned an identifier to an object of a given type in order to disambiguate that organization's identifier from another organization's identifier of the same type, such as accession numbers.  Another use case is giving further information about a particular `Dimension` associated with the object, such as who measured it, when, with which instrument, and so on.
+
+In this case, the subject of the relationship is the resource which refers to the value, the predicate is that relationship, and the object is the resource with the `assigned_by` property which refers to the AttributeAssignment.
+
+```crom
+top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
+acc1 = vocab.AccessionNumber(value="1925.0034")
+acc2 = vocab.AccessionNumber(value="B-1254.6")
+aa1 = model.AttributeAssignment()
+aa1.carried_out_by = vocab.MuseumOrg(label="First Owning Museum")
+aa2 = model.AttributeAssignment()
+aa2.carried_out_by = vocab.MuseumOrg(label="Another Owning Museum")
+acc1.assigned_by = aa1
+acc2.assigned_by = aa2
+top.identified_by = aa1
+top.identified_by = aa2
 ```
 
 ### "Style Of" Attribution
