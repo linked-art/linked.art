@@ -40,7 +40,7 @@ This is a complex shared structure in that it involves nested JSON objects rathe
 | `digitally_carried_by` | array | Required * | Used only when `type` is `"LinguisticObject"`. An array of json objects, each of which is a DigitalObject as described below |
 | `language` | array | Optional | Used only when `type` is `"LinguisticObject"`. An array of json objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
 
-* * Note Well that exactly one of `digitally_shown_by` and `digitally_carried_by`, as appropriate for the class of the Work, MUST be present
+* \* Note Well that exactly one of `digitally_shown_by` and `digitally_carried_by`, as appropriate for the class of the Work, MUST be present
 
 
 ### Properties of Embedded Digital Objects
