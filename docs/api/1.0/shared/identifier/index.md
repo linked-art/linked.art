@@ -36,6 +36,7 @@ Identifiers have the following properties.
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the identifier available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `content`         | string        | Required    | The string content of the identifier | <!-- LAF.10 -->
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) | <!-- LAF.9 -->
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name to be displayed for the identifier, and MUST follow the requirements for [Name](../name/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. | <!-- LAF.45 -->
 | `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, as below |   <!-- -->
 
@@ -87,6 +88,7 @@ An accession number for an object, created and assigned by Example Museum at som
 top = model.HumanMadeObject(ident="auto int-per-segment")
 id = vocab.AccessionNumber(label="Example Museum Accession Number", content="1997-A1752")
 top.identified_by = id
+id.identified_by = vocab.PrimaryName(content="Accession Number")
 id.referred_to_by = vocab.Note(content="This is the original accession number from 1997")
 aa = model.AttributeAssignment(label="Assignment of 1997-A1752")
 id.assigned_by = aa
