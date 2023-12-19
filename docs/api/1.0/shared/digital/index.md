@@ -78,5 +78,19 @@ Name instances are typically found as the object of the following properties.  T
 ## Example
 
 
+```crom
+top = model.HumanMadeObject(ident="auto int-per-segment")
+top.identified_by = vocab.PrimaryName(content="Object")
+lo = model.LinguisticObject()
+lo.language = vocab.instances['english']
+wp = vocab.WebPage()
+lo.digitally_carried_by = wp
+wp.access_point = model.DigitalObject(ident="http://example.org/objects/1")
+wp.identified_by = vocab.PrimaryName(content="Home page for Object")
+top.subject_of = lo
+```
+
+
+
 
 
