@@ -42,8 +42,6 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current visual work to another entity |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as abstract height or width, of the current visual work |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Visual Work or a [Textual Work](../textual_work/) that the current visual work is a part of |
-| `digitally_shown_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Digital Object](../digital/), such as a JPEG image, that digitally shows this visual work |
-| `shown_by` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Physical Object](../object/), such as a painting, that physically shows this visual work |
 | `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
 | `represents` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
 | `represents_entity_of_type` | array | Optional | An array of json objects, each of which is a type of another entity that this visual work represents or depicts, but where the individual is not known and MUST follow the requirements for [Type](../../shared/type/) |
