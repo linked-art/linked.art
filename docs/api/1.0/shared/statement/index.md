@@ -28,10 +28,10 @@ Statements are described in the [base patterns](/model/base/) of the model docum
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------| 
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the assignment, from which a representation of the assignment can be retrieved | 
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the statement, from which a representation of the statement can be retrieved | 
 | `type`            | string        | Required    | The class for the statement, which MUST be the value `"LinguisticObject"` |
 | `_label`          | string        | Optional    | A human readable label, intended for developers |
-| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the attribute assignment available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
+| `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the statement available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `content`         | string        | Required    | The string value of the statement |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the statement and MUST follow the requirements for [Type](../type/) |
 | `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the statement and MUST follow the requirements for [Language](../type/)|
