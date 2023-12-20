@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+    "dig": "http://www.ics.forth.gr/isl/CRMdig/",
+	"la": "https://linked.art/ns/terms/",
+
+	"HumanMadeObject": "crm:E22_Human-Made_Object",
+	"DigitalObject": "dig:D1_Digital_Object",
+	"LinguisticObject": "crm:E33_Linguistic_Object",
+	"VisualItem": "crm:E36_Visual_Item",
+	"Set": "la:Set",
+	"Person": "crm:E21_Person",
+	"Group": "crm:E74_Group",
+	"Place": "crm:E53_Place",
+	"Type": "crm:E55_Type",
+	"Language": "crm:E56_Language",
+	"Material": "crm:E57_Material",
+	"MeasurementUnit": "crm:E58_Measurement_Unit",
+	"Currency": "crm:E98_Currency",
+	"Period": "crm:E4_Period",
+	"Event": "crm:E5_Event",
+	"Activity": "crm:E7_Activity"
+
+  }
+}

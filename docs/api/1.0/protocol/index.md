@@ -24,7 +24,7 @@ For example, this documentation uses https, resulting in endpoints like:
 
 > `https://linked.art/example/object/1`
 
-There is a great advantage in terms of network interaction speed to support the latest version of the HTTP protocol, called `HTTP/2`. Supporting HTTP 2 allows many concurrent requests to take place, improving the time to complete page loads and avoiding the browser-imposed limit on the number of concurrent connections per site.  Web servers MUST support HTTP 1.1 and SHOULD support HTTP 2.
+There is a great advantage in terms of network interaction speed to support recent versions of the HTTP protocol. Supporting HTTP 2 and above allows many concurrent requests to take place, improving the time to complete page loads and avoiding the browser-imposed limit on the number of concurrent connections per site.  Web servers MUST support HTTP 1.1 and SHOULD support HTTP 2.
 
 ### Operations
 
