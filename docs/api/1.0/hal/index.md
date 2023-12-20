@@ -44,6 +44,7 @@ The types of link can be extended by adding namespaced properties, allowing both
 Before turning to the set of possible inverse links, there are three core properties defined by the Linked Art API to deal with API versioning.
 
 The versioning properties are:
+
 * `la:modelVersion` - the version of the linked art model used by the record, which might be different from the version of the API (required)
 * `la:apiVersion` - the version of the linked art API used by the record (required)
 * `la:localVersion` - the version of any extension or set of extensions used by the record (optional)
@@ -89,7 +90,7 @@ The URI given in `href` has no structural requirements. It can be a search with 
 
 The full set of possible links is described at the [namespace URI](/api/rels/1/) given in the `curies` block. 
 
-The response format is a profile of [Activity Streams](), as used in the [IIIF Search API]() and other standards. It is described in more detail under the [Ecosystem](../ecosystem/) documentation. The links MUST refer to the first page of the collection, rather than to the collection itself, to prevent unnecessary retrievals.
+The response format is a profile of [Activity Streams](https://www.w3.org/TR/activitystreams-core/), as used in the [IIIF Search API](https://iiif.io/api/search/2.0/) and other standards. It is described in more detail under the [Ecosystem](../ecosystem/) documentation. The links MUST refer to the first page of the collection, rather than to the collection itself, to prevent unnecessary retrievals.
 
 A complete HAL `_links` block might thus look like:
 
