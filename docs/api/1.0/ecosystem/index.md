@@ -78,7 +78,6 @@ This would allow change entries such as the following to be present in the strea
 
 Otherwise, the functionality and syntax is exactly as described by the IIIF specification.
 
-
 ## Search
 
 The Linked Art API does not specify a query syntax for searching, but we do define a response format. This is the format expected as a response from the links in the [HAL](../hal/) links section, but can also be used for responses from arbitrary search URIs as well.  It is a basic paged list syntax and based on the IIIF Change Discovery and [IIIF Content Search API](https://iiif.io/api/search/) formats, which in turn use the W3C's [Activity Streams](https://www.w3.org/TR/activitystreams-core/) format.
