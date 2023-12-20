@@ -1,0 +1,23 @@
+{
+	"@context": [
+		"https://www.w3.org/ns/activitystreams",
+		"https://linked.art/ns/v1/record-types.json",
+		{
+			"as": "https://www.w3.org/ns/activitystreams#",
+			"label": {
+	        	"@id": "as:name",
+	        	"@container": ["@language", "@set"],
+	        	"@context": {
+	          		"none": "@none"
+	       		 }
+	      	},    			
+			"summary": {
+	        	"@id": "as:summary",
+	        	"@container": ["@language", "@set"],
+	        	"@context": {
+	          		"none": "@none"
+	       		 }
+	      	}
+		}
+	]
+}

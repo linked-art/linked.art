@@ -1,18 +1,60 @@
 ---
 title: "Linked Art API Ecosystem"
+up_href: "/api/1.0/"
+up_label: "Linked Art API 1.0"
 ---
 
 [TOC]
 
 ## Introduction
 
-Notes about ecosystem to flesh out.
-
-## APIs
+Linked Art data does not exist in a vacuum, nor does it try to define all possible interactions with cultural heritage data. Instead, our scope is to define the semantic description of cultural heritage items, and the important surrounding contextual information such as people, places, concepts and events. This section documents the broader ecosystem, and how to make use of the other standards and specifications in conjunction with Linked Art records.
 
 
-* Presentation of Images and facsimiles -- see IIIF
-* Change Discovery / Harvesting -- see IIIF
-* Search
-  * Basic -- see HAL ; define response here
-  * Graph -- see SPARQL
+## Presenting Content
+
+While Linked Art metadata records can easily be rendered via an attractive interface for humans to engage with, the display of full text, image, audio, video, 3d and any other content resources is left to external specifications and tools. In particular, the functionality of the IIIF Image and Presentation APIs are recommended.
+
+The hooks to those resources are given using the [Digital Integration](/model/digital) patterns.
+
+* [IIIF Image API](https://iiif.io/api/image/)
+* [IIIF Presentation API](https://iiif.io/api/presentation/)
+
+
+## Visibility from the Human Web
+
+In order to ensure that search engines such as Google get as much information as possible, there is a mapping from Linked Art into the [Schema.Org](https://schema.org/) structure. Schema.Org can be embedded within web pages as JSON-LD or other formats enabling search engines to process the data as data, rather than only via the human-intended HTML. The [mapping](/cookbook/mappings/schema.org/) is not part of the versioned APIs as it will be updated as the underlying schema and its usage changes, which is not in our control.
+
+For visibility of the data to clients that might be given a web page, rather than the URI of the JSON-LD record, it is also important to give them a link to the data. This is done via [Link Headers](https://www.rfc-editor.org/rfc/rfc8288.html) in the HTTP response (for non-browser clients), and within the HTML `head` element (for browser-based clients).
+
+In the HTTP response of the web page for the object, the header to link to the JSON-LD record would look like this:
+
+```
+Link: <https://example.com/data/object/1>;
+        rel="alternate";
+        type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"
+```
+
+And in the `head` element of the HTML:
+
+```
+<head>
+  <link rel="alternate" href="https://example.com/data/object/1" 
+        type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
+</head>
+```
+
+The `link` element in `head` MUST be present, and the HTTP header SHOULD be present if possible.
+
+
+## Harvesting
+
+In order to produce cross-collection and cross-institutional aggregating services or applications, it is necessary to be able to find all of the 
+
+## Search
+
+
+* Basic -- HAL Responses
+* Advanced -- GraphQL
+* Graph -- SPARQL
+

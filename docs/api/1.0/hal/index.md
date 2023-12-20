@@ -75,9 +75,9 @@ The `_links` section might thus now look like the following:
 Note that, as a namespace, the curie template for the Linked Art relationships does not include a minor version number as minor versions must be backwards compatible with the major version. Future major versions will thus introduce a new set of links (though likely the same as the previous versions), and potentially also change the response format from following those links.
 
 
-## Refering Records Links
+## Referring Records Links
 
-The links to the lists of refering records can now be added to the `_links` block.
+The links to the lists of referring records can now be added to the `_links` block.
 
 The links are named in camelCase according to the current record's type, the relationship that it has to the entities in the response, and then the expected type of those entities. For example, the set of works that are about the current object would be `object` plus `SubjectOf` (being the inverse of `about`) plus `Work`. This convention helps to ensure that there will not be collisions with naming in future versions.
 
@@ -109,3 +109,36 @@ A complete HAL `_links` block might thus look like:
   }
 }
 ```
+
+## Other HAL Links
+
+There are two further HAL links that enable the overall [ecosystem](../ecosystem/) to flourish. In particular, it is very valuable to link from the JSON-LD data to a web page that renders the data for humans and also to a IIIF Change Discovery API endpoint that would allow a remote system to harvest and stay synchronized with the overall dataset.
+
+Linking from the JSON-LD record to a rendering of the data, as opposed to some external web collection page about the object, can be done with the `alternate` property. In order to convey the media type of the page (very likely to be HTML), this can be added as the `type` property in the link object.
+
+The Change Discovery endpoint can similarly be referenced using the `collection` property.
+
+Thus a complete `_links` section could look like:
+
+```
+{
+  "_links": {
+    "self": "http://example.org/linked_art/objects/1234"
+    "curies": [
+      {"name":"la","href":"https://linked.art/api/rels/1/{rel}","templated":true}
+    ],
+    "alternate": {"href": "https://example.org/collection/1234", "type": "text/html"},
+    "collection": {"href": "https://example.org/api/discovery/collection.json"},
+
+    "la:modelVersion": {"href":"https://linked.art/model/1.0/", "name": "v1.0"},
+    "la:apiVersion": {"href":"https://linked.art/api/1.0/", "name": "v1.0"},
+    "la:localVersion": {"href":"https://example.org/extension/maps/geo-210", "name": "v2.1.0-beta-01"},
+
+    "la:objectHasPartObject": {"href": "https://example.org/api/objectHasPartObject/1234"},
+    "la:objectSubjectOfWork": {"href": "https://example.org/api/objectSubjectOfWork/1234"}
+  }
+}
+```
+
+
+
