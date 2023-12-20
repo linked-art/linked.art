@@ -75,6 +75,8 @@ Collections have the following properties:
 * `summary` - This MAY be present. If present, the value is a JSON object with the keys being the two letter code for a language, and the values being an array of strings, where each string is a description or summary of the collection in that language.
 
 
+The collection, embedded within a page, might thus look like:
+
 ```json
 {
 	"@context": "https://linked.art/ns/v1/search.json",

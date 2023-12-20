@@ -21,7 +21,7 @@ The hooks to those resources are given using the [Digital Integration](/model/di
 * [IIIF Presentation API](https://iiif.io/api/presentation/)
 
 
-## Visibility from the Human Web
+## Data Visibility from HTML
 
 In order to ensure that search engines such as Google get as much information as possible, there is a mapping from Linked Art into the [Schema.Org](https://schema.org/) structure. Schema.Org can be embedded within web pages as JSON-LD or other formats enabling search engines to process the data as data, rather than only via the human-intended HTML. The [mapping](/cookbook/mappings/schema.org/) is not part of the versioned APIs as it will be updated as the underlying schema and its usage changes, which is not in our control.
 
