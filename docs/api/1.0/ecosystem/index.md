@@ -37,7 +37,7 @@ Link: <https://example.com/data/object/1>;
 
 And in the `head` element of the HTML:
 
-```
+```XML
 <head>
   <link rel="alternate" href="https://example.com/data/object/1" 
         type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
@@ -55,7 +55,7 @@ In order to make the Linked Art record types available, a short context document
 
 Thus the contexts in the response would be:
 
-```
+```json
 {
   "@context": [
     "https://linked.art/ns/v1/record-types.json",
@@ -66,7 +66,7 @@ Thus the contexts in the response would be:
 
 This would allow change entries such as the following to be present in the stream, rather than being limited to the IIIF values for `type`.
 
-```
+```json
 {
   "type": "Update",
   "object": {

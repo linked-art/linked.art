@@ -19,7 +19,7 @@ The format has two main responses: the overall Collection of items or results, w
 
 Result pages have a very simple structure with the following properties:
 
-* `@context` - This MUST be present, with the value `"https://linked.art/ns/v1/search.json"
+* `@context` - This MUST be present, with the value `"https://linked.art/ns/v1/search.json"`
 * `id` - This MUST be present, with the value being the URI of the page
 * `type` - This MUST be present, with the value being the string `"OrderedCollectionPage"`
 * `partOf` - This MUST be present, with the value being a JSON object for the Collection, described in the next section.
@@ -30,7 +30,7 @@ Result pages have a very simple structure with the following properties:
 
 An example page would thus be:
 
-```
+```json
 {
 	"@context": "https://linked.art/ns/v1/search.json",
 	"id": "https://example.org/api/objectHasPartObject/1234/2",
@@ -75,7 +75,7 @@ Collections have the following properties:
 * `summary` - This MAY be present. If present, the value is a JSON object with the keys being the two letter code for a language, and the values being an array of strings, where each string is a description or summary of the collection in that language.
 
 
-```
+```json
 {
 	"@context": "https://linked.art/ns/v1/search.json",
 	"id": "https://example.org/api/objectHasPartObject/1234/2",
