@@ -49,12 +49,40 @@ The `link` element in `head` MUST be present, and the HTTP header SHOULD be pres
 
 ## Harvesting
 
-In order to produce cross-collection and cross-institutional aggregating services or applications, it is necessary to be able to find all of the 
+In order to produce cross-collection and cross-institutional aggregating services or applications, it is necessary to be able to find all of the records in an efficient manner and stay synchronized with any changes to those records.  This is the purpose of the [IIIF Change Discovery API](https://iiif.io/api/discovery/). 
+
+In order to make the Linked Art record types available, a short context document ([https://linked.art/ns/v1/record-types.json](https://linked.art/ns/v1/record-types.json)) can be used as an extension, as described in the API's section on Linked Data Contexts and [Extensions](https://iiif.io/api/discovery/1.0/#342-extensions).
+
+Thus the contexts in the response would be:
+
+```
+{
+  "@context": [
+    "https://linked.art/ns/v1/record-types.json",
+    "http://iiif.io/api/discovery/1/context.json"
+  ]
+}
+```
+
+This would allow change entries such as the following to be present in the stream, rather than being limited to the IIIF values for `type`.
+
+```
+{
+  "type": "Update",
+  "object": {
+    "id": "https://example.org/api/object/1",
+    "type": "HumanMadeObject"
+  }
+}
+```
+
+Otherwise, the functionality and syntax is exactly as described by the IIIF specification.
+
 
 ## Search
 
+The Linked Art API does not specify a query syntax for searching, but we do define a response format. This is the format expected as a response from the links in the [HAL](../hal/) links section, but can also be used for responses from arbitrary search URIs as well.  It is a basic paged list syntax and based on the IIIF Change Discovery and [IIIF Content Search API](https://iiif.io/api/search/) formats, which in turn use the W3C's [Activity Streams](https://www.w3.org/TR/activitystreams-core/) format.
 
-* Basic -- HAL Responses
-* Advanced -- GraphQL
-* Graph -- SPARQL
+It is documented [here](search.html).
 
+For more complex search cases, implmenters are advised to look at [GraphQL](https://graphql.org/) which queries by example, and [SPARQL](https://www.w3.org/TR/sparql11-query/) which is the standard for RDF graph based queries.

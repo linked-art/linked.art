@@ -89,7 +89,7 @@ The URI given in `href` has no structural requirements. It can be a search with 
 
 The full set of possible links is described at the [namespace URI](/api/rels/1/) given in the `curies` block. 
 
-The response format is a profile of [Activity Streams](), as used in the [IIIF Search API]() and other standards. It is described in more detail under the [Ecosystem](../ecosystem/) documentation.
+The response format is a profile of [Activity Streams](), as used in the [IIIF Search API]() and other standards. It is described in more detail under the [Ecosystem](../ecosystem/) documentation. The links MUST refer to the first page of the collection, rather than to the collection itself, to prevent unnecessary retrievals.
 
 A complete HAL `_links` block might thus look like:
 
@@ -104,8 +104,8 @@ A complete HAL `_links` block might thus look like:
     "la:apiVersion": {"href":"https://linked.art/api/1.0/", "name": "v1.0"},
     "la:localVersion": {"href":"https://example.org/extension/maps/geo-210", "name": "v2.1.0-beta-01"},
 
-    "la:objectHasPartObject": {"href": "https://example.org/api/objectHasPartObject/1234"},
-    "la:objectSubjectOfWork": {"href": "https://example.org/api/objectSubjectOfWork/1234"}
+    "la:objectHasPartObject": {"href": "https://example.org/api/objectHasPartObject/1234/1"},
+    "la:objectSubjectOfWork": {"href": "https://example.org/api/objectSubjectOfWork/1234/1"}
   }
 }
 ```
