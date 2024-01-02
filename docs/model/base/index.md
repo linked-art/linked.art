@@ -78,10 +78,12 @@ The object is classified as being a Painting, and the concept "Painting" is for 
 top = vocab.Painting(ident="spring/3", label="Jeanne (Spring) by Manet", art=1)
 ```
 
-
+Rembrandt (a person) has a nationality of Dutch:
 
 ```crom
-
+top = model.Person(ident="rembrandt/1", label="Rembrandt")
+top.classified_as = vocab.instances['dutch']
+```
 
 
 ## Names and Identifiers for a Resource
