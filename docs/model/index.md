@@ -28,17 +28,19 @@ These are then expanded on in order to fulfill shared use cases and common requi
 
 The model can be treated as interlinking components that describe aspects of the events of interest. 
 
-* [Introduction](intro/) on how to read the documentation
-* [Basic Patterns](base/) shared across the model
-* [Object](object/) descriptions
+* [Introduction](intro/) on how to read the documentation, and the examples used throughout
+* [Basic Patterns](base/) used throughout the model
+* [Common Patterns](common/) that are shared across the different types of entity
+* [Physical Objects](object/) 
 * [People and Organizations](actor/)
 * [Places](place/)
-* [Digital Integration](digital/)
+* [Digital Objects](digital/)
 * [Provenance](provenance/) of Objects
-* [Collections](collection/) and Sets
-* [Exhibitions](exhibition/) of Objects
-* [Primary Sources](document/) of information
-* [Assertion](assertion/) level metadata
+* [Collections](collection/) and Sets of entities
+* [Exhibitions](exhibition/)
+* [Textual Documents](document/)
+* [Archival Hierarchies](archives/)
+* [Assertions](assertion/)
 * [Dataset](dataset/) level metadata
 
 An index of all of the classes, properties and identities used:
@@ -69,8 +71,8 @@ For more information about how you can participate in Linked Art, please see the
 
 * Interoperability
     * The goal of the work is interoperability between systems, not to provide a comprehensive data model to describe everything that a single institution might know. This implies that management and production of the data is out of scope as a system specific concern. Similarly, the exact models used within those systems are not our concern. These would otherwise violate the technology independency principle. Open access is not a requirement, but the intent to publish beyond system boundaries is.
-* Complex Bibliography
-    * The thorough description of bibliographic resources in Linked Data is the subject of several ongoing discussions in the Library domain. We feel that the Art and Museum community should adopt whatever solution is devised by the experts in that field for complex bibliographic description, if necessary beyond the model described for documents generally.
+* Complex Bibliography and Archival Descriptions
+    * The thorough description of bibliographic and archival resources in Linked Data is the subject of several ongoing discussions in the Library and Archives domains. We feel that the Art and Museum community should adopt whatever solution is devised by the experts in that field for complex bibliographic or archival description, however Linked Art will provide an on-ramp to those domains by defining the basic descriptions using our shared patterns.
 * Data Provenance 
     * Recording the individual events in which the data itself is created, modified and managed is out of scope of this work. The global Linked Open Data community has various approaches to this problem, with varying degrees of complexity and accuracy. Given the relative infancy of the work in the Art domain, we feel that adding this is an unnecessary burden at this stage at any level below the entire dataset. 
 * Quantification of Uncertainty
