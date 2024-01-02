@@ -102,7 +102,7 @@ __Example:__
 The primary name for "The Night Watch" is "The Night Watch" in English, and "De Nachtwacht" in Dutch:
 
 ```crom
-top = vocab.Painting(ident="nightwatch/1", label="Night Watch by Rembrandt")
+top = model.HumanMadeObject(ident="nightwatch/1", label="Night Watch by Rembrandt")
 ttl = vocab.PrimaryName(content="The Night Watch")
 ttl.language = vocab.instances['english']
 top.identified_by = ttl
@@ -113,27 +113,23 @@ top.identified_by = ttl2
 
 ### Identifiers
 
-Many resources of interest are also given external identifiers, such as accession numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
+Many entities are also given external identifiers, such as accession numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
 
-As `Identifier`s and `Name`s use the same `identified_by` property, the JSON will frequently have mixed classes in the array. Unlike `Name`s, `Identifier`s are not part of human language and thus cannot have translations or a language associated with them.
+As `Identifier`s and `Name`s use the same `identified_by` property, the JSON will frequently have mixed classes in the array. Unlike `Name`s, `Identifier`s are not part of human language and thus cannot have a language associated with them.
 
 __Example:__
 
-The accession number identifier for the painting is "P1998-27".
+The accession number identifier for "The Night Watch" is "SK-C-5":
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting: Pasture and Sheep")
-id1 = vocab.AccessionNumber()
-id1.content = "P1998-27"
-top.identified_by = id1
-ttl = vocab.PrimaryName()
-ttl.content = "Pasture and Sheep"
-top.identified_by = ttl
+top = model.HumanMadeObject(ident="nightwatch/2", label="Night Watch by Rembrandt")
+top.identified_by = vocab.AccessionNumber(content="SK-C-5")
+top.identified_by = vocab.PrimaryName(content="The Night Watch")
 ```
 
-## Statements about a Resource
+## Statements about an Entity
 
-In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the resource, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
+In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in a human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the entity, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
 
 The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.
 
@@ -145,16 +141,15 @@ Use cases for this pattern include:
 * Biography for a person
 * Dimensions statement for a part of an object
 
-Note that both Names and Statements can have Names (e.g. "Former Title", "Supplied Description") and Statements (such as the source of the name or statement), however best practice is to only use these sparingly.
+Note that both Names and Statements can have their own Names (e.g. "Former Title", "Supplied Description") and their own Statements (such as the source of the name or statement), however best practice is to only use these sparingly.
 
 __Example:__
 
 Having only a textual description of the materials in English, the content `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300435429)_ statement:
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting on Canvas")
-lo = vocab.MaterialStatement()
-lo.content = "Oil on Canvas"
+top = model.HumanMadeObject(ident="nightwatch/3", label="Night Watch by Rembrandt")
+lo = vocab.MaterialStatement(content="Oil on Canvas")
 lo.language = vocab.instances['english']
 top.referred_to_by = lo
 ```
@@ -162,7 +157,7 @@ top.referred_to_by = lo
 
 ## Parts
 
-Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part` (from the whole to the part) or `part_of` (from the part to the whole).
+Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part_of`, from the part to the whole.
 
 Use cases for this pattern include:
 
@@ -171,22 +166,21 @@ Use cases for this pattern include:
  * Separating geographical locations into smaller subdivisions, such as that the neighborhood is part of the city, which is in turn part of the state.
  * Partitioning a text into segments, such as that the paragraph is part of a chapter, which is in turn part of the entire book
 
+Note that these parts are separate records from the main entity, and the main entity does not refer to its parts. Instead the API defines a method to retrieve [all of the parts](/api/1.0/hal/#referring-records-links) of the main entity, or other incoming references.
 
 __Example:__
 
-The canvas support is part of the overall watercolor painting.
+The canvas support is part of the overall painting of Spring.
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Example Painting")
-top.made_of = vocab.instances['watercolor']
-part = vocab.SupportPart(label="Canvas Support")
-part.made_of = vocab.instances['canvas']
-top.part = part
+top = vocab.SupportPart(ident="spring/frame", label="Frame of Spring")
+top.referred_to_by = vocab.MaterialStatement(content="Canvas")
+top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Manet")
 ```
 
 ### Membership
 
-Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member` or `member_of` property, instead of the corresponding `part` and `part_of`.
+Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member_of` property, instead of the corresponding `part_of`.
 
 Use cases for the membership pattern include:
 
@@ -196,17 +190,17 @@ Use cases for the membership pattern include:
 
 __Example:__
 
-The curator is a member of the paintings department.
+Rembrandt was a member of the Guild of St Luke.
 
 ```crom
-top = vocab.Department(ident="auto int-per-segment", label = "Paintings Department")
-who = model.Person(label="Curator")
-top.member = who
+top = model.Person(ident="rembrandt/2", label="Rembrandt")
+grp = model.Group(ident="stluke", label="Guild of St Luke")
+top.member_of = grp
 ```
 
 ## Events and Activities
 
-Patterns are not only within a single entity, but also in the way that we manage relationships between entities.  While many systems link straight from one an object to its creator, for example, CIDOC-CRM and thus Linked Art instead uses an intermediate entity that represents the activity of the artist in creating the object. This enables us to associate time, place, actors, techniques, other objects and more with the creation activity, rather than needing many individual relationships.
+Patterns are not only within a single entity, but also in the way that we manage relationships between entities.  While many systems link straight from one an object to its creator, for example, Linked Art instead uses an intermediate entity that represents the activity of the artist in creating the object. This enables us to associate time, place, actors, techniques, other objects and more with the creation activity, rather than needing many individual relationships.
 
 The key participants in those different types of events are:
 
@@ -215,22 +209,25 @@ The key participants in those different types of events are:
   * the [Locations](../place) at which the activity occurs,
   * and the Time at which it occurs.
 
-The general pattern is to create a resource for the `Activity` or `Event`, and associate the participants with that resource. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the `Object` is dependent on the type of `Event` or `Activity`, which are discussed in more detail in the specific sections.
+The general pattern is to create a construct internal to the record for the event (with the class `Event`) or activity (with the class `Activity` or a more specific class), and associate the participants with that construct. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the object is dependent on the type of event or activity, which are discussed in more detail in the specific sections.
 
 There are both subclasses of `Activity`, such as `Acquisition`, `Production` and `AttributeAssignment`, and classifications associated with them to be more specific, either as a `technique` like glassblowing _(aat:300053932)_, or via `classified_as` for more general terms like gift giving _(aat:aat:300404212)_ to clarify the sort of `Acquisition`.
 
-The pattern uses the terms and structure given in this completely artificial example:
+
+__Example:__
+
+"Spring" was produced in a Production activity carried out by Manet in 1881, somewhere in France.
 
 ```crom
-top = model.Activity(ident="auto int-per-segment")
-who = model.Actor(label="Who")
-when = model.TimeSpan(label="When")
-when.begin_of_the_begin = "earliest-start-datetime"
-when.end_of_the_end = "latest-end-datetime"
-where = model.Place(label="Where")
-top.carried_out_by = who
-top.took_place_at = where
-top.timespan = when
+top = model.HumanMadeObject(ident="spring/4", label="Jeanne (Spring) by Manet")
+prod = model.Production()
+top.produced_by = prod
+prod.carried_out_by = model.Person(ident="manet", label="Manet")
+when = model.TimeSpan(label="1881")
+when.begin_of_the_begin = "1881-01-01T00:00:00"
+when.end_of_the_end = "1881-12-31T23:59:59"
+prod.timespan = when
+prod.took_place_at = model.Place(ident="france", label="France")
 ```
 
 ### Time Span Details
@@ -248,23 +245,22 @@ There are other properties for `TimeSpan` instances that are useful when the exa
 
 __Example:__ 
 
-An auction that occured during April 1763 over a period of three consecutive days.
+The Christie's auction of the Stowe House took place over 40 days in August and September, 1848 ([Source](https://www.countrylife.co.uk/luxury/art-and-antiques/5-sales-which-made-christies-no-2-the-stowe-sale-144150)).
 
 
 ```crom
-top = vocab.AuctionEvent(ident="auto int-per-segment", label="Auction")
+top = vocab.AuctionEvent(ident="stowe", label="Auction of Stowe House")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1763-04-01T00:00:00Z"
-ts.end_of_the_begin = "1763-04-28T00:00:00Z"
-ts.begin_of_the_end = "1763-04-04T00:00:00Z"
-ts.end_of_the_end = "1763-05-01T00:00:00Z"
-dim = model.Dimension(value=3)
+ts.begin_of_the_begin = "1848-08-01T00:00:00Z"
+ts.end_of_the_begin = "1848-08-21T00:00:00Z"
+ts.begin_of_the_end = "1848-09-09T00:00:00Z"
+ts.end_of_the_end = "1848-09-30T23:59:59Z"
+dim = model.Dimension(value=40)
 dim.value = 3
 dim.unit = vocab.instances['days']
 ts.duration = dim
 n = model.Name()
-n.content = "Three days within April 1763"
+n.content = "40 days in August and September, 1848"
 ts.identified_by = n
 top.timespan = ts 
 ```
-
