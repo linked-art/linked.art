@@ -16,12 +16,12 @@ There are a few core properties that every resource must have for it to be a use
 
 * `@context` is a reference to the context mapping which determines how to interpret the JSON as LOUD. It is not a property of the entity being described, but of the document. It must be present.
 * `id` captures the URI that identifies the entity.  Every core entity must have exactly one URI.
-* `type` captures the class of the entity, or `rdf:type` in RDF. Every entity must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
+* `type` captures the class of the entity, or `rdf:type` in RDF. Every entity must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation. Classes determine which properties or relationships may be associated with the entity.
 * `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every entity should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
 
 __Example:__
 
-The simplest possible object has a URI, a class and a label.
+The simplest possible object description of "Spring" has a URI, a class and a label.
 
 ```crom
 top = model.HumanMadeObject(ident="spring/1", label="Jeanne (Spring) by Manet")
@@ -29,7 +29,7 @@ top = model.HumanMadeObject(ident="spring/1", label="Jeanne (Spring) by Manet")
 
 ## Types and Classifications
 
-CIDOC-CRM, our underlying ontology, is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the `classified_as` property, which refers to a term from a controlled vocabulary. This is in contrast to the `type` property described above, which is used for classes. The `classified_as` property is thus a way to be more specific about the sort of entity, while maintaining the core information as the class using `type`. Controlled vocabulary entries should not be used with `type`, nor classes used with `classified_as`.
+CIDOC-CRM, our underlying ontology, is a framework that must be extended via additional vocabularies and ontologies to be useful.  The provided mechanism for doing this is the `classified_as` property, which refers to a term from a controlled vocabulary. This is in contrast to the `type` property described above, which is used for a limited number of core, ontological classes. The `classified_as` property is thus a way to be more specific about the sort of entity, while maintaining the core information as the class using `type`. Controlled vocabulary entries should not be used with `type`, nor classes used with `classified_as`. 
 
 While any external vocabulary of terms can be used, the [Getty's Art and Architecture Thesaurus](http://vocab.getty.edu/aat/) is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [community best-practices](/community/best-practices/vocabularies/) for recommendations, and within the documentation of the model when a particular choice is essential for interoperability.
 
@@ -44,13 +44,19 @@ Use cases for this pattern are in almost every example, but include:
 
 __Example:__
 
-The type of the object (an instance of the class `HumanMadeObject`) is a painting _(aat:300033618)_, and an artwork _(aat:300133025)_:
+The classification of "Spring" (an instance of the class `HumanMadeObject`) is a painting _(aat:300033618)_, and an artwork _(aat:300133025)_:
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Simple Example Painting")
-top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300033618", label="Painting")
-top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300133025", label="Work of Art")
+top = model.HumanMadeObject(ident="spring/2", label="Jeanne (Spring) by Manet", art=1)
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300033618",label="Painting")
 ```
+
+The classification of "Paris" (an instance of the class `Place`) is a city _(aat:00008389)_: 
+
+```crom
+top = vocab.City(ident="paris/1", label="Paris")
+```
+
 
 ### Types of Types
 
@@ -66,11 +72,16 @@ Use cases for this pattern include:
 
 __Example:__
 
-The physical thing is classified as being a Painting, and the concept "Painting" is for classifying the type of object (as opposed to any other sort of classification).
+The object is classified as being a Painting, and the concept "Painting" is for classifying the type of object (as opposed to any other sort of classification).
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
+top = vocab.Painting(ident="spring/3", label="Jeanne (Spring) by Manet", art=1)
 ```
+
+
+
+```crom
+
 
 
 ## Names and Identifiers for a Resource
