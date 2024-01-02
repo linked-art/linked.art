@@ -3,4 +3,4 @@
 /api/ /api/1.0/
 /api/index.html /api/1.0/index.html
 /example/:directory/:term /example/:directory/:term.json
-/questionnaire/ /community/projects/linkedartii/questionnaire/
+/example/:directory/:instance/:term /example/:directory/:instance/:term.json
