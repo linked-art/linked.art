@@ -30,7 +30,6 @@ The model can be treated as interlinking components that describe aspects of the
 
 * [Introduction](intro/) on how to read the documentation, and the examples used throughout
 * [Basic Patterns](base/) used throughout the model
-* [Common Patterns](common/) that are shared across the different types of entity
 * [Physical Objects](object/) 
 * [People and Organizations](actor/)
 * [Places](place/)

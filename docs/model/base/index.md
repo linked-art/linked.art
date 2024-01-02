@@ -1,12 +1,12 @@
 ---
-title: Baseline Patterns
+title: Basic Patterns
 up_href: "/model/"
 up_label: "Model Overview"
 ---
 
 [TOC]
  
-It is useful to have some common, basic patterns to follow when using a very open model and ontology. The following patterns have been agreed on as useful ways to think about our cultural data, through working with objects, entities and collections from across many different museums and organizations. They are foundational to all of Linked Art, and used extensively both to describe the core entities of interest (objects, works, people, places and so on) as well as within the descriptions (for example to give a label to a description, or a classification to a span of time). Further [common patterns](../common/) that are shared across the core entities are also documented separately.
+It is useful to have some common, basic patterns to follow when using a very open model and ontology. The following patterns have been agreed on as useful ways to think about our cultural data, through working with objects, entities and collections from across many different museums and organizations. They are foundational to all of Linked Art, and used extensively both to describe the core entities of interest (objects, works, people, places and so on) as well as within the descriptions (for example to give a label to a description, or a classification to a span of time).
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different entity types will include more information about how they are used in different circumstances.
 
@@ -18,6 +18,23 @@ There are a few core properties that every resource must have for it to be a use
 * `id` captures the URI that identifies the entity.  Every core entity must have exactly one URI.
 * `type` captures the class of the entity, or `rdf:type` in RDF. Every entity must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation. Classes determine which properties or relationships may be associated with the entity.
 * `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every entity should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
+
+The classes used for the core entities we describe are summarized as below, with links to the full documentation about them:
+
+| Class             | Documentation                | Description   |
+|-------------------|------------------------------|---------------|
+| `HumanMadeObject` | [Objects](../object/)        | Physical things you can touch, e.g. a painting |
+| `DigitalObject`   | [Digital](../digital/)       | Digital things that exist only in computers, e.g. a web page |
+| `Person`          | [Agents](../actor/)          | A human person, e.g. Rembrandt |
+| `Group`           | [Agents](../actor/)          | A group of people, capable of collective action, e.g. a museum department |
+| `Place`           | [Places](../place/)          | A place, typically somewhere on earth that could have coordinates, e.g. Paris |
+| `VisualItem`      | [Visual Work](../object/aboutness/) | Conceptual image/visual content shown by a physical or digital object, e.g. the image we know as "The Mona Lisa", as opposed to the physical painting |
+| `LinguisticObject`| [Documents](../document/)    | Textual content carried by a physical or digital object, e.g. the text of The Lord of the Rings |
+| `PropositionalObject`| [Exhibitions](../exhibition/) | An entirely abstract work that is neither linguistic nor visual, e.g. the notion of an exhibition or piece of performance art |
+| `Type`            | [Concepts](../concept/)      | A category, concept, or similar, e.g. centimeters or sculpting |
+| `Set`             | [Collection](../collection/) | A set or collection of some number of other entities, e.g. a museum collection |
+| `Activity`        | [Provenance](../provenance/), [Exhibitions](../exhibition/) | An activity carried out by people or groups, e.g. an exhibition or the transfer of ownership of an object between parties |
+
 
 __Example:__
 
@@ -127,6 +144,20 @@ top.identified_by = vocab.AccessionNumber(content="SK-C-5")
 top.identified_by = vocab.PrimaryName(content="The Night Watch")
 ```
 
+### Equivalent Data URIs
+
+Identifiers for the same entity within the web of linked data are treated differently from string identifiers such as accession numbers or ISBNs. In order to allow systems to follow the link and potentially process the information that they discover there, we use a new property `equivalent` to link out to other organizations' data about the same entity.  For example, Rembrandt has a description in the Getty's [ULAN](http://vocab.getty.edu/ulan/500011051) vocabulary, in [Wikidata](http://www.wikidata.org/entity/Q5598), in the Library of Congress [Name Authority File](http://id.loc.gov/authorities/names/n79142935), and in OCLC's [Virtual International Authority File](http://viaf.org/viaf/64013650), amongst many others. The URI given must identify the entity itself, rather than about page the entity. For example, in ULAN there is also the website version [http://vocab.getty.edu/page/ulan/500011051](http://vocab.getty.edu/page/ulan/500011051) which must not be used with equivalent.
+
+__Example:__
+
+The Night Watch has an external URI that also identifies the same physical object in [wikidata](https://www.wikidata.org/wiki/Q219831):
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/3", label="Night Watch by Rembrandt")
+top.equivalent = model.HumanMadeObject(ident="https://www.wikidata.org/entity/Q219831", label="Night Watch")
+```
+
+
 ## Statements about an Entity
 
 In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in a human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the entity, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
@@ -148,54 +179,10 @@ __Example:__
 Having only a textual description of the materials in English, the content `"Oil on Canvas"` is recorded as referring to the painting as a "materials" _(aat:300435429)_ statement:
 
 ```crom
-top = model.HumanMadeObject(ident="nightwatch/3", label="Night Watch by Rembrandt")
+top = model.HumanMadeObject(ident="nightwatch/4", label="Night Watch by Rembrandt")
 lo = vocab.MaterialStatement(content="Oil on Canvas")
 lo.language = vocab.instances['english']
 top.referred_to_by = lo
-```
-
-
-## Parts
-
-Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part_of`, from the part to the whole.
-
-Use cases for this pattern include:
-
- * Delineating physical components or aspects of an object, such as the frame being part of the painting, or the recto side being part of the page.
- * Separating a long period or event into smaller sections, such as battles within a war, or the activities of different people during the production of an object.
- * Separating geographical locations into smaller subdivisions, such as that the neighborhood is part of the city, which is in turn part of the state.
- * Partitioning a text into segments, such as that the paragraph is part of a chapter, which is in turn part of the entire book
-
-Note that these parts are separate records from the main entity, and the main entity does not refer to its parts. Instead the API defines a method to retrieve [all of the parts](/api/1.0/hal/#referring-records-links) of the main entity, or other incoming references.
-
-__Example:__
-
-The canvas support is part of the overall painting of Spring.
-
-```crom
-top = vocab.SupportPart(ident="spring/frame", label="Frame of Spring")
-top.referred_to_by = vocab.MaterialStatement(content="Canvas")
-top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Manet")
-```
-
-### Membership
-
-Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member_of` property, instead of the corresponding `part_of`.
-
-Use cases for the membership pattern include:
-
-* A curator is a member of the paintings department of the museum.
-* A painting is part of the collection of a the museum.
-* An identifier is part of the set of identifiers that collectively make up the accession numbers assigned to paintings by the museum.
-
-__Example:__
-
-Rembrandt was a member of the Guild of St Luke.
-
-```crom
-top = model.Person(ident="rembrandt/2", label="Rembrandt")
-grp = model.Group(ident="stluke", label="Guild of St Luke")
-top.member_of = grp
 ```
 
 ## Events and Activities
@@ -211,7 +198,19 @@ The key participants in those different types of events are:
 
 The general pattern is to create a construct internal to the record for the event (with the class `Event`) or activity (with the class `Activity` or a more specific class), and associate the participants with that construct. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the object is dependent on the type of event or activity, which are discussed in more detail in the specific sections.
 
-There are both subclasses of `Activity`, such as `Acquisition`, `Production` and `AttributeAssignment`, and classifications associated with them to be more specific, either as a `technique` like glassblowing _(aat:300053932)_, or via `classified_as` for more general terms like gift giving _(aat:aat:300404212)_ to clarify the sort of `Acquisition`.
+There are both subclasses, such as `Birth`, `Production` and `Creation`, and classifications associated with them to be more specific, such as glassblowing _(aat:300053932)_ to clarify the type or technique of the activity. There are three common categories of activity which are used across the different entity types: their beginning of existence, their end of existence, and core activities that they either performed (for people or groups) or were required for (for objects and works). The table below summaries the beginning and ending of existence classes per main entity class. Note that conceptual entities cannot have an end of existence, and Places have neither.
+
+| Class             | Beginning    | Ending        |
+|-------------------|--------------|---------------|
+| `HumanMadeObject` | `Production` | `Destruction` |
+| `DigitalObject`   | `Creation`   | `Erasure`     |
+| `LinguisticObject`| `Creation`   | None          |
+| `VisualItem`      | `Creation`   | None          |
+| `PropositionalObject`| `Creation`| None          |
+| `Type`            | `Creation`   | None          |
+| `Set`             | `Creation`   | None          |
+| `Person`          | `Birth`      | `Death`       |
+| `Group`           | `Formation`  | `Dissolution` |
 
 
 __Example:__
@@ -263,4 +262,75 @@ n = model.Name()
 n.content = "40 days in August and September, 1848"
 ts.identified_by = n
 top.timespan = ts 
+```
+
+
+## Parts
+
+Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part_of`, from the part to the whole.
+
+Use cases for this pattern include:
+
+ * Delineating physical components or aspects of an object, such as the frame being part of the painting, or the recto side being part of the page.
+ * Separating a long period or event into smaller sections, such as battles within a war, or the activities of different people during the production of an object.
+ * Separating geographical locations into smaller subdivisions, such as that the neighborhood is part of the city, which is in turn part of the state.
+ * Partitioning a text into segments, such as that the paragraph is part of a chapter, which is in turn part of the entire book
+
+Note that these parts are separate records from the main entity, and the main entity does not refer to its parts. Instead the API defines a method to retrieve [all of the parts](/api/1.0/hal/#referring-records-links) of the main entity, or other incoming references.
+
+__Example:__
+
+The canvas support is part of the overall painting of Spring.
+
+```crom
+top = vocab.SupportPart(ident="spring/frame", label="Frame of Spring")
+top.referred_to_by = vocab.MaterialStatement(content="Canvas")
+top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Manet")
+```
+
+### Membership
+
+Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member_of` property, instead of the corresponding `part_of`.
+
+Use cases for the membership pattern include:
+
+* A curator is a member of the paintings department of the museum.
+* A painting is part of the collection of a the museum.
+* An identifier is part of the set of identifiers that collectively make up the accession numbers assigned to paintings by the museum.
+
+__Example:__
+
+Rembrandt was a member of the Guild of St Luke.
+
+```crom
+top = model.Person(ident="rembrandt/2", label="Rembrandt")
+grp = model.Group(ident="stluke", label="Guild of St Luke")
+top.member_of = grp
+```
+
+### Partitioning of Internal Constructs
+
+It is sometimes necessary to partition an activity that is embedded within another record, such as the `Production` of an object or `Creation` of a work, in order to be more specific about individual roles or aspects. In this case, as there isn't another record to refer to with `part_of`, the parts are included within the record using `part`. This allows information to be associated with either the individual parts of the activity, or the whole activity.
+
+
+__Example:__
+
+A video (modeled as a Work that contains language, or a `LinguisticObject`) about Rembrandt's Night Watch was directed by Peter Greenaway and Produced by Femke Wolting.
+
+```crom
+top = model.LinguisticObject(ident="rembrandtjaccuse", label="Rembrandt's J'accuse")
+cre = model.Creation()
+top.created_by = cre
+ts = model.TimeSpan(label="2008")
+ts.begin_of_the_begin = "2008-01-01T00:00:00"
+ts.end_of_the_end = "2008-12-31T23:59:59"
+cre.timespan = ts
+pg = model.Creation()
+cre.part = pg
+pg.carried_out_by = model.Person(ident="greenaway", label="Peter Greenaway")
+pg.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300025654", label="Director")
+fw = model.Creation()
+cre.part = fw
+fw.carried_out_by = model.Person(ident="wolting", label="Femke Wolting")
+fw.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300197742", label="Producer")
 ```
