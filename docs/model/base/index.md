@@ -90,24 +90,25 @@ top.classified_as = vocab.instances['dutch']
 
 ### Names
 
-As the `_label` property is intended as internal documentation for the data, it is strongly recommended that every resource that should be rendered to an end user also have at least one specific name. The name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` resource.  The value of the name is given in the `content` property of the `Name`. 
+As the `_label` property is intended as internal documentation for the data, it is strongly recommended that every entity that should be rendered to an end user also have at least one specific name. The name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` construct.  The value of the name is given in the `content` property of the `Name`. 
 
-It is somewhat unintuitive to think of a name as identifying the resource it is associated with, as names are typically not unique.  However, as the name itself __is__ uniquely identified rather than just an anonymous string, they are no longer a shared label and instead the particular instance of a name is uniquely associated with the resource. With this formulation, the name instance does uniquely identify the resource.  
+It is somewhat unintuitive to think of a name as identifying the resource it is associated with, as names are typically not unique.  However, as the name has its own class (Name) and __could__ have an `id`, it is not just an anonymous string and thus no longer a shared label. Instead each name is the particular instance of a name which is uniquely associated with its entity. With this formulation, the name instance __does__ uniquely identify the entity.  
 
-If there is more than one name given, then there should be one that is `classified_as` the primary name for use. This is done by adding the Primary Name _(aat:300404670)_ term to it. There should be exactly one primary title given per language.
+If there is more than one name given, then there should be one that is `classified_as` the primary name for use. This is done by adding the Primary Name _(aat:300404670)_ term to it. There should be exactly one primary name given per language. Names are also part of human communication, and can have the Linguistic features of the model associated with them, such as having a particular language.
 
-Names are also part of human communication, and can have the Linguistic features of the model associated with them, such as having a particular language, or having translations.
 
 __Example:__
 
-The primary name for the painting is "Pasture and Sheep", which is in English.
+The primary name for "The Night Watch" is "The Night Watch" in English, and "De Nachtwacht" in Dutch:
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting: Pasture and Sheep")
-ttl = vocab.PrimaryName()
-ttl.content = "Pasture and Sheep"
+top = vocab.Painting(ident="nightwatch/1", label="Night Watch by Rembrandt")
+ttl = vocab.PrimaryName(content="The Night Watch")
 ttl.language = vocab.instances['english']
 top.identified_by = ttl
+ttl2 = vocab.PrimaryName(content="De Nachtwacht")
+ttl2.language = vocab.instances['dutch']
+top.identified_by = ttl2
 ```
 
 ### Identifiers
