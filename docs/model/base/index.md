@@ -6,25 +6,25 @@ up_label: "Model Overview"
 
 [TOC]
  
-It is useful to have some common baseline patterns to follow when using a very open ontology, like CIDOC-CRM.  From working with datasets from across many different museums, the following patterns have been agreed on as useful ways to think about our cultural data.
+It is useful to have some common, basic patterns to follow when using a very open model and ontology. The following patterns have been agreed on as useful ways to think about our cultural data, through working with objects, entities and collections from across many different museums and organizations. They are foundational to all of Linked Art, and used extensively both to describe the core entities of interest (objects, works, people, places and so on) as well as within the descriptions (for example to give a label to a description, or a classification to a span of time). Further [common patterns](../common/) that are shared across the core entities are also documented separately.
 
-These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different resource types will include more information about how they are used in different circumstances.
+These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different entity types will include more information about how they are used in different circumstances.
 
 ## Core Properties
 
-There are a few core properties that every resource should have for it to be a useful part of the world of Linked Open Data:
+There are a few core properties that every resource must have for it to be a useful part of the world of Linked Art and Linked Open Usable Data ([LOUD](../../loud/)):
 
-* `@context` is a reference to the context mapping which determines how to interpret the JSON as Linked Open Data. It is not a property of the entity being described, but of the document. It must be present.
-* `id` captures the URI that identifies the object.  Every resource must have exactly one id, and it must be an HTTP URI.
-* `type` captures the class of the object, or `rdf:type` in RDF. Every resource must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
-* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every resource should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
+* `@context` is a reference to the context mapping which determines how to interpret the JSON as LOUD. It is not a property of the entity being described, but of the document. It must be present.
+* `id` captures the URI that identifies the entity.  Every core entity must have exactly one URI.
+* `type` captures the class of the entity, or `rdf:type` in RDF. Every entity must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation.
+* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every entity should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
 
 __Example:__
 
 The simplest possible object has a URI, a class and a label.
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Example Object")
+top = model.HumanMadeObject(ident="spring/1", label="Jeanne (Spring) by Manet")
 ```
 
 ## Types and Classifications

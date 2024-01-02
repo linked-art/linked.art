@@ -27,6 +27,15 @@ The descriptions of the objects as examples are not intended to replace or compe
 The Linked Art community is grateful to the owning organizations for letting us use their beautiful objects and images.
 If the above objects do not cover the particular use case (for example the destruction of an object), then the documentation will link to a specific real world example in the appropriate section.
 
+## Basic Terminology
+
+We try to be consistent in our use of terminology in the description of the model, following these definitions:
+
+* Object: A physical thing such as a painting, sculpture or laptop.
+* Work: A conceptual thing, born of human creativity, that can be expressed in an Object. Works can be purely abstract (the "work" of an exhibition), based on language (the text of a book), or based on image (the visual content shown by a photograph). Future versions will investigate auditory works.
+* Concept: A purely conceptual categorization, which is not itself a work. 
+* Entity: Any of the above types.
+
 
 ## Reading the Examples
 
