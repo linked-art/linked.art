@@ -105,21 +105,10 @@ The JSON for an Abstract Work entry for the idea for an exhibition about Gainsbo
 
 
 ```crom
-top = vocab.ExhibitionIdea(ident="auto int-per-segment", label="Gainsborough by Hayes")
-top.identified_by = vocab.PrimaryName(content="Gainsborough: Paintings and Drawings")
-top.identified_by = vocab.IsbnIdentifier(content="0714816396")
+top = vocab.ExhibitionIdea(ident="auto int-per-segment", label="exhibition")
+top.identified_by = vocab.PrimaryName(content="exhibition")
 top.referred_to_by = vocab.Abstract(content="A thorough analysis of the artist's life and work")
-top.language = vocab.instances['english']
 top.about = model.Person(ident="http://vocab.getty.edu/ulan/500115200", label="Gainsborough, Thomas")
-pub = vocab.Publishing()
-pub.carried_out_by = model.Group(label="Phaidon")
-pub.took_place_at = model.Place(label="New York")
-ts = model.TimeSpan()
-ts._label = "1975"
-ts.begin_of_the_begin = "1975-01-01T00:00:00Z"
-ts.end_of_the_end = "1975-12-31T23:59:59Z"
-pub.timespan = ts
-top.used_for = pub
 cre = model.Creation()
 cre.carried_out_by = model.Person(label="Hayes, John")
 top.created_by = cre
