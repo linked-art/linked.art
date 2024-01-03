@@ -45,7 +45,8 @@ extra:
 plugins:
     - search
     - mermaid2:
-        version: '10.6.1'
+        javascript: "https://linked.art/media/vendor/mermaid.min.js"
+        #version: '10.6.1'
         arguments:
           theme: 'neutral'
           logLevel: 1
