@@ -8,22 +8,6 @@ The Linked Art Data Model is an application profile that can be used to describe
 
 The model is currently under very active development in the community and the documentation is shifting to keep up with the current decisions. While the basic patterns have been fleshed out thoroughly, as we investigate more use cases, the model should be expected to change to reflect these new discussions. The documentation is not always up to date with the discussions, and sometimes there are bugs in the rendering. Please bear with us while we do our best to ensure that the result is as considered, accurate and usable as possible.
 
-## Model Fundamentals
-
-Following the existing standards and best practices of the community, our starting point consists of:
-
-* [CIDOC-CRM](http://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
-    * We use a streamlined [profile](profile/) of CIDOC-CRM to ensure consistency and comprehension.
-    * We also use the RDF implementation of CIDOC-CRM, given our choice of web and linked data as an integration platform.
-* The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity for domain-specific terminology
-    * Core terminology is part of the application profile documentation directly, when interoperability between systems relies on the selection.
-    * Other best practices are discussed in the [vocabularies best practice](/community/best-practices/vocabularies/) section.
-* The concrete expression of the profile and access to data is fully covered in the [API](/api/) documentation.
-    * The core serialization format is [JSON-LD 1.1](https://w3.org/TR/json-ld11)
-    * The access mechanism is designed to be as simple as possible to publish and consume, following basic REST and web patterns.
-
-These are then expanded on in order to fulfill shared use cases and common requirements, as they become known.
-
 ## Model Components
 
 The model can be treated as interlinking components that describe aspects of the events of interest. 
@@ -45,6 +29,19 @@ The model can be treated as interlinking components that describe aspects of the
 An index of all of the classes, properties and identities used:
 
 * [Index of Examples](example_index)
+
+
+## Model Background
+
+Following the existing standards and best practices of the community, our starting point consists of the following background standards:
+
+* [CIDOC-CRM](http://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
+    * We use a streamlined [subset](profile/) of CIDOC-CRM 7.1.1 to ensure consistency and comprehension.
+* The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity for domain-specific terminology
+    * Core terminology is part of the application profile documentation directly, when interoperability between systems relies on the selection. Other best practices are discussed in the [vocabularies best practice](/community/best-practices/vocabularies/) section.
+* The concrete expression of the profile and access to data is fully covered in the [API](/api/) documentation.
+    * The core serialization format is [JSON-LD 1.1](https://w3.org/TR/json-ld11)
+
 
 ## Scope and Process
 
