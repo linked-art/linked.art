@@ -21,6 +21,7 @@ There are a few core properties that every resource must have for it to be a use
 
 The classes used for the core entities we describe are summarized as below, with links to the full documentation about them:
 
+>
 | Class             | Documentation                | Description   |
 |-------------------|------------------------------|---------------|
 | `HumanMadeObject` | [Objects](../object/)        | Physical things you can touch, e.g. a painting |

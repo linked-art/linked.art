@@ -44,9 +44,8 @@ extra:
 
 plugins:
     - search
-#    - macros
     - mermaid2:
-        version: '8.11.4'
+        version: '10.6.1'
         arguments:
           theme: 'neutral'
           logLevel: 1
