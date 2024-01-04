@@ -79,9 +79,9 @@ prod.part = act2
 Other objects can play critical roles in the production of artwork, such as copying or being inspired by another artwork, or the use of the same source to create an artwork, either mechanically or manually, such as the negative used for printing a photograph.
 
 
-### Inspiration or Copies
+### Inspirations, Studies or Copies
 
-Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. 
+Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. This includes studies done for the final version of the work.
 
 __Example:__
 
@@ -102,6 +102,8 @@ Many objects are created from a source, such as a photograph being printed from 
 
 Note that all of the art objects created from the same source will show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects show, allowing us to group the objects together. For more information about the work, see the section on [aboutness](../aboutness/).
 
+Equipment or tools such as a particular camera or palette would also be modeled with the same property `used_specific_object`, however would not (of course) show the same visual item as the main work.
+
 __Example:__
 
 Copies of a photograph, taken by Alfred Stieglitz of Georgia O'Keeffe, are printed from the same negative at different times and now owned by different organizations: [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/198690), [National Gallery of Art](https://www.nga.gov/collection/art-object-page.60057.html), and the [Georgia O'Keeffe Museum](https://collections.okeeffemuseum.org/object/6627/)
@@ -112,11 +114,10 @@ top = vocab.Photograph(ident="okeeffe-gok/1", label = "GOK 1918, GOKM")
 top.identified_by = vocab.AccessionNumber(content="2014.3.78")
 prod = model.Production(label = "Printing of Photograph")
 top.produced_by = prod
-negative = vocab.Negative(ident="okeeffe-negative", label = "Negative of GOK 1918")
+negative = model.HumanMadeObject(ident="okeeffe-negative", label = "Negative of GOK 1918")
 prod.used_specific_object = negative
 vi = model.VisualItem(ident="okeeffe", label="Visual Content of GOK 1918")
 top.shows = vi
-negative.shows = vi
 ```
 
 ```crom
@@ -124,20 +125,27 @@ top = vocab.Photograph(ident="okeeffe-yuag/1", label = "GOK 1918, YUAG")
 top.identified_by = vocab.AccessionNumber(content="2016.101.242")
 prod = model.Production(label = "Printing of Photograph")
 top.produced_by = prod
-negative = vocab.Negative(ident="okeeffe-negative", label = "Negative of GOK 1918")
+negative = model.HumanMadeObject(ident="okeeffe-negative", label = "Negative of GOK 1918")
 prod.used_specific_object = negative
 vi = model.VisualItem(ident="okeeffe", label="Visual Content of GOK 1918")
 top.shows = vi
-negative.shows = vi
 ```
 
+__Example:__
 
+A [print](https://collections.britishart.yale.edu/catalog/tms:6141) at the Yale Center for British Art, Chaucer's Canterbury Pilgrims, made from a specific [copper plate](https://artgallery.yale.edu/collections/objects/11787) held at the Yale University Art Gallery.
 
-### Equipment or Objects Used during Production
+```crom
+top = vocab.Print(ident="ccp", label="Chaucer's Canterbury Pilgrims")
+prod = model.Production(label="Printing from Plate")
+top.produced_by = prod
+prod.used_specific_object = model.HumanMadeObject(ident="ccp-plate", label="Plate for CCP")
+```
 
-
-
-
+```crom
+top = model.HumanMadeObject(ident="ccp-plate", label="Plate for CCP")
+top.made_of = vocab.instances['copper']
+```
 
 
 ## Attributions

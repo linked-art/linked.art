@@ -284,7 +284,7 @@ __Example:__
 The canvas support is part of the overall painting of Spring.
 
 ```crom
-top = vocab.SupportPart(ident="spring/frame", label="Frame of Spring")
+top = vocab.SupportPart(ident="spring/support", label="Support of Spring")
 top.referred_to_by = vocab.MaterialStatement(content="Canvas")
 top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Manet")
 ```
