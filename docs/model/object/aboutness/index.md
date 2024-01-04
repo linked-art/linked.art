@@ -12,17 +12,16 @@ The features described in this section are information _about_ the object, and a
 
 ## Description
 
-The main description of the object is provided in the same manner as other such texts; as the `content` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300411780)_.  The description can include any content that describes the object, and is useful primarily for display to a human user.
+The main description of the object is provided in the same manner as other such texts; as the `content` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300411780)_.  The description can include any content that describes the object, and is useful primarily for display to a human user. Note that the description of artworks are often about the image shown, and less about the physicality of the object itself, however it is typically impossible to distinguish between them in current collection management systems. The image is described by a `VisualItem`, as explained below.
 
 __Example:__
 
-A painting the has the description "The Example Painting is a great example of exampleness".
+Spring by Manet has a description, explaining the object and its image.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-desc = vocab.Description()
-desc.content = "The Example Painting is a great example of exampleness."
-top.referred_to_by = desc
+top = model.HumanMadeObject(ident="spring/5", label="Jeanne (Spring) by Manet")
+top.referred_to_by = vocab.Description(content="A chic young woman in a day dress with floral accents holds a parasol against a background of exuberant foliage.")
+top.shows = model.VisualItem(ident="spring", label="Visual Content of Spring")
 ```
 
 ## Physical Object and Visual Work
@@ -41,17 +40,12 @@ This is modeled using the `represents` property on the `VisualItem`, which refer
  
 __Example:__
 
-A self portrait is both produced by the artist and has visual content that represents the artist.
+The image of Manet's Spring represents or depicts Jeanne Demarsy, a French actress.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Self Portrait", art=1)
-who = model.Actor(label="Artist")
-vi = model.VisualItem()
-top.shows = vi
+top = model.VisualItem(ident="spring/1", label="Visual Content of Spring")
+who = model.Person(ident="jeanne", label="Jeanne Demarsy")
 vi.represents = who 
-prd = model.Production()
-prd.carried_out_by = who
-top.produced_by = prd
 ```
 
 ### Subject
@@ -62,15 +56,12 @@ The model for subject is that the `VisualObject` is `about` the subject, which i
 
 __Example:__
 
-A visual content of a portrait of Lord Nelson has the conceptual subject of "war". It would also represent Lord Nelson, following the example above, however this is not included in the example.
+Manet's Spring is about the season spring.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Portrait of Lord Nelson", art=1)
-vi = model.VisualItem()
-top.shows = vi
-vi.about = vocab.instances['war']
+top = model.VisualItem(ident="spring/2", label="Visual Content of Spring")
+top.about = model.Type(ident="https://vocab.getty.edu/aat/300133097", label="Spring (season)")
 ```
-
 
 ### Style Classification
 
@@ -78,30 +69,25 @@ Styles are a categorization of the aesthetic qualities of the work being describ
 
 The distinction that all styles are aesthetic is somewhat controversial, but simplifies the model significantly at very little cost. A clear example is a perfect imitation of a Navajo dream-catcher made by a factory in China cannot be said to be culturally Navajo as an object, but the image of the object can be said to have an aesthetic that is related to the Navajo culture.
 
-The style is associated with the object using the `classified_as` property, and must be a reference to an appropriate vocabulary. It is associated with the `VisualItem` that is shown by the object, to reinforce that it is the way the object looks that determines the style, not the physicality of its production.  The `style` property could be thought of as _how_ the content is presented.  In order to distinguish styles from other classifications, the style itself has a `classified_as` of _aat:300015646_.
+The style is associated with the object using the `classified_as` property, and must be a reference to an appropriate vocabulary. It is associated with the `VisualItem` that is shown by the object, to reinforce that it is the way the object looks that determines the style, not the physicality of its production.  The style could be thought of as _how_ the content is presented.  In order to distinguish styles from other classifications, the style itself has a `classified_as` of _aat:300015646_.
 
 __Example:__
 
-An impressionist painting is classified as impressionism, which is classified as being a type of style.
+Manet's Spring is in an impressionist style.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Impressionist Painting", art=1)
-vi = model.VisualItem()
-top.shows = vi
-vi.classified_as = vocab.instances['style impressionism']
+top = model.VisualItem(ident="spring/3", label="Visual Content of Spring")
+top.classified_as = vocab.instances['style impressionism']
 ```
 
 ### Other Classifications
 
-Other classifications can also be assigned to the object's content. If it is possible to say that "the artistic content of this object is an X", then X can be included in the set of classifications using the `classified_as` property on the `VisualItem`.  This could include classifications such as "Landscape" or "Allusion", compared to classifications that are derived from the physical nature of the object such as a "Painting", "Photograph" or "Sculpture" which are associated with the object.  
+Other classifications can also be assigned to the object's content. If it is possible to say that "the artistic content of this object is an X", then X can be included in the set of classifications using the `classified_as` property on the `VisualItem`.  This could include classifications such as "Landscape", "Genre", "Portrait" or "Allusion", compared to classifications that are derived from the physical nature of the object such as a "Painting", "Photograph" or "Sculpture" which are associated with the object.  
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Allusion Painting", art=1)
-vi = model.VisualItem()
-top.shows = vi
-vi.classified_as = vocab.instances['allusion']
+top = model.VisualItem(ident="spring/4", label="Visual Content of Spring")
+top.classified_as = vocab.instances['content portrait']
 ```
-
 
 ## Textual and Visual Works
 
@@ -111,34 +97,48 @@ While the primary use case for Linked Art is visual works, there is also a need 
 
 The description of textual works are covered in detail in the [Document](../../document/) section of the model. 
 
-```crom
-top = vocab.Book(ident="auto int-per-segment", label="Example Physical Book")
-top.carries = vocab.MonographText(ident="auto int-per-segment", label="Text of the book")
-```
-
 
 ### Single Object, Multiple Works
 
 A single object might carry both significant textual content and separate visual works. For example an exhibition catalog carries its text and, via its illustrations, the visual content of the objects that were exhibited. In this case we would simply list each of the works.
 
+__Example:__
+
+The [exhibition catalog](https://lccn.loc.gov/80013795) for the "Post-Impressionism: Cross-Currents in European and American Painting 1880-1906", at which Manet's "Spring" (from the Getty) and Cezanne's "Houses in Provence" (from the [National Gallery](https://www.nga.gov/collection/art-object-page.54129.html)) were exhibited, shows both works and carries its own text.
+
+
 ```crom
-top = vocab.ExhibitionCatalog(ident="auto int-per-segment", label="Exhibition Catalog Copy")
-top.carries = vocab.ExhibitionCatalogText(ident="auto int-per-segment", label="Exhibition Catalog Text")
-top.shows = model.VisualItem(label="Work of Painting 1")
-top.shows = model.VisualItem(label="Work of Painting 2")
+top = vocab.ExhibitionCatalog(ident="catalog", label="Copy of Exhibition Catalog")
+top.carries = vocab.ExhibitionCatalogText(ident="catalogtext", label="Exhibition Catalog Text")
+top.shows = model.VisualItem(ident="spring", label="Visual Content of Spring")
+top.shows = model.VisualItem(ident="houses", label="Visual Content of Houses in Provence")
 ```
+
 
 ### Single Object, Single Textual and Visual Work
 
-However, in the poster case, there is only a single work that has both important visual and textual attributes. In this case we do not want to give the impression that they are separate and instead use the partitioning pattern.
+However, in the poster or magazine cover case, there is only a single work that has both important visual and textual attributes. In this case we do not want to give the impression that they are separate and instead use the partitioning pattern.
+
+__Example:__
+
+"Harper's January" at the [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/11254) is a print by Edward Penfield that has both significant text and visual content.
 
 ```crom
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Poster Item")
-top.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300027221", label="Poster")
-vi = model.VisualItem(label="Image shown by Poster")
+top = vocab.Print(ident="harpers", label="Poster Item")
+vi = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
 top.shows = vi
-lo = model.LinguisticObject(label="Text which is part of the Image")
-vi.part = lo
+```
+
+```crom
+top = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
+top.represents = model.Type(ident="http://vocab.getty.edu/aat/300025943", label="Woman")
+top.referred_to_by = vocab.Description(content="The text and image are primarily red and black")
+```
+
+```crom
+top = model.LinguisticObject(ident="harpers", label="Textual component of Harpers")
+top.content = "Harper's. January contains Roden's corner. A Novel by Henry Seton Merriman [...]"
+top.part_of = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
 ```
 
 

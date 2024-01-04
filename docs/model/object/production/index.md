@@ -58,19 +58,20 @@ For consistency, it is recommended that this pattern also be used for production
 
 __Example:__
 
-A sculpture that is then painted by another artist, would be produced by the overall activity, with two parts, one for each artist's activities.
+A [painted textile called "RÜN"](https://artgallery.yale.edu/collections/objects/153900), where the linen was hand-woven by Sarah Parke and then painted by Mark Barrow.
+
 
 ```crom
-top = vocab.Sculpture(ident="auto int-per-segment", label = "Painted Sculpture", art=1)
+top = vocab.Painting(ident="run", label = "RUN")
 prod = model.Production()
 top.produced_by = prod
 act1 = model.Production()
-act1.technique = vocab.instances['sculpting']
-act1.carried_out_by = model.Person(label="Sculptor")
+act1.technique = vocab.instances['painting']
+act1.carried_out_by = model.Person(ident="barrow", label="Mark Barrow")
 prod.part = act1
 act2 = model.Production()
-act2.carried_out_by = model.Person(label="Painter")
-act2.technique = vocab.instances['painting']
+act2.technique = model.Type(ident="http://vocab.getty.edu/aat/300053643", label="hand weaving")
+act2.carried_out_by = model.Person(ident="parke", label="Sarah Parke")
 prod.part = act2
 ```
 
