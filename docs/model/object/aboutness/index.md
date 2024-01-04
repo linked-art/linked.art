@@ -45,7 +45,7 @@ The image of Manet's Spring represents or depicts Jeanne Demarsy, a French actre
 ```crom
 top = model.VisualItem(ident="spring/1", label="Visual Content of Spring")
 who = model.Person(ident="jeanne", label="Jeanne Demarsy")
-vi.represents = who 
+top.represents = who 
 ```
 
 ### Subject
