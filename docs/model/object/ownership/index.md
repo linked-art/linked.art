@@ -18,23 +18,27 @@ To make the current owner easier to find from the object's description, the owne
 
 __Example:__
 
-The current owner of the painting is a Museum.
+The current owner of Spring is the Getty.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
-top.current_owner = vocab.MuseumOrg(label="Museum")
+top = model.HumanMadeObject(ident="spring/6", label="Jeanne (Spring) by Manet")
+top.current_owner = model.Group(ident="https://vocab.getty.edu/ulan/500115988", label="Getty Museum")
 ```
 
 ## Custody
 
 Similarly, the current custodian of the object should be referenced with the `transferred_custody_to` in the most recent `TransferOfCustody`, in the same way as the current owner is referenced from the most recent `Acquisition`. There is an equivalent property to `current_owner` for custody, which is `current_custodian`.  This is described in more detail in the section on [custody](/model/provenance/custody).
 
-Note that objects are owned by legal entities, such as people or organizations. If there is a department or person that is not the owner but is responsible for the object, then that actor is the `current_custodian`.
+If there is a department or person that is not the owner but is responsible for the object, then that actor is the `current_custodian`. Similarly, loans between organizations (either temporary or permanent) transfer custody rather than ownership.
+
+__Example:__
+
+The Night Watch is owned by the City of Amsterdam, and on permanent loan to the Rijksmuseum.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
-top.current_owner = vocab.MuseumOrg(label="Museum")
-top.current_custodian = vocab.Department(label="Paintings Department")
+top = vocab.Painting(ident="nightwatch/1",label="Painting", art=1)
+top.current_owner = model.Group(ident="amsterdam_govt", label="City of Amsterdam Governing Body")
+top.current_custodian = model.Group(ident="http://vocab.getty.edu/ulan/500246547", label="Rijksmuseum")
 ```
 
 ## Location
@@ -44,10 +48,9 @@ The current location of the object is given using the `current_location` propert
 
 __Example:__
 
-The current location of the painting is Gallery W6.
+The current location of the Spring is Gallery W204 (which is part of the West building, which is part of the Getty Center)
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
-where = model.Place(label="Gallery W6")
-top.current_location = where
+top = model.HumanMadeObject(ident="spring/7", label="Jeanne (Spring) by Manet")
+top.current_location = model.Place(ident="W204", label="Gallery W204")
 ```
