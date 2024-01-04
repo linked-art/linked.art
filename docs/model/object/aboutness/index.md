@@ -141,22 +141,12 @@ top.content = "Harper's. January contains Roden's corner. A Novel by Henry Seton
 top.part_of = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
 ```
 
-
 ## Related Objects
 
 A list of related objects is often known for any given object, however the reason for the relation is not recorded. These objects might be physically similar, they may have been created by the same artist, they might have been exhibited together or they might just be both highlights of the current institution and share no observable features. In this circumstance, the best that can be done is to record that there is some relationship without any specificity as to the details.  If there are more details known about the relationship then more specific patterns should be used instead.
 
-The model uses an `AttributeAssignment` activity to relate the two objects together. This allows additional information to be associated with the activity, such as a label, name or classification if known.  The relationship has a direction, slightly paradoxically from the entity which has an `attributed_by` property to the `AttributeAssignment`, to the entity which is `assigned`. The property can be given using `assigned_property`, with the value being the name of the property.
+The model uses an `AttributeAssignment` activity to relate the two objects together. This allows additional information to be associated with the activity, such as a label, name or classification if known. The pattern is fully documented in the [assertion](../../assertion/) section of the documentation.
 
 
-__Example:__
 
-Example Painting is related, in some unknown way, to Yet Another Example Painting. Perhaps the relationship is that they are both examples.
 
-```crom
-top = vocab.Painting(ident="auto int-per-segment", art=1, label="Example Painting")
-p2 = vocab.Painting(ident="auto int-per-segment", art=1, label="Yet Another Example Painting")
-aa = model.AttributeAssignment()
-aa.assigned = p2
-top.attributed_by = aa
-```
