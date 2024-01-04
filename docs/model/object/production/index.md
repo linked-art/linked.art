@@ -100,22 +100,38 @@ prod.carried_out_by = model.Person(ident="keller", label="Deane Keller")
 
 Many objects are created from a source, such as a photograph being printed from a negative, a print created from a woodcut, or a sculpture made from a cast.  The use of the particular source can be captured as part of the description of the `Production` of the object using the `used_specific_object` property.
 
-All of the art objects created from the same source show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects, including the source object, show. This allows us to group the objects together based on their provenance.
+Note that all of the art objects created from the same source will show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects show, allowing us to group the objects together. For more information about the work, see the section on [aboutness](../aboutness/).
 
 __Example:__
 
-A photograph is printed using a Negative. Both the positive and the negative show the same visual content, as would any other prints of the photograph.
+Copies of a photograph, taken by Alfred Stieglitz of Georgia O'Keeffe, are printed from the same negative at different times and now owned by different organizations: [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/198690), [National Gallery of Art](https://www.nga.gov/collection/art-object-page.60057.html), and the [Georgia O'Keeffe Museum](https://collections.okeeffemuseum.org/object/6627/)
+
 
 ```crom
-top = vocab.Photograph(ident="auto int-per-segment",label = "Photograph")
+top = vocab.Photograph(ident="okeeffe-gok/1", label = "GOK 1918, GOKM")
+top.identified_by = vocab.AccessionNumber(content="2014.3.78")
 prod = model.Production(label = "Printing of Photograph")
 top.produced_by = prod
-negative = vocab.Negative(label = "Negative of Photograph")
+negative = vocab.Negative(ident="okeeffe-negative", label = "Negative of GOK 1918")
 prod.used_specific_object = negative
-vi = model.VisualItem(label="Visual Content of Photographs and Negative")
+vi = model.VisualItem(ident="okeeffe", label="Visual Content of GOK 1918")
 top.shows = vi
 negative.shows = vi
 ```
+
+```crom
+top = vocab.Photograph(ident="okeeffe-yuag/1", label = "GOK 1918, YUAG")
+top.identified_by = vocab.AccessionNumber(content="2016.101.242")
+prod = model.Production(label = "Printing of Photograph")
+top.produced_by = prod
+negative = vocab.Negative(ident="okeeffe-negative", label = "Negative of GOK 1918")
+prod.used_specific_object = negative
+vi = model.VisualItem(ident="okeeffe", label="Visual Content of GOK 1918")
+top.shows = vi
+negative.shows = vi
+```
+
+
 
 ### Equipment or Objects Used during Production
 
