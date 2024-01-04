@@ -85,14 +85,15 @@ Some artworks are copies of, or clearly directly inspired by, others.  This rela
 
 __Example:__
 
+In 1964, Deane Keller created [a copy](https://artgallery.yale.edu/collections/objects/54339) of Daniel Huntington's [portrait of James Dwight Dana](https://artgallery.yale.edu/collections/objects/52687), from 1858. 
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Copy of Painting of a Fish", art=1)
+top = vocab.Painting(ident="kellerdana/1", label="Copy of Huntington Portrait")
 prod = model.Production()
 top.produced_by = prod
-copied = vocab.Painting(label="Painting of a Fish", art=1)
+copied = model.HumanMadeObject(ident="huntingtondana", label="Huntington Portrait of Dana")
 prod.influenced_by = copied
-prod.carried_out_by = model.Person(label="Copyist")
+prod.carried_out_by = model.Person(ident="keller", label="Deane Keller")
 ```
 
 ### Reproduction from an Identifiable Source
@@ -105,7 +106,6 @@ __Example:__
 
 A photograph is printed using a Negative. Both the positive and the negative show the same visual content, as would any other prints of the photograph.
 
-
 ```crom
 top = vocab.Photograph(ident="auto int-per-segment",label = "Photograph")
 prod = model.Production(label = "Printing of Photograph")
@@ -117,6 +117,13 @@ top.shows = vi
 negative.shows = vi
 ```
 
+### Equipment or Objects Used during Production
+
+
+
+
+
+
 ## Attributions
 
 ### Attribution of a Group
@@ -127,83 +134,39 @@ We can use the `influenced_by` property on the `Formation` (the creation) of the
 
 __Example:__
 
-A painting is from the workshop of an artist named Franckz.
+The "Bust of a Man" object described above was created by the Studio of Francis Harwood, a Group. The example below is the record for the Group.
  
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label = "Painting from the workshop of Franckz", art=1)
-prod = model.Production()
-top.produced_by = prod
-grp = model.Group(label = "Workshop of Franckz")
-prod.carried_out_by = grp
-f = model.Formation()
-grp.formed_by = f
-f.influenced_by = model.Person(label = "Franckz")
+top = vocab.Studio(ident="harwoodstudio", label="Studio of Francis Harwood")
+fm = model.Formation()
+top.formed_by = fm
+fm.influenced_by = model.Person(ident="http://vocab.getty.edu/ulan/500015886", label="Francis Harwood")
 ```
 
 ### Uncertain or Changing Attributions
 
-A piece of information associated with historical artworks that can change as research and understanding improves is the identity of the artist that produced it. The actor that is referenced in `carried_out_by` is the current opinion, but previous attributions can still be recorded. 
+A piece of information associated with historical artworks that can change as research and understanding improves is the identity of the artist that produced it. The actor that is referenced in `carried_out_by` is the current opinion, but previous attributions can still be recorded. The pattern used for this is described in more detail in the [assertions](/model/assertion/) section of the documentation.
 
-In order to clearly separate the previous thinking from current, the model explicitly includes the act of assigning the previous artist as an `AttributeAssignment`. The assignment activity assigns the previous artist's role as part of the main Production, but has an "obsolete" classification to indicate that it is no longer believed to be correct. A "possibly" classification would indicate that the attribution of the artist is uncertain.
-
-The Attribute Assignment pattern is described in more detail in the [assertions](/model/assertion/) section of the documentation.
-
-__Example:__
-
-It was previously thought that J. Artist produced the painting, by Paintings Curator in 1923, but that is no longer held to be correct.
-
-```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
-prod = model.Production()
-top.produced_by = prod
-aa = vocab.ObsoleteAssignment()
-who = model.Person(label="J. Artist")
-prod2 = model.Production()
-prod2.carried_out_by = who
-prod.assigned_by = aa
-aa.assigned = prod2
-aa.assigned_property = "part_of"
-aa.carried_out_by = model.Person(label = "Paintings Curator")
-ts = model.TimeSpan()
-ts.begin_of_the_begin = "1923-07-20"
-ts.end_of_the_end = "1923-07-21"
-aa.timespan = ts
-```
 
 ## Production by Removal
 
 It is also possible for an object to come into documentary existence when it is removed from a larger object.  The production of the part is simply part of the production of the whole, but until it is removed, it does not need a separate identity or existence.
 
-This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created de novo in the present.
+This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created _de novo_ in the present.
 
-A second scenario when this occurs is unfortunately common.  If an object, such as a medieval manuscript, can be sold for more by splitting it up into parts and selling each part individually, then unscrupulous sellers will do just that. Rather than sell an innocuous book of hours to a single buyer, instead each illumination can be sold individually and then the remaining text-bearing pages either dumped or sold over time at a greatly reduced price.  This dispersal of manuscripts still occurs today.
+A second scenario when this occurs is unfortunately common.  If an object, such as a medieval manuscript, can be sold for a higher profit by splitting it up into parts and selling each part individually, then unscrupulous sellers will do just that. Rather than sell an innocuous book of hours to a single buyer, instead each illumination can be sold individually and then the remaining text-bearing pages either dumped or sold over time at a greatly reduced price.  This dispersal of manuscripts still occurs today.
 
+In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, other than it has a `diminished` property that refers to the whole object from which the part was removed.  It is not normally useful to have a separate `Production` for the part, if the information about the source object it was removed from is known.
 
-In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, other than it has a `diminished` property that refers to the whole object from which the part was removed.  The removed object can have a `Production` event, but it should be a part of the `Production` of the whole.  As it is unlikely that there is any new information about the removed part, this is not normally useful.
-
-
-__Example:__
-
-A conservator removes a paint sample from a painting.
-
-```crom
-top = model.HumanMadeObject(ident="auto int-per-segment",label="Paint sample")
-rm = model.PartRemoval()
-rm.carried_out_by = model.Person(label="Conservator")
-whole = vocab.Painting(label="Painting")
-rm.diminished = whole
-top.removed_by = rm
-```
 
 __Example:__
 
-A seller removes a page of a manuscript for individual sale.
+The collection item is a page from a gradual (manuscript) by the Master of the Libro dei Notai. [Source](https://artgallery.yale.edu/collections/objects/51500)
 
 ```crom
-top = vocab.Page(ident="auto int-per-segment",label="Page of Manuscript")
+top = vocab.Page(ident="gradualpage/1", label="Page from a Gradual")
 rm = model.PartRemoval()
-rm.carried_out_by = model.Person(label="Unscrupulous Seller")
-whole = vocab.Manuscript(label="Manuscript")
+whole = vocab.Manuscript(label="Gradual")
 rm.diminished = whole
 top.removed_by = rm
 ```
