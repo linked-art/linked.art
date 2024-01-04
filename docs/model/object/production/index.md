@@ -12,22 +12,22 @@ This section covers the beginning and ending of objects' existence, along with t
 
 ## Base Production Activity
 
-The first activity in an object's lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors. This follows the base pattern for [activities](/model/base/#events-and-activities).
+The first activity in an object's lifecycle is its creation, or `Production`.  The relationship from the object to the activity is `produced_by`, and the `Production` activity itself follows the general [base activity model](/model/base/#events-and-activities) with the description of time, location and agents.
 
 __Example:__
 
-A painting is created by an artist, in their studio, in March 1780.
+Similar to the Production example in the basic patterns, "The Night Watch" was created by Rembrandt in Amsterdam in 1642.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
+top = model.HumanMadeObject(ident="nightwatch/5", label="Night Watch by Rembrandt")
 prod = model.Production()
-prod.carried_out_by = model.Person(label="Artist")
-prod.took_place_at = model.Place(label="Artist's Studio")
-when = model.TimeSpan()
-when.begin_of_the_begin = "1780-03-05T00:00:00Z"
-when.end_of_the_end = "1780-03-06T00:00:00Z"
-prod.timespan = when
 top.produced_by = prod
+prod.carried_out_by = model.Person(ident="rembrandt", label="Rembrandt")
+when = model.TimeSpan(label="1642")
+when.begin_of_the_begin = "1642-01-01T00:00:00"
+when.end_of_the_end = "1642-12-31T23:59:59"
+prod.timespan = when
+prod.took_place_at = model.Place(ident="amsterdam", label="Amsterdam")
 ```
 
 ## Techniques and Classifications
@@ -36,33 +36,17 @@ We distinguish between techniques used to create the artwork, and other classifi
 
 ### Techniques
 
-If there is a particular technique known to have been used in the creation of the object, this can be expressed using the `technique` property, referring to a controlled vocabulary term for the technique. This should be used to capture specific techniques or methods, and the base `classified_as` property used for more general classifications of the activity.
-
+If there is a particular technique known to have been used in the creation of the object, this can be expressed using the `technique` property, referring to a controlled vocabulary term for the technique. This should be used to capture specific techniques or methods, and the base `classified_as` property used for more general classifications of the activity.  More general classifications are more common on individual roles, discussed below.
+ 
 __Example:__
 
-A glass sculpture is created using the glassblowing technique, which is identified by _aat:300053932_.
+The sculpture "Bust of a Man" was created by the Studio of Francis Hardwood using the sculpting technique.
 
 ```crom
-top = vocab.Sculpture(ident="auto int-per-segment",label="Glass Sculpture", art=1)
+top = vocab.Sculpture(ident="bust/1", label="Bust of a Man")
 prod = model.Production()
-prod.carried_out_by = model.Person(label = "Glassblowing Artist")
-prod.technique = vocab.instances['glassblowing']
-top.produced_by = prod
-```
-
-### Classifications
-
-Classifications for production events are less common than techniques, but still possible.  These classifications must not be techniques, but instead some assertion about the activity generally. This could include whether the activity was a minor contribution to the overall work, or whether the activity was performed legally or not. 
-
-__Example:__
-
-Grafitti artwork is created using the "spraypainting" technique, and could also be considered "vandalism", but vandalism is not a technique.
-
-```crom
-top = model.HumanMadeObject(ident="auto int-per-segment",label="Graffiti", art=1)
-prod = model.Production(label="Production of Graffiti")
-prod.technique = vocab.instances['spraypainting']
-prod.classified_as = vocab.instances['vandalism']
+prod.carried_out_by = model.Group(ident="harwoodstudio", label="Studio of Francis Harwood")
+prod.technique = vocab.instances['sculpting']
 top.produced_by = prod
 ```
 
@@ -70,7 +54,7 @@ top.produced_by = prod
 
 If there are multiple artists collaborating on the same piece of artwork, then we follow the partitioning pattern of creating separate parts of the main `Production` activity. Each of these components captures the details of one particular artist's role in the production of the object. This allows us to assert different properties for each artist's contribution, including different times, techniques, locations or influences.
 
-For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. 
+For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. For compatibility with other systems this is, however, not required.
 
 __Example:__
 
@@ -232,18 +216,17 @@ The model uses a `Destruction` class that represents the going out of existence 
 
 __Example:__
 
-The Painting was destroyed in 1823.
+The painting "Le Peintre" by Picasso was destroyed (in a plane crash) on September 2nd, 1998 at about 10:30pm. [Source](https://en.wikipedia.org/wiki/Swissair_Flight_111)
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Example Destroyed Painting", art=1)
-dest = model.Destruction(label="Destruction of Painting")
+top = vocab.Painting(ident="lepeintre/1", label="Le Peintre by Picasso")
+dest = model.Destruction(label="Destruction of Le Peintre")
 top.destroyed_by = dest
 when = model.TimeSpan()
-when.begin_of_the_begin = "1823-03-01T00:00:00Z"
-when.end_of_the_end = "1823-03-31T00:00:00Z"
+when.begin_of_the_begin = "1998-09-02T22:20:00Z"
+when.end_of_the_end = "1998-09-02T022:40:00Z"
 dest.timespan = when
 ```
-
 
 ### Cause of Destruction
 
@@ -253,18 +236,17 @@ In order to distinguish between the destruction itself and its cause, we use the
 
 __Example:__
 
-The Painting was destroyed in 1823, due to being burnt by someone.
+Le Peintre was destroyed because of the plane crashing. (Which also would have caused the destruction of the plane, the death of the crew, passengers and many other consequences)
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Destroyed Painting", art=1)
-dest = model.Destruction(label="Destruction of Painting")
+top = vocab.Painting(ident="lepeintre/2", label="Le Peintre by Picasso")
+dest = model.Destruction(label="Destruction of Le Peintre")
 top.destroyed_by = dest
 when = model.TimeSpan()
-when.begin_of_the_begin = "1823-03-01T00:00:00Z"
-when.end_of_the_end = "1823-03-31T00:00:00Z"
+when.begin_of_the_begin = "1998-09-02T22:20:00Z"
+when.end_of_the_end = "1998-09-02T022:40:00Z"
 dest.timespan = when
-act = model.Activity(label="Burning of the Painting")
-act.carried_out_by = model.Person(label="Painting Burner")
+act = model.Event(ident="sr111crash", label="Crash of Swiss Air 111")
 dest.caused_by = act
 ```
 
