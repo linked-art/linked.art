@@ -238,20 +238,3 @@ act = model.Event(ident="sr111crash", label="Crash of Swiss Air 111")
 dest.caused_by = act
 ```
 
-
-## Other Specific Activities
-
-If there are other activities that are specific to the particular object and do not have any identity of their own beyond the object, then that activity can be described with a relationship from the object to the activity, rather than from the activity to the object. In these cases the description of the activity will end up embedded completely within the object's record, in the same way that the publication of a work is embedded within the work's record.  In the more general case, when the activity has its own identity (such as an auction or conservation work on the object) then the event will instead refer to the object and the object must not refer to the event. The relationship for this situation is `used_for` between the object and the activity.
-
-
-__Example:__
-
-A knife was created and used for a specific ritual, about which we know nothing else.
-
-```
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Ritual Knife")
-top.identified_by = vocab.PrimaryName(content="Ritual Knife")
-ritual = model.Activity()
-ritual.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300065284")
-top.used_for = ritual
-```
