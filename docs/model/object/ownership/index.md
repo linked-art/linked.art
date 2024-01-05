@@ -36,7 +36,7 @@ __Example:__
 The Night Watch is owned by the City of Amsterdam, and on permanent loan to the Rijksmuseum.
 
 ```crom
-top = vocab.Painting(ident="nightwatch/1",label="Painting", art=1)
+top = vocab.Painting(ident="nightwatch/14",label="Painting", art=1)
 top.current_owner = model.Group(ident="amsterdam_govt", label="City of Amsterdam Governing Body")
 top.current_custodian = model.Group(ident="http://vocab.getty.edu/ulan/500246547", label="Rijksmuseum")
 ```

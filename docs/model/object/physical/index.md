@@ -159,7 +159,7 @@ __Example:__
 The Night Watch is "oil on canvas".
 
 ```crom
-top = vocab.Painting(ident="nightwatch/12", label="Night Watch by Rembrandt")
+top = vocab.Painting(ident="nightwatch/13", label="Night Watch by Rembrandt")
 top.referred_to_by = vocab.MaterialStatement(content="Oil on Canvas")
 ```
 
