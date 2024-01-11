@@ -8,11 +8,11 @@ up_label: "Linked Art API 1.0 Ecosystem"
 
 ## Introduction
 
-The format described below is not new, and is used in a variety of places within the cultural heritage API ecosystem. It is based upon the Collections model from [Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/#collections) and is used in specifications such as the [IIIF Change Discovery API](https://iiif.io/api/discovery/1.0/), the [IIIF Content Search API](https://iiif.io/api/search/2.0/), the [W3C's Web Annotation Model](https://www.w3.org/TR/annotation-model/#collections), and beyond. It is a very straight forward paging model where the server rather than the client gets to define the page size.
+The format described below is not new, and is used in a variety of places within the cultural heritage API ecosystem. It is based upon the Collections model from [Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/#collections) and is used in specifications such as the [IIIF Change Discovery API](https://iiif.io/api/discovery/), the [IIIF Content Search API](https://iiif.io/api/search/), the [W3C's Web Annotation Model](https://www.w3.org/TR/annotation-model/#collections), and beyond. It is a very straight forward paging model where the server rather than the client gets to define the page size.
 
 This documentation will not go into great detail about the format and focus on the core functionality needed for implementation. If excruciating detail is desirable, then reading the above links will provide that experience.
 
-The format has two main responses: the overall Collection of items or results, which consists of one or more pages that enumerate the included items. The [HAL](../hal/) links from records will refer to the first page of the collection, rather than to the collection directly. The collection is then embedded within each page, meaning that it never has to be dereferenced separately. 
+The format has two main responses: the overall Collection of items or results, which consists of one or more pages that enumerate the included items. The [HAL](../hal/index.md) links from records will refer to the first page of the collection, rather than to the collection directly. The collection is then embedded within each page, meaning that it never has to be dereferenced separately. 
 
 
 ## Result Pages
