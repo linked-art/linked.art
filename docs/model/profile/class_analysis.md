@@ -130,7 +130,7 @@ _E30 Right_
 
 The definition of E30 Right in CIDOC-CRM doesn't fit any actual need that has been encountered to date. The rationale is below, but the summary is that E30 is conceptual and is not contextualized by space or time, however the legal status of objects changes all the time. This is covered in more, excruciating, detail in the note below.
 
-Given that the class is not useful as currently defined, the approach has been taken to attempt to fix that usage within the context of Linked Art, and then submit the necessary changes with evidence from the community back to the ontology maintenance agency for consideration of a revised model. This has been discussed within the SIG, and is thus expected rather than subversive.
+Given that the class is not useful as currently defined, the approach has been taken to attempt to fix that usage within the context of Linked Art, and then submit the necessary changes with evidence from the community back to the ontology maintenance agency for consideration of a revised model.
 
 !!! note "The Problem of Rights"
 
@@ -143,11 +143,4 @@ Given that the class is not useful as currently defined, the approach has been t
     Finally, E72 Legal Object is not the parent of Conceptual Object but instead of Symbolic Object. This means that Rights cannot be applied to ideas, yet patents can provide legal protection for those ideas. Thus even if all of the above were solved, Rights would still not cover the correct set of classes without multiple instantiation.
 
     In summary, CIDOC-CRM lacks the expressiveness to state what is required and the current definition of E30 Right is insufficiently clear for use as currently documented in the standard. If you're still not convinced, you can read [the email thread that starts here](http://lists.ics.forth.gr/pipermail/crm-sig/2017-August/003045.html) (if you dare).
-
-
-## Useful Additional Classes
-
-__Payment__
-
-There is currently no way to describe the Activity of transferring MonetaryAmounts between actors, a Payment.  The transfer classes (Acquisition, Transfer of Custody, Move) are very specific as to their semantics and the sorts of things that can be transferred. Thus, a new class is required, `Payment`, with three relationships of `paid_from`, `paid_to` and `paid_amount`.  A better solution would be a low level transfer class that could be used to transfer right of custody, right of ownership, the object itself, and monetary amounts, from one actor to another.
 
