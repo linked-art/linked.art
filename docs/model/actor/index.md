@@ -100,7 +100,7 @@ __Example:__
 Rembrandt had an address in Amsterdam.
 
 ```crom
-top = model.Person(ident="rembrandt/6", label="Rembrandt")
+top = model.Person(ident="rembrandt/12", label="Rembrandt")
 top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011 NK Amsterdam")
 ```
 
@@ -113,6 +113,20 @@ top = model.Group(ident="rembrandthuis/1", label="Rembrandt House Museum")
 top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011 NK Amsterdam")
 top.contact_point = vocab.PhoneNumber(content="+31-20-520-0400")
 top.contact_point = vocab.EmailAddress(content="museum@rembrandthuis.nl")
+```
+
+## Residence as a Place
+
+People and Organizations can have a Place as their residence, identified and described as an entity rather than just a street address as a string. That Place might have the address as an identifier, it would have its own Name, could have geographical coordinates, and any other features of the [Place](../place/) model.
+
+__Example:__
+
+Rembrandt resided at a Place which is where his house is.
+
+```crom
+top = model.Person(ident="rembrandt/11", label="Rembrandt")
+res = model.Place(ident="rembrandthuis", label="Rembrandt's House Place")
+top.residence = res
 ```
 
 
@@ -136,7 +150,7 @@ __Example:__
 Rembrandt was born on 1606-07-15 and died on 1669-10-04 in Amsterdam.
 
 ```crom
-top = model.Person(ident="rembrandt/6", label="Rembrandt")
+top = model.Person(ident="rembrandt/13", label="Rembrandt")
 birth = model.Birth()
 bts = model.TimeSpan()
 bts.begin_of_the_begin = "1606-07-15T00:00:00"
@@ -173,6 +187,8 @@ It is often useful to know where and when the person or organization was active 
 
 The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` resource should be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  
 
+This pattern can be used for other activities that the Person or Group was responsible for by changing the `classified_as` on the Activity to reflect the nature of that activity, however the activity must not have its own identity separate from Person or Group. If it does, then it should have its own record, and use `carried_out_by` in the regular fashion. Activities that are embedded within records in this way cannot be referred to separately from the Person.
+
 __Example:__
 
 Rembrandt was professionally active between 1631 and his death in 1669.
@@ -186,6 +202,29 @@ ats.end_of_the_end = "1669-10-04T23:59:59"
 active.timespan = ats
 top.carried_out = active
 ```
+
+### Participation versus Responsibility
+
+Other core life events are not carried out by the Person or Group, but are still potentially important to capture such as baptisms and burials. As marriages are not unique to the person, they should instead have their own record to capture both parties.
+
+Note that many such events take place in locations only identified by a civic or religious building, however activities take place at a Place, not at a building, which is a Human Made Object. See [documenation](../model/place/#buildings-and-immovable-objects) about "immovable" objects and places.
+
+__Example:__
+
+Rembrandt was buried after his death in 1669 at the location of Westerkerk.
+
+```crom
+top = model.Person(ident="rembrandt/14", label="Rembrandt")
+burial = model.Activity()
+burial.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300263485", label="Burial")
+ats = model.TimeSpan()
+ats.begin_of_the_begin = "1669-10-04T00:00:00"
+ats.end_of_the_end = "1669-11-01T23:59:59"
+burial.timespan = ats
+burial.took_place_at = model.Place(ident="westerkerk", label="Place of Westerkerk")
+top.participated_in = burial
+```
+
 
 ## Descriptive Information
 
@@ -221,44 +260,47 @@ top.classified_as = vocab.instances['dutch nationality']
 
 Ethnicity is separate from nationality, as it refers to a social group or culture as opposed to a political nation or state. The same rationale as for Nationality being a classification also applies to ethnicity or culture -- it is unlikely to be a coherent collective capable of intentional action.
 
+__Example:__
+
+Kehinde Wiley is African-American.
+
+```crom
+top = model.Person(ident="wiley/1", label="Kehinde Wiley")
+top.classified_as = vocab.Ethnicity(ident="https://www.wikidata.org/wiki/Q3007177", label="African-American")
+```
 
 ### Gender
 
 Gender is a debated and politically charged topic. The intent of this section is not to take a stand on those debates, but instead to allow the representation of data in museum and other information management systems to be made accessible.
 
-Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the modeling follows the same classification pattern as for nationality and culture. This allows a plethora of gender diversity, and does not make any specific statements about biological versus assumed versus preferred gender roles. The gender must be `classified_as` _aat:300055147_.
+Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the modeling follows the same classification pattern as for nationality and culture. This allows a diverse set of gender possibilities, and does not make any specific statements about biological versus assigned versus preferred gender roles. The gender must be `classified_as` _aat:300055147_.
+
+__Example:__
+
+Rembrandt was male.
 
 ```crom
-top = model.Person(ident="auto int-per-segment", label = "Mabel N. Overton")
-gender = vocab.Gender("http://vocab.getty.edu/aat/300189557", label="Feminine")
-top.classified_as = gender
+top = model.Person(ident="rembrandt/10", label="Rembrandt")
+top.classified_as = vocab.instances['male gender']
 ```
 
 ### Digital Integration
 
-Images of the person can also be provided, following the common pattern for [digital resources](/model/digital). Only the basic image case is shown below, the other scenarios can easily be determined from the referenced digital integration for objects.
-
-```crom
-top = model.Person(ident="auto int-per-segment",label = "Gertrude H. Ingram")
-vi = model.VisualItem()
-img = vocab.DigitalImage("http://example.org/images/gertrude.jpg")
-vi.digitally_shown_by = img
-top.representation = vi
-```
+Images of or web pages about the person can also be provided, following the common pattern for [digital resources](/model/digital). 
 
 
 ## Organization Membership
 
 As discussed above, Organizations can be seen as the actor when it comes to their roles in various events. For example, an auction is likely to be carried out by an organization, and they can own and curate objects.
 
-The only significantly new aspect to organizational actors, compared to people, is that they can have members.  These members can be either sub-groups, such as a department within a museum, or individuals.
+The only significantly new aspect to organizational actors, compared to people, is that they can have members.  These members can be either other groups, such as a department within a museum, or individuals. The `member_of` property is used to connect the member Person or Group to the Group they are a member of.
 
-For example, a curator could be a `member_of` a department, which is in turn a member of the wider institution.  This is simply the inverse of `member` relationship described in the [base patterns](/model/base/#25-organizations).
+__Example:__ 
+
+Rembrandt (a Person) was a member of the Guild of St Luke (a Group).
 
 ```crom
-top = model.Person(ident="auto int-per-segment",label = "Sameen T. Underwood")
-dept = vocab.Department(label="Paintings Department")
-mus = vocab.MuseumOrg(label="Example Museum")
-top.member_of = dept
-dept.member_of = mus
+top = model.Person(ident="rembrandt/2", label="Rembrandt")
+grp = model.Group(ident="stluke", label="Guild of St Luke")
+top.member_of = grp
 ```

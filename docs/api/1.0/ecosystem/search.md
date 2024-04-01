@@ -56,7 +56,6 @@ An example page would thus be:
 		}
 	]
 }
-
 ```
 
 ## Collections
