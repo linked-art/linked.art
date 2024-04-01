@@ -8,19 +8,8 @@ In order to provide examples of how to apply the [data model](/model/), this sec
 
 ## Recipes
 
-* Getty
-    * [Photo Archive](getty/photoarchive/)
-* [Indianapolis Museum of Art (IMA)](http://collection.imamuseum.org)
-    * [IMA Collection data (GitHub)](ima)
-* National Gallery of Art
-    * [CSV Artwork transformation to Linked Art Data Model](nga)
-* Yale
-    * [Lux](yale/lux/)
+* The recipes are being rewritten against the latest version of the model for the 1.0 release
 
-
-## Data Sources
-
-A [list of open data sources](data-sources) that would be beneficial to map and transform into Linked Art.
 
 ## Relevant Resources
 
@@ -32,7 +21,4 @@ A [list of open data sources](data-sources) that would be beneficial to map and 
 
 ### Tools/Scripts for Cleaning/Handling Collections Data
 
-* [Scripts for cleaning/handling collections data](https://github.com/fieldmuseum/Collections-Scripts)
 * [Open Refine](https://openrefine.org/)
-
-
