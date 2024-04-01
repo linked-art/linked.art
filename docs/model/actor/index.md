@@ -54,13 +54,10 @@ Rembrandt's name is Rembrandt / Harmenzoon / van Rijn
 ```crom
 top = model.Person(ident="rembrandt/4", label="Rembrandt")
 name = vocab.PrimaryName(content="Rembrandt Harmenzoon van Rijn")
-top.identified_by = name
-given = vocab.GivenName(content="Rembrandt")
-mid = vocab.MiddleName("Harmenzoon")
-fam = vocab.FamilyName(content="van Rijn")
-apl.part = given
-apl.part = mid
-apl.part = fam
+top.identified_by = name 
+name.part = vocab.GivenName(content="Rembrandt")
+name.part = vocab.MiddleName("Harmenzoon")
+name.part = vocab.FamilyName(content="van Rijn")
 ```
 
 ## Identity
