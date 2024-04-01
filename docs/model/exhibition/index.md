@@ -28,7 +28,7 @@ ts.begin_of_the_begin = "2019-10-08"
 ts.end_of_the_end = "2020-01-12"
 top.timespan = ts
 top.carried_out_by = vocab.MuseumOrg(ident="http://vocab.getty.edu/ulan/500115988", label="Getty Museum")
-top.took_place at = vocab.City(ident="http://vocab.getty.edu/tgn/7023900", label="Los Angeles")
+top.took_place_at = vocab.City(ident="http://vocab.getty.edu/tgn/7023900", label="Los Angeles")
 top.used_specific_object = model.Set(ident="exhset", label="Exhibition objects")
 top.motivated_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 ```
@@ -69,7 +69,7 @@ ts.begin_of_the_begin = "2019-05-26"
 ts.end_of_the_end = "2019-09-08"
 top.timespan = ts
 top.carried_out_by = vocab.MuseumOrg(ident="http://vocab.getty.edu/ulan/500304669", label="Art Institute")
-top.took_place at = vocab.City(ident="http://vocab.getty.edu/tgn/7013596", label="Chicago")
+top.took_place_at = vocab.City(ident="http://vocab.getty.edu/tgn/7013596", label="Chicago")
 top.used_specific_object = model.Set(ident="exhset", label="Exhibition objects")
 top.motivated_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 top.part_of = model.Activity(ident="exhab", label="Manet and Modern Beauty")
@@ -106,7 +106,7 @@ top.created_by = cre
 ```
 
 ```crom
-top = vocab.Painting(ident="spring/12", "Jeanne (Spring) by Manet")
+top = vocab.Painting(ident="spring/12", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 top.member_of = model.Set(ident="exhset")
 ```

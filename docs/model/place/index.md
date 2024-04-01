@@ -72,6 +72,6 @@ The [Frank Lloyd Wright House](https://crystalbridges.org/frank-lloyd-wright/) w
 
 ```crom
 top = vocab.Building(ident="flw_house/1", label="Frank Lloyd Wright House")
-top.identified_by = model.Name("Frank Lloyd Wright House")
+top.identified_by = model.Name(content="Frank Lloyd Wright House")
 top.current_location = model.Place(ident="crystal_bridges", label="Crystal Bridges")
 ```

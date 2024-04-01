@@ -106,7 +106,7 @@ __Example:__
 There is a home page for Jeanne in the Getty collections.
 
 ```crom
-top = vocab.Painting(ident="spring/9", "Jeanne (Spring) by Manet")
+top = vocab.Painting(ident="spring/9", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 lo = model.LinguisticObject()
 top.subject_of = lo
@@ -127,7 +127,7 @@ __Example:__
 Jeanne has a IIIF Presentation API Manifest.
 
 ```crom
-top = vocab.Painting(ident="spring/10", "Jeanne (Spring) by Manet")
+top = vocab.Painting(ident="spring/10", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 lo = model.LinguisticObject()
 top.subject_of = lo
@@ -148,7 +148,7 @@ __Example:__
 The image of Jeanne is also available via a IIIF Image API service.
 
 ```crom
-top = vocab.Painting(ident="spring/11", "Jeanne (Spring) by Manet")
+top = vocab.Painting(ident="spring/11", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 img = model.VisualItem()
 top.representation = img

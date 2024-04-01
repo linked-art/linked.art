@@ -108,7 +108,7 @@ Rembrandt's residence is now a museum at the same address, with a phone number a
 ```crom
 top = model.Group(ident="rembrandthuis/1", label="Rembrandt House Museum")
 top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011 NK Amsterdam")
-top.contact_point = vocab.PhoneNumber(content="+31-20-520-0400")
+top.contact_point = vocab.TelephoneNumber(content="+31-20-520-0400")
 top.contact_point = vocab.EmailAddress(content="museum@rembrandthuis.nl")
 ```
 
@@ -278,7 +278,7 @@ Rembrandt was male.
 
 ```crom
 top = model.Person(ident="rembrandt/10", label="Rembrandt")
-top.classified_as = vocab.instances['male gender']
+top.classified_as = vocab.instances['male']
 ```
 
 ### Digital Integration
