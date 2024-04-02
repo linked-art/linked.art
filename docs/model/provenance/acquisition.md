@@ -20,16 +20,25 @@ The model encodes this information with an `Acquisition` part of the overall Pro
 
 Each object has its own Acquisition as part of the provenance event, so if a collector buys three paintings from a dealer, then there would be a single Provenance Event with three Acquisitions, all of which transfer the title of a single painting from the dealer to the collector.
 
+
+__Example:__
+
+Oliver Payne acquired Spring from the Durand-Ruel Gallery in New York in 1909
+
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
-buyer = model.Person(label="Buyer")
-seller = model.Person(label="Seller")
-acq = model.Acquisition(label="Acquisition of Sculpture from Seller")
+top = vocab.ProvenanceEntry(ident="durand_payne/1", label="Purchase of Spring by Payne")
+top.identified_by = vocab.PrimaryName("Purchase of Spring by Payne from Durand-Ruel")
+
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1909-01-01T00:00:00Z"
+ts.end_of_the_end = "1909-12-31T23:59:59Z"
+top.timespan = ts
+
+acq = model.Acquisition(label="Ownership of Spring to Payne")
 top.part = acq
-what = vocab.Sculpture(label="Sculpture", art=1)
-acq.transferred_title_of = what
-acq.transferred_title_from = seller
-acq.transferred_title_to = buyer
+acq.transferred_title_of = model.HumanMadeObject(ident="spring", label="Spring")
+acq.transferred_title_from = model.Person(ident="durand", label="Durand-Ruel Gallery")
+acq.transferred_title_to = model.Person(ident="payne", label="Oliver Payne")
 ```
 
 ### Multiple Owners
@@ -40,58 +49,66 @@ If there is additional information known about the exact nature of the ownership
 
 If there are multiple parties that have formally entered into a legal consortium or organization, and that consortium is the legal owner of the object, then the consortium should be modeled as a [`Group`](/model/actor/) with the parties as members, and be the sole owner of the object.
 
+__Example:__
+
+The Yale University Art Gallery and the Yale Center for British Art jointly purchased a painting by Kehinde Wiley in 2021 from undisclosed seller.
+
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
-buyer = model.Person(label="Buyer")
-buyer2 = model.Person(label="Buyer 2")
-seller = model.Person(label="Seller")
-acq = model.Acquisition(label="Acquisition of Sculpture from Seller by two Buyers")
+top = vocab.ProvenanceEntry(ident="yuag_ycba_wiley/1", label="Purchase of Painting")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "2021-01-01T00:00:00Z"
+ts.end_of_the_end = "2021-12-31T23:59:59Z"
+top.timespan = ts
+acq = model.Acquisition(label="Acquisition")
 top.part = acq
-what = vocab.Sculpture(label="Sculpture", art=1)
-acq.transferred_title_of = what
-acq.transferred_title_from = seller
-acq.transferred_title_to = buyer
-acq.transferred_title_to = buyer2
+acq.transferred_title_of = model.HumanMadeObject(ident="yiadom-boakye", label="Portrait of Lynette Yiadom-Boakye")
+acq.transferred_title_to = model.Group(ident="yuag", label="Yale University Art Gallery")
+acq.transferred_title_to = model.Group(ident="ycba", label="Yale Center for British Art")
 ```
 
 ### Agents
 
 In some cases, it is known that an agent other than the buyer carried out the acquisition. This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. 
 
+__Example:__
+
+In 2014, the family heirs of Oliver Payne sold Spring (by auction at Christie's) to Otto Naumann, acting for the J. Paul Getty Museum.
+
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
-buyer = model.Person(label="Buyer")
-seller = model.Person(label="Seller")
-agent = model.Person(label="Agent for the Buyer")
-acq = model.Acquisition(label="Acquisition of Sculpture from Seller")
+top = vocab.ProvenanceEntry(ident="payneheirs_getty", label="Purchase of Spring for Getty")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "2014-11-05T00:00:00Z"
+ts.end_of_the_end = "2014-11-05T23:59:59Z"
+acq = model.Acquisition(label="Acquisition of Spring")
 top.part = acq
-what = vocab.Sculpture(label="Sculpture", art=1)
-acq.transferred_title_of = what
-acq.transferred_title_from = seller
-acq.transferred_title_to = buyer
-acq.carried_out_by = agent
+acq.transferred_title_of = model.HumanMadeObject(ident="spring", label="Spring")
+acq.transferred_title_from = model.Group(ident="payne_heirs", label="Family of Oliver Payne")
+acq.transferred_title_to = model.Group(ident="getty", label="J. Paul Getty Museum")
+acq.carried_out_by = model.Person(ident="naumann", label="Otto Naumann")
 ```
 
 ### Exchange of Objects
 
 This pattern allows for the exchange of objects between two parties by simply adding a second Acquisition.
 
+__Example:__
+
+In 1962, the Yale University Art Gallery exchanged a "Nude Woman" by Beckmann for a "Personnages dans un parc" by Masson.
+
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Exchange of Sculpture for Painting")
-buyer = model.Person(label="Buyer")
-seller = model.Person(label="Seller")
-acq = model.Acquisition(label="Acquisition of Sculpture from Seller")
+top = vocab.ProvenanceEntry(ident="yuag_stora/1", label="Exchange of Objects")
+yuag = model.Group(ident="yuag", label="Yale University Art Gallery")
+feigen = model.Group(ident="feigen", label="Richard Feigen Gallery")
+acq = model.Acquisition(label="Acquisition of Personnages")
 top.part = acq
-what = vocab.Sculpture(label="Sculpture", art=1)
-acq.transferred_title_of = what
-acq.transferred_title_from = seller
-acq.transferred_title_to = buyer
-acq2 = model.Acquisition(label="Acquisition of Painting from Buyer")
+acq.transferred_title_of = model.HumanMadeObject(ident="masson_personnages", label="Personnages dans un parc")
+acq.transferred_title_from = feigen
+acq.transferred_title_to = yuag
+acq2 = model.Acquisition(label="Acquisition of Nude")
 top.part = acq2
-what = vocab.Painting(label="Painting", art=1)
-acq.transferred_title_of = what
-acq.transferred_title_from = buyer
-acq.transferred_title_to = seller
+acq.transferred_title_of = model.HumanMadeObject(ident="beckmann_nude", label="Nude Woman by Beckmann")
+acq.transferred_title_from = yuag
+acq.transferred_title_to = feigen
 ```
 
 
@@ -105,32 +122,45 @@ The `Payment` activity has equivalent relationships for the actor that the money
 !!! note "Diachronic Comparison of Monetary Amounts"
     The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
 
+__Example:__
+
+Édouard Manet sold his painting, Jeanne, to Antonin Proust in 1883 for 3,000 francs.
+
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture")
-seller = model.Person(label="Seller")
-buyer = model.Person(label="Buyer")
-paymt = model.Payment()
-paymt.paid_from = buyer
-paymt.paid_to = seller
-amt = model.MonetaryAmount()
-amt.value = 1000
-amt.currency = vocab.instances['us dollars']
-paymt.paid_amount = amt
-top.part = paymt
+top = vocab.ProvenanceEntry(ident="manet_proust/1", label="Purchase of Spring by Proust")
+top.identified_by = vocab.PrimaryName("Purchase of Spring by Proust from Manet")
+
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1881-01-01T00:00:00Z"
+ts.end_of_the_end = "1883-12-31T23:59:59Z"
+top.timespan = ts
+
+acq = model.Acquisition(label="Ownership of Spring to Proust")
+top.part = acq
+acq.transferred_title_of = model.HumanMadeObject(ident="spring", label="Spring")
+acq.transferred_title_from = model.Person(ident="manet", label="Manet")
+acq.transferred_title_to = model.Person(ident="proust", label="Proust")
+
+pay = model.Payment(label="3000 Francs to Manet")
+pay.paid_from = model.Person(ident="proust", label="Proust")
+pay.paid_to = model.Person(ident="manet", label="Manet")
+amnt = model.MonetaryAmount()
+amnt.currency = vocab.instances['fr francs']
+amnt.value = 3000
+pay.paid_amount = amnt
+top.part = pay
 ```
  
 ### Payment for Services
 
-Beyond simply paying the previous owner for the object, there are many other reasons why money might change hands that are relevant to describe for art history.
-
-For example, it might be known how much commission went to an auction house or for the sale of objects by consignment, particularly if this comes from the stock books or records of the company. Artists might be paid a commission in advance for the production of an object, or agents might be paid a commission for finding and purchasing objects on behalf of the new owner.
+Beyond simply paying the previous owner for the object, there are many other reasons why money might change hands that are relevant to describe. For example, it might be known how much commission went to an auction house or for the sale of objects by consignment, particularly if this comes from the stock books or records of the company. Artists might be paid a commission in advance for the production of an object, or agents might be paid a commission for finding and purchasing objects on behalf of the new owner.
 
 __Example:__
 
-The above payment might actually have been 900 dollars to the previous owner and 100 dollars to the auction house for its cut.
+FIXME: Find a real example
 
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Sculpture with Commission")
+top = vocab.ProvenanceEntry(ident="fixme/1", label="Purchase of Sculpture with Commission")
 seller = model.Person(label="Seller")
 buyer = model.Person(label="Buyer")
 house = vocab.AuctionHouseOrg(label="Auction House")
