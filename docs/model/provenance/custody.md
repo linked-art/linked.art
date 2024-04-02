@@ -57,7 +57,7 @@ Spring is acquired by the Getty, and custody given to the Paintings department.
 top = vocab.ProvenanceEntry(ident="payneheirs_getty/2", label="Purchase of Spring")
 buyer = model.Group(ident="getty", label="J. Paul Getty Museum")
 seller = model.Group(ident="payne_heirs", label="Family of Oliver Payne")
-dept = model.Group(ident="getty_ptgs', label="Paintings Department")
+dept = model.Group(ident="getty_ptgs", label="Paintings Department")
 what = model.HumanMadeObject(ident="spring", label="Spring")
 acq = model.Acquisition(label="Acquisition of Painting")
 top.part = acq
