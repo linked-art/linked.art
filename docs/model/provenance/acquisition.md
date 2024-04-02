@@ -75,7 +75,7 @@ __Example:__
 In 2014, the family heirs of Oliver Payne sold Spring (by auction at Christie's) to Otto Naumann, acting for the J. Paul Getty Museum.
 
 ```crom
-top = vocab.ProvenanceEntry(ident="payneheirs_getty", label="Purchase of Spring for Getty")
+top = vocab.ProvenanceEntry(ident="payneheirs_getty/1", label="Purchase of Spring for Getty")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "2014-11-05T00:00:00Z"
 ts.end_of_the_end = "2014-11-05T23:59:59Z"
