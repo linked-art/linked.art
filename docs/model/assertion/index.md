@@ -69,10 +69,10 @@ Similar to the approach taken in the first example above, it is possible to use 
 
 __Example:__ 
 
-The watercolor "Forum Romanum" was possibly produced by Salomon Corrodi
+The watercolor painting "Forum Romanum" was possibly produced by Salomon Corrodi
 
 ```crom
-top = vocab.Watercolor(ident="forum/1", label="Forum Romanum")
+top = vocab.Painting(ident="forum/1", label="Forum Romanum")
 top.identified_by = vocab.PrimaryName(content="Forum Romanum")
 prod = model.Production()
 top.produced_by = prod
