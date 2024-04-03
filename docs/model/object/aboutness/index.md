@@ -106,10 +106,9 @@ __Example:__
 
 The [exhibition catalog](https://lccn.loc.gov/80013795) for the "Post-Impressionism: Cross-Currents in European and American Painting 1880-1906", at which Manet's "Spring" (from the Getty) and Cezanne's "Houses in Provence" (from the [National Gallery](https://www.nga.gov/collection/art-object-page.54129.html)) were exhibited, shows both works and carries its own text.
 
-
 ```crom
-top = vocab.ExhibitionCatalog(ident="catalog", label="Copy of Exhibition Catalog")
-top.carries = vocab.ExhibitionCatalogText(ident="catalogtext", label="Exhibition Catalog Text")
+top = vocab.ExhibitionCatalog(ident="catalog/1", label="Copy of Exhibition Catalog")
+top.carries = model.LinguisticObject(ident="catalogtext", label="Exhibition Catalog Text")
 top.shows = model.VisualItem(ident="spring", label="Visual Content of Spring")
 top.shows = model.VisualItem(ident="houses", label="Visual Content of Houses in Provence")
 ```
@@ -124,19 +123,19 @@ __Example:__
 "Harper's January" at the [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/11254) is a print by Edward Penfield that has both significant text and visual content.
 
 ```crom
-top = vocab.Print(ident="harpers", label="Poster Item")
+top = vocab.Print(ident="harpers/1", label="Poster Item")
 vi = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
 top.shows = vi
 ```
 
 ```crom
-top = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
+top = model.VisualItem(ident="harpers/1", label="Visual Content of Harpers")
 top.represents = model.Type(ident="http://vocab.getty.edu/aat/300025943", label="Woman")
 top.referred_to_by = vocab.Description(content="The text and image are primarily red and black")
 ```
 
 ```crom
-top = model.LinguisticObject(ident="harpers", label="Textual component of Harpers")
+top = model.LinguisticObject(ident="harpers/1", label="Textual component of Harpers")
 top.content = "Harper's. January contains Roden's corner. A Novel by Henry Seton Merriman [...]"
 top.part_of = model.VisualItem(ident="harpers", label="Visual Content of Harpers")
 ```

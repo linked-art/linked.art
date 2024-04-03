@@ -62,7 +62,7 @@ A [painted textile called "RÜN"](https://artgallery.yale.edu/collections/object
 
 
 ```crom
-top = vocab.Painting(ident="run", label = "RUN")
+top = vocab.Painting(ident="run/1", label = "RUN")
 prod = model.Production()
 top.produced_by = prod
 act1 = model.Production()
@@ -137,14 +137,14 @@ __Example:__
 A [print](https://collections.britishart.yale.edu/catalog/tms:6141) at the Yale Center for British Art, Chaucer's Canterbury Pilgrims, made from a specific [copper plate](https://artgallery.yale.edu/collections/objects/11787) held at the Yale University Art Gallery.
 
 ```crom
-top = vocab.Print(ident="ccp", label="Chaucer's Canterbury Pilgrims")
+top = vocab.Print(ident="ccp/1", label="Chaucer's Canterbury Pilgrims")
 prod = model.Production(label="Printing from Plate")
 top.produced_by = prod
 prod.used_specific_object = model.HumanMadeObject(ident="ccp-plate", label="Plate for CCP")
 ```
 
 ```crom
-top = model.HumanMadeObject(ident="ccp-plate", label="Plate for CCP")
+top = model.HumanMadeObject(ident="ccp-plate/1", label="Plate for CCP")
 top.made_of = vocab.instances['copper']
 ```
 
@@ -180,7 +180,7 @@ __Example:__
 The "Bust of a Man" object described above was created by the Studio of Francis Harwood, a Group. The example below is the record for the Group.
  
 ```crom
-top = vocab.Studio(ident="harwoodstudio", label="Studio of Francis Harwood")
+top = vocab.Studio(ident="harwoodstudio/1", label="Studio of Francis Harwood")
 fm = model.Formation()
 top.formed_by = fm
 fm.influenced_by = model.Person(ident="http://vocab.getty.edu/ulan/500015886", label="Francis Harwood")

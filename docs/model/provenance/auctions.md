@@ -174,7 +174,7 @@ bidprop.refers_to = amnt
 Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/).
 
 ```crom
-top = vocab.AuctionCatalogText(ident="catalog_24477", label="Auction Catalog")
+top = vocab.AuctionCatalogText(ident="catalog_24477/1", label="Auction Catalog")
 top.identified_by = vocab.PrimaryName(content="Impressionist & Modern Evening Sale Catalog")
 top.about = model.Activity(ident="christies_24477", label="Impressionist Sale")
 ```

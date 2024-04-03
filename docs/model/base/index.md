@@ -249,7 +249,7 @@ The Christie's auction of the Stowe House took place over 40 days in August and 
 
 
 ```crom
-top = vocab.AuctionEvent(ident="stowe", label="Auction of Stowe House")
+top = vocab.AuctionEvent(ident="stowe/1", label="Auction of Stowe House")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "1848-08-01T00:00:00Z"
 ts.end_of_the_begin = "1848-08-21T00:00:00Z"
@@ -313,13 +313,12 @@ top.member_of = grp
 
 It is sometimes necessary to partition an activity that is embedded within another record, such as the `Production` of an object or `Creation` of a work, in order to be more specific about individual roles or aspects. In this case, as there isn't another record to refer to with `part_of`, the parts are included within the record using `part`. This allows information to be associated with either the individual parts of the activity, or the whole activity.
 
-
 __Example:__
 
 A video (modeled as a Work that contains language, or a `LinguisticObject`) about Rembrandt's Night Watch was directed by Peter Greenaway and Produced by Femke Wolting.
 
 ```crom
-top = model.LinguisticObject(ident="rembrandtjaccuse", label="Rembrandt's J'accuse")
+top = model.LinguisticObject(ident="rembrandtjaccuse/1", label="Rembrandt's J'accuse")
 cre = model.Creation()
 top.created_by = cre
 ts = model.TimeSpan(label="2008")
