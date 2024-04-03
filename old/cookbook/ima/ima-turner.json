@@ -1,0 +1,137 @@
+{
+"@context": "https://linked.art/ns/v1/linked-art.json", 
+"id": "http://imamuseum.org/mercury/load-artwork/38020", 
+"type": "HumanMadeObject", 
+"_label": "View of Exeter College from the Turl",
+"classified_as": [
+{
+  "id": "http://vocab.getty.edu/page/aat/300041340",
+  "type": "Type",
+  "_label": "Engraving",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300435443",
+      "type": "Type",
+      "_label": "Type of Work"
+    }
+  ]
+},
+{
+  "id": "http://vocab.getty.edu/aat/300133025",
+  "type": "Type",
+  "_label": "Work of Art"
+}
+],
+
+"identified_by": [
+{
+  "type": "Name",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300404670",
+      "type": "Type",
+      "_label": "Primary Name"
+    }
+  ],
+  "content": "View of Exeter College from the Turl",
+  "language": [
+    {
+      "id": "http://vocab.getty.edu/aat/300388277",
+      "type": "Language",
+      "_label": "English"
+    }
+  ]
+},
+{
+  "type": "Identifier",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300312355",
+      "type": "Type",
+      "_label": "IMA Accession Number"
+    }
+  ],
+  "content": "80.825.86"
+},
+{
+  "type": "Identifier",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300312355",
+      "type": "Type",
+      "_label": "IMA irn"
+    }
+  ],
+  "content": "38020"
+}
+],
+"referred_to_by": [
+{
+  "type": "LinguisticObject",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300435429",
+      "type": "Type",
+      "_label": "Material Statement",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/page/aat/300435418",
+          "type": "Type",
+          "_label": "Credit line"
+        }
+      ]
+    }
+  ],
+  "content": "Kurt F. Panzer",
+  "language": [
+    {
+      "id": "http://vocab.getty.edu/aat/300388277",
+      "type": "Language",
+      "_label": "English"
+    }
+  ]
+}
+],
+
+"created_by": {
+    "type": "Production",
+    "timespan": {
+      "type": "TimeSpan", 
+      "begin_of_the_begin": "1806-01-01T00:00:00Z", 
+      "end_of_the_end": "1806-12-31T23:59:59Z"
+    },
+    "carried_out_by": [
+        {
+            "id": "http://vocab.getty.edu/ulan/500026846",
+            "type": "Person",
+            "_label": "Joseph Mallord William Turner"
+        }
+    ]
+},
+
+"shows": [
+    {
+      "type": "VisualItem",
+      "represents": [
+        {
+        "id": "http://vocab.getty.edu/page/tgn/7011931",
+        "type": "Place",
+        "_label": "Oxford",
+        "classified_as": [
+            {
+            "id": "http://vocab.getty.edu/aat/300008389",
+            "type": "Type",
+            "_label": "City"
+            }
+        ],
+        "identified_by": [
+            {
+            "type": "Name",
+            "content": "Oxford"
+            }
+        ]
+        }
+      ]
+    }
+        ]
+}
