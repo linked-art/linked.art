@@ -24,7 +24,7 @@ __Example:__
 A sculpture is lent from one person to another, and then later returned.
 
 ```crom
-top = vocab.ProvenanceEntry(ident="spring_aic", label="Loan of Spring to AIC")
+top = vocab.ProvenanceEntry(ident="spring_aic/1", label="Loan of Spring to AIC")
 loan = vocab.Loan()
 top.part = loan
 loan.transferred_custody_of = model.HumanMadeObject(ident="spring", label="Spring")
@@ -35,7 +35,7 @@ loan.transferred_custody_to = model.Group(ident="aic", label="Art Institute of C
 Which would typically be followed by a later return with the same form:
 
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Return of the Sculpture to Lender")
+top = vocab.ProvenanceEntry(ident="spring_getty/1", label="Return of Spring to Getty")
 loan = vocab.ReturnOfLoan(label="Return")
 top.part = loan
 loan.transferred_custody_of = model.HumanMadeObject(ident="spring", label="Spring")
@@ -71,28 +71,6 @@ cust.transferred_custody_from = seller
 cust.transferred_custody_to = dept
 ```
 
-## Loss
-
-
-
-
-__Example:__
-
-FIXME: Add a real example? Does anyone record this?
-
-
-```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Loss of Painting")
-xfer = vocab.Loss()
-xfer.transferred_custody_of = vocab.Painting(label="Lost Painting", art=1)
-xfer.transferred_custody_from = model.Person(label="Owner")
-when = model.TimeSpan(label="Time noticed as Lost")
-when.begin_of_the_begin = "1790-12-04T00:00:00Z"
-when.end_of_the_end = "1790-12-05T00:00:00Z"
-xfer.timespan = when
-top.part = xfer
-```
-
 ## Theft and Loss
 
 The theft of an object is also the (illegal) transfer of custody of the object, rather than a transfer of ownership. If  the stolen object were recovered, then it would be restored to its owner. Stolen, or looted as a special case of theft, objects and their repatriation are an interesting and important part of the provenance of a work and frequently contested. A single theft event might involve stealing multiple objects, in the same way that the purchase of an auction lot might involve the acquisition of multiple objects for a combined payment. 
@@ -104,7 +82,7 @@ __Example:__
 The Mona Lisa was stolen from the Louvre in 1911 by Vincenzo Peruggia.
 
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Theft of Mona Lisa")
+top = vocab.ProvenanceEntry(ident="mona_lisa_theft/1", label="Theft of Mona Lisa")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "1911-08-21T00:00:00Z"
 ts.end_of_the_end = "1911-08-21T23:59:59Z"

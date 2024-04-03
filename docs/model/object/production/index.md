@@ -149,13 +149,31 @@ top.made_of = vocab.instances['copper']
 ```
 
 
-## Attributions
+## Attribution Qualifiers
 
-### Attribution of a Group
+### Influenced By an Artist
+
+If there is some connection between the production of the object and someone who was not the artist directly, but influenced the production, then the `influenced_by` property can be used to reference that person.  These are often expressed as "after", "in the style of", or "in the manner of" attributions -- they qualify the attribution by relating the production to someone (likely as embodied by their work, rather than through a personal connection) that directly influenced it.
+
+__Example:__
+
+The painting "Wash Day" was intentionally created in the manner of Winslow Homer.
+
+```
+top = vocab.Painting(ident="washday/1", label="Wash Day")
+top.identified_by = vocab.PrimaryName(content="Wash Day")
+prod = model.Production()
+prod.influenced_by = model.Person(ident="whomer", label="Winslow Homer")
+top.produced_by = prod
+```
+
+### Attribution of a Group Related to an Artist
 
 Even if the artist's or artists' identity is not known exactly, the person or persons may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`: this does not mean that every member of the group participated, just that at least one of them did, in the same way that saying that a document was written by an organization does not imply all employees contributed to the text.
 
 We can use the `influenced_by` property on the `Formation` (the creation) of the group to connect it to a known person -- the "master" of the workshop in the example use case. The "master" might not have participated in the group, or even been alive when it was formed, and hence does not necessarily form the group or is even a member of it. 
+
+This approach can be used for workshops, studios, the set of pupils, followers, and so forth. It is not that the entire Group created the object, but that one or more of them did. 
 
 __Example:__
 

@@ -139,5 +139,4 @@ These sorts of provenance events are documented in the [Movement](movement) sect
 There are some common scenarios that can be described using Linked Art's Provenance modeling, with some additional vocabulary for precision:
 
 * [Auctions](auctions)
-* [Curatorial Activities during Ownership](curation)
 
