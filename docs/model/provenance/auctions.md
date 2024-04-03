@@ -190,40 +190,21 @@ It is possible that an auction lot is withdrawn from the auction before the auct
 
 In this case, there should be a catalog entry and the auction lot set that the entry describes, but no corresponding auction of lot activity, as it did not take place. The date can be calculated from the dates of the auction event, to position the objects in time.  In some cases, where the auctioned objects are all from a single person or organization, this would also establish evidence of ownership at that time.
 
-
 ### Object Withdrawn from Lot
 
 It can also be that a single object is withdrawn from a Lot with multiple objects, which is otherwise sold. In this case, the withdrawn object is returned to the owner as part of the provenance event that is caused by the auction of the lot which still takes place. That return has a specific purpose that can distinguish withdrawn objects from objects that are returned for other reasons below.
-
 
 ### Reserve Not Met
 
 Another scenario is when the auction of lot does take place, but there is no purchase because a reserve price was not met.  This is often referred to as being "Bought In", or sometimes "Passed".
 
-In this case the auction of lot activity does occur, but there may or may not have been any bidding. It does result in a provenance entry, as for the auction house organization to be able to auction it, they must have had some degree of custody of the object.  There may also be a commission paid from the owner to the auction house for running the auction, even though it was ultimately unsuccessful.
-
-__Example:__
-
-A painting put up for auction is returned to the owner, as it was not sold to someone else.  The Provenance Entry below would be `caused` by the Auction of Lot activity. This example is also appropriate to the following use cases as well. 
-
-```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Return to Owner from Auction House")
-xf = vocab.ReturnOfLoan()
-what = model.HumanMadeObject(label="Painting")
-owner = model.Person(label="Owner")
-ah = model.Group(label="Auction House")
-top.part = xf
-xf.transferred_custody_of = what
-xf.transferred_custody_to = owner
-xf.transferred_custody_from = ah
-```
+In this case the auction of lot activity does occur, but there may or may not have been any bidding. It does result in a provenance entry, as for the auction house organization to be able to auction it, they must have had some degree of custody of the object.  There may also be a commission paid from the owner to the auction house for running the auction, even though it was ultimately unsuccessful.  The return of the object to the owner would be a Transfer of Custody in the same way as returning a painting to the owner after an exhibition.
 
 ### Bought by Owner
 
 In some cases the owner of the object actively bids on their own items, either directly or via an agent, and ends up bidding the highest amount, and thereby winning the lot. This is different to the bought in case, as in that case the reserve was not met, and in this case it was. This was sometimes done intentionally to determine what the market would bear for an object, or to drive up the price of related objects by providing a precedent.
 
 As the owner cannot sell the object to themselves, this does not result in a __change__ of ownership. In the same way as when the reserve is not met, there is a change of custody from the owner to the auction house and back again, and might involve paying commission to the auction house for the "sale". Conversely, in this case we do know that there was bidding as there was a "sale", even if there was not a transfer of ownership.  
-
 
 ### Winner Unable to Pay
 
