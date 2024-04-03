@@ -78,30 +78,3 @@ The set of objects in an [auction lot](/model/provenance/auctions.html#set-of-ob
 
 Information about a resource that is specific to the context of the set that they are part of, such as the accession number of an object for that particular collection, can be described using the `AttributeAssignment` patterns described in the page about [assertions](/model/assertion/#context-specific-assertions).
 
-<!--
-## Collections over Time
-
-Collections are not static over time but instead change as objects are acquired and sold, stolen or given to new owners. Recording these states results in some complexity, as we still want to be able to refer to objects in a previous context, rather than just their current context. It is useful, for example, to record the accession or stock number of an object in previous collections or as assigned by dealerships and auction houses.  For collections that never change once finished, this isn't a problem.  The object can be considered to always be part of the auction lot.  However for museum or dealer collections, it is important to distinguish between the objects that are currently part of that collection and the objects that have ever been part of the collection. 
-
-Much of the time this is an unnecessary complication that can be safely ignored, as the information systems only know about the current state. If it is important, then read on.
-
-### Adding and Removing Resources
-
-Objects are rarely added and removed from collections without further contextual information, there is almost always some larger activity that results in the change.  The ownership of the object is transferred to the organization which prompts it to be accessioned into the collection, and subsequently an accession number Identifier as assigned to it.
-
-There are two activities, `Addition` and `Removal`, which mirror the same activities of Joining and Leaving for members of Groups.  These may be included in the object representation, to further expand upon the `member_of` relationship.
-
-```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
-coll = vocab.CollectionSet()
-top.member_of = coll
-add = model.Addition()
-top.added_member_by = add
-add.added_to = coll
-add.carried_out_by = model.Person(label="Museum Registrar")
-ts = model.TimeSpan()
-ts.begin_of_the_begin = "1954-01-01T00:00:00Z"
-ts.end_of_the_end = "1955-01-01T00:00:00Z"
-add.timespan = ts
-```
--->

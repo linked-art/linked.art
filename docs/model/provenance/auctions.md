@@ -32,11 +32,7 @@ It is referenced by the auction of lot activities via their `part_of` property.
 
 __Example:__
 
-An auction event takes place on November 5th, 2014 at the New York premises of Christie's.
-
-<!-- 
-https://www.christies.com/en/auction/impressionist-modern-evening-sale-24477/
--->
+An [auction event](https://www.christies.com/en/auction/impressionist-modern-evening-sale-24477/) takes place on November 5th, 2014 at the New York premises of Christie's.
 
 ```crom
 top = vocab.AuctionEvent(ident="christies_24477/1", label="Impressionist Sale")
@@ -140,34 +136,6 @@ pay.paid_from = buyer
 pay.paid_to = seller
 top.part = pay
 ```
-
-<!--
-
-Too Complex, Not Enough Data
-
-### Known Bid Amounts
-
-Sometimes we also know the monetary amounts that were unsuccessfully bid for the object, regardless of whether the auction eventually ended in a sale or not.  These bids are part of the overall bidding activity.
-
-Bids are modeled as the creation of a proposition that the bidder (or the person that an agent is bidding on behalf of) will pay a certain amount of money for the object. In the example below, a known bid is $10,000 but it is not stated whether there was a sale concluded.
-
-```crom
-top = vocab.Auction(ident="auto int-per-segment", label="Auction of Lot J-1823-5")
-bidset = model.Activity(label="Bids on Lot J-1823-5")
-top.part = bidset
-bid = vocab.Bidding(label="Bid of 10000 dollars")
-bidset.part = bid
-who = model.Person(label="Example Bidder")
-bid.carried_out_by = who
-bidprop = model.PropositionalObject()
-bid.created = bidprop
-amnt = model.MonetaryAmount()
-amnt.value = 10000
-amnt.currency = vocab.instances["us dollars"]
-bidprop.refers_to = amnt
-```
-
--->
 
 ## Auction Catalog
 

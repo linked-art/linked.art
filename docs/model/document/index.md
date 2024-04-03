@@ -121,18 +121,3 @@ top = vocab.MonographText(ident="koot_nightwatch/3", label="Content of Koot's Ni
 top.about = model.HumanMadeObject(ident="nightwatch", label="The Night Watch")
 ```
 
-<!--
-
-## Translations
-
-One Linguistic Object, be it captured in the model as a Statement or as the full text content carried by a physical object, can be the translation of another. For example an article can be the translation of an original article in a different language. This is represented using the `translation_of` relationship.
-
-```crom
-top = vocab.ArticleText(ident="auto int-per-segment")
-top._label = "The Birth of Artistic Conception in China"
-top.language = vocab.instances['english']
-orig = vocab.ArticleText()
-orig._label =  "Zhongguo yishu yijing zhi dansheng"
-orig.language = vocab.instances['chinese']
-top.translation_of = orig
-```
