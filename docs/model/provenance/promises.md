@@ -20,6 +20,9 @@ There is a necessary vocabulary term, given the lack of a more explicit class to
 * __Promise:__ (_aat:300435599_) A promise that some future activity will be carried out.
 
 
+!!! note "At Risk"
+	Given the Society work above, and the limited utility of the patterns, there is a proposal to exclude promises from Linked Art 1.0 and instead have them (along with other complex provenance) as an extension. Thoughts on this would be greatly appreciated.
+
 ## Promised Gift
 
 A promise of a gift (or sale, or exchange) is an Activity which is carried out by the promising party.  It is a promise to some other actor to perform some further activity (the giving or sale of the object), however we lack the ontological machinery at the moment to make this explicit. Instead we can reference the promised party and the object being promised only via the more general properties of `participant` and `used_specific_object` respectively. 

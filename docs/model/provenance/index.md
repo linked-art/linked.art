@@ -28,7 +28,7 @@ __Example:__
 
 ```crom
 top = vocab.ProvenanceEntry(ident="manet_proust/1", label="Purchase of Spring by Proust")
-top.identified_by = vocab.PrimaryName("Purchase of Spring by Proust from Manet")
+top.identified_by = vocab.PrimaryName(content="Purchase of Spring by Proust from Manet")
 
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "1881-01-01T00:00:00Z"
