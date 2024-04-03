@@ -18,15 +18,14 @@ It is recommended that external gazeteer systems be used for recording the spati
 
 __Example:__
 
-There is a city called Los Angeles, in California.
+There is a city called Amsterdam in the Netherlands.
 
 ```crom
-top = vocab.City(ident="auto int-per-segment", label="Los Angeles, CA")
-top.identified_by = model.Name(content="Los Angeles")
-top.referred_to_by = vocab.Description(content="Los Angeles is a city in California, USA.")
-top.part_of = vocab.Province(label="California")
+top = vocab.City(ident="amsterdam/1", label="Amsterdam")
+top.identified_by = model.Name(content="Amsterdam")
+top.referred_to_by = vocab.Description(content="Amsterdam is a city in the Netherlands")
+top.part_of = vocab.Nation(ident="netherlands", label="Netherlands")
 ```
-
 
 ## Geospatial Location
 
@@ -37,10 +36,10 @@ This is handled simply by associating a [WKT](https://en.wikipedia.org/wiki/Well
 
 __Example:__
 
-A polygon that (approximately) defines the country New Zealand.
+A polygon that (approximately) defines the country of New Zealand.
 
 ```crom
-top = vocab.Nation(ident="auto int-per-segment", label="New Zealand")
+top = vocab.Nation(ident="new_zealand/1", label="New Zealand")
 top.defined_by = "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
 ```
 
@@ -50,12 +49,12 @@ All recorded locations are approximate to some degree. It may be desirable to ca
  
 __Example:__
 
-Many art sales take place in auction houses over time, and while the city might be known, the exact address within the city might not be and it would be wrong to collect all of the art sales within the entire city together.
+Many art sales take place in auction houses over time, and while the city might be known, the exact address within the city might not be and it could be misleading to collect all of the art sales within the entire city together.
 
 ```crom
-top = model.Place(ident="auto int-per-segment", label="Auction House Location")
-p2 = model.Place(label="City of the Auction House")
-p2.defined_by = "POINT(-0.0032937526703165 51.515107154846)"
+top = model.Place(ident="amsterdam_auction_house/1", label="Christie's AMS")
+top.identified_by = model.Name(content="Christie's Amsterdam Location")
+p2 = model.Place(ident="amsterdam", label="Amsterdam")
 top.part_of = p2
 ```
 
@@ -72,6 +71,7 @@ __Example:__
 The [Frank Lloyd Wright House](https://crystalbridges.org/frank-lloyd-wright/) was originally built in New Jersey, and subsequently moved to its current location in Arkansas.
 
 ```crom
-top = vocab.Building(ident="auto int-per-segment", label="Frank Lloyd Wright House")
-top.current_location = model.Place(label="Current Location in Arkansas at Crystal Bridges");
+top = vocab.Building(ident="flw_house/1", label="Frank Lloyd Wright House")
+top.identified_by = model.Name(content="Frank Lloyd Wright House")
+top.current_location = model.Place(ident="crystal_bridges", label="Crystal Bridges")
 ```

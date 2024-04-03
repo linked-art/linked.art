@@ -8,7 +8,7 @@ title: "Collections and Sets"
 
 There are many use cases for grouping resources together, often of the same class but sometimes of varying types.  These use cases are exemplified in the sections below, and range from the set of objects in an auction lot, to dealer inventories and museum collections, exhibitions, a set of related concepts, or the set of people that share a common feature such as gender or nationality.
 
-In order to cover all of the use cases with a consistent pattern, we introduce a new `Set` class from outside of CIDOC-CRM. This avoids issues with sets of resources with different types, and the semantics of the identity of objects and collections. If an equivalent class is added into the core CIDOC-CRM ontology in the future, a new major version of the specification will change to using it.
+In order to cover all of the use cases with a consistent pattern, we introduce a new `Set` class from outside of CIDOC-CRM. This avoids issues with sets of resources with different types, and the semantics of the identity of objects and collections. If an equivalent class is added into the core CIDOC-CRM ontology in the future, a new major version of the specification would likely change to using it.
 
 ## Sets
 
@@ -16,66 +16,58 @@ In order to cover all of the use cases with a consistent pattern, we introduce a
 
 Sets are conceptual groupings, rather than physical ones.  The set of objects in a virtual exhibition or simply the set of a person's favorite objects never change their physical state by being part of the Set or not.  They are, thus, created by a `Creation`, not by a `Production`.
 
-Like any core resource, Set must have an `id` and `type`, are likely to have additional classifications, and can have Identifiers and Names. They can have statements made about them, and have member resources.  These member resources are included via the `member` property rather than `part`, or via `member_of` from the included resource to the Set.  
+Like any core resource, instances of `Set` must have an `id` and `type`, are likely to have additional classifications, and can have identifiers and names. They can have statements made about them, and have member resources.  These member resources are included via the `member_of` on the included resource with a value of the URI of the `Set`.  
+
+Note that this means that the publisher of the information about the member needs to include the `member_of` property to the `Set` instance. This is not a problem in the situation where both are managed in the same environment, nor a challenge conceptually in the model (there is the inverse `member` property), however the current API does not allow for sets to refer to their members.
+
+__Example:__
+
+The set of objects in an exhibition.
 
 ```crom
-top = vocab.CollectionSet(ident="auto int-per-segment")
-top._label = "Example Collection"
-p = vocab.Painting()
-p._label = "Example Painting"
-top.member = p
-desc = vocab.Description()
-desc.content = "This is a lovely little collection"
-top.referred_to_by = desc
-n = model.Name()
-n.content = "Example Collection"
-top.identified_by = n
+top = model.Set(ident="exhset/1", label="Exhibition objects")
+top.identified_by = vocab.PrimaryName(content="Objects in Manet and Modern Beauty")
+top.referred_to_by = vocab.Description(content="Objects in the exhibition Manet and Modern Beauty at the Art Institute of Chicago and the Getty Museum")
 cre = model.Creation()
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1954-01-01"
-ts.end_of_the_end = "1955-01-01"
+ts.begin_of_the_begin = "2019-05-01"
+ts.end_of_the_end = "2019-05-01"
 cre.timespan = ts
 top.created_by = cre
+```
+
+```crom
+top = vocab.Painting(ident="spring/13", label="Jeanne (Spring) by Manet")
+top.identified_by = model.Name(content="Jeanne (Spring)")
+top.member_of = model.Set(ident="exhset")
 ```
 
 
 ### Collections of Objects
 
-Sets can be used to describe the set of objects that make up a curated collection. This is not necessarily the set of objects that the institution owns, as there could be objects which are looked after but owned by some other organization or individual, nor the set of objects that the institution has custody over, as objects being loaned to other organizations for exhibitions are still part of the conceptual collection of objects. The details of the relationship between the object and the institution are recorded on the object, and the Set simply records which objects are thought of as being part of the collection.  Objects can be thought of as being part of multiple collections at the same time -- the private owner's personal collection and the museum's public collection.  So while the majority of objects are both owned by and in the custody of the organization, this is not certain and should not be inferred. The Set is created by the organization or person that abstractly manages the collected objects.
-
-This pattern can be used for any type of organization that manages objects, from museums and archives to individuals and art dealers.
-
-```crom
-top = vocab.CollectionSet(ident="auto int-per-segment")
-top._label = "Collection of Example Museum"
-p = vocab.Painting()
-p._label = "Example Painting"
-top.member = p
-cre = model.Creation()
-inst = vocab.MuseumOrg()
-inst._label = "Example Museum"
-cre.carried_out_by = inst
-top.created_by = cre
-```
-
-#### Departmental Collections
+Sets can be used to describe the set of objects that make up a curated collection. This is not necessarily the same as the set of objects that the institution owns, as there could be objects which are looked after but owned by some other organization or individual, nor the set of objects that the institution has custody over, as objects being loaned to other organizations for exhibitions are still part of the conceptual collection of objects. The details of the relationship between the object and the institution are recorded on the object, and the Set provides identity for the collection itself, independently of the member objects.  Objects can be part of multiple collections at the same time -- the private owner's personal collection and the museum's public collection.  So while the majority of objects are both owned by and in the custody of the organization, this is not certain and should not be inferred.
 
 Institutions are often split up into departments, each of which will manage a part of the overall collection. These parts of the collection are managed as separate Sets, rather than a tree structure within a single resource.  It is useful to be able to describe the properties of the object in each of the contexts, and allow a separate structure of inventory management from organizational chart. The department might also conceive of further sets of their objects, without any direct correspondence and likely with the same object being part of more than one set at the same time.
 
+__Example:__
+
+The paintings of the Rijksmuseum.
+
 ```crom
-top = vocab.CollectionSet(ident="auto int-per-segment")
-top._label = "Collection of Example Museum's Paintings Department"
-p = vocab.Painting()
-p._label = "Example Painting"
-top.member = p
-cre = model.Creation()
-inst = vocab.MuseumOrg()
-inst._label = "Example Museum"
-dept = vocab.Department()
-dept._label = "Paintings Department"
-dept.member_of = inst
-cre.carried_out_by = dept
-top.created_by = cre
+top = vocab.CollectionSet(ident="rijks_objects/1", label="Collection of the Rijksmuseum")
+top.identified_by = vocab.PrimaryName(content="Collection of the Rijksmuseum")
+```
+
+```crom
+top = vocab.CollectionSet(ident="rijks_paintings/1", label="Paintings of the Rijksmuseum")
+top.identified_by = vocab.PrimaryName(content="Paintings of the Rijksmuseum")
+top.member_of = model.Set(ident="rijks_objects", label="Collection of the Rijksmuseum")
+```
+
+```crom
+top = vocab.Painting(ident="nightwatch/16", label="Night Watch by Rembrandt")
+top.identified_by = vocab.PrimaryName(content="The Night Watch")
+top.member_of = model.Set(ident="rijks_paintings", label="Paintings of the Rijksmuseum")
 ```
 
 ### Other Uses
@@ -86,7 +78,7 @@ The set of objects in an [auction lot](/model/provenance/auctions.html#set-of-ob
 
 Information about a resource that is specific to the context of the set that they are part of, such as the accession number of an object for that particular collection, can be described using the `AttributeAssignment` patterns described in the page about [assertions](/model/assertion/#context-specific-assertions).
 
-
+<!--
 ## Collections over Time
 
 Collections are not static over time but instead change as objects are acquired and sold, stolen or given to new owners. Recording these states results in some complexity, as we still want to be able to refer to objects in a previous context, rather than just their current context. It is useful, for example, to record the accession or stock number of an object in previous collections or as assigned by dealerships and auction houses.  For collections that never change once finished, this isn't a problem.  The object can be considered to always be part of the auction lot.  However for museum or dealer collections, it is important to distinguish between the objects that are currently part of that collection and the objects that have ever been part of the collection. 
@@ -112,3 +104,4 @@ ts.begin_of_the_begin = "1954-01-01T00:00:00Z"
 ts.end_of_the_end = "1955-01-01T00:00:00Z"
 add.timespan = ts
 ```
+-->

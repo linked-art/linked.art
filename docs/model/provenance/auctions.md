@@ -32,18 +32,20 @@ It is referenced by the auction of lot activities via their `part_of` property.
 
 __Example:__
 
-An auction event takes place on March 12 and 13 at the London premises of the auction house.
+An auction event takes place on November 5th, 2014 at the New York premises of Christie's.
+
+<!-- 
+https://www.christies.com/en/auction/impressionist-modern-evening-sale-24477/
+-->
 
 ```crom
-top = vocab.AuctionEvent(ident="auto int-per-segment", label="Example Auction in London 1875-03-12,13")
-org = vocab.AuctionHouseOrg(label="Auction House")
-where = vocab.AuctionHouse(label="Auction House Premises, London")
-top.took_place_at = where
-top.carried_out_by = org
-t = model.TimeSpan()
-t._label = "12th and 13th of March, 1875"
-t.begin_of_the_begin = "1875-03-12T00:00:00Z"
-t.end_of_the_end = "1875-03-14T00:00:00Z"
+top = vocab.AuctionEvent(ident="christies_24477/1", label="Impressionist Sale")
+top.identified_by = vocab.PrimaryName(content="Impressionist & Modern Evening Sale")
+top.took_place_at = vocab.AuctionHouse(ident="christies_nyc", label="Christie's, New York")
+top.carried_out_by = vocab.AuctionHouseOrg(ident="christies", label="Christie's")
+t = model.TimeSpan(label="Nov 5, 2014")
+t.begin_of_the_begin = "2014-11-05T17:00:00Z"
+t.end_of_the_end = "2014-11-05T23:59:59Z"
 top.timespan = t
 ```
 
@@ -55,16 +57,93 @@ The model uses an `Activity` for the auction of lot, which is `part_of` the Auct
 
 __Example:__
 
-The lot "J-1823-5" was auctioned as part of the Example Auction above, and resulted in a sale.
+Lot 16 was auctioned as part of the auction above.
 
 ```crom
-top = vocab.Auction(ident="auto int-per-segment", label="Auction of Lot J-1823-5")
-top.carried_out_by = vocab.Person(label="Example Auctioneer")
-top.used_specific_object = model.Set(label="Set of Objects for Lot J-1823-5")
-top.part_of = vocab.Activity(label="Example Auction")
-top.part = model.Activity(label="Bids on Lot J-1823-5")
-top.caused = vocab.ProvenanceEntry(label="Sale of Lot J-1823-5")
+top = vocab.Auction(ident="christies_24477_16/1", label="Auction of Lot 16")
+top.identified_by = vocab.PrimaryName(content="Auction of Lot 16")
+top.used_specific_object = model.Set(ident="24477_16_objects", label="Lot 16")
+top.part_of = vocab.Activity(ident="christies_24477")
 ```
+
+## Set of Objects 
+
+The Lot is a set of objects grouped together for the purposes of the sale, and may potentially have come from different owners.  It is frequently assigned an identifying Lot Number by the auction house, and may have a title, description or other properties such as specific price information, discussed in more detail below.  The set has members which are the objects for sale. As with all other Sets, the membership information is given on the object using the `member_of` property, rather than on the Set directly.
+
+__Example:__
+
+Lot 16 consists of a single painting, Spring.
+
+```crom
+top = vocab.AuctionLotSet(ident="24477_16_objects/1", label="Set of Objects for Lot 16")
+top.identified_by = vocab.PrimaryName(content="Lot 16: Le Printemps")
+top.identified_by = vocab.LotNumber(content="16")
+```
+
+```crom
+top = vocab.Painting(ident="spring/20", label="Spring")
+top.identified_by = vocab.PrimaryName(content="Jeanne (Spring)")
+top.member_of = model.Set(ident="24477_16_objects", label="Lot 16: Le Printemps")
+```
+
+### Pre-set Prices
+
+In auctions, there are several types of monetary values that are useful and interesting to record.  There is a significant distinction between the starting price or reserve price for an auction and the regular purchase price of an object, in that even if the auction never takes place, these other prices are still known as they are set in advance.
+
+There are three pre-set prices of interest:
+
+  * __Starting Price:__  (_aat:300417242_) The price at which the auction will start.
+  * __Reserve Price:__  (_aat:300417243_) The price that must be exceeded for the auction to result in a sale.
+  * __Estimated Price:__  (_aat:300417244_) The price that the auction house estimates will be the final sale price.
+
+These prices are associated with the Set of Objects that the Auction of Lot is intended to sell.  In this way, even if the auction never takes place, there is still the set of objects to associate the prices with.  In order to associate a monetary value with an object, it is treated as an observed dimension.
+
+__Example:__
+
+Lot 16 had an estimated price of $25,000,000:
+
+```crom
+top = vocab.AuctionLotSet(ident="24477_16_objects/2", label = "Set of Objects for Lot 16")
+amnt = vocab.EstimatedPrice(value=25000000)
+amnt.currency = vocab.instances['us dollars']
+top.dimension = amnt
+```
+
+## Purchase of Lot 
+
+The purchase of the lot is very similar to the purchase of any other object, however there is an explicit reference to the set of objects. The set is only a temporary grouping, put together only for the purpose of this particular auction and is not something which can be owned directly.  As such, each object has its own acquisition as part of the provenance event or its own record. Conversely, there is only a single payment for the entire lot.
+
+__Example:__
+
+The Getty acquired Lot 16 for $65,125,000.
+
+```crom
+top = vocab.ProvenanceEntry(ident="payneheirs_getty/2", label="Purchase of Lot 16")
+top.used_specific_object = model.Set(label="Set of Objects for Lot 812")
+top.part_of = model.Activity(ident="christies_24477_16", label="Auction of Lot 16")
+
+seller = model.Group(ident="payne_heirs", label="Family of Oliver Payne")
+buyer = model.Group(ident="getty", label="J. Paul Getty Museum")
+
+acq = model.Acquisition(label="Acquisition of Spring")
+top.part = acq
+acq.transferred_title_of = model.HumanMadeObject(ident="spring", label="Spring")
+acq.transferred_title_from = seller
+acq.transferred_title_to = buyer
+acq.carried_out_by = model.Person(ident="naumann", label="Otto Naumann")
+
+pay = model.Payment(label="Payment for Lot 16")
+ma = model.MonetaryAmount(value=65125000)
+ma.currency = vocab.instances['us dollars']
+pay.paid_amount = ma
+pay.paid_from = buyer
+pay.paid_to = seller
+top.part = pay
+```
+
+<!--
+
+Too Complex, Not Enough Data
 
 ### Known Bid Amounts
 
@@ -88,74 +167,18 @@ amnt.currency = vocab.instances["us dollars"]
 bidprop.refers_to = amnt
 ```
 
-## Set of Objects 
+-->
 
-The Lot is a set of objects grouped together for the purposes of the sale, and may potentially have come from different owners.  It is frequently assigned an identifying Lot Number by the auction house, and may have a title, description or other properties such as specific price information, discussed in more detail below.  The set has members which are the objects for sale.
+## Auction Catalog
 
-__Example:__
-
-Lot "812" consists of a single painting.
+Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/).
 
 ```crom
-top = vocab.AuctionLotSet(ident="auto int-per-segment", label="Set of Objects for Lot 812")
-top.identified_by = vocab.LotNumber(content="812")
-top.identified_by = model.Name(content="One Example Painting")
-top.member = model.HumanMadeObject(label="Example Painting")
+top = vocab.AuctionCatalogText(ident="catalog_24477/1", label="Auction Catalog")
+top.identified_by = vocab.PrimaryName(content="Impressionist & Modern Evening Sale Catalog")
+top.about = model.Activity(ident="christies_24477", label="Impressionist Sale")
 ```
 
-### Pre-set Prices
-
-In auctions, there are several types of monetary values that are useful and interesting to record.  There is a significant distinction between the starting price or reserve price for an auction and the regular purchase price of an object, in that even if the auction never takes place, these other prices are still known as they are set in advance.
-
-There are three pre-set prices of interest:
-
-  * __Starting Price:__  (_aat:300417242_) The price at which the auction will start.
-  * __Reserve Price:__  (_aat:300417243_) The price that must be exceeded for the auction to result in a sale.
-  * __Estimated Price:__  (_aat:300417244_) The price that the auction house estimates will be the final sale price.
-
-These prices are associated with the Set of Objects that the Auction of Lot is intended to sell.  In this way, even if the auction never takes place, there is still the set of objects to associate the prices with.  In order to associate a monetary value with an object, it is treated as an observed dimension.
-
-__Example:__
-
-A lot with a starting price of $500, a reserve price of $3000 and an estimated price of $4000:
-
-```crom
-top = vocab.AuctionLotSet(ident="auto int-per-segment", label = "Set of Objects for Lot 812")
-top.member = model.HumanMadeObject(label = "Example Painting")
-amnt = vocab.StartingPrice(value = 500)
-amnt.currency = vocab.instances['us dollars']
-amnt2 = vocab.EstimatedPrice(value=4000)
-amnt2.currency = vocab.instances['us dollars']
-amnt3 = vocab.ReservePrice(value = 3000)
-amnt3.currency = vocab.instances['us dollars']
-top.dimension = amnt
-top.dimension = amnt2
-top.dimension = amnt3
-```
-
-## Purchase of Lot 
-
-The purchase of the lot is very similar to the purchase of any other object, however there is an explicit reference to the set of objects. The set is only a temporary grouping, put together only for the purpose of this particular auction and is not something which can be owned directly.  As such, each object has its own acquisition as part of the provenance event. Conversely, there is only a single payment for the entire lot.
-
-
-```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase via Lot 812")
-top.used_specific_object = model.Set(label="Set of Objects for Lot 812")
-seller = model.Person(label="Seller")
-buyer = model.Person(label="Buyer")
-acq = model.Acquisition(label="Acquisition of Painting via Lot 812")
-top.part = acq
-acq.transferred_title_of = model.HumanMadeObject(label="Example Painting")
-acq.transferred_title_from = seller
-acq.transferred_title_to = buyer
-pay = model.Payment(label="Payment for Lot 812")
-ma = model.MonetaryAmount(value=4500)
-ma.currency = vocab.instances['us dollars']
-pay.paid_amount = ma
-pay.paid_from = buyer
-pay.paid_to = seller
-top.part = pay
-```
 
 ## Other Results
 
@@ -167,40 +190,21 @@ It is possible that an auction lot is withdrawn from the auction before the auct
 
 In this case, there should be a catalog entry and the auction lot set that the entry describes, but no corresponding auction of lot activity, as it did not take place. The date can be calculated from the dates of the auction event, to position the objects in time.  In some cases, where the auctioned objects are all from a single person or organization, this would also establish evidence of ownership at that time.
 
-
 ### Object Withdrawn from Lot
 
 It can also be that a single object is withdrawn from a Lot with multiple objects, which is otherwise sold. In this case, the withdrawn object is returned to the owner as part of the provenance event that is caused by the auction of the lot which still takes place. That return has a specific purpose that can distinguish withdrawn objects from objects that are returned for other reasons below.
-
 
 ### Reserve Not Met
 
 Another scenario is when the auction of lot does take place, but there is no purchase because a reserve price was not met.  This is often referred to as being "Bought In", or sometimes "Passed".
 
-In this case the auction of lot activity does occur, but there may or may not have been any bidding. It does result in a provenance entry, as for the auction house organization to be able to auction it, they must have had some degree of custody of the object.  There may also be a commission paid from the owner to the auction house for running the auction, even though it was ultimately unsuccessful.
-
-__Example:__
-
-A painting put up for auction is returned to the owner, as it was not sold to someone else.  The Provenance Entry below would be `caused` by the Auction of Lot activity. This example is also appropriate to the following use cases as well. 
-
-```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Return to Owner from Auction House")
-xf = vocab.ReturnOfLoan()
-what = model.HumanMadeObject(label="Painting")
-owner = model.Person(label="Owner")
-ah = model.Group(label="Auction House")
-top.part = xf
-xf.transferred_custody_of = what
-xf.transferred_custody_to = owner
-xf.transferred_custody_from = ah
-```
+In this case the auction of lot activity does occur, but there may or may not have been any bidding. It does result in a provenance entry, as for the auction house organization to be able to auction it, they must have had some degree of custody of the object.  There may also be a commission paid from the owner to the auction house for running the auction, even though it was ultimately unsuccessful.  The return of the object to the owner would be a Transfer of Custody in the same way as returning a painting to the owner after an exhibition.
 
 ### Bought by Owner
 
 In some cases the owner of the object actively bids on their own items, either directly or via an agent, and ends up bidding the highest amount, and thereby winning the lot. This is different to the bought in case, as in that case the reserve was not met, and in this case it was. This was sometimes done intentionally to determine what the market would bear for an object, or to drive up the price of related objects by providing a precedent.
 
 As the owner cannot sell the object to themselves, this does not result in a __change__ of ownership. In the same way as when the reserve is not met, there is a change of custody from the owner to the auction house and back again, and might involve paying commission to the auction house for the "sale". Conversely, in this case we do know that there was bidding as there was a "sale", even if there was not a transfer of ownership.  
-
 
 ### Winner Unable to Pay
 
@@ -209,19 +213,4 @@ And in other cases, someone successfully wins the auction other than the owner, 
 It is not often to know that this has occured, unless the information is coming either directly from the auction house or from the owner.  This might happen when an art dealer auctions an object, and then records the return of the object in their stock management system.
 
 
-## Auction Catalog
 
-Much of the information we have about historical auctions comes from Auction Catalogs.  These documents thus provide the primary source of evidence, and can be linked to the descriptions of the activities.  These follow the same model as other [documents](/model/document/).
-
-```crom
-top = vocab.AuctionCatalogText(ident="auto int-per-segment", label="Auction Catalog of Example Auction")
-entry = vocab.ParagraphText(label="Entry for Lot 812")
-top.part = entry
-auc = vocab.AuctionEvent(label = "Example Auction, 1924")
-top.refers_to = auc
-lot = vocab.Auction(label = "Auction of Lot 812")
-lotset = vocab.AuctionLotSet(label="Lot 812")
-top.refers_to = auc
-entry.refers_to = lot
-entry.refers_to = lotset
-```

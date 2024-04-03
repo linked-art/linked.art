@@ -20,23 +20,22 @@ This pattern is useful when you do not want to assert the relationship directly,
 
 The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `attributed_by` property on that resource, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  In terms of the relationship that the `AttributeAssignment` expresses, the resource with the `attributed_by` property is the subject of the relationship, the relationship itself is given in `assigned_property`, and the object of the relationship is given in `assigned`, thereby making up a regular 'triple' of subject, predicate, object.
 
-The example below demonstrates associating a previous title with an object.
+__Example:__
+
+Manet called his painting "Le Printemps", "Spring" in French.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",art=1)
-top._label = "Current Painting Title"
+top = vocab.Painting(ident="spring/21", label="Spring")
 aa = model.AttributeAssignment()
 aa.assigned_property = "identified_by"
 name = model.Name()
-name.content = "Previous Painting Title"
+name.content = "Le Printemps"
 aa.assigned = name
 top.attributed_by = aa
-who = model.Person()
-who._label = "Painting Curator"
-aa.carried_out_by = who
+aa.carried_out_by = model.Person(ident="manet", label="Manet")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1804-05-19"
-ts.end_of_the_end = "1804-05-19"
+ts.begin_of_the_begin = "1881-01-01T00:00:00Z"
+ts.end_of_the_end = "1881-12-31T23:59:59Z"
 aa.timespan = ts
 ```
 
@@ -46,84 +45,47 @@ In other situations the assigned value is the appropriate resource with which to
 
 In this case, the subject of the relationship is the resource which refers to the value, the predicate is that relationship, and the object is the resource with the `assigned_by` property which refers to the AttributeAssignment.
 
+__Example:__
+
+The Kehinde Wiley painting "Portrait of Lynette Yiadom-Boakye, Jacob Morland of Capplethwaite" is jointly owned by the Yale University Art Gallery and the Yale Center for British Art. Both organizations have assigned their own accession numbers to the painting, and both are correct simultaneously.
+
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-acc1 = vocab.AccessionNumber(value="1925.0034")
-acc2 = vocab.AccessionNumber(value="B-1254.6")
+top = vocab.Painting(ident="yiadom-boakye/1", label="Portrait of Lynette Yiadom-Boakye")
+acc1 = vocab.AccessionNumber(value="2021.25.1")
+acc2 = vocab.AccessionNumber(value="B2021.5")
 aa1 = model.AttributeAssignment()
-aa1.carried_out_by = vocab.MuseumOrg(label="First Owning Museum")
+aa1.carried_out_by = vocab.MuseumOrg(ident="yuag", label="Yale University Art Gallery")
 aa2 = model.AttributeAssignment()
-aa2.carried_out_by = vocab.MuseumOrg(label="Another Owning Museum")
+aa2.carried_out_by = vocab.MuseumOrg(ident="ycba", label="Yale Center for British Art")
 acc1.assigned_by = aa1
 acc2.assigned_by = aa2
 top.identified_by = acc1
 top.identified_by = acc2
 ```
 
-### "Style Of" Attribution
+## Uncertain or Former Assignments
 
-There is a common special case of wanting to assign not an individual (e.g. Rembrandt) or a group with specific identity (Workshop of Rembrandt) to the production of an object, but simply to say that it was produced as if it had been produced by some other actor.  This is traditionally recorded as being "in the style of" or "in the manner of" a known artist. It is not correct to say that Rembrandt carried out the production, but a search for objects attributed (loosely speaking) to Rembrandt should discover this object. The assessment of "style of" attribution is a judgement decision that might be changed later as new evidence of the actual creator comes to light.
+Similar to the approach taken in the first example above, it is possible to use `attributed_by` on a `Production` node to make either uncertain or previously held to be true claims about it. The assignment then creates another `Production` to encapsulate the information that isn't certain, or was formerly held to be correct, including the artist(s) but also potentially other links such as the place of production, the date, or other influences.
 
-The approach taken for this case is to use an `AttributeAssignment` that associates a Production activity that is `influenced_by` the artist and `classified_as` being in the "style of" (_aat:300404285_).  This prevent systems from mistakenly infering that the actor `carried_out` the production, but is consistent with the overall pattern.
+__Example:__ 
 
-This would also apply to cases where there is a "circle of" or "follower of" and similar attributions in which there is doubt that there was an actual coherent group, and thus there is reluctance to give that hypothetical group an identity.  Instead of using the "style of" AAT concept, it would use another [attribution qualifiers](http://www.getty.edu/vow/AATHierarchy?find=&logic=AND&note=&page=1&subjectid=300404264).
+The watercolor painting "Forum Romanum" was possibly produced by Salomon Corrodi
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",art=1)
-top._label = "Example Painting"
-aa = model.AttributeAssignment()
-aa.assigned_property = "produced_by"
-who = model.Person()
-who._label = "Well Known Artist"
+top = vocab.Painting(ident="forum/1", label="Forum Romanum")
+top.identified_by = vocab.PrimaryName(content="Forum Romanum")
 prod = model.Production()
-prod.influenced_by = who
-prod.classified_as = vocab.instances['style of']
-aa.assigned = prod
-top.attributed_by = aa
-by = model.Person()
-by._label = "Painting Curator"
-aa.carried_out_by = by
-```
-
-## Context Specific Assertions
-
-The basic pattern for making an assertion within some context is to reuse the `AttributeAssignment` activity, and have it be part of some larger activity.  A good example of this is the assignment of a particular title to a work during an [Exhibition](/model/exhibition/#exhibition-specific-labels). This could equally be part of the larger cataloging activity of an organization, an art dealer taking inventory, or any number of other contexts.
-
-There are two relationships to note with this pattern.  The first is that the broader activity has a `part` which is the `AttributeAssignment`.  This gives some basic temporal context for the assignment. There is also in many cases a set of objects or other resources that provide additional context. In the Exhibition case, the set of objects and their labels in the exhibit is `involved` in the provision of the `Name` of the individual object.
-
-
-```crom
-top = vocab.Exhibition(ident="auto int-per-segment")
-top._label = "Example Exhibition"
-agg = model.Set()
-top.used_specific_object = agg
-obj = vocab.Painting(art=1)
-obj._label = "Real Painting Name"
-agg.member = obj
+top.produced_by = prod
 aa = model.AttributeAssignment()
-aa.assigned_property = "identified_by"
-name = model.Name()
-name.content = "Exhibition Specific Name"
-aa.assigned = name
-obj.attributed_by = aa
-curator = model.Person()
-curator._label = "A. Curator"
-aa.carried_out_by = curator
-aa.involved = agg
-aa.part_of = top
+aa.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300404272", label="Possibly By")
+part = model.Production()
+aa.assigned = part
+part.carried_out_by = model.Person(ident="corrodi", label="Salomon Corrodi")
+aa.assigned_property = "part"
+prod.attributed_by = aa
 ```
 
-## Inferred Data
+## Unknown Relationship
 
-Some assertions, or even entire resources, are computationally inferred from other data rather than being evidenced in primary source literature or history. It is useful to tag these resources as such, so that they can be treated appropriately when it comes to research making use of them: if the underlying data has errors, these errors will have been propogated to this resource.
 
-The way that this can be signalled in the data is to add the "computer-generated" concept _aat:300202389_ to the resource in the `classified_as` field.  
 
-```crom
-top = model.Activity(ident="auto int-per-segment")
-top._label = "Inferred Activity"
-top.classified_as = vocab.instances['computer generated']
-a = model.Actor()
-a._label = "Performer of inferred activity"
-top.carried_out_by = a
-```

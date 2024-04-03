@@ -8,7 +8,7 @@ up_label: "Objects"
 
 ## Introduction
 
-The rights information about both the physical objects and their digital representations is important to capture.  For general, textual statements about rights information the model uses the LinguisticObject pattern that should be familiar.  For more specific rights that can be identified individually, such as copyright, and optionally who holds those rights, there is the ability to assert them in a machine readable way.
+The rights information about both the physical objects and their digital representations is important to capture.  For general, textual statements about rights information the model uses the LinguisticObject pattern that should now be familiar.  For more specific rights that can be identified individually, such as copyright, and optionally who holds those rights, there is the ability to assert them in a machine readable way.
 
 ## Credit / Attribution Statement
 
@@ -16,29 +16,26 @@ It is important to be able to give a credit or attribution statement that should
 
 __Example:__
 
-The painting was a donation of a Ms J. Smith.
+The Night Watch is on loan to the Rijksmuseum from the City of Amsterdam.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-crdt = vocab.CreditStatement()
-crdt.content = "Donation of Ms J. Smith; Example Organization"
-top.referred_to_by = crdt
+top = vocab.Painting(ident="nightwatch/15", label="Night Watch by Rembrandt")
+top.referred_to_by = vocab.CreditStatement(content="On loan from the City of Amsterdam")
 ```
 
 ## Rights Statement
 
-For general statements about rights that have not been aligned with any other controlled vocabularies such as [rightsstatements.org](http://rightsstatements.org/), the information can be provided in the same way as for a credit or attribution.  The difference is that it is `classified_as` _aat:300435434_ - the term for license or legal statements.
+For general statements about rights or licenses, the information can be provided in the same way as for a credit or attribution.  The difference is that it is `classified_as` _aat:300435434_ - the term for license or legal statements.
+Such rights statements might be associated with the physical object or with the visual work, but likely should be associated with the work (the image that has or had copyright, rather than the bits of matter that carry it).
+
 
 __Example:__
 
-An assertion that the copyright status of an object has not been assessed, and is thus unknown.
+The visual content of the Night Watch is in the Public Domain.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", art=1)
-top._label = "Example Painting"
-crdt = vocab.RightsStatement()
-crdt.content = "Copyright of this object has not yet been assessed"
-top.referred_to_by = crdt
+top = model.VisualItem(ident="nightwatch/1", label="Visual Content of Night Watch")
+top.referred_to_by = vocab.RightsStatement(content="Public Domain")
 ```
 
 ## Rights Assertions
@@ -47,20 +44,19 @@ More detailed information is, however, often available and it is useful to be ex
 
 ### RightsStatements.org Assertions
 
-There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way.
+There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way. These assertions are modeled as individual Rights, which are then `classified_as` the Rights Statement URI or a Creative Commons URI.
 
-These assertions are modeled as individual Rights, which are then `classified_as` the rights statement URI. A label, via`_label`, can also be given to provide clarity for developers looking at the data in the same way as `Type` objects.
+These rights must be associated with the Work, rather than the Object, if they are about the copyright or other use of the image rather than the physical object. Asserting that you can reuse "The Night Watch" does not give you any physical rights over the object in the Rijksmuseum, it gives you usage rights over the visual content.
 
 __Example:__
 
-The painting has no known copyright.
+The visual content of the Night Watch is in the Public Domain.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", art=1)
-top._label = "Painting"
-r = model.Right()
-t = model.Type(ident="http://rightsstatements.org/vocab/NKC/1.0/")
-t._label = "No known copyright"
+top = model.VisualItem(ident="nightwatch/2", label="Visual Content of Night Watch")
+r = model.Right(label="Night Watch's Public Domain status")
+t = model.Type(ident="https://creativecommons.org/publicdomain/zero/1.0/", label="Public Domain")
+r.identified_by = model.Name(content="Public Domain")
 r.classified_as = t
 top.subject_to = r
 ```

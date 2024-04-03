@@ -1,6 +1,4 @@
 .site
 scripts/*.pyc
-scripts/.hyde_deps
 extensions/*.pyc
-.hyde_deps
-content/example/*
+docs/model/example_index.md

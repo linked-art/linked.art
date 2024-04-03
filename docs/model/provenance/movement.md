@@ -12,7 +12,6 @@ The [current location](/model/object/ownership/) of an object is determined by t
 
 There are several scenarios in which it is, however, useful to track the movement of an object, in the same way as tracking custody or ownership.  These include:
 
-
 * Putting an object on display, or taking it off display and putting it back in storage. This would inform when objects were visible to the public.
 * Putting an object on display as part of an exhibition, when the object is owned by the exhibiting organization and hence there is no transfer of custody between organizations.
 * Moving an object between storage facilities, conservation studios or galleries.
@@ -24,16 +23,18 @@ If the institution is subdivided into departments, these moves may also coincide
 
 The model for moving an object is very similar to that of an Acquisition, Transfer of Custody or Payment.  There is an activity, which can be `carried_out_by` an actor and all of the other basic activity features, that `moved` the object between two locations, from the place given in `moved_from` and to the place given in `moved_to`.
 
+__Example:__
+
+The Kehinde Wiley painting "Portrait of Lynette Yiadom-Boakye" routinely moves between the Yale Center for British Art and the Yale University Art Gallery
+
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Exhibiting a Painting")
-what = vocab.Painting(label="Example Painting")
-storage = vocab.StoragePlace(label="Storage Venue")
-display = vocab.Gallery(label="Gallery")
-exh = vocab.Exhibition()
-top.motivated_by = exh
+top = vocab.ProvenanceEntry(ident="wiley_move/1", label="Movement of Wiley Painting")
+what = model.HumanMadeObject(ident="yiadom-boakye", label="Portrait of Lynette Yiadom-Boakye")
+yuag = model.Place(ident="yuag_gallery", label="YUAG Gallery")
+ycba = model.Place(ident="ycba_gallery", label="YCBA Gallery")
 mv = model.Move()
 mv.moved = what
-mv.moved_from = storage
-mv.moved_to = display
+mv.moved_from = ycba
+mv.moved_to = yuag
 top.part = mv
 ```

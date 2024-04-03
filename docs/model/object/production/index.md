@@ -12,22 +12,22 @@ This section covers the beginning and ending of objects' existence, along with t
 
 ## Base Production Activity
 
-The first activity in an object's lifecycle is its creation, or `Production`.  The relationship to the object that was produced by the activity (`produced`) is added to the general activity model, along with the time, location and actors. This follows the base pattern for [activities](/model/base/#events-and-activities).
+The first activity in an object's lifecycle is its creation, or `Production`.  The relationship from the object to the activity is `produced_by`, and the `Production` activity itself follows the general [base activity model](/model/base/#events-and-activities) with the description of time, location and agents.
 
 __Example:__
 
-A painting is created by an artist, in their studio, in March 1780.
+Similar to the Production example in the basic patterns, "The Night Watch" was created by Rembrandt in Amsterdam in 1642.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
+top = model.HumanMadeObject(ident="nightwatch/5", label="Night Watch by Rembrandt")
 prod = model.Production()
-prod.carried_out_by = model.Person(label="Artist")
-prod.took_place_at = model.Place(label="Artist's Studio")
-when = model.TimeSpan()
-when.begin_of_the_begin = "1780-03-05T00:00:00Z"
-when.end_of_the_end = "1780-03-06T00:00:00Z"
-prod.timespan = when
 top.produced_by = prod
+prod.carried_out_by = model.Person(ident="rembrandt", label="Rembrandt")
+when = model.TimeSpan(label="1642")
+when.begin_of_the_begin = "1642-01-01T00:00:00"
+when.end_of_the_end = "1642-12-31T23:59:59"
+prod.timespan = when
+prod.took_place_at = model.Place(ident="amsterdam", label="Amsterdam")
 ```
 
 ## Techniques and Classifications
@@ -36,33 +36,17 @@ We distinguish between techniques used to create the artwork, and other classifi
 
 ### Techniques
 
-If there is a particular technique known to have been used in the creation of the object, this can be expressed using the `technique` property, referring to a controlled vocabulary term for the technique. This should be used to capture specific techniques or methods, and the base `classified_as` property used for more general classifications of the activity.
-
+If there is a particular technique known to have been used in the creation of the object, this can be expressed using the `technique` property, referring to a controlled vocabulary term for the technique. This should be used to capture specific techniques or methods, and the base `classified_as` property used for more general classifications of the activity.  More general classifications are more common on individual roles, discussed below.
+ 
 __Example:__
 
-A glass sculpture is created using the glassblowing technique, which is identified by _aat:300053932_.
+The sculpture "Bust of a Man" was created by the Studio of Francis Hardwood using the sculpting technique.
 
 ```crom
-top = vocab.Sculpture(ident="auto int-per-segment",label="Glass Sculpture", art=1)
+top = vocab.Sculpture(ident="bust/1", label="Bust of a Man")
 prod = model.Production()
-prod.carried_out_by = model.Person(label = "Glassblowing Artist")
-prod.technique = vocab.instances['glassblowing']
-top.produced_by = prod
-```
-
-### Classifications
-
-Classifications for production events are less common than techniques, but still possible.  These classifications must not be techniques, but instead some assertion about the activity generally. This could include whether the activity was a minor contribution to the overall work, or whether the activity was performed legally or not. 
-
-__Example:__
-
-Grafitti artwork is created using the "spraypainting" technique, and could also be considered "vandalism", but vandalism is not a technique.
-
-```crom
-top = model.HumanMadeObject(ident="auto int-per-segment",label="Graffiti", art=1)
-prod = model.Production(label="Production of Graffiti")
-prod.technique = vocab.instances['spraypainting']
-prod.classified_as = vocab.instances['vandalism']
+prod.carried_out_by = model.Group(ident="harwoodstudio", label="Studio of Francis Harwood")
+prod.technique = vocab.instances['sculpting']
 top.produced_by = prod
 ```
 
@@ -70,23 +54,24 @@ top.produced_by = prod
 
 If there are multiple artists collaborating on the same piece of artwork, then we follow the partitioning pattern of creating separate parts of the main `Production` activity. Each of these components captures the details of one particular artist's role in the production of the object. This allows us to assert different properties for each artist's contribution, including different times, techniques, locations or influences.
 
-For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. 
+For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. For compatibility with other systems this is, however, not required.
 
 __Example:__
 
-A sculpture that is then painted by another artist, would be produced by the overall activity, with two parts, one for each artist's activities.
+A [painted textile called "RÜN"](https://artgallery.yale.edu/collections/objects/153900), where the linen was hand-woven by Sarah Parke and then painted by Mark Barrow.
+
 
 ```crom
-top = vocab.Sculpture(ident="auto int-per-segment", label = "Painted Sculpture", art=1)
+top = vocab.Painting(ident="run/1", label = "RUN")
 prod = model.Production()
 top.produced_by = prod
 act1 = model.Production()
-act1.technique = vocab.instances['sculpting']
-act1.carried_out_by = model.Person(label="Sculptor")
+act1.technique = vocab.instances['painting']
+act1.carried_out_by = model.Person(ident="barrow", label="Mark Barrow")
 prod.part = act1
 act2 = model.Production()
-act2.carried_out_by = model.Person(label="Painter")
-act2.technique = vocab.instances['painting']
+act2.technique = model.Type(ident="http://vocab.getty.edu/aat/300053643", label="hand weaving")
+act2.carried_out_by = model.Person(ident="parke", label="Sarah Parke")
 prod.part = act2
 ```
 
@@ -95,131 +80,136 @@ prod.part = act2
 Other objects can play critical roles in the production of artwork, such as copying or being inspired by another artwork, or the use of the same source to create an artwork, either mechanically or manually, such as the negative used for printing a photograph.
 
 
-### Inspiration or Copies
+### Inspirations, Studies or Copies
 
-Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. 
+Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. This includes studies done for the final version of the work.
 
 __Example:__
 
+In 1964, Deane Keller created [a copy](https://artgallery.yale.edu/collections/objects/54339) of Daniel Huntington's [portrait of James Dwight Dana](https://artgallery.yale.edu/collections/objects/52687), from 1858. 
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Copy of Painting of a Fish", art=1)
+top = vocab.Painting(ident="kellerdana/1", label="Copy of Huntington Portrait")
 prod = model.Production()
 top.produced_by = prod
-copied = vocab.Painting(label="Painting of a Fish", art=1)
+copied = model.HumanMadeObject(ident="huntingtondana", label="Huntington Portrait of Dana")
 prod.influenced_by = copied
-prod.carried_out_by = model.Person(label="Copyist")
+prod.carried_out_by = model.Person(ident="keller", label="Deane Keller")
 ```
 
 ### Reproduction from an Identifiable Source
 
 Many objects are created from a source, such as a photograph being printed from a negative, a print created from a woodcut, or a sculpture made from a cast.  The use of the particular source can be captured as part of the description of the `Production` of the object using the `used_specific_object` property.
 
-All of the art objects created from the same source show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects, including the source object, show. This allows us to group the objects together based on their provenance.
+Note that all of the art objects created from the same source will show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects show, allowing us to group the objects together. For more information about the work, see the section on [aboutness](../aboutness/).
+
+Equipment or tools such as a particular camera or palette would also be modeled with the same property `used_specific_object`, however would not (of course) show the same visual item as the main work.
 
 __Example:__
 
-A photograph is printed using a Negative. Both the positive and the negative show the same visual content, as would any other prints of the photograph.
+Copies of a photograph, taken by Alfred Stieglitz of Georgia O'Keeffe, are printed from the same negative at different times and now owned by different organizations: [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/198690), [National Gallery of Art](https://www.nga.gov/collection/art-object-page.60057.html), and the [Georgia O'Keeffe Museum](https://collections.okeeffemuseum.org/object/6627/)
 
 
 ```crom
-top = vocab.Photograph(ident="auto int-per-segment",label = "Photograph")
+top = vocab.Photograph(ident="okeeffe-gok/1", label = "GOK 1918, GOKM")
+top.identified_by = vocab.AccessionNumber(content="2014.3.78")
 prod = model.Production(label = "Printing of Photograph")
 top.produced_by = prod
-negative = vocab.Negative(label = "Negative of Photograph")
+negative = model.HumanMadeObject(ident="okeeffe-negative", label = "Negative of GOK 1918")
 prod.used_specific_object = negative
-vi = model.VisualItem(label="Visual Content of Photographs and Negative")
+vi = model.VisualItem(ident="okeeffe", label="Visual Content of GOK 1918")
 top.shows = vi
-negative.shows = vi
 ```
 
-## Attributions
+```crom
+top = vocab.Photograph(ident="okeeffe-yuag/1", label = "GOK 1918, YUAG")
+top.identified_by = vocab.AccessionNumber(content="2016.101.242")
+prod = model.Production(label = "Printing of Photograph")
+top.produced_by = prod
+negative = model.HumanMadeObject(ident="okeeffe-negative", label = "Negative of GOK 1918")
+prod.used_specific_object = negative
+vi = model.VisualItem(ident="okeeffe", label="Visual Content of GOK 1918")
+top.shows = vi
+```
 
-### Attribution of a Group
+__Example:__
+
+A [print](https://collections.britishart.yale.edu/catalog/tms:6141) at the Yale Center for British Art, Chaucer's Canterbury Pilgrims, made from a specific [copper plate](https://artgallery.yale.edu/collections/objects/11787) held at the Yale University Art Gallery.
+
+```crom
+top = vocab.Print(ident="ccp/1", label="Chaucer's Canterbury Pilgrims")
+prod = model.Production(label="Printing from Plate")
+top.produced_by = prod
+prod.used_specific_object = model.HumanMadeObject(ident="ccp-plate", label="Plate for CCP")
+```
+
+```crom
+top = model.HumanMadeObject(ident="ccp-plate/1", label="Plate for CCP")
+top.made_of = vocab.instances['copper']
+```
+
+
+## Attribution Qualifiers
+
+### Influenced By an Artist
+
+If there is some connection between the production of the object and someone who was not the artist directly, but influenced the production, then the `influenced_by` property can be used to reference that person.  These are often expressed as "after", "in the style of", or "in the manner of" attributions -- they qualify the attribution by relating the production to someone (likely as embodied by their work, rather than through a personal connection) that directly influenced it.
+
+__Example:__
+
+The painting "Wash Day" was intentionally created in the manner of Winslow Homer.
+
+```
+top = vocab.Painting(ident="washday/1", label="Wash Day")
+top.identified_by = vocab.PrimaryName(content="Wash Day")
+prod = model.Production()
+prod.influenced_by = model.Person(ident="whomer", label="Winslow Homer")
+top.produced_by = prod
+```
+
+### Attribution of a Group Related to an Artist
 
 Even if the artist's or artists' identity is not known exactly, the person or persons may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`: this does not mean that every member of the group participated, just that at least one of them did, in the same way that saying that a document was written by an organization does not imply all employees contributed to the text.
 
 We can use the `influenced_by` property on the `Formation` (the creation) of the group to connect it to a known person -- the "master" of the workshop in the example use case. The "master" might not have participated in the group, or even been alive when it was formed, and hence does not necessarily form the group or is even a member of it. 
 
+This approach can be used for workshops, studios, the set of pupils, followers, and so forth. It is not that the entire Group created the object, but that one or more of them did. 
+
 __Example:__
 
-A painting is from the workshop of an artist named Franckz.
+The "Bust of a Man" object described above was created by the Studio of Francis Harwood, a Group. The example below is the record for the Group.
  
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label = "Painting from the workshop of Franckz", art=1)
-prod = model.Production()
-top.produced_by = prod
-grp = model.Group(label = "Workshop of Franckz")
-prod.carried_out_by = grp
-f = model.Formation()
-grp.formed_by = f
-f.influenced_by = model.Person(label = "Franckz")
+top = vocab.Studio(ident="harwoodstudio/1", label="Studio of Francis Harwood")
+fm = model.Formation()
+top.formed_by = fm
+fm.influenced_by = model.Person(ident="http://vocab.getty.edu/ulan/500015886", label="Francis Harwood")
 ```
 
 ### Uncertain or Changing Attributions
 
-A piece of information associated with historical artworks that can change as research and understanding improves is the identity of the artist that produced it. The actor that is referenced in `carried_out_by` is the current opinion, but previous attributions can still be recorded. 
+A piece of information associated with historical artworks that can change as research and understanding improves is the identity of the artist that produced it. The actor that is referenced in `carried_out_by` is the current opinion, but previous attributions can still be recorded. The pattern used for this is described in more detail in the [assertions](/model/assertion/) section of the documentation.
 
-In order to clearly separate the previous thinking from current, the model explicitly includes the act of assigning the previous artist as an `AttributeAssignment`. The assignment activity assigns the previous artist's role as part of the main Production, but has an "obsolete" classification to indicate that it is no longer believed to be correct. A "possibly" classification would indicate that the attribution of the artist is uncertain.
-
-The Attribute Assignment pattern is described in more detail in the [assertions](/model/assertion/) section of the documentation.
-
-__Example:__
-
-It was previously thought that J. Artist produced the painting, by Paintings Curator in 1923, but that is no longer held to be correct.
-
-```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Painting", art=1)
-prod = model.Production()
-top.produced_by = prod
-aa = vocab.ObsoleteAssignment()
-who = model.Person(label="J. Artist")
-prod2 = model.Production()
-prod2.carried_out_by = who
-prod.assigned_by = aa
-aa.assigned = prod2
-aa.assigned_property = "part_of"
-aa.carried_out_by = model.Person(label = "Paintings Curator")
-ts = model.TimeSpan()
-ts.begin_of_the_begin = "1923-07-20"
-ts.end_of_the_end = "1923-07-21"
-aa.timespan = ts
-```
 
 ## Production by Removal
 
 It is also possible for an object to come into documentary existence when it is removed from a larger object.  The production of the part is simply part of the production of the whole, but until it is removed, it does not need a separate identity or existence.
 
-This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created de novo in the present.
+This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created _de novo_ in the present.
 
-A second scenario when this occurs is unfortunately common.  If an object, such as a medieval manuscript, can be sold for more by splitting it up into parts and selling each part individually, then unscrupulous sellers will do just that. Rather than sell an innocuous book of hours to a single buyer, instead each illumination can be sold individually and then the remaining text-bearing pages either dumped or sold over time at a greatly reduced price.  This dispersal of manuscripts still occurs today.
+A second scenario when this occurs is unfortunately common.  If an object, such as a medieval manuscript, can be sold for a higher profit by splitting it up into parts and selling each part individually, then unscrupulous sellers will do just that. Rather than sell an innocuous book of hours to a single buyer, instead each illumination can be sold individually and then the remaining text-bearing pages either dumped or sold over time at a greatly reduced price.  This dispersal of manuscripts still occurs today.
 
+In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, other than it has a `diminished` property that refers to the whole object from which the part was removed.  It is not normally useful to have a separate `Production` for the part, if the information about the source object it was removed from is known.
 
-In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, other than it has a `diminished` property that refers to the whole object from which the part was removed.  The removed object can have a `Production` event, but it should be a part of the `Production` of the whole.  As it is unlikely that there is any new information about the removed part, this is not normally useful.
-
-
-__Example:__
-
-A conservator removes a paint sample from a painting.
-
-```crom
-top = model.HumanMadeObject(ident="auto int-per-segment",label="Paint sample")
-rm = model.PartRemoval()
-rm.carried_out_by = model.Person(label="Conservator")
-whole = vocab.Painting(label="Painting")
-rm.diminished = whole
-top.removed_by = rm
-```
 
 __Example:__
 
-A seller removes a page of a manuscript for individual sale.
+The collection item is a page from a gradual (manuscript) by the Master of the Libro dei Notai. [Source](https://artgallery.yale.edu/collections/objects/51500)
 
 ```crom
-top = vocab.Page(ident="auto int-per-segment",label="Page of Manuscript")
+top = vocab.Page(ident="gradualpage/1", label="Page from a Gradual")
 rm = model.PartRemoval()
-rm.carried_out_by = model.Person(label="Unscrupulous Seller")
-whole = vocab.Manuscript(label="Manuscript")
+whole = vocab.Manuscript(label="Gradual")
 rm.diminished = whole
 top.removed_by = rm
 ```
@@ -232,18 +222,17 @@ The model uses a `Destruction` class that represents the going out of existence 
 
 __Example:__
 
-The Painting was destroyed in 1823.
+The painting "Le Peintre" by Picasso was destroyed (in a plane crash) on September 2nd, 1998 at about 10:30pm. [Source](https://en.wikipedia.org/wiki/Swissair_Flight_111)
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment",label="Example Destroyed Painting", art=1)
-dest = model.Destruction(label="Destruction of Painting")
+top = vocab.Painting(ident="lepeintre/1", label="Le Peintre by Picasso")
+dest = model.Destruction(label="Destruction of Le Peintre")
 top.destroyed_by = dest
 when = model.TimeSpan()
-when.begin_of_the_begin = "1823-03-01T00:00:00Z"
-when.end_of_the_end = "1823-03-31T00:00:00Z"
+when.begin_of_the_begin = "1998-09-02T22:20:00Z"
+when.end_of_the_end = "1998-09-02T022:40:00Z"
 dest.timespan = when
 ```
-
 
 ### Cause of Destruction
 
@@ -253,35 +242,17 @@ In order to distinguish between the destruction itself and its cause, we use the
 
 __Example:__
 
-The Painting was destroyed in 1823, due to being burnt by someone.
+Le Peintre was destroyed because of the plane crashing. (Which also would have caused the destruction of the plane, the death of the crew, passengers and many other consequences)
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Destroyed Painting", art=1)
-dest = model.Destruction(label="Destruction of Painting")
+top = vocab.Painting(ident="lepeintre/2", label="Le Peintre by Picasso")
+dest = model.Destruction(label="Destruction of Le Peintre")
 top.destroyed_by = dest
 when = model.TimeSpan()
-when.begin_of_the_begin = "1823-03-01T00:00:00Z"
-when.end_of_the_end = "1823-03-31T00:00:00Z"
+when.begin_of_the_begin = "1998-09-02T22:20:00Z"
+when.end_of_the_end = "1998-09-02T022:40:00Z"
 dest.timespan = when
-act = model.Activity(label="Burning of the Painting")
-act.carried_out_by = model.Person(label="Painting Burner")
+act = model.Event(ident="sr111crash", label="Crash of Swiss Air 111")
 dest.caused_by = act
 ```
 
-
-## Other Specific Activities
-
-If there are other activities that are specific to the particular object and do not have any identity of their own beyond the object, then that activity can be described with a relationship from the object to the activity, rather than from the activity to the object. In these cases the description of the activity will end up embedded completely within the object's record, in the same way that the publication of a work is embedded within the work's record.  In the more general case, when the activity has its own identity (such as an auction or conservation work on the object) then the event will instead refer to the object and the object must not refer to the event. The relationship for this situation is `used_for` between the object and the activity.
-
-
-__Example:__
-
-A knife was created and used for a specific ritual, about which we know nothing else.
-
-```
-top = model.HumanMadeObject(ident="auto int-per-segment", label="Ritual Knife")
-top.identified_by = vocab.PrimaryName(content="Ritual Knife")
-ritual = model.Activity()
-ritual.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300065284")
-top.used_for = ritual
-```

@@ -22,15 +22,15 @@ The physical dimensions of an object, such as height, width, diameter or weight,
 
 __Example:__
 
-A painting that measures 16 inches wide by 20 inches tall.
+The Night Watch is 379.5 cm high, by 453.5 cm wide.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
-w = vocab.Width(value=16)
-w.unit = vocab.instances['inches']
+top = vocab.Painting(ident="nightwatch/6", label="Night Watch by Rembrandt")
+w = vocab.Width(value=453.5)
+w.unit = vocab.instances['cm']
 top.dimension = w
-h = vocab.Height(value=20)
-h.unit = vocab.instances['inches']
+h = vocab.Height(value=379.5)
+h.unit = vocab.instances['cm']
 top.dimension = h
 ```
 
@@ -40,12 +40,12 @@ If the dimension text is not recorded in a way that is condusive to generating t
 
 __Example:__
 
-The same 16 by 20 inch painting, described only in a human-readable text.
+The dimensions, including weight, of the Night Watch, described in a human-readable text.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
+top = vocab.Painting(ident="nightwatch/7", label="Night Watch by Rembrandt")
 dims = vocab.DimensionStatement()
-dims.content = "The painting is approximately 16 inches wide, by 20 inches high"
+dims.content = "height 379.5 cm × width 453.5 cm × weight 337 kg"
 top.referred_to_by = dims
 ```
 
@@ -57,20 +57,19 @@ This same approach can be used on many data structures and is merely being calle
 
 __Example:__
 
-The same 16 by 20 inch painting once more, described with human readable labels on each dimension.
+The Night Watch once more, described with human readable labels on each dimension.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example 16x20 Painting", art=1)
-w = vocab.Width(value=16)
-w.unit = vocab.instances['inches']
-w.identified_by = vocab.DisplayName(value="16 inches wide")
+top = vocab.Painting(ident="nightwatch/8", label="Night Watch by Rembrandt")
+w = vocab.Width(value=453.5)
+w.unit = vocab.instances['cm']
 top.dimension = w
-h = vocab.Height(value=20)
-h.unit = vocab.instances['inches']
-h.identified_by = vocab.DisplayName(value="20 inches high")
+h = vocab.Height(value=379.5)
+h.unit = vocab.instances['cm']
 top.dimension = h
+w.identified_by = vocab.DisplayName(value="453.5 cm wide")
+h.identified_by = vocab.DisplayName(value="379.5 cm high")
 ```
-
 
 
 ### Measurements of Dimensions
@@ -81,17 +80,17 @@ In order to build upon the dimension model described above, the model adds an `A
 
 __Example:__
 
-A particular curator measured the painting to be 20 inches high.
+The measurement of the Night Watch was carried out by the "Operation Night Watch" team, during "[Operation Night Watch](https://www.rijksmuseum.nl/en/stories/operation-night-watch)" 
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-h = vocab.Height(value=20)
-h.unit = vocab.instances['inches']
-aa = model.AttributeAssignment(label="Measurement of Painting")
-h.assigned_by = aa
-who = model.Person(label="Curator")
-aa.carried_out_by = who
+top = vocab.Painting(ident="nightwatch/9", label="Night Watch by Rembrandt")
+h = vocab.Height(value=379.5)
+h.unit = vocab.instances['cm']
 top.dimension = h
+aa = model.AttributeAssignment(label="Measurement of the Night Watch")
+h.assigned_by = aa
+aa.carried_out_by = model.Group(ident="nightwatchteam", label="Operation Night Watch Team")
+aa.part_of = model.Activity(ident="operationnightwatch", label="Operation Night Watch")
 ```
 
 
@@ -103,21 +102,20 @@ Measurements record a `Dimension`, and thus we create an instance of the class t
 
 __Example:__
 
-A green painting has a vivid (`00FF00`) green color, and is also categorized as being green (_aat:300128438_)
+The Night Watch is primarily a brown color (`B35A1F`), which is categorized as being brown (_aat:300127490_)
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Green Painting", art=1)
-c = vocab.Color()
-c._label = "green"
-c.classified_as = vocab.instances['color green']
-c.value = 65280
+top = vocab.Painting(ident="nightwatch/10", label="Night Watch by Rembrandt")
+c = vocab.Color(label="brown")
+c.classified_as = vocab.instances['color brown']
+c.value = 11754015
 c.unit = vocab.instances['rgb_colorspace']
 top.dimension = c
 ```
 
 !!! note "Implementation Note"
 
-	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int(hex_value, 16)`. The reverse is also true, with the equivalent being `hex(int_value)`. As such, the unobvious value of `65280` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer.
+	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int("B35A1F", 16)`. The reverse is also true, with the equivalent being `hex(11754015)`. As such, the unobvious value of `11754015` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency with all other dimensions is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer.
 
 
 ## Shapes
@@ -128,26 +126,28 @@ Shapes are given as classifications on the object via the `classified_as` proper
 
 __Example:__
 
-An oval-shaped painting.
+The Night Watch is a landscape format painting, as it is wider than it is high.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Oval Painting", art=1)
-top.classified_as = vocab.instances['oval']
+top = vocab.Painting(ident="nightwatch/11", label="Night Watch by Rembrandt")
+top.classified_as = vocab.instances['oblong']
 ```
 
 ## Materials
 
 Objects are created using different materials, such as canvas or marble.  These are recorded using the `made_of` property on the object directly. The materials are the type of material, rather than the specific bits of matter and therefore refer to entries in external vocabularies.  When possible, it is good to use this model, and combined with the parts model described in the next section, allows for a comprehensive set of information about which parts are which sizes, shapes, colors, and made of which materials.
 
-Note that the type-of-type pattern is not needed for materials, like it is for shape, as they have their own `Material` class that is used to distinguish them.
+Note that the type-of-type pattern is not needed for materials, like it is for shape, as they have their own `Material` class that is used to distinguish them. Note also that materials should be specifically the material of the artwork, rather than the tool used to apply the material. For example, the material should be graphite, not pencil, as pencils can be used as materials to create (very small) sculptures.
+
 
 __Example:__
 
-A statue made of marble.
+The Night Watch is made of oil paint and canvas.
 
 ```crom
-top = vocab.Sculpture(ident="auto int-per-segment", label="Marble Sculpture", art=1)
-top.made_of = vocab.instances['marble']
+top = vocab.Painting(ident="nightwatch/12", label="Night Watch by Rembrandt")
+top.made_of = vocab.instances['oil']
+top.made_of = vocab.instances['canvas']
 ```
 
 ### Materials Statement 
@@ -156,48 +156,29 @@ Similarly to dimensions statements, it is possible to describe the materials usi
 
 __Example:__
 
-A multi-media painting, with a description of the materials in human-readable text only.
+The Night Watch is "oil on canvas".
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Multi-material Painting", art=1)
-mats = vocab.MaterialStatement()
-mats.content = "Oil, French Watercolors on Paper, Graphite and Ink on Canvas, with an Oak frame"
-top.referred_to_by = mats
-```
-
-## Environmental conditions
-
-Depending on their material, objects need to be kept in appropriate environmental conditions so that they do not deteriorate. Such conditions are often recommendations by conservators and collection care experts and can be documented using a `LinguisticObject` classified as being about the environmental conditions of the object via _aat:300229535_.
-
-__Example:__
-
-A painting with a description of the recommended environmental conditions.
-
-```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Painting", art=1)
-env = vocab.EnvironmentStatement()
-env.content = "Light level: 150 &#177;50 lux; Relative humidity: 55 &#177;5%; Temperature 21 &#177;1 &deg;C."
-top.referred_to_by = env
+top = vocab.Painting(ident="nightwatch/13", label="Night Watch by Rembrandt")
+top.referred_to_by = vocab.MaterialStatement(content="Oil on Canvas")
 ```
 
 ## Parts
 
-As described in the [baseline patterns](/model/base/), one of the main modeling paradigms used is to separate parts of resources from the whole. Physical objects are particularly amenable to this, and allows reuse of the rest of the model as needed.  The parts do not need to be physically separable without destroying the object, but do need to be objectively definable in terms of the matter that makes it up.  For example, the arm of a sculpture could have dimensions and materials, but while an arch-shaped space in a rock formation might have dimensions, it could not be removed, nor is it made of anything, and thus it is not a part.
+As described in the [basic patterns](/model/base/), one of the main modeling paradigms used is to separate parts of resources from the whole. Physical objects are particularly amenable to this, and allows reuse of the rest of the model as needed.  The parts do not need to be physically separable without destroying the object, but do need to be objectively definable in terms of the matter that makes it up.  For example, the arm of a sculpture could have dimensions and materials, but while an arch-shaped space in a rock formation might have dimensions, it could not be removed, nor is it made of anything, and thus it is not a part.
 
-Physical parts are given using the `part` property, and use the same `HumanMadeObject` class, as per the full object. The `classified_as` property can be used to be more specific as to the sort of part, in this case the support for the painting, which is in turn made of canvas. The type of part is then further classified as _aat:300241583_ to ensure that it can be distinguished as a part-type, rather than an object-type.
+Physical parts are linked to the whole using the `part_of` property, and use the same `HumanMadeObject` class. The `classified_as` property can be used to be more specific as to the sort of part, in this case the support for the painting, which is in turn made of canvas. The type of part is then further classified as _aat:300241583_ to ensure that it can be distinguished as a part-type, rather than an object-type.
 
 The model does not have a separate parts statement to describe this in a human-readable way, as this is traditionally done using the materials statement as demonstrated above.
 
 __Example:__
 
-A watercolor painting, that has a part which is the support and is made of canvas.
+The support part of the Night Watch is made of canvas, and part of the Night Watch.
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting", art=1)
-top.made_of = vocab.instances['watercolor']
-part = vocab.SupportPart(label="Canvas Support")
-part.made_of = vocab.instances['canvas']
-top.part = part
+top = vocab.SupportPart(ident="nightwatch/support", label="Support of Night Watch")
+top.made_of = vocab.instances['canvas']
+top.part_of = model.HumanMadeObject(ident="nightwatch", label="Night Watch by Rembrandt")
 ```
 
 ### Sides of an Object
@@ -208,24 +189,11 @@ While some artworks can be treated as two dimensional, as the only part of inter
 
 __Example:__
 
-A photograph that depicts the Example Painting, where the image is on the front part, and there is an inscription on the back that reads "Photograph of Example Painting, taken 1932".
-The use of the classification of being an artwork applies only to the front of the photograph, and not the back.
 
+On the back of Manet's "Spring" is an inscription "11505F".
 
 ```crom
-top = vocab.PhotographColor(ident="auto int-per-segment",label="Photograph of Example Painting")
-
-recto = vocab.FrontPart(label="Front of Photograph", art=1)
-verso = vocab.BackPart(label="Back of Photograph")
-top.part = recto
-top.part = verso
-
-what = vocab.Painting(label="Example Painting", art=1)
-vi = model.VisualItem()
-vi.represents = what
-recto.shows = vi
-
-txt = model.LinguisticObject()
-txt.content = "Photograph of Example Painting, taken 1932"
-verso.carries = txt
+top = vocab.BackPart(ident="spring/back", label="Back of Spring by Manet")
+top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Manet")
+top.referred_to_by = vocab.InscriptionStatement(content="11505F")
 ```

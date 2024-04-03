@@ -20,23 +20,19 @@ Objects of cultural significance are often lost to all knowledge, or to the gene
 The model uses an `Encounter` activity, which is carried out by the person or group making the rediscovery. The activity has its own relationship for the object that is rediscovered, `encountered`, to ensure that other objects that are used as part of the discovery can be separated from the "find".
 As it is part of a Provenance Event, other parts can describe the changing ownership status of the object.  In all other ways, the `Encounter` is just like a regular `Activity` as described in the [baseline patterns](/model/base/#events-and-activities).
 
+Note that Encounters may also be included directly in the object's description without ownership implications.
 
 __Example:__
 
-A sculpture was lost at sea, and then later rediscovered by a commercial fisher when she dredged it up with her fishing nets.  As it was in international waters, this resulted in the ownership of the statue by the fisher.
-
+The "Statue of a Victorious Youth" was discovered in 1964 off the coast of Italy by a fishing trawler, thereby taking ownership of it.
 
 ```crom
-top = vocab.ProvenanceEntry(ident="auto int-per-segment")
-what = vocab.Sculpture(label="Lost Sculpture")
-who = model.Person(label="Fisher")
-where = model.Place(label="At Sea")
-withwhat = model.HumanMadeObject(label="Fishing Net")
+top = vocab.ProvenanceEntry(ident="getty_bronze/1", label="Discovery of Victorious Youth")
+what = model.HumanMadeObject(ident="victorious_youth", label="Victorious Youth")
+who = model.Group(ident="ferruccio", label="Owners of Ferri Ferruccio")
 enc = model.Encounter(label="Encounter of Sculpture")
 enc.encountered = what
 enc.carried_out_by = who
-enc.took_place_at = where
-enc.used_specific_object = withwhat
 top.part =  enc
 acq = model.Acquisition()
 acq.transferred_title_of = what

@@ -9,11 +9,11 @@ The core of any art historical information system is the art objects themselves.
 
 ## Shared Patterns
 
-The [basic patterns](/model/base/) apply to objects, as does the [digital integration layer](/model/digital/). Rather than repeating the patterns for every type of resource, example [use cases and vocabularies](use_cases/) are provided to demonstrate how the patterns are applied.
+The [basic patterns](/model/base/) apply to objects, as does the [digital integration layer](/model/digital/). Rather than repeating the patterns for every type of entity, example [use cases and vocabularies](use_cases/) are provided to demonstrate how the patterns are applied.
 
 ## Sections
 
-The following sections are uniquely about physical objects, and specifically artworks:
+The following sections are uniquely about physical objects:
 
 * [Production and Destruction](production/) -- How the work is produced and/or destroyed
 * [Physical Characteristics](physical/) -- Dimensions, Shapes, Colors, Materials and Parts
