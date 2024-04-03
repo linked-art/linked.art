@@ -50,7 +50,7 @@ __Example:__
 The Kehinde Wiley painting "Portrait of Lynette Yiadom-Boakye, Jacob Morland of Capplethwaite" is jointly owned by the Yale University Art Gallery and the Yale Center for British Art. Both organizations have assigned their own accession numbers to the painting, and both are correct simultaneously.
 
 ```crom
-top = vocab.Painting(ident="yiadom-boakye/1", label="Portrait of Lynette Yiadom-Boakye"))
+top = vocab.Painting(ident="yiadom-boakye/1", label="Portrait of Lynette Yiadom-Boakye")
 acc1 = vocab.AccessionNumber(value="2021.25.1")
 acc2 = vocab.AccessionNumber(value="B2021.5")
 aa1 = model.AttributeAssignment()
