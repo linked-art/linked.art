@@ -9,3 +9,8 @@ In order to provide examples of how to apply the [data model](/model/), this sec
 ## Recipes
 
 * The recipes are being rewritten against the latest version of the model for the 1.0 release
+
+## Mappings
+
+* [CDWA](cdwa/)
+* [Schema](schema/)
