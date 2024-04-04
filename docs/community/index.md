@@ -72,30 +72,20 @@ And several others. If you would like to be listed here, please let us know!
 
 Starting in January 2019, the linked.art project will be managed by an editorial board, currently consisting of the following people:
 
-* Robert Sanderson (co-chair, Yale University)
-* Emmanuelle Delmas-Glass (co-chair, Yale Center for British Art)
+* Robert Sanderson (chair, Yale University)
 * Edward Anderson (Rijksmuseum)
 * David Beaudet (National Gallery of Art (US))
-* Dan Brennan (Princeton) 
-* George Bruseker (FORTH, CIDOC-CRM SIG)
-* Nicola Carboni (University of Zurich)
-* Sophy Chen (Academia Sinica)
-* Jennie Choi (Metropolitan Museum of Art)
-* Chris Dijkshoorn (Rijksmuseum)
-* Ethan Gruber (American Numismatics Society)
-* Thomas Hansli (ETH Zurich)
+* George Bruseker (Takin Solutions)
+* Trang Dang (Canadian Heritage Information Network)
 * Antoine Isaac (Europeana)
 * John McQuaid (Frick)
-* Philippe Michon (Canadian Heritage Information Network)
-* David Newbury (J. Paul Getty Trust)
+* Jonathan Lill (MoMA)
+* Bree Midavaine (Philadephia Museum of Art)
 * Samantha Norling (Indianapolis Museum of Art at Newfields)
 * Kevin Page (Oxford University)
 * Richard Palmer (V&A)
-* Kristen Regina (Philadephia Museum of Art)
-* Lynn Rother (Leuphana University Lüneburg)
-* Saskia Scheltjens (Rijksmuseum)
-* Adam Soroka (Smithsonian)
-* Athanasios Velios (University of the Arts London)
+* Julien A. Raemy (Swiss Federal Archives)
+* Daniel Sissman (J. Paul Getty Trust)
 
 The make-up of the editorial board will change over time, however every effort will continue to be made to ensure diversity of representation in the organizations participating in the work. The factors to be represented include geographic location, type and size of institution, gender, and career path.
 
