@@ -19,12 +19,12 @@ The model can be treated as interlinking components that describe aspects of the
 * [Places](place/)
 * [Digital Objects](digital/)
 * [Provenance](provenance/) of Objects
-* [Collections](collection/) and Sets of entities
 * [Exhibitions](exhibition/)
+* [Conservation](conservation/)
 * [Textual Documents](document/)
+* [Collections](collection/) and Sets of entities
 * [Archival Hierarchies](archives/)
 * [Assertions](assertion/)
-* [Dataset](dataset/) level metadata
 
 An index of all of the classes, properties and identities used:
 
