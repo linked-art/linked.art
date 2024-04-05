@@ -100,6 +100,6 @@ top = vocab.Painting(ident="nightwatch/17", label="The Night Watch")
 top.identified_by = vocab.PrimaryName(content="The Night Watch")
 aa = model.AttributeAssignment()
 top.attributed_by = aa
-aa.identified_by = model.DisplayName(content="Related Object")
+aa.identified_by = vocab.DisplayName(content="Related Object")
 aa.assigned = model.HumanMadeObject(ident="rppob-28-106", label="Nachtwacht")
 ```
