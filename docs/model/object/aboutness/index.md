@@ -44,8 +44,20 @@ The image of Manet's Spring represents or depicts Jeanne Demarsy, a French actre
 
 ```crom
 top = model.VisualItem(ident="spring/1", label="Visual Content of Spring")
-who = model.Person(ident="jeanne", label="Jeanne Demarsy")
-top.represents = who 
+top.represents = model.Person(ident="jeanne", label="Jeanne Demarsy")
+```
+
+### Depiction of an Instance
+
+Still life paintings, photographs and many other artworks depict things which we can recognize by type or classification, but not as unique or individual entities in reality. A photograph of an unknown beach clearly depicts a beach, but in the same way that we do not create individual records for unidentified people, we do not need to create a Place for the beach.  Instead, we can use `represents_instance_of_type` as a shortcut directly to the classification of "beach". The same applies for people (depicts an instance of "child"), objects (depicts an instance of "bicycle"), and so forth.
+
+__Example:__
+
+The painting Spring also depicts a parasol which, of course, does not have its own identity.
+
+```crom
+top = model.VisualItem(ident="spring/5", label="Visual Content of Spring")
+top.represents_instance_of_type = model.Type(ident="http://vocab.getty.edu/aat/300046218", label="Parasol")
 ```
 
 ### Subject
@@ -62,6 +74,7 @@ Manet's Spring is about the season spring.
 top = model.VisualItem(ident="spring/2", label="Visual Content of Spring")
 top.about = model.Type(ident="https://vocab.getty.edu/aat/300133097", label="Spring (season)")
 ```
+
 
 ### Style Classification
 

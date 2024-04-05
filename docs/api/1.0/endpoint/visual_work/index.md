@@ -44,7 +44,7 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Visual Work or a [Textual Work](../textual_work/) that the current visual work is a part of |
 | `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
 | `represents` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
-| `represents_entity_of_type` | array | Optional | An array of json objects, each of which is a type of another entity that this visual work represents or depicts, but where the individual is not known and MUST follow the requirements for [Type](../../shared/type/) |
+| `represents_instance_of_type` | array | Optional | An array of json objects, each of which is a type of another entity that this visual work represents or depicts, but where the individual is not known and MUST follow the requirements for [Type](../../shared/type/) |
 | `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below | 
 | `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below |
 
