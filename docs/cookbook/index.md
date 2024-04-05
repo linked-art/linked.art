@@ -12,5 +12,5 @@ In order to provide examples of how to apply the [data model](/model/), this sec
 
 ## Mappings
 
-* [CDWA](cdwa/)
-* [Schema](schema/)
+* [CDWA](mappings/cdwa/)
+* [Schema](mappings/schema/)
