@@ -227,7 +227,7 @@ The collection item is a page from a gradual (manuscript) by the Master of the L
 ```crom
 top = vocab.Page(ident="gradualpage/1", label="Page from a Gradual")
 rm = model.PartRemoval()
-whole = vocab.Manuscript(label="Gradual")
+whole = model.HumanMadeObject(ident="gradual", label="Gradual")
 rm.diminished = whole
 top.removed_by = rm
 ```
