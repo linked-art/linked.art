@@ -93,6 +93,38 @@ aa.carried_out_by = model.Group(ident="nightwatchteam", label="Operation Night W
 aa.part_of = model.Activity(ident="operationnightwatch", label="Operation Night Watch")
 ```
 
+### Measurement of Object Features
+
+It is common to measure parts of a particular object, such as the base of a statue or the image bearing part of a painting, or the object in a particular state, such as the height of the chest with the lid open rather than with the lid closed. If there is a record for the part, separate from the full object, then the dimension can be associated with that part of the object directly, but it is inconvenient to make separate records for all of the possible aspects that could be measured, and impossible to manage state in this way.
+
+If there isn't a requirement to have multiple dimensions connected, and there isn't an interoperability or searchability requirement to be able to distinguish them computationally, then a display Name or a Statement is likely sufficient to explain to a human reader what was being measured.
+
+If this is a requirement, then instead we add the `technique` property on the `AttributeAssignment` discussed in the previous section as a way to reference the method in which the measurement was taken. The technique would represent, for example, "measuring the base" or "measuring while open". The same technique would be added to each of the measurements for the particular feature -- the height, width, and depth of the statue's base would all have the "measuring the base" technique as a way to connect them together.
+
+/// note | Missing Vocabulary
+These techniques are unlikely to exist in shared vocabularies, and implementers are thus very likely to have to create their own based on local practice.
+///
+
+__Example:__
+
+Spring has "Framed [Outer Dim]" and "Unframed" dimensions. The "Unframed" height and width are 74 and 51.5cm.
+
+```crom
+top = vocab.Painting(ident="spring/29", label="Spring")
+h = vocab.Height(value=74)
+h.unit = vocab.instances['cm']
+top.dimension = h
+aa = model.AttributeAssignment(label="Unframed Measuring")
+aa.technique = model.Type('measuring_unframed', label="Unframed Measuring")
+h.assigned_by = aa
+w = vocab.Width(value=51.5)
+w.unit = vocab.instances['cm']
+top.dimension = w
+aa2 = model.AttributeAssignment(label="Unframed Measuring")
+aa2.technique = model.Type('measuring_unframed', label="Unframed Measuring")
+w.assigned_by = aa2
+```
+
 
 ### Colors
 
