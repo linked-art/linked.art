@@ -28,6 +28,7 @@ markdown_extensions:
         - toc:
             title: "Table of Contents"
         - pymdownx.tasklist
+        - pmdownx.mark
         - pymdownx.superfences:
             custom_fences:
               - name: mermaid
