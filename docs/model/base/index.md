@@ -163,8 +163,8 @@ top.equivalent = model.HumanMadeObject(ident="https://www.wikidata.org/entity/Q2
 
 In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in a human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the entity, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
 
-The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.
-
+The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.  If the content is not plain text, then using `format` to give the media type is recommended (e.g. "text/html" for HTML)
+ 
 Use cases for this pattern include:
 
 * General description of the resource
