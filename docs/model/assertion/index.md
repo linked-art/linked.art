@@ -85,9 +85,11 @@ aa.assigned_property = "part"
 prod.attributed_by = aa
 ```
 
-## Unknown Relationships
+## Related Entities
 
-Another use of `AttributeAssignment` is to capture relationships between entities when the nature of that relationship is unknown. This will often appear in human-oriented user interfaces with a label like "Related Place" or "Related Subject". The use of AttributeAssignment in this way should be as a last resort for when there isn't any way to be more specific that just "there is a relationship". A scenario in which this might be useful and justified is to explicitly connect "related" objects in a collection, where the related-ness is via some computed similarity measure. Equally, the underlying data format might not be explicit as to the relationship between the entities, and the attribute assignment pattern is as close as can be expressed.
+Another use of `AttributeAssignment` is to capture relationships between entities when the nature of that relationship is unknown. This will often appear in human-oriented user interfaces with a label like "Related Place" or "Related Person". The use of AttributeAssignment in this way should be as a last resort for when there isn't any way to be more specific that just "there is a relationship". A scenario in which this might be useful and justified is to explicitly connect "related" objects in a collection, where the related-ness is via some computed similarity measure. Equally, the underlying data format might not be explicit as to the relationship between the entities, and the attribute assignment pattern is as close as can be expressed.
+
+This would also cover the use case of "representative objects" for an artist, or other similar "highlight" reels. There isn't a particular relationship between the artist and the object that isn't already covered by the model, but it's desirable to have some predetermined choices made rather than allowing a system to randomly pick which objects to use. These could have additional classifications in `classified_as`.
 
 __Example:__
 
@@ -98,5 +100,6 @@ top = vocab.Painting(ident="nightwatch/17", label="The Night Watch")
 top.identified_by = vocab.PrimaryName(content="The Night Watch")
 aa = model.AttributeAssignment()
 top.attributed_by = aa
+aa.identified_by = model.DisplayName(content="Related Object")
 aa.assigned = model.HumanMadeObject(ident="rppob-28-106", label="Nachtwacht")
 ```
