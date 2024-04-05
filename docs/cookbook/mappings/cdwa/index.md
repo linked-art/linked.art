@@ -258,23 +258,23 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 24. EXHIBITION/LOAN HISTORY
 
-* 24.1. Exhibition/Loan Description --> Statement
+* 24.1. Exhibition/Loan Description --> `referred_to_by` a Statement
 * 24.2. Exhibition Title or Name --> Create an Exhibition with `identified_by`
 * 24.3. Exhibition Type --> `classified_as`
 * 24.4. Exhibition Curator --> `carried_out_by` or `created_by/carried_out_by` on the abstract work
 * 24.5. Exhibition Organizer --> `carried_out_by`
-* 24.6. Exhibition Sponsor --> Not mapped
+* 24.6. Exhibition Sponsor --> ==Not mapped== - we don't have a way to talk about sponsorship
 * 24.7. Exhibition Venue --> `took_place_at`
 * 24.7.1. Venue Name/Place --> `identified_by[type=Name]` on the place
-* 24.7.2. Venue Date --> timespan on the Exhibition
-* 24.8. Exhibition Object Number --> Attribute Assignment
-* 24.8.1. Number Type --> classified_as on the identifier assigned
-* 24.9. Exhibition Object/Work Label/Identification --> URI or Statement
+* 24.7.2. Venue Date --> `timespan` on the Exhibition
+* 24.8. Exhibition Object Number --> `Attribute Assignment` on the Object, `caused_by` the Exhibition
+* 24.8.1. Number Type --> `classified_as` on the Identifier assigned
+* 24.9. Exhibition Object/Work Label/Identification --> URI in `id` or `referred_to_by` a Statement
 
 
 ### 25. CATALOGING HISTORY
 
-* 25.1. Cataloging Institution --> We don't record meta-meta-data, intentionally not mapped.
+* 25.1. Cataloging Institution --> ==Not mapped== - we don't record meta-meta-data
 * 25.2. Cataloger Name
 * 25.3. Cataloger Action
 * 25.4. Area of Record Affected
