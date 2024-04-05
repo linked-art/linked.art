@@ -19,12 +19,13 @@ The model can be treated as interlinking components that describe aspects of the
 * [Places](place/)
 * [Digital Objects](digital/)
 * [Provenance](provenance/) of Objects
-* [Collections](collection/) and Sets of entities
 * [Exhibitions](exhibition/)
+* [Conservation](conservation/)
 * [Textual Documents](document/)
+* [Collections](collection/) and Sets of entities
 * [Archival Hierarchies](archives/)
 * [Assertions](assertion/)
-* [Dataset](dataset/) level metadata
+* [Vocabulary Terms](vocab/)
 
 An index of all of the classes, properties and identities used:
 
@@ -38,7 +39,7 @@ Following the existing standards and best practices of the community, our starti
 * [CIDOC-CRM](http://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
     * We use a streamlined [subset](profile/) of CIDOC-CRM 7.1.1 to ensure consistency and comprehension.
 * The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity for domain-specific terminology
-    * Core terminology is part of the application profile documentation directly, when interoperability between systems relies on the selection. Other best practices are discussed in the [vocabularies best practice](/community/best-practices/vocabularies/) section.
+    * Terminology is divided into three lists: [required](vocab/required/), [recommended](vocab/recommended/) and [optional](vocab/optional/) based on whether systems will be interoperable if different choices were made.
 * The concrete expression of the profile and access to data is fully covered in the [API](/api/) documentation.
     * The core serialization format is [JSON-LD 1.1](https://w3.org/TR/json-ld11)
 
