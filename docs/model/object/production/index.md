@@ -177,7 +177,7 @@ __Example:__
 
 The painting "Wash Day" was intentionally created in the manner of Winslow Homer.
 
-```
+```crom
 top = vocab.Painting(ident="washday/1", label="Wash Day")
 top.identified_by = vocab.PrimaryName(content="Wash Day")
 prod = model.Production()
