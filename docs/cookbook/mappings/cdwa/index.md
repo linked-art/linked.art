@@ -172,8 +172,8 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 * 17.1.4. Event Place --> `took_place_at`
 * 17.1.5. Event Agent --> `carried_out_by` or `participated_in`
 * 17.1.5.1. Agent Role --> `classified_as` on a part of the event carried out by agent
-* 17.1.6. Contextual Cost or Value --> Not mapped, but we have MonetaryAmount construct
-* 17.2. Architectural Context --> Not mapped. Could be where removed from, could be encounter. 
+* 17.1.6. Contextual Cost or Value --> ==Not mapped== - we have MonetaryAmount construct, but no assignment pattern
+* 17.2. Architectural Context --> ==Not mapped== - Could be `removed_from`, could be `encountered_by`? 
 * 17.2.1. Building/Site Context --> Ditto
 * 17.2.2. Part/Placement Context --> Ditto
 * 17.2.3. Architectural Context Date --> Ditto
@@ -390,34 +390,34 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 * 29.4. Place Types --> `classified_as`
 * 29.4.1. Preference --> ==Not mapped== - Can't put a preference on a reference
 * 29.4.2. Place Type Date --> ==Not mapped==
-* 29.5. Related Places --> Attribute Assignment if necessary
-* 29.5.1. Place Relationship Type
-* 29.5.2. Place Relationship Date
-* 29.6. Place Broader Context --> part_of
-* 29.6.1. Broader Context Date --> Not mapped
-* 29.7. Place/Location Label/Identification --> Name or Identifier
-* 29.8. Place/Location Descriptive Note --> Statement
-* 29.11. Place Authority Record ID --> URI or Identifier
+* 29.5. Related Places --> `attributed_by` an Attribute Assignment if necessary
+* 29.5.1. Place Relationship Type --> `attributed_by/assigned_property`
+* 29.5.2. Place Relationship Date --> `attributed_by/timespan`
+* 29.6. Place Broader Context --> `part_of`
+* 29.6.1. Broader Context Date --> ==Not mapped== - would need a Phase
+* 29.7. Place/Location Label/Identification --> `identified_by` a Name or Identifier
+* 29.8. Place/Location Descriptive Note --> `referred_to_by` a Statement
+* 29.11. Place Authority Record ID --> `id` of its URI or `identified_by` an Identifier
 
 ### 30. GENERIC CONCEPT AUTHORITY 
 * 30.1. Concept Authority Record Type --> `type`
-* 30.2. Concept Term --> identified_by
-* 30.2.1. Preference --> classified_as on the Name
-* 30.2.2. Term Type --> classified_as on the Name
-* 30.2.3. Term Qualifier --> Statement on the Name
-* 30.2.4. Concept Language --> language
-* 30.2.5. Historical Flag --> classified_as or attribute assignment
-* 30.2.6. Display Term --> classified_as
-* 30.2.7. Other Name Flags --> still classified_as
-* 30.2.8. Term Source --> statement or referred_to_by
-* 30.3. Related Generic Concepts --> Attribute Assignment
-* 30.3.1. Concept Relationship Type --> not mapped
-* 30.3.2. Concept Relationship Date --> not mapped
-* 30.4. Concept Broader Context --> broader 
-* 30.4.1. Broader Context Date --> Not mapped
-* 30.5. Generic Concept Label/Identification --> identified_by
-* 30.6. Concept Scope Note --> Statement
-* 30.9. Concept Authority Record ID --> URI or Identifier
+* 30.2. Concept Term --> `identified_by` a Name
+* 30.2.1. Preference --> `classified_as` on the Name
+* 30.2.2. Term Type --> `classified_as` on the Name
+* 30.2.3. Term Qualifier --> `referred_to_by` a Statement on the Name
+* 30.2.4. Concept Language --> `language`
+* 30.2.5. Historical Flag --> `classified_as` or `assigned_by` an Attribute Assignment with `classified_as`
+* 30.2.6. Display Term --> `classified_as`
+* 30.2.7. Other Name Flags --> still `classified_as`
+* 30.2.8. Term Source --> [change proposal](https://github.com/linked-art/linked.art/issues/586)
+* 30.3. Related Generic Concepts --> `attributed_by` an Attribute Assignment of the related concept
+* 30.3.1. Concept Relationship Type --> `attributed_by/assigned_property`
+* 30.3.2. Concept Relationship Date --> ==Not mapped== - Would need a Phase
+* 30.4. Concept Broader Context --> `broader`
+* 30.4.1. Broader Context Date --> ==Not mapped== - Would still need a Phase
+* 30.5. Generic Concept Label/Identification --> `identified_by`
+* 30.6. Concept Scope Note --> `referred_to_by` a Statement
+* 30.9. Concept Authority Record ID --> `id` of its URI or `identified_by` an Identifier
 
 ### 31. SUBJECT AUTHORITY 
 
