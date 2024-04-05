@@ -41,7 +41,7 @@ For more information about the Physical Object data, please see the [Object mode
 | `used_for`    | array | Optional | An array of json objects, each of which represents an activity that the object was instumental in, but does not have its own identity |
 | `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for Productions described below | 
 | `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for Destructions described below | 
-| `removed_by` | json object | Optional | A json object representing the removal of the current object from a larger one it was previously part of, which follows the requirements for PartRemovals described below | 
+| `removed_by` | array | Optional | An array of json objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for PartRemovals described below | 
 | `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for Encounters described below |
 
 
