@@ -1,5 +1,5 @@
 ---
-title: Previously-Held or Context-Specific Assertions
+title: Relationships and Context for Assignment of Attributes
 ---
 
 [TOC]
@@ -12,7 +12,9 @@ This pattern is also used for context-specific assertions, such as when an objec
 
 The use of context specific assertions or other attribute assignments should be kept to a minimum if possible. The data structure is significantly more complex than other patterns, which reduces the likelihood of implementation and increases the difficult of search queries. This pattern should only be used if there is no other way to express the knowledge, and it is important to capture with all of the details.
 
-## Assignment of Attributes
+## Assigning Attributes
+
+### Assignment of Attributes
 
 The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the _subject_ of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
@@ -63,7 +65,7 @@ top.identified_by = acc1
 top.identified_by = acc2
 ```
 
-## Uncertain or Former Assignments
+### Uncertain or Former Assignments
 
 Similar to the approach taken in the first example above, it is possible to use `attributed_by` on a `Production` node to make either uncertain or previously held to be true claims about it. The assignment then creates another `Production` to encapsulate the information that isn't certain, or was formerly held to be correct, including the artist(s) but also potentially other links such as the place of production, the date, or other influences.
 
@@ -85,7 +87,32 @@ aa.assigned_property = "part"
 prod.attributed_by = aa
 ```
 
-## Related Entities
+### Context-Specific Assignments
+
+Some assertions are only true within a specific context, and the most commonly known case of this is descriptions, names and identifiers assigned for a particular exhibition. In order to record these context-specific assertions, the `attributed_by` pattern should be used, even for Names and Identifiers that might otherwise have the `assigned_by` pattern, as this keeps the Identifer separated from the primary record. 
+
+We use the `caused_by` relationship to connect the attribution to the exhibition.
+
+__Example:__
+
+Spring was exhibited at the National Gallery of Art's exhibition "Post-Impressionism: Cross-Currents in European and American Painting" in 1980, and was assigned a exhibition specific identifier (called a "dexid").
+
+```crom
+top = vocab.Painting(ident="spring/31", label="Spring")
+top.identified_by = vocab.PrimaryName(content="Jeanne (Spring)")
+aa = model.AttributeAssignment()
+idt = model.Identifier(content="2497-12")
+idt.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300445023", label="Entry Numbers")
+aa.assigned = idt
+aa.assigned_property = 'identified_by'
+aa.carried_out_by = model.Group(ident="nga", label="National Gallery of Art")
+aa.caused_by = model.Activity(ident="post_impressionism", label="Post-Impressionism Exhibition")
+top.attributed_by = aa
+```
+
+## Relationships
+
+### Related Entities
 
 Another use of `AttributeAssignment` is to capture relationships between entities when the nature of that relationship is unknown. This will often appear in human-oriented user interfaces with a label like "Related Place" or "Related Person". The use of AttributeAssignment in this way should be as a last resort for when there isn't any way to be more specific that just "there is a relationship". A scenario in which this might be useful and justified is to explicitly connect "related" objects in a collection, where the related-ness is via some computed similarity measure. Equally, the underlying data format might not be explicit as to the relationship between the entities, and the attribute assignment pattern is as close as can be expressed.
 
@@ -104,7 +131,7 @@ aa.identified_by = vocab.DisplayName(content="Related Object")
 aa.assigned = model.HumanMadeObject(ident="rppob-28-106", label="Nachtwacht")
 ```
 
-## Unmodeled Relationships
+### Unmodeled Relationships
 
 Conversely, perhaps the relationship is known but there's no way to describe it in the model. For example the student/teacher relationship between people is a social construct that can't be captured easily, but is still of importance for art history. There are far too many such relationships, especially in the social arena, to model them all separately or create extension properties for each, and thus an `AttributeAssignment` for the relationship is the approach taken. Finding appropriate properties to use to describe the relationship, either as `classified_as` or `assigned_property` is up to the implementer. Giving a display name with `identified_by` on the `AttributeAssignment` is recommended.
 
@@ -122,6 +149,6 @@ top = model.Person(ident="bol/1", label="Ferdinand Bol")
 top.identified_by = vocab.PrimaryName(content="Ferdinand Bol")
 aa = model.AttributeAssignment()
 aa.assigned = model.Person(ident="rembrandt", label="Rembrandt")
-aa.identified_by = vocab.DisplayName("Student Of")
+aa.identified_by = vocab.DisplayName(content="Student Of")
 top.attributed_by = aa
 ```
