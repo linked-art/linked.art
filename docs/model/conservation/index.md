@@ -12,6 +12,7 @@ This section accommodates information about activities typically undertaken as p
 Condition assessments are when a curator or conservator assesses the state of an object, and the extent to which conservation intervention is needed. Conservation activities are physical modifications of the object to improve its condition.
 
 Other sections of the Linked.Art model also relate to conservation:
+
 * [Statements](/model/base/#statements-about-an-entity) can be about the object's state or conservation related activities
 * Sampling as an activity is described under [Production by removal](/model/object/production/#production-by-removal).
 * Hazardous material can be under [Materials](/model/object/physical/#materials) by adding a classification to the Material itself.
@@ -84,5 +85,5 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "2019-01-01T00:00:00Z"
 ts.end_of_the_end = "2023-12-31T23:59:59Z"
 top.timespan = ts
-top.referred_to_by = vocab.Description(content="Operation Night Watch is the biggest and most wide-ranging ever study of Rembrandt’s most famous painting. The project started in summer 2019 and is being carried out in full view of the visiting public, in a specially designed glass chamber.")
+top.referred_to_by = vocab.Description(content="Operation Night Watch is the biggest and most wide-ranging ever study of Rembrandt’s most famous painting.")
 ```
