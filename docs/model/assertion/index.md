@@ -103,3 +103,25 @@ top.attributed_by = aa
 aa.identified_by = vocab.DisplayName(content="Related Object")
 aa.assigned = model.HumanMadeObject(ident="rppob-28-106", label="Nachtwacht")
 ```
+
+## Unmodeled Relationships
+
+Conversely, perhaps the relationship is known but there's no way to describe it in the model. For example the student/teacher relationship between people is a social construct that can't be captured easily, but is still of importance for art history. There are far too many such relationships, especially in the social arena, to model them all separately or create extension properties for each, and thus an `AttributeAssignment` for the relationship is the approach taken. Finding appropriate properties to use to describe the relationship, either as `classified_as` or `assigned_property` is up to the implementer. Giving a display name with `identified_by` on the `AttributeAssignment` is recommended.
+
+/// note | Social Constructs as Groups
+Note that many social relationships could be modeled as `Joining` and `Leaving` a `Group` with a particular role, via `classified_as` on the `Joining` activity. For example, the Group represents the social bond between the teacher and the student, the teacher joins the group as the teacher, the student as the student. This is possible, but introduces a lot of additional overhead with identity for the "Group" of the relationship.
+///
+
+
+__Example:__
+
+Ferdinand Bol was a student of Rembrandt.
+
+```crom
+top = model.Person(ident="bol/1", label="Ferdinand Bol")
+top.identified_by = vocab.PrimaryName(content="Ferdinand Bol")
+aa = model.AttributeAssignment()
+aa.assigned = model.Person(ident="rembrandt", label="Rembrandt")
+aa.identified_by = vocab.DisplayName("Student Of")
+top.attributed_by = aa
+```
