@@ -148,6 +148,24 @@ top = model.HumanMadeObject(ident="ccp-plate/1", label="Plate for CCP")
 top.made_of = vocab.instances['copper']
 ```
 
+## Unidentified or Unknown Artist
+
+Many objects are created by an unknown or unidentified artist. While it is possible to have a different Person record with "Unidentified Artist" as the name, this quickly creates a huge number of identified people in the system with only a single reference to each. Instead, it is recommended to create a Group record to represent all unidentified artists, and then each object would have its Production `carried_out_by` the Group, meaning one (or more) people within that artificial set of people.
+
+If some features of the artist is know, for example their nationality or the century in which they were active, these can be additional Groups with these properties.
+
+__Example:__
+
+The [Coppa Amatoria](https://artgallery.yale.edu/collections/objects/138452) was created by an unidentified artist or artists from Italy.
+
+```crom
+top = model.HumanMadeObject(ident="coppa/1", label="Coppa Amatoria")
+top.identified_by = vocab.PrimaryName(content="Coppa Amatoria")
+prod = model.Production()
+prod.carried_out_by = model.Group(ident="unknown_italian", label="Unidentified Italian")
+top.produced_by = prod
+```
+
 
 ## Attribution Qualifiers
 
@@ -159,7 +177,7 @@ __Example:__
 
 The painting "Wash Day" was intentionally created in the manner of Winslow Homer.
 
-```
+```crom
 top = vocab.Painting(ident="washday/1", label="Wash Day")
 top.identified_by = vocab.PrimaryName(content="Wash Day")
 prod = model.Production()
