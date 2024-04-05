@@ -104,7 +104,7 @@ aa = model.AttributeAssignment()
 idt = model.Identifier(content="2497-12")
 idt.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300445023", label="Entry Numbers")
 aa.assigned = idt
-aa.assigned_property = "identified_by"
+aa.assigned_property = 'identified_by'
 aa.carried_out_by = model.Group(ident="nga", label="National Gallery of Art")
 aa.caused_by = model.Activity(ident="post_impressionism", label="Post-Impressionism Exhibition")
 top.attributed_by = aa
@@ -149,6 +149,6 @@ top = model.Person(ident="bol/1", label="Ferdinand Bol")
 top.identified_by = vocab.PrimaryName(content="Ferdinand Bol")
 aa = model.AttributeAssignment()
 aa.assigned = model.Person(ident="rembrandt", label="Rembrandt")
-aa.identified_by = vocab.DisplayName("Student Of")
+aa.identified_by = vocab.DisplayName(content="Student Of")
 top.attributed_by = aa
 ```
