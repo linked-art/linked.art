@@ -182,10 +182,9 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 * 17.3.2. Excavation Site Sector --> Place's `identified_by`
 * 17.3.3. Excavator --> Encounter's `carried_out_by`
 * 17.3.4. Discovery/Excavation Date --> Encounter's `timespan`
-* 17.4. Historical Location Context --> Not mapped
-* 17.4.1. Historical Location Place --> Not mapped
-* 17.4.2. Historical Location Date --> Not mapped
-
+* 17.4. Historical Location Context --> ==Not mapped== - Could be an Encounter or Inventory, but otherwise it's a Phase
+* 17.4.1. Historical Location Place --> ==Not mapped==
+* 17.4.2. Historical Location Date --> ==Not mapped==
 
 ### 18. DESCRIPTIVE NOTE
 
@@ -222,7 +221,7 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 * 21.2. Current Repository / Geographic Location  --> `current_location` or `current_owner` 
 * 21.2.1 Current Flag --> ==Not mapped== - but can infer from attribute assignment for former values
 * 21.2.2 Location Type --> `classified_as` on Place or Group
-* 21.2.3 Repository Numbers --> through location to organization, then `identified_by`, or through `current_owner`
+* 21.2.3 Repository Numbers --> Through location to organization, then `identified_by`, or through `current_owner`
 * 21.2.3.1. Number Type --> `classified_as` on the Identifier
 * 21.2.4. Gallery/Shelf Location --> `current_location`
 * 21.2.5. Coordinates --> `defined_by` on the Place
@@ -284,10 +283,10 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 26. RELATED VISUAL DOCUMENTATION
 
-* 26.1. Image References --> `representation` to the image work, then digitally_* carried_by to the digital image itself
+* 26.1. Image References --> `representation` to the image work, then `digitally_carried_by` to the digital image itself
 * 26.1.1. Image to Work Relationship Type --> `classified_as` on the VisualItem of * the Image
-* 26.2. Image Label/Identification --> URI or Statement or Name
-* 26.2.1. Image Catalog Level --> Not mapped
+* 26.2. Image Label/Identification --> `id` for its URI, `referred_to_by` a Statement or `identified_by` a Name
+* 26.2.1. Image Catalog Level --> ==Not mapped== - This seems like meta-meta-data
 * 26.2.2. Image Type --> `classified_as` likely on the visual item, not the digital object
 * 26.2.3. Image Title/Name --> `identified_by`
 * 26.2.3.1 Image Title Type --> `classified_as` on the Name
@@ -299,51 +298,51 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 * 26.2.6. Image Date --> `created_by/timespan`
 * 26.2.7. Image Color --> `classified_as`
 * 26.2.8. Works Depicted --> `represents` referring to the object
-* 26.2.9. Image View Description --> Statement
+* 26.2.9. Image View Description --> `referred_to_by` a Statement
 * 26.2.9.1. View Type --> `classified_as`
 * 26.2.9.2. View Subject --> `represents` per depicting
 * 26.2.9.2.1. View Subject Indexing Terms --> Still `represents`
-* 26.2.9.3. View Date --> If this is the date of the subject matter, then it would be that the image's VI is `about` a Period with a timespan?
+* 26.2.9.3. View Date --> ==Not mapped== - If this is the date of the subject matter, then it would be that the image's VI is `about` a Period with a timespan?
 * 26.2.10. Image Maker/Agent --> `created_by/carried_out_by`
 * 26.2.10.1. Image Maker Role --> `created_by/part/classified_as`
-* 26.2.10.2. Image Maker Extent --> Either same as role, or make a new entity that is part of the Image
+* 26.2.10.2. Image Maker Extent --> Either the same as role, or make a new entity that is part of the Image
 * 26.2.11. Image Repository --> `current_owner` or `current_location` of the Physical Object that shows the Visual Item. 
 * 26.2.11.1. Image Repository Numbers --> `identified_by` on owner / location
 * 26.2.11.1.1. Number Type --> `classified_as` on the Identifier
-* 26.2.12. Image Copyright/Restrictions --> Statement
+* 26.2.12. Image Copyright/Restrictions --> `referred_to_by` a Statement
 * 26.2.12.1. Image Copyright Holder --> See Rights
-* 26.2.12.1.1. Image Copyright Holder's Numbers --> identified_by with a Attribute Assignment
-* 26.2.12.1.1.1. Number Type --> classified_as
+* 26.2.12.1.1. Image Copyright Holder's Numbers --> `identified_by` with an Attribute Assignment
+* 26.2.12.1.1.1. Number Type --> `classified_as`
 * 26.2.12.2. Image Copyright Date --> See Rights
-* 26.2.13. Image Source --> Not mapped, if different from Repository.
+* 26.2.13. Image Source --> ==Not mapped== - hard to see when it would be recorded and different from repository
 * 26.2.13.1. Image Source Number --> ditto
 * 26.2.13.1.1. Number Type --> ditto
 * 26.2.14. Related Image --> Same as for related objects
-* 26.2.14.1. Image Relationship Type
-* 26.2.14.2. Image Relationship Number
-* 26.2.14.3. Image Relationship Date
-* 26.2.15. Image Broader Context --> Hierarchy looks like Sets of images
-* 26.2.18. Image Authority Record ID --> URI or `identified_by`
+* 26.2.14.1. Image Relationship Type --> ditto
+* 26.2.14.2. Image Relationship Number --> ditto
+* 26.2.14.3. Image Relationship Date --> ditto
+* 26.2.15. Image Broader Context --> ==Not mapped== - Hierarchy looks like Sets of images?
+* 26.2.18. Image Authority Record ID --> `id` for URI or `identified_by` an Identifier
 
 ### 27. RELATED TEXTUAL REFERENCES 
 
-* 27.1. Citations for Sources --> Statement
-* 27.1.1. Page --> Pagination statement on a Linguistic Object
+* 27.1. Citations for Sources --> `referred_to_by` a Statement
+* 27.1.1. Page --> `referred_to_by` a Pagination statement on a Linguistic Object
 * 27.1.2. Work Cited or Illustrated --> `about` on the LO
-* 27.1.3. Cited Object/Work Number --> Identifier on the cited object
-* 27.1.3.1. Number Type --> classified_as on that Identifier
-* 27.2. Source Brief Citation --> Statement
-* 27.2.1. Source Type --> classified_as on a LO
-* 27.2.2. Source Full Citation --> Longer Statement, or the LO itself 
-* 27.2.2.1. Source Title --> identified_by on LO
+* 27.1.3. Cited Object/Work Number --> `identified_by` an Identifier on the cited object
+* 27.1.3.1. Number Type --> `classified_as` on that Identifier
+* 27.2. Source Brief Citation --> `referred_to_by` a Statement
+* 27.2.1. Source Type --> `classified_as` on a LO
+* 27.2.2. Source Full Citation --> `referred_to_by` a Longer Statement, or the LO itself 
+* 27.2.2.1. Source Title --> `identified_by` on LO
 * 27.2.2.2. Source Broader Title --> ditto
-* 27.2.2.3. Source Author --> created_by/carried_out_by
-* 27.2.2.4. Source Editor/Compiler --> created_by/carried_out_by with a classified_as for editor, compiler, etc
-* 27.2.2.5. Source Publication Place --> used_for/took_place_at
-* 27.2.2.6. Source Publisher --> used_for/carried_out_by
-* 27.2.2.7. Source Publication Year --> used_for/timespan
-* 27.2.2.8. Source Edition Statement --> used_for/referred_to_by
-* 27.2.4. Citations Authority Record ID --> URI/identifier of the LO
+* 27.2.2.3. Source Author --> `created_by/carried_out_by`
+* 27.2.2.4. Source Editor/Compiler --> `created_by/carried_out_by` with a `classified_as` for editor, compiler, etc
+* 27.2.2.5. Source Publication Place --> `used_for/took_place_at`
+* 27.2.2.6. Source Publisher --> `used_for/carried_out_by`
+* 27.2.2.7. Source Publication Year --> `used_for/timespan`
+* 27.2.2.8. Source Edition Statement --> `used_for/referred_to_by`
+* 27.2.4. Citations Authority Record ID --> `id` for URI, of `identified_by` of an Identifier on the LO
 
 ### 28. PERSON/CORPORATE BODY AUTHORITY 
 
@@ -351,46 +350,46 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 * 28.2. Person/Corporate Body Name  --> `identified_by`
 * 28.2.1. Preference --> `classified_as` on Name
 * 28.2.2. Name Type --> `classified_as` on Name
-* 28.2.3. Name Qualifier --> Could be a Statement on the Name
+* 28.2.3. Name Qualifier --> `referred_to_by` a Statement on the Name
 * 28.2.4. Name Language --> `language`
-* 28.2.5. Historical Flag --> Attribute Assignment or classified_as for former
+* 28.2.5. Historical Flag --> `assigned_by` an Attribute Assignment with `classified_as` for former
 * 28.2.6. Display Name Flag --> `classified_as`
 * 28.2.7. Other Name Flags --> still in `classified_as`
-* 28.2.8. Name Source --> textual citation can go in a Statement, otherwise referred_to_by to a Linguistic Object
-* 28.2.8.1. Page --> in the citation statement only
-* 28.2.9. Name Date --> Not mapped. This is a Phase.
-* 28.3. Display Biography --> Statement
-* 28.4. Birth Date --> born/timespan
-* 28.5. Death Date  --> died/timespan
-* 28.6. Birth Place --> born/took_place_at
-* 28.7. Death Place --> died/took_place_at
-* 28.8. Person Nationality/Culture/Race  --> classified_as
-* 28.8.1. Preference --> not mapped
-* 28.8.2. Nationality/Culture Type --> classified_as/classified_as 
-* 28.9. Gender --> classified_as
-* 28.10. Life Roles --> if just a role, then put in classified_as ...
-* 28.10.1. Preference --> not mapped 
-* 28.10.2. Role Date --> ... if professional activity, put in carried_out_by with dates
-* 28.11. Person/Corporate Body Event --> carried_out_by or participated_in
-* 28.11.1. Event Date --> timespan
-* 28.11.2. Event Place --> took_place_at
-* 28.12. Related Person/Corporate Body --> Attribute Assignment of relationship
-* 28.12.1. Person Relationship Type --> classified_as
-* 28.12.2. Person Relationship Date --> Not mapped, this is also a Phase
-* 28.13. Person/Corporate Body Broader Context --> member_of
-* 28.13.1. Broader Context Date --> Not mapped, but could be modeled with Joining / Leaving
-* 28.14. Person/Corporate Body Label/Identification --> Name or Identifier
-* 28.15. Person/Corporate Body Descriptive Note --> Statement
-* 28.18. Person Authority Record ID --> URI or Identifier
+* 28.2.8. Name Source --> [change proposal](https://github.com/linked-art/linked.art/issues/586)
+* 28.2.8.1. Page --> `referred_to_by` citation statement
+* 28.2.9. Name Date --> ==Not mapped== - this is a Phase
+* 28.3. Display Biography --> `referred_to_by` a Statement
+* 28.4. Birth Date --> `born/timespan`
+* 28.5. Death Date  --> `died/timespan`
+* 28.6. Birth Place --> `born/took_place_at`
+* 28.7. Death Place --> `died/took_place_at`
+* 28.8. Person Nationality/Culture/Race  --> `classified_as`
+* 28.8.1. Preference --> ==Not mapped== - can't associate a classification with the reference without reifying
+* 28.8.2. Nationality/Culture Type --> `classified_as/classified_as`
+* 28.9. Gender --> `classified_as`
+* 28.10. Life Roles --> if just a role, then put in `classified_as` ...
+* 28.10.1. Preference --> ==Not mapped== - as above
+* 28.10.2. Role Date --> ... if professional activity, put in `carried_out_by` with dates
+* 28.11. Person/Corporate Body Event --> `carried_out_by` or `participated_in`
+* 28.11.1. Event Date --> `timespan`
+* 28.11.2. Event Place --> `took_place_at`
+* 28.12. Related Person/Corporate Body --> `attributed_by` a Attribute Assignment of a relationship
+* 28.12.1. Person Relationship Type --> `classified_as`
+* 28.12.2. Person Relationship Date --> ==Not mapped== - this is also a Phase
+* 28.13. Person/Corporate Body Broader Context --> `member_of`
+* 28.13.1. Broader Context Date --> ==Not mapped== - Could be modeled with Joining / Leaving
+* 28.14. Person/Corporate Body Label/Identification --> `identified_by` a Name or Identifier
+* 28.15. Person/Corporate Body Descriptive Note --> `referred_to_by` a Statement
+* 28.18. Person Authority Record ID --> `id` of its URI or `identified_by` an Identifier
 
 ### 29. PLACE/LOCATION AUTHORITY 
 
 * 29.1. Place/Location Authority Record Type --> `type` (always Place) 
 * 29.2. Place Name --> Same as Name of Person
 * 29.3. Geographic Coordinates --> `defined_by`
-* 29.4. Place Types --> classified_as
-* 29.4.1. Preference --> Not mapped
-* 29.4.2. Place Type Date --> Not mapped
+* 29.4. Place Types --> `classified_as`
+* 29.4.1. Preference --> ==Not mapped== - Can't put a preference on a reference
+* 29.4.2. Place Type Date --> ==Not mapped==
 * 29.5. Related Places --> Attribute Assignment if necessary
 * 29.5.1. Place Relationship Type
 * 29.5.2. Place Relationship Date
