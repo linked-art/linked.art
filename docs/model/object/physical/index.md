@@ -98,7 +98,7 @@ aa.part_of = model.Activity(ident="operationnightwatch", label="Operation Night 
 
 The main colors of an object can be determined and record in two very different ways - by capturing a very specific value for the wavelength of the light or composition of the color (in a Red/Green/Blue colorspace, for example), or categorizing the object into more broader, subjective color types ("pale green", "ochre"). The first approach might be done with instruments measuring the reflected light off the original, or via digital photography and computing the color from the resulting digital image.  The second approach is likely carried out by a curator in describing the object in a collection management system, hopefully using a controlled set of terms. As it is desirable to have only a single place to look for information, the model for color tries to capture both of these possibilities at once in as simple a way as possible, allowing either or both to happen for any given color.
 
-Measurements record a `Dimension`, and thus we create an instance of the class to record the color, even if the measurement is a categorization. The dimension has a `value` and `unit`, just like the more obvious physical dimensions described above. For an RGB colorspace, the value must be converted into an integer from the more traditional three-part hexadecimal value, as values are always decimalized. This allows the true value to be recorded.  The dimension can also be `classified_as` a particular color family -- the object has a color which is a green color, for example. Either or both of these patterns can be used, and multiple dimensions using this pattern can be recorded without having to match up which categories map to which values. 
+Measurements record a `Dimension`, and thus we create an instance of the class to record the color, even if the measurement is a categorization. The dimension has a `value` and `unit`, just like the more obvious physical dimensions described above. For an RGB colorspace, the value must be converted into an integer from the more traditional three-part hexadecimal value, as values are always decimalized. This allows the true value to be recorded.  The dimension can also be `classified_as` a particular color family -- the object has a color which is a green color, for example. Either or both of these patterns can be used, and multiple dimensions using this pattern can be recorded without having to match up which categories map to which values. The traditional hex string for the color can be given as the `content` of an Identifier for the dimension. 
 
 __Example:__
 
@@ -107,15 +107,16 @@ The Night Watch is primarily a brown color (`B35A1F`), which is categorized as b
 ```crom
 top = vocab.Painting(ident="nightwatch/10", label="Night Watch by Rembrandt")
 c = vocab.Color(label="brown")
+c.identified_by = model.Identifier(content="#B35A1F")
 c.classified_as = vocab.instances['color brown']
-c.value = 11754015
+c.value = 11754015.0
 c.unit = vocab.instances['rgb_colorspace']
 top.dimension = c
 ```
 
 !!! note "Implementation Note"
 
-	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int("B35A1F", 16)`. The reverse is also true, with the equivalent being `hex(11754015)`. As such, the unobvious value of `11754015` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency with all other dimensions is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer.
+	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int("B35A1F", 16)`. The reverse is also true, with the equivalent being `hex(11754015)`. As such, the unobvious value of `11754015` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency with all other dimensions is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer. The string can be carried as an Identifier on the Dimension instance.
 
 
 ## Shapes
