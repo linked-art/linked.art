@@ -234,7 +234,7 @@ prod.took_place_at = model.Place(ident="france", label="France")
 
 The minimal timespan model is given above, with just the `begin_of_the_begin` and an `end_of_the_end` properties to record the beginning of the span, and the end of the span.  The end of the span **is** included in the span, and thus if the `end_of_the_end` is `"1500-01-01T00:00:00Z"`, then the 1500 **is** included, and thus the timestamp should be "1499-12-31T23:59:59Z" for the last moment of the 1400s and not any of 1500. 
 
-The datestamps must be fully qualified with year, month, day, hour, minute and second. If a timezone is not supplied it should be assumed to be "Z" (GMT) to ensure comparisons work correctly.
+The datestamps must be fully qualified with year, month, day, hour, minute and second. If a timezone is not supplied it should be assumed to be "Z" (GMT) to ensure comparisons work correctly. This is the ["xsd:dateTime"](https://www.w3.org/TR/xmlschema-2/#dateTime) profile of ISO8601.
 
 It is very useful to have a `Name` for the `TimeSpan` that gives a human readable version of the machine readable timestamps and durations. This uses the pattern given above for naming things, and might be displayed to user directly, whereas the other properties could be used for matching a time-based search.
 
