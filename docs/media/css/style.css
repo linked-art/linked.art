@@ -30,7 +30,7 @@ nav {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 1rem 0;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -38,7 +38,7 @@ nav {
 }
 
 nav img {
-  height: 45px;
+  height: 46px;
   float: left;
   padding-left: 20px;
 }
@@ -80,7 +80,7 @@ nav .nav_warning {
 }
 
 .container {
-  margin-top: 63px;
+  margin-top: 65px;
 }
 
 
@@ -95,6 +95,7 @@ nav .nav_warning {
 }
 .toc li {
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .toc a {
@@ -102,7 +103,7 @@ nav .nav_warning {
   color: #000;
 }
 .toc ul ul {
-  margin: 0.5rem 0 0rem 2rem;
+  margin: 0rem 0 0rem 2rem;
 }
 
 
