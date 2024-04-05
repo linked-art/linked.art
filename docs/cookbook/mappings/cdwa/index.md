@@ -16,14 +16,14 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 1. OBJECT/WORK 
 
-* 1.1. Catalog Level --> No mapping, this is meta-meta-data 
+* 1.1. Catalog Level --> ==No mapping== - this is meta-meta-data 
 * 1.2. Object/Work Type --> `classified_as` on the Object, with metatype of Type of Object
-* 1.3. Object/Work Type Date --> Could be handled with an Attribute Assignment, but this is mostly a Phase
+* 1.3. Object/Work Type Date --> ==No mapping== - this is a Phase
 * 1.4. Components/Parts --> `part_of` from the component/part to the parent
 * 1.4.1 Components Quantity --> A `Dimension` for the number of parts
 * 1.4.2 Components Type --> `classified_as` on a part
-* 1.5. Remarks --> Statement pattern
-* 1.6. Citations --> `about` on the citing LinguisticObject, or a Statement
+* 1.5. Remarks --> `referred_to_by` Statement pattern
+* 1.6. Citations --> `about` on the citing LinguisticObject, or a Statement on the object
 
 ### 2. CLASSIFICATION 
 
@@ -33,24 +33,24 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 * 3.1. Title Text --> `identified_by[type=Name]/content`
 * 3.2. Title Type --> `identified_by[type=Name]/classified_as`
-* 3.3. Preference --> Are the same as 3.2
+* 3.3. Preference --> `identified_by[type=Name]/classified_as`
 * 3.4. Title Language --> `identified_by[type=Name]/language`
-* 3.5. Title Date --> Attribute Assignment of the title to associate a date with the naming
+* 3.5. Title Date --> `assigned_by` of an `AttributeAssignment` on the name to associate a date with the naming activity
 
 ### 4. CREATION 
 
-* 4.1. Creator Description --> The exact string could be in a Statement, but really this is `produced_by/carried_out_by`
-* 4.1.1. Creator Extent --> `technique` or `classified_as` on the `Production`
-* 4.1.2. Qualifier --> Depends. Either `influenced_by`, assigning a `Group`, or an `AttributeAssignment`
+* 4.1. Creator Description --> `produced_by/carried_out_by`
+* 4.1.1. Creator Extent --> `technique` or `classified_as` on the `Production`, likely as a `part` of a higher level `Production`
+* 4.1.2. Qualifier --> Either `influenced_by`, assigning a `Group`, or an `AttributeAssignment`
 * 4.1.3. Creator Identity --> `produced_by/carried_out_by/id`
-* 4.1.4. Creator Role --> Same as extent
-* 4.1.5. Creator Statement --> A Statement on the Production
+* 4.1.4. Creator Role --> `technique` or `classified_as` on the `Production`
+* 4.1.5. Creator Statement --> `referred_to_by` of a statement on the `Production`
 * 4.2. Creation Date --> `produced_by/timespan`
 * 4.2.1. Earliest Date --> `produced_by/timespan/begin_of_the_begin`
 * 4.2.2. Latest Date  --> `produced_by/timespan/end_of_the_end`
-* 4.2.3. Date Qualifier --> Associated with the part of the production that has the technique/classified_as (per extent)
+* 4.2.3. Date Qualifier --> `produced_by/part/timespan` (as per extent)
 * 4.3. Creation Place/Original Location --> `produced_by/took_place_at`
-* 4.3.1. Place Qualifier --> as per extent
+* 4.3.1. Place Qualifier --> `produced_by/part/took_place_at` (as per extent)
 * 4.4. Object/Work Culture --> `classified_as`
 * 4.5. Commissioner --> See Provenance section on Promises
 * 4.6. Creation Numbers --> `identified_by[type=Identifier]/content`
@@ -58,111 +58,110 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 5. STYLES/PERIODS/GROUPS/MOVEMENTS
 
-* 5.1. Styles/Periods Description --> `classified_as` on the Work, or link to the period/place/group from the Production if more specific knowledge is available
+* 5.1. Styles/Periods Description --> `classified_as` on the Work, or link to the `Period`, `Type` or `Group` from the `Production` if more specific knowledge is available
 * 5.2. Styles/Periods Indexing Terms --> as above
 * 5.2.1. Term Qualifier --> as above
 
 ### 6. MEASUREMENTS 
 
-* 6.1. Dimensions Description --> Statement in `referred_to_by`
+* 6.1. Dimensions Description --> `referred_to_by` to a Statement
 * 6.2. Dimensions Type --> `dimension/classified_as`
 * 6.3. Dimensions Value --> `dimension/value`
 * 6.4. Dimensions Unit --> `dimension/unit`
-* 6.5. Dimensions Extent --> Add an attribute assignment to the dimension, and then give it a `technique`
-* 6.6. Scale Type --> Not mapped
-* 6.7. Dimensions Qualifier --> these are how the dimension is taken, so classified_as on an attribute assignment
-* 6.8. Dimensions Date --> timespan on the attribute assignment
+* 6.5. Dimensions Extent --> `dimension/assigned_by` with `technique`
+* 6.6. Scale Type --> ==Not mapped== 
+* 6.7. Dimensions Qualifier --> `dimension/assigned_by/classified_as` 
+* 6.8. Dimensions Date --> `dimension/assigned_by/timespan`
 * 6.9. Shape --> `classified_as` on the object
 * 6.10. Format/Size --> format for digital objects is `format`; `classified_as` for others
 
 ### 7. MATERIALS/TECHNIQUES 
 
-* 7.1. Materials/Techniques Description --> Statement in `referred_to_by`
-* 7.2. Materials/Techniques Flag --> unnecessary, they're different `classified_as` on the statement
-* 7.3. Materials/Techniques Extent --> This would require parts to be explicitly defined
-* 7.4. Materials/Techniques Role --> Also wold need a part
-* 7.5. Materials/Techniques Name --> `material` or `technique` then to the Material/Type and identified_by
-* 7.6. Material Color --> Dimension for specific colors, classified_as for general colors
-* 7.7. Material Source Place --> this isn't possible
+* 7.1. Materials/Techniques Description --> `referred_to_by` of a Statement
+* 7.2. Materials/Techniques Flag --> `classified_as` on the statement
+* 7.3. Materials/Techniques Extent --> Create a new record for the part, and then add `made_of`, `technique` on the Production, or `referred_to_by`
+* 7.4. Materials/Techniques Role --> Same as Extent
+* 7.5. Materials/Techniques Name --> `material` or `technique` then to the Material/Type and `identified_by[type=Name]/content`
+* 7.6. Material Color --> `dimension` for specific colors, `classified_as` for general colors
+* 7.7. Material Source Place --> ==Not mapped== - This isn't possible in CIDOC-CRM
 * 7.8. Watermarks --> Statement in `referred_to_by`
-* 7.8.1. Watermark Identification --> This would need a Feature which was the watermark
+* 7.8.1. Watermark Identification --> ==Not mapped== - This would need a Feature which was the watermark
 * 7.8.2. Watermark Date --> Ditto
-* 7.9. Performance Actions --> Performance Art is not yet modeled (but would be its own activity)
+* 7.9. Performance Actions --> ==Not mapped== - Performance Art is not yet modeled (but would be its own activity)
 
 ### 8. INSCRIPTIONS/MARKS
 
-* 8.1. Inscription Transcription or Description --> Statement in `referred_to_by`
-* 8.2. Inscription Type --> if a statement, and differentiation is needed, then different `classified_as` on the statement. Otherwise needs a separate LinguisticObject record, and then `classified_as` on that
+* 8.1. Inscription Transcription or Description --> `referred_to_by` of a Statement
+* 8.2. Inscription Type --> if a statement, then different `classified_as` on the statement. Otherwise needs a separate LinguisticObject record, and then `classified_as` on that
 * 8.3. Inscription Author --> Needs a separate LinguisticObject that is carried by the the object, then regular `created_by`
-* 8.4. Inscription Location --> took_place_at on the LinguisticObject's creation
+* 8.4. Inscription Location --> `took_place_at` on the LinguisticObject's creation
 * 8.5. Inscription Language --> `language` on the LinguisticObject
-* 8.6. Typeface/ Letterform --> Not Mapped
-* 8.7. Mark Identification --> Not mappped, but could be classified_as on a VisualItem of the mark
+* 8.6. Typeface/Letterform --> ==Not mapped== - This would be about the symbols, rather than the content. Could be a `VisualItem`
+* 8.7. Mark Identification --> ==Not mapped== - Could be `classified_as` on a VisualItem of the mark
 * 8.8. Inscription Date --> `timespan` on the Creation of the LinguisticObject
 
 ### 9. STATE
 
-* 9.1. State Description --> Statement
+* 9.1. State Description --> `referred_to_by` a Statement
 * 9.2. State Identification --> `classified_as`
-* 9.3. Known States --> Not mapped
-
+* 9.3. Known States --> ==Not mapped== - this is a Phase
 
 ### 10. EDITION
 
-10.1. Edition Description --> Statement
-10.2. Edition Number or Name --> Not mapped -- we don't have "Edition" as an entity to associate information with
-10.3. Impression Number --> Not mapped
-10.4. Edition Size --> Not mapped
+* 10.1. Edition Description --> `referred_to_by` a Statement
+* 10.2. Edition Number or Name --> ==Not mapped== - we don't have "Edition" as an entity to associate information with
+* 10.3. Impression Number --> ==Not mapped==
+* 10.4. Edition Size --> ==Not mapped==
 
 
 ### 11. FACTURE
 
-* 11.1. Facture Description --> Statement
+* 11.1. Facture Description --> `referred_to_by` a Statement
 
 
 ### 12. ORIENTATION/ARRANGEMENT
 
-* 12.1. Orientation/Arrangement Description --> Statement
-* 12.2. Orientation Indexing Terms --> Not mapped
+* 12.1. Orientation/Arrangement Description --> `referred_to_by` a Statement
+* 12.2. Orientation Indexing Terms --> ==Not mapped==
 
 
 ### 13. PHYSICAL DESCRIPTION
 
-* 13.1. Physical Appearance --> Statement
-* 13.2. Physical Description Indexing Terms --> classified_as, or not mapped
+* 13.1. Physical Appearance --> `referred_to_by` a Statement
+* 13.2. Physical Description Indexing Terms --> `classified_as`, or ==Not mapped== if not controlled
 
 
 ### 14. CONDITION/EXAMINATION HISTORY
 
-* 14.1. Condition/Examination Description --> Statement
-* 14.2. Examination Type --> AttributeAssignment of the statement, classified_as
-* 14.3. Examination Agent --> carried_out_by
-* 14.4. Examination Date --> timespan
-* 14.5. Examination Place --> took_place_at
+* 14.1. Condition/Examination Description --> `referred_to_by` a Statement on the object, or on the examination activity
+* 14.2. Examination Type --> `attributed_by` of an `AttributeAssignment` with `classified_as`
+* 14.3. Examination Agent --> `carried_out_by` on the AttributeAssignment
+* 14.4. Examination Date --> `timespan` on the AttributeAssignment
+* 14.5. Examination Place --> `took_place_at` on the AttributeAssignment
 
 
 ### 15. CONSERVATION/TREATMENT HISTORY
 
-* 15.1. Conservation/Treatment Description --> Statement
-* 15.2. Treatment Type --> Modification of the object, classified_as
-* 15.3. Treatment Agent --> carried_out_by
-* 15.4. Treatment Date --> timespan
-* 15.5. Treatment Place --> took_place_at
+* 15.1. Conservation/Treatment Description --> `referred_to_by` a Statement, on the `Modification` activity
+* 15.2. Treatment Type --> `modified_by` a Modification of the object with `classified_as`
+* 15.3. Treatment Agent --> `carried_out_by` on the Modification
+* 15.4. Treatment Date --> `timespan` on the Modification
+* 15.5. Treatment Place --> `took_place_at` on the Modification
 
 
 ### 16. SUBJECT MATTER 
 
-* 16.1. Subject Display --> Statement
-* 16.2. General Subject Terms --> `about` on the Work (generally)
-* 16.2.1. General Subject Type --> different properties: `classified_as` vs `about` vs `represents`
-* 16.2.2. General Subject Extent --> associate with a part record if needed
-* 16.2. Specific Subject Terms --> the same as above
-* 16.3.1. Specific Subject Type --> ditto
-* 16.3.2. Specific Subject Extent --> ditto
-* 16.4. Outside Iconography Term --> as above
-* 16.4.1. Outside Iconography Code --> identifier on the Type
-* 16.4.1. Outside Iconography Source --> equivalent?
-* 16.5. Subject Interpretive History --> Statement
+* 16.1. Subject Display --> `referred_to_by` a Statement
+* 16.2. General Subject Terms --> `about` on the Work (generally, but we're more specific than CDWA)
+* 16.2.1. General Subject Type --> different properties: `classified_as`,  `about` or `represents`
+* 16.2.2. General Subject Extent --> Use the above properties on a part record of the Object
+* 16.2. Specific Subject Terms --> Ditto
+* 16.3.1. Specific Subject Type --> Ditto
+* 16.3.2. Specific Subject Extent --> Ditto
+* 16.4. Outside Iconography Term --> Iconography is treated the same as subjects
+* 16.4.1. Outside Iconography Code --> `identified_by` on the Type record for the iconographic term
+* 16.4.1. Outside Iconography Source --> `equivalent`
+* 16.5. Subject Interpretive History --> `referred_to_by` a Statement
 
 ### 17. CONTEXT
 
@@ -190,7 +189,7 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 18. DESCRIPTIVE NOTE
 
-* 18.1. Descriptive Note Text --> All of these are Statements
+* 18.1. Descriptive Note Text --> All of these are `referred_to_by` a Statement
 * 18.1.1. Abstract Description
 * 18.1.2. Pagination Description
 * 18.1.3. Foliation Description
@@ -199,11 +198,11 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 19. CRITICAL RESPONSES
 
-* 19.1. Critical Comment --> Linguistic Object about the entity
-* 19.2. Comment Document Type
-* 19.3. Comment Author
-* 19.4. Comment Date
-* 19.5. Comment Circumstances
+* 19.1. Critical Comment --> A new Linguistic Object `about` the entity it is responding to
+* 19.2. Comment Document Type --> `classified_as`
+* 19.3. Comment Author --> `created_by/carried_out_by`
+* 19.4. Comment Date --> `created_by/timespan`
+* 19.5. Comment Circumstances --> `referred_to_by` a Statement, or a `Period` or `Activity` the creation is `part_of`
 
 
 ### 20. RELATED WORKS
@@ -219,43 +218,43 @@ Similarly, there are earliest and latest dates called out explicitly for every d
 
 ### 21. CURRENT LOCATION 
 
-* 21.1. Current Location Description --> access Statement
+* 21.1. Current Location Description --> `referred_to_by` a Statement
 * 21.2. Current Repository / Geographic Location  --> `current_location` or `current_owner` 
-* 21.2.1 Current Flag --> Not mapped, infer from attribute assignment for former values
+* 21.2.1 Current Flag --> ==Not mapped== - but can infer from attribute assignment for former values
 * 21.2.2 Location Type --> `classified_as` on Place or Group
-* 21.2.3 Repository Numbers --> indirect through location to organization, then `identified_by`, or through `current_owner`
+* 21.2.3 Repository Numbers --> through location to organization, then `identified_by`, or through `current_owner`
 * 21.2.3.1. Number Type --> `classified_as` on the Identifier
 * 21.2.4. Gallery/Shelf Location --> `current_location`
 * 21.2.5. Coordinates --> `defined_by` on the Place
-* 21.2.6. Credit Line --> Statement
-* 21.3. Object/Work Label/Identification --> its URI, or a Statement for description
+* 21.2.6. Credit Line --> `referred_to_by` a Statement
+* 21.3. Object/Work Label/Identification --> its URI in `id`, or `referred_to_by` a Statement
 
 
 ### 22. COPYRIGHT/RESTRICTIONS
 
-* 22.1. Copyright Statement --> Statement
-* 22.2. Copyright Holder Name --> Could create a Right (per Provenance) and associate it with the holder of the right, but basically this isn't mapped
+* 22.1. Copyright Statement --> `referred_to_by` a Statement
+* 22.2. Copyright Holder Name --> ==Not mapped== - This could be a `Right` 
 * 22.3. Copyright Place --> ditto
 * 22.4. Copyright Date --> ditto
 
 
 ### 23. OWNERSHIP/COLLECTING HISTORY
 
-* 23.1. Provenance Description --> Statement
+* 23.1. Provenance Description --> `referred_to_by` a Statement
 * 23.1.1. Acquisition Description --> `Acquisition` in a Provenance Entry or Object
 * 23.2. Transfer Mode --> `classified_as` on the Acquisition 
 * 23.3. Cost or Value --> `Payment` or a valuation, as below
 * 23.3.1. Valuation --> `dimension` of a Monetary Amount (perhaps with an Attribute Assignment for details)
 * 23.3.1.1. Valuation Amount --> `value` on the Monetary Amount
 * 23.3.1.2. Currency Unit --> `currency`
-* 23.4. Legal Status --> Rights statement
+* 23.4. Legal Status --> `referred_to_by` a Statement
 * 23.5. Owner/Agent --> `current_owner`, or who the ownership was transferred to or from by an Acquisition. Agent is in `carried_out_by`
 * 23.5.1. Owner/Agent Role --> `classified_as` or via the relationship
-* 23.6. Ownership Place --> Not mapped
-* 23.7. Ownership Date --> the difference between acquisitions
+* 23.6. Ownership Place --> ==Not mapped== - this would need a Phase
+* 23.7. Ownership Date --> ==Not mapped== - this is the difference between sequential acquisitions
 * 23.8. Owner's Numbers --> `identified_by` with an Attribute Assignment
 * 23.8.1. Number Type --> `classified_as` on the Identifier
-* 23.9. Owner's Credit Line --> Statement
+* 23.9. Owner's Credit Line --> `referred_to_by` a Statement
 
 ### 24. EXHIBITION/LOAN HISTORY
 
