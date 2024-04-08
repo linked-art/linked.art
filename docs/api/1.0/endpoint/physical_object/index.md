@@ -107,7 +107,7 @@ The JSON for a Physical Object entry for the Mona Lisa could be as below.
     * ... an `Identifier`, with the content "INV. 779", and `classified_as` an Accession Number ("aat:300312355") 
 * It is `referred_to_by` a statement which ...
     * ... has `content` of "This portrait was doubtless started in Florence around 1503 ..."
-    * ... is `classified_as` a Description ("aat:300411780")
+    * ... is `classified_as` a Description ("aat:300435416")
 * It has two `dimension` entries ...
     * ... a Height ("aat:300055644") of 0.77 meters ("aat:300379099")
     * ... a Width ("aat:300055647") of 0.53 meters ("aat:300379099")

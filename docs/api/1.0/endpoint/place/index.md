@@ -81,7 +81,7 @@ The JSON for a Place entry for the city of Los Angeles could be as below.
 * It is `identified_by` a `Name`, with the `content` "Los Angeles"
 * It is `identified_by` an `Identifier`, with the `content` "06-44000"
 * It is `defined_by` a particular WKT Polygon
-* It is `referred_to_by` a `LinguisticObject`, which is `classified_as` a Description (_aat:300411780_), and has `content` of "Los Angeles is the largest city in California"
+* It is `referred_to_by` a `LinguisticObject`, which is `classified_as` a Description (_aat:300435416_), and has `content` of "Los Angeles is the largest city in California"
 * It is `part_of` another `Place`, which is the state California
 * It is a `member_of` the `Set` of top 10 cities in the USA
 * It is equivalent to the TGN entry 

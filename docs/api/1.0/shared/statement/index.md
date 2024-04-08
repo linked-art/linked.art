@@ -58,7 +58,7 @@ Statements are typically found as the object of the following properties.  This 
 An object is `referred_to_by` a Description in English.
 
 * The description has a `type` of "LinguisticObject"
-* It is `classified_as` a description, with an `id` of _aat:300411780_ and `type` of "Type".  The description concept is in turn `classified_as` a type of "brief text"
+* It is `classified_as` a description, with an `id` of _aat:300435416_ and `type` of "Type".  The description concept is in turn `classified_as` a type of "brief text"
 * It has `content` of "A small greenstone pendant..."
 * It is `identified_by` a display label, which has a `type` of "Name", and `content` of "Description"
 * It has a `language` of English, which has an `id` of _aat:300388277_

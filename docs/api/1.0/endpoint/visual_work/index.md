@@ -98,7 +98,7 @@ The JSON for a Visual Work entry for a visual content of Miro's "The Farm" could
 * It is `identified_by` a `Name`, with the content "Appearance of The Farm"
 * It is `referred_to_by` a statement which ...
     * ... has `content` of "A brilliant amalgamation of an intense ..."
-    * ... is `classified_as` a Description ("aat:300411780")
+    * ... is `classified_as` a Description ("aat:300435416")
 * It `represents` a Place, Mont-roig del Camp
 * It `represents_instance_of_type` Tree ("aat:300132410"), meaning there is a tree depicted but the tree has no separate identity beyond the content
 * It was `created_by` a Creation which ...
