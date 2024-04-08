@@ -30,6 +30,8 @@ References can only have the three properties below, in order to make it clear t
 
 Note that references inherently have the `_complete` property with a value of `false`. They can be detected as references as all other structures have mandatory fields beyond `id`, `type` and `_label`. The `_complete` property would thus be clutter in the most common scenario of shared constructions being fully included, and data for references not being included at all.
 
+There are two additional properties that MAY be used on references to ensure that the records are as usable as possible. If the reference is to a record for an entity which has an equivalent in a well known system (such as a local concept that duplicates a concept in AAT), then the local record's URI can be given in `id` and the external URI given in `equivalent`. Similarly, if the language tag for a `Language` is known, then that is easier for most developers to use with existing translation and internationalization toolkits, and so can be given in `lang_code` as part of the reference.
+
 ### Properties of References
 
 | Property Name     | Datatype      | Requirement | Description | 
@@ -37,6 +39,8 @@ Note that references inherently have the `_complete` property with a value of `f
 | `id`              | string        | Required    | The value MUST be a dereferenceable URI identifying the referenced resource |  
 | `type`            | string        | Required    | The value MUST be the same as the `type` of the referenced resource |
 | `_label`          | string        | Recommended | A human readable label for the referenced resource, intended for developers |
+| `equivalent`      | array         | Optional    | An array of references to external resources which are equivalent to the referenced resource |
+| `lang_code`       | string        | Optional    | Only valid if the `type` of the reference is `Language`. The [language tag](https://www.w3.org/International/articles/language-tags/) for the referenced language. |
 
 There are too many incoming properties to try to list them all, as it amounts to the list of all properties for all classes.
 
