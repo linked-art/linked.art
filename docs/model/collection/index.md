@@ -35,6 +35,8 @@ cre.timespan = ts
 top.created_by = cre
 ```
 
+An object in that set.
+
 ```crom
 top = vocab.Painting(ident="spring/13", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
