@@ -12,7 +12,7 @@ The features described in this section are information _about_ the object, and a
 
 ## Description
 
-The main description of the object is provided in the same manner as other such texts; as the `content` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300411780)_.  The description can include any content that describes the object, and is useful primarily for display to a human user. Note that the description of artworks are often about the image shown, and less about the physicality of the object itself, however it is typically impossible to distinguish between them in current collection management systems. The image is described by a `VisualItem`, as explained below.
+The main description of the object is provided in the same manner as other such texts; as the `content` of a `LinguisticObject` resource.  The classification for descriptions is _(aat:300435416)_.  The description can include any content that describes the object, and is useful primarily for display to a human user. Note that the description of artworks are often about the image shown, and less about the physicality of the object itself, however it is typically impossible to distinguish between them in current collection management systems. The image is described by a `VisualItem`, as explained below.
 
 __Example:__
 

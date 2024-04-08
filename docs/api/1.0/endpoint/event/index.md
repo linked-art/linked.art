@@ -81,7 +81,7 @@ The JSON for an Event describing an auction in 1820 could be as below.
     * ... and an `Identifier`, with the content "Br1908", which is `classified_as` an Owner-Assigned number ("aat:300404621")
 * It is `referred_to_by` a statement which ...
     * ... has `content` of "Besides paintings, this sale ..."
-    * ... is `classified_as` a Description ("aat:300411780")
+    * ... is `classified_as` a Description ("aat:300435416")
 * It has a `timespan` which ...
     * ... has a display title, with the `content` "1820 Mar 09"
     * ... has a `begin_of_the_begin` with the value "1820-03-09T00:00:00Z"  (the earliest possible time on March 9th)

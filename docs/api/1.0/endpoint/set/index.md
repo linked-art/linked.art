@@ -96,7 +96,7 @@ The JSON for a Set entry for the Met's Collection could be as below.
 * It is `identified_by` a `Name`, with the content "Art Collection of the Metropolitan Museum of Art"
 * It is `referred_to_by` a statement which ...
     * ... has `content` of "Over 2 million works ..."
-    * ... is `classified_as` a Description ("aat:300411780")
+    * ... is `classified_as` a Description ("aat:300435416")
 * It was `created_by` a Creation which ...
     * ... has a `timespan` between "1870-04-13T00:00:00Z" and "1870-04-13T23:59:59Z"
 
