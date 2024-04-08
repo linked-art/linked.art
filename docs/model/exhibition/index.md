@@ -59,7 +59,7 @@ top.created_by = cre
 
 A frequently encountered situation is that we know about a historical exhibition and which artist or artists had works that were exhibited, but do not know any of the individual works. As the artist was likely not present at the exhibition, nor was involved in planning or otherwise executing it, they cannot be a participant in the activity, nor in the conceptualization of the activity. Equally, we might know of an exhibition that was planned around an artist, but it may never have actually occured.  Finally, we may wish to link an artist to the exhibition regardless of whether we know the objects or not.
 
-The link to the artist is thus on the Exhibition Concept, rather than related to the activity. If the exhibition is about the artist specifically, then it can be `about` the artist. If the artist is just known to have had works used in the exhibition, then it should be `influenced_by` the artist. It can also, of course, be both.
+The link to the artist is thus on the Exhibition Concept, rather than related to the activity. If the exhibition is about the artist specifically, then it can be `about` the artist. If the artist is just known to have had works used in the exhibition, then its `Creation` should be `influenced_by` the artist. It can also, of course, be both.
 
 __Example:__
 
@@ -68,7 +68,9 @@ The conceptualization of the "Manet and Modern Beauty" exhibition was influenced
 ```crom
 top = vocab.ExhibitionIdea(ident="exhidea/2", label="Idea for Manet and Modern Beauty")
 top.identified_by = vocab.PrimaryName(content="Manet and Modern Beauty")
-top.influenced_by = model.Person(ident="http://vocab.getty.edu/ulan/500010363", label="Manet")
+cre = model.Creation()
+top.created_by = cre
+cre.influenced_by = model.Person(ident="http://vocab.getty.edu/ulan/500010363", label="Manet")
 ```
 
 
