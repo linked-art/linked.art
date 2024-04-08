@@ -149,6 +149,8 @@ top.identified_by = vocab.PrimaryName(content="The Night Watch")
 
 Identifiers for the same entity within the web of linked data are treated differently from string identifiers such as accession numbers or ISBNs. In order to allow systems to follow the link and potentially process the information that they discover there, we use a new property `equivalent` to link out to other organizations' data about the same entity.  For example, Rembrandt has a description in the Getty's [ULAN](http://vocab.getty.edu/ulan/500011051) vocabulary, in [Wikidata](http://www.wikidata.org/entity/Q5598), in the Library of Congress [Name Authority File](http://id.loc.gov/authorities/names/n79142935), and in OCLC's [Virtual International Authority File](http://viaf.org/viaf/64013650), amongst many others. The URI given must identify the entity itself, rather than about page the entity. For example, in ULAN there is also the website version [http://vocab.getty.edu/page/ulan/500011051](http://vocab.getty.edu/page/ulan/500011051) which must not be used with equivalent.
 
+Note that `equivalent` can also be included when referencing resources across records in the [API](/api/1.0/shared/reference/).
+
 __Example:__
 
 The Night Watch has an external URI that also identifies the same physical object in [wikidata](https://www.wikidata.org/wiki/Q219831):
