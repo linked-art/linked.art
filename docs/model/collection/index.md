@@ -64,7 +64,6 @@ hmo.produced_by = prod
 top.members_exemplified_by = hmo
 ```
 
-
 ## Collections of Objects
 
 Sets can be used to describe the set of objects that make up a curated collection. This is not necessarily the same as the set of objects that the institution owns, as there could be objects which are looked after but owned by some other organization or individual, nor the set of objects that the institution has custody over, as objects being loaned to other organizations for exhibitions are still part of the conceptual collection of objects. The details of the relationship between the object and the institution are recorded on the object, and the Set provides identity for the collection itself, independently of the member objects.  Objects can be part of multiple collections at the same time -- the private owner's personal collection and the museum's public collection.  So while the majority of objects are both owned by and in the custody of the organization, this is not certain and should not be inferred.
