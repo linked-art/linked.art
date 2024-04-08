@@ -55,6 +55,23 @@ top.created_by = cre
 
 ```
 
+### Known Artist without Known Objects
+
+A frequently encountered situation is that we know about a historical exhibition and which artist or artists had works that were exhibited, but do not know any of the individual works. As the artist was likely not present at the exhibition, nor was involved in planning or otherwise executing it, they cannot be a participant in the activity, nor in the conceptualization of the activity. Equally, we might know of an exhibition that was planned around an artist, but it may never have actually occured.  Finally, we may wish to link an artist to the exhibition regardless of whether we know the objects or not.
+
+The link to the artist is thus on the Exhibition Concept, rather than related to the activity. If the exhibition is about the artist specifically, then it can be `about` the artist. If the artist is just known to have had works used in the exhibition, then it should be `influenced_by` the artist. It can also, of course, be both.
+
+__Example:__
+
+The conceptualization of the "Manet and Modern Beauty" exhibition was influenced by the Manet and his work.
+
+```crom
+top = vocab.ExhibitionIdea(ident="exhidea/2", label="Idea for Manet and Modern Beauty")
+top.identified_by = vocab.PrimaryName(content="Manet and Modern Beauty")
+top.influenced_by = model.Person(ident="http://vocab.getty.edu/ulan/500010363", label="Manet")
+```
+
+
 ## Multiple Venues
 
 Some exhibitions are shown at different locations over time, moving from one museum or exhibition hall to another.  In this case, each of the different locations is treated as an exhibition activity in its own right, and then a broader "travelling exhibition" _(aat:300054773)_ is created that these are part of.  Note that the travelling exhibition can have separate properties from its parts, such as a `label` to distinguish the joint nature and a broader `timespan` that covers all of the venues. There is no need to duplicate the organizations and locations in the travelling exhibition, these can be determined more easily by looking at the exhibitions that it consists of.
@@ -110,6 +127,12 @@ top = vocab.Painting(ident="spring/12", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 top.member_of = model.Set(ident="exhset")
 ```
+
+
+
+
+
+
 
 
 ## Integration with Other Parts of the Model
