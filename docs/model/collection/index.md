@@ -8,15 +8,14 @@ title: "Collections and Sets"
 
 There are many use cases for grouping resources together, often of the same class but sometimes of varying types.  These use cases are exemplified in the sections below, and range from the set of objects in an auction lot, to dealer inventories and museum collections, exhibitions, a set of related concepts, or the set of people that share a common feature such as gender or nationality.
 
-In order to cover all of the use cases with a consistent pattern, we introduce a new `Set` class from outside of CIDOC-CRM. This avoids issues with sets of resources with different types, and the semantics of the identity of objects and collections. If an equivalent class is added into the core CIDOC-CRM ontology in the future, a new major version of the specification would likely change to using it.
+In order to cover all of the use cases with a consistent pattern, we introduce a new `Set` class from outside of CIDOC-CRM. This avoids issues with sets of resources with different types, and the semantics of the identity of objects and collections. If an equivalent class were to be added into the core CIDOC-CRM ontology in the future, a new major version of the specification would likely change to use it.
 
-## Sets
 
-### Core Features
+## Features
 
 Sets are conceptual groupings, rather than physical ones.  The set of objects in a virtual exhibition or simply the set of a person's favorite objects never change their physical state by being part of the Set or not.  They are, thus, created by a `Creation`, not by a `Production`.
 
-Like any core resource, instances of `Set` must have an `id` and `type`, are likely to have additional classifications, and can have identifiers and names. They can have statements made about them, and have member resources.  These member resources are included via the `member_of` on the included resource with a value of the URI of the `Set`.  
+Like any core resource, instances of `Set` must have an `id` and `type`, are likely to have additional classifications, and can have identifiers and names. They can have statements made about them, and have member resources.  These member resources are included via the `member_of` on the included resource with a value of the URI of the `Set`. Member resources should be only those which can stand alone as [records](/api/1.0/endpoint/) such as `HumanMadeObject` or `VisualItem`, rather than classes which are used within records such as `TimeSpan` or `Name`.
 
 Note that this means that the publisher of the information about the member needs to include the `member_of` property to the `Set` instance. This is not a problem in the situation where both are managed in the same environment, nor a challenge conceptually in the model (there is the inverse `member` property), however the current API does not allow for sets to refer to their members.
 
@@ -36,14 +35,36 @@ cre.timespan = ts
 top.created_by = cre
 ```
 
+An object in that set.
+
 ```crom
 top = vocab.Painting(ident="spring/13", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 top.member_of = model.Set(ident="exhset")
 ```
 
+### Prototypical Members
 
-### Collections of Objects
+The information about any particular member of a set might not be available, however it might be known what sort of entities were members of the set. For example, objects in a particular set might have been created by the same person, be classified as the same type, or have had the same owner. Works might be written in the same language, be about the same subject, and so on. As any entity can be a member of a set, this gives a lot of freedom to describe the sorts of things that have been grouped together. This is frequently true for Archives, described below, but also can be valuable for making the rationale for the set be more apparent, such as that the objects curated by a Paintings department are (generally) paintings.
+
+The description of prototype member is embedded within the set as the value of the `members_exemplified_by` property. The description should be one of the main classes in the specification, such as a `HumanMadeObject` or an `Activity`, and should not be classes that are only used within records such as `Production` or `Name`.
+
+This is not the 'highlight' members of the set, such as the famous pieces in a collection of objects. For that, use the [Related Objects](/model/assertions/) pattern. Using this approach does not imply that *every* member of the set has all of the features of the prototypical member, however care should be taken to not include information that is not generally true.
+
+__Example:__
+
+The objects exhibited were typically (but not exclusively) paintings by Manet.
+
+```crom
+top = model.Set(ident="exhset/2", label="Exhibition objects")
+hmo = vocab.Painting()
+prod = model.Production()
+prod.carried_out_by = model.Person(ident="http://vocab.getty.edu/ulan/500010363", label="Manet")
+hmo.produced_by = prod
+top.members_exemplified_by = hmo
+```
+
+## Collections of Objects
 
 Sets can be used to describe the set of objects that make up a curated collection. This is not necessarily the same as the set of objects that the institution owns, as there could be objects which are looked after but owned by some other organization or individual, nor the set of objects that the institution has custody over, as objects being loaned to other organizations for exhibitions are still part of the conceptual collection of objects. The details of the relationship between the object and the institution are recorded on the object, and the Set provides identity for the collection itself, independently of the member objects.  Objects can be part of multiple collections at the same time -- the private owner's personal collection and the museum's public collection.  So while the majority of objects are both owned by and in the custody of the organization, this is not certain and should not be inferred.
 
@@ -70,7 +91,23 @@ top.identified_by = vocab.PrimaryName(content="The Night Watch")
 top.member_of = model.Set(ident="rijks_paintings", label="Paintings of the Rijksmuseum")
 ```
 
-### Other Uses
+## Archives
+
+
+
+
+## Other Use Cases
+
+### Sets of People
+
+A Group is a set of other `Group`s and `Person`s which can take action. This means that the features of Sets are also available for use with Groups. 
+
+/// warning
+Sets, and that they are a new super-class of Group, is only true when using the Linked Art ontology and not true in the CIDOC-CRM base ontology. 
+
+///
+
+### Auction Lots
 
 The set of objects in an [auction lot](/model/provenance/auctions.html#set-of-objects) are also modeled as a Set. These are not curated in the same way as a museum collection, and are not necessarily ever brought together physically, but are being put up for auction as a single entity.  Similarly, the set of objects used in an [exhibition](/model/exhibition/#objects) is also modeled as a Set.
 
