@@ -95,5 +95,10 @@ top.member_of = model.Set(ident="archive_sfl", label="Stieglitz Family Letters")
 
 ## Collective Description
 
-It is possible to describe the shared features of members of Sets using the `members_exemplified_by` property on Set instances.  This is described in more detail in the [collections](/model/collection/) page.
+It is possible to describe the shared features of members of Sets using the `members_exemplified_by` property on Set instances.  This is described in more detail in the [collections](/model/collection/) page. This is especially useful for establishing the range of dates of creation of objects, the language of their contents, their types and so forth for the members of the archival collection.
+
+Otherwise, much of the description of archives is done in plain text, which follows the [statement](/model/base/) pattern.
+
+
+
 
