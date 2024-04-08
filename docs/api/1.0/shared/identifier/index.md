@@ -32,27 +32,13 @@ Identifiers have the following properties.
 |-------------------|---------------|-------------|-------------| 
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the identifier, from which a representation of the assignment can be retrieved | 
 | `type`            | string        | Required    | The class for the name, which MUST be the value `"Identifier"` |
-| `_label`          | string        | Recommended | A human readable label, intended for developers | <!-- LAF.8 -->
+| `_label`          | string        | Recommended | A human readable label, intended for developers | 
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the identifier available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
-| `content`         | string        | Required    | The string content of the identifier | <!-- LAF.10 -->
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) | <!-- LAF.9 -->
+| `content`         | string        | Required    | The string content of the identifier | 
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) | 
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name to be displayed for the identifier, and MUST follow the requirements for [Name](../name/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. | <!-- LAF.45 -->
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, as below |   <!-- -->
-
-
-### Properties of Identifier Assignments
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"AttributeAssignment"` |
-| `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the assignment and MUST follow the requirements for [Type](../type/) |
-| `carried_out_by`  | array         | Recommended | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) |
-| `timespan`        | json object   | Optional    | A json object which MUST follow the requirements for [timespans](../timespan/)|
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../reference/) to another endpoint that was instrumental in the assignment of the identifier |
-
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. |
+| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, and MUST follow the requirements for [Assignments](../assignment/) |
 
 ### Property Diagram
 
