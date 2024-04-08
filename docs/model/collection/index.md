@@ -72,18 +72,25 @@ Institutions are often split up into departments, each of which will manage a pa
 
 __Example:__
 
-The paintings of the Rijksmuseum.
+The full collection of the Rijksmuseum.
 
 ```crom
 top = vocab.CollectionSet(ident="rijks_objects/1", label="Collection of the Rijksmuseum")
 top.identified_by = vocab.PrimaryName(content="Collection of the Rijksmuseum")
 ```
 
+The paintings of the Rijksmuseum, as curated by the Paintings department.
+
 ```crom
 top = vocab.CollectionSet(ident="rijks_paintings/1", label="Paintings of the Rijksmuseum")
 top.identified_by = vocab.PrimaryName(content="Paintings of the Rijksmuseum")
 top.member_of = model.Set(ident="rijks_objects", label="Collection of the Rijksmuseum")
+cur = vocab.Curating()
+cur.carried_out_by = model.Group("rijks_paintings_dept", label="Paintings Department")
+top.used_for = cur
 ```
+
+The Night Watch is a member of the paintings set.
 
 ```crom
 top = vocab.Painting(ident="nightwatch/16", label="Night Watch by Rembrandt")
@@ -91,21 +98,20 @@ top.identified_by = vocab.PrimaryName(content="The Night Watch")
 top.member_of = model.Set(ident="rijks_paintings", label="Paintings of the Rijksmuseum")
 ```
 
-## Archives
-
-
-
 
 ## Other Use Cases
 
 ### Sets of People
 
-A Group is a set of other `Group`s and `Person`s which can take action. This means that the features of Sets are also available for use with Groups. 
+A Group is a set of other `Group`s and `Person`s which can take action. This means that the features of Sets are also available for use with Groups, such as `members_exemplified_by`.
 
 /// warning
-Sets, and that they are a new super-class of Group, is only true when using the Linked Art ontology and not true in the CIDOC-CRM base ontology. 
-
+That Set is a new super-class of Group is only true when using the Linked Art ontology and not true in the CIDOC-CRM base ontology, as Linked Art introduces the notion of the Set.
 ///
+
+### Archives
+
+Set is used extensively in the model for [Archives](/model/archives/).
 
 ### Auction Lots
 
