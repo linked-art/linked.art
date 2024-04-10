@@ -27,3 +27,8 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
   Content-Type: application/ld+json  
+
+/model/profile/ontologies/*.rdf
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+  Content-Type: application/rdf+xml

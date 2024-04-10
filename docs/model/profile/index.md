@@ -116,6 +116,5 @@ Some (iterative, ongoing) analysis of the CIDOC-CRM ontology that both contribut
 The analysis performed above, in conjunction with the use cases and data for what is required, result in the creation of some additional ontological modeling.
 
 * [Linked Art Ontology](/ns/terms/) of additional terms
-* [Other Ontologies](ontologies/linkedart_crm_enhancements.xml) mapped into the CRM universe
-
-
+* [CIDOC-CRM Base](ontologies/cidoc.rdf) (with some minor fixes for domain and range)
+* [Other Ontologies](ontologies/linkedart_crm_enhancements.rdf) mapped into the CRM universe

@@ -2692,7 +2692,7 @@ P53 has former or current location (is former or current location of) is a short
 	<rdfs:comment>This property records the foreseen permanent location of an instance of E19 Physical Object at the time of validity of the record or database containing the statement that uses this property.
 P54 has current permanent location (is current permanent location of) is similar to P55 has current location (currently holds). However, it indicates the E53 Place currently reserved for an object, such as the permanent storage location or a permanent exhibit location. The object may be temporarily removed from the permanent location, for example when used in temporary exhibitions or loaned to another institution. The object may never actually be located at its permanent location.
 </rdfs:comment>
-	<rdfs:domain rdf:resource="E19_Physical_Object"/>
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
 	<rdfs:range rdf:resource="E53_Place"/>
 <owl:inverseOf rdf:resource="P54i_is_current_permanent_location_of"/>
 </rdf:Property>
@@ -2708,7 +2708,7 @@ P54 has current permanent location (is current permanent location of) is similar
 	<rdfs:label xml:lang="zh">&#30446;&#21069;&#34987;&#29992;&#26469;&#27704;&#20037;&#32622;&#25918;</rdfs:label>
 
 	<rdfs:domain rdf:resource="E53_Place"/>
-	<rdfs:range rdf:resource="E19_Physical_Object"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
 <owl:inverseOf rdf:resource="P54_has_current_permanent_location"/>
 </rdf:Property>
 
@@ -2726,7 +2726,7 @@ P54 has current permanent location (is current permanent location of) is similar
 	This property is a specialisation of P53 has former or current location (is former or current location of). It indicates that the E53 Place associated with the E19 Physical Object is the current location of the object. The property does not allow any indication of how long the Object has been at the current location. 
 P55 has current location (currently holds) is a shortcut. A more detailed representation can make use of the fully developed (i.e. indirect) path from E19 Physical Object through P25 moved (moved by), E9 Move P26 moved to (was destination of) to E53 Place if and only if this Move is the most recent.
 </rdfs:comment>
-	<rdfs:domain rdf:resource="E19_Physical_Object"/>
+	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
 	<rdfs:range rdf:resource="E53_Place"/>
 	<rdfs:subPropertyOf rdf:resource="P53_has_former_or_current_location"/>
 <owl:inverseOf rdf:resource="P55i_currently_holds"/>
@@ -2743,7 +2743,7 @@ P55 has current location (currently holds) is a shortcut. A more detailed repres
 	<rdfs:label xml:lang="zh">&#30446;&#21069;&#32622;&#25918;&#20102;</rdfs:label>
 
 	<rdfs:domain rdf:resource="E53_Place"/>
-	<rdfs:range rdf:resource="E19_Physical_Object"/>
+	<rdfs:range rdf:resource="E18_Physical_Thing"/>
 	<rdfs:subPropertyOf rdf:resource="P53i_is_former_or_current_location_of"/>
 <owl:inverseOf rdf:resource="P55_has_current_location"/>
 </rdf:Property>
@@ -2803,40 +2803,6 @@ For a more complete description, objects may be decomposed into their components
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
 </rdf:Property>
 
-
-<rdf:Property rdf:about="P58_has_section_definition">
-	<rdfs:label xml:lang="en">has section definition</rdfs:label>
-   <rdfs:label xml:lang="de">hat Abschittsdefinition</rdfs:label>
-    <rdfs:label xml:lang="ru">&#1080;&#1084;&#1077;&#1077;&#1090; &#1086;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1077;&#1085;&#1080;&#1077; &#1088;&#1072;&#1081;&#1086;&#1085;&#1072;</rdfs:label>
-   <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#959;&#961;&#953;&#963;&#956;&#972; &#964;&#956;&#942;&#956;&#945;&#964;&#959;&#962;</rdfs:label>
-	<rdfs:label xml:lang="fr">a pour d&#233;signation de section</rdfs:label>
-	<rdfs:label xml:lang="pt">tem designa&#231;&#227;o de se&#231;&#227;o</rdfs:label>
-	<rdfs:label xml:lang="zh">&#26377;&#21306;&#22495;&#23450;&#20041;</rdfs:label>
-	
-	<rdfs:comment>This property links an area (section) named by a E41 Appellation to the instance of E18 Physical Thing upon which it is found.
-The CRM handles sections as locations (instances of E53 Place) within or on E18 Physical Thing that are identified by E41 Appellations. Sections need not be discrete and separable components or parts of an object.
-This is part of a more developed path from E18 Physical Thing through P58, E41 Appellation, P87 is identified by (identifies) that allows a more precise definition of a location found on an object than the shortcut P59 has section (is located on or within).
-A particular instance of a section definition only applies to one instance of Physical Thing.</rdfs:comment>
-	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
-	<rdfs:range rdf:resource="E41_Appellation"/>
-<owl:inverseOf rdf:resource="P58i_defines_section"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P58i_defines_section">
-	<rdfs:label xml:lang="ru">&#1086;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1103;&#1077;&#1090; &#1088;&#1072;&#1081;&#1086;&#1085;</rdfs:label>
-	<rdfs:label xml:lang="en">defines section</rdfs:label>
-	<rdfs:label xml:lang="de">definiert Abschitt auf oder von</rdfs:label>
-    <rdfs:label xml:lang="fr">d&#233;finit une section de</rdfs:label>
-    <rdfs:label xml:lang="el">&#959;&#961;&#943;&#950;&#949;&#953; &#964;&#956;&#942;&#956;&#945; &#963;&#949;</rdfs:label>
-	<rdfs:label xml:lang="pt">define uma se&#231;&#227;o de</rdfs:label>
-	<rdfs:label xml:lang="zh">&#30028;&#23450;&#20102;&#21306;&#22495;&#26044;</rdfs:label>
-
-	<rdfs:domain rdf:resource="E41_Appellation"/>
-	<rdfs:range rdf:resource="E18_Physical_Thing"/>
-<owl:inverseOf rdf:resource="P58_has_section_definition"/>
-</rdf:Property>
-
-
 <rdf:Property rdf:about="P59_has_section">
 	<rdfs:label xml:lang="en">has section</rdfs:label>
     <rdfs:label xml:lang="el">&#941;&#967;&#949;&#953; &#964;&#959;&#956;&#941;&#945;</rdfs:label>
@@ -2848,7 +2814,7 @@ A particular instance of a section definition only applies to one instance of Ph
 	<rdfs:comment>This property links an area to the instance of E18 Physical Thing upon which it is found.
 It is typically used when a named E41 Appellation is not appropriate.
 E18 Physical Thing may be subdivided into arbitrary regions. 
-P59 has section (is located on or within) is a shortcut. If the E53 Place is identified by a Section Definition, a more detailed representation can make use of the fully developed (i.e. indirect) path from E18 Physical Thing through P58 has section definition (defines section), E41 Appellation, P87 is identified by (identifies) to E53 Place. A Place can only be located on or within one Physical Object.
+P59 has section (is located on or within) is a shortcut. If the E53 Place is identified by a Section Definition, a more detailed representation can make use of the fully developed (i.e. indirect) path from E18 Physical Thing through P1 is identified by, E41 Appellation, P1 is identified by (identifies) to E53 Place. A Place can only be located on or within one Physical Object.
 </rdfs:comment>
 	<rdfs:domain rdf:resource="E18_Physical_Thing"/>
 	<rdfs:range rdf:resource="E53_Place"/>
@@ -4137,209 +4103,6 @@ Although a Part removal activity normally concerns only one item of Physical Man
 <owl:inverseOf rdf:resource="P113_removed"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="P114_is_equal_in_time_to">
-	<rdfs:label xml:lang="fr">est temporellement &#233;gale &#224;</rdfs:label>
-	<rdfs:label xml:lang="de">zeitgleich zu</rdfs:label>
-	<rdfs:label xml:lang="el">&#963;&#965;&#956;&#960;&#943;&#960;&#964;&#949;&#953; &#967;&#961;&#959;&#957;&#953;&#954;&#940; &#956;&#949;</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1088;&#1072;&#1074;&#1077;&#1085; &#1087;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</rdfs:label>
-    <rdfs:label xml:lang="en">is equal in time to</rdfs:label>
-	<rdfs:label xml:lang="pt">&#233; temporalmente igual a</rdfs:label>
-	<rdfs:label xml:lang="zh">&#26102;&#27573;&#30456;&#21516;&#26044;</rdfs:label>
-
-	<rdfs:comment>This symmetric property allows the instances of E2 Temporal Entity with the same E52 Time-Span to be equated. 
-This property is only necessary if the time span is unknown (otherwise the equivalence can be calculated).
-This property is the same as the "equal" relationship of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P175_starts_before_or_with_the_start_of"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P115_finishes">
-	<rdfs:label xml:lang="en">finishes</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1079;&#1072;&#1082;&#1072;&#1085;&#1095;&#1080;&#1074;&#1072;&#1077;&#1090;</rdfs:label>
-	<rdfs:label xml:lang="de">beendet</rdfs:label>
-	<rdfs:label xml:lang="fr">termine</rdfs:label>
-	<rdfs:label xml:lang="el">&#960;&#949;&#961;&#945;&#964;&#974;&#957;&#949;&#953;</rdfs:label>
-	<rdfs:label xml:lang="pt">finaliza</rdfs:label>
-	<rdfs:label xml:lang="zh">&#32467;&#26463;&#20102;</rdfs:label>
-	<rdfs:comment>This property allows the ending point for a E2 Temporal Entity to be situated by reference to the ending point of another temporal entity of longer duration.  
-This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the "finishes / finished-by" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P176i_starts_after_the_start_of"/>
-	<owl:inverseOf rdf:resource="P115i_is_finished_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P115i_is_finished_by">
-	<rdfs:label xml:lang="fr">est termin&#233;e par</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1079;&#1072;&#1082;&#1072;&#1085;&#1095;&#1080;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103;</rdfs:label>
-	<rdfs:label xml:lang="el">&#960;&#949;&#961;&#945;&#964;&#974;&#957;&#949;&#964;&#945;&#953; &#956;&#949;</rdfs:label>
-	<rdfs:label xml:lang="de">wurde beendet mit</rdfs:label>
-	<rdfs:label xml:lang="en">is finished by</rdfs:label>
-	<rdfs:label xml:lang="pt">&#233; finalizada por</rdfs:label>
-	<rdfs:label xml:lang="zh">&#34987;&#32467;&#26463;&#20110;</rdfs:label>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P176_starts_before_the_start_of"/>
-	<owl:inverseOf rdf:resource="P115_finishes"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P116_starts">
-	<rdfs:label xml:lang="fr">commence</rdfs:label>
-	<rdfs:label xml:lang="en">starts</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1085;&#1072;&#1095;&#1080;&#1085;&#1072;&#1077;&#1090;</rdfs:label>
-	<rdfs:label xml:lang="de">beginnt</rdfs:label>
-	<rdfs:label xml:lang="el">&#945;&#961;&#967;&#943;&#950;&#949;&#953;</rdfs:label>
-	<rdfs:label xml:lang="pt">inicia</rdfs:label>
-	<rdfs:label xml:lang="zh">&#24320;&#22987;&#20102;</rdfs:label>
-	<rdfs:comment>This property allows the starting point for a E2 Temporal Entity to be situated by reference to the starting point of another temporal entity of longer duration.  
-This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the "starts / started-by" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P175_starts_before_or_with_the_start_of"/>
-	<owl:inverseOf rdf:resource="P116i_is_started_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P116i_is_started_by">
-	<rdfs:label xml:lang="fr">est commenc&#233;e par</rdfs:label>
-	<rdfs:label xml:lang="de">wurde begonnen mit</rdfs:label>
-	<rdfs:label xml:lang="el">&#945;&#961;&#967;&#943;&#950;&#949;&#953; &#956;&#949;</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1085;&#1072;&#1095;&#1080;&#1085;&#1072;&#1077;&#1090;&#1089;&#1103;</rdfs:label>
-	<rdfs:label xml:lang="en">is started by</rdfs:label>
-	<rdfs:label xml:lang="pt">&#233; iniciada por</rdfs:label>
-	<rdfs:label xml:lang="zh">&#34987;&#24320;&#22987;&#20110;</rdfs:label>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P175i_starts_with_or_after_the_start_of"/>
-	<owl:inverseOf rdf:resource="P116_starts"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P117_occurs_during">
-	<rdfs:label xml:lang="de">f&#228;llt in</rdfs:label>
-	<rdfs:label xml:lang="el">&#949;&#956;&#966;&#945;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#954;&#945;&#964;&#940; &#964;&#951; &#948;&#953;&#940;&#961;&#954;&#949;&#953;&#945;</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1074;&#1086; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077;</rdfs:label>
-	<rdfs:label xml:lang="en">occurs during</rdfs:label>
-	<rdfs:label xml:lang="fr">a lieu pendant</rdfs:label>
-	<rdfs:label xml:lang="pt">ocorre durante</rdfs:label>
-	<rdfs:label xml:lang="zh">&#26102;&#27573;&#34987;&#28085;&#30422;&#26044;</rdfs:label>
-	<rdfs:comment>This property allows the entire E52 Time-Span of an E2 Temporal Entity to be situated within the Time-Span of another temporal entity that starts before and ends after the included temporal entity.   
-This property is only necessary if the time span is unknown (otherwise the relationship can be calculated). This property is the same as the "during / includes" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-<owl:inverseOf rdf:resource="P117i_includes"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P117i_includes">
-	<rdfs:label xml:lang="el">&#960;&#949;&#961;&#953;&#955;&#945;&#956;&#946;&#940;&#957;&#949;&#953;</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1074;&#1082;&#1083;&#1102;&#1095;&#1072;&#1077;&#1090;</rdfs:label>
-	<rdfs:label xml:lang="fr">comporte</rdfs:label>
-	<rdfs:label xml:lang="en">includes</rdfs:label>
-	<rdfs:label xml:lang="de">beinhaltet</rdfs:label>
-	<rdfs:label xml:lang="pt">inclui</rdfs:label>
-	<rdfs:label xml:lang="zh">&#26102;&#27573;&#28085;&#30422;&#20102;</rdfs:label>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-<owl:inverseOf rdf:resource="P117_occurs_during"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P118_overlaps_in_time_with">
-	<rdfs:label xml:lang="en">overlaps in time with</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1082;&#1088;&#1099;&#1074;&#1072;&#1077;&#1090; &#1074;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</rdfs:label>
-	<rdfs:label xml:lang="el">&#960;&#961;&#959;&#951;&#947;&#949;&#943;&#964;&#945;&#953; &#956;&#949;&#961;&#953;&#954;&#974;&#962; &#949;&#960;&#953;&#954;&#945;&#955;&#973;&#960;&#964;&#959;&#957;&#964;&#945;&#962;</rdfs:label>
-	<rdfs:label xml:lang="de">&#252;berlappt zeitlich mit</rdfs:label>
-	<rdfs:label xml:lang="fr">est partiellement recouverte dans le temps par</rdfs:label>
-	<rdfs:label xml:lang="pt">sobrep&#245;e temporalmente</rdfs:label>
-	<rdfs:label xml:lang="zh">&#26102;&#27573;&#37325;&#21472;&#20102;</rdfs:label>
-	<rdfs:comment>This property identifies an overlap between the instances of E52 Time-Span of two instances of E2 Temporal Entity. 
-It implies a temporal order between the two entities: if A overlaps in time B, then A must start before B, and B must end after A. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).
-This property is the same as the "overlaps / overlapped-by" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P174i_ends_after_the_start_of"/>
-	<owl:inverseOf rdf:resource="P118i_is_overlapped_in_time_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P118i_is_overlapped_in_time_by">
-	<rdfs:label xml:lang="de">wird zeitlich &#252;berlappt von</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1087;&#1077;&#1088;&#1077;&#1082;&#1088;&#1099;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103; &#1074;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</rdfs:label>
-	<rdfs:label xml:lang="fr">recouvre partiellement dans le temps</rdfs:label>
-	<rdfs:label xml:lang="en">is overlapped in time by</rdfs:label>
-	<rdfs:label xml:lang="el">&#941;&#960;&#949;&#964;&#945;&#953; &#956;&#949;&#961;&#953;&#954;&#974;&#962; &#949;&#960;&#953;&#954;&#945;&#955;&#965;&#960;&#964;&#972;&#956;&#949;&#957;&#959;</rdfs:label>
-	<rdfs:label xml:lang="pt">&#233; sobreposto temporalmente por</rdfs:label>
-	<rdfs:label xml:lang="zh">&#26102;&#27573;&#34987;&#37325;&#21472;&#20110;</rdfs:label>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P174_starts_before_the_end_of"/>
-	<owl:inverseOf rdf:resource="P118_overlaps_in_time_with"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P119_meets_in_time_with">
-	<rdfs:label xml:lang="en">meets in time with</rdfs:label>
-	<rdfs:label xml:lang="el">&#960;&#961;&#959;&#951;&#947;&#949;&#943;&#964;&#945;&#953;</rdfs:label>
-	<rdfs:label xml:lang="de">trifft zeitlich auf</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1089;&#1083;&#1077;&#1076;&#1091;&#1077;&#1090; &#1074;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1079;&#1072;</rdfs:label>
-	<rdfs:label xml:lang="fr">est temporellement contigu&#235; avec</rdfs:label>
-	<rdfs:label xml:lang="pt">&#233; temporalmente cont&#237;guo com</rdfs:label>
-	<rdfs:label xml:lang="zh">&#32039;&#25509;&#32493;&#20102;</rdfs:label>
-	<rdfs:comment>This property indicates that one E2 Temporal Entity immediately follows another. 
-It implies a particular order between the two entities: if A meets in time with B, then A must precede B. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated). 
-This property is the same as the "meets / met-by" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P173i_ends_after_or_with_the_start_of"/>
-	<owl:inverseOf rdf:resource="P119i_is_met_in_time_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P119i_is_met_in_time_by">
-	<rdfs:label xml:lang="fr">est imm&#233;diatement pr&#233;c&#233;d&#233; par</rdfs:label>
-	<rdfs:label xml:lang="el">&#941;&#960;&#949;&#964;&#945;&#953;</rdfs:label>
-	<rdfs:label xml:lang="en">is met in time by</rdfs:label>
-	<rdfs:label xml:lang="de">wird zeitlich getroffen von</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1087;&#1088;&#1077;&#1076;&#1096;&#1077;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; &#1074;&#1086; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</rdfs:label>
-	<rdfs:label xml:lang="pt">&#233; imediatamente precedido por</rdfs:label>
-	<rdfs:label xml:lang="zh">&#32039;&#25509;&#32493;&#26044;</rdfs:label>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:subPropertyOf rdf:resource="P173_starts_before_or_with_the_end_of"/>
-	<owl:inverseOf rdf:resource="P119_meets_in_time_with"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P120_occurs_before">
-	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1076;&#1086;</rdfs:label>
-	<rdfs:label xml:lang="fr">a lieu avant</rdfs:label>
-	<rdfs:label xml:lang="el">&#949;&#956;&#966;&#945;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#960;&#961;&#953;&#957;</rdfs:label>
-	<rdfs:label xml:lang="en">occurs before</rdfs:label>
-	<rdfs:label xml:lang="de">kommt vor</rdfs:label>
-	<rdfs:label xml:lang="pt">ocorre antes</rdfs:label>
-	<rdfs:label xml:lang="zh">&#21457;&#29983;&#26102;&#27573;&#20808;&#26044;</rdfs:label>
-	<rdfs:comment>This property identifies the relative chronological sequence of two temporal entities. 
-It implies that a temporal gap exists between the end of A and the start of B. This property is only necessary if the relevant time spans are unknown (otherwise the relationship can be calculated).
-This property is the same as the "before / after" relationships of Allen&#8217;s temporal logic (Allen, 1983, pp. 832-843).
-</rdfs:comment>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-<owl:inverseOf rdf:resource="P120i_occurs_after"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="P120i_occurs_after">
-	<rdfs:label xml:lang="fr">a lieu apr&#232;s</rdfs:label>
-	<rdfs:label xml:lang="el">&#949;&#956;&#966;&#945;&#957;&#943;&#950;&#949;&#964;&#945;&#953; &#956;&#949;&#964;&#940;</rdfs:label>
-	<rdfs:label xml:lang="ru">&#1087;&#1086;&#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1087;&#1086;&#1089;&#1083;&#1077;</rdfs:label>
-	<rdfs:label xml:lang="de">kommt nach</rdfs:label>
-	<rdfs:label xml:lang="en">occurs after</rdfs:label>
-	<rdfs:label xml:lang="pt">ocorre depois</rdfs:label>
-	<rdfs:label xml:lang="zh">&#21457;&#29983;&#26102;&#27573;&#21518;&#26044;</rdfs:label>
-	<rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-	<rdfs:range rdf:resource="E2_Temporal_Entity"/>
-<owl:inverseOf rdf:resource="P120_occurs_before"/>
-</rdf:Property>
-
 <rdf:Property rdf:about="P121_overlaps_with">
 	<rdfs:label xml:lang="el">&#949;&#960;&#953;&#954;&#945;&#955;&#973;&#960;&#964;&#949;&#964;&#945;&#953; &#956;&#949;</rdfs:label>
 	<rdfs:label xml:lang="de">&#252;berlappt mit</rdfs:label>
@@ -5323,8 +5086,8 @@ A digital photograph of a manuscript page incorporates the text of the manuscrip
 <owl:inverseOf rdf:resource="P176_starts_before_the_start_of"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="P177_assigned_property_type">
-    <rdfs:label xml:lang="en">assigned property type</rdfs:label>
+<rdf:Property rdf:about="P177_assigned_property_of_type">
+    <rdfs:label xml:lang="en">assigned property of type</rdfs:label>
     <rdfs:comment>This property associates an instance of E13 Attribute Assignment with the type of property or relation that this assignment maintains to hold between the item to which it assigns an attribute and the attribute itself. Note that the properties defined by the CIDOC CRM also constitute instances of E55 Type themselves. The direction of the assigned property type is understood to be from the attributed item (the range of property P140 assigned attribute to) to the attribute item (the range of the property P141 assigned). More than one property type may be assigned to hold between two items.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="P2_has_type"/>
     <rdfs:domain rdf:resource="E13_Attribute_Assignment"/>
@@ -5365,13 +5128,7 @@ A digital photograph of a manuscript page incorporates the text of the manuscrip
 <owl:inverseOf rdf:resource="P180_has_currency"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="P181_has_amount">
-    <rdfs:label xml:lang="en">has amount</rdfs:label>
-    <rdfs:comment xml:lang="en">This property establishes the relationship between an instance of E97 Monetary Amount and the amount of currency that it consists of.</rdfs:comment>
-    <rdfs:domain rdf:resource="E97_Monetary_Amount"/>   
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:subPropertyOf rdf:resource="P90_has_value"/>
-</rdf:Property>
+<!-- P181 deprecated as being semantically indistinguishable from P90 has value, its super property -->
 
 <rdf:Property rdf:about="P182_ends_before_or_with_the_start_of">
     <rdfs:label xml:lang="en">ends before or at the start of</rdfs:label>
@@ -5545,6 +5302,91 @@ In more recent documentation often point coordinate information is provided that
 	<owl:inverseOf rdf:resource="P191_had_duration"/>
 </rdf:Property>
 
+<rdf:Property rdf:about="P195_was_a_presence_of">
+    <rdfs:label xml:lang="en">was a presence of</rdfs:label>
+    <rdfs:comment>This property associates an instance of E93 Presence with the instance of E18 Physical Thing of which it represents a temporal restriction (i.e.: a time-slice) of the thing’s trajectory through spacetime. In other words, it describes where the instance of E18 Physical Thing were or moved around within a given time-span. Instantiating this property constitutes a necessary part of the identity of the respective instance of E93 Presence.</rdfs:comment>
+    <rdfs:domain rdf:resource="E93_Presence"/>
+    <rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<owl:inverseOf rdf:resource="P195i_had_presence"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P195i_had_presence">
+    <rdfs:label xml:lang="en">was a presence of</rdfs:label>
+    <rdfs:comment>Inverse of P195</rdfs:comment>
+    <rdfs:range rdf:resource="E93_Presence"/>
+    <rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<owl:inverseOf rdf:resource="P195_was_a_presence_of"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P196_defines">
+    <rdfs:label xml:lang="en">defines</rdfs:label>
+    <rdfs:comment>This property associates an instance of E18 Physical Thing with the instance of E92 Spacetime Volume
+that constitutes the complete trajectory of its geometric extent through spacetime for the whole time of
+the existence of the instance of E18 Physical Thing.</rdfs:comment>
+    <rdfs:domain rdf:resource="E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="E92_Spacetime_Volume"/>
+	<owl:inverseOf rdf:resource="P196i_is_defined_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P196i_is_defined_by">
+    <rdfs:label xml:lang="en">is defined by</rdfs:label>
+    <rdfs:comment>Inverse of P196</rdfs:comment>
+    <rdfs:range rdf:resource="E18_Physical_Thing"/>
+    <rdfs:domain rdf:resource="E92_Spacetime_Volume"/>
+	<owl:inverseOf rdf:resource="P196_defines"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P197_covered_parts_of">
+    <rdfs:label xml:lang="en">covered parts of</rdfs:label>
+    <rdfs:comment>This property associates an instance of E93 Presence with an instance of E53 Place that geometrically
+overlaps with the spatial projection of the respective instance of E93 Presence.</rdfs:comment>
+    <rdfs:domain rdf:resource="E93_Presence"/>
+    <rdfs:range rdf:resource="E53_Place"/>
+	<owl:inverseOf rdf:resource="P197i_was_partially_covered_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P197i_was_partially_covered_by">
+    <rdfs:label xml:lang="en">was partially covered by</rdfs:label>
+    <rdfs:comment>Inverse of P197</rdfs:comment>
+    <rdfs:range rdf:resource="E93_Presence"/>
+    <rdfs:domain rdf:resource="E53_Place"/>
+	<owl:inverseOf rdf:resource="P197_covered_parts_of"/>
+</rdf:Property>
+
+
+<rdf:Property rdf:about="P198_holds_or_supports">
+    <rdfs:label xml:lang="en">holds or supports</rdfs:label>
+    <rdfs:comment>This property relates one instance of E18 Physical Thing which acts as a container or support to a
+supported or contained instance of E18 Physical Thing. T ypical examples of E18 Physical Things
+which are intended to function as a container or support include shelves, folders or boxes.</rdfs:comment>
+    <rdfs:domain rdf:resource="E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="E18_Physical_Thing"/>
+	<owl:inverseOf rdf:resource="P198i_is_held_or_supported_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P198i_is_held_or_supported_by">
+    <rdfs:label xml:lang="en">is held or supported by</rdfs:label>
+    <rdfs:comment>Inverse of P198</rdfs:comment>
+    <rdfs:range rdf:resource="E18_Physical_Thing"/>
+    <rdfs:domain rdf:resource="E18_Physical_Thing"/>
+	<owl:inverseOf rdf:resource="P198_holds_or_supports"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P199_represents_instance_of_type">
+    <rdfs:label xml:lang="en">represents instance of type</rdfs:label>
+    <rdfs:comment>This property establishes the relationship between an instance of E36 Visual Item and an instance of E55 Type that characterises the thing depicted. This property is used when the identity of the thing depicted is unknown or unrecorded, but is clearly a particular thing of that type.</rdfs:comment>
+    <rdfs:domain rdf:resource="E36_Visual_Item"/>
+    <rdfs:range rdf:resource="E55_Type"/>
+	<owl:inverseOf rdf:resource="P199i_"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P199i_has_instance_represented_by">
+    <rdfs:label xml:lang="en">has instance represented by</rdfs:label>
+    <rdfs:comment>Inverse of P199</rdfs:comment>
+    <rdfs:range rdf:resource="E36_Visual_Item"/>
+    <rdfs:domain rdf:resource="E55_Type"/>
+	<owl:inverseOf rdf:resource="P199_represents_instance_of_type"/>
+</rdf:Property>
 
 
 <!-- .............................................. -->
