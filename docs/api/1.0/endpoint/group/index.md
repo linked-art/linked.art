@@ -43,14 +43,15 @@ Dereferencing an entity via the Group endpoint would result in a JSON-LD documen
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Group that the current group is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a **[Group](../group/)** |
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current group, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current group to another entity |
-| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the group and follows the requirements for Professional Activities described below. |
+| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the group and follows the requirements for Activities described below |
+| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the group participated, but was not responsible, and follows the requirements for Activities described below |
 | `contact_point` | array | Optional | An array of json objects, each of which is an address at which the group is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
 | `residence` | array | Optional | A place that the group was associated with, and MUST follow the requirements for a [reference](../../shared/reference/) to a [Place](../place/) |
 | `formed_by` | json object | Optional | A json object representing the formation of the group, which follows the requirements for Formations described below. | 
 | `dissolved_by` | json object | Optional | A json object representing the dissolution of the group, which follows the requirements for Dissolutions described below. |
 
 
-### Properties of Formations, Dissolutions and Professional Activities
+### Properties of Formations, Dissolutions and Activities
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|

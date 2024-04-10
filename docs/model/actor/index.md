@@ -222,7 +222,6 @@ burial.took_place_at = model.Place(ident="westerkerk", label="Place of Westerker
 top.participated_in = burial
 ```
 
-
 ## Descriptive Information
 
 ### Biography
