@@ -23,7 +23,7 @@ The hooks to those resources are given using the [Digital Integration](/model/di
 
 ## Data Visibility from HTML
 
-In order to ensure that search engines such as Google get as much information as possible, there is a mapping from Linked Art into the [Schema.Org](https://schema.org/) structure. Schema.Org can be embedded within web pages as JSON-LD or other formats enabling search engines to process the data as data, rather than only via the human-intended HTML. The [mapping](/cookbook/mappings/schema.org/) is not part of the versioned APIs as it will be updated as the underlying schema and its usage changes, which is not in our control.
+In order to ensure that search engines such as Google get as much information as possible, there is a mapping from Linked Art into the [Schema.Org](https://schema.org/) structure. Schema.Org can be embedded within web pages as JSON-LD or other formats enabling search engines to process the data as data, rather than only via the human-intended HTML. The [mapping](/cookbook/mappings/schema/) is not part of the versioned APIs as it will be updated as the underlying schema and its usage changes, which is not in our control.
 
 For visibility of the data to clients that might be given a web page, rather than the URI of the JSON-LD record, it is also important to give them a link to the data. This is done via [Link Headers](https://www.rfc-editor.org/rfc/rfc8288.html) in the HTTP response (for non-browser clients), and within the HTML `head` element (for browser-based clients).
 
@@ -31,7 +31,7 @@ In the HTTP response of the web page for the object, the header to link to the J
 
 ```
 Link: <https://example.com/data/object/1>;
-        rel="alternate";
+        rel="describedby";
         type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"
 ```
 
@@ -39,12 +39,14 @@ And in the `head` element of the HTML:
 
 ```XML
 <head>
-  <link rel="alternate" href="https://example.com/data/object/1" 
+  <link rel="describedby" href="https://example.com/data/object/1" 
         type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
 </head>
 ```
 
 The `link` element in `head` MUST be present, and the HTTP header SHOULD be present if possible.
+
+Note that this follows the [FAIR Signposting Profile](https://signposting.org/FAIR/) so any implementation of Linked Art that follows the above, will also conform with that specification.
 
 
 ## Harvesting
