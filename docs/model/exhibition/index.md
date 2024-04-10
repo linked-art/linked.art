@@ -112,9 +112,12 @@ For travelling exhibitions described above, a different collection of objects sh
 
 __Example:__
 
+The objects in Manet and Modern Beauty ...
+
 ```crom
 top = model.Set(ident="exhset/1", label="Exhibition objects")
 top.identified_by = vocab.PrimaryName(content="Objects in Manet and Modern Beauty")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300378926", label="Exhibition Collection")
 top.referred_to_by = vocab.Description(content="Objects in the exhibition Manet and Modern Beauty at the Art Institute of Chicago and the Getty Museum")
 cre = model.Creation()
 ts = model.TimeSpan()
@@ -124,21 +127,15 @@ cre.timespan = ts
 top.created_by = cre
 ```
 
+... include Jeanne, by Manet.
+
 ```crom
 top = vocab.Painting(ident="spring/12", label="Jeanne (Spring) by Manet")
 top.identified_by = model.Name(content="Jeanne (Spring)")
 top.member_of = model.Set(ident="exhset")
 ```
 
-
-
-
-
-
-
-
 ## Integration with Other Parts of the Model
-
 
 ### Provenance Events for Exhibitions
 
