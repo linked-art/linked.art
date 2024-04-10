@@ -43,14 +43,15 @@ Dereferencing an entity via the Person endpoint would result in a JSON-LD docume
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Group that the current Person is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a **[Group](../group/)** |
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Person, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Person to another entity |
-| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the person and follows the requirements for Professional Activities described below. |
+| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the person and follows the requirements for Activities described below |
+| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the person participated, but was not responsible, and follows the requirements for Activities described below |
 | `contact_point` | array | Optional | An array of json objects, each of which is an address at which the person is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
 | `residence` | array | Optional | A place that the person was associated with, and MUST follow the requirements for a [reference](../../shared/reference/) to a [Place](../place/) |
 | `born` | json object | Optional | A json object representing the birth of the person, which follows the requirements for Births described below. | 
 | `died` | json object | Optional | A json object representing the death of the person, which follows the requirements for Deaths described below. |
 
 
-### Properties of Births, Deaths and Professional Activities
+### Properties of Births, Deaths and Activities
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
