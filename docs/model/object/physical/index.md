@@ -218,7 +218,7 @@ top.part_of = model.HumanMadeObject(ident="nightwatch", label="Night Watch by Re
 
 While some artworks can be treated as two dimensional, as the only part of interest is the front of a flat surface such as a painting, drawing or photograph, there are many other objects where it is desirable to record information separately about the front and back, or any number of other sides.
 
- This pattern allows separate identities for the recto and verso of a page, the obverse and reverse of a coin, in the same manner as the frame or canvas of a painting.  The use of the classification _aat:300133025_ (artwork) is important to distinguish between objects that should be treated as the complete artwork, and objects that are either parts of it, or those that it is part of.
+This pattern allows separate identities for the recto and verso of a page, the obverse and reverse of a coin, in the same manner as the frame or canvas of a painting.  The use of the classification _aat:300133025_ (artwork) is important to distinguish between objects that should be treated as the complete artwork, and objects that are either parts of it, or those that it is part of.
 
 __Example:__
 
@@ -229,4 +229,22 @@ On the back of Manet's "Spring" is an inscription "11505F".
 top = vocab.BackPart(ident="spring/back", label="Back of Spring by Manet")
 top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Manet")
 top.referred_to_by = vocab.InscriptionStatement(content="11505F")
+```
+
+### Number of Parts
+
+Some objects have a much higher number of parts than others, and it would be impractical to describe them all independently. For example, a chess set might consist of 33 parts (the board, the 16 white pieces, the 16 black pieces), whereas a vase that has been shattered might consist of hundreds of fragments. It is possible, using the `dimension` pattern described above, to record the number of parts of an object regardless of whether they are described individually or not.
+
+__Example:__
+
+"Vessel with miniature chess set" by Michael Mode consists of 36 parts (the 32 pieces, the board, a lid, and two other parts)
+
+```crom
+top = model.HumanMadeObject(ident="chess/1", label="Miniature Chess")
+top.identified_by = vocab.PrimaryName(content="Vessel with miniature chess set")
+dim = model.Dimension()
+dim.value = 36
+dim.unit = model.MeasurementUnit(ident="http://vocab.getty.edu/aat/300241583", label="Components")
+dim.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300404433", label="Count")
+top.dimension = dim
 ```
