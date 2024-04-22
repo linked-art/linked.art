@@ -2,19 +2,13 @@
 title: Linked Art
 ---
 
-Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on Linked Open Data to describe Art. We then implement that model in [Software](/software/) and use it to provide valuable content. It is under active development and we welcome additional partners and collaborators.
+Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on Linked Open Data to describe cultural heritage with a particular focus on art. We then implement that model in [Software](/software/) and use it to provide valuable content. It is under active development and we welcome additional partners and collaborators.
 
 Watch our introduction to the work from the CIDOC 2020 Conference:
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/afO7KEysda8?start=183" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
-
-<br/>
-
-## Want to learn more?
-
-Beyond the documentation in the site, you can listen to some of the previous discussions of the working group on the [YouTube channel](https://www.youtube.com/channel/UCNASnutgByTdQHGehoOUlSA).
 
 
 <div id="devbranch" style="display:none">
