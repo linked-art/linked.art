@@ -10,10 +10,9 @@ There are many ways to get involved:
 
 * Attend a Linked Art [Event](/community/events/)
 * Join the Discussion Group: <https://groups.google.com/forum/#!forum/linked-art>
-* Join the Slack (email [robert.sanderson@yale.edu](mailto:robert.sanderson@yale.edu) for an invitation)
+* Join the Slack workspace (email [robert.sanderson@yale.edu](mailto:robert.sanderson@yale.edu) for an invitation)
 * Add to Issues / Questions: <https://github.com/linked-art/linked.art/issues>
 * Edit the website source in Github: <https://github.com/linked-art/linked.art/>
-* Listen to some of our recorded discussions: <https://www.youtube.com/channel/UCNASnutgByTdQHGehoOUlSA>
 
 ## Funded Projects and Supporters
 
@@ -70,7 +69,7 @@ And several others. If you would like to be listed here, please let us know!
 
 ### Editorial Board
 
-Starting in January 2019, the linked.art project will be managed by an editorial board, currently consisting of the following people:
+Starting in January 2019, the Linked Art initiative is managed by an editorial board, which currently consists of the following people:
 
 * Robert Sanderson [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-4441-6852) (chair, Yale University)
 * Edward Anderson (Rijksmuseum)
@@ -88,4 +87,3 @@ Starting in January 2019, the linked.art project will be managed by an editorial
 * Daniel Sissman (J. Paul Getty Trust)
 
 The make-up of the editorial board will change over time, however every effort will continue to be made to ensure diversity of representation in the organizations participating in the work. The factors to be represented include geographic location, type and size of institution, gender, and career path.
-

@@ -8,7 +8,7 @@ title: Linked Art Data Model
 
 **Latest Stable Version:** TBA
 
-The Linked Art Data Model is published and maintained by the [Editorial Board](../community/index.md#editorial-board) under the [CC-BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
+The Linked Art Data Model is published and maintained by the [Editorial Board](../community/index.md#editorial-board) under the [CC BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
 
 ## Introduction
 
