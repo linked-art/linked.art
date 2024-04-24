@@ -8,28 +8,9 @@ title: Linked Art API
 
 **Latest Stable Version:** TBA
 
-Versions before 1.0 are considered to be **unstable**. This means that any changes may be made at any time, without concern for compatibility. Version 0.9 is reserved for implementation feedback, and is considered as a release candidate for 1.0. 
+Versions before 1.0 are considered to be **unstable**. This means that any changes may be made at any time, without concern for compatibility. Version 0.9 is reserved for implementation feedback, and is considered as a release candidate for 1.0. Version 1.0 is expected by the end of calendar year 2024 (delayed due to COVID and other related circumstances).
 
-Version 1.0 is expected by the end of calendar year 2024 (delayed due to COVID and other related circumstances).
-
-**Editors:**
-
-* Robert Sanderson [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-4441-6852) (chair, Yale University)
-* Edward Anderson (Rijksmuseum)
-* David Beaudet (National Gallery of Art (US))
-* George Bruseker [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-7519-1970) (Takin Solutions)
-* Trang Dang (Canadian Heritage Information Network)
-* Antoine Isaac [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-9767-6979) (Europeana)
-* John McQuaid (Frick)
-* Jonathan Lill (MoMA)
-* Bree Midavaine (Philadephia Museum of Art)
-* Samantha Norling (Indianapolis Museum of Art at Newfields)
-* Kevin Page [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-1668-6540) (Oxford University)
-* Richard Palmer (V&A)
-* Julien A. Raemy [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-4711-5759) (Swiss Federal Archives)
-* Daniel Sissman (J. Paul Getty Trust)
-
-Specification published under the [CC-BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
+The Linked Art API is published and maintained by the [Editorial Board](../../community/index.md#editorial-board) under the [CC-BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
 
 ## Introduction
 

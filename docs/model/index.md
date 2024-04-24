@@ -2,6 +2,14 @@
 title: Linked Art Data Model
 ---
 
+## Status of this Document
+
+**This version:** 0.8.5
+
+**Latest Stable Version:** TBA
+
+The Linked Art Data Model is published and maintained by the [Editorial Board](../community/index.md#editorial-board) under the [CC-BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
+
 ## Introduction
 
 The Linked Art Data Model is an application profile that can be used to describe cultural heritage resources, with a focus on artworks and museum-oriented activities. It defines common patterns and terms to ensure that the resulting data can be easily [used](/loud/) and is based on real-world data and use cases.
