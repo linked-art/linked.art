@@ -4,7 +4,7 @@ title: Linked Art Data Model
 
 ## Status of this Document
 
-**This version:** 0.8.5
+**This version:** 0.9
 
 **Latest Stable Version:** TBA
 

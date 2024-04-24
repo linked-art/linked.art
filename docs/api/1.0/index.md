@@ -1,10 +1,10 @@
 ---
-title: Linked Art API
+title: Linked Art API 1.0
 ---
 
 ## Status of this Document
 
-**This version:** 0.8.5
+**This version:** 0.9
 
 **Latest Stable Version:** TBA
 

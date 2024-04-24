@@ -47,7 +47,7 @@ Technical infrastructure improvements, such as tests, coverage or other integrat
 ## Contributors
 
 * Rob Sanderson (robert.sanderson@yale.edu)
-* Linked Art Editorial Board 
+* [Linked Art Editorial Board](https://linked.art/community/#editorial-board) 
 
 ### Past Contributors
 
