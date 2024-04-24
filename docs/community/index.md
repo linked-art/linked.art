@@ -72,19 +72,19 @@ And several others. If you would like to be listed here, please let us know!
 
 Starting in January 2019, the linked.art project will be managed by an editorial board, currently consisting of the following people:
 
-* Robert Sanderson (chair, Yale University)
+* Robert Sanderson [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0003-4441-6852) (chair, Yale University)
 * Edward Anderson (Rijksmuseum)
-* David Beaudet (National Gallery of Art (US))
-* George Bruseker (Takin Solutions)
+* David Beaudet (National Gallery of Art)
+* George Bruseker [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-7519-1970) (Takin Solutions)
 * Trang Dang (Canadian Heritage Information Network)
-* Antoine Isaac (Europeana)
-* John McQuaid (Frick)
-* Jonathan Lill (MoMA)
+* Antoine Isaac [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0001-9767-6979) (Europeana)
+* John McQuaid (Frick Collection)
+* Jonathan Lill (Museum of Modern Art)
 * Bree Midavaine (Philadephia Museum of Art)
 * Samantha Norling (Indianapolis Museum of Art at Newfields)
-* Kevin Page (Oxford University)
-* Richard Palmer (V&A)
-* Julien A. Raemy (Swiss Federal Archives)
+* Kevin Page [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-1668-6540) (Oxford University)
+* Richard Palmer (Victoria and Albert Museum)
+* Julien A. Raemy [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-4711-5759) (Swiss Federal Archives)
 * Daniel Sissman (J. Paul Getty Trust)
 
 The make-up of the editorial board will change over time, however every effort will continue to be made to ensure diversity of representation in the organizations participating in the work. The factors to be represented include geographic location, type and size of institution, gender, and career path.
