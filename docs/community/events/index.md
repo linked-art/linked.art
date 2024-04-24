@@ -29,13 +29,13 @@ Below is a list of editorial in-person and outreach events organized to develop 
 
 ## 2019
 
-* **Outreach Workshop** (October 1st, London, United Kingdom); open attendance, see [details here](2019/outreach_london)
-* Editorial Face-to-Face 2 (October 2nd-4th, Oxford University, United Kingdom)
+* **Outreach Workshop** (October 1st, Victoria and Albert Museum, London, United Kingdom); open attendance, see [details here](2019/outreach_london)
+* Editorial Face-to-Face 2 (October 2nd-4th, University of Oxford, Oxford, United Kingdom)
 * Editorial Face-to-Face 1 (March 4th-6th, Getty, Los Angeles, CA, USA)
-
 
 ## Related Events
 
 * [2024 IIIF Conference Birds of a Feather session: Connecting IIIF and Semantic Cultural Heritage Metadata for Discovery](https://iiif.io/event/2024/los-angeles/schedule/#106) (June 16th, 2024, Los Angeles, CA, USA)
-* Enriching Exhibitions Meeting (May 16th, Yale University, New Haven, CT, USA)
-* [Linked Conservation Data Modeling](https://www.ligatus.org.uk/lcd/meeting/modelling) (September 12th-13th, 2019, London, United Kingdom)
+* Enriching Exhibitions Scholarship Symposium (February 7th, 2024, Ashmolean Museum, Oxford, United Kingdom)
+* Enriching Exhibitions Meeting (May 16th, 2023, Yale University, New Haven, CT, USA)
+* [Linked Conservation Data Modeling](https://www.ligatus.org.uk/lcd/meeting/19) (September 12th-13th, 2019, University of the Arts, London, United Kingdom)
