@@ -36,6 +36,6 @@ Below is a list of editorial in-person and outreach events organized to develop 
 
 ## Related Events
 
-* [2024 IIIF Conference Birds of a Feather session: Connecting IIIF and Semantic Cultural Heritage Metadata for Discovery](https://iiif.io/event/2024/los-angeles/schedule/) (June 16th, 2024, Los Angeles, CA, USA)
+* [2024 IIIF Conference Birds of a Feather session: Connecting IIIF and Semantic Cultural Heritage Metadata for Discovery](https://iiif.io/event/2024/los-angeles/schedule/#106) (June 16th, 2024, Los Angeles, CA, USA)
 * Enriching Exhibitions Meeting (May 16th, Yale University, New Haven, CT, USA)
 * [Linked Conservation Data Modeling](https://www.ligatus.org.uk/lcd/meeting/modelling) (September 12th-13th, 2019, London, United Kingdom)
