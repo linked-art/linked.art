@@ -61,7 +61,6 @@ top.current_custodian = model.Group(ident="http://vocab.getty.edu/ulan/500115988
 
 The current location of the object is given using the `current_location` property.  This can give a reference to a gallery or specific part of a facility, or be used for the general address of the organization where the object is currently held. There are further modeling details available about [Places](/model/place/).
 
-
 __Example:__
 
 The current location of the Spring is Gallery W204 (which is part of the West building, which is part of the Getty Center)
