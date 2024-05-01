@@ -41,6 +41,22 @@ top.current_owner = model.Group(ident="amsterdam_govt", label="City of Amsterdam
 top.current_custodian = model.Group(ident="http://vocab.getty.edu/ulan/500246547", label="Rijksmuseum")
 ```
 
+### Normal Custodian
+
+When an object is temporarily loaned to another organization, for example for an exhibition, then the current owner does not change, but the current custodian will. It is useful in this circumstance to know who the usual or normal custodian of the object is when it's different from the current custodian. For example, if (and this is a big if given the size of the painting) the Night Watch was loaned to another organization, then the owner would remain the city, the current custodian would be the exhibiting organization, and the Rijksmuseum would remain the normal custodian. This uses a property called `current_permanent_custodian`.
+
+__Example:__
+
+The Night Watch is also (hypothetically) loaned to the Getty Museum.
+
+```crom
+top = vocab.Painting(ident="nightwatch/17",label="Painting", art=1)
+top.current_owner = model.Group(ident="amsterdam_govt", label="City of Amsterdam Governing Body")
+top.current_permanent_custodian = model.Group(ident="http://vocab.getty.edu/ulan/500246547", label="Rijksmuseum")
+top.current_custodian = model.Group(ident="http://vocab.getty.edu/ulan/500115988", label="Getty Museum")
+```
+
+
 ## Location
 
 The current location of the object is given using the `current_location` property.  This can give a reference to a gallery or specific part of a facility, or be used for the general address of the organization where the object is currently held. There are further modeling details available about [Places](/model/place/).
@@ -53,4 +69,18 @@ The current location of the Spring is Gallery W204 (which is part of the West bu
 ```crom
 top = model.HumanMadeObject(ident="spring/7", label="Jeanne (Spring) by Manet")
 top.current_location = model.Place(ident="W204", label="Gallery W204")
+```
+
+### Normal Location
+
+Similar to the current versus normal custodian, objects may also have a normal location compared to their current location. The object might not be where it normally is for conservation work, because it has been moved for an exhibition, or due to gallery rotations.  The model uses the same pattern with a `current_permanent_location` property.
+
+__Example:__
+
+Spring is (also hypothetically) currently in a different gallery for an exhibition.
+
+```crom
+top = model.HumanMadeObject(ident="spring/14", label="Jeanne (Spring) by Manet")
+top.current_permanent_location = model.Place(ident="W204", label="Gallery W204")
+top.current_location = model.Place(ident="E100", label="Exhibition Gallery 100")
 ```
