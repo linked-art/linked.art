@@ -38,6 +38,7 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 | `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
 | `identified_by`   | array         | Optional    | An array of json objects, each of which is a name for this Name and follows the Name pattern |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the Name. | <!-- -->
+| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the Name, and MUST follow the requirements for [Assignments](../assignment/) |
 
 ### Property Diagram
 

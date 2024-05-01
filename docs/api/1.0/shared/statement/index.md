@@ -38,6 +38,8 @@ Statements are described in the [base patterns](/model/base/) of the model docum
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a label or name for the statement, and MUST follow the requirements for [Name](../name/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to this statement, or an embedded statement about this statement | 
 | `format`          | string        | Optional    | If the string in content is not plain text, then format can be used to specify the media type of the string |
+| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the statement, and MUST follow the requirements for [Assignments](../assignment/) |
+
 
 ### Property Diagram
 
@@ -51,7 +53,6 @@ Statements are typically found as the object of the following properties.  This 
 |------------------|------------------|-------------|
 | `referred_to_by` | All              | Statements are almost always found in the `referred_to_by` property, and can be present in any of the API endpoints |
 
-(And that's all!)
 
 ## Example
 

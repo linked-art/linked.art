@@ -14,30 +14,26 @@ The use of context specific assertions or other attribute assignments should be 
 
 ## Assigning Attributes
 
-### Assignment of Attributes
-
-The `AttributeAssignment` class is an `Activity`, carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the _subject_ of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
+The `AttributeAssignment` class is an `Activity`, typically carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the _subject_ of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
 This pattern is useful when you do not want to assert the relationship directly, such as for a name that was previously given to the object but is no longer actively used. Or an attribution of an artist that is possibly true, but might only be an informed guess.
 
-The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `attributed_by` property on that resource, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship, or a `Name` to an `Actor` with the `identified_by` relationship.  In terms of the relationship that the `AttributeAssignment` expresses, the resource with the `attributed_by` property is the subject of the relationship, the relationship itself is given in `assigned_property`, and the object of the relationship is given in `assigned`, thereby making up a regular 'triple' of subject, predicate, object.
+The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `attributed_by` property on that resource, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship or a `Material` to an object with the `made_of` property.  In terms of the relationship that the `AttributeAssignment` expresses, the resource with the `attributed_by` property is the subject of the relationship, the relationship itself is given in `assigned_property`, and the object of the relationship is given in `assigned`, thereby making up a regular 'triple' of subject, predicate, object.
 
 __Example:__
 
-Manet called his painting "Le Printemps", "Spring" in French.
+It is asserted in 2015 that "Spring" has a material of canvas.
 
 ```crom
 top = vocab.Painting(ident="spring/21", label="Spring")
 aa = model.AttributeAssignment()
-aa.assigned_property = "identified_by"
-name = model.Name()
-name.content = "Le Printemps"
-aa.assigned = name
+aa.assigned_property = "made_of"
+mat = model.Material(ident="http://vocab.getty.edu/aat/300014078", _label="canvas")
+aa.assigned = mat
 top.attributed_by = aa
-aa.carried_out_by = model.Person(ident="manet", label="Manet")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "1881-01-01T00:00:00Z"
-ts.end_of_the_end = "1881-12-31T23:59:59Z"
+ts.begin_of_the_begin = "2015-01-01T00:00:00Z"
+ts.end_of_the_end = "2015-12-31T23:59:59Z"
 aa.timespan = ts
 ```
 
@@ -63,6 +59,25 @@ acc1.assigned_by = aa1
 acc2.assigned_by = aa2
 top.identified_by = acc1
 top.identified_by = acc2
+```
+
+### Source of Knowledge
+
+It is useful to be able to assert the source of information, such as the text which provides an authority or witness for a particular form of a name of an entity. This is modeled using the attribute assignment pattern, with a reference to the entity that provided the information in the `used_specific_object` field. This could be a database, or the text of a book, a physical object or other entity types. The requirement, however, is that it is a reference to this entity, rather than a string citation.
+
+For citations as strings, the regular Statement pattern can be used with `referred_to_by`, again on the attribute assignment. 
+
+__Example:__
+
+The name form "Rembrandt van Rijn" was added from Gardner's "Art through the Ages".
+
+```crom
+top = model.Person(ident="rembrandt/10", label="Rembrandt")
+name = model.Name(content="Rembrandt van Rijn")
+aa1 = model.AttributeAssignment()
+aa1.used_specific_object = model.LinguisticObject(ident="gardner-art", label="Art through the Ages")
+name.assigned_by = aa1
+top.identified_by = name
 ```
 
 ### Uncertain or Former Assignments
