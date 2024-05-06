@@ -43,7 +43,7 @@ All project software, procedures, and documentation, will be made freely availab
 <u>US Team</u>
 
 - **Principal Investigator**: [Dr Robert Sanderson](https://www.linkedin.com/in/robert-sanderson/), [Yale University](https://www.yale.edu/)
-- **Co-Investigator**: [Dr Emmanuelle Delmas-Glass](https://www.linkedin.com/in/emmanuelle-delmas-glass-3929343/), [Yale Center for British Art](https://britishart.yale.edu/), [Yale University](https://www.yale.edu/)
+- **Co-Investigator**: [Emmanuelle Delmas-Glass](https://www.linkedin.com/in/emmanuelle-delmas-glass-3929343/), [Yale Center for British Art](https://britishart.yale.edu/), [Yale University](https://www.yale.edu/)
 - **Cultural Heritage Data Engineer**: [Kelly Davis](https://www.linkedin.com/in/daviskellyk/), [Yale University](https://www.yale.edu/)
 
 For enquiries about the project, please contact [Dr Kevin Page](https://eng.ox.ac.uk/people/kevin-page/) in the first instance.
