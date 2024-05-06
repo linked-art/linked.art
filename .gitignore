@@ -2,3 +2,4 @@
 scripts/*.pyc
 extensions/*.pyc
 docs/model/example_index.md
+**/.DS_Store
