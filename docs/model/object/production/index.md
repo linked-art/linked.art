@@ -148,6 +148,23 @@ top = model.HumanMadeObject(ident="ccp-plate/1", label="Plate for CCP")
 top.made_of = vocab.instances['copper']
 ```
 
+## Cause of Production
+
+Artworks are frequently commissioned, where an artist agrees to create the artwork and the commissioner agrees to compenate the artist for his efforts. The modeling of the [commission](/model/provenance/promises/#commissions-for-artwork) is described in the Provenance section, as an exchange of promises, and potentially also Payments. The object can refer to this Activity in its Production with the `caused_by` property.
+
+__Example:__
+
+The production of the [Nuveen Painting](https://artgallery.yale.edu/collections/objects/290048) was caused by its commissioning.
+
+```crom
+top = model.HumanMadeObject(ident="nuveen/1", label="Nuveen Painting")
+top.identified_by = vocab.PrimaryName(content="The Nuveen Painting")
+prod = model.Production()
+prod.carried_out_by = model.Person(ident="dine", label="Jim Dine")
+prod.caused_by = model.Activity(ident="nuveen_commission", label="Commission")
+top.produced_by = prod
+```
+
 ## Unidentified or Unknown Artist
 
 Many objects are created by an unknown or unidentified artist. While it is possible to have a different Person record with "Unidentified Artist" as the name, this quickly creates a huge number of identified people in the system with only a single reference to each. Instead, it is recommended to create a Group record to represent all unidentified artists, and then each object would have its Production `carried_out_by` the Group, meaning one (or more) people within that artificial set of people.

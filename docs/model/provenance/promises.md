@@ -58,6 +58,7 @@ The "Nuveen Painting" by Jim Dine was commissioned by Richard Franke in 1985.
 
 ```crom
 top = vocab.ProvenanceEntry(ident="nuveen_commission/1", label="Commission of Painting")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300393199", label="Commissioning")
 promise = vocab.Promise(label="Obligation to Pay Artist")  
 fromwho = model.Person(ident="franke", label="Richard Franke")
 towho = model.Person(ident="dine", label="Jim Dine")
@@ -72,12 +73,4 @@ promprod.referred_to_by = vocab.Description(content="Promise to produce a painti
 top.part = promprod
 ```
 
-The resulting production activity has a cause, which is the above Provenance Event.
-
-```crom
-top = vocab.Painting(ident="nuveen/1", label="Nuveen Painting")
-top.identified_by = vocab.PrimaryName(content="The Nuveen Painting")
-prod = model.Production()
-prod.carried_out_by = model.Person(ident="dine", label="Jim Dine")
-prod.caused_by = model.Activity(ident="nuveen_commission", label="Commission of Painting")
-```
+The resulting production activity has a `caused_by` property that references the above Provenance Event, as described in the [object](/model/object/production/#cause-of-production) documentation.

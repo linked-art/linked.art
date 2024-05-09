@@ -46,6 +46,7 @@ Dereferencing an entity via the Event endpoint would result in a JSON-LD documen
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to another Event that caused this event to occur. **Only usable when the `type` is `"Event"` or `"Activity"`** |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion.  **Only usable when the `type` is `"Activity"`** | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity. **Only usable when the `type` is `"Activity"`** |
+| `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the event but did not carry it out. **Only usable when the `type` is "Event" or "Activity"`** |
 | `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity. **Only usable when the `type` is `"Activity"`** |
 
 
