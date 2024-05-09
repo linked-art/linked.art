@@ -186,13 +186,17 @@ The property for the Person or Group is `carried_out`, the inverse of the more f
 
 This pattern can be used for other activities that the Person or Group was responsible for by changing the `classified_as` on the Activity to reflect the nature of that activity, however the activity must not have its own identity separate from Person or Group. If it does, then it should have its own record, and use `carried_out_by` in the regular fashion. Activities that are embedded within records in this way cannot be referred to separately from the Person.
 
+A more specific classification can be added to the activity if known, for example that Rembrandt's professional activities were being an artist, rather than being an author. The location can be added with `took_place_at`, along with any other activity based properties. Note that this might end up duplicating occupation information in `classified_as` on the Person or Group.
+
+
 __Example:__
 
-Rembrandt was professionally active between 1631 and his death in 1669.
+Rembrandt was professionally active as a painter between 1631 and his death in 1669.
 
 ```crom
 top = model.Person(ident="rembrandt/7", label="Rembrandt")
 active = vocab.Active()
+active.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300025136", label="Painter")
 ats = model.TimeSpan()
 ats.begin_of_the_begin = "1631-01-01T00:00:00"
 ats.end_of_the_end = "1669-10-04T23:59:59"
