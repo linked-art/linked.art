@@ -122,6 +122,10 @@ page.access_point = model.DigitalObject("https://www.getty.edu/art/collection/ob
 
 The [IIIF Presentation API](http://iiif.io/api/presentation/) is considered to be a `DigitalObject` that is about the object, in the same way as the home page of the object in a collection information system. There is linguistic content within the manifest, that could be have one or more languages associated with it, and thus we have the same intermediary `LinguisticObject` as the value of the `subject_of` property. The `conformsTo` property should be used to refer to the context document for the API to ensure it can be recognized, including which version.
 
+The specification that a Manifest conforms to is the Presentation API: [http://iiif.io/api/presentation/](http://iiif.io/api/presentation/)
+
+And per that specification, the media type to be used in format follows the pattern: `application/ld+json;profile="http://iiif.io/api/presentation/3/context.json"`
+
 __Example:__
 
 Jeanne has a IIIF Presentation API Manifest.
@@ -133,7 +137,8 @@ lo = model.LinguisticObject()
 top.subject_of = lo
 mfst = model.DigitalObject()
 mfst.access_point = model.DigitalObject(ident="https://media.getty.edu/iiif/manifest/db379bba-801c-4650-bc31-3ff2f712eb21")
-mfst.conforms_to = model.InformationObject("http://iiif.io/api/presentation/3")
+mfst.conforms_to = model.InformationObject("http://iiif.io/api/presentation/")
+mfst.format = "application/ld+json;profile='http://iiif.io/api/presentation/3/context.json'"
 lo.digitally_carried_by = mfst
 ```
 
@@ -141,7 +146,7 @@ lo.digitally_carried_by = mfst
 
 The [IIIF Image API](http://iiif.io/api/image/) is a `DigitalService` from which various derivatives of the image content can be requested. Similarly to the `access_point` property used in the previous sections, this service is referenced via the `digitally_available_via` property from the core `DigitalObject` that represents the digital image.  The same image might have both access points and image services.
 
-The IIIF Image service should have a `conforms_to` property that refers to "http://iiif.io/api/image/" plus the major version number at the end as the URI of an `InformationObject`, so that applications know what sort of service is being referred to.
+The IIIF Image service should have a `conforms_to` property that refers to "http://iiif.io/api/image/" as the URI of an `InformationObject`, so that applications know what sort of service is being referred to. The `format` property refers to the image information document (info.json) which has the media type of `application/ld+json;profile="http://iiif.io/api/image/3/context.json"`
 
 __Example:__
 
@@ -157,6 +162,7 @@ img.digitally_shown_by = do
 do.access_point = model.DigitalObject("https://media.getty.edu/iiif/image/8094f61e-e458-42bd-90cf-a0ed0dcc90b9/full/full/0/default.jpg")
 svc = model.DigitalService()
 svc.access_point = model.DigitalObject(ident="https://media.getty.edu/iiif/image/8094f61e-e458-42bd-90cf-a0ed0dcc90b9")
-svc.conforms_to = model.InformationObject("http://iiif.io/api/image/3")
+svc.conforms_to = model.InformationObject("http://iiif.io/api/image")
+svc.format = "application/ld+json;profile='http://iiif.io/api/image/3/context.json'"
 do.digitally_available_via = svc
 ```
