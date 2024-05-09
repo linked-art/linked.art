@@ -138,7 +138,7 @@ top.subject_of = lo
 mfst = model.DigitalObject()
 mfst.access_point = model.DigitalObject(ident="https://media.getty.edu/iiif/manifest/db379bba-801c-4650-bc31-3ff2f712eb21")
 mfst.conforms_to = model.InformationObject("http://iiif.io/api/presentation/")
-mfst.format = 'application/ld+json;profile=\"http://iiif.io/api/presentation/3/context.json\"'
+mfst.format = 'application/ld+json;profile=\\\"http://iiif.io/api/presentation/3/context.json\\\"'
 lo.digitally_carried_by = mfst
 ```
 
@@ -163,6 +163,6 @@ do.access_point = model.DigitalObject("https://media.getty.edu/iiif/image/8094f6
 svc = model.DigitalService()
 svc.access_point = model.DigitalObject(ident="https://media.getty.edu/iiif/image/8094f61e-e458-42bd-90cf-a0ed0dcc90b9")
 svc.conforms_to = model.InformationObject("http://iiif.io/api/image")
-svc.format = 'application/ld+json;profile=\"http://iiif.io/api/image/3/context.json\"'
+svc.format = 'application/ld+json;profile=\\\"http://iiif.io/api/image/3/context.json\\\"'
 do.digitally_available_via = svc
 ```
