@@ -97,6 +97,10 @@ top.classified_as = vocab.instances['style impressionism']
 
 Other classifications can also be assigned to the object's content. If it is possible to say that "the artistic content of this object is an X", then X can be included in the set of classifications using the `classified_as` property on the `VisualItem`.  This could include classifications such as "Landscape", "Genre", "Portrait" or "Allusion", compared to classifications that are derived from the physical nature of the object such as a "Painting", "Photograph" or "Sculpture" which are associated with the object.  
 
+__Example:__
+
+Spring's visual appearance is classified as a Portrait.
+
 ```crom
 top = model.VisualItem(ident="spring/4", label="Visual Content of Spring")
 top.classified_as = vocab.instances['content portrait']
@@ -105,6 +109,21 @@ top.classified_as = vocab.instances['content portrait']
 ## Textual and Visual Works
 
 While the primary use case for Linked Art is visual works, there is also a need to be able to describe textual works: works containing content in a human readable language. Some works are solely textual (which we call linguistic), and some are solely visual. A single object might carry more than one visual work, and/or more than one textual work. There can also be single works that have both visual and textual components, but cannot be separated. For example, a poster with specific layout, fonts, colors and other stylistic choices cannot truly separate the linguistic from the visual.
+
+### Inscriptions and Signatures
+
+The most common textual content that is carried by primarily image based works is an inscription or a signature.  The easiest way to represent this information is to provide a Statement on the object that conveys a description and content of the inscription or signature.
+
+It is possible to convey detailed, structured information about important inscriptions by following the model described in the following sections. This would treat the inscription as its own identifiable entity with a `LinguisticObject` record. That entity can have a `Creation`, a `Language`, and be `carried_by` either the full physical object or a physical part of it. In the case of signatures that are part of the image, then the signature linguistic object can be `part_of` the `VisualItem`. While it is infrequnt that this level of detailed description is either available or necessary, it is feasible to convey.
+
+__Example:__
+
+The Night Watch has an signature statement:
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/18")
+top.referred_to_by = vocab.SignatureStatement(content="signature and date: ‘Rembrandt f 1642’")
+```
 
 ### Objects Carrying Textual Works
 
