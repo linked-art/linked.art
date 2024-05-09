@@ -51,7 +51,7 @@ If there are multiple parties that have formally entered into a legal consortium
 
 __Example:__
 
-The Yale University Art Gallery and the Yale Center for British Art jointly purchased a painting by Kehinde Wiley in 2021 from undisclosed seller.
+The Yale University Art Gallery and the Yale Center for British Art jointly purchased a painting by Kehinde Wiley in 2021 from an undisclosed seller.
 
 ```crom
 top = vocab.ProvenanceEntry(ident="yuag_ycba_wiley/1", label="Purchase of Painting")
@@ -59,7 +59,7 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "2021-01-01T00:00:00Z"
 ts.end_of_the_end = "2021-12-31T23:59:59Z"
 top.timespan = ts
-acq = model.Acquisition(label="Acquisition")
+acq = model.Acquisition()
 top.part = acq
 acq.transferred_title_of = model.HumanMadeObject(ident="yiadom-boakye", label="Portrait of Lynette Yiadom-Boakye")
 acq.transferred_title_to = model.Group(ident="yuag", label="Yale University Art Gallery")

@@ -43,9 +43,10 @@ For more information about the Physical Object data, please see the [Object mode
 | `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for Destructions described below | 
 | `removed_by` | array | Optional | An array of json objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for PartRemovals described below | 
 | `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for Encounters described below |
+| `changed_ownership_through` | array | Optional | An array of json objects, each of which represents the Acquisition of the object by some actor from another, and follows the requirements for an Acquisition as given in the [Provenance Activity](../provenance_activity/) endpoint description, as also summarized below|
 
 
-### Properties of Productions, Destructions, PartRemovals and general Activities
+### Properties of Productions, Destructions, PartRemovals and other Activities
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
@@ -59,11 +60,13 @@ For more information about the Physical Object data, please see the [Object mode
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused this event to occur |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out this event. **Only usable when the `type` is `"Production"` or `"PartRemoval"` |
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out this event. **Only usable when the `type` is `"Production"`, `"Encounter"` or `"PartRemoval"`** |
 | `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../reference/) to an entity that was instrumental in the carrying out of this event |
 | `technique` | array | Optional | An array of json objects, each of which is a technique used in the event and MUST follow the requirements for [Type](../../shared/type) |
-| `part` | array | Optional | An array of json objects, each of which is another instance of this same event type. **Only usable when the `type` is `"Production"` or `"PartRemoval"`** | 
+| `part` | array | Optional | An array of json objects, each of which is another instance of this same event type. **Only usable when the `type` is `"Production"`, `"Encounter"` or `"PartRemoval"`** | 
 | `diminished` | json object | Optional | A json objects which is a [reference](../../shared/reference/) to another Physical Object that this object was removed from by this event. **Only usable when the `type` is `"PartRemoval"`**|
+| `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
+| `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
 
 ### Property Diagram
 
