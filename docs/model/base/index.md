@@ -153,7 +153,7 @@ Note that `equivalent` can also be included when referencing resources across re
 
 __Example:__
 
-The Night Watch has an external URI that also identifies the same physical object in [wikidata](https://www.wikidata.org/wiki/Q219831):
+The Night Watch has an external URI that also identifies the same physical object in [wikidata](https://www.wikidata.org/entity/Q219831):
 
 ```crom
 top = model.HumanMadeObject(ident="nightwatch/3", label="Night Watch by Rembrandt")
@@ -226,8 +226,8 @@ prod = model.Production()
 top.produced_by = prod
 prod.carried_out_by = model.Person(ident="manet", label="Manet")
 when = model.TimeSpan(label="1881")
-when.begin_of_the_begin = "1881-01-01T00:00:00"
-when.end_of_the_end = "1881-12-31T23:59:59"
+when.begin_of_the_begin = "1881-01-01T00:00:00Z"
+when.end_of_the_end = "1881-12-31T23:59:59Z"
 prod.timespan = when
 prod.took_place_at = model.Place(ident="france", label="France")
 ```
@@ -325,15 +325,15 @@ top = model.LinguisticObject(ident="rembrandtjaccuse/1", label="Rembrandt's J'ac
 cre = model.Creation()
 top.created_by = cre
 ts = model.TimeSpan(label="2008")
-ts.begin_of_the_begin = "2008-01-01T00:00:00"
-ts.end_of_the_end = "2008-12-31T23:59:59"
+ts.begin_of_the_begin = "2008-01-01T00:00:00Z"
+ts.end_of_the_end = "2008-12-31T23:59:59Z"
 cre.timespan = ts
 pg = model.Creation()
 cre.part = pg
 pg.carried_out_by = model.Person(ident="greenaway", label="Peter Greenaway")
-pg.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300025654", label="Director")
+pg.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300025654", label="Director")
 fw = model.Creation()
 cre.part = fw
 fw.carried_out_by = model.Person(ident="wolting", label="Femke Wolting")
-fw.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300197742", label="Producer")
+fw.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300197742", label="Producer")
 ```

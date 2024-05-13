@@ -150,15 +150,15 @@ Rembrandt was born on 1606-07-15 and died on 1669-10-04 in Amsterdam.
 top = model.Person(ident="rembrandt/13", label="Rembrandt")
 birth = model.Birth()
 bts = model.TimeSpan()
-bts.begin_of_the_begin = "1606-07-15T00:00:00"
-bts.end_of_the_end = "1606-07-15T23:59:59"
+bts.begin_of_the_begin = "1606-07-15T00:00:00Z"
+bts.end_of_the_end = "1606-07-15T23:59:59Z"
 birth.timespan = bts
 death = model.Death()
 dts = model.TimeSpan()
-dts.begin_of_the_begin = "1669-10-04T00:00:00"
-dts.end_of_the_end = "1669-10-04T23:59:59"
+dts.begin_of_the_begin = "1669-10-04T00:00:00Z"
+dts.end_of_the_end = "1669-10-04T23:59:59Z"
 death.timespan = dts
-dloc = model.Place(ident="https://vocab.getty.edu/tgn/7006952",label="Amsterdam")
+dloc = model.Place(ident="http://vocab.getty.edu/tgn/7006952",label="Amsterdam")
 death.took_place_at = dloc
 top.born = birth
 top.died = death 
@@ -173,8 +173,8 @@ top = model.Group(ident="rembrandthuis/2", label = "Rembrandt House Museum")
 form = model.Formation()
 top.formed_by = form
 fts = model.TimeSpan()
-fts.begin_of_the_begin = "1911-06-10T00:00:00"
-fts.end_of_the_end = "1911-06-10T23:59:59"
+fts.begin_of_the_begin = "1911-06-10T00:00:00Z"
+fts.end_of_the_end = "1911-06-10T23:59:59Z"
 form.timespan = fts
 ```
 
@@ -198,8 +198,8 @@ top = model.Person(ident="rembrandt/7", label="Rembrandt")
 active = vocab.Active()
 active.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300025136", label="Painter")
 ats = model.TimeSpan()
-ats.begin_of_the_begin = "1631-01-01T00:00:00"
-ats.end_of_the_end = "1669-10-04T23:59:59"
+ats.begin_of_the_begin = "1631-01-01T00:00:00Z"
+ats.end_of_the_end = "1669-10-04T23:59:59Z"
 active.timespan = ats
 top.carried_out = active
 ```
@@ -219,8 +219,8 @@ top = model.Person(ident="rembrandt/14", label="Rembrandt")
 burial = model.Activity()
 burial.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300263485", label="Burial")
 ats = model.TimeSpan()
-ats.begin_of_the_begin = "1669-10-04T00:00:00"
-ats.end_of_the_end = "1669-11-01T23:59:59"
+ats.begin_of_the_begin = "1669-10-04T00:00:00Z"
+ats.end_of_the_end = "1669-11-01T23:59:59Z"
 burial.timespan = ats
 burial.took_place_at = model.Place(ident="westerkerk", label="Place of Westerkerk")
 top.participated_in = burial
@@ -266,7 +266,7 @@ Kehinde Wiley is African-American.
 
 ```crom
 top = model.Person(ident="wiley/1", label="Kehinde Wiley")
-top.classified_as = vocab.Ethnicity(ident="https://www.wikidata.org/wiki/Q3007177", label="African-American")
+top.classified_as = vocab.Ethnicity(ident="http://www.wikidata.org/entity/Q3007177", label="African-American")
 ```
 
 ### Gender
