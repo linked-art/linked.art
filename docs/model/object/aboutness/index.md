@@ -72,7 +72,7 @@ Manet's Spring is about the season spring.
 
 ```crom
 top = model.VisualItem(ident="spring/2", label="Visual Content of Spring")
-top.about = model.Type(ident="https://vocab.getty.edu/aat/300133097", label="Spring (season)")
+top.about = model.Type(ident="http://vocab.getty.edu/aat/300133097", label="Spring (season)")
 ```
 
 

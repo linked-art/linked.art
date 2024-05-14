@@ -40,7 +40,7 @@ There are two additional properties that MAY be used on references to ensure tha
 | `type`            | string        | Required    | The value MUST be the same as the `type` of the referenced resource |
 | `_label`          | string        | Recommended | A human readable label for the referenced resource, intended for developers |
 | `equivalent`      | array         | Optional    | An array of references to external resources which are equivalent to the referenced resource |
-| `lang_code`       | string        | Optional    | Only valid if the `type` of the reference is `Language`. The [language tag](https://www.w3.org/International/articles/language-tags/) for the referenced language. |
+| `notation`        | array         | Optional    | An array of strings, each of which is a commonly used notation or identifier for the resource. This is typically used when the `type` of the reference is `Language` and gives the [language tag](https://www.w3.org/International/articles/language-tags/). |
 
 There are too many incoming properties to try to list them all, as it amounts to the list of all properties for all classes.
 

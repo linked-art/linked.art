@@ -17,7 +17,7 @@ There are a few core properties that every resource must have for it to be a use
 * `@context` is a reference to the context mapping which determines how to interpret the JSON as LOUD. It is not a property of the entity being described, but of the document. It must be present.
 * `id` captures the URI that identifies the entity.  Every core entity must have exactly one URI.
 * `type` captures the class of the entity, or `rdf:type` in RDF. Every entity must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation. Classes determine which properties or relationships may be associated with the entity.
-* `_label` captures a human readable label as a string, intended for developers or other people reading the data to understand what they are looking at.  Every entity should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
+* `_label` captures a human readable label as a string, **intended only for developers** or other people reading the data to understand what they are looking at.  Every entity should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
 
 The classes used for the core entities we describe are summarized as below, with links to the full documentation about them:
 
@@ -103,7 +103,6 @@ top = model.Person(ident="rembrandt/1", label="Rembrandt")
 top.classified_as = vocab.instances['dutch']
 ```
 
-
 ## Names and Identifiers for a Resource
 
 ### Names
@@ -153,19 +152,20 @@ Note that `equivalent` can also be included when referencing resources across re
 
 __Example:__
 
-The Night Watch has an external URI that also identifies the same physical object in [wikidata](https://www.wikidata.org/wiki/Q219831):
+The Night Watch has an external URI that also identifies the same physical object in [wikidata](https://www.wikidata.org/entity/Q219831):
 
 ```crom
 top = model.HumanMadeObject(ident="nightwatch/3", label="Night Watch by Rembrandt")
 top.equivalent = model.HumanMadeObject(ident="https://www.wikidata.org/entity/Q219831", label="Night Watch")
 ```
 
-
 ## Statements about an Entity
 
 In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in a human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the entity, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
 
 The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.  If the content is not plain text, then using `format` to give the media type is recommended (e.g. "text/html" for HTML)
+
+Note that, in the [Linked Art API](/api/1.0/shared/type/), the reference to a Language from a Statement or Name can have a `notation` property which gives the commonly used two or three letter code for it, if known.
  
 Use cases for this pattern include:
 
@@ -203,17 +203,17 @@ The general pattern is to create a construct internal to the record for the even
 
 There are both subclasses, such as `Birth`, `Production` and `Creation`, and classifications associated with them to be more specific, such as glassblowing _(aat:300053932)_ to clarify the type or technique of the activity. There are three common categories of activity which are used across the different entity types: their beginning of existence, their end of existence, and core activities that they either performed (for people or groups) or were required for (for objects and works). The table below summaries the beginning and ending of existence classes per main entity class. Note that conceptual entities cannot have an end of existence, and Places have neither.
 
-| Class             | Beginning    | Ending        |
-|-------------------|--------------|---------------|
-| `HumanMadeObject` | `Production` | `Destruction` |
-| `DigitalObject`   | `Creation`   | `Erasure`     |
-| `LinguisticObject`| `Creation`   | None          |
-| `VisualItem`      | `Creation`   | None          |
-| `PropositionalObject`| `Creation`| None          |
-| `Type`            | `Creation`   | None          |
-| `Set`             | `Creation`   | None          |
-| `Person`          | `Birth`      | `Death`       |
-| `Group`           | `Formation`  | `Dissolution` |
+| Class                | Beginning    | Ending        |
+|----------------------|--------------|---------------|
+| `HumanMadeObject`    | `Production` | `Destruction` |
+| `DigitalObject`      | `Creation`   | `Erasure`     |
+| `LinguisticObject`   | `Creation`   | None          |
+| `VisualItem`         | `Creation`   | None          |
+| `PropositionalObject`| `Creation`   | None          |
+| `Type` (& below)     | `Creation`   | None          |
+| `Set`                | `Creation`   | None          |
+| `Person`             | `Birth`      | `Death`       |
+| `Group`              | `Formation`  | `Dissolution` |
 
 
 __Example:__
@@ -226,8 +226,8 @@ prod = model.Production()
 top.produced_by = prod
 prod.carried_out_by = model.Person(ident="manet", label="Manet")
 when = model.TimeSpan(label="1881")
-when.begin_of_the_begin = "1881-01-01T00:00:00"
-when.end_of_the_end = "1881-12-31T23:59:59"
+when.begin_of_the_begin = "1881-01-01T00:00:00Z"
+when.end_of_the_end = "1881-12-31T23:59:59Z"
 prod.timespan = when
 prod.took_place_at = model.Place(ident="france", label="France")
 ```
@@ -250,7 +250,6 @@ __Example:__
 
 The Christie's auction of the Stowe House took place over 40 days in August and September, 1848 ([Source](https://www.countrylife.co.uk/luxury/art-and-antiques/5-sales-which-made-christies-no-2-the-stowe-sale-144150)).
 
-
 ```crom
 top = vocab.AuctionEvent(ident="stowe/1", label="Auction of Stowe House")
 ts = model.TimeSpan()
@@ -267,7 +266,6 @@ n.content = "40 days in August and September, 1848"
 ts.identified_by = n
 top.timespan = ts 
 ```
-
 
 ## Parts
 
@@ -325,15 +323,15 @@ top = model.LinguisticObject(ident="rembrandtjaccuse/1", label="Rembrandt's J'ac
 cre = model.Creation()
 top.created_by = cre
 ts = model.TimeSpan(label="2008")
-ts.begin_of_the_begin = "2008-01-01T00:00:00"
-ts.end_of_the_end = "2008-12-31T23:59:59"
+ts.begin_of_the_begin = "2008-01-01T00:00:00Z"
+ts.end_of_the_end = "2008-12-31T23:59:59Z"
 cre.timespan = ts
 pg = model.Creation()
 cre.part = pg
 pg.carried_out_by = model.Person(ident="greenaway", label="Peter Greenaway")
-pg.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300025654", label="Director")
+pg.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300025654", label="Director")
 fw = model.Creation()
 cre.part = fw
 fw.carried_out_by = model.Person(ident="wolting", label="Femke Wolting")
-fw.classified_as = model.Type(ident="https://vocab.getty.edu/aat/300197742", label="Producer")
+fw.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300197742", label="Producer")
 ```

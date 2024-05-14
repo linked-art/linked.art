@@ -27,7 +27,7 @@ The current owner of Spring is the Getty.
 
 ```crom
 top = model.HumanMadeObject(ident="spring/6", label="Jeanne (Spring) by Manet")
-top.current_owner = model.Group(ident="https://vocab.getty.edu/ulan/500115988", label="Getty Museum")
+top.current_owner = model.Group(ident="http://vocab.getty.edu/ulan/500115988", label="Getty Museum")
 ```
 
 ### Custody

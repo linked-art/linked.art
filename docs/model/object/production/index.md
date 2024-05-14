@@ -24,8 +24,8 @@ prod = model.Production()
 top.produced_by = prod
 prod.carried_out_by = model.Person(ident="rembrandt", label="Rembrandt")
 when = model.TimeSpan(label="1642")
-when.begin_of_the_begin = "1642-01-01T00:00:00"
-when.end_of_the_end = "1642-12-31T23:59:59"
+when.begin_of_the_begin = "1642-01-01T00:00:00Z"
+when.end_of_the_end = "1642-12-31T23:59:59Z"
 prod.timespan = when
 prod.took_place_at = model.Place(ident="amsterdam", label="Amsterdam")
 ```
@@ -265,7 +265,7 @@ dest = model.Destruction(label="Destruction of Le Peintre")
 top.destroyed_by = dest
 when = model.TimeSpan()
 when.begin_of_the_begin = "1998-09-02T22:20:00Z"
-when.end_of_the_end = "1998-09-02T022:40:00Z"
+when.end_of_the_end = "1998-09-02T22:40:00Z"
 dest.timespan = when
 ```
 
@@ -285,7 +285,7 @@ dest = model.Destruction(label="Destruction of Le Peintre")
 top.destroyed_by = dest
 when = model.TimeSpan()
 when.begin_of_the_begin = "1998-09-02T22:20:00Z"
-when.end_of_the_end = "1998-09-02T022:40:00Z"
+when.end_of_the_end = "1998-09-02T22:40:00Z"
 dest.timespan = when
 act = model.Event(ident="sr111crash", label="Crash of Swiss Air 111")
 dest.caused_by = act
