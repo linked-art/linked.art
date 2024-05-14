@@ -37,7 +37,6 @@ The same core features of all other resources are also applicable to the `Lingui
 
 The title of a text is captured using the `Name` pattern, and assigned identifiers using the `Identifier` pattern, both with the `identified_by` relationship.
 
-
 __Example:__
 
 The textual content of Koot's work.
