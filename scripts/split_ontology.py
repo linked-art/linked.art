@@ -19,7 +19,7 @@ try:
 	os.chdir('scripts')
 except:
 	pass
-shutil.copy('index.xml', '../content/ns/terms/')
+shutil.copy('index.xml', '../docs/ns/terms/')
 
 
 # And split it
@@ -45,7 +45,7 @@ for c in classes:
 	odom = etree.XML(out)
 	odom.append(c)
 	o = etree.tostring(odom, pretty_print=True).decode('utf-8')
-	fh = open('../content/ns/terms/%s.xml' % name, 'w')
+	fh = open('../docs/ns/terms/%s.xml' % name, 'w')
 	fh.write(o)
 	fh.close()
 
@@ -56,6 +56,6 @@ for p in props:
 	odom = etree.XML(out)
 	odom.append(p)
 	o = etree.tostring(odom, pretty_print=True).decode('utf-8')
-	fh = open('../content/ns/terms/%s.xml' % name, 'w')
+	fh = open('../docs/ns/terms/%s.xml' % name, 'w')
 	fh.write(o)
 	fh.close()
