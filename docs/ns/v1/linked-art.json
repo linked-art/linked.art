@@ -254,6 +254,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -274,6 +288,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -294,6 +322,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -329,6 +371,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -349,6 +405,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -369,6 +439,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -389,6 +473,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -409,6 +507,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P46i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -435,6 +547,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P148i_is_component_of"
+              }
+            }
+          }
         }
       }
     },
@@ -461,6 +587,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -481,6 +621,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -501,6 +655,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -521,6 +689,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -541,6 +723,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -564,6 +760,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -584,6 +794,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -604,6 +828,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P86_falls_within"
+              }
+            }
+          }
         }
       }
     },
@@ -624,6 +862,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P89_falls_within"
+              }
+            }
+          }
         }
       }
     },
@@ -647,6 +899,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "skos:broader"
+              }
+            }
+          }
         }
       }
     },
@@ -667,6 +933,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "skos:broader"
+              }
+            }
+          }
         }
       }
     },
@@ -687,6 +967,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "skos:broader"
+              }
+            }
+          }
         }
       }
     },
@@ -707,6 +1001,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "skos:broader"
+              }
+            }
+          }
         }
       }
     },
@@ -876,6 +1184,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -1023,6 +1345,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P148i_is_component_of"
+              }
+            }
+          }
         }
       }
     },
@@ -1043,6 +1379,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -1092,6 +1442,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "skos:broader"
+              }
+            }
+          }
         }
       }
     },
@@ -1115,6 +1479,20 @@
           "@id": "la:member_of",
           "@type": "@id",
           "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
         }
       }
     },
@@ -1576,8 +1954,7 @@
     },
     "current_permanent_location": {
       "@id": "crm:P54_has_current_permanent_location",
-      "@type": "@id",
-      "@container": "@set"
+      "@type": "@id"
     },
     "current_permanent_location_of": {
       "@id": "crm:P54i_is_current_permanent_location_of",
@@ -2503,7 +2880,38 @@
       "@id": "crm:P90b_has_upper_value_limit"
     },
     "DigitalObject": {
-      "@id": "dig:D1_Digital_Object"
+      "@id": "dig:D1_Digital_Object",
+      "@context": {
+        "part": {
+          "@id": "crm:P106_is_composed_of",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "part_of": {
+          "@id": "crm:P106i_forms_part_of",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "member_of": {
+          "@id": "la:member_of",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "attributed_by": {
+          "@id": "crm:P140i_was_attributed_by",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "@id": "crm:P177_assigned_property_of_type",
+            "@type": "@vocab",
+            "@context": {
+              "part_of": {
+                "@id": "crm:P106i_forms_part_of"
+              }
+            }
+          }
+        }
+      }
     },
     "Encounter": {
       "@id": "sci:S19_Encounter_Event"
@@ -2540,6 +2948,9 @@
       "@id": "skos:broader",
       "@type": "@id",
       "@container": "@set"
+    },
+    "notation": {
+      "@id": "skos:notation"
     },
     "conforms_to": {
       "@id": "dcterms:conformsTo",
@@ -2631,9 +3042,6 @@
       "@id": "la:paid_to",
       "@type": "@id",
       "@container": "@set"
-    },
-    "lang_code": {
-      "@id": "la:lang_code"
     },
     "members_exemplified_by": {
       "@id": "la:members_exemplified_by",

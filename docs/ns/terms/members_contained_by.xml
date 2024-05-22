@@ -1,12 +1,11 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/" xml:lang="en" xml:base="http://www.cidoc-crm.org/cidoc-crm/">
 
-<rdf:Property rdf:about="https://linked.art/ns/terms/related_from_by">
-        <rdfs:label xml:lang="en">related from by</rdfs:label>
-        <rdfs:comment xml:lang="en"/>
-        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
-        <rdfs:range rdf:resource="https://linked.art/ns/terms/Relationship"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/relates_from"/>
-</rdf:Property> 
-
+<rdf:Property rdf:about="https://linked.art/ns/terms/members_contained_by">
+    <rdfs:label xml:lang="en">members contained by</rdfs:label>
+    <rdfs:comment xml:lang="en"/>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:range rdf:resource="E18_Physical_Thing"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/contains_members_of"/>
+</rdf:Property>
 
 </rdf:RDF>

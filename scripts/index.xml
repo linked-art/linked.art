@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<rdf:RDF xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.cidoc-crm.org/cidoc-crm/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:dig="http://www.ics.forth.gr/isl/CRMdig/">
+<rdf:RDF xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.cidoc-crm.org/cidoc-crm/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:la="https://linked.art/ns/terms/" xmlns:schema="http://schema.org/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:dig="http://www.ics.forth.gr/isl/CRMdig/">
 
 <!--                                -->
 <!-- Hopefully temporary extensions -->
@@ -44,7 +44,7 @@
 </rdf:Property>
 
 
-<!-- Many of these will go to CRM SOC in the future, hopefully -->
+<!-- Payment of a Monetary Amount -->
 
 <rdfs:Class rdf:about="https://linked.art/ns/terms/Payment">
     <rdfs:label xml:lang="en">Payment</rdfs:label>
@@ -72,6 +72,203 @@
         <rdfs:domain rdf:resource="https://linked.art/ns/terms/Payment"/>
         <rdfs:range rdf:resource="E39_Actor"/>
 </rdf:Property>
+
+<!-- Set of Things, as potential superclass of Group and Collection -->
+<!-- e.g. an auction lot is not a curated holding, but we need a class for its membership -->
+<!-- Sets can have rights (right to add /remove) and be about subjects (e.g. exhibition) -->
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Set">
+    <rdfs:label xml:lang="en">Set</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E89_Propositional_Object"/>
+    <rdfs:subClassOf rdf:resource="E72_Legal_Object"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/has_member">
+    <rdfs:label xml:lang="en">has member</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/member_of"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/member_of">
+    <rdfs:label xml:lang="en">member of</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/has_member"/>
+</rdf:Property>
+
+<!-- No inverse, as we don't want instances to be exemplars -->
+<rdf:Property rdf:about="https://linked.art/ns/terms/members_exemplified_by">
+    <rdfs:label xml:lang="en">members exemplified by</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/members_contained_by">
+    <rdfs:label xml:lang="en">members contained by</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:range rdf:resource="E18_Physical_Thing"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/contains_members_of"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/contains_members_of">
+    <rdfs:label xml:lang="en">contains members of</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="E18_Physical_Thing"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/members_contained_by"/>
+</rdf:Property>
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Addition">
+    <rdfs:label xml:lang="en">Addition</rdfs:label>
+    <rdfs:comment>The addition of some entity to a Set</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/added_to">
+    <rdfs:label xml:lang="en">added to</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Addition"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_to_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/added_to_by">
+    <rdfs:label xml:lang="en">added to by</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Addition"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_to"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/added_member">
+    <rdfs:label xml:lang="en">added</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Addition"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_member_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/added_member_by">
+    <rdfs:label xml:lang="en">added by</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Addition"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_member"/>
+</rdf:Property>
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Removal">
+    <rdfs:label xml:lang="en">Removal</rdfs:label>
+    <rdfs:comment>The removal of some entity from a Set</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/removed_from">
+    <rdfs:label xml:lang="en">removed from</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Removal"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_from_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/removed_from_by">
+    <rdfs:label xml:lang="en">removed from by</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Removal"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_from"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/removed_member">
+    <rdfs:label xml:lang="en">removed</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Removal"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_member_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/removed_member_by">
+    <rdfs:label xml:lang="en">removed by</rdfs:label>
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="https://linked.art/ns/terms/Removal"/>
+    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_member"/>
+</rdf:Property>
+
+
+<!-- Remodeling of Digital Object -->
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_carries">
+        <rdfs:label xml:lang="en">digitally carries</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <rdfs:range rdf:resource="E90_Symbolic_Object"/>
+        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_carried_by"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_carried_by">
+        <rdfs:label xml:lang="en">digitally carried by</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:domain rdf:resource="E90_Symbolic_Object"/>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_carries"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_shows">
+        <rdfs:label xml:lang="en">digitally shows</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <rdfs:range rdf:resource="E36_Visual_Item"/>
+        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_shown_by"/>        
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_shown_by">
+        <rdfs:label xml:lang="en">digitally shown by</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <rdfs:domain rdf:resource="E36_Visual_Item"/>
+        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_shows"/>        
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/access_point">
+    <rdfs:label xml:lang="en">access point</rdfs:label>
+    <rdfs:comment xml:lang="en">From an ur- digital object to a single concrete representation.
+        A locator as opposed to an identifier, similar to the approximated_by for Place.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+    <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+</rdf:Property>
+
+<rdfs:Class rdf:about="https://linked.art/ns/terms/DigitalService">
+    <rdfs:label xml:lang="en">Digital Service</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_available_via">
+        <rdfs:label xml:lang="en">digitally available via</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <rdfs:range rdf:resource="https://linked.art/ns/terms/DigitalService"/>
+        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_makes_available"/>        
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_makes_available">
+        <rdfs:label xml:lang="en">digitally makes available</rdfs:label>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:range rdf:resource="https://linked.art/ns/terms/DigitalService"/>
+        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_available_via"/>        
+</rdf:Property>
+
+
+
+
+<!-- Acquisition/Transfer of Rights -->
 
 <rdfs:Class rdf:about="https://linked.art/ns/terms/RightAcquisition">
     <rdfs:label xml:lang="en">Right Acquisition</rdfs:label>
@@ -109,6 +306,8 @@
         <rdfs:range rdf:resource="https://linked.art/ns/terms/RightAcquisition"/>
         <owl:inverseOf rdf:resource="https://linked.art/ns/terms/invalidates"/>
 </rdf:Property>
+
+
 
 
 <!-- Phase -->
@@ -193,176 +392,5 @@
     <rdfs:subPropertyOf rdf:resource="P2_has_type"/>
 </rdf:Property>
 
-
-<!-- caused / caused_by is O13_triggered / O13i_triggered_by -->
-
-
-<!-- Set of Things, as potential superclass of Group and Collection -->
-<!-- e.g. an auction lot is not a curated holding, but we need a class for its membership -->
-<!-- Sets can have rights (right to add /remove) and be about subjects (e.g. exhibition) -->
-
-<rdfs:Class rdf:about="https://linked.art/ns/terms/Set">
-    <rdfs:label xml:lang="en">Set</rdfs:label>
-    <rdfs:comment></rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E89_Propositional_Object"/>
-    <rdfs:subClassOf rdf:resource="E72_Legal_Object"/>
-</rdfs:Class>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/has_member">
-    <rdfs:label xml:lang="en">has member</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
-    <rdfs:range rdf:resource="E1_CRM_Entity"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/member_of"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/member_of">
-    <rdfs:label xml:lang="en">member of</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/has_member"/>
-</rdf:Property>
-
-<rdfs:Class rdf:about="https://linked.art/ns/terms/Addition">
-    <rdfs:label xml:lang="en">Addition</rdfs:label>
-    <rdfs:comment>The addition of some entity to a Set</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E7_Activity"/>
-</rdfs:Class>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/added_to">
-    <rdfs:label xml:lang="en">added to</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Addition"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_to_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/added_to_by">
-    <rdfs:label xml:lang="en">added to by</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Addition"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_to"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/added_member">
-    <rdfs:label xml:lang="en">added</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Addition"/>
-    <rdfs:range rdf:resource="E1_CRM_Entity"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_member_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/added_member_by">
-    <rdfs:label xml:lang="en">added by</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Addition"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/added_member"/>
-</rdf:Property>
-
-<rdfs:Class rdf:about="https://linked.art/ns/terms/Removal">
-    <rdfs:label xml:lang="en">Removal</rdfs:label>
-    <rdfs:comment>The removal of some entity from a Set</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E7_Activity"/>
-</rdfs:Class>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/removed_from">
-    <rdfs:label xml:lang="en">removed from</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Removal"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Set"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_from_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/removed_from_by">
-    <rdfs:label xml:lang="en">removed from by</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Set"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Removal"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_from"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/removed_member">
-    <rdfs:label xml:lang="en">removed</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="https://linked.art/ns/terms/Removal"/>
-    <rdfs:range rdf:resource="E1_CRM_Entity"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_member_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/removed_member_by">
-    <rdfs:label xml:lang="en">removed by</rdfs:label>
-    <rdfs:comment xml:lang="en"></rdfs:comment>
-    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
-    <rdfs:range rdf:resource="https://linked.art/ns/terms/Removal"/>
-    <owl:inverseOf rdf:resource="https://linked.art/ns/terms/removed_member"/>
-</rdf:Property>
-
-
-<!-- Temporary (ish) digital relationships until update of CRMDig -->
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_carries">
-        <rdfs:label xml:lang="en">digitally carries</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-        <rdfs:range rdf:resource="E90_Symbolic_Object"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_carried_by"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_carried_by">
-        <rdfs:label xml:lang="en">digitally carried by</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="E90_Symbolic_Object"/>
-        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_carries"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_shows">
-        <rdfs:label xml:lang="en">digitally shows</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-        <rdfs:range rdf:resource="E36_Visual_Item"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_shown_by"/>        
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_shown_by">
-        <rdfs:label xml:lang="en">digitally shown by</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-        <rdfs:domain rdf:resource="E36_Visual_Item"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_shows"/>        
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/access_point">
-    <rdfs:label xml:lang="en">access point</rdfs:label>
-    <rdfs:comment xml:lang="en">From an ur- digital object to a single concrete representation.
-        A locator as opposed to an identifier, similar to the approximated_by for Place.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-    <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-</rdf:Property>
-
-<rdfs:Class rdf:about="https://linked.art/ns/terms/DigitalService">
-    <rdfs:label xml:lang="en">Digital Service</rdfs:label>
-    <rdfs:comment></rdfs:comment>
-    <rdfs:subClassOf rdf:resource="dig:D1_Digital_Object"/>
-</rdfs:Class>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_available_via">
-        <rdfs:label xml:lang="en">digitally available via</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-        <rdfs:range rdf:resource="https://linked.art/ns/terms/DigitalService"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_makes_available"/>        
-</rdf:Property>
-
-<rdf:Property rdf:about="https://linked.art/ns/terms/digitally_makes_available">
-        <rdfs:label xml:lang="en">digitally makes available</rdfs:label>
-        <rdfs:comment xml:lang="en"></rdfs:comment>
-        <rdfs:range rdf:resource="https://linked.art/ns/terms/DigitalService"/>
-        <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
-        <owl:inverseOf rdf:resource="https://linked.art/ns/terms/digitally_available_via"/>        
-</rdf:Property>
 
 </rdf:RDF>
