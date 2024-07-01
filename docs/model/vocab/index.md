@@ -1,5 +1,7 @@
 ---
 title: Vocabulary Terms in Linked Art 
+up_href: "/model/"
+up_label: "Model Overview"
 ---
 
 ## Introduction
@@ -10,14 +12,14 @@ Any entity in the model can have one or more classifications associated with it 
 
 The reference to the vocabulary entry can be either directly in the `id` of the reference, or as an embedded `equivalent` to an intermediary. For the purposes of conformance and utility, the following are both equally acceptable.
 
-Vocabulary in id:
+Vocabulary in `id`:
 
 ```crom
 top = model.HumanMadeObject(ident="spring/30", label="Jeanne (Spring) by Manet")
 top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300033618",label="Painting")
 ```
 
-Vocabulary in equivalent:
+Vocabulary in `equivalent`:
 
 ```crom
 top = model.HumanMadeObject(ident="spring/31", label="Jeanne (Spring) by Manet")

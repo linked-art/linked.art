@@ -1,5 +1,7 @@
 ---
 title: Recommended Vocabulary Terms
+up_href: "/model/vocab/"
+up_label: "Vocabulary Terms"
 ---
 
 ## Introduction
@@ -7,28 +9,55 @@ title: Recommended Vocabulary Terms
 These terms are required to be used in order to facilitate even the most basic understanding of the data.
 
 
-## Name Types
+## Types
 
-## Identifier Types
+### Name Types
 
-## Statement Types
-
-
-## Object Types
-
-
-## Place Types
-
-## Group Types
+| Name | URI | Description |
+|------|-----|-------------|
+|  |  |
 
 
-## Languages
 
-## Dimension Types
 
-## Measurement Units
+### Identifier Types
 
-## Materials
+### Statement Types
 
-## Currencies
+
+### Object Types
+
+
+### Place Types
+
+### Group Types
+
+### Digital Types
+
+### Set Types
+
+### Dimension Types
+
+
+## Instances
+
+### Languages
+
+### Measurement Units
+
+### Materials
+
+### Currencies
+
+### Nationalities
+
+### Shapes
+
+### Occupations
+
+### Styles
+
+
+
+
 
