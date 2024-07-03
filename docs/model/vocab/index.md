@@ -4,6 +4,8 @@ up_href: "/model/"
 up_label: "Model Overview"
 ---
 
+[TOC]
+
 ## Introduction
 
 As the Linked Art model is very broad in terms of its classes and properties, we rely heavily on the use of vocabulary terms to be more specific about individual entities. There isn't a difference at the ontology level between a book or a painting or a bridge, they're all instances of the class `HumanMadeObject`. This makes it easy to be interoperable at the ontological level, however in order to compare data across institutions or datasets, there must also be interoperability at the vocabulary level to avoid thinking that the bridge should be counted in the same way as the painting.
