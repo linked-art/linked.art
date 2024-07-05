@@ -56,28 +56,28 @@ These terms are required to be used in order to facilitate even the most basic u
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-| Painting              | aat:300033618 | Object created by application of colored liquid onto a surface  |
-| Sculpture             | aat:300047090 | Object created by carving or engraving a hard material or molding a malleable material  |
-| Drawing               | aat:300033973 | Object created by application of lines on a surface  |
-| Miniature             | aat:300033936 | A painting on a very small scale, often excised from an illuminated Manuscript  |
-| Tapestry              | aat:300205002 | A woven textile object, typically hung on a wall  |
-| Furniture             | aat:300037680 | Objects used for sitting, reclining, or storage, such as a chair or cabinet  |
-| Mosaic                | aat:300015342 | Objects created by arrangement of small pieces of durable material, such as stone or colored glass  |
-| Photograph            | aat:300046300 | Object produced by chemical action of light on a sensitive film  |
-| Coin                  | aat:300037222 | Object typically made of metal, used as currency |
-| Map                   | aat:300028094 | Flat object which depicts a representation of the Earth's surface, including physical and/or political features  |
-| Clothing              | aat:300266639 | Object made for the purpose of covering the body, excluding jewelry and accessories  |
 | Architecture          | aat:300263552 | Structure or part of a structure which is the result of conscious construction  |
 | Armor                 | aat:300036745 | Clothing designed to protect the body in combat  |
 | Book                  | aat:300028051 | Object comprised of a sequence of leaves of paper or other material, typically carrying language or image, and bound together into a codex  |
+| Clothing              | aat:300266639 | Object made for the purpose of covering the body, excluding jewelry and accessories  |
+| Coin                  | aat:300037222 | Object typically made of metal, used as currency |
 | Decorative Arts       | aat:300411641 | Objects that are primarily utilitarian in form or function but have aesthetic value, including ceramics, furniture, textiles, glass, clocks and so on |
-| Jewelry               | aat:300209286 | Objects worn on the body for adornment rather than function typically of precious materials |
-| Manuscript            | aat:300265483 | Handwritten books, typically decorated and illustrated  |
-| Print                 | aat:300041273 | Objects created by transferring an image using a printing process  |
+| Drawing               | aat:300033973 | Object created by application of lines on a surface  |
 | Frame                 | aat:300404391 | Part of an object which surrounds a generally two dimensional artwork such as a painting  |
-| Lithograph            | aat: | Prints created using the process of lithography  |
+| Furniture             | aat:300037680 | Objects used for sitting, reclining, or storage, such as a chair or cabinet  |
+| Jewelry               | aat:300209286 | Objects worn on the body for adornment rather than function typically of precious materials |
+| Lithograph            | aat:300041379 | Prints created using the process of lithography  |
+| Manuscript            | aat:300265483 | Handwritten books, typically decorated and illustrated  |
+| Map                   | aat:300028094 | Flat object which depicts a representation of the Earth's surface, including physical and/or political features  |
+| Miniature             | aat:300033936 | A painting on a very small scale, often excised from an illuminated Manuscript  |
+| Mosaic                | aat:300015342 | Objects created by arrangement of small pieces of durable material, such as stone or colored glass  |
 | Musical Instrument    | aat:300041620 | Object whose primary function is to enable the user to create music  |
+| Painting              | aat:300033618 | Object created by application of colored liquid onto a surface  |
+| Photograph            | aat:300046300 | Object produced by chemical action of light on a sensitive film  |
+| Print                 | aat:300041273 | Objects created by transferring an image using a printing process  |
+| Sculpture             | aat:300047090 | Object created by carving or engraving a hard material or molding a malleable material  |
 | Stained Glass         | aat:300263722 | Objects made of colored glass, often in the form of a window, meant to be observed through refracted light |
+| Tapestry              | aat:300205002 | A woven textile object, typically hung on a wall  |
 
 
 ### Place Types
