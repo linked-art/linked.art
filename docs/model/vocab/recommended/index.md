@@ -4,10 +4,11 @@ up_href: "/model/vocab/"
 up_label: "Vocabulary Terms"
 ---
 
+[TOC]
+
 ## Introduction
 
 These terms are required to be used in order to facilitate even the most basic understanding of the data.
-
 
 ## Types
 
@@ -214,24 +215,26 @@ These terms are required to be used in order to facilitate even the most basic u
 |tempera                | aat:300015062 |tempera |
 |terracotta             | aat:300010669 |terracotta |
 |watercolor             | aat:300015045 |watercolors |
-
-graphite
-ink
-wood
-pottery
-stone
-plaster
-bone
-metal
+|graphite               | aat:300011098 | graphite |
+|ink                    | aat:300015012 | ink |
+|wood                   | aat:300011914 | wood |
+|stone                  | aat:300011176 | stone |
+|plaster                | aat:300014922 | plaster|
+|bone                   | aat:300011798 | bone |
+|metal                  | aat:300010900 | metal |
+|clay                   | aat:300010439 | clay |
 
 ### Currencies
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-|us dollars             | aat:300411994 |US Dollars |
-|gb pounds              | aat:300411998 |British Pounds |
+|british pounds         | aat:300411998 | British Pounds |
+|canadian dollar        | aat:300412000 | Canadian Dollars |
+|euros                  | aat:300411996 | Euros |
+|Japanese Yen           | aat:300411997 | Japanese Yen |
+|swiss franc            | aat:300412001 | Swiss Francs |
+|us dollars             | aat:300411994 | US Dollars |
 
-euros
 
 ### Nationalities
 
