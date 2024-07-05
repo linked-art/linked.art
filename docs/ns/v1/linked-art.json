@@ -260,11 +260,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -294,11 +296,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -328,11 +332,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -377,11 +383,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -411,11 +419,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -445,11 +455,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -479,11 +491,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -513,11 +527,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P46i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P46i_forms_part_of"
+                }
               }
             }
           }
@@ -553,11 +569,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P148i_is_component_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P148i_is_component_of"
+                }
               }
             }
           }
@@ -593,11 +611,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -627,11 +647,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -661,11 +683,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -695,11 +719,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -729,11 +755,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -766,11 +794,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -800,11 +830,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -834,11 +866,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P86_falls_within"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P86_falls_within"
+                }
               }
             }
           }
@@ -868,11 +902,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P89_falls_within"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P89_falls_within"
+                }
               }
             }
           }
@@ -905,11 +941,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "skos:broader"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "skos:broader"
+                }
               }
             }
           }
@@ -939,11 +977,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "skos:broader"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "skos:broader"
+                }
               }
             }
           }
@@ -973,11 +1013,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "skos:broader"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "skos:broader"
+                }
               }
             }
           }
@@ -1007,11 +1049,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "skos:broader"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "skos:broader"
+                }
               }
             }
           }
@@ -1190,11 +1234,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -1351,11 +1397,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P148i_is_component_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P148i_is_component_of"
+                }
               }
             }
           }
@@ -1385,11 +1433,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -1448,11 +1498,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "skos:broader"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "skos:broader"
+                }
               }
             }
           }
@@ -1485,11 +1537,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
@@ -2902,11 +2956,13 @@
           "@type": "@id",
           "@container": "@set",
           "@context": {
-            "@id": "crm:P177_assigned_property_of_type",
-            "@type": "@vocab",
-            "@context": {
-              "part_of": {
-                "@id": "crm:P106i_forms_part_of"
+            "assigned_property": {
+              "@id": "crm:P177_assigned_property_of_type",
+              "@type": "@vocab",
+              "@context": {
+                "part_of": {
+                  "@id": "crm:P106i_forms_part_of"
+                }
               }
             }
           }
