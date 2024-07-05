@@ -84,24 +84,23 @@ These terms are required to be used in order to facilitate even the most basic u
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-| Country         | aat:300128207 | The  |
-| State         | aat:300000776 | The  |
-| City         | aat:300008389 | The  |
-| Gallery         | aat:300240057 | The  |
-| Province         | aat:300000774 | The  |
-| Continent         | aat:300128176 | The  |
+| Continent             | aat:300128176 | The Place is a continent (Europe, Asia, North America, etc)  |
+| Country               | aat:300128207 | The Place is a country or Nation (France, Japan, USA, etc) |
+| State                 | aat:300000776 | The Place is a state (New York, California, etc) |
+| Province              | aat:300000774 | The Place is a province or similar region (Ontario, Yorkshire, etc) |
+| City                  | aat:300008389 | The Place is a city (Paris, Chicago, Tokyo, etc) |
+| Gallery               | aat:300240057 | The Place is a (museum) gallery room in which art is displayed |
 
 
 ### Group Types
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-| Museum         | aat:300312281 | The  |
-| Department         | aat:300263534 | The  |
-| Organization         | aat:300025948 | The  |
-| Family         | aat:300055474 | The  |
-| Company        | aat:300160084 | |
-
+| Company               | aat:300160084 | The Group is a commercial company or business |
+| Department            | aat:300263534 | The Group is a department of another organization  |
+| Family                | aat:300055474 | The Group is an (extended) family related by blood and/or marriage |
+| Museum                | aat:300312281 | The Group is a museum |
+| Organization          | aat:300025948 | The Group is an organization or society of some sort |
 
 
 ### Digital Types
@@ -109,50 +108,187 @@ These terms are required to be used in order to facilitate even the most basic u
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-| Digital Image         | aat:300215302 | The  |
-| Web Page         | aat:300264578 | The  |
+| Digital Image         | aat:300215302 | The Digital Object is an image |
+| Web Page              | aat:300264578 | The Digital Object is a web page |
 
 
 ### Set Types
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-| Archive         | aat:300375748 | The  |
-| Archive Grouping         | aat:300404022 | The  |
-| Archive Sub-Grouping         | aat:300404023 | The  |
-| Collection | aat:300025976 | |
+| Archive               | aat:300375748 | The Set is a top level Archive |
+| Archival Grouping     | aat:300404022 | The Set is some grouping within an archive |
+| Archival Sub-Grouping | aat:300404023 | The Set is some grouping within an archival grouping |
+| Collection            | aat:300025976 | The Set is a collection of things, typically physical objects and managed by an organization |
 
 
 ### Dimension Types
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-| Height         | aat:300055644 | The  |
-| Width         | aat:300055647| The  |
-| Depth         | aat:300072633 | The  |
-| Weight        | aat:300056240 | The  |
-| Unknown Physical Dimension | aat:300055642 | The  |
-
-
+| Depth                 | aat:300072633 | The Dimension measures the depth of the entity, from the front to the back |
+| Height                | aat:300055644 | The Dimension measures the height of the entity, from the top to the bottom |
+| Unknown Physical Dimension | aat:300055642 | The Dimension measures some unknown physical dimension of the entity |
+| Weight                | aat:300056240 | The Dimension measures the weight of the entity |
+| Width                 | aat:300055647 | The Dimension measures the width of the object, from left to right |
 
 ## Instances
 
 ### Languages
 
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|ancient greek          | aat:300387827 |Ancient Greek |
+|arabic                 | aat:300387843 |Arabic |
+|chinese                | aat:300388113 |Chinese |
+|danish                 | aat:300388204 |Danish |
+|dutch                  | aat:300388256 |Dutch |
+|english                | aat:300388277 |English |
+|farsi                  | aat:300388296 |Farsi |
+|finnish                | aat:300388299 |Finnish |
+|french                 | aat:300388306 |French |
+|german                 | aat:300388344 |German |
+|greek                  | aat:300388361 |Greek |
+|hebrew                 | aat:300388401 |Hebrew |
+|hindi                  | aat:300388412 |Hindi |
+|icelandic              | aat:300388449 |Icelandic |
+|irish                  | aat:300388467 |Irish |
+|italian                | aat:300388474 |Italian |
+|japanese               | aat:300388486 |Japanese |
+|korean                 | aat:300388633 |Korean |
+|latin                  | aat:300388693 |Latin |
+|norwegian              | aat:300388992 |Norwegian |
+|polish                 | aat:300389109 |Polish |
+|portuguese             | aat:300389115 |Portuguese |
+|romanian               | aat:300389157 |Romanian |
+|russian                | aat:300389168 |Russian |
+|spanish                | aat:300389311 |Spanish |
+|swedish                | aat:300389336 |Swedish |
+|tamil                  | aat:300389365 |Tamil |
+|thai                   | aat:300389405 |Thai |
+|turkish                | aat:300389470 |Turkish |
+|urdu                   | aat:300389502 |Urdu |
+|welsh                  | aat:300389555 |Welsh |
+
 ### Measurement Units
+
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|bytes                  | aat:300265869 |bytes |
+|centimeters            | aat:300379098 |centimeters |
+|days                   | aat:300379242 |days |
+|feet                   | aat:300379101 |feet |
+|gigabytes              | aat:300265874 |gigabytes |
+|grams                  | aat:300379225 |grams |
+|hours                  | aat:300379241 |hours |
+|inches                 | aat:300379100 |inches |
+|kilobytes              | aat:300265870 |kilobytes |
+|kilograms              | aat:300379226 |kilograms |
+|megabytes              | aat:300265873 |megabytes |
+|meters                 | aat:300379099 |meters |
+|minutes                | aat:300379240 |minutes |
+|millimeters            | aat:300379097 |millimeters |
+|months                 | aat:300379245 |months |
+|partsUnit              | aat:300404159 |parts |
+|percent                | aat:300417377 |percent |
+|pounds                 | aat:300379254 |pounds |
+|seconds                | aat:300379239 |seconds |
+|years                  | aat:300379244 |years |
+
 
 ### Materials
 
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|bronze                 | aat:300010957 |bronze |
+|canvas                 | aat:300014078 |canvas |
+|chalk                  | aat:300011727 |chalk |
+|copper                 | aat:300011020 |copper |
+|glass                  | aat:300010797 |glass |
+|gold leaf              | aat:300264831 |gold leaf |
+|marble                 | aat:300011443 |marble |
+|oak                    | aat:300012264 |oak |
+|oil paint              | aat:300015050 |oil |
+|paper                  | aat:300014109 |paper |
+|silver                 | aat:300011029 |silver |
+|tempera                | aat:300015062 |tempera |
+|terracotta             | aat:300010669 |terracotta |
+|watercolor             | aat:300015045 |watercolors |
+
+graphite
+ink
+wood
+pottery
+stone
+plaster
+bone
+metal
+
 ### Currencies
+
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|us dollars             | aat:300411994 |US Dollars |
+|gb pounds              | aat:300411998 |British Pounds |
+
+euros
 
 ### Nationalities
 
-### Shapes
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|american nationality   | aat:300107956 |American |
+|austrian nationality   | aat:300111153 |Austrian |
+|australian nationality | aat:300021861 |Australian |
+|belgian nationality    | aat:300111156 |Belgian |
+|british nationality    | aat:300111159 |British |
+|canadian nationality   | aat:300107962 |Canadian |
+|chinese nationality    | aat:300018322 |Chinese |
+|czech nationality      | aat:300111166 |Czech |
+|danish nationality     | aat:300111172 |Danish |
+|dutch nationality      | aat:300111175 |Dutch |
+|egyptian nationality   | aat:300020251 |Egyptian |
+|flemish nationality    | aat:300111184 |Flemish |
+|french nationality     | aat:300111188 |French |
+|german nationality     | aat:300111192 |German |
+|greek nationality      | aat:300264816 |Greek |
+|hungarian nationality  | aat:300111195 |Hungarian |
+|indian nationality     | aat:300018863 |Indian |
+|irish nationality      | aat:300111259 |Irish |
+|italian nationality    | aat:300111198 |Italian |
+|japanese nationality   | aat:300018519 |Japanese |
+|mexican nationality    | aat:300107963 |Mexican |
+|new zealand nationality| aat:300021959 |New Zealander |
+|norwegian nationality  | aat:300111201 |Norwegian |
+|polish nationality     | aat:300111204 |Polish |
+|portuguese nationality | aat:300111207 |Portuguese |
+|russian nationality    | aat:300111276 |Russian |
+|spanish nationality    | aat:300111215 |Spanish |
+|swedish nationality    | aat:300111218 |Swedish |
+|swiss nationality      | aat:300111221 |Swiss |
 
 ### Occupations
 
-### Styles
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|artist occupation      | aat:300025103 |Artist |
+|collector occupation   | aat:300025234 |Collector |
+|dealer occupation      | aat:300025236 |Dealer |
 
+### Shapes
+
+| Name                  | URI           | Description |
+|-----------------------|---------------|-------------|
+|arched                 | aat:300126995 |Arched |
+|circle                 | aat:300263827 |Circle |
+|oblong                 | aat:300311843 |Oblong |
+|octagonal              | aat:300263824 |Octagonal |
+|oval                   | aat:300263817 |Oval |
+|square                 | aat:300263832 |Square |
+|upright                | aat:300343370 |Upright |
+
+
+### Styles
 
 
 
