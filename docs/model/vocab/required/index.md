@@ -207,7 +207,7 @@ top = vocab.Exhibition(ident="exha/40", label="Manet and Modern Beauty (Getty)")
 
 ### Provenance Activity
 
-The URI for Exhibition is: [http://vocab.getty.edu/aat/300055863](http://vocab.getty.edu/aat/300055863)
+The URI for Provenance entries is: [http://vocab.getty.edu/aat/300055863](http://vocab.getty.edu/aat/300055863)
 
 Provenance activities also have their own [section](/model/provenance/) of the documentation, and do not have a class in the ontology. This classification is for the top level activity which groups together the other parts.
 
@@ -217,7 +217,7 @@ top = vocab.ProvenanceEntry(ident="manet_proust/40", label="Purchase of Spring b
 
 ### Publication Activity
 
-The URI for Exhibition is: [http://vocab.getty.edu/aat/300054686](http://vocab.getty.edu/aat/300054686)
+The URI for Publication activities is: [http://vocab.getty.edu/aat/300054686](http://vocab.getty.edu/aat/300054686)
 
 Works, especially texts such as books, are [published](/model/document/#creation-and-publication) in an activity. These activities are embedded in the record for the work, but are no less important to be able to distinguish.
 
@@ -230,13 +230,24 @@ top.used_for = pub
 
 ### Professional Activity
 
-The URI for Exhibition is: [http://vocab.getty.edu/aat/300393177](http://vocab.getty.edu/aat/300393177)
+The URI for Professional Activities is: [http://vocab.getty.edu/aat/300393177](http://vocab.getty.edu/aat/300393177)
+
+```crom
+top = model.Person(ident="rembrandt/44", label="Rembrandt")
+top.carried_out = vocab.Active()
+```
 
 ### Promise Activity
 
-The URI for Exhibition is: [http://vocab.getty.edu/aat/300435599](http://vocab.getty.edu/aat/300435599)
+The URI for Promises is: [http://vocab.getty.edu/aat/300435599](http://vocab.getty.edu/aat/300435599)
 
+Albeit a small part of the detailed provenance, there isn't a class for [promises](/model/provenance/promises/) in the ontology, and thus we have to require terminology to fill the role. 
 
+```crom
+top = vocab.ProvenanceEntry(ident="coffin_promise/1", label="Promised Gift of Coffin")
+promise = vocab.Promise(label="Promise of Gift")
+top.part = promise
+```
 
 ## Object Flags
 
