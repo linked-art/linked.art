@@ -199,17 +199,38 @@ There are several classifications for Activity that are important to use, as the
 
 The URI for Exhibition is: [http://vocab.getty.edu/aat/300054766](http://vocab.getty.edu/aat/300054766)
 
+Exhibitions are [documented in their own section](/model/exhibition/), but do not have a class of their own in the ontology. As such we need to give them a required classification so they can be recognized.
+
+```crom
+top = vocab.Exhibition(ident="exha/40", label="Manet and Modern Beauty (Getty)")
+```
+
 ### Provenance Activity
 
 The URI for Exhibition is: [http://vocab.getty.edu/aat/300055863](http://vocab.getty.edu/aat/300055863)
 
-### Professional Activity
+Provenance activities also have their own [section](/model/provenance/) of the documentation, and do not have a class in the ontology. This classification is for the top level activity which groups together the other parts.
 
-The URI for Exhibition is: [http://vocab.getty.edu/aat/300393177](http://vocab.getty.edu/aat/300393177)
+```crom
+top = vocab.ProvenanceEntry(ident="manet_proust/40", label="Purchase of Spring by Proust")
+```
 
 ### Publication Activity
 
 The URI for Exhibition is: [http://vocab.getty.edu/aat/300054686](http://vocab.getty.edu/aat/300054686)
+
+Works, especially texts such as books, are [published](/model/document/#creation-and-publication) in an activity. These activities are embedded in the record for the work, but are no less important to be able to distinguish.
+
+```crom
+top = vocab.LinguisticObject(ident="koot_nightwatch/40", label="Content of Koot's Night Watch")
+pub = vocab.Publishing(label="MI's Publishing")
+pub.carried_out_by = model.Group(ident="meulenhoff", label="Meulenhoff International")
+top.used_for = pub
+```
+
+### Professional Activity
+
+The URI for Exhibition is: [http://vocab.getty.edu/aat/300393177](http://vocab.getty.edu/aat/300393177)
 
 ### Promise Activity
 
