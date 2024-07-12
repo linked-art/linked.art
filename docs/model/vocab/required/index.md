@@ -40,7 +40,11 @@ See below for details about each
 
 ## Name Types
 
+There are four required vocabulary entries for Names and Identifiers to be able to distinguish them from others. Each has particular requirements for use by the client or search system.
+
 ### Primary Name
+
+The URI for Primary Name is: [http://vocab.getty.edu/aat/300404670](http://vocab.getty.edu/aat/300404670)
 
 The main or primary name of the entity. Every record must have a name with the primary name classification so that user interfaces know which name to use. There may be multiple primary names for a single record, but each must have a unique language, or no language. See the [name documentation](/model/base/#names).
 
@@ -55,7 +59,9 @@ top.identified_by = ttl
 
 ### Display Name
 
-A name to use when displaying the node which has the associated name. For Statements, this is typically used by interfaces as the label for the statement. For TimeSpans or other structured data, it is used in place of the structured data.
+The URI for Display Name is: [http://vocab.getty.edu/aat/300404669](http://vocab.getty.edu/aat/300404669)
+
+A name to use when displaying the node which has the associated name. For Statements, this is typically used by interfaces as the label for the statement. For [TimeSpans](/model/base/#time-span-details) or other structured data, it is used in place of the structured data.
 
 Example 1:
 
@@ -81,6 +87,8 @@ prod.timespan = ts
 
 ### Sort Name
 
+The URI for Sort Name is: [http://vocab.getty.edu/aat/300451544](http://vocab.getty.edu/aat/300451544)
+
 A name to use when sorting the entity along with other entities in a list. This classification can be used on the same name as the primary name, or on a different form of the entity's name. Different languages can have different sort names, however each language must not have more than one.
 
 ```crom
@@ -91,7 +99,9 @@ top.identified_by = vocab.SortName(content="van Rijn, Rembrandt Harmenszoon")
 
 ### Sort Value
 
-An identifier to use for sorting the entity along with other entities in a list, instead of a linguistic form as described above. There must not be more than one sort value per entity. User interfaces should not render the sort value to the end user.
+The URI for Sort Name is: [http://vocab.getty.edu/aat/300456575](http://vocab.getty.edu/aat/300456575)
+
+A non-linguistic identifier to use for sorting the entity along with other entities in a list, instead of a linguistic form as described above. There must not be more than one sort value per entity. User interfaces should not render the sort value to the end user.
 
 ```crom
 top = model.Person(ident="rembrandt/42", label="Rembrandt")
@@ -100,20 +110,86 @@ top.identified_by = vocab.SortValue(content="r0000011")
 
 ## Classification Types
 
+There are six classifications that stand as categories when it is otherwise difficult to distinguish between very similar constructs in the same property. These are described in the [types of types section](/model/base/#types-of-types), and sometimes referred to as "meta-types". A related required term is that for color, however it classifies a Dimension rather than another Type.
+
 ### Statement
+
+The URI for the Statement type is: [http://vocab.getty.edu/aat/300418049](http://vocab.getty.edu/aat/300418049)
+
+There are many types of [Statements](model/base/#statements-about-an-entity), and it is impossible to enumerate all of those different types in a way that could be implemented successfully and usably. Instead, the type of the statement (e.g. materials statement) is given a meta-type of "brief text" so that they can be recognized as the type of statement.
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/44", label="Night Watch by Rembrandt")
+top.referred_to_by = vocab.MaterialStatement(content="Oil on Canvas")
+```
 
 ### Type of Work
 
+The URI for Type of Work is: [http://vocab.getty.edu/aat/300435443](http://vocab.getty.edu/aat/300435443)
+
+There are many [types of works](/model/base/#types-and-classifications) (painting, statue, print, ...) and it is equally impossible for any system to know all of them a priori. Instead the type of work of an object is classified with the Type of Work meta-type so it can be recognized.
+
+```crom
+top = vocab.Painting(ident="nightwatch/45", label="Night Watch by Rembrandt")
+```
+
 ### Style
 
-### Color
+The URI for Style is: [http://vocab.getty.edu/aat/300015646](http://vocab.getty.edu/aat/300015646)
+
+Similarly, there are many [styles](/model/object/aboutness/#style-classification) and we use aat:300015646 to distinguish a style concept from other categorizations of the work.
+
+```crom
+top = model.VisualItem(ident="nightwatch/40", label="Appearance of Night Watch")
+top.classified_as = vocab.instances['baroque style']
+```
 
 ### Shape
 
-### Occupation
+The URI for Shape is: [http://vocab.getty.edu/aat/300056273](http://vocab.getty.edu/aat/300056273)
+
+There are, similarly, many [shapes](/model/object/physical/#shapes) and we need to distinguish shape from other classifications.
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/48", label="Night Watch by Rembrandt")
+top.classified_as = vocab.instances['rectangular']
+```
 
 ### Nationality
 
+The URI for Nationality is: [http://vocab.getty.edu/aat/300379842](http://vocab.getty.edu/aat/300379842)
+
+In the same way as for objects and works, people also have a variety of types of classification associated with them. A common one is [nationality](/model/actor/#nationality).
+
+```crom
+top = model.Person(ident="rembrandt/44", label="Rembrandt")
+top.classified_as = vocab.instances['dutch nationality']
+```
+
+### Occupation
+
+The URI for Occupation is: [http://vocab.getty.edu/aat/300263369](http://vocab.getty.edu/aat/300263369)
+
+People can also be categorized by their occupation.
+
+```crom
+top = model.Person(ident="rembrandt/43", label="Rembrandt")
+top.classified_as = vocab.instances['artist occupation']
+```
+
+### Color
+
+The URI for Color is: [http://vocab.getty.edu/aat/300080438](http://vocab.getty.edu/aat/300080438)
+
+As [colors](/model/object/physical/#colors) can be measured precisely as well as being treated as a category, the classification sits on the Dimension. The dimension might end up not having a value and unit, only a second classification for what sort of color it is (in this case, brown), but the required terminology is to use aat:300080438 on the Dimension.
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/47", label="Night Watch by Rembrandt")
+c = vocab.Color(label="brown")
+c.value = 11754015.0
+c.unit = vocab.instances['rgb_colorspace']
+top.dimension = c
+```
 
 ## Activity Types
 
