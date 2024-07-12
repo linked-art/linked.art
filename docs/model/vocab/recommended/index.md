@@ -10,6 +10,12 @@ up_label: "Vocabulary Terms"
 
 These terms are required to be used in order to facilitate even the most basic understanding of the data.
 
+<style>
+	table {width: 90%}
+	tr td:first-child {width: 20%}
+	tr td:second-child {width: 10%}
+</style>
+
 ## Types
 
 ### Name Types
