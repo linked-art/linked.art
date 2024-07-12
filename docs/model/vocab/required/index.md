@@ -244,7 +244,7 @@ The URI for Promises is: [http://vocab.getty.edu/aat/300435599](http://vocab.get
 Albeit a small part of the detailed provenance, there isn't a class for [promises](/model/provenance/promises/) in the ontology, and thus we have to require terminology to fill the role. 
 
 ```crom
-top = vocab.ProvenanceEntry(ident="coffin_promise/1", label="Promised Gift of Coffin")
+top = vocab.ProvenanceEntry(ident="coffin_promise/40", label="Promised Gift of Painting")
 promise = vocab.Promise(label="Promise of Gift")
 top.part = promise
 ```
