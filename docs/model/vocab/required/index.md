@@ -193,6 +193,7 @@ top.dimension = c
 
 ## Activity Types
 
+There are several classifications for Activity that are important to use, as they they define core cultural heritage organization practices.
 
 ### Exhibition Activity
 

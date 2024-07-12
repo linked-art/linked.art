@@ -108,7 +108,8 @@ A painting by Joseph Henry Sharp, "Cheyenne Oklahoma", was stolen from the Harwo
 top = vocab.ProvenanceEntry(ident="sharp_sale/1", label="Purchase of Stolen Painting")
 thf = model.Person(ident="alter", label="Jerry Alter")
 what = model.HumanMadeObject(ident="cheyenne", label="Cheyenne Oklahoma")
-xfer = vocab.SaleOfStolenGoods(label="Sale of Painting")
+xfer = model.Activity(label="Sale of Painting")
+xfer.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300438484", label="sale of stolen goods")
 top.part = xfer
 xfer.transferred_custody_of = what
 xfer.transferred_custody_from = thf
