@@ -11,10 +11,10 @@ up_label: "Vocabulary Terms"
 These terms are required to be used in order to facilitate even the most basic understanding of the data.
 
 <style>
-	table {width: 90%}
-	tr td:first-child {width: 30em}
-	tr td:second-child {width: 14em}
-	tr td:third-child {width: 100%; text-align: left}
+	table {width: 95%}
+	tr td:first-child {width: 20em}
+	tr td:nth-child(2) {width: 12em}
+	tr td:nth-child(3) {width: 100%; text-align: left}
 </style>
 
 ## Types
