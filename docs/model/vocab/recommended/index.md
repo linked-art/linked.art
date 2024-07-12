@@ -12,8 +12,9 @@ These terms are required to be used in order to facilitate even the most basic u
 
 <style>
 	table {width: 90%}
-	tr td:first-child {width: 20%}
-	tr td:second-child {width: 10%}
+	tr td:first-child {width: 30em}
+	tr td:second-child {width: 14em}
+	tr td:third-child {width: 100%; text-align: left}
 </style>
 
 ## Types
