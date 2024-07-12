@@ -193,15 +193,27 @@ top.dimension = c
 
 ## Activity Types
 
+
 ### Exhibition Activity
+
+The URI for Exhibition is: [http://vocab.getty.edu/aat/300054766](http://vocab.getty.edu/aat/300054766)
 
 ### Provenance Activity
 
+The URI for Exhibition is: [http://vocab.getty.edu/aat/300055863](http://vocab.getty.edu/aat/300055863)
+
 ### Professional Activity
+
+The URI for Exhibition is: [http://vocab.getty.edu/aat/300393177](http://vocab.getty.edu/aat/300393177)
 
 ### Publication Activity
 
+The URI for Exhibition is: [http://vocab.getty.edu/aat/300054686](http://vocab.getty.edu/aat/300054686)
+
 ### Promise Activity
+
+The URI for Exhibition is: [http://vocab.getty.edu/aat/300435599](http://vocab.getty.edu/aat/300435599)
+
 
 
 ## Object Flags
