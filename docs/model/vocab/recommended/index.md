@@ -12,8 +12,8 @@ These terms are required to be used in order to facilitate even the most basic u
 
 <style>
 	table {width: 100% ; table-layout: fixed}
-	tr th:first-child {width: 26em}
-	tr th:nth-child(2) {width: 12em}
+	tr th:first-child {width: 18em}
+	tr th:nth-child(2) {width: 10em}
 	tr th:nth-child(3) {text-align: left}
 </style>
 
