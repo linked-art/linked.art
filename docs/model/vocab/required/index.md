@@ -249,9 +249,26 @@ promise = vocab.Promise(label="Promise of Gift")
 top.part = promise
 ```
 
-## Object Flags
+## Object/Item Flags
+
+There are two flags that are useful to distinguish broad categories of items.
 
 ### Collection Item
 
+The URI for Collection Items is: [http://vocab.getty.edu/aat/300404024](http://vocab.getty.edu/aat/300404024)
+
+It is useful to be able to distinguish between records that describe items in the "collection" of an institution from records that describe other physical or digital objects or intellectual works.
+Equally there are things which are part of the collection but one might not describe as artworks, as below, such as archival material or reference collections.
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/49", label="Night Watch by Rembrandt")
+top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300404024", label="Collection Item")
+```
+
 ### Artwork
 
+A second important distinction is between objects that are artworks and objects that are not. There might be two chairs in a gallery -- one is art, and the other is just a chair for visitors to sit on.
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/50", label="Night Watch by Rembrandt", artwork=1)
+```
