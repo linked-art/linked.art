@@ -8,7 +8,7 @@ up_label: "Vocabulary Terms"
 
 ## Introduction
 
-These terms are required to be used in order to facilitate even the most basic understanding of the data.
+These terms are recommended to be used in order to facilitate interoperability between datasets where possible. Please think carefully before choosing another concept for one in the lists below as it will be much harder to compare your data with others', however it will still be valid Linked Art if you do pick a different concept.
 
 <style>
 	table {width: 100% ; table-layout: fixed}
@@ -281,9 +281,15 @@ These terms are required to be used in order to facilitate even the most basic u
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-|artist occupation      | aat:300025103 |Artist |
-|collector occupation   | aat:300025234 |Collector |
-|dealer occupation      | aat:300025236 |Dealer |
+|artist                 | aat:300025103 |Artist |
+|collector              | aat:300025234 |Art Collector |
+|dealer                 | aat:300025236 |Art Dealer |
+|architect	            | aat:300024987 |Architect |
+|author	                | aat:300025492 |Author |
+|composer	            | aat:300025671 |(Music) Composer |
+|printer	            | aat:300025732 |Printer |
+|publisher	            | aat:300025574 |Publisher |
+
 
 ### Shapes
 
@@ -294,11 +300,11 @@ These terms are required to be used in order to facilitate even the most basic u
 |oblong                 | aat:300311843 |Oblong |
 |octagonal              | aat:300263824 |Octagonal |
 |oval                   | aat:300263817 |Oval |
+|rectangular            | aat:300263831 |Rectangular |
 |square                 | aat:300263832 |Square |
 |upright                | aat:300343370 |Upright |
 
 
-### Styles
 
 
 
