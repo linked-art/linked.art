@@ -8,14 +8,14 @@ Linked Art is a [Community](/community/) working together to create a shared [Mo
 ## Where First?
 
 * [About](/about/)
-  * [Community](/community/)
-  * [LOUD](/loud/)
+    * [Community](/community/)
+    * [LOUD](/loud/)
 * [Data Model](/model/)
-  * [Modeling Cookbook](/cookbook/)
+    * [Modeling Cookbook](/cookbook/)
 * [APIs](/api/)
-  * [Software][/software/]
+    * [Software](/software/)
 
 ## Understanding Linked Art
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSraxFteSqttGo9igjee5yQ7BsscOkbGvdDIjDsXbvz3zAx5VN0UPp8Em3qEypWNlUnK8V4REXblfnQ/embed?start=false&loop=true&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe align="center" src="https://docs.google.com/presentation/d/e/2PACX-1vSraxFteSqttGo9igjee5yQ7BsscOkbGvdDIjDsXbvz3zAx5VN0UPp8Em3qEypWNlUnK8V4REXblfnQ/embed?start=false&loop=true&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
