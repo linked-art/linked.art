@@ -19,6 +19,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 ### Name Types
 
+See the [name documentation](/model/base/#names).
+
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
 | Translated Title    | aat:300417194 | |
@@ -29,6 +31,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 
 ### Identifier Types
+
+See the [identifier documentation](/model/base/#identifiers).
 
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
@@ -41,6 +45,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 ### Contact Identifier Types
 
+See the [contact point documentation](/model/actor/#addresses)
+
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
 | Email Address       | aat:300435686 | |
@@ -50,6 +56,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 
 ### Statement Types
+
+See the [statement documentation](/model/base/#statements-about-an-entity)
 
 | Name                   | URI           | Description |
 |------------------------|---------------|-------------|
@@ -67,6 +75,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 
 ### Document Types
+
+See the [textual document documentation](/model/document/)
 
 | Name               | URI           | Description |
 |--------------------|---------------|-------------|
@@ -89,6 +99,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 ### Place Types
 
+See the [place documentation](/model/place/)
+
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
 | City Block          | aat:300008077 | |
@@ -100,6 +112,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 
 ### Group Types
+
+See the person and [group documentation](/model/actor/)
 
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
@@ -114,6 +128,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 
 ### Object Types
+
+See the [object documentation](/model/object/) and base [classification documentation](/model/base/#types-and-classifications)
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -134,6 +150,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 ### Parts of Objects Types
 
+See the [partitioning documentation](/model/base/#parts)
+
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
 | Back                | aat:300190692 | |
@@ -148,6 +166,8 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 
 ### Dimension Types
+
+See the [dimensions documentation](/model/object/physical/#dimensions)
 
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|

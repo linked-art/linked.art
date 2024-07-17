@@ -21,6 +21,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 ### Name Types
 
+See the [name documentation](/model/base/#names).
+
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
 | Alternate Name        | aat:300264273 | An alternate name, as opposed to the primary name, of an entity |
@@ -31,6 +33,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 ### Identifier Types
 
+See the [identifier documentation](/model/base/#identifiers).
+
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
 | Accession Number      | aat:300312355 | An accession number for the object |
@@ -39,7 +43,10 @@ These terms are recommended to be used in order to facilitate interoperability b
 | Call Number           | aat:300311706 | An identifier for where the object is physically in the repository, typically used in libraries |
 
 
-### Statement Types (Embedded LinguisticObjects)
+### Statement Types 
+
+These are embedded Linguistic Objects within other records. See the [statement documentation](/model/base/#statements-about-an-entity)
+
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -62,6 +69,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 
 ### Object Types
+
+See the [object documentation](/model/object/) and base [classification documentation](/model/base/#types-and-classifications)
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -91,6 +100,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 ### Place Types
 
+See the [place documentation](/model/place/)
+
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
 | Continent             | aat:300128176 | The Place is a continent (Europe, Asia, North America, etc)  |
@@ -105,6 +116,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 ### Group Types
 
+See the person and [group documentation](/model/actor/)
+
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
 | Company               | aat:300160084 | The Group is a commercial company or business |
@@ -115,7 +128,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 
 ### Digital Types
-
+ 
+See the [digital objects documentation](/model/digital/) 
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -124,6 +138,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 
 ### Set Types
+
+See the [collection documentation](model/collection/)
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -134,6 +150,8 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 
 ### Dimension Types
+
+See the [dimensions documentation](/model/object/physical/#dimensions)
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
