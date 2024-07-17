@@ -2,75 +2,20 @@
 title: Linked Art
 ---
 
-Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on Linked Open Data to describe cultural heritage with a particular focus on art. We then implement that model in [Software](/software/) and use it to provide valuable content. It is under active development and we welcome additional partners and collaborators.
-
-Watch our introduction to the work from the CIDOC 2020 Conference:
-
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/afO7KEysda8?start=183" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
+Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on [Linked Open Usable Data](/loud/) to describe cultural heritage with a particular focus on art. We specify [APIs](/api/) that enable access to data in the model, and implement them in [Software](/software/) to provide valuable content to the world. It is approaching a first stable release and we welcome additional partners and collaborators.
 
 
-<div id="devbranch" style="display:none">
+## Where First?
 
-<b>Development Previews</b>
+* [About](/about/)
+  * [Community](/community/)
+  * [LOUD](/loud/)
+* [Data Model](/model/)
+  * [Modeling Cookbook](/cookbook/)
+* [APIs](/api/)
+  * [Software][/software/]
 
-<ul id="branches"></ul>
-</div>
+## Understanding Linked Art
 
-<script src="/media/vendor/gh3.js"></script>
-<script>
-if (window.location.hostname != "linked.art") {
-	var me = new Gh3.User("linked-art");
-	var larepo = new Gh3.Repository("linked.art", me);
-	larepo.fetch(
-		function(err, res) {
-			if (err) return;
-			larepo.fetchBranches(
-				function(err, res) {
-					if (err) return;
-					// var branches = larepo.getBranches();
-					larepo.eachBranch(
-						function(branch) {
-							if (branch.name != "master") {
-								$("#branches").append('<li><a href="https://'+branch.name+
-									'--linked-art.netlify.com/">'+branch.name+'</a></ul>');
-								// Getting files is hard, need to walk through many commits
-								// and somehow determine when to stop
-							}
-						}
-					)					
-				}
-			);
-			larepo.fetchPulls(
-				function(err, res) {
-					if (err) return;
-					// var pulls = larepo.getPulls();
-					larepo.eachPull(
-						function(pull) {
-							$("#branches").append('<li><a href="https://deploy-preview-'+pull.number+
-								'--linked-art.netlify.com/">Pull Request '+pull.number+'</a>' +
-								'<ul id="files_'+pull.number+'">');
-							pull.fetchFiles(
-								function(err, res) {
-									_.each(res.files, function(file) {
-										if (file.filename.startsWith("content")) {
-											fn = file.filename.replace('content', '', 1)
-											if (fn.endsWith(".html") || fn.endsWith(".json")) {
-												$("#files_"+pull.number).append('<li><a href="https://deploy-preview-'+
-													pull.number+'--linked-art.netlify.com/'+fn+'">'+fn+"</a></li>");
-											}
-										}
-									})
-								}
-							);
-						}
-					)					
-				}
-			);
-		}
-	);
-	$("#devbranch").show()
-}
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSraxFteSqttGo9igjee5yQ7BsscOkbGvdDIjDsXbvz3zAx5VN0UPp8Em3qEypWNlUnK8V4REXblfnQ/embed?start=false&loop=true&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-</script>

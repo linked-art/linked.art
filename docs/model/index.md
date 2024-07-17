@@ -16,31 +16,40 @@ The Linked Art Data Model is an application profile that can be used to describe
 
 The model is currently under very active development in the community and the documentation is shifting to keep up with the current decisions. While the basic patterns have been fleshed out thoroughly, as we investigate more use cases, the model should be expected to change to reflect these new discussions. The documentation is not always up to date with the discussions, and sometimes there are bugs in the rendering. Please bear with us while we do our best to ensure that the result is as considered, accurate and usable as possible.
 
-## Model Components
+## The Linked Art Model
 
-The model can be treated as interlinking components that describe aspects of the events of interest. 
+* Introduction:
+    * [How To Read](intro/) the model documentation, and the examples used throughout
+    * [Basic Patterns](base/) used throughout the model
 
-* [Introduction](intro/) on how to read the documentation, and the examples used throughout
-* [Basic Patterns](base/) used throughout the model
-* [Physical Objects](object/) 
-* [People and Organizations](actor/)
-* [Places](place/)
-* [Digital Objects](digital/)
-* [Provenance](provenance/) of Objects
-* [Exhibitions](exhibition/)
-* [Conservation](conservation/)
-* [Textual Documents](document/)
-* [Collections](collection/) and Sets of entities
-* [Archival Hierarchies](archives/)
-* [Assertions](assertion/)
-* [Vocabulary Terms](vocab/)
+* Artworks and other Physical Objects:
+    * [Objects](object/) 
+    * [Digital Content](digital/) about or depicting the objects
+    * [Collections](collection/) of objects, and other sets
+    * [Provenance](provenance/) of objects
+    * [Exhibitions](exhibition/) of objects
+    * [Conservation](conservation/) of objects
+
+* Related People, Places and Concepts:
+    * [People and Organizations](actor/)
+    * [Places](place/)
+    * [Concepts](concept/)
+    * [Vocabulary Terms Used](vocab/)
+
+* Cultural Context:
+    * [Textual Documents](document/) 
+    * [Archival Hierarchies](archives/)
+    * [Specific Assertions](assertion/)
+
 
 An index of all of the classes, properties and identities used:
 
 * [Index of Examples](example_index)
 
 
-## Model Background
+## Development of the Model
+
+### Model Background
 
 Following the existing standards and best practices of the community, our starting point consists of the following background standards:
 
@@ -52,9 +61,9 @@ Following the existing standards and best practices of the community, our starti
     * The core serialization format is [JSON-LD 1.1](https://w3.org/TR/json-ld11)
 
 
-## Scope and Process
+### Scope and Process
 
-### Development Process
+#### Development Process
 
 The desired target model for Linked Open Data in the Art domain is one with the following properties:
 
@@ -72,7 +81,7 @@ Successful models are developed:
 
 For more information about how you can participate in Linked Art, please see the [Community](/community/) section of the website.
 
-### Scope Limitations
+#### Scope Limitations
 
 * Interoperability
     * The goal of the work is interoperability between systems, not to provide a comprehensive data model to describe everything that a single institution might know. This implies that management and production of the data is out of scope as a system specific concern. Similarly, the exact models used within those systems are not our concern. These would otherwise violate the technology independency principle. Open access is not a requirement, but the intent to publish beyond system boundaries is.
