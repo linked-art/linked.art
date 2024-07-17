@@ -56,6 +56,7 @@ These terms are recommended to be used in order to facilitate interoperability b
 | Materials Statement   | aat:300435429 | A description or list of the materials the object is made of  |
 | Production Statement  | aat:300435436 | A description of the production or creation of the object  |
 | Provenance Statement  | aat:300435438 | A description or semi-structured value describing the ownership history of the object  |
+| Rights Statement      | aat:300435434 | A description of copyright or other licenses pertaining to the object |
 | Signature Statement   | aat:300028705 | A description of the artist's signature which is on the object, often part of the artwork |
 | Summary               | aat:300026032 | A summary of the intellectual content of the object, as opposed to a Description of the object as a whole |
 
@@ -96,7 +97,9 @@ These terms are recommended to be used in order to facilitate interoperability b
 | Country               | aat:300128207 | The Place is a country or Nation (France, Japan, USA, etc) |
 | State                 | aat:300000776 | The Place is a state (New York, California, etc) |
 | Province              | aat:300000774 | The Place is a province or similar region (Ontario, Yorkshire, etc) |
+| County                | aat:300000771 | The Place is a county (New Haven county, etc) |
 | City                  | aat:300008389 | The Place is a city (Paris, Chicago, Tokyo, etc) |
+| Museum (as Place)     | aat:300005768 | The Place is a museum location |
 | Gallery               | aat:300240057 | The Place is a (museum) gallery room in which art is displayed |
 
 
@@ -208,28 +211,28 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-|bronze                 | aat:300010957 |bronze |
-|canvas                 | aat:300014078 |canvas |
-|chalk                  | aat:300011727 |chalk |
-|copper                 | aat:300011020 |copper |
-|glass                  | aat:300010797 |glass |
-|gold leaf              | aat:300264831 |gold leaf |
-|marble                 | aat:300011443 |marble |
-|oak                    | aat:300012264 |oak |
-|oil paint              | aat:300015050 |oil |
-|paper                  | aat:300014109 |paper |
-|silver                 | aat:300011029 |silver |
-|tempera                | aat:300015062 |tempera |
-|terracotta             | aat:300010669 |terracotta |
-|watercolor             | aat:300015045 |watercolors |
+|bone                   | aat:300011798 | bone |
+|bronze                 | aat:300010957 | bronze |
+|canvas                 | aat:300014078 | canvas |
+|chalk                  | aat:300011727 | chalk |
+|clay                   | aat:300010439 | clay |
+|copper                 | aat:300011020 | copper |
+|glass                  | aat:300010797 | glass |
+|gold leaf              | aat:300264831 | gold leaf |
 |graphite               | aat:300011098 | graphite |
 |ink                    | aat:300015012 | ink |
-|wood                   | aat:300011914 | wood |
-|stone                  | aat:300011176 | stone |
-|plaster                | aat:300014922 | plaster|
-|bone                   | aat:300011798 | bone |
+|marble                 | aat:300011443 | marble |
 |metal                  | aat:300010900 | metal |
-|clay                   | aat:300010439 | clay |
+|oak                    | aat:300012264 | oak |
+|oil paint              | aat:300015050 | oil |
+|paper                  | aat:300014109 | paper |
+|plaster                | aat:300014922 | plaster|
+|silver                 | aat:300011029 | silver |
+|stone                  | aat:300011176 | stone |
+|tempera                | aat:300015062 | tempera |
+|terracotta             | aat:300010669 | terracotta |
+|watercolor             | aat:300015045 | watercolors |
+|wood                   | aat:300011914 | wood |
 
 ### Currencies
 
@@ -247,65 +250,61 @@ These terms are recommended to be used in order to facilitate interoperability b
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-|american nationality   | aat:300107956 |American |
-|austrian nationality   | aat:300111153 |Austrian |
-|australian nationality | aat:300021861 |Australian |
-|belgian nationality    | aat:300111156 |Belgian |
-|british nationality    | aat:300111159 |British |
-|canadian nationality   | aat:300107962 |Canadian |
-|chinese nationality    | aat:300018322 |Chinese |
-|czech nationality      | aat:300111166 |Czech |
-|danish nationality     | aat:300111172 |Danish |
-|dutch nationality      | aat:300111175 |Dutch |
-|egyptian nationality   | aat:300020251 |Egyptian |
-|flemish nationality    | aat:300111184 |Flemish |
-|french nationality     | aat:300111188 |French |
-|german nationality     | aat:300111192 |German |
-|greek nationality      | aat:300264816 |Greek |
-|hungarian nationality  | aat:300111195 |Hungarian |
-|indian nationality     | aat:300018863 |Indian |
-|irish nationality      | aat:300111259 |Irish |
-|italian nationality    | aat:300111198 |Italian |
-|japanese nationality   | aat:300018519 |Japanese |
-|mexican nationality    | aat:300107963 |Mexican |
-|new zealand nationality| aat:300021959 |New Zealander |
-|norwegian nationality  | aat:300111201 |Norwegian |
-|polish nationality     | aat:300111204 |Polish |
-|portuguese nationality | aat:300111207 |Portuguese |
-|russian nationality    | aat:300111276 |Russian |
-|spanish nationality    | aat:300111215 |Spanish |
-|swedish nationality    | aat:300111218 |Swedish |
-|swiss nationality      | aat:300111221 |Swiss |
+|american               | aat:300107956 | American |
+|austrian               | aat:300111153 | Austrian |
+|australian             | aat:300021861 | Australian |
+|belgian                | aat:300111156 | Belgian |
+|british                | aat:300111159 | British |
+|canadian               | aat:300107962 | Canadian |
+|chinese                | aat:300018322 | Chinese |
+|czech                  | aat:300111166 | Czech |
+|danish                 | aat:300111172 | Danish |
+|dutch                  | aat:300111175 | Dutch |
+|egyptian               | aat:300020251 | Egyptian |
+|flemish                | aat:300111184 | Flemish |
+|french                 | aat:300111188 | French |
+|german                 | aat:300111192 | German |
+|greek                  | aat:300264816 | Greek |
+|hungarian              | aat:300111195 | Hungarian |
+|indian                 | aat:300018863 | Indian |
+|irish                  | aat:300111259 | Irish |
+|italian                | aat:300111198 | Italian |
+|japanese               | aat:300018519 | Japanese |
+|mexican                | aat:300107963 | Mexican |
+|new zealand            | aat:300021959 | New Zealander |
+|norwegian              | aat:300111201 | Norwegian |
+|polish                 | aat:300111204 | Polish |
+|portuguese             | aat:300111207 | Portuguese |
+|russian                | aat:300111276 | Russian |
+|spanish                | aat:300111215 | Spanish |
+|swedish                | aat:300111218 | Swedish |
+|swiss                  | aat:300111221 | Swiss |
+
 
 ### Occupations
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-|artist                 | aat:300025103 |Artist |
-|collector              | aat:300025234 |Art Collector |
-|dealer                 | aat:300025236 |Art Dealer |
-|architect	            | aat:300024987 |Architect |
-|author	                | aat:300025492 |Author |
-|composer	            | aat:300025671 |(Music) Composer |
-|printer	            | aat:300025732 |Printer |
-|publisher	            | aat:300025574 |Publisher |
+|artist                 | aat:300025103 | Artist |
+|collector              | aat:300025234 | Art Collector |
+|dealer                 | aat:300025236 | Art Dealer |
+|architect	            | aat:300024987 | Architect |
+|author	                | aat:300025492 | Author |
+|composer	            | aat:300025671 | (Music) Composer |
+|printer	            | aat:300025732 | Printer |
+|publisher	            | aat:300025574 | Publisher |
 
 
 ### Shapes
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
-|arched                 | aat:300126995 |Arched |
-|circle                 | aat:300263827 |Circle |
-|oblong                 | aat:300311843 |Oblong |
-|octagonal              | aat:300263824 |Octagonal |
-|oval                   | aat:300263817 |Oval |
-|rectangular            | aat:300263831 |Rectangular |
-|square                 | aat:300263832 |Square |
-|upright                | aat:300343370 |Upright |
-
-
-
-
-
+|arched                 | aat:300126995 | Arched |
+|circle                 | aat:300263827 | Circle |
+|oblong                 | aat:300311843 | Oblong |
+|octagonal              | aat:300263824 | Octagonal |
+|oval                   | aat:300263817 | Oval |
+|rectangular            | aat:300263831 | Rectangular |
+|square                 | aat:300263832 | Square |
+|upright                | aat:300343370 | Upright |
 
