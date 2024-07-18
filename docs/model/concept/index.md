@@ -24,10 +24,10 @@ All of the types are used in the regular `type` property, but care should be tak
 
 __Example:__
 
-A minimal record for the AAT concept of a Painting.
+A minimal record for a concept of a Painting.
 
 ```crom
-top = model.Type(ident="http://vocab.getty.edu/aat/300033618", label="Painting")
+top = model.Type(ident="painting/1", label="Painting")
 ```
 
 ## Importance of Equivalents
@@ -41,7 +41,7 @@ __Example 1:__
 A local record that sets a different primary name, but is equivalent to the AAT concept.
 
 ```crom
-top = model.Type(ident="painting/1", label="Local Copy of Painting")
+top = model.Type(ident="painting/2", label="Local Copy of Painting")
 top.identified_by = vocab.PrimaryName(content="Painting")
 top.equivalent = model.Type(ident="http://vocab.getty.edu/aat/300033618", label="painting (visual art)")
 ```
@@ -52,7 +52,7 @@ The Night Watch is a painting, using the local record with an equivalent of the 
 
 ```crom
 top = model.HumanMadeObject(ident="nightwatch/52", label="Night Watch by Rembrandt")
-ptg = model.Type(ident="painting/1", label="Local Copy of Painting")
+ptg = model.Type(ident="painting", label="Local Copy of Painting")
 ptg.equivalent = model.Type(ident="http://vocab.getty.edu/aat/300033618", label="painting (visual art)")
 top.classified_as = ptg
 ```
