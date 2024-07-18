@@ -18,25 +18,22 @@ The model is currently under very active development in the community and the do
 
 ## The Linked Art Model
 
-* Introduction:
+* Introduction
     * [How To Read](intro/) the model documentation, and the examples used throughout
     * [Basic Patterns](base/) used throughout the model
-
-* Artworks and other Physical Objects:
+* Artworks and other Physical Objects
     * [Objects](object/) 
     * [Digital Content](digital/) about or depicting the objects
     * [Collections](collection/) of objects, and other sets
     * [Provenance](provenance/) of objects
     * [Exhibitions](exhibition/) of objects
     * [Conservation](conservation/) of objects
-
-* Related People, Places and Concepts:
+* Related People, Places and Concepts
     * [People and Organizations](actor/)
     * [Places](place/)
     * [Concepts](concept/)
     * [Vocabulary Terms Used](vocab/)
-
-* Cultural Context:
+* Cultural Context
     * [Textual Documents](document/) 
     * [Archival Hierarchies](archives/)
     * [Specific Assertions](assertion/)
