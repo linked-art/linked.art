@@ -267,7 +267,7 @@ __Example:__
 Rembrandt was male.
 
 ```crom
-top = model.Person(ident="rembrandt/10", label="Rembrandt")
+top = model.Person(ident="rembrandt/32", label="Rembrandt")
 top.classified_as = vocab.instances['male']
 ```
 

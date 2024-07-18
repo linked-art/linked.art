@@ -24,8 +24,8 @@ top = vocab.Exhibition(ident="exha/1", label="Manet and Modern Beauty (Getty)")
 top.identified_by = vocab.PrimaryName(content="Manet and Modern Beauty")
 top.referred_to_by = vocab.Description(content="The great painter of modern Paris Edouard Manet famously shocked contemporary audiences with his provocative pictures. The first exhibition ever to explore the last years of his short life, Manet and Modern Beauty highlights a less familiar and more intimate side of this celebrated artist's work.")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "2019-10-08"
-ts.end_of_the_end = "2020-01-12"
+ts.begin_of_the_begin = "2019-10-08T00:00:00Z"
+ts.end_of_the_end = "2020-01-12T23:59:59Z"
 top.timespan = ts
 top.carried_out_by = vocab.MuseumOrg(ident="http://vocab.getty.edu/ulan/500115988", label="Getty Museum")
 top.took_place_at = vocab.City(ident="http://vocab.getty.edu/tgn/7023900", label="Los Angeles")
@@ -84,8 +84,8 @@ __Example:__
 top = vocab.Exhibition(ident="exhb/1", label="Manet and Modern Beauty (AIC)")
 top.identified_by = vocab.PrimaryName(content="Manet and Modern Beauty")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "2019-05-26"
-ts.end_of_the_end = "2019-09-08"
+ts.begin_of_the_begin = "2019-05-26T00:00:00Z"
+ts.end_of_the_end = "2019-09-08T23:59:59Z"
 top.timespan = ts
 top.carried_out_by = vocab.MuseumOrg(ident="http://vocab.getty.edu/ulan/500304669", label="Art Institute")
 top.took_place_at = vocab.City(ident="http://vocab.getty.edu/tgn/7013596", label="Chicago")
@@ -98,8 +98,8 @@ top.part_of = model.Activity(ident="exhab", label="Manet and Modern Beauty")
 top = vocab.MultiExhibition(ident="exhab/1", label="Manet and Modern Beauty")
 top.identified_by = vocab.PrimaryName(content="Manet and Modern Beauty")
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "2019-05-26"
-ts.end_of_the_end = "2020-01-12"
+ts.begin_of_the_begin = "2019-05-26T00:00:00Z"
+ts.end_of_the_end = "2020-01-12T23:59:59Z"
 top.timespan = ts
 top.motivated_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 ```
@@ -121,8 +121,8 @@ top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300378926", lab
 top.referred_to_by = vocab.Description(content="Objects in the exhibition Manet and Modern Beauty at the Art Institute of Chicago and the Getty Museum")
 cre = model.Creation()
 ts = model.TimeSpan()
-ts.begin_of_the_begin = "2019-05-01"
-ts.end_of_the_end = "2019-05-01"
+ts.begin_of_the_begin = "2019-05-01T00:00:00Z"
+ts.end_of_the_end = "2019-05-01T23:59:59Z"
 cre.timespan = ts
 top.created_by = cre
 ```

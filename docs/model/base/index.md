@@ -100,7 +100,7 @@ Rembrandt (a person) has a nationality of Dutch:
 
 ```crom
 top = model.Person(ident="rembrandt/1", label="Rembrandt")
-top.classified_as = vocab.instances['dutch']
+top.classified_as = vocab.instances['dutch nationality']
 ```
 
 ## Names and Identifiers for a Resource
