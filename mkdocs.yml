@@ -10,11 +10,10 @@ theme:
 
 nav:
     - Home: 'index.md'
-    - LOUD: 'loud/index.md'
-    - About: 'about/index.md'
-    - Community: 'community/index.md'
     - Model: 'model/index.md'
     - API: 'api/1.0/index.md'
+    - About: 'about/index.md'
+    - Community: 'community/index.md'
     - Recipes: 'cookbook/index.md'
     - Software: 'software/index.md'
 
