@@ -11,9 +11,13 @@ Linked Art is a [Community](/community/) working together to create a shared [Mo
     * [Community](/community/)
     * [LOUD](/loud/)
 * [Data Model](/model/)
+    * Start with the Data Model if you want to understand the semantics and how to describe things using Linked Art
     * [Modeling Cookbook](/cookbook/)
 * [APIs](/api/)
+    * Start with the APIs if you want to understand how to interact with Linked Art data
     * [Software](/software/)
+
+
 
 ## Understanding Linked Art
 
