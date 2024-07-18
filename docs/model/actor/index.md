@@ -60,19 +60,6 @@ name.part = vocab.MiddleName("Harmenzoon")
 name.part = vocab.FamilyName(content="van Rijn")
 ```
 
-## Identity
-
-People and Organizations are often assigned identifiers that should be recorded and tracked in the same way as any other identity. These follow the same [basic pattern](/model/base.html#identifiers) as for other identifiers, with `identified_by` being used with an `Identifier` resource.
-
-__Example:__
-
-An identifier for Rembrandt is "Q5598"
-
-```crom
-top = model.Person(ident="rembrandt/5", label="Rembrandt")
-top.identified_by = vocab.LocalNumber(content="Q5598")
-```
-
 ### Equivalent Resources
 
 There may be other identifiers for the person available in external systems, such as [ULAN](http://vocab.getty.edu/ulan/) or any of a dozen others.  If all of the information needed about the person is available from that system, then it is recommended to simply use that identifier directly as the URI for the Person.  If there is a requirement to maintain separate information about the person, then the `equivalent` property should be used to align the two. This might happen when, for example, the local data has additional information about which documents refer to the person, or more detailed biographical information.
@@ -182,7 +169,7 @@ form.timespan = fts
 
 It is often useful to know where and when the person or organization was active in their professional function. For example, an artist might have started painting when they were 20, stopped by 30, and only painted in Italy. This information can be used to help eliminate dubious attributions, for example.
 
-The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` resource should be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  
+The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` resource must be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  
 
 This pattern can be used for other activities that the Person or Group was responsible for by changing the `classified_as` on the Activity to reflect the nature of that activity, however the activity must not have its own identity separate from Person or Group. If it does, then it should have its own record, and use `carried_out_by` in the regular fashion. Activities that are embedded within records in this way cannot be referred to separately from the Person.
 
@@ -284,10 +271,18 @@ top = model.Person(ident="rembrandt/10", label="Rembrandt")
 top.classified_as = vocab.instances['male']
 ```
 
-### Digital Integration
+### Occupations
 
-Images of or web pages about the person can also be provided, following the common pattern for [digital resources](/model/digital). 
+Similar to nationalities, ethnicities and genders, people are also often classified based on their roles or occupations.
 
+__Example:__
+
+Rembrandt was an artist.
+
+```crom
+top = model.Person(ident="rembrandt/31", label="Rembrandt")
+top.classified_as = vocab.instances["artist occupation"]
+```
 
 ## Organization Membership
 
