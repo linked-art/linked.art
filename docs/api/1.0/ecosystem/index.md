@@ -44,7 +44,7 @@ And in the `head` element of the HTML:
 </head>
 ```
 
-The `link` element in `head` MUST be present, and the HTTP header SHOULD be present if possible.
+The `link` element in `head` MUST be present, and the HTTP header SHOULD be present if possible. The page MUST have only one such link to a linked art record to avoid confusion about which one should be used.
 
 Note that this follows the [FAIR Signposting Profile](https://signposting.org/FAIR/) so any implementation of Linked Art that follows the above, will also conform with that specification.
 

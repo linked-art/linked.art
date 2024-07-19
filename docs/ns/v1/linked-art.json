@@ -1581,12 +1581,12 @@
       "@type": "@id",
       "@container": "@set"
     },
-    "subState": {
+    "sub_state": {
       "@id": "crm:P5_consists_of",
       "@type": "@id",
       "@container": "@set"
     },
-    "subState_of": {
+    "sub_state_of": {
       "@id": "crm:P5i_forms_part_of",
       "@type": "@id",
       "@container": "@set"
@@ -3063,9 +3063,6 @@
     "RightAcquisition": {
       "@id": "la:RightAcquisition"
     },
-    "Phase": {
-      "@id": "la:Phase"
-    },
     "property_classified_as": {
       "@id": "la:property_classified_as",
       "@type": "@id",
@@ -3187,7 +3184,8 @@
     },
     "establishes": {
       "@id": "la:establishes",
-      "@type": "@id"
+      "@type": "@id",
+      "@container": "@set"
     },
     "established_by": {
       "@id": "la:established_by",
@@ -3200,48 +3198,6 @@
     },
     "invalidated_by": {
       "@id": "la:invalidated_by",
-      "@type": "@id"
-    },
-    "initiated": {
-      "@id": "la:initiated",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "initiated_by": {
-      "@id": "la:initiated_by",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "terminated": {
-      "@id": "la:terminated",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "terminated_by": {
-      "@id": "la:terminated_by",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "has_phase": {
-      "@id": "la:has_phase",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "phase_of": {
-      "@id": "la:phase_of",
-      "@type": "@id"
-    },
-    "related_entity": {
-      "@id": "la:related_entity",
-      "@type": "@id"
-    },
-    "related_entity_of": {
-      "@id": "la:related_entity_of",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "relationship": {
-      "@id": "la:relationship",
       "@type": "@id"
     }
   }

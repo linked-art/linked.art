@@ -56,6 +56,8 @@ If there are multiple artists collaborating on the same piece of artwork, then w
 
 For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. For compatibility with other systems this is, however, not required.
 
+Note that these parts of productions can also have statements associated with them, describing the role in more detail beyond just the classification, technique or other structured data.
+
 __Example:__
 
 A [painted textile called "RÜN"](https://artgallery.yale.edu/collections/objects/153900), where the linen was hand-woven by Sarah Parke and then painted by Mark Barrow.
@@ -108,7 +110,6 @@ Equipment or tools such as a particular camera or palette would also be modeled 
 __Example:__
 
 Copies of a photograph, taken by Alfred Stieglitz of Georgia O'Keeffe, are printed from the same negative at different times and now owned by different organizations: [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/198690), [National Gallery of Art](https://www.nga.gov/collection/art-object-page.60057.html), and the [Georgia O'Keeffe Museum](https://collections.okeeffemuseum.org/object/6627/)
-
 
 ```crom
 top = vocab.Photograph(ident="okeeffe-gok/1", label = "GOK 1918, GOKM")

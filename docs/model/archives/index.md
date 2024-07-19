@@ -19,6 +19,8 @@ With this in mind, the archives can be described as a hierarchy of `Set`s, where
 
 The items, if described, are `HumanMadeObject`s which are also `member_of` the `Set`s, and follow the regular physical [object](/model/object/) model. 
  
+Note that the ordering of the members within the archival group can be given in [the same way](/model/collection/#order-of-members) as ordering for any other Set.
+
 
 __Example:__
 
@@ -49,25 +51,6 @@ top.identified_by = vocab.PrimaryName(content="Alfred Stiegliz Correspondence")
 ```
 
 (and so on)
-
-### Order of Members
-
-In order to ensure that the members are ordered correctly, a sort value can be added as an Identifier on the member. This value should sort correctly with respect to the other members of the set, with the alphanumerically lowest identifier value being presented first and then in ascending order from there. This identifier should have an AttributeAssignment associated with it that is `motivated_by` the Set in which the sort value should be applied. This allows the same entity to be a member of multiple ordered sets at the same time.
-
-__Example:__
-
-The Obermeyer letter should sort as "000001" within the Stieglitz Family Letters set.
-
-```crom
-top = model.HumanMadeObject(ident="letter/2", label="Obermeyer 1920")
-top.identified_by = vocab.PrimaryName(content="Obermeyer, Bertha (1920)")
-sv = vocab.SortValue(content="000001")
-aa = model.AttributeAssignment()
-aa.motivated_by = model.Set(ident="archive_sfl", label="Stieglitz Family Letters")
-sv.assigned_by = aa
-top.identified_by = sv
-top.member_of = model.Set(ident="archive_sfl", label="Stieglitz Family Letters")
-```
 
 ### Alignment between Conceptual and Physical Hierarchies
 

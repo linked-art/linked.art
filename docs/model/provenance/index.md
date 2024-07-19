@@ -68,7 +68,7 @@ ts.begin_of_the_begin = "1999-01-01T00:00:00Z"
 ts.end_of_the_end = "1999-12-31T23:59:59Z"
 top.timespan = ts
 acq = model.Acquisition(label="Acquisition of Painting 1")
-acq.transferred_title_of = model.HumanMadeObject(ident="ziwei_landscape", label="Lanscape")
+acq.transferred_title_of = model.HumanMadeObject(ident="ziwei_landscape", label="Landscape")
 acq.transferred_title_to = model.Group(ident="yuag", label="Yale University Art Gallery")
 acq.transferred_title_from = model.Person(ident="ziwei", label="Xu Ziwei")
 top.part = acq

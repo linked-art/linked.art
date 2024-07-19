@@ -138,7 +138,7 @@ __Example:__
 The Night Watch is related to another object in the Rijksmuseum collection "Nachtwacht", but the relationship is not captured specifically.
 
 ```crom
-top = vocab.Painting(ident="nightwatch/17", label="The Night Watch")
+top = vocab.Painting(ident="nightwatch/57", label="The Night Watch")
 top.identified_by = vocab.PrimaryName(content="The Night Watch")
 aa = model.AttributeAssignment()
 top.attributed_by = aa
