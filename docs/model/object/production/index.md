@@ -111,7 +111,6 @@ __Example:__
 
 Copies of a photograph, taken by Alfred Stieglitz of Georgia O'Keeffe, are printed from the same negative at different times and now owned by different organizations: [Yale University Art Gallery](https://artgallery.yale.edu/collections/objects/198690), [National Gallery of Art](https://www.nga.gov/collection/art-object-page.60057.html), and the [Georgia O'Keeffe Museum](https://collections.okeeffemuseum.org/object/6627/)
 
-
 ```crom
 top = vocab.Photograph(ident="okeeffe-gok/1", label = "GOK 1918, GOKM")
 top.identified_by = vocab.AccessionNumber(content="2014.3.78")
