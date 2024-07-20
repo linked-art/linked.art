@@ -1,13 +1,15 @@
 ---
-title: Linked Art HAL Link: objectEncounteredByAgent
+title: "Linked Art HAL Link: objectEncounteredByAgent"
 ---
 
 ## objectEncounteredByAgent
 
 Returns the instances of HumanMadeObject encountered by the given Person or Group
 
-Example: Given O.C. Marsh, would return the fossil Torosaurus
+### Example Given O.C. Marsh, would return the fossil Torosaurus
 
-Class Given: ['Person', 'Group']
-Returns Class: ['HumanMadeObject']
-Relationship: encounteredBy
+
+* Class Given: ['Person', 'Group']
+* Returns Class: ['HumanMadeObject']
+* Relationship: encounteredBy
+

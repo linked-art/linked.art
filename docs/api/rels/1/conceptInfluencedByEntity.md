@@ -1,13 +1,15 @@
 ---
-title: Linked Art HAL Link: conceptInfluencedByEntity
+title: "Linked Art HAL Link: conceptInfluencedByEntity"
 ---
 
 ## conceptInfluencedByEntity
 
 Returns the instances of RET WHERE the given GIVEN
 
-Example: 
+### Example 
 
-Class Given: ['ALL']
-Returns Class: ['Type']
-Relationship: influencedBy
+
+* Class Given: ['ALL']
+* Returns Class: ['Type']
+* Relationship: influencedBy
+

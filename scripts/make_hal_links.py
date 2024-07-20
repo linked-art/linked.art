@@ -25,20 +25,21 @@ for c in cats:
 ## Write individual files, and an index
 
 indiv_tmpl = """---
-title: Linked Art HAL Link: {name}
+title: "Linked Art HAL Link: {name}"
 ---
 
 ## {name}
 
 {description}
 
-Example: {example}
+### Example {example}
 
-Class Given: {given}
-Returns Class: {returns}
-Relationship: {where}
+
+* Class Given: {given}
+* Returns Class: {returns}
+* Relationship: {where}
+
 """
-
 
 for l in links:
     fh = open(f"../docs/api/rels/1/{l['name']}.md", "w")
