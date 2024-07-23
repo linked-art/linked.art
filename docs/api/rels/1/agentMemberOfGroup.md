@@ -1,15 +1,25 @@
 ---
-title: "Linked Art HAL Link: agentMemberOfGroup"
+title: "HAL Link: agentMemberOfGroup"
 ---
 
 ## agentMemberOfGroup
 
-Returns the instances of Person or Group that are or were members of the given Group
+Return the people or groups that are members of the group.
 
-### Example Given Rob Sanderson, would return Yale University
+### Example
 
 
-* Class Given: ['Group']
-* Returns Class: ['Person', 'Group']
+
+
+### Details
+
+* Class Given: Group
+* Returns Class: Agent
 * Relationship: memberOf
+
+
+### SPARQL
+```
+
+```
 

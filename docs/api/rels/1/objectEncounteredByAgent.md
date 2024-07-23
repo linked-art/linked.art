@@ -1,15 +1,29 @@
 ---
-title: "Linked Art HAL Link: objectEncounteredByAgent"
+title: "HAL Link: objectEncounteredByAgent"
 ---
 
 ## objectEncounteredByAgent
 
-Returns the instances of HumanMadeObject encountered by the given Person or Group
+Return the objects that were discovered or encountered by the person or group.
 
-### Example Given O.C. Marsh, would return the fossil Torosaurus
+### Example
+
+From the record for O.C. Marsh, the record for the Torosaurus holotype would be in the response
 
 
-* Class Given: ['Person', 'Group']
-* Returns Class: ['HumanMadeObject']
+### Details
+
+* Class Given: Agent
+* Returns Class: HumanMadeObject
 * Relationship: encounteredBy
+
+
+### SPARQL
+```
+SELECT DISTINCT ?object WHERE {
+   BIND(<%current%> as ?who)
+   ?object a crm:E22_Human-Made_Object ; sci:O19i_was_object_encountered_at ?enc .
+   ?enc crm:P9_consists_of*/crm:P14_carried_out_by ?who .
+  }
+```
 

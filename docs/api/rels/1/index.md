@@ -1,22 +1,123 @@
 ---
-title: Linked Art API: HAL Links
+title: Linked Art HAL Links
 ---
 
-## Introduction
+## HAL Links
 
 
+### Object
 
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
 
-## Object Links
+### Work
 
-## Work Links
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
 
-## Person/Group Links
+### Agent
 
-## Place Links
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
 
-## Concept Links
+### Place
 
-## Period/Event/Activity Links
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
 
+### Concept
 
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+
+### Activity
+
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+
+### Set
+
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}
+  * [{name}]({name}): {description}

@@ -1,0 +1,103 @@
+Category	Name	Returns	Relationship	Given	Docs Link	Description	SPARQL	Example
+agent	objectProducedByAgent	HumanMadeObject	producedBy	Agent	/model/object/production/#base-production-activity	Return the objects that were produced, in whole or in part, by the person or group.	SELECT DISTINCT ?object WHERE {   BIND(<%current%> as ?who)   ?object a crm:E22_Human-Made_Object ; crm:P108i_was_produced_by ?prod .   ?prod crm:P9_consists_of*/crm:P14_carried_out_by ?who .  }	From the record for Rembrandt, the record for The Night Watch would be in the response
+agent	objectEncounteredByAgent	HumanMadeObject	encounteredBy	Agent		Return the objects that were discovered or encountered by the person or group.	SELECT DISTINCT ?object WHERE {   BIND(<%current%> as ?who)   ?object a crm:E22_Human-Made_Object ; sci:O19i_was_object_encountered_at ?enc .   ?enc crm:P9_consists_of*/crm:P14_carried_out_by ?who .  }	From the record for O.C. Marsh, the record for the Torosaurus holotype would be in the response
+agent	objectCuratedByAgent	HumanMadeObject	curatedBy	Agent	/model/object/ownership/#custody	Return the objects that are curated, looked after, or otherwise are in the custody of the person or group.	SELECT DISTINCT ?object WHERE {   BIND(<%current%> as ?who)   {     ?object a crm:E22_Human-Made_Object ; la:member_of ?coll .     ?coll crm:P16i_was_used_for ?curating .     ?curating crm:P14_carried_out_by ?who .    } UNION {     ?object crm:P50_has_current_keeper ?who .   } }	From the record for the Paintings Department of the Rijksmuseum, the record for The Night Watch would be in the response.
+agent	objectOwnedByAgent	HumanMadeObject	ownedBy	Agent	/model/object/ownership/#ownership	Return the objects that are owned by the person or group.	SELECT DISTINCT ?object WHERE {   BIND(<%current%> as ?who)   ?object a crm:E22_Human-Made_Object ; crm:P52_has_current_owner ?who . }	From the record for the Rijksmuseum, the record for The Night Watch would be in the response.
+agent	workCreatedByAgent	Work	createdBy	Agent	/model/document/#creation-and-publication	Return the works that were created, in whole or in part, by the person or group.	SELECT DISTINCT ?work WHERE {   BIND(<https://lux.collections.yale.edu/data/person/5bc822aa-1312-4ae5-8f24-1709f7ebda17> as ?who)     ?work crm:P94i_was_created_by ?cre .         ?cre crm:P9_consists_of*/crm:P14_carried_out_by ?who . }	
+agent	workAboutAgent	Work	about	Agent	/model/object/aboutness/#subject	Return the works that are about or have a subject of the person or group.		
+agent	workPublishedByAgent	Work	publishedBy	Agent	/model/document/#creation-and-publication	Return the works that are published by the person or group.		
+agent	workRepresentsAgent	Work	represents	Agent	/model/object/aboutness/#depiction	Return the visual works that represent or depict the person or group.		
+agent	groupFoundedByAgent	Group	foundedBy	Agent	/model/actor/#birth-and-death-formation-and-dissolution	Return the groups that were founded by the person or group.		
+agent	agentMemberOfGroup	Agent	memberOf	Group	/model/actor/#organization-membership	Return the people or groups that are members of the group.		
+agent	conceptInfluencedByAgent	Concept	influencedBy	Agent	/model/concept/#creation-and-influences	Return the concepts that were influenced by the person or group.		
+agent	setCreatedByAgent	Set	createdBy	Agent	/model/collection/#features	Return the sets or collections that were created, in whole or in part, by the person or group.		
+agent	activityParticipantAgent	Event, Activity	participant	Agent		Return the activities in which the person or group participated but did not carry out directly.		
+agent	activityCarriedOutByAgent	Activity	carriedOutBy	Agent	/model/base/#events-and-activities /model/exhibition/#exhibition-activity	Return the activities that were carried out by the person or group.		
+agent	objectProductionInfluencedByAgent	HumanMadeObject	productionInfluencedBy	Agent	/model/object/production/#inspirations-studies-or-copies	Return the objects whose production was influenced by the person or group.		
+agent	workAboutOrRepresentsAgent	Work	about / represents	Agent	/model/object/aboutness/#subject	Return the works that are either about or depict the person or group.		
+								
+place	objectProducedAtPlace	HumanMadeObject	producedAt	Place	/model/object/production/#base-production-activity	Return the objects that were produced, in whole or in part, at the place.		
+place	objectEncounteredAtPlace	HumanMadeObject	encounteredAt	Place		Return the objects that were encountered at the place.		
+place	workCreatedAtPlace	Work	createdAt	Place	/model/document/#creation-and-publication	Return the works that were created, in whole or in part, at the place.		
+place	workPublishedAtPlace	Work	publishedAt	Place	/model/document/#creation-and-publication	Return the works that were published at the place.		
+place	objectCurrentPlace	HumanMadeObject	current	Place	/model/object/ownership/#location	Return the objects that are, as far as the system knows, currently at the place.		
+place	workAboutPlace	Work	about	Place	/model/object/aboutness/#subject	Return the works that are about or have a subject of the place.		
+place	workRepresentsPlace	Work	represents	Place	/model/object/aboutness/#depiction	Return the visual works that represent or depict the place.		
+place	personBornAtPlace	Person	bornAt	Place	/model/actor/#birth-and-death-formation-and-dissolution	Return the people who were born at the place.		
+place	groupFormedAtPlace	Group	formedAt	Place	/model/actor/#birth-and-death-formation-and-dissolution	Return the groups that were formed at the place.		
+place	personDiedAtPlace	Person	diedAt	Place	/model/actor/#birth-and-death-formation-and-dissolution	Return the people who died at the place.		
+place	groupDissolvedAtPlace	Group	dissolvedAt	Place	/model/actor/#birth-and-death-formation-and-dissolution	Return the groups that were dissolved at the place.		
+place	personActiveAtPlace	Person	activeAt	Place	/model/actor/#active-dates	Return the people who were active at the place.		
+place	groupActiveAtPlace	Group	activeAt	Place	/model/actor/#active-dates	Return the groups who were active at the place.		
+place	agentBornOrFormedAtPlace	Agent	born / formed	Place	/model/actor/#birth-and-death-formation-and-dissolution	Return the people or groups who were born or formed at the place.		
+place	agentDiedOrDissolvedAtPlace	Agent	died / dissolved	Place	/model/actor/#birth-and-death-formation-and-dissolution	Return the people or groups who died or were dissolved at the place.		
+place	agentActiveAtPlace	Agent	activeAt	Place	/model/actor/#active-dates	Return the people or groups who were active at the place.		
+place	agentResidentAtPlace	Agent	residenceAt	Place	/model/actor/#residence-as-a-place	Return the people or groups who are or were resident at the place.		
+place	placePartOfPlace	Place	partOf	Place	/model/place/#core-information	Return the places which are part of the place.		
+place	setCreatedAtPlace	Set	createdAt	Place	/model/collection/#features	Return the sets which were created at the place.		
+place	conceptInfluencedByPlace	Concept	influencedBy	Place	/model/concept/#creation-and-influences	Return the concepts whose creation was influenced by the place.		
+place	activityTookPlaceAtPlace	Event, Activity	tookPlaceAt	Place	/model/base/#events-and-activities /model/exhibition/#exhibition-activity	Return the activities that took place at the place.		
+place	objectProductionInfluencedByPlace	HumanMadeObject	productionInfluencedBy	Place	/model/object/production/#inspirations-studies-or-copies	Return the objects whose production was influenced by the place.		
+place	workAboutOrRepresentsPlace	Work	about / represents	Place	/model/object/aboutness/#subject	Return works that are about or depict the place.		
+								
+concept	objectMadeOfMaterial	HumanMadeObject	madeOf	Material	/model/object/physical/#materials	Return the objects which are made of the material.		
+concept	workLanguageLanguage	LinguisticObject	language	Language	/model/document/#core-features	Return the works that are written or in the language.		
+concept	objectClassifiedAsConcept	HumanMadeObject	classifiedAs	Concept	/model/base/#types-and-classifications	Return the objects that are classified as the concept.		
+concept	objectProductionTechniqueConcept	HumanMadeObject	productionTechnique	Concept	/model/object/production/#techniques-and-classifications	Return the objects whose production has a technique of the concept.		
+concept	workClassifiedAsConcept	Work	classifiedAs	Concept	/model/base/#types-and-classifications	Return the works that are classified as the concept.		
+concept	workCreationTechniqueConcept	Work	creationTechnique	Concept		Return the works whose creation has a technique of the concept.		
+concept	workAboutConcept	Work	about	Concept	/model/object/aboutness/#subject	Return the works that are about the concept.		
+concept	workRepresentsConcept	Work	represents	Concept	/model/object/aboutness/#depiction	Return the visual works that represent or depict the concept.		
+concept	agentClassifiedAsConcept	Agent	classifiedAs	Concept	/model/base/#types-and-classifications	Return the people or groups that are classified as the concept.		
+concept	placeClassifiedAsConcept	Place	classifiedAs	Concept	/model/base/#types-and-classifications	Return the places that are classified as the concept.		
+concept	activityClassifiedAsConcept	Temporal	classifiedAs	Concept	/model/base/#types-and-classifications	Return the activities that are classified as the concept.		
+concept	conceptClassifiedAsConcept	Concept	classifiedAs	Concept	/model/concept/#partitioning-versus-classification	Return the concepts that are classified as the concept.		
+concept	conceptBroaderConcept	Concept	broader	Concept	/model/concept/#partitioning-versus-classification	Return the concepts that have a broader relationship to the concept (e.g. are narrower concepts)		
+concept	conceptInfluencedByConcept	Concept	influencedBy	Concept	/model/concept/#creation-and-influences	Return the concepts that are influenced by the concept.		
+concept	setClassifiedAsConcept	Set	classifiedAs	Concept	/model/base/#types-and-classifications	Return the sets that are classified as the concept.		
+concept	workAboutOrRepresentsConcept	Concept	about / represents	Concept	/model/object/aboutness/#subject	Return the works that are about or depict the concept.		
+								
+set	entityMemberOfSet	Entity	memberOf	Set	/model/collection/#features	Return any entity which is a member of the set.		
+set	objectMemberOfSet	HumanMadeObject	memberOf	Set	/model/collection/#features	Return objects which are members of the set.		
+set	workMemberOfSet	Work	memberOf	Set	/model/collection/#features	Return works which are members of the set.		
+set	agentMemberOfSet	Agent	memberOf	Set		Return people or groups which are members of the set.		
+set	placeMemberOfSet	Place	memberOf	Set	/model/collection/#features	Return places which are members of the set.		
+set	conceptMemberOfSet	Concept	memberOf	Set	/model/collection/#features	Return concepts which are members of the set.		
+set	temporalMemberOfSet	Temporal	memberOf	Set	/model/collection/#features	Return periods, events and activities which are members of the set.		
+set	workAboutSet	Work	about	Set	/model/object/aboutness/#subject	Return works which are about the set.		
+set	workRepresentsSet	Work	represents	Set	/model/object/aboutness/#depiction	Return visual works which represent or depict the set.		
+set	activityUsedSet	Activity	used	Set	/model/exhibition/#exhibition-activity	Return activities which used the set.		
+set	setMemberOfSet	Set	memberOf	Set	/model/collection/#features	Return the sets which are members of the set.		
+set	conceptInfluencedBySet	Concept	influencedBy	Set	/model/concept/#creation-and-influences	Return concepts which were influenced by the set.		
+set	workAboutOrRepresentsSet	Work	about / represents	Set	/model/object/aboutness/#subject	Return the works which are about or represent the set.		
+								
+activity	objectProductionCausedByActivity	HumanMadeObject	productionCausedBy	Event,Activity	/model/object/production/#cause-of-production	Return the objects whose production was caused by the event or activity.		
+activity	workCreationCausedByActivity	Work		Event,Activity		Return the works whose creation was caused by the event or activity.		
+activity	setCreationCausedByActivity	Set		Event,Activity		Return the sets whose creation was caused by the event or activity.		
+activity	personDeathCausedByActivity	Person		Event,Activity		Return the people whose death was caused by the event or activity.		
+activity	objectDestructionCausedByActivity	HumanMadeObject		Event,Activity	/model/object/production/#cause-of-destruction	Return the objects whose destruction was caused by the event or activity.		
+activity	conceptCreationCausedByActivity	Concept		Event,Activity		Return the concepts whose creation was caused by the event or activity.		
+activity	activityCausedByActivity	Event,Activity		Event,Activity		Return the activities that were caused by the event or activity.		
+activity	activityPartOfActivity	Temporal		Temporal	/model/base/#parts	Return the periods, events or activities that were part of the period, event or activity.		
+activity	workAboutActivity	Work		Temporal	/model/object/aboutness/#subject	Return the works that are about or have a subject of the period, event or activity.		
+activity	workRepresentsActivity	Work		Temporal	/model/object/aboutness/#depiction	Return the works that are represent or depict the period, event or activity.		
+activity	conceptInfluencedByActivity	Concept		Temporal	/model/concept/#creation-and-influences	Return the concepts that were influenced by the period, event or activity.		
+activity	workAboutOrRepresentsActivity	Work		Temporal	/model/object/aboutness/#subject	Return the works that are about or represent the period, event or activity.		
+								
+object	objectPartOfObject	HumanMadeObject	objectPartOfObject	HumanMadeObject	/model/object/physical/#parts	Return the objects that are part of the object.		
+object	conceptInfluencedByObject	Concept	influencedBy	HumanMadeObject	/model/concept/#creation-and-influences	Return the concepts that were influenced by the object.		
+object	objectProductionInfluencedByObject	HumanMadeObject	productionInfluencedBy	HumanMadeObject	/model/object/production/#inspirations-studies-or-copies	Return the objects whoses production was influenced by the object.		
+object	workAboutObject	Work	about	HumanMadeObject	/model/object/aboutness/#subject	Return the works that are about or have a subject of the object.		
+object	workRepresentsObject	Work	represents	HumanMadeObject	/model/object/aboutness/#depiction	Return the visual works that represent or depict the object.		
+object	activityUsedObject	Activity	used	HumanMadeObject		Return the activities that used the object.		
+object	workAboutOrRepresentsObject	Work	about / represents	HumanMadeObject	/model/object/aboutness/#subject	Return the works that are about or represent the object.		
+								
+work	objectCarriesWork	HumanMadeObject	carries	LinguisticObject	/model/document/#physical-objects-conceptual-texts	Return the objects that carry the work.		
+work	objectShowsWork	HumanMadeObject	shows	VisualItem	/model/object/aboutness/#physical-object-and-visual-work	Return the objects that show the work.		
+work	workPartOfWork	Work	partOf	Work	/model/document/#structure	Return the works that are part of the work.		
+work	conceptInfluencedByWork	Concept	influencedBy	Work	/model/concept/#creation-and-influences	Return the concepts that were influenced by the work.		
+work	workAboutWork	Work	about	Work	/model/object/aboutness/#subject	Return the works that are about or have a subject of the work.		
+work	workRepresentsWork	Work	represents	Work	/model/object/aboutness/#depiction	Return the works that represent or depict the work.		
+work	activityUsedWork	Activity	used	Work		Return the activities that used the work.		
+work	objectProductionInfluencedByWork	HumanMadeObject	productionInfluencedBy	Work	/model/object/production/#inspirations-studies-or-copies	Return the objects whose production was influenced by the work.		
+work	workAboutOrRepresentsWork	Work	about / represents	Work	/model/object/aboutness/#subject	Return the works that are either about or represent the work.		

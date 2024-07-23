@@ -120,14 +120,13 @@
 	{
 		"category": "all",
 		"given": ["ALL"],
-		"returns": ["Type"],
-		"where": "influencedBy",
-		"name": "conceptInfluencedByEntity",
+		"returns": ["LinguisticObject", "VisualItem", "PropositionalObject"],
+		"where": "about",
+		"name": "workAboutEntity",
 		"docs": "",
-		"description": "Returns the instances of Type that were influenced by the given entity",
+		"description": "Returns the instances of LinguisticObject, VisualItem or PropositionalObject that are about the given entity",
 		"example": "Given the Place France, would return the concept History of France"	
 	},
-
 
 
 		{

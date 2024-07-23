@@ -1,15 +1,25 @@
 ---
-title: "Linked Art HAL Link: groupFoundedByAgent"
+title: "HAL Link: groupFoundedByAgent"
 ---
 
 ## groupFoundedByAgent
 
-Returns the instances of Group that were founded or started by the given Person or Group
+Return the groups that were founded by the person or group.
 
-### Example Given Bill Gates, would return Microsoft
+### Example
 
 
-* Class Given: ['Person', 'Group']
-* Returns Class: ['Group']
+
+
+### Details
+
+* Class Given: Agent
+* Returns Class: Group
 * Relationship: foundedBy
+
+
+### SPARQL
+```
+
+```
 

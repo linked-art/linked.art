@@ -1,0 +1,25 @@
+---
+title: "HAL Link: agentMemberOfSet"
+---
+
+## agentMemberOfSet
+
+Return people or groups which are members of the set.
+
+### Example
+
+
+
+
+### Details
+
+* Class Given: Set
+* Returns Class: Agent
+* Relationship: memberOf
+
+
+### SPARQL
+```
+
+```
+

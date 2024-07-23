@@ -1,15 +1,29 @@
 ---
-title: "Linked Art HAL Link: objectProducedByAgent"
+title: "HAL Link: objectProducedByAgent"
 ---
 
 ## objectProducedByAgent
 
-Returns the instances of HumanMadeObject produced by the given Person or Group
+Return the objects that were produced, in whole or in part, by the person or group.
 
-### Example Given Rembrandt, would return at the Night Watch painting
+### Example
+
+From the record for Rembrandt, the record for The Night Watch would be in the response
 
 
-* Class Given: ['Person', 'Group']
-* Returns Class: ['HumanMadeObject']
+### Details
+
+* Class Given: Agent
+* Returns Class: HumanMadeObject
 * Relationship: producedBy
+
+
+### SPARQL
+```
+SELECT DISTINCT ?object WHERE {
+   BIND(<%current%> as ?who)
+   ?object a crm:E22_Human-Made_Object ; crm:P108i_was_produced_by ?prod .
+   ?prod crm:P9_consists_of*/crm:P14_carried_out_by ?who .
+  }
+```
 

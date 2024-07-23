@@ -1,15 +1,25 @@
 ---
-title: "Linked Art HAL Link: workPublishedByAgent"
+title: "HAL Link: workPublishedByAgent"
 ---
 
 ## workPublishedByAgent
 
-Returns the instances of VisualItem, LinguisticObject or PropositionalObject that were published by the given Person or Group
+Return the works that are published by the person or group.
 
-### Example Given , would return 
+### Example
 
 
-* Class Given: ['Person', 'Group']
-* Returns Class: ['VisualItem', 'LinguisticObject', 'PropositionalObject']
+
+
+### Details
+
+* Class Given: Agent
+* Returns Class: Work
 * Relationship: publishedBy
+
+
+### SPARQL
+```
+
+```
 

@@ -1,15 +1,25 @@
 ---
-title: "Linked Art HAL Link: activityCarriedOutByAgent"
+title: "HAL Link: activityCarriedOutByAgent"
 ---
 
 ## activityCarriedOutByAgent
 
-Returns the instances of Activity that were carried out by the given Person or Group
+Return the activities that were carried out by the person or group.
 
-### Example Given the National Gallery of Art, would return the exhibition 'Manet and Modern Beauty'
+### Example
 
 
-* Class Given: ['Person', 'Group']
-* Returns Class: ['Activity']
+
+
+### Details
+
+* Class Given: Agent
+* Returns Class: Activity
 * Relationship: carriedOutBy
+
+
+### SPARQL
+```
+
+```
 

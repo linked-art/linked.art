@@ -1,15 +1,28 @@
 ---
-title: "Linked Art HAL Link: objectOwnedByAgent"
+title: "HAL Link: objectOwnedByAgent"
 ---
 
 ## objectOwnedByAgent
 
-Returns the instances of HumanMadeObject that are or were owned by the given Group
+Return the objects that are owned by the person or group.
 
-### Example Given the Getty Museum, would return Spring by Manet
+### Example
+
+From the record for the Rijksmuseum, the record for The Night Watch would be in the response.
 
 
-* Class Given: ['Person', 'Group']
-* Returns Class: ['HumanMadeObject']
+### Details
+
+* Class Given: Agent
+* Returns Class: HumanMadeObject
 * Relationship: ownedBy
+
+
+### SPARQL
+```
+SELECT DISTINCT ?object WHERE {
+   BIND(<%current%> as ?who)
+   ?object a crm:E22_Human-Made_Object ; crm:P52_has_current_owner ?who .
+ }
+```
 
