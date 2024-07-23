@@ -28,6 +28,8 @@ title: "HAL Link: {name}"
 
 {description}
 
+See the related [model documentation]({docs})
+
 ### Example
 
 {example}
@@ -74,7 +76,7 @@ for c in cats:
     index.append(f"### {c.title()}")
     index.append("")
     for l in ls:
-        index.append("  * [{name}]({name}): {description}")
+        index.append("  * [{name}]({name}): {description}".format(**l))
 
     index.append("")
 
