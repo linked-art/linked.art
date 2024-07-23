@@ -6,6 +6,8 @@ title: "HAL Link: agentMemberOfGroup"
 
 Return the people or groups that are members of the group.
 
+See the related [model documentation](/model/actor/#organization-membership)
+
 ### Example
 
 

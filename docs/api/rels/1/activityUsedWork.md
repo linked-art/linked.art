@@ -6,6 +6,8 @@ title: "HAL Link: activityUsedWork"
 
 Return the activities that used the work.
 
+See the related [model documentation]()
+
 ### Example
 
 

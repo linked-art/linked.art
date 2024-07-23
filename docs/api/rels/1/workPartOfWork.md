@@ -6,6 +6,8 @@ title: "HAL Link: workPartOfWork"
 
 Return the works that are part of the work.
 
+See the related [model documentation](/model/document/#structure)
+
 ### Example
 
 

@@ -6,6 +6,8 @@ title: "HAL Link: workAboutOrRepresentsObject"
 
 Return the works that are about or represent the object.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

@@ -6,6 +6,8 @@ title: "HAL Link: activityParticipantAgent"
 
 Return the activities in which the person or group participated but did not carry out directly.
 
+See the related [model documentation]()
+
 ### Example
 
 

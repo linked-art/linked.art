@@ -6,6 +6,8 @@ title: "HAL Link: temporalMemberOfSet"
 
 Return periods, events and activities which are members of the set.
 
+See the related [model documentation](/model/collection/#features)
+
 ### Example
 
 

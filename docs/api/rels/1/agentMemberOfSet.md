@@ -6,6 +6,8 @@ title: "HAL Link: agentMemberOfSet"
 
 Return people or groups which are members of the set.
 
+See the related [model documentation]()
+
 ### Example
 
 

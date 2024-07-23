@@ -6,6 +6,8 @@ title: "HAL Link: workCreatedByAgent"
 
 Return the works that were created, in whole or in part, by the person or group.
 
+See the related [model documentation](/model/document/#creation-and-publication)
+
 ### Example
 
 

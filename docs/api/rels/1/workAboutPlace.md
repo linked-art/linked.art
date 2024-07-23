@@ -6,6 +6,8 @@ title: "HAL Link: workAboutPlace"
 
 Return the works that are about or have a subject of the place.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

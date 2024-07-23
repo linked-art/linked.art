@@ -6,6 +6,8 @@ title: "HAL Link: workRepresentsWork"
 
 Return the works that represent or depict the work.
 
+See the related [model documentation](/model/object/aboutness/#depiction)
+
 ### Example
 
 

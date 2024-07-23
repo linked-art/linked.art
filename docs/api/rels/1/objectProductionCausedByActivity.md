@@ -6,6 +6,8 @@ title: "HAL Link: objectProductionCausedByActivity"
 
 Return the objects whose production was caused by the event or activity.
 
+See the related [model documentation](/model/object/production/#cause-of-production)
+
 ### Example
 
 

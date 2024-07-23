@@ -6,6 +6,8 @@ title: "HAL Link: entityMemberOfSet"
 
 Return any entity which is a member of the set.
 
+See the related [model documentation](/model/collection/#features)
+
 ### Example
 
 

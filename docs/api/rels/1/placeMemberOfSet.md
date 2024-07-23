@@ -6,6 +6,8 @@ title: "HAL Link: placeMemberOfSet"
 
 Return places which are members of the set.
 
+See the related [model documentation](/model/collection/#features)
+
 ### Example
 
 

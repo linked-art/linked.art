@@ -6,6 +6,8 @@ title: "HAL Link: setMemberOfSet"
 
 Return the sets which are members of the set.
 
+See the related [model documentation](/model/collection/#features)
+
 ### Example
 
 

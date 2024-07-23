@@ -6,6 +6,8 @@ title: "HAL Link: objectMadeOfMaterial"
 
 Return the objects which are made of the material.
 
+See the related [model documentation](/model/object/physical/#materials)
+
 ### Example
 
 

@@ -6,6 +6,8 @@ title: "HAL Link: objectCarriesWork"
 
 Return the objects that carry the work.
 
+See the related [model documentation](/model/document/#physical-objects-conceptual-texts)
+
 ### Example
 
 

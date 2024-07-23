@@ -6,6 +6,8 @@ title: "HAL Link: workCreationCausedByActivity"
 
 Return the works whose creation was caused by the event or activity.
 
+See the related [model documentation]()
+
 ### Example
 
 

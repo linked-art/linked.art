@@ -6,6 +6,8 @@ title: "HAL Link: activityPartOfActivity"
 
 Return the periods, events or activities that were part of the period, event or activity.
 
+See the related [model documentation](/model/base/#parts)
+
 ### Example
 
 

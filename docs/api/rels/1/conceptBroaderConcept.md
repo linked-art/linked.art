@@ -6,6 +6,8 @@ title: "HAL Link: conceptBroaderConcept"
 
 Return the concepts that have a broader relationship to the concept (e.g. are narrower concepts)
 
+See the related [model documentation](/model/concept/#partitioning-versus-classification)
+
 ### Example
 
 

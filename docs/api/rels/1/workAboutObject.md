@@ -6,6 +6,8 @@ title: "HAL Link: workAboutObject"
 
 Return the works that are about or have a subject of the object.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

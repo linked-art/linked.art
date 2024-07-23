@@ -6,6 +6,8 @@ title: "HAL Link: activityUsedObject"
 
 Return the activities that used the object.
 
+See the related [model documentation]()
+
 ### Example
 
 

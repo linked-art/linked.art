@@ -6,6 +6,8 @@ title: "HAL Link: objectEncounteredAtPlace"
 
 Return the objects that were encountered at the place.
 
+See the related [model documentation]()
+
 ### Example
 
 

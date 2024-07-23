@@ -6,6 +6,8 @@ title: "HAL Link: workRepresentsAgent"
 
 Return the visual works that represent or depict the person or group.
 
+See the related [model documentation](/model/object/aboutness/#depiction)
+
 ### Example
 
 

@@ -6,6 +6,8 @@ title: "HAL Link: workRepresentsPlace"
 
 Return the visual works that represent or depict the place.
 
+See the related [model documentation](/model/object/aboutness/#depiction)
+
 ### Example
 
 

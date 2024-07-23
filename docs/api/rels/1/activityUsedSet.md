@@ -6,6 +6,8 @@ title: "HAL Link: activityUsedSet"
 
 Return activities which used the set.
 
+See the related [model documentation](/model/exhibition/#exhibition-activity)
+
 ### Example
 
 

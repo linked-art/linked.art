@@ -6,6 +6,8 @@ title: "HAL Link: placePartOfPlace"
 
 Return the places which are part of the place.
 
+See the related [model documentation](/model/place/#core-information)
+
 ### Example
 
 

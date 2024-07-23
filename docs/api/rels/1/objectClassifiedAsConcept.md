@@ -6,6 +6,8 @@ title: "HAL Link: objectClassifiedAsConcept"
 
 Return the objects that are classified as the concept.
 
+See the related [model documentation](/model/base/#types-and-classifications)
+
 ### Example
 
 

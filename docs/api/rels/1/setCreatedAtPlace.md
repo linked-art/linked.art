@@ -6,6 +6,8 @@ title: "HAL Link: setCreatedAtPlace"
 
 Return the sets which were created at the place.
 
+See the related [model documentation](/model/collection/#features)
+
 ### Example
 
 

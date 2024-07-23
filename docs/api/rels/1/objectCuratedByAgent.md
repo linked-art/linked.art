@@ -6,6 +6,8 @@ title: "HAL Link: objectCuratedByAgent"
 
 Return the objects that are curated, looked after, or otherwise are in the custody of the person or group.
 
+See the related [model documentation](/model/object/ownership/#custody)
+
 ### Example
 
 From the record for the Paintings Department of the Rijksmuseum, the record for The Night Watch would be in the response.

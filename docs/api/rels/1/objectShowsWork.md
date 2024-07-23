@@ -6,6 +6,8 @@ title: "HAL Link: objectShowsWork"
 
 Return the objects that show the work.
 
+See the related [model documentation](/model/object/aboutness/#physical-object-and-visual-work)
+
 ### Example
 
 

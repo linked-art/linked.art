@@ -6,6 +6,8 @@ title: "HAL Link: objectProducedAtPlace"
 
 Return the objects that were produced, in whole or in part, at the place.
 
+See the related [model documentation](/model/object/production/#base-production-activity)
+
 ### Example
 
 

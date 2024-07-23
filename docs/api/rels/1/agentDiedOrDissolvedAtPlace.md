@@ -6,6 +6,8 @@ title: "HAL Link: agentDiedOrDissolvedAtPlace"
 
 Return the people or groups who died or were dissolved at the place.
 
+See the related [model documentation](/model/actor/#birth-and-death-formation-and-dissolution)
+
 ### Example
 
 

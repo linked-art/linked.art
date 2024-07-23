@@ -6,6 +6,8 @@ title: "HAL Link: objectPartOfObject"
 
 Return the objects that are part of the object.
 
+See the related [model documentation](/model/object/physical/#parts)
+
 ### Example
 
 

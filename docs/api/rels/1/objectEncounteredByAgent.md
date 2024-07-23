@@ -6,6 +6,8 @@ title: "HAL Link: objectEncounteredByAgent"
 
 Return the objects that were discovered or encountered by the person or group.
 
+See the related [model documentation]()
+
 ### Example
 
 From the record for O.C. Marsh, the record for the Torosaurus holotype would be in the response

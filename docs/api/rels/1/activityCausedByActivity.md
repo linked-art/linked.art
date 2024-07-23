@@ -6,6 +6,8 @@ title: "HAL Link: activityCausedByActivity"
 
 Return the activities that were caused by the event or activity.
 
+See the related [model documentation]()
+
 ### Example
 
 

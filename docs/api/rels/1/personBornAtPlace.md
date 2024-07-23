@@ -6,6 +6,8 @@ title: "HAL Link: personBornAtPlace"
 
 Return the people who were born at the place.
 
+See the related [model documentation](/model/actor/#birth-and-death-formation-and-dissolution)
+
 ### Example
 
 

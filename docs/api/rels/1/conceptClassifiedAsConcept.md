@@ -6,6 +6,8 @@ title: "HAL Link: conceptClassifiedAsConcept"
 
 Return the concepts that are classified as the concept.
 
+See the related [model documentation](/model/concept/#partitioning-versus-classification)
+
 ### Example
 
 

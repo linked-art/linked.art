@@ -6,6 +6,8 @@ title: "HAL Link: workAboutActivity"
 
 Return the works that are about or have a subject of the period, event or activity.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

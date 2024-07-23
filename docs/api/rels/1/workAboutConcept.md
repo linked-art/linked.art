@@ -6,6 +6,8 @@ title: "HAL Link: workAboutConcept"
 
 Return the works that are about the concept.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

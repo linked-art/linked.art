@@ -6,6 +6,8 @@ title: "HAL Link: conceptInfluencedBySet"
 
 Return concepts which were influenced by the set.
 
+See the related [model documentation](/model/concept/#creation-and-influences)
+
 ### Example
 
 

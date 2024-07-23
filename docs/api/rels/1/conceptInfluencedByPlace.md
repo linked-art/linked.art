@@ -6,6 +6,8 @@ title: "HAL Link: conceptInfluencedByPlace"
 
 Return the concepts whose creation was influenced by the place.
 
+See the related [model documentation](/model/concept/#creation-and-influences)
+
 ### Example
 
 

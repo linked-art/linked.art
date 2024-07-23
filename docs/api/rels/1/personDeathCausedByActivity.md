@@ -6,6 +6,8 @@ title: "HAL Link: personDeathCausedByActivity"
 
 Return the people whose death was caused by the event or activity.
 
+See the related [model documentation]()
+
 ### Example
 
 

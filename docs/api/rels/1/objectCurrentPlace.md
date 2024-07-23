@@ -6,6 +6,8 @@ title: "HAL Link: objectCurrentPlace"
 
 Return the objects that are, as far as the system knows, currently at the place.
 
+See the related [model documentation](/model/object/ownership/#location)
+
 ### Example
 
 

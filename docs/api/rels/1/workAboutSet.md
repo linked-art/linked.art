@@ -6,6 +6,8 @@ title: "HAL Link: workAboutSet"
 
 Return works which are about the set.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

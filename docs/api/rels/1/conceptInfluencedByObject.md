@@ -6,6 +6,8 @@ title: "HAL Link: conceptInfluencedByObject"
 
 Return the concepts that were influenced by the object.
 
+See the related [model documentation](/model/concept/#creation-and-influences)
+
 ### Example
 
 

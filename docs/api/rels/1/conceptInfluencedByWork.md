@@ -6,6 +6,8 @@ title: "HAL Link: conceptInfluencedByWork"
 
 Return the concepts that were influenced by the work.
 
+See the related [model documentation](/model/concept/#creation-and-influences)
+
 ### Example
 
 

@@ -6,6 +6,8 @@ title: "HAL Link: objectProducedByAgent"
 
 Return the objects that were produced, in whole or in part, by the person or group.
 
+See the related [model documentation](/model/object/production/#base-production-activity)
+
 ### Example
 
 From the record for Rembrandt, the record for The Night Watch would be in the response

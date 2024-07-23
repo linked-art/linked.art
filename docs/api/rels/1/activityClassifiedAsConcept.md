@@ -6,6 +6,8 @@ title: "HAL Link: activityClassifiedAsConcept"
 
 Return the activities that are classified as the concept.
 
+See the related [model documentation](/model/base/#types-and-classifications)
+
 ### Example
 
 

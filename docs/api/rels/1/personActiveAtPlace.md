@@ -6,6 +6,8 @@ title: "HAL Link: personActiveAtPlace"
 
 Return the people who were active at the place.
 
+See the related [model documentation](/model/actor/#active-dates)
+
 ### Example
 
 

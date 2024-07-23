@@ -6,6 +6,8 @@ title: "HAL Link: workLanguageLanguage"
 
 Return the works that are written or in the language.
 
+See the related [model documentation](/model/document/#core-features)
+
 ### Example
 
 

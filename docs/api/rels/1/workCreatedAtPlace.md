@@ -6,6 +6,8 @@ title: "HAL Link: workCreatedAtPlace"
 
 Return the works that were created, in whole or in part, at the place.
 
+See the related [model documentation](/model/document/#creation-and-publication)
+
 ### Example
 
 

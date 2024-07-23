@@ -6,6 +6,8 @@ title: "HAL Link: agentActiveAtPlace"
 
 Return the people or groups who were active at the place.
 
+See the related [model documentation](/model/actor/#active-dates)
+
 ### Example
 
 

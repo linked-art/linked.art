@@ -6,6 +6,8 @@ title: "HAL Link: activityTookPlaceAtPlace"
 
 Return the activities that took place at the place.
 
+See the related [model documentation](/model/base/#events-and-activities /model/exhibition/#exhibition-activity)
+
 ### Example
 
 

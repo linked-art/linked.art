@@ -6,6 +6,8 @@ title: "HAL Link: objectProductionInfluencedByAgent"
 
 Return the objects whose production was influenced by the person or group.
 
+See the related [model documentation](/model/object/production/#inspirations-studies-or-copies)
+
 ### Example
 
 

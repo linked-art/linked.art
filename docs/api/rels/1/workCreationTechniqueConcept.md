@@ -6,6 +6,8 @@ title: "HAL Link: workCreationTechniqueConcept"
 
 Return the works whose creation has a technique of the concept.
 
+See the related [model documentation]()
+
 ### Example
 
 

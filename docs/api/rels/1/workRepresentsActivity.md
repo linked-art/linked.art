@@ -6,6 +6,8 @@ title: "HAL Link: workRepresentsActivity"
 
 Return the works that are represent or depict the period, event or activity.
 
+See the related [model documentation](/model/object/aboutness/#depiction)
+
 ### Example
 
 

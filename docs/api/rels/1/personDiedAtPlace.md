@@ -6,6 +6,8 @@ title: "HAL Link: personDiedAtPlace"
 
 Return the people who died at the place.
 
+See the related [model documentation](/model/actor/#birth-and-death-formation-and-dissolution)
+
 ### Example
 
 

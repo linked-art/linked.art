@@ -6,6 +6,8 @@ title: "HAL Link: workAboutOrRepresentsAgent"
 
 Return the works that are either about or depict the person or group.
 
+See the related [model documentation](/model/object/aboutness/#subject)
+
 ### Example
 
 

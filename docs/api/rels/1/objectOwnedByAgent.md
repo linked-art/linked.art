@@ -6,6 +6,8 @@ title: "HAL Link: objectOwnedByAgent"
 
 Return the objects that are owned by the person or group.
 
+See the related [model documentation](/model/object/ownership/#ownership)
+
 ### Example
 
 From the record for the Rijksmuseum, the record for The Night Watch would be in the response.

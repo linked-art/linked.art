@@ -6,6 +6,8 @@ title: "HAL Link: agentResidentAtPlace"
 
 Return the people or groups who are or were resident at the place.
 
+See the related [model documentation](/model/actor/#residence-as-a-place)
+
 ### Example
 
 
