@@ -1,0 +1,142 @@
+[
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["HumanMadeObject"],
+		"where": "producedBy",
+		"name": "objectProducedByAgent",
+		"docs": "/model/object/production/#base-production-activity",
+		"description": "Returns the instances of HumanMadeObject produced by the given Person or Group",
+		"example": "Given Rembrandt, would return at the Night Watch painting"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["HumanMadeObject"],
+		"where": "encounteredBy",
+		"name": "objectEncounteredByAgent",
+		"docs": "",
+		"description": "Returns the instances of HumanMadeObject encountered by the given Person or Group",
+		"example": "Given O.C. Marsh, would return the fossil Torosaurus"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["HumanMadeObject"],
+		"where": "curatedBy",
+		"name": "objectCuratedByAgent",
+		"docs": "",
+		"description": "Returns the instances of HumanMadeObject that are or were curated or looked after by the given Group",
+		"example": "Given the Getty Museum, would return Spring by Manet"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["HumanMadeObject"],
+		"where": "ownedBy",
+		"name": "objectOwnedByAgent",
+		"docs": "",
+		"description": "Returns the instances of HumanMadeObject that are or were owned by the given Group",
+		"example": "Given the Getty Museum, would return Spring by Manet"
+	},
+
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["VisualItem", "LinguisticObject", "PropositionalObject"],
+		"where": "createdBy",
+		"name": "workCreatedByAgent",
+		"docs": "",
+		"description": "Returns the instances of VisualItem, LinguisticObject or PropositionalObject created by the given Person or Group",
+		"example": "Given Rembrandt, would return the image shown by the Night Watch"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["VisualItem", "LinguisticObject", "PropositionalObject"],
+		"where": "about",
+		"name": "workAboutAgent",
+		"docs": "",
+		"description": "Returns the instances of VisualItem, LinguisticObject or PropositionalObject that are about or have a subject of the given Person or Group",
+		"example": "Given Rembrandt, would return a biography for him"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["VisualItem", "LinguisticObject", "PropositionalObject"],
+		"where": "publishedBy",
+		"name": "workPublishedByAgent",
+		"docs": "",
+		"description": "Returns the instances of VisualItem, LinguisticObject or PropositionalObject that were published by the given Person or Group",
+		"example": "Given , would return "	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["VisualItem"],
+		"where": "depicts",
+		"name": "workDepictsAgent",
+		"docs": "",
+		"description": "Returns the instances of VisualItem that show or depict the given Person or Group",
+		"example": "Given Rembrandt, would return a self-portrait"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["Group"],
+		"where": "foundedBy",
+		"name": "groupFoundedByAgent",
+		"docs": "",
+		"description": "Returns the instances of Group that were founded or started by the given Person or Group",
+		"example": "Given Bill Gates, would return Microsoft"	
+	},
+	{
+		"category": "agent",
+		"given": ["Person", "Group"],
+		"returns": ["Activity"],
+		"where": "carriedOutBy",
+		"name": "activityCarriedOutByAgent",
+		"docs": "",
+		"description": "Returns the instances of Activity that were carried out by the given Person or Group",
+		"example": "Given the National Gallery of Art, would return the exhibition 'Manet and Modern Beauty'"	
+	},
+
+	{
+		"category": "agent",
+		"given": ["Group"],
+		"returns": ["Person", "Group"],
+		"where": "memberOf",
+		"name": "agentMemberOfGroup",
+		"docs": "",
+		"description": "Returns the instances of Person or Group that are or were members of the given Group",
+		"example": "Given Rob Sanderson, would return Yale University"	
+	},
+
+
+
+
+
+
+	{
+		"category": "all",
+		"given": ["ALL"],
+		"returns": ["LinguisticObject", "VisualItem", "PropositionalObject"],
+		"where": "about",
+		"name": "workAboutEntity",
+		"docs": "",
+		"description": "Returns the instances of LinguisticObject, VisualItem or PropositionalObject that are about the given entity",
+		"example": "Given the Place France, would return the concept History of France"	
+	},
+
+
+		{
+		"category": "all",
+		"given": ["ALL"],
+		"returns": ["Type"],
+		"where": "influencedBy",
+		"name": "conceptInfluencedByEntity",
+		"docs": "",
+		"description": "Returns the instances of RET WHERE the given GIVEN",
+		"example": ""	
+	}
+]
