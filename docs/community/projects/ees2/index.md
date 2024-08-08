@@ -13,6 +13,9 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 <br>
 *Enriching Exhibition Stories: Adding Voices to Quire (project reference AH/Y006011/1) is a project funded by the UK [Arts and Humanities Research Council](https://ahrc.ukri.org/) (AHRC) and led by the [University of Oxford](https://www.ox.ac.uk/), working in partnership with the [University of Edinburgh](https://www.ed.ac.uk/), the [Ashmolean Museum](https://www.ashmolean.org/), and [Yale University](https://www.yale.edu/)*.
 
+## Project News
+- **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)
+
 ## Project Summary
 Traditional exhibition catalogues are extremely informative documents, but may be daunting, perhaps even intimidating, both to those who write them and those who read them. Enriching Exhibition Stories will help museums more easily create supplemental digital forms of exhibition narrative which speak to, and can be voiced by, a wider and more diverse range of perspectives than those who usually engage with exhibitions.
 
