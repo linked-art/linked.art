@@ -58,6 +58,7 @@ Dereferencing an entity via the Abstract Work endpoint would result in a JSON-LD
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation and MUST follow the requirements for [Type](../../shared/type/) |
 | `timespan`        | json object   | Recommended | A json object recording when the creation occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the creation occured | 
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation |
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation to occur |

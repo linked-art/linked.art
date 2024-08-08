@@ -44,6 +44,7 @@ The top level Activity has the following properties.
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another event that the current event is a part of. |
 | `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the provenance activity occured | 
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
@@ -75,6 +76,7 @@ Each of the activities in the `part` property can have the properties in the tab
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
 | `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |

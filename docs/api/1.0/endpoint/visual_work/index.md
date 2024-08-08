@@ -59,12 +59,12 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation or publication and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation or publication and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/) |
 | `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
-
 
 ### Property Diagram
 

@@ -35,6 +35,7 @@ The relationship assignment data structure has the following properties.
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which made the assignment|
 | `timespan`        | json object   | Optional    | A json object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the Assignment occured | 
 | `assigned`        | array         | Required    | An array of json objects, each of which is a [reference](../reference/) to another entity that is related to the current one (SHOULD NOT be used with Dimension or Identifier assignments) |
 | `assigned_property` | string      | Optional    | A string which is either a URI, or resolves to a URI via a context document, for the specific relationship between the main entity and the entity referenced in `assigned` |
 | `motivated_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to another entity which caused or motivated the assignment |

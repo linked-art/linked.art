@@ -197,9 +197,10 @@ The key participants in those different types of events are:
   * the [Object](../object/) being acted upon,
   * the [Actors](../actor/) (people or organizations) that perform the activity,
   * the [Locations](../place) at which the activity occurs,
-  * and the Time at which it occurs.
+  * the Time at which it occurs, and/or the [Period](../event/) during which it occurs,
+  * and any other [Event](../event/) or activity which caused it.
 
-The general pattern is to create a construct internal to the record for the event (with the class `Event`) or activity (with the class `Activity` or a more specific class), and associate the participants with that construct. The relationships for time (`timespan`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the object is dependent on the type of event or activity, which are discussed in more detail in the specific sections.
+The general pattern is to create a construct internal to the record for the event (with the class `Event`) or activity (with the class `Activity` or a more specific class), and associate the participants with that construct. The relationships for time (`timespan` and/or `during`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the object is dependent on the type of event or activity, which are discussed in more detail in the specific sections.
 
 There are both subclasses, such as `Birth`, `Production` and `Creation`, and classifications associated with them to be more specific, such as glassblowing _(aat:300053932)_ to clarify the type or technique of the activity. There are three common categories of activity which are used across the different entity types: their beginning of existence, their end of existence, and core activities that they either performed (for people or groups) or were required for (for objects and works). The table below summaries the beginning and ending of existence classes per main entity class. Note that conceptual entities cannot have an end of existence, and Places have neither.
 
@@ -228,6 +229,7 @@ prod.carried_out_by = model.Person(ident="manet", label="Manet")
 when = model.TimeSpan(label="1881")
 when.begin_of_the_begin = "1881-01-01T00:00:00Z"
 when.end_of_the_end = "1881-12-31T23:59:59Z"
+prod.during = model.Period(ident="19c", label="19th Century")
 prod.timespan = when
 prod.took_place_at = model.Place(ident="france", label="France")
 ```

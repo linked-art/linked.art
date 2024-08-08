@@ -50,6 +50,7 @@ The dimension data structure has the following properties.
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the measurement and MUST follow the requirements for [Type](../type/) |
 | `carried_out_by`  | array         | Recommended | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) |
 | `timespan`        | json object   | Optional    | A json object which MUST follow the requirements for [timespans](../timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the measurement occured | 
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the measurement |
 
 ### Property Diagram
