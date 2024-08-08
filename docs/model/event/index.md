@@ -94,7 +94,16 @@ top.during = model.Period(ident="early_roman", label="Early Roman Empire")
 
 ## Relative Times
 
-`before`
+Sometimes we have an order for activities or events relative to each other, but do not have a specific time at which they took place. For example, we might know from documentary evidence that an object was created before some event but have only the vaguest time period in which those two activities occured. We can describe the order between events using the properties `before` (the event with the property occured before the event in the value of the property) and `after` (the opposite). This is especially useful for provenance activities in order to form an ordered sequence of events, without knowing the dates of the sales.
 
-`after`
+__Example:__
 
+A statue in Pompeii must have been created before the eruption of Vesuvius.
+
+```crom
+top = model.HumanMadeObject(ident="pompeii_statue/1", label="Statue in Pompeii")
+top.identified_by = vocab.PrimaryName(content="Pompeii Statue")
+prod = model.Production()
+prod.before = model.Event(ident="vesuvius", label="Eruption of Vesuvius")
+top.produced_by = prod
+```
