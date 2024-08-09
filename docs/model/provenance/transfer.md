@@ -21,6 +21,7 @@ The class for indeterminate transfers is `Transfer`, and has three properties be
 
 This mirrors the other classes such as `Acquisition`, `TransferOfCustody`, and `Move`.
 
+
 __Example:__
 
 A painting is transferred between two people, however it is not clear whether it was permanent or merely a loan.
