@@ -49,17 +49,18 @@ Vesuvius erupts on August 24th, 79 CE.
 ```crom
 top = model.Event(ident="vesuvius/1", label="Eruption of Vesuvius")
 top.identified_by = vocab.PrimaryName(content="Eruption of Vesuvius")
-top.took_place_at = model.Place(ident="vesuvius_it", label="Mount Vesuvius")
+top.took_place_at = model.Place(ident="vesuvius", label="Mount Vesuvius")
 ts = model.TimeSpan()
 ts.begin_of_the_begin = "0079-08-24T12:00:00Z"
 ts.end_of_the_end = "0079-08-26T23:59:59Z"
 top.timespan = ts
+
 ``` 
 
 And is the cause of the destruction of the city of Pompeii.
 
 ```crom
-top = model.HumanMadeObject(ident="pompeii_buildings/1", label="Buildings making up the city of Pompeii")
+top = model.HumanMadeObject(ident="pompeii-buildings/1", label="Buildings making up the city of Pompeii")
 top.identified_by = vocab.PrimaryName(content="City of Pompeii")
 dest = model.Destruction()
 dest.caused_by = model.Event(ident="vesuvius")
