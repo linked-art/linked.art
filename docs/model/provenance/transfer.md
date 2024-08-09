@@ -8,7 +8,7 @@ up_label: "Provenance"
 
 ## Introduction
 
-Especially when working from incomplete documentary evidence, it is frequently difficult to determine exactly what sort of exchange took place in the past. The object might have been sold or otherwise changed ownership, or it might have been only on loan. While this could theoretically be handled by a transfer of an indeterminate [property right](rights), this would be very complex and give the impression of more information being available than is actually the case. Instead, we add a new class called `Transfer` which allows the indeterminate transfer of an object between two parties without claiming whether it is ownership, custody or something else entirely.
+Especially when working from incomplete documentary evidence, it is frequently difficult to determine exactly what sort of exchange took place in the past. The object might have been sold or otherwise changed ownership, or it might have been only on loan. While this could theoretically be handled by a transfer of an indeterminate [property right](../rights), this would be very complex and give the impression of more information being available than is actually the case. Instead, we add a new class called `Transfer` which allows the indeterminate transfer of an object between two parties without claiming whether it is ownership, custody or something else entirely.
 
 
 ## Transfer
