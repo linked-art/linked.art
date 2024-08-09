@@ -46,15 +46,52 @@
 
 <!-- Payment of a Monetary Amount -->
 
+<rdfs:Class rdf:about="https://linked.art/ns/terms/Transfer">
+    <rdfs:label xml:lang="en">Transfer</rdfs:label>
+    <rdfs:comment>Abstract transferral of something between entities</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="E8_Acquisition">
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="E9_Move">
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="E10_Transfer_of_Custody">
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/transferred">
+        <rdfs:label xml:lang="en">transferred</rdfs:label>
+        <rdfs:comment xml:lang="en">What was transferred</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Transfer"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/transferred_from">
+        <rdfs:label xml:lang="en">transferred from</rdfs:label>
+        <rdfs:comment xml:lang="en">Where or with whom did it start</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Transfer"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linked.art/ns/terms/transferred_to">
+        <rdfs:label xml:lang="en">transferred to</rdfs:label>
+        <rdfs:comment xml:lang="en">Where or with whom did it end</rdfs:comment>
+        <rdfs:domain rdf:resource="https://linked.art/ns/terms/Transfer"/>
+        <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
 <rdfs:Class rdf:about="https://linked.art/ns/terms/Payment">
     <rdfs:label xml:lang="en">Payment</rdfs:label>
     <rdfs:comment>Payment of Money</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
 </rdfs:Class>
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/paid_amount">
         <rdfs:label xml:lang="en">Paid Amount</rdfs:label>
-        <rdfs:comment xml:lang="en">The amount paid.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The amount paid</rdfs:comment>
         <rdfs:domain rdf:resource="https://linked.art/ns/terms/Payment"/>
         <rdfs:range rdf:resource="E97_Monetary_Amount"/>
 </rdf:Property>
@@ -82,6 +119,11 @@
     <rdfs:comment></rdfs:comment>
     <rdfs:subClassOf rdf:resource="E89_Propositional_Object"/>
     <rdfs:subClassOf rdf:resource="E72_Legal_Object"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="E74_Group">
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Set"/>
+    <rdfs:subClassOf rdf:resource="E39_Actor"/>
 </rdfs:Class>
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/has_member">
@@ -130,6 +172,12 @@
     <rdfs:subClassOf rdf:resource="E7_Activity"/>
 </rdfs:Class>
 
+
+<rdfs:Class rdf:about="E85_Joining">
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Addition"/>
+</rdfs:Class>
+
+
 <rdf:Property rdf:about="https://linked.art/ns/terms/added_to">
     <rdfs:label xml:lang="en">added to</rdfs:label>
     <rdfs:comment xml:lang="en"></rdfs:comment>
@@ -166,6 +214,10 @@
     <rdfs:label xml:lang="en">Removal</rdfs:label>
     <rdfs:comment>The removal of some entity from a Set</rdfs:comment>
     <rdfs:subClassOf rdf:resource="E7_Activity"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="E86_Leaving">
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Removal"/>
 </rdfs:Class>
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/removed_from">
@@ -266,14 +318,12 @@
 </rdf:Property>
 
 
-
-
 <!-- Acquisition/Transfer of Rights -->
 
 <rdfs:Class rdf:about="https://linked.art/ns/terms/RightAcquisition">
     <rdfs:label xml:lang="en">Right Acquisition</rdfs:label>
     <rdfs:comment>The acquiring or establishment of a particular E30 Right over some entity </rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
 </rdfs:Class>
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/establishes">
@@ -308,11 +358,9 @@
 </rdf:Property>
 
 
-
-
-<!-- Phase -->
-<!-- This looks like S16 State, but state is only for physical states not social ones like ownership. -->
-<!-- We don't currently use Phase in the profile, but leaving it here for the future -->
+<!-- Phase 
+This looks like S16 State, but state is only for physical states not social ones like ownership
+We don't currently use Phase in the profile, but leaving it here for the future
 
 <rdfs:Class rdf:about="https://linked.art/ns/terms/Phase">
     <rdfs:label xml:lang="en">Phase</rdfs:label>
@@ -392,5 +440,6 @@
     <rdfs:subPropertyOf rdf:resource="P2_has_type"/>
 </rdf:Property>
 
+-->
 
 </rdf:RDF>
