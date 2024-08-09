@@ -3,7 +3,7 @@
 <rdfs:Class rdf:about="https://linked.art/ns/terms/Payment">
     <rdfs:label xml:lang="en">Payment</rdfs:label>
     <rdfs:comment>Payment of Money</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
 </rdfs:Class>
 
 </rdf:RDF>

@@ -1611,12 +1611,12 @@
       "@type": "@id",
       "@container": "@set"
     },
-    "falls_within": {
+    "during": {
       "@id": "crm:P10_falls_within",
       "@type": "@id",
       "@container": "@set"
     },
-    "contains": {
+    "includes": {
       "@id": "crm:P10i_contains",
       "@type": "@id",
       "@container": "@set"
@@ -2658,16 +2658,6 @@
       "@type": "@id",
       "@container": "@set"
     },
-    "during": {
-      "@id": "crm:P164_during",
-      "@type": "@id",
-      "@container": "@set"
-    },
-    "timespan_of_presence": {
-      "@id": "crm:P164i_was_time-span_of",
-      "@type": "@id",
-      "@container": "@set"
-    },
     "presence_of": {
       "@id": "crm:P165_incorporates",
       "@type": "@id",
@@ -2786,12 +2776,12 @@
       "@type": "@id",
       "@container": "@set"
     },
-    "ends_before_the_start_of": {
+    "before": {
       "@id": "crm:P183_ends_before_the_start_of",
       "@type": "@id",
       "@container": "@set"
     },
-    "starts_after_the_end_of": {
+    "after": {
       "@id": "crm:P183i_starts_after_the_end_of",
       "@type": "@id",
       "@container": "@set"
@@ -3016,6 +3006,9 @@
     "format": {
       "@id": "dc:format"
     },
+    "Transfer": {
+      "@id": "la:Transfer"
+    },
     "Payment": {
       "@id": "la:Payment",
       "@context": {
@@ -3079,6 +3072,21 @@
     },
     "equivalent": {
       "@id": "la:equivalent",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "transferred": {
+      "@id": "la:transferred",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "transferred_from": {
+      "@id": "la:transferred_from",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "transferred_to": {
+      "@id": "la:transferred_to",
       "@type": "@id",
       "@container": "@set"
     },

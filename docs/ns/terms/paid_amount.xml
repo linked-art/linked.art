@@ -2,7 +2,7 @@
 
 <rdf:Property rdf:about="https://linked.art/ns/terms/paid_amount">
         <rdfs:label xml:lang="en">Paid Amount</rdfs:label>
-        <rdfs:comment xml:lang="en">The amount paid.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The amount paid</rdfs:comment>
         <rdfs:domain rdf:resource="https://linked.art/ns/terms/Payment"/>
         <rdfs:range rdf:resource="E97_Monetary_Amount"/>
 </rdf:Property>

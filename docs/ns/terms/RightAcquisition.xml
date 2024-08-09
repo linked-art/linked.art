@@ -3,7 +3,7 @@
 <rdfs:Class rdf:about="https://linked.art/ns/terms/RightAcquisition">
     <rdfs:label xml:lang="en">Right Acquisition</rdfs:label>
     <rdfs:comment>The acquiring or establishment of a particular E30 Right over some entity </rdfs:comment>
-    <rdfs:subClassOf rdf:resource="E7_Activity"/>
+    <rdfs:subClassOf rdf:resource="https://linked.art/ns/terms/Transfer"/>
 </rdfs:Class>
 
 </rdf:RDF>

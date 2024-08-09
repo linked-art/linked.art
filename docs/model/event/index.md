@@ -56,7 +56,7 @@ ts.end_of_the_end = "0079-08-26T23:59:59Z"
 top.timespan = ts
 ```
 
-And is the cause of the destruction of the city of Pompeii.
+And was the cause of the destruction of the city of Pompeii.
 
 ```crom
 top = model.HumanMadeObject(ident="pompeii-buildings/1", label="Buildings making up the city of Pompeii")
