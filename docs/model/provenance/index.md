@@ -109,17 +109,19 @@ There are also provenance events that do not involve a transfer of legal ownersh
 
 These sorts of provenance events are documented in the [Custody](custody) section.
 
-### Acquisition of a Right
-
-Some transfers of ownership are more complex than simply acquiring an object and involve the transfer of shares of ownership, possibly being traded amongst a network of owners over time. In this case, it is necessary to model the right of ownership, and how it is being divided and managed. Other scenarios where this pattern is important is when the "thing" being acquired is not a physical object, but an intellectual property right, such as the right to perform a work of theatre or other time-based media.
-
-These sorts of provenance events are documented in the [Rights](rights) section.
-
 ### Rediscovery of an Object
 
 Objects can be lost, sometimes for very long periods of time, and then encountered by a different culture or set of people than the ones that lost it. As this might happen several times in the history of an object, and there are ownership and custody implications of the rediscovery, encounters of these sorts are part of the provenance record of the object. Knowledge about previous encounters or the production of the object may not be known, meaning that it is possible that this is the first known entry in the provenance chain.
 
 These sorts of provenance events are documented in the [Encountering an Object](encounters) section.
+
+### Acquisition of a Right
+
+Some transfers of ownership are more complex than simply acquiring an object and involve the transfer of shares of ownership, possibly being traded amongst a network of owners over time. In this case, it is necessary to model the right of ownership, and how it is being divided and managed. Other scenarios where this pattern is important is when the "thing" being acquired is not a physical object, but an intellectual property right, such as the right to perform a work of theatre or other time-based media.
+
+Note that this section is complicated, and likely only valuable to specialized databases of provenance. Feedback is welcome to improve its usability and accuracy in representing the transfer of non-physical ownership.
+
+These sorts of provenance events are documented in the [Rights](rights) section.
 
 ### Promise of Activity
 
@@ -132,6 +134,12 @@ Promises are documented in the [Promises](promises) section, and bids are auctio
 Although not often explicitly documented, most provenance activities also involve the physical relocation of the acquired object. This is especially interesting for use with describing exhibitions, where the location is explicitly known over a period of time, or in cases where such movement is extraordinary in some way, such as the relocation of a building or other "immovable" piece of art.
 
 These sorts of provenance events are documented in the [Movement](movement) section.
+
+### Unknown Type of Transfer
+
+When working from incomplete documentary evidence it is frequently difficult to determine exactly what sort of exchange took place in the past. For example, an archive or letter might say that the object "went to the museum", which would be insufficient to distinguish between a transfer of ownership, a transfer of custody, or merely physical movement of the object. While every effort should be made to be precise in provenance document whenever possible, it is also important to capture uncertain activities.
+
+These sorts of provenance events are document in the [Transfer](transfer) section.
 
 
 ## Specific Uses
