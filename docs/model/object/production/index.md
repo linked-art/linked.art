@@ -250,6 +250,29 @@ rm.diminished = whole
 top.removed_by = rm
 ```
 
+## Discovery versus Production
+
+If the object enters into documented history by being found, rather than created, then instead of a `Production` entry, there is an `Encounter`. This would be appropriate for fossils, gemstones, or other natural history items, along with objects that were created but no information is available about that production or the "discovery" of the object is the first significant entry in the item's provenance. This pattern may only be used for the discovery of the object, rather than other sorts of encounters.
+
+Encounters may also be recorded as separate events, as described in the [provenance section](../../provenance/encounters/). The separate event must be used for any encounter that is not a discovery.
+
+Instead of `produced_by`, the property used is `encountered_by`, and the class of the activity is `Encounter`. All of the other patterns are the same, including where the encounter took place, who encountered it, when it occurred and so forth. The role pattern also applies, with the `part`s of the encounter also being `Encounter`s.
+
+__Example:__
+
+The fossil Torosaurus (VP.04072) was encountered in 1891 by John Bell Hatcher.
+
+```crom
+top = model.HumanMadeObject(ident="torosaurus/1", label="Torosaurus Gladius")
+enc = model.Encounter()
+enc.carried_out_by = model.Person(ident="hatcher", label="John Bell Hatcher")
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "1891-01-01T00:00:00Z"
+ts.end_of_the_end = "1891-12-31T23:59:59Z"
+enc.timespan = ts
+top.encountered_by = enc
+```
+
 ## Destruction
 
 The end of the provenance chain of an object is when it is known to have been destroyed.  Loss of the object leaves the chain open ended as it might be recovered in the future, however if the object is destroyed then there is no coming back. Objects should, thus, only be recorded as destroyed if they are known to be so.
