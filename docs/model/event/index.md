@@ -54,8 +54,7 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "0079-08-24T12:00:00Z"
 ts.end_of_the_end = "0079-08-26T23:59:59Z"
 top.timespan = ts
-
-``` 
+```
 
 And is the cause of the destruction of the city of Pompeii.
 
