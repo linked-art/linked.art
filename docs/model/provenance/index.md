@@ -78,7 +78,7 @@ top.part = acq
 
 When describing historical events, it may not be possible to give any useful timespan of when the activity occured, and only be able to relate it to happening before or after another event. This allows the activity to be ordered in a chain of events, without being explicit about any date range.
 
-The provenance activity has two properties to cover this situation, `starts_after_the_end_of` and `ends_before_the_start_of`. The first relates to activities that occur before the current event (the start of the current event is after the end of the previous one) and the latter relates to activities that occur after the current one, by the same logic.
+The provenance activity has two properties to cover this situation, `after` (this event starts after the end of the referenced event) and `before` (this event ends before the start of the referenced event). The first relates to activities that occur before the current event (the start of the current event is after the end of the previous one) and the latter relates to activities that occur after the current one, by the same logic.
 
 
 __Example:__
@@ -87,8 +87,8 @@ Jean-Baptise Faure owned Spring after Proust (but not necessarily directly from 
 
 ```crom
 top = vocab.ProvenanceEntry(ident="unknown_faure/1", label="Unknown Acquisition of Spring by Faure")
-top.starts_after_the_end_of = vocab.ProvenanceEntry(ident="manet_proust")
-top.ends_before_the_start_of = vocab.ProvenanceEntry(label="foure_durand")
+top.after = vocab.ProvenanceEntry(ident="manet_proust")
+top.before = vocab.ProvenanceEntry(label="foure_durand")
 ```
 
 

@@ -28,10 +28,11 @@ The model is currently under very active development in the community and the do
     * [Provenance](provenance/) of objects
     * [Exhibitions](exhibition/) of objects
     * [Conservation](conservation/) of objects
-* Related People, Places and Concepts
+* Related People, Places, Concepts and Events
     * [People and Organizations](actor/)
     * [Places](place/)
     * [Concepts](concept/)
+    * [Events](event/)
     * [Vocabulary Terms Used](vocab/)
 * Cultural Context
     * [Textual Documents](document/) 
