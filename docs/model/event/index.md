@@ -82,6 +82,7 @@ The Early Roman Empire period, from 31 BCE through 193 CE, is part of the Roman 
 top = model.Period(ident="early_roman/1", label="Early Roman Empire (31 BCE - 193 CE)")
 top.identified_by = vocab.PrimaryName(content="Early Roman Empire")
 top.part_of = model.Period(ident="roman", label="Roman Empire")
+
 ```
 
 And Vesuvius erupted during this period.
