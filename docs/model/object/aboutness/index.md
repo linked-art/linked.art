@@ -64,7 +64,7 @@ top.represents_instance_of_type = model.Type(ident="http://vocab.getty.edu/aat/3
 
 Subjects are the concepts or things that the artwork evokes, as opposed to an object (real or imaginary) that is depicted by the artwork.  For example, a portrait of a military commander in full regalia on a battlefield depicts the person and the place, but could be interpreted to have a subject of "war". A painting with an allusion to a piece of literature does not depict the literature, but instead evokes it as a subject. This could be thought of as what the artwork is _about_ rather than what can be seen, or as _why_ the content in the artwork is present.
 
-The model for subject is that the `VisualObject` is `about` the subject, which is a `Type` instance.
+The model for subject is that the `VisualItem` is `about` the subject, which is a `Type` instance.
 
 __Example:__
 
