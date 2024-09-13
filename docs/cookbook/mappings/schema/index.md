@@ -2,13 +2,15 @@
 title: Linked Art / Schema.org Mapping
 ---
 
+This mapping is from Linked Art into Schema.org
+
 
 ## Shared Properties
 
 * /id --> /url
 * /referred_to_by[classified_as/id=DESCRIPTION]/content --> /description
 * /classified_as/id --> /additionalType
-* /identified_by[type=Name][classified_as/id=PRIMARY_NAME]/content --> /name 
+* /identified_by[type=Name] [classified_as/id=PRIMARY_NAME]/content --> /name 
 * /identified_by[type=Name]/content --> /alternateName
 * /identified_by[type=Identifier]/content --> /identifier
 * /equivalent/id --> /sameAs
@@ -53,14 +55,14 @@ title: Linked Art / Schema.org Mapping
 
 ## Concepts
 
-* Type = DefinedTerm, CreativeWork
+* Type = DefinedTerm AND CreativeWork
 * Additional Types: Language
 * /broader --> /isPartOf
 * /member_of --> /inDefinedTermSet
 
 ## Human Made Object
 
-* type = VisualArtwork, ArchiveComponent 
+* type = VisualArtwork OR ArchiveComponent 
 * /classified_as/id --> /artform (painting, sculpture, etc)
 * /referred_to_by[classified_as/id=DESCRIPTION]/content --> /abstract  (other classes use /description)
 * /referred_to_by[classified_as/id=RIGHTS_STMT]/content --> /copyrightNotice
@@ -84,7 +86,7 @@ title: Linked Art / Schema.org Mapping
 
 ## Digital Object 
 
-* /type = CreativeWork, DataSet
+* /type = CreativeWork AND DataSet
 * /digitally_shows|digitally_carries --> /exampleOfWork
 * /dimension[classified_as/id=HEIGHT]/value --> /height
 * /dimension[classified_as/id=WIDTH]/value --> /width
@@ -92,7 +94,6 @@ title: Linked Art / Schema.org Mapping
 * /dimension --> /size
 * /part_of --> /isPartOf
 * /format --> /encodingFormat
-* /conforms_to --> ??
 * /access_point --> /distribution
 * /created_by/part*/carried_out_by --> /creator
 * /used_for[./classified_as/id=PUBLISHING]/carried_out_by --> /publisher
@@ -125,7 +126,7 @@ title: Linked Art / Schema.org Mapping
 
 ## Set
 
-* type = ArchiveComponent (for Archives) or type = Collection (for other Sets)
+* type = ArchiveComponent (for Archives) OR type = Collection (for other Sets)
 * /member_of --> /isPartOf
 * /created_by/part*/carried_out_by --> /author, /artist, or /creator
 * /used_for[./classified_as/id=PUBLISHING]/carried_out_by --> /publisher

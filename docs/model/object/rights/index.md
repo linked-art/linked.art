@@ -42,9 +42,9 @@ top.referred_to_by = vocab.RightsStatement(content="Public Domain")
 
 More detailed information is, however, often available and it is useful to be explicit. These patterns associate a `Right` that the object is `subject_to`, and then give more detail about the nature of that right, such as what sort of right, and who holds it.
 
-### RightsStatements.org Assertions
+Each Right is a tied specifically to the entity that is subject to the right, rather than being the broader class of such a right, and thus the Right is the status of the object, not the legal construct. We still need a way to have a reference to the type of right or license being asserted, and for this we use the `classified_as` property. The URI for the classification can be anything, but is most commonly a rightsstatements.org URI or a [Creative Commons](https://creativecommons.org/) URI.
 
-There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way. These assertions are modeled as individual Rights, which are then `classified_as` the Rights Statement URI or a Creative Commons URI.
+There is a recent effort to standardize rights statements, described at [rightsstatements.org](http://rightsstatements.org/).  Twelve basic rights statements were identified and given URIs to identify them.  If any of these statements apply, it is useful to use these URIs to ensure that client systems can process them the in the same way. 
 
 These rights must be associated with the Work, rather than the Object, if they are about the copyright or other use of the image rather than the physical object. Asserting that you can reuse "The Night Watch" does not give you any physical rights over the object in the Rijksmuseum, it gives you usage rights over the visual content.
 

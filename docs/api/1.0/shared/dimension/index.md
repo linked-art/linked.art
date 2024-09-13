@@ -29,7 +29,7 @@ The dimension data structure has the following properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the dimension, from which a representation of the dimension can be retrieved | 
-| `type`            | string        | Required    | The class for the name, which MUST be the value `"Dimension"` |
+| `type`            | string        | Required    | The class for the dimension, which MUST have the value `"Dimension"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the identifier available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `value`           | number        | Required    | The numeric value of the dimension |
