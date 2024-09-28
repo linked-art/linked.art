@@ -1,6 +1,8 @@
 ---
-title: "How easily can Linked Art data be retrieved for inclusion in Quire?" subtitle: "Sasha Tan considers modelling, versioning, and local practice, and how software tools can help."
+title: "How easily can Linked Art data be retrieved for inclusion in Quire?"
 ---
+
+## Sasha Tan considers modelling, versioning, and local practice, and how software tools can help
 
 Particularly given the collaborative and ongoing nature of Linked Art’s development as a metadata standard, developing a singular cross-institutional solution connecting Linked Art data to Quire is not without its challenges. On a technical level, such a solution essentially necessitates that equivalent data-fields across different records are stored in predictable ways. At the same time however, different institutions may employ different versions of the Linked Art specification; they may have different preferences reflecting equally valid interpretations of the same specification; and their implementations each occur in the context of their respective institutional circumstances and constraints. Throughout my placement with the EES2 team, I spoke with individuals working at various stages of the cultural heritage data life-cycle in order to get to grips with some of these issues. Their insights would subsequently inform the development of latool.js, a software tool which streamlines the retrieval of Linked Art data for various purposes including data validation, research, and publication via Quire.
 
@@ -14,7 +16,7 @@ During these meetings, I noted the point that between records, the metadata avai
 
 Bearing all of these considerations in mind, latool.js has been developed to accommodate a broad range of institutional and versioning-based variations, of which the above discussion has discussed only a handful. Intended to be both robust and flexible in its data retrieval approach, the tool serves not only those interested in rendering Linked Art data fit for publication via Quire, but also those wishing to use Linked Art data for research or data validation purposes.
  
-<figure>
+<figure style="text-align: center;">
   <img src="https://dams.ashmus.ox.ac.uk/iiif/image/785801/full/thm/0/default.jpg" alt="Ancient Greek silver coin">
-  <figcaption>Ashmolean Museum, Ancient Greek silver coin, 300 BCE–201 BCE, 26mm (diameter). HCR4579</figcaption>
+  <figcaption>Ancient Greek silver coin, 300 BCE–201 BCE, 26mm (diameter), HCR4579, Ashmolean Museum</figcaption>
 </figure>

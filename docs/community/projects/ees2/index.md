@@ -24,7 +24,9 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 ## Project News
 - **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)
-- **MSc Practicum Outputs.** How easily can Linked Art data be retrieved for inclusion in Quire? Sasha Tan considers modelling, versioning, and local practice, and how software tools can help. [Read more…](https://ees2-prep.netlify.app/community/projects/ees2/outcomes/linked_art_retrieval_tool_practicum) How do people use *Quire*? Thorsteinn Imi King reports on a comparative evaluation of *Quire* publications and the benefits of Linked Art for digital curators and editors. [Read more...](https://ees2-prep.netlify.app/community/projects/ees2/outcomes/quire_comparison_practicum).
+- **MSc Practicum Outputs.**
+    - How easily can Linked Art data be retrieved for inclusion in Quire? Sasha Tan considers modelling, versioning, and local practice, and how software tools can help. [Read more…](https://ees2-prep.netlify.app/community/projects/ees2/news/quire_workshop/linked_art_retrieval_tool_practicum)
+    - How do people use Quire? Thorsteinn Imi King reports on a comparative evaluation of Quire publications and the benefits of Linked Art for digital curators and editors. [Read more...](https://ees2-prep.netlify.app/community/projects/ees2/news/quire_workshop/quire_comparison_practicum).
 - **Quire Linked Art Extension Documentation.** [Documentation](https://ees2-prep.netlify.app/community/projects/ees2/docs/quire) for the Linked Art Extension for Quire developed by the Enriching Exhibition Stories project is now available.
 
 ## Project Summary

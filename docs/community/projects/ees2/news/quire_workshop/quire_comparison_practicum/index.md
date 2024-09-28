@@ -1,7 +1,9 @@
 ---
-title: "How do people use *Quire*?"
-subtitle: "Thorsteinn Imi King reports on a comparative evaluation of *Quire* publications and the benefits of Linked Art for digital curators and editors."
+title: "How do people use Quire?"
 ---
+
+## Thorsteinn Imi King reports on a comparative evaluation of Quire publications and the benefits of Linked Art for digital curators and editors
+
 Over the course of two months with EES2 (Enriching Exhibition Stories), I evaluated the effectiveness of the EES2 Linked Art module for Getty's Quire. The EES2 module was in version 0.6 at the time of my involvement with the project. As of [DAY THIS GOES LIVE] it is at 0.7. As part of this it was necessary to understand how people use the Quire software, something which no one outside of the Getty has yet attempted to do. My evaluation lays the groundwork for the EES2 module's future development. This was an exciting period; EES2 is being developed at a time when the user-base of Quire is rapidly expanding. In the time since I finished my practicum alone (just over two months), five new Quire outputs have been featured on the Getty's Quire 'Community Showcase’ page (Getty 2024). In the first six months of 2024 only one output was featured. As Quire continues to develop and to find new audiences, understanding who those audiences are, and what their use-needs are becomes all the more important to evaluating the effectiveness of software extensions like the EES2 module. Overall, the EES2 module is a very useful extension for the Quire software. The specific complications of the module should nevertheless be highlighted.
 
 For those that do not know, Quire is a digital publishing tool, developed by the Getty. It is powered by a static site generator (11ty), several JavaScript programs, and IIIF (International Image Interoperability Framework). The user creates their own Quire output by editing Markdown and YAML code, which are respectively plain-text markup and data-serialisation languages. The team at the Getty want to keep Quire as non-prescriptive as possible (Enriching Exhibition Stories 2024). The developers do not want the structure of the Quire software to necessarily dictate the kinds of output which Quire users can, or tend to produce. This understanding extends to any extensions being developed for Quire. The clearest way to avoid being overly prescriptive while still creating a tool which is helpful to the user community is to understand the structure of existing Quire outputs. These are not necessarily indicative of the future direction of the field, but are indicative of current trends in Quire: by understanding these we root the development of the EES2 module in things that are actually happening in the user community today. This blog post identifies how the EES2 module engages with the state of the field in a way which adds value to creators currently working in Quire, highlighting issues and areas for future development.
@@ -12,28 +14,28 @@ Within relevant Quire outputs I discern two distinct frameworks of image use on 
 
 The first framework of use is object-focused. Object-focused outputs tend to be exhibition catalogues, which import, per page, one object (typically some form of visual media), alongside ‘tombstone’ fields containing metadata about that object. For example: 
 
-<figure>
+<figure style="text-align: center;">
   <img src="fig_1.png">
-  <figcaption>Image incorporated as an object in a Quire output.</figcaption>
+  <figcaption>Fig 1. Image incorporated as an object in a Quire output.</figcaption>
 </figure>
 
 The 'tombstone' is the table of information which accompanies the object. This table of information can contain various pieces of metadata. The underlying Quire YAML (data-serialisation) is split across several lines of code, each corresponding to a different tombstone field. It looks like this:
 
-<figure>
+<figure style="text-align: center;">
   <img src="fig_2.png">
-  <figcaption>Fig. 2. YAML code underpinning object in a Quire output.</figcaption>
+  <figcaption>Fig 2. YAML code underpinning object in a Quire output.</figcaption>
 </figure>
 
 The second framework of use is figure-focused. An example of a figure-focused output is an essay related to art or cultural heritage. This might import multiple figures within a single page, each with a ‘caption’ field containing the information which the tombstone fields contain for objects. The output and the underlying code look like this:
 
-<figure>
+<figure style="text-align: center;">
   <img src="fig_3.png">
   <figcaption>Fig 3. Image incorporated as a figure in a Quire output.</figcaption>
 </figure>
 
-<figure>
+<figure style="text-align: center;">
   <img src="fig_4.png">
-  <figcaption>Fig. 4. YAML code underpinning figure in a Quire output.</figcaption>
+  <figcaption>Fig 4. YAML code underpinning figure in a Quire output.</figcaption>
 </figure>
 
 It is not uncommon for a single Quire output to incorporate both objects and figures, but it is still worth defining these as distinct frameworks. Although both the object and figure can contain identical metadata, this differs in the way it is structured in the underlying code. For an object, information is split across several fields in the YAML; for a figure it is condensed to fit within a single caption field. This means that incorporating the same image into Quire can actually result in a very different production process depending on how the author wants to display that image within the final Quire publication.
@@ -58,10 +60,10 @@ Overall, the EES2 module is at present a fantastic quality-of-life improvement f
 
 ## Citations
 
-- Burrows, Toby, Laura Cleaver, Doug Emery, Mikko Koho, Lynn Ransom, and Emma Thomson. “Using SPARQL to Investigate the Research Potential of a Linked Open Data Knowledge Graph: The Mapping Manuscript Migrations Project”, 2021. [doi:10.5281/ZENODO.5106318](https://doi.org/10.5281/zenodo.5106318).
+Burrows, Toby, Laura Cleaver, Doug Emery, Mikko Koho, Lynn Ransom, and Emma Thomson. “Using SPARQL to Investigate the Research Potential of a Linked Open Data Knowledge Graph: The Mapping Manuscript Migrations Project”, 2021. [doi:10.5281/ZENODO.5106318](https://doi.org/10.5281/zenodo.5106318).
   
-- Thorsteinn Imi King. “Linked Art for Quire: A Survey of Community Quire Outputs.” *Enriching Exhibition Stories*, forthcoming.
+Thorsteinn Imi King. “Linked Art for Quire: A Survey of Community Quire Outputs.” *Enriching Exhibition Stories*, forthcoming.
   
-- Enriching Exhibition Stories. “EES2 Development Tasks and Priority Use Cases.” Minutes of EES2 meeting, 3 June 2024, The Getty Villa.
+Enriching Exhibition Stories. “EES2 Development Tasks and Priority Use Cases.” Minutes of EES2 meeting, 3 June 2024, The Getty Villa.
   
-- Getty. “Community Showcase.” *Quire™*, 2024. <https://quire.getty.edu/community/community-showcase/> [accessed 19 June 2024].
+Getty. “Community Showcase.” *Quire™*, 2024. <https://quire.getty.edu/community/community-showcase/> [accessed 19 June 2024].
