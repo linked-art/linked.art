@@ -16,7 +16,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 ## DHOxSS Links
 - [Quire Linked Art Extension Documentation](https://linked.art/community/projects/ees2/docs/quire)  
 - [Quire Installation Instructions](https://linked.art/community/projects/ees2/docs/quire/quire_installation_instructions.docx)  
-- [Linked Art Extenstion Files (la_quire_extension.zip)](https://linked.art/community/projects/ees2/docs/quire/la_quire_extension.zip)  
+- [Linked Art Extension Files (la_quire_extension.zip)](https://linked.art/community/projects/ees2/docs/quire/la_quire_extension.zip)  
 - [Quire Template (quire_template.zip)](https://drive.google.com/file/d/1Cfb7bfgQJeVR6THAWrk9QKwxeazKjgoM/view?usp=sharing)  
 - [Demo](https://drive.google.com/file/d/1XFSEEqePwsPYl6PjCkpFOwyJLX73wLCS/view?usp=sharing)  
 - [Tuesday Session Slides](https://linked.art/community/projects/ees2/docs/quire/slides.pdf)  
