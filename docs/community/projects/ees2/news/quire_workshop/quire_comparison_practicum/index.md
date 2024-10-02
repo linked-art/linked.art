@@ -56,7 +56,7 @@ One way it can do this in future is by expanding the functionality that currentl
 
 Overall, the EES2 module is at present a fantastic quality-of-life improvement for users working within object-focused Quire outputs, especially when a catalogue contains a great number of pages devoted to individual artworks, themselves containing many tombstone fields. The module presupposes familiarity with Quire and the interpretive nature of cultural data, but this is by design.
 
- Supporting documentation for the EES2 module is being created, incorporating the work I contributed during my two months with the project. Structured data import for figures, as exists for objects, has been added to the development wishlist. I would like to thank my colleagues at EES2 and the Getty for their support over the two months I was with the project, which gave me the resources to contribute meaningfully to the EES2 project. Dr. Kevin Page, Dr. Tyler Bonnet, David Lewis, Erin Canning and Sasha Tan variously provided supervision and a stimulating and enjoyable work environment.
+ Supporting documentation for the EES2 module is being created, incorporating the work I contributed during my two months with the project. Structured data import for figures, as exists for objects, has been added to the development wishlist. I would like to thank all my colleagues at the OERC, Yale, Edinburgh, the EES2 research project and the Getty for their help and support. I would particularly like to thank Dr. Kevin Page, Dr. Tyler Bonnet, David Lewis, Erin Canning and Sasha Tan for providing the environment and resources to contribute meaningfully to the project.
 
 ## Citations
 
