@@ -1,6 +1,9 @@
 ---
-title: "Linked Art for Quire"
+title: ""
 ---
+[Back to EES2 Project page](https://ees2-prep.netlify.app/community/projects/ees2/)
+
+# Linked Art for Quire
 
 ## Survey of Community Quire outputs
 

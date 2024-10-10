@@ -1,6 +1,10 @@
 ---
-title: "Getty Quire Workshop, June 2024"
+title: ""
 ---
+[Back to EES2 Project page](https://ees2-prep.netlify.app/community/projects/ees2/)
+
+# Getty Quire Workshop, June 2024
+
 In June 2024, Enriching Exhibition Stories held a Quire use case workshop with our partners at Getty alongside associated activities at the Getty Villa and IIIF conference.
 
 Hosted by our project partners at Getty, the workshop brought together the full project team from the University of Oxford e-Research Centre, Yale University, and the Getty Quire development team. The voice of current and potential Quire users was represented by colleagues from the Ashmolean Museum, Getty Villa, the Quire community manager, and invited experts from the Wildenstein Plattner Institute and Design for Context.

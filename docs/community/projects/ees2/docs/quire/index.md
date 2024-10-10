@@ -1,6 +1,11 @@
 ---
-title: "Quire Linked Art Extension Documentation"
+title: ""
 ---
+[Back to EES2 Project page](https://ees2-prep.netlify.app/community/projects/ees2/)
+
+# Quire Linked Art Extension Documentation
+
+[Back to EES2 project home page...](https://ees2-prep.netlify.app/community/projects/ees2/)
 
 The Linked Art command class for Quire is called `add`. Information about Quire’s command classes can be accessed by running `quire help` in the terminal. `add` is listed as follows:
 

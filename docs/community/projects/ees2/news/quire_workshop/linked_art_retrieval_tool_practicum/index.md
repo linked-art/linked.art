@@ -1,6 +1,9 @@
 ---
-title: "How easily can Linked Art data be retrieved for inclusion in Quire?"
+title: ""
 ---
+[Back to EES2 Project page](https://ees2-prep.netlify.app/community/projects/ees2/)
+
+# How easily can Linked Art data be retrieved for inclusion in Quire?
 
 ## Sasha Tan considers modelling, versioning, and local practice, and how software tools can help
 
