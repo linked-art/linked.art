@@ -1,7 +1,7 @@
 ---
 title: ""
 ---
-[Back to EES2 Project page](https://ees2-prep.netlify.app/community/projects/ees2/)
+[Back to EES2 Project page](https://linked.art/community/projects/ees2/)
 
 # How easily can Linked Art data be retrieved for inclusion in Quire?
 

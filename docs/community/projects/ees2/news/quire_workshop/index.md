@@ -1,7 +1,7 @@
 ---
 title: ""
 ---
-[Back to EES2 Project page](https://ees2-prep.netlify.app/community/projects/ees2/)
+[Back to EES2 Project page](https://linked.art/community/projects/ees2/)
 
 # Getty Quire Workshop, June 2024
 
