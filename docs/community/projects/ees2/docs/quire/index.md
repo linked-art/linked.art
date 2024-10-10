@@ -1,6 +1,9 @@
 ---
-title: "Quire Linked Art Extension Documentation"
+title: ""
 ---
+[Back to EES2 Project page](https://linked.art/community/projects/ees2/)
+
+# Quire Linked Art Extension Documentation
 
 The Linked Art command class for Quire is called `add`. Information about Quire’s command classes can be accessed by running `quire help` in the terminal. `add` is listed as follows:
 
