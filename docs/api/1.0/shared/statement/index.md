@@ -39,6 +39,7 @@ Statements are described in the [base patterns](/model/base/) of the model docum
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to this statement, or an embedded statement about this statement | 
 | `format`          | string        | Optional    | If the string in content is not plain text, then format can be used to specify the media type of the string |
 | `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the statement, and MUST follow the requirements for [Assignments](../assignment/) |
+| `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../right) that is held over the statement |
 
 
 ### Property Diagram
