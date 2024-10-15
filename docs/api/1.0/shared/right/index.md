@@ -51,13 +51,19 @@ Right instances are typically found as the object of the following properties.
 |-----------------|-------------------|-------------|
 | `subject_to`     | [Textual Work](../../endpoint/textual_work/), [Visual Work](../../endpoint/visual_work), [Abstract Work](../../endpoint/abstract_work), [Statement](../statement/) | Intellectual things, primarily works, can have rights associated with them using the `subject_to` property |
 
-
 ## Example
+
+A textual work is in the public domain.
+
+* The Textual Work is `subject_to` the Right
+* The Right itself does not have a URI, but has a `type` of `Right`
+* It is `classified_as` the sort of Right, in this case the Creative Commons URI for CC Zero
+* It is `identified_by` a `Name`, which is `classified_as` being a Display Title, and the `content` of "Public Domain"
 
 ```crom
 top = model.LinguisticObject(ident="auto int-per-segment", label="Example Text")
 r = model.Right(label="Public Domain status of Example Text")
 r.identified_by = vocab.DisplayName(content="Public Domain")
-r.classified_as = model.Type(ident="https://creativecommons.org/publicdomain/zero/1.0/")
+r.classified_as = model.Type(ident="https://creativecommons.org/publicdomain/zero/1.0/", label="cc0")
 top.subject_to = r
 ```
