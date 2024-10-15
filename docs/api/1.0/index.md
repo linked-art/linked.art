@@ -26,14 +26,14 @@ This section of the website documents the web-based API, or Application Programm
     * [Protocol](protocol/) - Making API requests over the web via HTTP(S)
   * APIs
     * Core Descriptive APIs
-      * [Entity Descriptions](endpoint/) - The objects, people, places and other entities described in Linked Art, as JSON-LD
-      * [Shared Constructs](shared/) - Patterns that are shared between descriptions
-      * [Versioning](hal/) - Declaring API versions
-      * [JSON Schema](schema_docs/) - JSON Schemas with documentation for the APIs
-      * [Class Reference](classes) - Which ontology class is which end point?
+       * [Entity Descriptions](endpoint/) - The objects, people, places and other entities described in Linked Art, as JSON-LD
+       * [Shared Constructs](shared/) - Patterns that are shared between descriptions
+       * [Versioning](hal/) - Declaring API versions
+       * [JSON Schema](schema_docs/) - JSON Schemas with documentation for the APIs
+       * [Class Reference](classes) - Which ontology class is which end point?
     * Hypermedia and Search
-      * [Hypermedia](hal/) - API specific affordances to convey the version of the document, and links to search endpoints
-      * [Web Integration](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions    
+       * [Hypermedia](hal/) - API specific affordances to convey the version of the document, and links to search endpoints
+       * [Web Integration](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions    
 
 
 ## API Versioning
