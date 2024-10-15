@@ -39,6 +39,7 @@ Statements are described in the [base patterns](/model/base/) of the model docum
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to this statement, or an embedded statement about this statement | 
 | `format`          | string        | Optional    | If the string in content is not plain text, then format can be used to specify the media type of the string |
 | `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the statement, and MUST follow the requirements for [Assignments](../assignment/) |
+| `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../right) that is held over the statement |
 
 
 ### Property Diagram
@@ -64,6 +65,7 @@ An object is `referred_to_by` a Description in English.
 * It is `identified_by` a display label, which has a `type` of "Name", and `content` of "Description"
 * It has a `language` of English, which has an `id` of _aat:300388277_
 * It has a statement about the description, saying that it was provided by the artist.
+* It is `subject_to` a Right, which is Creative Commons Attribution Required, version 4.0
 
 ```crom
 top = model.HumanMadeObject(ident="auto int-per-segment")
@@ -71,5 +73,9 @@ d = vocab.Description(content="A small greenstone pendant surrounded by silver")
 d.language = vocab.instances['english']
 d.identified_by = vocab.DisplayName(content="Description")
 d.referred_to_by = model.LinguisticObject(content="Description provided by the artist")
+r = model.Right()
+r.classified_as = model.Type(ident="https://creativecommons.org/licenses/by/4.0/")
+r.identified_by = vocab.DisplayName(content="CC BY 4.0")
+d.subject_to = r
 top.referred_to_by = d
 ```

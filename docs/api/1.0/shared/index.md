@@ -15,6 +15,7 @@ These data structures are shared between many endpoints, within the main respons
 * [Identifiers](identifier/) - Identifiers for the resource (e.g. Accession Number of 1997-1234)
 * [Monetary Amounts](money/) - Monetary amounts in a given currency (e.g. 10000 US Dollars)
 * [Names](name/) - Names in a human language that have been given to the resource (e.g. Mona Lisa in English)
+* [Rights](right/) - Structured rights assertions for licenses or property rights
 * [References](reference/) - References to another entity in the system (e.g. the reference from a painting to the artist's information)
 * [Statements](statement/) - Human readable texts that describe the resource (e.g. a Materials statement)
 * [TimeSpans](timespan/) - Spans of time, with fuzziness at each end (e.g. 1950 to 1955)

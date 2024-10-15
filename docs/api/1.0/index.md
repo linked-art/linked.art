@@ -18,18 +18,22 @@ The model, or application profile, defines the aspects of the conceptual model, 
 
 This section of the website documents the web-based API, or Application Programming Interface, by which applications can interact with the data from a conforming publisher. This API has been designed with several design principles in mind to ensure that it is as usable as possible for software developers. The documentation is divided into several sections, separating protocol interactions over HTTP from format decisions about the structure of the JSON returned and the links between different JSON endpoints. The endpoints are split up by the core entities of the model, with shared constructs such as Names and Identifiers being described separately.
 
-## The Linked Art API
+## The Linked Art APIs
 
-  * [Design Principles](principles/) - The underlying principles guiding decisions for the design of the API
-  * [Protocol](protocol/) - The use of HTTP for interacting with the API over the web
-  * API Format
+* Fundamentals
+    * [Design Principles](principles/) - The underlying principles guiding decisions for the design of the API
     * [JSON-LD Considerations](json-ld/) - Core JSON and JSON-LD details
-    * [Shared Constructs](shared/) - Constructions that are used by many endpoints
-    * [Entity Endpoints](endpoint/) - The entities of interest, exposed at JSON-LD endpoints
-    * [Versioning and Hypertext](hal/) - API specific affordances to convey the version of the document, and links to search endpoints
-    * [Ecosystem Endpoints](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions
-    * [JSON Schema](schema_docs/) - JSON Schema for the API, and derived alternate documentation
-    * [Class Reference](classes) - Which ontology class is which end point?
+    * [Protocol](protocol/) - Making API requests over the web via HTTP(S)
+* APIs
+    * Core Descriptive APIs
+        * [Entity Descriptions](endpoint/) - The objects, people, places and other entities described in Linked Art, as JSON-LD
+        * [Shared Constructs](shared/) - Patterns that are shared between descriptions
+        * [Versioning](hal/) - Declaring API versions
+        * [JSON Schema](schema_docs/) - JSON Schemas with documentation for the APIs
+        * [Class Reference](classes) - Which ontology class is which end point?
+    * Hypermedia and Search
+        * [Hypermedia](hal/) - API specific affordances to convey the version of the document, and links to search endpoints
+        * [Web Integration](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions    
 
 ## API Versioning
 
