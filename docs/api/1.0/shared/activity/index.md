@@ -88,6 +88,7 @@ Activity instances are typically found as the object of the following properties
 ## Example
 
 The [Mona Lisa](../../endpoint/physical_thing/):
+
   * ... was produced by Leonardo da Vini
   * ... between 1503 and 1506
   * ... in Florence
