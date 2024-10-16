@@ -38,34 +38,20 @@ For more information about the Physical Object data, please see the [Object mode
 | `current_permanent_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is normally located, but might not be at the present time |
 | `carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that this object carries the text of |
 | `shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that this object shows a rendition of |
-| `used_for`    | array | Optional | An array of json objects, each of which represents an activity that the object was instumental in, but does not have its own identity |
-| `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for Productions described below | 
-| `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for Destructions described below | 
-| `removed_by` | array | Optional | An array of json objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for PartRemovals described below | 
-| `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for Encounters described below |
-| `changed_ownership_through` | array | Optional | An array of json objects, each of which represents the Acquisition of the object by some actor from another, and follows the requirements for an Acquisition as given in the [Provenance Activity](../provenance_activity/) endpoint description, as also summarized below|
+| `used_for`    | array | Optional | An array of json objects, each of which represents an activity that the object was instumental in, but does not have its own identity, and follows the requirements for an [Activity](../../shared/activity) |
+| `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for a [Production](../../shared/activity) | 
+| `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for a [Destruction](../../shared/activity) | 
+| `removed_by` | array | Optional | An array of json objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for a [PartRemoval](../../shared/activity) | 
+| `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for an [Encounter](../../shared/activity) |
+| `changed_ownership_through` | array | Optional | An array of json objects, each of which represents the Acquisition of the object by some actor from another, and follows the requirements for an `Acquisition` as given in the [Provenance Activity](../provenance_activity/) endpoint description, as also summarized below|
 
 
-### Properties of Productions, Destructions, PartRemovals and other Activities
+### Additional Properties of Acquisitions
+
+The properties of [Activities](../../shared/activity) are available for Acquistion, along with the following:
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the production, destruction or part removal (henceforth "event")  |  
-| `type`            | string        | Required    | The class for the event, which MUST be the value `"Production"`, `"Destruction"`, `"PartRemoval"` or `"Activity"`|
-| `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the event |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused this event to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out this event. **Only usable when the `type` is `"Production"`, `"Encounter"` or `"PartRemoval"`** |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../reference/) to an entity that was instrumental in the carrying out of this event |
-| `technique` | array | Optional | An array of json objects, each of which is a technique used in the event and MUST follow the requirements for [Type](../../shared/type) |
-| `part` | array | Optional | An array of json objects, each of which is another instance of this same event type. **Only usable when the `type` is `"Production"`, `"Encounter"` or `"PartRemoval"`** | 
-| `diminished` | json object | Optional | A json objects which is a [reference](../../shared/reference/) to another Physical Object that this object was removed from by this event. **Only usable when the `type` is `"PartRemoval"`**|
 | `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
 | `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
 

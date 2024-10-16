@@ -50,30 +50,8 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `digitally_shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
 | `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined below |
 | `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the digital object can be retrieved |
-| `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for Creations described below, for when the digital object was first created | 
-| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for Publications described below, for when the digital object was made available |
-
-
-### Properties of Creations, Publication Activities
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the creation or publication  |  
-| `type`            | string        | Required    | The class for the creation, which MUST be the value `"Creation"` or `"Activity"` |
-| `_label`          | string        | Recommended | A human readable label for the creation or publication, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation or publication and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation or publication and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the creation or publication occured | 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation or publication to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that was used in the creation or publication |
-| `technique` | array | Optional | An array of json objects, each of which is a technique used in this event and MUST follow the requirements for [Type](../../shared/type) |
-| `part` | array | Optional | An array of json objects, each of which is another instance of this same type for describing different aspects of the creation or publication | 
-
+| `created_by` | json object | Optional | A json object representing the creation of the digital object, which follows the requirements for a [Creation](../../shared/activity) | 
+| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
 
 ### Properties of Digital Services
 

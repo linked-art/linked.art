@@ -43,30 +43,12 @@ Dereferencing an entity via the Group endpoint would result in a JSON-LD documen
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Group that the current group is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a **[Group](../group/)** |
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current group, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current group to another entity |
-| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the group and follows the requirements for Activities described below |
-| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the group participated, but was not responsible, and follows the requirements for Activities described below |
 | `contact_point` | array | Optional | An array of json objects, each of which is an address at which the group is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
 | `residence` | array | Optional | A place that the group was associated with, and MUST follow the requirements for a [reference](../../shared/reference/) to a [Place](../place/) |
-| `formed_by` | json object | Optional | A json object representing the formation of the group, which follows the requirements for Formations described below. | 
-| `dissolved_by` | json object | Optional | A json object representing the dissolution of the group, which follows the requirements for Dissolutions described below. |
-
-
-### Properties of Formations, Dissolutions and Activities
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the formation, dissolution or professional activity  |  
-| `type`            | string        | Required    | The class for the birth, death or professional activity, which MUST be the value `"Formation"`, `"Dissolution"`, or `"Activity"` respectively |
-| `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the event |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the current event to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is an [entity referece](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
-
+| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the group and follows the requirements for [Activities](../../shared/activity) |
+| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the group participated, but was not responsible, and follows the requirements for [Activities](../../shared/activity) |
+| `formed_by` | json object | Optional | A json object representing the formation of the group, which follows the requirements for a [Formation](../../shared/activity) | 
+| `dissolved_by` | json object | Optional | A json object representing the dissolution of the group, which follows the requirements for a [Dissolution](../../shared/activity) |
 
 ### Property Diagram
 

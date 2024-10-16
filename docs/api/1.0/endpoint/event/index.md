@@ -49,7 +49,7 @@ Dereferencing an entity via the Event endpoint would result in a JSON-LD documen
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity. **Only usable when the `type` is `"Activity"`** |
 | `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the event but did not carry it out. **Only usable when the `type` is "Event" or "Activity"`** |
 | `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity. **Only usable when the `type` is `"Activity"`** |
-
+| `technique` | array | Optional | An array of json objects, each of which is a technique used in the activity and MUST follow the requirements for [Type](../../shared/type). **Only usable when the `type` is `"Activity"`** |
 
 ### Property Diagram
 
