@@ -1,74 +1,116 @@
 html {
-    background-color: #fdfbf2;
+    background-color: #eefeff;
     height: 100%;
+    font-size: 16px;
 }
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
 }
+
 hr {
-  border-color: #e4e0cd;
+  border-color: #CCC;
 }
 
 h1 {
-  border-bottom: 1px solid #e4e0cd;
+  font-family: "IBM Plex Mono", sans-serif;
+  border-bottom: 1px solid #999;
+  margin: 1rem 0;
+  font-size: 2.5rem; /* 40px */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+}
+
+h6 {
+  font-size: 1rem; /* 16px */
+}
+
+p {
+  font-size: 1rem; /* 16px */
+}
+
+a {
+  color: #2f89ff;
 }
 
 main {
   flex: 1;
+  width: 100%;
+  max-width: 1200px; /* Maximum width of the content */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+
+@media (min-width: 800px) {
+  .main {
+    padding: 0 60px; /* Increase padding for larger screens */
+  }
 }
 
 
 /* ============ TOP LEVEL NAVIGATION ============ */
 nav {
-    font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "IBM Plex Mono", sans-serif;
     text-align: right;
-    background-color: #302803;
-    color: #E7E8D1;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    position: fixed;
-    top: 0px;
+    background-color: #005dd6;
+    color: #FFF;
     width: 100%;
+    margin: 0; /* Center the content */
+    padding: 0; /* Add padding for smaller screens */
+    position: sticky;
+    top: 0px;
     z-index: 1000;
 }
 
 nav img {
   height: 46px;
   float: left;
-  padding-left: 20px;
+  padding: 2rem 4rem;
 }
 
 nav a,
 nav a:visited {
     text-decoration: none;
-    color: #ddd;
-    font-size: 110%;
+    color: #FFF;
 }
 
 nav a.selected {
-    color: #D3CEAA;
+    font-weight: 700;
 }
 
 nav a:hover {
-    color: #E7E8D1;
+    color: #F5F5F5;
 }
 
 nav ul {
     list-style: none;
-    padding-right: 2rem;
-    margin-bottom: 0;
+    padding: 3rem 4rem 0;
 }
 
 nav ul li {
     display: inline;
     list-style-type: none;
-    padding-left: 25px;
-    padding-right: 5px;
+    padding: 0 1rem;
 }
 
 nav .nav_warning {
@@ -80,7 +122,7 @@ nav .nav_warning {
 }
 
 .container {
-  margin-top: 65px;
+  margin-top: 3rem;
 }
 
 
@@ -100,7 +142,7 @@ nav .nav_warning {
 
 .toc a {
   text-decoration: none;
-  color: #000;
+  color: #2885ff;
 }
 .toc ul ul {
   margin: 0rem 0 0rem 2rem;
@@ -110,14 +152,18 @@ nav .nav_warning {
 /* ============ PAGE FOOTER ============ */
 
 footer {
-    font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #302803;
-    color: #E7E8D1;
-    font-size: 80%;
+    font-family: "IBM Plex Mono", sans-serif;
+    background-color: #005dd6;
+    color: #ffffff;
+    font-size: 0.8rem;
     text-align: center;
-    padding: 1rem 3rem;
+    padding: 3rem;
     margin-top: 3rem;
- }
+}
+
+footer a {
+  color: #bbe7ff; /* Change to your desired color */
+}
 
 /* ============ CODE BLOCKS ============ */
 code {
