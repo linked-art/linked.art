@@ -88,12 +88,12 @@ Activity instances are typically found as the object of the following properties
 ## Example
 
 The [Mona Lisa](../../endpoint/physical_thing/):
+  * ... was produced by Leonardo da Vini
+  * ... between 1503 and 1506
+  * ... in Florence
+  * ... using the painting technique
+  * ... the production was influenced by Lisa del Giocondo
 
-    * ... was produced by Leonardo da Vini
-    * ... between 1503 and 1506
-    * ... in Florence
-    * ... using the painting technique
-    * ... the production was influenced by Lisa del Giocondo
 
 ```crom
 top = vocab.Painting(ident="auto int-per-segment", label="Mona Lisa")
