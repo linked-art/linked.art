@@ -1,5 +1,5 @@
 html {
-    background-color: #eefeff;
+    background-color: #FFFFDD;
     height: 100%;
     font-size: 16px;
 }
@@ -50,7 +50,12 @@ p {
 }
 
 a {
-  color: #2f89ff;
+  color: #C83E13;
+}
+
+a:hover {
+  color: #FFFFDD;
+  background-color: #C83E13;
 }
 
 main {
@@ -72,8 +77,8 @@ main {
 nav {
     font-family: "IBM Plex Mono", sans-serif;
     text-align: right;
-    background-color: #005dd6;
-    color: #FFF;
+    background-color: #C83E13;
+    color: #FFFFDD;
     width: 100%;
     margin: 0; /* Center the content */
     padding: 0; /* Add padding for smaller screens */
@@ -99,7 +104,7 @@ nav a.selected {
 }
 
 nav a:hover {
-    color: #F5F5F5;
+    color: #FFFFDD;
 }
 
 nav ul {
@@ -142,8 +147,8 @@ nav .nav_warning {
 
 .toc a {
   text-decoration: none;
-  color: #2885ff;
 }
+
 .toc ul ul {
   margin: 0rem 0 0rem 2rem;
 }
@@ -153,8 +158,8 @@ nav .nav_warning {
 
 footer {
     font-family: "IBM Plex Mono", sans-serif;
-    background-color: #005dd6;
-    color: #ffffff;
+    background-color: #C83E13;
+    color: #FFFFDD;
     font-size: 0.8rem;
     text-align: center;
     padding: 3rem;
