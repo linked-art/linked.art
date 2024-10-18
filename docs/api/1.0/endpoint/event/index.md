@@ -4,15 +4,6 @@ up_href: "/api/1.0/endpoint/"
 up_label: "Linked Art API 1.0 Endpoints"
 ---
 
-<style>
-th, td {
-  padding: 5px 5px;
-  text-align: left;
-  border: 1px solid #D0D0D0; }
-th { background: #F0F0F0; }
-th:first-child, td:first-child { padding-left: 3px; }
-th:last-child, td:last-child { padding-right: 3px; }
-</style>
 
 [TOC]
 
@@ -49,7 +40,7 @@ Dereferencing an entity via the Event endpoint would result in a JSON-LD documen
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity. **Only usable when the `type` is `"Activity"`** |
 | `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the event but did not carry it out. **Only usable when the `type` is "Event" or "Activity"`** |
 | `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity. **Only usable when the `type` is `"Activity"`** |
-
+| `technique` | array | Optional | An array of json objects, each of which is a technique used in the activity and MUST follow the requirements for [Type](../../shared/type). **Only usable when the `type` is `"Activity"`** |
 
 ### Property Diagram
 

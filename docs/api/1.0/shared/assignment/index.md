@@ -2,15 +2,6 @@
 title: "Linked Art API: Assigned Relationship Structure"
 ---
 
-<style>
-th, td {
-  padding: 5px 5px;
-  text-align: left;
-  border: 1px solid #D0D0D0; }
-th { background: #F0F0F0; }
-th:first-child, td:first-child { padding-left: 3px; }
-th:last-child, td:last-child { padding-right: 3px; }
-</style>
 
 [TOC]
 
@@ -36,10 +27,13 @@ The relationship assignment data structure has the following properties.
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which made the assignment|
 | `timespan`        | json object   | Optional    | A json object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
 | `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the Assignment occured | 
+| `influenced_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to another entity which influenced or motivated the assignment |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the assignment to occur |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../reference/) to another endpoint that was instrumental in the assignment |
+| `technique` | array | Optional | An array of json objects, each of which is a technique used in the assignment and MUST follow the requirements for [Type](../../shared/type) |
 | `assigned`        | array         | Required    | An array of json objects, each of which is a [reference](../reference/) to another entity that is related to the current one (SHOULD NOT be used with Dimension or Identifier assignments) |
 | `assigned_property` | string      | Optional    | A string which is either a URI, or resolves to a URI via a context document, for the specific relationship between the main entity and the entity referenced in `assigned` |
-| `motivated_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to another entity which caused or motivated the assignment |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../reference/) to another endpoint that was instrumental in the assignment |
+
 
 ### Property Diagram
 
@@ -58,7 +52,6 @@ Relationship Assignment instances are typically found as the object of the follo
 ## Example
 
 A Human-Made Object [instance](../../endpoint/physical_thing/):
-
 
 ```crom
 top = model.HumanMadeObject(ident="auto int-per-segment", label="Painting of a Fish")

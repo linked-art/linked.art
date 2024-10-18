@@ -4,15 +4,6 @@ up_href: "/api/1.0/shared/"
 up_label: "Linked Art API 1.0 Shared Data Structures"
 ---
 
-<style>
-th, td {
-  padding: 5px 5px;
-  text-align: left;
-  border: 1px solid #D0D0D0; }
-th { background: #F0F0F0; }
-th:first-child, td:first-child { padding-left: 3px; }
-th:last-child, td:last-child { padding-right: 3px; }
-</style>
 
 [TOC]
 
@@ -39,19 +30,7 @@ The dimension data structure has the following properties.
 | `upper_value_limit` | number      | Optional    | A number, which represents the highest possible value for the dimension|
 | `lower_value_limit` | number      | Optional    | A number, which represents the lowest possible value for the dimension |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the dimension, or an embedded [statement](../statement/) about the dimension. |
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is a measurement activity for the dimension, as below |  
-
-### Properties of Measurements
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `type`            | string        | Required    | The class for the measurement, which MUST be the value `"AttributeAssignment"` |
-| `_label`          | string        | Recommended | A human readable label for the measurement, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the measurement and MUST follow the requirements for [Type](../type/) |
-| `carried_out_by`  | array         | Recommended | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) |
-| `timespan`        | json object   | Optional    | A json object which MUST follow the requirements for [timespans](../timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the measurement occured | 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the measurement |
+| `assigned_by`     | array         | Optional    | An array of json objects, each of which is a measurement activity for the dimension, and follows the [AttributeAssignment](../assignment/) pattern |  
 
 ### Property Diagram
 

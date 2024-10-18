@@ -4,16 +4,6 @@ up_href: "/api/1.0/endpoint/"
 up_label: "Linked Art API 1.0 Endpoints"
 ---
 
-<style>
-th, td {
-  padding: 5px 5px;
-  text-align: left;
-  border: 1px solid #D0D0D0; }
-th { background: #F0F0F0; }
-th:first-child, td:first-child { padding-left: 3px; }
-th:last-child, td:last-child { padding-right: 3px; }
-</style>
-
 [TOC]
 
 ## Introduction
@@ -46,26 +36,8 @@ Dereferencing an entity via the Abstract Work endpoint would result in a JSON-LD
 | `dimension` | array | Optional | An array of json objects, each of which is an abstract [Dimension](../../shared/dimension) of the current work |
 | `conceptually_part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Abstract Work that the current work is conceptually part of |
 | `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this work is primarily about | 
-| `created_by` | json object | Optional | A json object representing the creation of the work, which follows the requirements for Creations described below | 
 | `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../../shared/right) that is held over the intellectual work |
-
-### Properties of Creations
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the creation  |  
-| `type`            | string        | Required    | The class for the creation, which MUST be the value `"Creation"` |
-| `_label`          | string        | Recommended | A human readable label for the creation, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation and MUST follow the requirements for [Type](../../shared/type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the creation occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the creation occured | 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the creation to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation |
-
+| `created_by` | json object | Optional | A json object representing the creation of the work, which follows the requirements for a [Creation](../../shared/activity) | 
 
 ### Property Diagram
 
@@ -93,25 +65,24 @@ The JSON for an Abstract Work entry for the idea for an exhibition about Gainsbo
 * It has the Linked Art context document reference in `@context`
 * It self-documents its URI in `id`
 * It has a `type` of "PropositionalObject"
-* It has a `_label` with the value "_____" for people reading the JSON
-* It is `classified_as` a "________", which has an `id` of "__________"
+* It has a `_label` with the value "Gainsborough Exh." for people reading the JSON
+* It is `classified_as` an Exhibition, which has an `id` of "aat:300417531"
 * It is `identified_by` ...
-    * ... a `Name`, with the content "_____"
-    * ... an `Identifier` with the content "____", which is `classified_as` an _____ ("_____")
+    * ... a `Name`, with the content "Gainsborough Exhibition"
 * It is `referred_to_by` a statement which ...
-    * ... has `content` of "_____"
-    * ... is `classified_as` an _____ ("_____")
+    * ... has `content` describing the abstract work
+    * ... and is `classified_as` an abstract ("aat:300418049")
 * It is `about` Gainsborough, a Person with `id` "ulan:500115200"
 * It was `created_by` a Creation which ...
-    * ... was `carried_out_by` _____, a Person
+    * ... was `carried_out_by` Brett Hayes, a Person
 
 
 ```crom
-top = vocab.ExhibitionIdea(ident="auto int-per-segment", label="exhibition")
-top.identified_by = vocab.PrimaryName(content="exhibition")
+top = vocab.ExhibitionIdea(ident="auto int-per-segment", label="Gainsborough Exh.")
+top.identified_by = vocab.PrimaryName(content="Gainsborough Exhibition")
 top.referred_to_by = vocab.Abstract(content="A thorough analysis of the artist's life and work")
 top.about = model.Person(ident="http://vocab.getty.edu/ulan/500115200", label="Gainsborough, Thomas")
 cre = model.Creation()
-cre.carried_out_by = model.Person(label="Hayes, John")
+cre.carried_out_by = model.Person(ident="http://vocab.getty.edu/ulan/500144588", label="Hayes, Brett")
 top.created_by = cre
 ```

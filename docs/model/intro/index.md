@@ -46,7 +46,7 @@ Below each example is an automatically generated diagram for the same content.  
 For each example there is also a set of links to other representations, including the raw JSON as a file (for example to use to test a client implementation), the JSON-LD presented in the JSON-LD playground, the linked data expressed as raw Turtle, and the same turtle in a syntax-highlighting environment.
 
 | Color         | Description |
-| ------------- | ----------- |
+|---------------|-------------|
 | Brown         | Physical things. Classes: `HumanMadeObject` |
 | Green         | Places.  Classes: `Place` |
 | Red/Pink      | Actors.  Classes: `Person`, `Group` |

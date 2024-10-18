@@ -4,15 +4,6 @@ up_href: "/api/1.0/shared/"
 up_label: "Linked Art API 1.0 Shared Data Structures"
 ---
 
-<style>
-th, td {
-  padding: 5px 5px;
-  text-align: left;
-  border: 1px solid #D0D0D0; }
-th { background: #F0F0F0; }
-th:first-child, td:first-child { padding-left: 3px; }
-th:last-child, td:last-child { padding-right: 3px; }
-</style>
 
 [TOC]
 
@@ -40,6 +31,7 @@ Statements are described in the [base patterns](/model/base/) of the model docum
 | `format`          | string        | Optional    | If the string in content is not plain text, then format can be used to specify the media type of the string |
 | `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the statement, and MUST follow the requirements for [Assignments](../assignment/) |
 | `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../right) that is held over the statement |
+| `created_by` | json object | Optional | A json object representing the creation of the statement, which follows the requirements for a [Creation](../../shared/activity) |
 
 
 ### Property Diagram

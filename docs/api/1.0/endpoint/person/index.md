@@ -4,15 +4,6 @@ up_href: "/api/1.0/endpoint/"
 up_label: "Linked Art API 1.0 Endpoints"
 ---
 
-<style>
-th, td {
-  padding: 5px 5px;
-  text-align: left;
-  border: 1px solid #D0D0D0; }
-th { background: #F0F0F0; }
-th:first-child, td:first-child { padding-left: 3px; }
-th:last-child, td:last-child { padding-right: 3px; }
-</style>
 
 [TOC]
 
@@ -43,29 +34,12 @@ Dereferencing an entity via the Person endpoint would result in a JSON-LD docume
 | `member_of`       | array         | Optional    | An array of json objects, each of which is a Group that the current Person is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a **[Group](../group/)** |
 | `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Person, and MUST follow the requirements for a [reference](../../shared/reference) |
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Person to another entity |
-| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the person and follows the requirements for Activities described below |
-| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the person participated, but was not responsible, and follows the requirements for Activities described below |
 | `contact_point` | array | Optional | An array of json objects, each of which is an address at which the person is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
 | `residence` | array | Optional | A place that the person was associated with, and MUST follow the requirements for a [reference](../../shared/reference/) to a [Place](../place/) |
-| `born` | json object | Optional | A json object representing the birth of the person, which follows the requirements for Births described below. | 
-| `died` | json object | Optional | A json object representing the death of the person, which follows the requirements for Deaths described below. |
-
-
-### Properties of Births, Deaths and Activities
-
-| Property Name     | Datatype      | Requirement | Description | 
-|-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the birth, death or professional activity  |  
-| `type`            | string        | Required    | The class for the birth, death or professional activity, which MUST be the value `"Birth"`, `"Death"`, or `"Activity"` respectively |
-| `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
-| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the measurement |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the current event to occur |
-
+| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the person and follows the requirements for [Activities](../../shared/activity) |
+| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the person participated, but was not responsible, and follows the requirements for [Activities](../../shared/activity) |
+| `born` | json object | Optional | A json object representing the birth of the person, which follows the requirements for a [Birth](../../shared/activity) | 
+| `died` | json object | Optional | A json object representing the death of the person, which follows the requirements for a [Death](../../shared/activity) |
 
 ### Property Diagram
 
