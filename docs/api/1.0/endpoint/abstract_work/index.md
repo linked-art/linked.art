@@ -65,25 +65,24 @@ The JSON for an Abstract Work entry for the idea for an exhibition about Gainsbo
 * It has the Linked Art context document reference in `@context`
 * It self-documents its URI in `id`
 * It has a `type` of "PropositionalObject"
-* It has a `_label` with the value "_____" for people reading the JSON
-* It is `classified_as` a "________", which has an `id` of "__________"
+* It has a `_label` with the value "Gainsborough Exh." for people reading the JSON
+* It is `classified_as` an Exhibition, which has an `id` of "aat:300417531"
 * It is `identified_by` ...
-    * ... a `Name`, with the content "_____"
-    * ... an `Identifier` with the content "____", which is `classified_as` an _____ ("_____")
+    * ... a `Name`, with the content "Gainsborough Exhibition"
 * It is `referred_to_by` a statement which ...
-    * ... has `content` of "_____"
-    * ... is `classified_as` an _____ ("_____")
+    * ... has `content` describing the abstract work
+    * ... and is `classified_as` an abstract ("aat:300418049")
 * It is `about` Gainsborough, a Person with `id` "ulan:500115200"
 * It was `created_by` a Creation which ...
-    * ... was `carried_out_by` _____, a Person
+    * ... was `carried_out_by` Brett Hayes, a Person
 
 
 ```crom
-top = vocab.ExhibitionIdea(ident="auto int-per-segment", label="exhibition")
-top.identified_by = vocab.PrimaryName(content="exhibition")
+top = vocab.ExhibitionIdea(ident="auto int-per-segment", label="Gainsborough Exh.")
+top.identified_by = vocab.PrimaryName(content="Gainsborough Exhibition")
 top.referred_to_by = vocab.Abstract(content="A thorough analysis of the artist's life and work")
 top.about = model.Person(ident="http://vocab.getty.edu/ulan/500115200", label="Gainsborough, Thomas")
 cre = model.Creation()
-cre.carried_out_by = model.Person(label="Hayes, John")
+cre.carried_out_by = model.Person(ident="http://vocab.getty.edu/ulan/500144588", label="Hayes, Brett")
 top.created_by = cre
 ```
