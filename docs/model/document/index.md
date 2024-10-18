@@ -120,3 +120,18 @@ top = vocab.MonographText(ident="koot_nightwatch/3", label="Content of Koot's Ni
 top.about = model.HumanMadeObject(ident="nightwatch", label="The Night Watch")
 ```
 
+## Abstract Work
+
+It is sometimes valuable to relate the content with a higher level abstraction which does not even distinguish between text, audio, video, image or other forms, let alone the various editions, translations or other manifestations of the idea. Some general examples would include The Lord of the Rings, as conceptualized and originally written by Tolkien in English, but subsequently turned into a films, such as by Peter Jackson, and other interpretations of the same abstract work. While not a strict LRM or FRBR model, this does allow the mapping of the "Work" level into an appropriately abstract class in Linked Art.
+
+The abstract work has all of the same features as the Linguistic Object with the exception of `language`. Linguistic, Visual and other Abstract works can be `conceptually_part_of` Abstract works to connect them together in a hierarchy. 
+
+__Example:__
+
+The text of Koot's book is conceptually part of a larger more abstract work of his conceptualization of the research and discussion, which might have multiple editions, translations or instantiations.
+
+```crom
+top = model.LinguisticObject(ident="koot_nightwatch/1", label="Content of Koot's Night Watch")
+top.identified_by = vocab.PrimaryName(content="Rembrant's Night Watch. A Fascinating Story")
+top.conceptually_part_of = model.PropositionalObject(ident="koot_idea", label="Koot's Conceptualization")
+```

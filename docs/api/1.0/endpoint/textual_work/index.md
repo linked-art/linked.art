@@ -37,6 +37,7 @@ Dereferencing an entity via the Textual Work endpoint would result in a JSON-LD 
 | `language` | array | Optional | An array of json objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
 | `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of words, of the current text |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Textual Work or a [Visual Work](../visual_work/) that the current text is a part of. |
+| `conceptually_part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Abstract Work](../abstract_work/) that the current work is conceptually part of |
 | `content` | string | Optional | The string representation of the textual content of the work |
 | `format` | string | Optional | The media type of the encoding of the string representation given in the `content` property |
 | `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
