@@ -45,7 +45,7 @@ top.member_of = model.Set(ident="exhset")
 
 ### Order of Members
 
-In order to ensure that the members are ordered correctly, a sort value can be added as an Identifier on the member. This value should sort correctly with respect to the other members of the set, with the alphanumerically lowest identifier value being presented first and then in ascending order from there. This identifier should have an `AttributeAssignment` associated with it that is `motivated_by` the Set in which the sort value should be applied. This allows the same entity to be a member of multiple ordered sets at the same time.
+In order to ensure that the members are ordered correctly, a sort value can be added as an Identifier on the member. This value should sort correctly with respect to the other members of the set, with the alphanumerically lowest identifier value being presented first and then in ascending order from there. This identifier should have an `AttributeAssignment` associated with it that is `influenced_by` the Set in which the sort value should be applied. This allows the same entity to be a member of multiple ordered sets at the same time.
 
 __Example:__
 
@@ -56,7 +56,7 @@ top = model.HumanMadeObject(ident="letter/2", label="Obermeyer 1920")
 top.identified_by = vocab.PrimaryName(content="Obermeyer, Bertha (1920)")
 sv = vocab.SortValue(content="000001")
 aa = model.AttributeAssignment()
-aa.motivated_by = model.Set(ident="archive_sfl", label="Stieglitz Family Letters")
+aa.influenced_by = model.Set(ident="archive_sfl", label="Stieglitz Family Letters")
 sv.assigned_by = aa
 top.identified_by = sv
 top.member_of = model.Set(ident="archive_sfl", label="Stieglitz Family Letters")

@@ -13,11 +13,11 @@ Exhibitions are a very common activity that involves artwork owned by different 
 
 There is an activity which is the exhibiting of the objects.  In particular, the exhibition occurs at a certain time given in `timespan`, at a certain place or places given in `took_place_at`, and was organized by some actor or actors, likely organizations, given in `carried_out_by`. It can be recognized as an exhibition using the classification of _aat:300054766_, "exhibitions". Exhibitions link to the set of objects exhibited with the `used_specific_object` property to a [Set](/model/collection/)
 
-Note that exhibitions as activities do not have a theme or subject, instead the activity is `motivated_by` an abstract work -- the idea of the Exhibition, described in the next section.
+Note that exhibitions as activities do not have a theme or subject, instead the activity is `influenced_by` an abstract work -- the idea of the Exhibition, described in the next section.
 
 __Example:__
 
-
+Manet and Modern Beauty at the Getty, October 2019 to January 2020, was carried out by the Getty Museum in Los Angeles, and influenced by the idea behind the exhibition.
 
 ```crom
 top = vocab.Exhibition(ident="exha/1", label="Manet and Modern Beauty (Getty)")
@@ -30,7 +30,7 @@ top.timespan = ts
 top.carried_out_by = vocab.MuseumOrg(ident="http://vocab.getty.edu/ulan/500115988", label="Getty Museum")
 top.took_place_at = vocab.City(ident="http://vocab.getty.edu/tgn/7023900", label="Los Angeles")
 top.used_specific_object = model.Set(ident="exhset", label="Exhibition objects")
-top.motivated_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
+top.influenced_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 ```
 
 
@@ -90,7 +90,7 @@ top.timespan = ts
 top.carried_out_by = vocab.MuseumOrg(ident="http://vocab.getty.edu/ulan/500304669", label="Art Institute")
 top.took_place_at = vocab.City(ident="http://vocab.getty.edu/tgn/7013596", label="Chicago")
 top.used_specific_object = model.Set(ident="exhset", label="Exhibition objects")
-top.motivated_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
+top.influenced_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 top.part_of = model.Activity(ident="exhab", label="Manet and Modern Beauty")
 ```
 
@@ -101,7 +101,7 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "2019-05-26T00:00:00Z"
 ts.end_of_the_end = "2020-01-12T23:59:59Z"
 top.timespan = ts
-top.motivated_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
+top.influenced_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 ```
 
 ## Objects 

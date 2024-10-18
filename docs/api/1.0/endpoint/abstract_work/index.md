@@ -55,7 +55,7 @@ Abstract Work instances are typically found as the object of the following prope
 | Property Name              | Source Endpoint | Description |
 |----------------------------|-----------------|-------------|
 | `about`                    | Textual Work    | Textual works can be about abstract works  |
-| `motivated_by`             | Activity        | Activities (such as Exhibitions) can be motivated by the abstract work |
+| `influenced_by`             | Activity        | Activities (such as Exhibitions) can be influenced by the abstract work |
   
 
 ## Example
