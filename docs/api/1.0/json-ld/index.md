@@ -29,12 +29,12 @@ This would be the value of the `Content-Type` HTTP header on responses, and if t
 There are several core requirements to keep in mind for JSON and JSON-LD representations:
 
 * Terms are case sensitive.  `Type` (the class `crm:E55_Type`), and `type` (the property `rdf:type`) are different terms, separated only by the upper case of the initial letter. As described below, the JSON representation of the names of classes and properties is as consistent as possible.
-* Properties cannot be repeated on a single object.  Instead, if there are multiple values for a property or multiple instances of a relationship, then the JSON will have an array as the value where each entry is considered to have that property. Linked Art does not use ordered lists (such as `rdf:List`).
+* Properties cannot be repeated on a single object.  Instead, if there are multiple values for a property or multiple instances of a relationship, then the JSON will have an array as the value where each entry is considered to have that property. Linked Art does not use RDF's ordered lists (such as `rdf:List`) but instead relies on the order in the serialization.
 
 
 ## Other Serialization Formats
 
-Other serialization formats of the underlying graph may also be available, such as [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), [Turtle](https://www.w3.org/TR/turtle/), other standardized formats, or even non-standardized representations. These are not required in order to fully conform with the Linked Art API, and should not be assumed to exist. How to request these alternative serializations is documented in the [protocol](../protocol/) section.
+Other serialization formats of the underlying graph may also be available, such as [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), [Turtle](https://www.w3.org/TR/turtle/), other standardized formats, or even non-standardized representations. These are not required in order to fully conform with the Linked Art API, and should not be assumed to exist. How to advertise and request these alternative serializations is documented in the [protocol](../protocol/) section.
 
 
 ## Examples

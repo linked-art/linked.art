@@ -29,6 +29,7 @@ See the [name documentation](/model/base/#names).
 | Given Name            | aat:300404651 | The given or first name of a Person |
 | Middle Name           | aat:300404654 | The middle name of a Person |
 | Family Name           | aat:300404652 | The family or sirname of a Person |
+| Former Name           | aat:300435719 | A former name, for any reason, of a Person |
 
 
 ### Identifier Types
