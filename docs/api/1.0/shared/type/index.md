@@ -47,7 +47,7 @@ Types and other instances of concepts are typically found as the object of the f
 |-----------------|----------------|-------------|
 | `classified_as` | All            | Almost every entity can be classified as a Type |
 | `technique`     | `Activity`     | Activities (of all sorts) can have a technique, which is modeled as a Type |
-| `motivated_by`  | `Activity`     | Activities can also be motivated by a Type |
+| `influenced_by`  | `Activity`     | Activities can also be motivated by a Type |
 | `about`         | `LinguisticObject`, `VisualItem` | Textual and Visual Works can have subjects, which are modeled as Types |
 | `assigned`      | `AttributeAssignment` | The classification of an object might be assigned as part of a documented Attribute Assignment |
 | `language`      | `LinguisticObject`    | The language of linguistic content is modeled as a Language |
