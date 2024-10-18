@@ -10,6 +10,7 @@ These data structures are shared between many endpoints, within the main respons
 
 ## Data Structures
 
+* [Activities](activity/) - Creations, Publications, Births/Deaths and other activities which are embedded in the main entity's record
 * [Digital Links](digital/) - Links to other digital content such as web pages and images
 * [Dimensions](dimension/) - Dimensions of the resource with a given unit and type (e.g. 20 inches wide)
 * [Identifiers](identifier/) - Identifiers for the resource (e.g. Accession Number of 1997-1234)
