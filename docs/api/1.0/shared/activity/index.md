@@ -40,16 +40,16 @@ The activity data structure has the following properties.
 
 | Endpoint / Pattern| Beginning     | Ending      | Other       | 
 |-------------------|---------------|-------------|-------------| 
-| Abstract Work     | Creation      |             |             |
-| Concept           | Creation      |             |             |
-| Digital Object    | Creation      |             | Activity    |
+| Abstract Work     | Creation      | -           | -           |
+| Concept           | Creation      | -           | -           |
+| Digital Object    | Creation      | -           | Activity    |
 | Group             | Formation     | Dissolution | Activity    |
 | Person            | Birth         | Death       | Activity    |
 | Physical Object   | Production, PartRemoval | Destruction | Encounter, Activity | 
-| Set               | Creation      |             | Activity    |
-| Textual Work      | Creation      |             | Activity    |
-| Visual Work       | Creation      |             | Activity    |
-| Statement         | Creation      |             |             |      
+| Set               | Creation      | -           | Activity    |
+| Textual Work      | Creation      | -           | Activity    |
+| Visual Work       | Creation      | -           | Activity    |
+| Statement         | Creation      | -           | -           |      
 
 
 ### Property Diagram
