@@ -1,5 +1,5 @@
 html {
-    background-color: #FFFFDD;
+    background-color: #FDFBF2;
     height: 100%;
     font-size: 16px;
 }
@@ -50,12 +50,12 @@ p {
 }
 
 a {
-  color: #C83E13;
+  color: #4C93C7;
 }
 
 a:hover {
-  color: #FFFFDD;
-  background-color: #C83E13;
+  color: #FDFBF2;
+  background-color: #4C93C7;
 }
 
 main {
@@ -77,8 +77,8 @@ main {
 nav {
     font-family: "IBM Plex Mono", sans-serif;
     text-align: right;
-    background-color: #C83E13;
-    color: #FFFFDD;
+    background-color: #302803;
+    color: #FDFBF2;
     width: 100%;
     margin: 0; /* Center the content */
     padding: 0; /* Add padding for smaller screens */
@@ -104,7 +104,7 @@ nav a.selected {
 }
 
 nav a:hover {
-    color: #FFFFDD;
+    color: #FDFBF2;
 }
 
 nav ul {
@@ -158,8 +158,8 @@ nav .nav_warning {
 
 footer {
     font-family: "IBM Plex Mono", sans-serif;
-    background-color: #C83E13;
-    color: #FFFFDD;
+    background-color: #302803;
+    color: #FDFBF2;
     font-size: 0.8rem;
     text-align: center;
     padding: 3rem;
@@ -381,4 +381,23 @@ article h6:hover .headeranchor-link .headeranchor:before {
   font-family: inherit;
   font-size: 85%;
   content: '🔗';
+}
+
+
+/* ============ GOOGLE SLIDES ============ */
+
+.responsive-google-slides {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Ratio */
+  height: 0;
+  overflow: hidden;
+  margin: auto;
+}
+.responsive-google-slides iframe {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
