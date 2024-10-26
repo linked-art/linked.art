@@ -88,9 +88,9 @@ nav {
 }
 
 nav img {
-  height: 46px;
+  height: 30px;
   float: left;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
 }
 
 nav a,
@@ -105,11 +105,13 @@ nav a.selected {
 
 nav a:hover {
     color: #FDFBF2;
+    background-color: #C53D23;
 }
 
 nav ul {
     list-style: none;
-    padding: 3rem 4rem 0;
+    padding: 1rem 4rem 0;
+    margin-bottom: 0;
 }
 
 nav ul li {
