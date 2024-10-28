@@ -19,8 +19,8 @@ nav:
 
 markdown_extensions:
         - fenced_code
-	- mdx_truly_sane_lists
-	- def_list
+        - mdx_truly_sane_lists
+        - def_list
         - tables
         - abbr
         - attr_list
