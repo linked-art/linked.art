@@ -21,6 +21,8 @@ Linked Art is a [Community](/community/) working together to create a shared [Mo
 
 ## Understanding Linked Art
 
-<center>
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSraxFteSqttGo9igjee5yQ7BsscOkbGvdDIjDsXbvz3zAx5VN0UPp8Em3qEypWNlUnK8V4REXblfnQ/embed?start=false&loop=true&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</center>
+<div class="responsive-google-slides">
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSraxFteSqttGo9igjee5yQ7BsscOkbGvdDIjDsXbvz3zAx5VN0UPp8Em3qEypWNlUnK8V4REXblfnQ/embed?start=false&loop=true&delayms=30000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+
