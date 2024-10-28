@@ -10,7 +10,7 @@ See the related [model documentation](/model/place/#core-information)
 
 ### Example
 
-
+From the record for Île-de-France, the record for Paris would be in the response
 
 
 ### Details

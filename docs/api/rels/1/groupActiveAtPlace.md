@@ -10,7 +10,7 @@ See the related [model documentation](/model/actor/#active-dates)
 
 ### Example
 
-
+From the record for Paris France, the record for Goupil & Cie would be in the response
 
 
 ### Details

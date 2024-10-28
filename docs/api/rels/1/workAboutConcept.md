@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#subject)
 
 ### Example
 
-
+From the record for Democracy, the record for Diamond's work "In Search of Democracy" would be in the response
 
 
 ### Details

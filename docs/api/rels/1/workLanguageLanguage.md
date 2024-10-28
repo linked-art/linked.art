@@ -10,7 +10,7 @@ See the related [model documentation](/model/document/#core-features)
 
 ### Example
 
-
+From the record for English, the record for the Lord of the Rings would be in the response
 
 
 ### Details

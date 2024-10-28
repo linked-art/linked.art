@@ -10,7 +10,7 @@ See the related [model documentation](/model/concept/#creation-and-influences)
 
 ### Example
 
-
+From the record for Rembrandt, the record for the concept 'Rembrandt -- Aesthetics' would be in the response
 
 
 ### Details

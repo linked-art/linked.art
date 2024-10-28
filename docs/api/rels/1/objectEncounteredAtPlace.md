@@ -6,11 +6,11 @@ title: "HAL Link: objectEncounteredAtPlace"
 
 Return the objects that were encountered at the place.
 
-See the related [model documentation]()
+See the related [model documentation](/model/object/production/#discovery-versus-production)
 
 ### Example
 
-
+From the record for the Burgess Shale, the record for Anomalocaris Canadiensis would be in the response
 
 
 ### Details

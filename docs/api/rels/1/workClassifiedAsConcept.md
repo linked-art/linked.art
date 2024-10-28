@@ -10,7 +10,7 @@ See the related [model documentation](/model/base/#types-and-classifications)
 
 ### Example
 
-
+From the record for Impressionism, the record for the work of Van Gogh's "Irises" would be in the response
 
 
 ### Details
