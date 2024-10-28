@@ -1,8 +1,15 @@
 html {
-    background-color: #FDFBF2;
-    height: 100%;
-    font-size: 16px;
+  --la-orange: #C53D23;
+  --la-blue: #4C93C7;
+  --la-brown: #302803;
+  --la-yellow: #FDFBF2;
+  --la-gray: #CCCCCC;
+  
+  background-color: var(--la-yellow);
+  height: 100%;
+  font-size: 16px;
 }
+
 body {
   min-height: 100%;
   display: flex;
@@ -15,47 +22,33 @@ body {
 }
 
 hr {
-  border-color: #CCC;
+  border-color: var(--la-grey);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "IBM Plex Mono", sans-serif;
+  margin: 1rem 0;
 }
 
 h1 {
-  font-family: "IBM Plex Mono", sans-serif;
-  border-bottom: 1px solid #999;
-  margin: 1rem 0;
   font-size: 2.5rem; /* 40px */
+  border-bottom: 1px solid;
+  border-color: var(--la-grey);
 }
 
-h2 {
-  font-size: 2rem; /* 32px */
-}
-
-h3 {
-  font-size: 1.75rem; /* 28px */
-}
-
-h4 {
-  font-size: 1.5rem; /* 24px */
-}
-
-h5 {
-  font-size: 1.25rem; /* 20px */
-}
-
-h6 {
-  font-size: 1rem; /* 16px */
-}
-
-p {
-  font-size: 1rem; /* 16px */
-}
+h2 { font-size: 2rem; /* 32px */ }
+h3 { font-size: 1.75rem; /* 28px */ }
+h4 { font-size: 1.5rem; /* 24px */ }
+h5 { font-size: 1.25rem; /* 20px */ }
+h6, p { font-size: 1rem; /* 16px */ }
 
 a {
-  color: #4C93C7;
+  color: var(--la-blue);
 }
 
 a:hover {
-  color: #FDFBF2;
-  background-color: #4C93C7;
+  color: var(--la-yellow);
+  background-color: var(--la-blue);
 }
 
 main {
@@ -66,37 +59,40 @@ main {
   padding: 0 20px; /* Add padding for smaller screens */
 }
 
-@media (min-width: 800px) {
-  .main {
-    padding: 0 60px; /* Increase padding for larger screens */
-  }
-}
 
 
 /* ============ TOP LEVEL NAVIGATION ============ */
+
 nav {
     font-family: "IBM Plex Mono", sans-serif;
-    text-align: right;
-    background-color: #302803;
-    color: #FDFBF2;
+    font-size: 0.8rem;
+    background-color: var(--la-brown);
+    color: var(--la-yellow);
     width: 100%;
     margin: 0; /* Center the content */
     padding: 0; /* Add padding for smaller screens */
-    position: sticky;
     top: 0px;
     z-index: 1000;
+    position: sticky;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+nav.shrink {
+  background-color: var(--la-orange);
 }
 
 nav img {
   height: 30px;
-  float: left;
-  padding: 1rem 4rem;
+  padding: 0.8rem;
 }
 
 nav a,
 nav a:visited {
     text-decoration: none;
-    color: #FFF;
+    color: var(--la-yellow);
 }
 
 nav a.selected {
@@ -104,20 +100,20 @@ nav a.selected {
 }
 
 nav a:hover {
-    color: #FDFBF2;
-    background-color: #C53D23;
+    color: var(--la-yellow);
+    background-color: var(--la-orange);
 }
 
 nav ul {
     list-style: none;
-    padding: 1rem 4rem 0;
-    margin-bottom: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
-    list-style-type: none;
-    padding: 0 1rem;
+  list-style-type: none;
+  padding: 0.8rem;
 }
 
 nav .nav_warning {
@@ -128,8 +124,21 @@ nav .nav_warning {
   margin: 3px;
 }
 
+@media (min-width: 550px) {
+  nav {
+    font-size: 1rem;
+  }
+  nav ul li,
+  nav img {
+    padding: 1rem;
+  }
+}
+
+
+/* ============ ARTICLE ============ */
+
 .container {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 
@@ -160,17 +169,30 @@ nav .nav_warning {
 
 footer {
     font-family: "IBM Plex Mono", sans-serif;
-    background-color: #302803;
-    color: #FDFBF2;
+    background-color: var(--la-brown);
+    color: var(--la-yellow);
     font-size: 0.8rem;
     text-align: center;
     padding: 3rem;
     margin-top: 3rem;
 }
 
-footer a {
-  color: #bbe7ff; /* Change to your desired color */
+footer p {
+  font-size: 0.8rem;
 }
+
+footer a {
+  color: var(--la-blue);
+}
+
+footer button {
+  background-color: var(--la-yellow);
+}
+
+footer input[type="text"] {
+  max-width: 300px;
+}
+
 
 /* ============ CODE BLOCKS ============ */
 code {
