@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/ownership/#location)
 
 ### Example
 
-
+From the record for Getty's gallery W204, the record for Jeanne (Spring) would be in the response
 
 
 ### Details

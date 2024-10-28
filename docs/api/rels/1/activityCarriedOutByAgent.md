@@ -10,7 +10,7 @@ See the related [model documentation](/model/base/#events-and-activities /model/
 
 ### Example
 
-
+From the record for the National Gallery of Art, the record for the Manet exhibition activity would be in the response
 
 
 ### Details

@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/production/#base-production-
 
 ### Example
 
-
+From the record for Amsterdam, the record for The Night Watch would be in the response
 
 
 ### Details

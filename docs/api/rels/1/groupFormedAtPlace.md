@@ -10,7 +10,7 @@ See the related [model documentation](/model/actor/#birth-and-death-formation-an
 
 ### Example
 
-
+From the record for Los Altos California, the record for Apple Computers would be in the response
 
 
 ### Details

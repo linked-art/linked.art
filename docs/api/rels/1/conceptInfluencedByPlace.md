@@ -10,7 +10,7 @@ See the related [model documentation](/model/concept/#creation-and-influences)
 
 ### Example
 
-
+From the record for the Netherlands, the record for Dutch Golden Age Paintings would be in the response
 
 
 ### Details

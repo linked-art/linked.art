@@ -10,7 +10,7 @@ See the related [model documentation](/model/base/#types-and-classifications)
 
 ### Example
 
-
+From the record for Paintings, the record for Sunflowers would be in the response
 
 
 ### Details

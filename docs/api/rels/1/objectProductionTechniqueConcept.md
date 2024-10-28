@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/production/#techniques-and-c
 
 ### Example
 
-
+From the record for Bronze Casting, the record for The Thinker would be in the response 
 
 
 ### Details

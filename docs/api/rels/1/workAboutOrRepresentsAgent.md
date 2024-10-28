@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#subject)
 
 ### Example
 
-
+From the record for John Trumbull, the visual items and texts that depict him (such as a bibliographic record and a self-portrait) would be in the response
 
 
 ### Details

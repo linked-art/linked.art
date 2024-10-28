@@ -6,7 +6,7 @@ title: "HAL Link: objectEncounteredByAgent"
 
 Return the objects that were discovered or encountered by the person or group.
 
-See the related [model documentation]()
+See the related [model documentation](/model/object/production/#discovery-versus-production)
 
 ### Example
 

@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#subject)
 
 ### Example
 
-
+From the record for Paris France, the record for Victor Hugo's work "Paris" would be in the response 
 
 
 ### Details

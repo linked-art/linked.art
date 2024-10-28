@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/production/#inspirations-stu
 
 ### Example
 
-
+From the record for Albert Bierstadt, the prints of his works (which were not necessarily created by him) would be in the response
 
 
 ### Details

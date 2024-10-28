@@ -10,7 +10,7 @@ See the related [model documentation](/model/actor/#birth-and-death-formation-an
 
 ### Example
 
-
+From the record for Amsterdam, the record for Rembrandt would be in the response
 
 
 ### Details

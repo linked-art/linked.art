@@ -10,7 +10,7 @@ See the related [model documentation](/model/actor/#active-dates)
 
 ### Example
 
-
+From the record for Arles France, the record for Vincent Van Gogh would be in the response
 
 
 ### Details

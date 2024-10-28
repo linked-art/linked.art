@@ -10,7 +10,7 @@ See the related [model documentation](/model/document/#creation-and-publication)
 
 ### Example
 
-
+From the record for André Chastel, the record for The Vatican Frescoes of Michelangelo would be in the response.
 
 
 ### Details
