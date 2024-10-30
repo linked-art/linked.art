@@ -6,7 +6,9 @@ up_label: "Vocabulary Terms"
 
 ## Introduction
 
-These terms are listed to be used in order to facilitate interoperability between datasets where possible, and make it easier to find them when doing data mappings. They are in the list because someone has found them to be useful, rather than that they are recommended for general use. If you don't have a reason to use a different term, then please use these. If you do have a reason to use a different term, that's totally okay.
+These terms are listed to be used in order to facilitate interoperability between datasets where possible, and make it easier to find them when doing data mappings. They are in the list because someone has found them to be useful, rather than that they are recommended for general use. If you don't have a reason to use a different term, then please use these. If you do have a reason to use a different term, that's totally okay. 
+
+Also, if you would like to suggest additions that you think would be interesting, for example new terms that mitigate a bias resulting from the somewhat ad hoc process of compiling the lists here, please [reach out](https://linked.art/community/)!
 
 <style>
 	table {width: 100% ; table-layout: fixed}

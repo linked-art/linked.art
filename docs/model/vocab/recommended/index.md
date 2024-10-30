@@ -10,6 +10,8 @@ up_label: "Vocabulary Terms"
 
 These terms are recommended to be used in order to facilitate interoperability between datasets where possible. Please think carefully before choosing another concept for one in the lists below as it will be much harder to compare your data with others', however it will still be valid Linked Art if you do pick a different concept.
 
+We are aware that unfortunately some of the lists here can be biased towards the needs of the first Linked Art implementers, and welcome any help in mitigating such biases. If you have suggestions for new terms or any other type of feedback, please do not hesitate to [reach out](https://linked.art/community/)!
+
 <style>
 	table {width: 100% ; table-layout: fixed}
 	tr th:first-child {width: 18em}
