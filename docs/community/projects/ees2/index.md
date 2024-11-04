@@ -22,6 +22,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 ## Resources
 
+- Access the [Quire Linked Art Extension](https://linked.art/community/projects/ees2/docs/quire/) page for installation instructions and detailed documentation on how to use the extension to work with Linked Art in your Quire projects.
 - Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using Linked Art with Quire.
 
 ## Project Summary

@@ -17,9 +17,18 @@ We are providing the materials created for these sessions here, free-to-use and 
 Explore the links below to access the training materials.
 
 ### Resources
-- **Slides** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pdf)|[PPTX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pptx))
-- **Installation Instructions**
+- **Introductory Slides** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pdf)|[PPTX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pptx))
+- **Installation instructions for Quire and Linked Art Extension**
+    - [Download the Extension](https://linked.art/community/projects/ees2/docs/quire/)
     - MacOS ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-macOS.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-macOS.docx))
     - Windows ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.docx))
 - **Exercise Sheet** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.docx))
-- **Quire Template** ([ZIP](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
+- **Quire Template for Exercises** ([ZIP](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
+- **Exercise Sheet Walk-Through Video** ([YouTube](https://youtu.be/y0z8u-r9UCY))
+    - 00:00 - Exercise 2: Give your project a title and add your name ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=0s))
+    - 04:00 - Exercise 3: Write a brief introduction ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=240s))
+    - 05:09 - Exercise 4: Add a figure from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=309s))
+    - 08:25 - Exercise 5: Add an object from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=505s))
+    - 11:08 - Exercise 6: Add a figure to an existing object ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=668s))
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y0z8u-r9UCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
