@@ -5,4 +5,4 @@ title: ""
 
 # Exploring the Labyrinth with Quire
 
-## An Exemplar Quire Project Based on *Labyrinth: Knossos Myth & Reality* Exhibition
+## An Exemplar Quire Project Based on the *Labyrinth: Knossos Myth & Reality* Exhibition
