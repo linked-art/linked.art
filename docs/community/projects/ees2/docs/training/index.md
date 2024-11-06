@@ -24,7 +24,7 @@ Explore the links below to access the training materials.
     - Windows ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.docx))
 - **Exercise Sheet** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.docx))
 - **Quire Template for Exercises** ([ZIP](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
-    - Run ‘npm install’ in the template folder to install dependencies
+    - Run `npm install` in the template folder to install dependencies
 - **Exercise Sheet Walk-Through Video** ([YouTube](https://youtu.be/y0z8u-r9UCY))
     - 00:00 - Exercise 1: Download and preview the Quire project Template ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=0s))
     - 01:50 - Exercise 2: Give your project a title and add your name ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=110s))
