@@ -14,6 +14,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 *Enriching Exhibition Stories: Adding Voices to Quire (project reference AH/Y006011/1) is a project funded by the UK [Arts and Humanities Research Council](https://ahrc.ukri.org/) (AHRC) and led by the [University of Oxford](https://www.ox.ac.uk/), working in partnership with the [University of Edinburgh](https://www.ed.ac.uk/), the [Ashmolean Museum](https://www.ashmolean.org/), and [Yale University](https://www.yale.edu/)*. 
 
 ## Project News
+
 - **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)
 - **MSc Practicum Reports.** In Trinity Term 2024 the EES2 project was delighted to host two students reading for their [MSc in Digital Scholarship](https://www.humanities.ox.ac.uk/mscdigsch).
     - How easily can Linked Art data be retrieved for inclusion in Quire? Sasha Tan considers modelling, versioning, and local practice, and how software tools can help. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop/linked_art_retrieval_tool_practicum)
@@ -24,8 +25,11 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 - Access the [Quire Linked Art Extension](https://linked.art/community/projects/ees2/docs/quire/) page for installation instructions and detailed documentation on how to use the extension to work with Linked Art in your Quire projects.
 - Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using Linked Art with Quire.
+- Read our May 2024 [survey](https://linked.art/community/projects/ees2/docs/quire_survey/) of existing Quire use.
+- Check out [latool.js](https://linked.art/community/projects/ees2/docs/latool), a script that fetches and processes Linked Art from a provided URL.
 
 ## Project Summary
+
 Traditional exhibition catalogues are extremely informative documents, but may be daunting, perhaps even intimidating, both to those who write them and those who read them. Enriching Exhibition Stories will help museums more easily create supplemental digital forms of exhibition narrative which speak to, and can be voiced by, a wider and more diverse range of perspectives than those who usually engage with exhibitions.
 
 This project builds upon a successful international collaboration between leading researchers at the Universities of Oxford and Edinburgh in the UK and Yale University in the US, alongside the Ashmolean Museum in Oxford and the Yale Center for British Art. It draws upon insights from the same team during their research for the [Enriching Exhibition Scholarship project](https://www.sps.ed.ac.uk/research/research-project/enriching-exhibition-scholarship), which linked and contextualised objects as they move between institutions through exhibitions, combining structured museum collections data with 'rich text' such as newspaper articles and social media.
@@ -61,6 +65,7 @@ All project software, procedures, and documentation, will be made freely availab
 For enquiries about the project, please contact [Dr Kevin Page](https://eng.ox.ac.uk/people/kevin-page/) in the first instance.
 
 ## About the AHRC
+
 The Arts and Humanities Research Council (AHRC) funds world-class, independent researchers in a wide range of subjects: history, archaeology, digital content, philosophy, languages, design, heritage, area studies, the creative and performing arts, and much more. This financial year the AHRC will spend approximately £98 million to fund research and postgraduate training, in collaboration with a number of partners. The quality and range of research supported by this investment of public funds not only provides social and cultural benefits and contributes to the economic success of the UK but also to the culture and welfare of societies around the globe.
  
 Visit the AHRC website at: ahrc.ukri.org, on Twitter at @ahrcpress, and on Facebook search for the Arts and Humanities Research Council, or Instagram at @ahrcpress.
