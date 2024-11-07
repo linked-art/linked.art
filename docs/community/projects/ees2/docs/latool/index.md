@@ -76,6 +76,7 @@ Currently, the tool supports the following fields, all of which are displayed by
 14. Location  
 15. Owner  
 16. Set  
+17. Social media (I modelled this for the Labyrinth objects but it’s not a standard field)  
 18. Credit line  
 19. Citations  
 20. Access statement  
@@ -87,10 +88,10 @@ Currently, the tool supports the following fields, all of which are displayed by
 26. Primary thumbnail  
 27. All images  
 28. All thumbnails  
-17. Social media (I modelled this for the Labyrinth objects but it’s not a standard field)
 
-- To omit a field from the display, the outputOrder object can be modified in the script,
+To omit a field from the display, the outputOrder object can be modified in the script,
 similar to the object_display_order object in objects.yaml in the Quire extension.
-- When the `--concise argument` is used, fields 6, 8, 10, and 12 are prioritised over fields
+
+When the `--concise argument` is used, fields 6, 8, 10, and 12 are prioritised over fields
 7, 9, 11, and 13, which are treated as their alternate or secondary forms; this can easily
 be swapped around in the code if desired however.
