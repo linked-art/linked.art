@@ -11,16 +11,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
     <img src="/community/projects/ees2/YCBA logo.png" alt="Yale Center for British Art" height="67" />
 </div>
 <br>
-*Enriching Exhibition Stories: Adding Voices to Quire (project reference AH/Y006011/1) is a project funded by the UK [Arts and Humanities Research Council](https://ahrc.ukri.org/) (AHRC) and led by the [University of Oxford](https://www.ox.ac.uk/), working in partnership with the [University of Edinburgh](https://www.ed.ac.uk/), the [Ashmolean Museum](https://www.ashmolean.org/), and [Yale University](https://www.yale.edu/)*.
-
-## DHOxSS Links
-- [Quire Linked Art Extension Documentation](https://linked.art/community/projects/ees2/docs/quire)  
-- [Quire Installation Instructions](https://linked.art/community/projects/ees2/docs/quire/quire_installation_instructions.docx)  
-- [Linked Art Extension Files (la_quire_extension.zip)](https://linked.art/community/projects/ees2/docs/quire/la_quire_extension.zip)  
-- [Quire Template (quire_template.zip)](https://drive.google.com/file/d/1Cfb7bfgQJeVR6THAWrk9QKwxeazKjgoM/view?usp=sharing)  
-- [Demo](https://drive.google.com/file/d/1XFSEEqePwsPYl6PjCkpFOwyJLX73wLCS/view?usp=sharing)  
-- [Tuesday Session Slides](https://linked.art/community/projects/ees2/docs/quire/slides.pdf)  
-- [Thursday Session Exercise Sheet](https://linked.art/community/projects/ees2/docs/quire/exercise_sheet.docx)  
+*Enriching Exhibition Stories: Adding Voices to Quire (project reference AH/Y006011/1) is a project funded by the UK [Arts and Humanities Research Council](https://ahrc.ukri.org/) (AHRC) and led by the [University of Oxford](https://www.ox.ac.uk/), working in partnership with the [University of Edinburgh](https://www.ed.ac.uk/), the [Ashmolean Museum](https://www.ashmolean.org/), and [Yale University](https://www.yale.edu/)*. 
 
 ## Project News
 - **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)
@@ -28,6 +19,11 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
     - How easily can Linked Art data be retrieved for inclusion in Quire? Sasha Tan considers modelling, versioning, and local practice, and how software tools can help. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop/linked_art_retrieval_tool_practicum)
     - How do people use Quire? Thorsteinn Imi King reports on a comparative evaluation of Quire publications and the benefits of Linked Art for digital curators and editors. [Read more...](https://linked.art/community/projects/ees2/news/quire_workshop/quire_comparison_practicum)
 - **Quire Linked Art Extension Documentation.** [Documentation](https://linked.art/community/projects/ees2/docs/quire) for the Linked Art Extension for Quire developed by the Enriching Exhibition Stories project is now available.
+
+## Resources
+
+- Access the [Quire Linked Art Extension](https://linked.art/community/projects/ees2/docs/quire/) page for installation instructions and detailed documentation on how to use the extension to work with Linked Art in your Quire projects.
+- Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using Linked Art with Quire.
 
 ## Project Summary
 Traditional exhibition catalogues are extremely informative documents, but may be daunting, perhaps even intimidating, both to those who write them and those who read them. Enriching Exhibition Stories will help museums more easily create supplemental digital forms of exhibition narrative which speak to, and can be voiced by, a wider and more diverse range of perspectives than those who usually engage with exhibitions.
