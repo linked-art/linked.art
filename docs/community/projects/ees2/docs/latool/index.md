@@ -59,33 +59,34 @@ the log included:
 ### Output
 
 Currently, the tool supports the following fields, all of which are displayed by default:
-1. Title
-2. Exhibited title
-3. Former title
-4. Accession number
-5. Creator(s)
-6. Work type (classification)
-7. Work type (statement)
-8. Timespan (name)
-9. Timespan (structured)
-10. Dimensions statement
-11. Dimensions (structured)
-12. Materials statement
-13. Materials (structured)
-14. Location
-15. Owner
-16. Set
-18. Credit line
-19. Citations
-20. Access statement
-21. Description
-22. Provenance description
-23. Web page(s)
-24. IIIF manifest
-25. Primary image
-26. Primary thumbnail
-27. All images
-28. All thumbnails
+
+1. Title  
+2. Exhibited title  
+3. Former title  
+4. Accession number  
+5. Creator(s)  
+6. Work type (classification)  
+7. Work type (statement)  
+8. Timespan (name)  
+9. Timespan (structured)  
+10. Dimensions statement  
+11. Dimensions (structured)  
+12. Materials statement  
+13. Materials (structured)  
+14. Location  
+15. Owner  
+16. Set  
+18. Credit line  
+19. Citations  
+20. Access statement  
+21. Description  
+22. Provenance description  
+23. Web page(s)  
+24. IIIF manifest  
+25. Primary image  
+26. Primary thumbnail  
+27. All images  
+28. All thumbnails  
 17. Social media (I modelled this for the Labyrinth objects but it’s not a standard field)
 
 - To omit a field from the display, the outputOrder object can be modified in the script,
