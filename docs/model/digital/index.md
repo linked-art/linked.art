@@ -17,7 +17,7 @@ Digital objects are generally treated in the same way as physical objects -- the
 
 All Digital Objects share some basic characteristics, regardless of their particular nature.  The [basic patterns](/model/base/) of Name, Identifier, Classification, and Statement all apply in the regular way. Beyond the baseline, digital objects can have the following descriptive features:
 
-* Access Point - The URLs where the object is available. The URL is given the `type` of `DigitalObject` for consistency, but the URL itself is the important aspect.
+* Access Point - The URLs where the actual file itself is available. The URL is given the `type` of `DigitalObject` for consistency, but the URL is the important aspect. For example, the access point for an image would be the URL from which you get the actual pixels, rather than a linked data description of the image.
 * Format - The `format` of a digital object is its media type, often called a MIME type, given as a string.
 * Standard - Many digital objects further conform to standard specifications, which can be referenced using the `conforms_to` property. This differs from `format`, as there may not be a media type for the specification, and from `classified_as` which is a broader classification (Image, rather than conforming to the standard for JPEG 2000)
 * Dimensions - Digital dimensions follow the same pattern as [physical dimensions](/model/object/physical/#dimensions), but might use different types (file size) or the same (height, width for images) and different units (bytes, pixels).
