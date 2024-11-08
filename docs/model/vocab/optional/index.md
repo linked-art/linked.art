@@ -10,12 +10,6 @@ These terms are listed to be used in order to facilitate interoperability betwee
 
 Also, if you would like to suggest additions that you think would be interesting, for example new terms that mitigate a bias resulting from the somewhat ad hoc process of compiling the lists here, please [reach out](https://linked.art/community/)!
 
-<style>
-	table {width: 100% ; table-layout: fixed}
-	tr th:first-child {width: 18em}
-	tr th:nth-child(2) {width: 10em}
-	tr th:nth-child(3) {text-align: left}
-</style>
 
 ## Types
 
@@ -25,11 +19,11 @@ See the [name documentation](/model/base/#names).
 
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
-| Translated Title    | aat:300417194 | |
-| Sub-title           | aat:300312006 | |
-| Alias               | aat:300404664 | |
-| Pseudonym           | aat:300404657 | |
-| Former Name         | aat:300435719 | |
+| Translated Title    | aat:300417194 | The Name is a translation of another name |
+| Sub-title           | aat:300312006 | The Name is part of a larger title, and is the sub-title |
+| Alias               | aat:300404664 | The Name is an alias or nickname, likely for a person |
+| Pseudonym           | aat:300404657 | The Name is a pseudonym, pen-name or other adopted name |
+
 
 
 ### Identifier Types
@@ -38,11 +32,11 @@ See the [identifier documentation](/model/base/#identifiers).
 
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
-| Auction Lot Number  | aat:300404628 | |
-| ISBN                | aat:300417443 | |
-| ISSN                | aat:300417430 | |
-| DOI                 | aat:300417432 | |
-| Stock Number        | aat:300412177 | |
+| Auction Lot Number  | aat:300404628 | The identifier, typically a number, for an auction lot. The same identifier might be repeated across different auctions |
+| ISBN                | aat:300417443 | An International Standard Book Number |
+| ISSN                | aat:300417430 | An International Standard Serial Number (for journals) |
+| DOI                 | aat:300417432 | A Digital Object Identifier |
+| Stock Number        | aat:300412177 | An identifier based on the stock managed by a commercial organization |
 
 
 ### Contact Identifier Types
@@ -51,10 +45,10 @@ See the [contact point documentation](/model/actor/#addresses)
 
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
-| Email Address       | aat:300435686 | |
-| Street Address      | aat:300386983 | |
-| Telephone Number    | aat:300435688 | |
-| Fax Number          | aat:300435689 | |
+| Email Address       | aat:300435686 | An email address, as a string rather than a mailto: URI |
+| Street Address      | aat:300386983 | A street address |
+| Telephone Number    | aat:300435688 | A telephone number |
+| Fax Number          | aat:300435689 | A fax number |
 
 
 ### Statement Types
@@ -63,17 +57,17 @@ See the [statement documentation](/model/base/#statements-about-an-entity)
 
 | Name                   | URI           | Description |
 |------------------------|---------------|-------------|
-| Biography (Statement)  | aat:300435422 | |
-| Condition Statement    | aat:300435425 | |
-| Context Statement      | aat:300435428 | |
-| Culture Statement      | aat:300435431 | |
-| Edition Statement      | aat:300435435 | |
-| Foliation Statement    | aat:300435441 | |
-| Language Statement     | aat:300435433 | |
-| Pagination Statement   | aat:300435440 | |
-| Period Statement       | aat:300435432 | |
-| Significance Statement | aat:300435427 | |
-| Valuation Statement    | aat:300435426 | |
+| Biography (Statement)  | aat:300435422 | A description of the life of a person|
+| Condition Statement    | aat:300435425 | The physical condition of an object |
+| Context Statement      | aat:300435428 | Context of any sort relevant to the resource it is associated with|
+| Culture Statement      | aat:300435431 | The culture from which the object or work is drawn, or that the person or group is part of |
+| Edition Statement      | aat:300435435 | The edition or number of a work or object |
+| Foliation Statement    | aat:300435441 | The foliation statement of an object with folios, such as "i-ix, f1r-f256v" |
+| Language Statement     | aat:300435433 | A statement declaring the language or languages of a text |
+| Pagination Statement   | aat:300435440 | Similar to a foliation statement, a description of the page count for the object |
+| Period Statement       | aat:300435432 | A statement about the period of time from which the object, work or other entity originates |
+| Significance Statement | aat:300435427 | A statement as to the significance of the object or work |
+| Valuation Statement    | aat:300435426 | A statement as to the value of the object or work |
 
 
 ### Document Types
@@ -178,6 +172,7 @@ See the [dimensions documentation](/model/object/physical/#dimensions)
 | Thickness           | aat:300055646 | |
 
 
+<!--
 
 ## Instances
 
@@ -219,5 +214,6 @@ See the [dimensions documentation](/model/object/physical/#dimensions)
 | Name                | URI           | Description |
 |---------------------|---------------|-------------|
 
+-->
 
 
