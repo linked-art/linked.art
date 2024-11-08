@@ -36,6 +36,7 @@ For more information about the Physical Object data, please see the [Object mode
 | `current_permanent_custodian` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that normally has custody of the object, but might not at the present time |
 | `current_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is currently located |
 | `current_permanent_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is normally located, but might not be at the present time |
+| `contained_or_supported_by` | json object | Optional | A json object which is a [reference](../../shared/reference) to another Physical Object that holds, contains or supports the current object |
 | `carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that this object carries the text of |
 | `shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that this object shows a rendition of |
 | `used_for`    | array | Optional | An array of json objects, each of which represents an activity that the object was instumental in, but does not have its own identity, and follows the requirements for an [Activity](../../shared/activity) |

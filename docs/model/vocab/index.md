@@ -17,7 +17,7 @@ Any entity in the model can have one or more classifications associated with it 
 
 * [Required Terms](required/) -- you **must** use these terms to be considered to have implemented Linked Art
 * [Recommended Terms](recommended/) -- you **should** use these terms unless you have a specific reason not to
-* [Optional Terns](optional/) -- you **may** use these terms, but should feel no compulsion to if there's a reason not to
+* [Optional Terms](optional/) -- you **may** use these terms, but should feel no compulsion to if there's a reason not to
 
 ## Usage
 

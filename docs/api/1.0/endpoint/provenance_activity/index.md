@@ -60,19 +60,19 @@ Each of the activities in the `part` property can have the properties in the tab
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the creation or publication  |  
+| `id`              | string        | Optional    | If present, the value MUST be a URI identifying the provenance part activity  |  
 | `type`            | string        | Required    | The class for the part, which MUST be the value given in the subsections below |
-| `_label`          | string        | Recommended | A human readable label for the creation or publication, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the creation or publication and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the creation or publication and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the creation or publication |
-| `timespan`        | json object   | Recommended | A json object recording when the creation or publication occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the creation or publication occured |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the creation or publication in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the creation or publication |
-| `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the activity but did not carry it out. |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
+| `_label`          | string        | Recommended | A human readable label for the provenance part, intended for developers |
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the provenance part and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the part and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the provenance part and MUST follow the requirements for [Type](../../shared/type/) |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the part |
+| `timespan`        | json object   | Recommended | A json object recording when the part occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the part activity occured | 
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the part activity occured |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the part activity in some noticable fashion, but did not carry it out | 
+| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the part activity |
+| `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the part activity but did not carry it out |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the part activity |
 
 #### Properties of Part: Acquisition
 
