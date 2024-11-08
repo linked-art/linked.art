@@ -247,6 +247,8 @@ top.classified_as = vocab.instances['dutch nationality']
 
 Ethnicity is separate from nationality, as it refers to a social group or culture as opposed to a political nation or state. The same rationale as for Nationality being a classification also applies to ethnicity or culture -- it is unlikely to be a coherent collective capable of intentional action.
 
+Please note that it is completely acceptable to list a nationality or ethnicity without a "meta-type" classification if it is unknown which of the two it is. Also, note that different organizations might make different decisions as to whether a particular group or culture is a nationality or an ethnicity.
+
 __Example:__
 
 Kehinde Wiley is African-American.
