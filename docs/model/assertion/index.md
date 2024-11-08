@@ -103,7 +103,6 @@ ts.begin_of_the_begin = "2024-11-07T20:50:00Z"
 ts.end_of_the_end = "2024-11-07T20:50:00Z"
 cre.timespan = ts
 cre.technique = model.Type(ident="http://vocab.getty.edu/aat/300456842")
-cre.carried_out_by = model.Type(ident="")
 stmt.created_by = cre
 stmt.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300456841")
 right = model.Right()
