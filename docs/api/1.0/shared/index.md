@@ -28,7 +28,7 @@ These data structures are shared between many endpoints, within the main respons
 
 Note that data structures embedded within the records available from endpoints do not have their own `@context` entries, as they use the context document from the main record. If the data structure is shared separately using the linked art format, then it MUST have the `@context` reference added.
 
-If there is an embedded structure (rather than a reference to another record) that has its own URI given in `id` at which data can be retrieved, and there is more information there about the entity, then the structure in the linked art record MUST have a property called `_complete` with the value of `false`. This will enable consumers of the data to know that it could be valuable to retrieve the data from the URI given in the `id` field. Otherwise, the expectation is that the URI in `id` is informational only.
+If there is a data structure which is typically completely embedded within another record, such as a Dimension or a Name (not a reference to another record), that has its own URI given in `id` at which data can be retrieved, and there is more information there about the entity, then the structure in the linked art record MUST have a property called `_complete` with the value of `false`. This will enable consumers of the data to know that it could be valuable to retrieve the data from the URI given in the `id` field. Otherwise, the expectation is that the URI in `id` is informational only. 
 
 
 ```crom
