@@ -12,10 +12,9 @@ This section covers the beginning and ending of objects' existence, along with t
 
 ## Base Production Activity
 
-The first activity in an object's lifecycle is its creation, or `Production`.  The relationship from the object to the activity is `produced_by`, and the `Production` activity itself follows the general [base activity model](/model/base/#events-and-activities) with the description of time, location and agents.
+The first activity in an object's lifecycle is its creation, which is described using the `Production` class.  The relationship from the object to the activity is `produced_by`, and the `Production` activity itself follows the general [base activity model](/model/base/#events-and-activities) with the description of time, location and agents.
 
 __Example:__
-
 Similar to the Production example in the basic patterns, "The Night Watch" was created by Rembrandt in Amsterdam in 1642.
 
 ```crom
