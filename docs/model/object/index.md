@@ -4,12 +4,12 @@ title: Objects
 
 ## Introduction
 
-The core of any art historical information system is the art objects themselves. The class for physical objects that have some value in human society is `HumanMadeObject`. Even if the object is a shell (and thus natural) without any significant modifications, this class is still used as the modification is the instilling of value by society. This also keeps the model simpler than having to worry about the degree of change that would be significant for the distinction.
+The core of any art historical information system is the art objects themselves. The class for physical objects that have some value in human society is `HumanMadeObject`. Even if the object is a shell (and thus natural) without any significant modifications, this class is still used as the modification is the instilling of value by society. This also keeps the model easy to use, rather than having to worry about the degree of change that would be significant for the distinction.
 
 
 ## Shared Patterns
 
-The [basic patterns](/model/base/) apply to objects, as does the [digital integration layer](/model/digital/). Rather than repeating the patterns for every type of entity, example [use cases and vocabularies](use_cases/) are provided to demonstrate how the patterns are applied.
+The [basic patterns](/model/base/) apply to objects, as does the [digital integration layer](/model/digital/). These patterns are used throughout the documentation.
 
 ## Sections
 
