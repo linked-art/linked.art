@@ -23,7 +23,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 ## Resources
 
-- Access the [Quire Linked Art Extension](https://linked.art/community/projects/ees2/docs/quire/) page for installation instructions and detailed documentation on how to use the extension to work with Linked Art in your Quire projects.
+- Visit the [Quire Linked Art Extension](https://linked.art/community/projects/ees2/docs/quire/) page for installation instructions and comprehensive documentation. This extension fetches data from a Linked Art API and merges object records and images (via IIIF) into a Quire project.
 - Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using Linked Art with Quire.
 - Read our May 2024 [survey](https://linked.art/community/projects/ees2/docs/quire_survey/) of existing Quire use.
 - Check out [latool.js](https://linked.art/community/projects/ees2/docs/latool), a script that fetches and processes Linked Art from a provided URL.
