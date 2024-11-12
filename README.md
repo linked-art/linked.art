@@ -1,7 +1,7 @@
 
 # Semantic Versioning
 
-We are in active development of the content at the moment, and breaking changes are to be expected as we encounter new use cases. The version of the documents is thus below 1.0, somewhere about 0.8 (if that means anything) as what we have is reasonably stable but we do not guarantee it!
+We are in active development of the content at the moment, and breaking changes are to be expected as we encounter new use cases. The version of the documents is thus below 1.0, somewhere about 0.9 (if that means anything) as what we have is reasonably stable but we do not guarantee it!
 
 # Installation Instructions
 
