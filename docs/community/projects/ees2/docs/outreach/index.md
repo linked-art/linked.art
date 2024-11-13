@@ -35,47 +35,47 @@ Further details about the approach of the trial are documented in the resources 
 - Handling Worksheet ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-handling_worksheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-handling_worksheet.docx)) [Andrew Shapland]
 
 **History & Computing Workshop**: Two 1 hour lessons either side of a lunch break, 3 hours are recommended*
-- Pre-workshop setup and configuration checklist ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-checklist.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-checklist.docx)) [Kevin Page]
-    - Creating a new template for different museum objects would require installation of Quire and the Linked Art Extension [Tyler Bonnet] created for the EES2 project
-- Lesson Plan ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_plan.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_plan.docx)) [Louise Elias and Kevin Page]
-    - N.B. Actual timing during the trial did not keep to the lesson plan: most students completed the tasks noted in the lesson plan at 60 minutes in the first lesson (i.e. up to the lunch break); some also completed tasks noted in the lesson plan up to 20 minutes in the second lesson (after lunch break); later tasks were not completed in the trial due to lack of time*
-- Lesson Slides ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_slides.pdf)|[pptx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_slides.pptx)) [Louise Elias, Kevin Page, and Tyler Bonnet]
-    - [Embedded video demonstrating Linked Art data import to Quire](https://youtu.be/PAYuN2hj2nE)
-- Student Worksheet ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_worksheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_worksheet.docx)) [Tyler Bonnet, Kevin Page, and Clare Llewellyn]
-- Markdown Reference Sheet for students ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_markdown_reference_sheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_markdown_reference_sheet.docx)) [Tyler Bonnet]	
-- ‘cheney_book’ Quire project folder ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/cheney_book.zip)) [Tyler Bonnet and Kevin Page]
-    - This is the “blank” project folder pre-populated with templates ready for observations and interpretations to be added by students during the class (by following the lesson plan and worksheet)
-- Linked Art data export ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/linked_art_export.zip)) [Tyler Bonnet]
-    - A copy of Ashmolean and Rumble Museum Linked Art data, specially provided for this classroom exercise, used in creation of the cheney_book template, and provided here for reference. Ashmolean data and images are © Ashmolean Museum, University of Oxford
-- IIIF data export ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/iiif_export.zip)) [Tyler Bonnet]
-    - A copy of Ashmolean and Rumble Museum IIIF data, specially provided for this classroom exercise, used in creation of the cheney_book template, and provided here for reference. Ashmolean data and images are © Ashmolean Museum, University of Oxford
+- Pre-workshop setup and configuration checklist ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-checklist.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-checklist.docx)) [Kevin Page]  
+    - Creating a new template for different museum objects would require installation of Quire and the Linked Art Extension [Tyler Bonnet] created for the EES2 project  
+- Lesson Plan ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_plan.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_plan.docx)) [Louise Elias and Kevin Page]  
+    - N.B. Actual timing during the trial did not keep to the lesson plan: most students completed the tasks noted in the lesson plan at 60 minutes in the first lesson (i.e. up to the lunch break); some also completed tasks noted in the lesson plan up to 20 minutes in the second lesson (after lunch break); later tasks were not completed in the trial due to lack of time*  
+- Lesson Slides ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_slides.pdf)|[pptx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_slides.pptx)) [Louise Elias, Kevin Page, and Tyler Bonnet]  
+    - [Embedded video demonstrating Linked Art data import to Quire](https://youtu.be/PAYuN2hj2nE)  
+- Student Worksheet ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_worksheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_worksheet.docx)) [Tyler Bonnet, Kevin Page, and Clare Llewellyn]  
+- Markdown Reference Sheet for students ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_markdown_reference_sheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-student_markdown_reference_sheet.docx)) [Tyler Bonnet]  
+- ‘cheney_book’ Quire project folder ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/cheney_book.zip)) [Tyler Bonnet and Kevin Page]  
+    - This is the “blank” project folder pre-populated with templates ready for observations and interpretations to be added by students during the class (by following the lesson plan and worksheet)  
+- Linked Art data export ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/linked_art_export.zip)) [Tyler Bonnet]  
+    - A copy of Ashmolean and Rumble Museum Linked Art data, specially provided for this classroom exercise, used in creation of the cheney_book template, and provided here for reference. Ashmolean data and images are © Ashmolean Museum, University of Oxford  
+- IIIF data export ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/iiif_export.zip)) [Tyler Bonnet]  
+    - A copy of Ashmolean and Rumble Museum IIIF data, specially provided for this classroom exercise, used in creation of the cheney_book template, and provided here for reference. Ashmolean data and images are © Ashmolean Museum, University of Oxford  
 
-* Based on the novel experience of the trial, all research and school staff agreed that many, if not all, activities in the programme would benefit from additional time allowances, and that completing the full programme would be of benefit to learners: the Ashmolean visit would benefit from additional time to consolidate and complete worksheets; the Rumble Workshop would benefit from being 2 hours in length, and the History & Computing Workshop would benefit from taking place over three 1 hour lessons. Further details can be found in the  Evaluation and Recommendations report created by school staff and the research team, published by Cheney School, and reproduced here by kind permission of Cheney School.
+\* Based on the novel experience of the trial, all research and school staff agreed that many, if not all, activities in the programme would benefit from additional time allowances, and that completing the full programme would be of benefit to learners: the Ashmolean visit would benefit from additional time to consolidate and complete worksheets; the Rumble Workshop would benefit from being 2 hours in length, and the History & Computing Workshop would benefit from taking place over three 1 hour lessons. Further details can be found in the  Evaluation and Recommendations report created by school staff and the research team, published by Cheney School, and reproduced here by kind permission of Cheney School.
 
 ## Acknowledgements and thanks
 
-**Cheney School**
-Rob Pavey (Headteacher)
-Nazneen Ali
-Tapera Chikunga
-Martin Daniels
-Louise Elias
-Sophie Quantrell
-Lorna Robinson
-Cheney IT Support Team
+**Cheney School**  
+Rob Pavey (Headteacher)  
+Nazneen Ali  
+Tapera Chikunga  
+Martin Daniels  
+Louise Elias  
+Sophie Quantrell  
+Lorna Robinson  
+Cheney IT Support Team  
 
-**Ashmolean Museum University of Oxford**
-Andrew Shapland
-Kirsti Deacon
-Aruna Bhaugeerutty
+**Ashmolean Museum University of Oxford**  
+Andrew Shapland  
+Kirsti Deacon  
+Aruna Bhaugeerutty  
 
-**University of Edinburgh**
-Clare Llewellyn
+**University of Edinburgh**  
+Clare Llewellyn  
 
-**University of Oxford e-Research Centre**
-Tyler Bonnet
-Erin Canning
-Thorsteinn Imi King
-Kevin Page
-Sasha Tan
+**University of Oxford e-Research Centre**  
+Tyler Bonnet  
+Erin Canning  
+Thorsteinn Imi King  
+Kevin Page  
+Sasha Tan  
 
