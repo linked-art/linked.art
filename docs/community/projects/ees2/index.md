@@ -16,7 +16,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 ## Project News
 
 - **History and Computing School Programme.** In October 2024 the EEES2 project collaborated with colleagues at the Ashmolean and Rumble Museums, and staff at Cheney School in Oxford, to trial a [programme of activities](https://linked.art/community/projects/news/cheney) in which students gathered observations and interpretations to create their own digital stories.
-- **Train-the-Trainer Event.** EES2 was pleased to hold a [‘train-the-trainer’ workshop](https://linked.art/community/projects/news/dhoxss) at the Digital Humanities at Oxford Summer School, in which we introduced the project’s Linekd Art extension to Quire.
+- **Train-the-Trainer Event.** EES2 was pleased to hold a [‘train-the-trainer’ workshop](https://linked.art/community/projects/news/dhoxss) at the Digital Humanities at Oxford Summer School, in which we introduced the project’s Linked Art extension to Quire.
 - **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)
 - **MSc Practicum Reports.** In Trinity Term 2024 the EES2 project was delighted to host two students reading for their [MSc in Digital Scholarship](https://www.humanities.ox.ac.uk/mscdigsch).
     - How easily can Linked Art data be retrieved for inclusion in Quire? Sasha Tan considers modelling, versioning, and local practice, and how software tools can help. [Read more…](https://linked.art/community/projects/ees2/news/linked_art_retrieval_tool_practicum)
@@ -27,6 +27,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 - The Quire Linked Art Extension extension fetches data from a Linked Art API and merges object records and images (via IIIF) into a Quire project. For installation instructions and comprehensive documentation, visit this [page](https://linked.art/community/projects/ees2/docs/quire/).
 - Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using Linked Art with Quire.
+- [Find out more](https://linked.art/community/projects/ees2/docs/outreach/) about our outreach trial with the Ashmolean and Rumble Museums and Cheney School, including lesson plans and accompanying teaching resources.
 - Read our May 2024 [survey](https://linked.art/community/projects/ees2/docs/quire_survey/) of existing Quire use.
 - Check out [latool.js](https://linked.art/community/projects/ees2/docs/latool), a script that fetches and processes Linked Art from a provided URL.
 
