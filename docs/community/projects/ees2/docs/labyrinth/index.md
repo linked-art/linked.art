@@ -7,9 +7,13 @@ title: ""
 
 ## An Exemplar Quire Project Based on the *Labyrinth: Knossos Myth & Reality* Exhibition
 
+Introduce Quire
+
 ### About the Exhibition
 
 The [*Labyrinth: Knossos, Myth & Reality*](https://www.ashmolean.org/exhibition/labyrinth-knossos-myth-reality) exhibition was held at the Ashmolean Museum from **10 February to 30 July 2023**. This major exhibition explored the legend and archaeology of Knossos, the center of the ancient Minoan civilization on the island of Crete, and its association with the mythical labyrinth said to contain the Minotaur.
+
+This video introduces the Exhibition
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=JVNvrPdyiG8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -21,8 +25,8 @@ The digital publication created through Quire enables visitors, researchers, and
 
 ### Resources
 
-- **Slideshow Presentation**
-    - Oxford e-Research Centre, August 2024 ([PDF]()|[PPTX]())
+- **Slideshow Introducing Creation of the Labyrinth Quire Resources**
+    - As presented at the Oxford Digital Humanities Summer School 2024 ([PDF]()|[PPTX]())
 - **Labyrinth: Knossos, Myth & Reality Quire Project**
     - [Website](https://oerc-csi.github.io/la-quire/)
     - [PDF]()
