@@ -24,17 +24,20 @@ To realise the workshop during the limited preparation time available for the tr
 Further details about the approach of the trial are documented in the resources below. These were created collaboratively between the research team and school staff, with specific [contributions noted in square brackets]. A full list of acknowledgements can be found below.
 
 **Ashmolean Museum Visit**: Run as a 1 hour Handling Session, 1 hour Gallery Hunt, plus unguided time to explore. An additional hour is recommended*
+
 - Handling Session Activity Plan ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_handling-activity_plan.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_gallery-activity_plan.docx)) [Andrew Shapland]
 - Handling Session Worksheet ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_handling-worksheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_handling-worksheet.docx)) [Andrew Shapland]
 - Gallery Session Activity Plan ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_gallery-activity_plan.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_gallery-activity_plan.docx)) [Kirsti Deacon]
 - Gallery Hunt Worksheet ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_gallery-worksheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/ashmolean_visit/ashmolean_gallery-worksheet.docx)) [Kirsti Deacon]
 
 **Rumble Museum Workshop**: Run as a 1 hour lesson. 2 hours are recommended*
+
 - Lesson Plan ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-lesson_plan.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-lesson_plan.docx)) [Louise Elias, Lorna Robinson, and Martin Daniels]
 - Lesson Slides ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-lesson_slides.pdf)|[pptx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-lesson_slides.pptx)) [Lorna Robinson]
 - Handling Worksheet ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-handling_worksheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/rumble_workshop/rumble_workshop-handling_worksheet.docx)) [Andrew Shapland]
 
 **History & Computing Workshop**: Two 1 hour lessons either side of a lunch break, 3 hours are recommended*
+
 - Pre-workshop setup and configuration checklist ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-checklist.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-checklist.docx)) [Kevin Page]  
     - Creating a new template for different museum objects would require installation of Quire and the Linked Art Extension [Tyler Bonnet] created for the EES2 project  
 - Lesson Plan ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_plan.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/history_and_computing_lesson/history_computing_workshop/history_and_computing_workshop-lesson_plan.docx)) [Louise Elias and Kevin Page]  
