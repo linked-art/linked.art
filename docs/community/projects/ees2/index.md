@@ -15,8 +15,8 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 ## Project News
 
-- **History and Computing School Programme.** In October 2024 the EEES2 project collaborated with colleagues at the Ashmolean and Rumble Museums, and staff at Cheney School in Oxford, to trial a [programme of activities](https://linked.art/community/projects/news/cheney) in which students gathered observations and interpretations to create their own digital stories.
-- **Train-the-Trainer Event.** EES2 was pleased to hold a [‘train-the-trainer’ workshop](https://linked.art/community/projects/news/dhoxss) at the Digital Humanities at Oxford Summer School, in which we introduced the project’s Linked Art extension to Quire.
+- **Outreach Trial.** In October 2024 the EEES2 project collaborated with colleagues at the Ashmolean and Rumble Museums, and staff at Cheney School in Oxford, to trial a programme of activities in which students gathered observations and interpretations to create their own digital stories. [Read more...](https://linked.art/community/projects/news/cheney)
+- **Digital Humanities at Oxford Summer School.** EES2 was pleased to hold a ‘train-the-trainer’ workshop at the Digital Humanities at Oxford Summer School, in which we introduced the project’s Linked Art extension to Quire. [Read more...](https://linked.art/community/projects/news/dhoxss)
 - **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)
 - **MSc Practicum Reports.** In Trinity Term 2024 the EES2 project was delighted to host two students reading for their [MSc in Digital Scholarship](https://www.humanities.ox.ac.uk/mscdigsch).
     - How easily can Linked Art data be retrieved for inclusion in Quire? Sasha Tan considers modelling, versioning, and local practice, and how software tools can help. [Read more…](https://linked.art/community/projects/ees2/news/linked_art_retrieval_tool_practicum)
