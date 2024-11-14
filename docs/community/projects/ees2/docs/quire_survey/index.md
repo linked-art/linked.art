@@ -7,6 +7,8 @@ title: ""
 
 ## Survey of Community Quire outputs
 
+By Thorsteinn Imi King
+
 As of 23 May 2024, there are fourteen distinct genres of Quire output identified by the team at Getty in the [‘Community Showcase’](https://quire.getty.edu/community/community-showcase/) section of their website.<sup>1</sup> The page lists 61 separate Quire outputs as of 19 June 2024. This consists of around 80% of extant Quire projects known to the team.<sup>2</sup> Several projects linked to on the Community Showcase page are no longer accessible. The first is a self-published 2019 research project, of which only the cover page is functional.<sup>3</sup> Three outputs by Hong Kong University have similarly perished.<sup>4</sup> The extant outputs are still a valuable resource for investigating the practices of Quire users, and seeing how these might influence future development of the EES2 Quire Linked Art module.<sup>5</sup>
 
 The genres identified by the team at Getty, examples hyperlinked, are:
