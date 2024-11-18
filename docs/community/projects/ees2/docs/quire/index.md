@@ -194,7 +194,7 @@ After a selection is made, the program will process all the objects in the ‘ac
 
 ### **4 Options**
 
-There are two options: `--dry-run` and `--force`.
+There are five options: `--dry-run`, `--force`, `--resize`, `--interactive`, and `--select`.
 
 #### **4.1 Preview an entry before adding to objects.yaml or figures.yaml**
 
@@ -237,3 +237,13 @@ When `--interactive` is passed, an interaction will start:
 `artist, type, year, period, dimensions, materials, location, accession, credit line, set, owner, took place at, encountered by, find spot, access statement, web page, thumbnail link, description, citations, provenance`
 
 After entering a comma-separated list of fields, the module disregards the object_display_order and retrieves the fields in the list in the order they were provided.
+
+#### **4.5 Selecting objects in 'activity' record**
+
+When `--select` is passed along with an ‘activity’ URI, a list of creators of the objects included in the record and their types will be presented. This initiates an interactive selection process:
+
+`Please select the URIs you would like to process based on creators and object types (e.g., "creators: raphael, vincent van gogh AND/OR types: drawing, painting"):`
+
+After entering the selection in the required format, only the objects that meet the criteria will be processed.
+
+**Note:** A spreadsheet is generated and used to facilitate filtering URIs based on the chosen creators and object types. This option requires that ‘b’ (both spreadsheet generation and processing) is selected in the interaction explained in Section 3. The `--select` option will not work if ‘p’ (process only) is chosen, as no spreadsheet will be generated in that mode.
