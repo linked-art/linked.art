@@ -7,26 +7,50 @@ title: ""
 
 The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
 
-<iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/XEzPBwicQAg?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!-- Include the YouTube IFrame API script -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<!-- The iframe where the YouTube video will be embedded -->
+<div id="player"></div>
 
 <ul>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(0)">00:00 - Adding an object from a Linked Art resource</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(150)">02:30 - Adding a figure from a Linked Art resource to an existing object</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(240)">04:00 - Adding a figure from a Linked Art resource</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(322)">05:22 - Choosing what fields to retrieve</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(420)">07:00 - Processing multiple Linked Art records in a single command</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(495)">08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(570)">09:30 - Choosing fields interactively and previewing entries</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(629)">10:29 - Generating a spreadsheet of all data in a Linked Art record</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(690)">11:30 - Resizing an image upon retrieval</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(760)">12:40 - Selectively importing objects from an activity record based on object type and artist name</a></li>
-    <li><a href="javascript:void(0);" onclick="updateVideoTime(850)">14:10 - Running native build, pdf, and epub commands</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(0)">00:00 - Adding an object from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(150)">02:30 - Adding a figure from a Linked Art resource to an existing object</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(240)">04:00 - Adding a figure from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(322)">05:22 - Choosing what fields to retrieve</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(420)">07:00 - Processing multiple Linked Art records in a single command</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(495)">08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(570)">09:30 - Choosing fields interactively and previewing entries</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(629)">10:29 - Generating a spreadsheet of all data in a Linked Art record</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(690)">11:30 - Resizing an image upon retrieval</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(760)">12:40 - Selectively importing objects from an activity record based on object type and artist name</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(850)">14:10 - Running native build, pdf, and epub commands</a></li>
 </ul>
 
 <script>
-    // Function to update iframe with the timestamp
-    function updateVideoTime(startTime) {
-        document.getElementById('videoPlayer').src = `https://www.youtube.com/embed/XEzPBwicQAg?start=${startTime}`;
+    // This function gets called by the YouTube API to create the player
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '315',
+            width: '560',
+            videoId: 'XEzPBwicQAg', // Your YouTube video ID here
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    // This function is called when the video player is ready
+    function onPlayerReady(event) {
+        // You can add additional actions here if needed
+    }
+
+    // This function is called when you want to jump to a specific time in the video
+    function seekToTime(seconds) {
+        if (player) {
+            player.seekTo(seconds, true); // This changes the time without stopping the video
+        }
     }
 </script>
 
