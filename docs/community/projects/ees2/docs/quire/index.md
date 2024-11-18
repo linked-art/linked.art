@@ -5,6 +5,12 @@ title: ""
 
 # Quire Linked Art Extension
 
+The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
+
+<div style="text-align: center;">
+  <iframe width="560" height="315" src="https://youtu.be/XEzPBwicQAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## Quire Linked Art Extension Installation
 
 The Quire Linked Art Extension is available on the [releases](https://github.com/oerc-csi/la-quire/releases) page of the EES2 project's GitHub repository. In the 'Assets' dropdown of the latest version, click on the 'js-files.zip' link to download.

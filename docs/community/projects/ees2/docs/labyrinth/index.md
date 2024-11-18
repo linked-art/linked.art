@@ -7,7 +7,7 @@ title: ""
 
 ## An Exemplar Quire Project Based on the Labyrinth: Knossos Myth & Reality Exhibition
 
-This page gives an examplar of Quire use for museums by Dr. Andrew Shapland, who has reused materials created for his 2023 exhibition at the Ashmolean within new Quire-generated learning resources for the permanent Aegean World gallery.
+This page gives an exemplar of Quire use for museums by Dr. Andrew Shapland, who has reused materials created for his 2023 exhibition at the Ashmolean within new Quire-generated learning resources for the permanent Aegean World gallery.
 
 ### About the Exhibition
 
