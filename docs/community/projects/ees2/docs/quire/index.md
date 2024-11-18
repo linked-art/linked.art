@@ -7,19 +7,21 @@ title: ""
 
 The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XEzPBwicQAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+<iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/XEzPBwicQAg?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-00:00 - Adding an object from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg=0s))  
-02:30 - Adding a figure from a Linked Art resource to an existing object ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=150s))   
-04:00 - Adding a figure from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=240s))  
-05:22 - Choosing what fields to retrieve ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=322s))  
-07:00 - Processing multiple Linked Art records in a single command ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=420s))  
-08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=495s))  
-09:30 - Choosing fields interactively and previewing entries ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=570s))  
-10:29 - Generating a spreadsheet of all data in a Linked Art record ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=629s))  
-11:30 - Resizing an image upon retrieval ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=690s))  
-12:40 - Selectively importing objects from an activity record based on object type and artist name ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=760s))  
-14:10 - Running native build, pdf, and epub commands ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=850s))  
+<ul>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=0" target="videoPlayer">00:00 - Adding an object from a Linked Art resource</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=150" target="videoPlayer">02:30 - Adding a figure from a Linked Art resource to an existing object</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=240" target="videoPlayer">04:00 - Adding a figure from a Linked Art resource</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=322" target="videoPlayer">05:22 - Choosing what fields to retrieve</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=420" target="videoPlayer">07:00 - Processing multiple Linked Art records in a single command</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=495" target="videoPlayer">08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=570" target="videoPlayer">09:30 - Choosing fields interactively and previewing entries</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=629" target="videoPlayer">10:29 - Generating a spreadsheet of all data in a Linked Art record</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=690" target="videoPlayer">11:30 - Resizing an image upon retrieval</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=760" target="videoPlayer">12:40 - Selectively importing objects from an activity record based on object type and artist name</a></li>
+    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=850" target="videoPlayer">14:10 - Running native build, pdf, and epub commands</a></li>
+</ul>
 
 ## Quire Linked Art Extension Installation
 
