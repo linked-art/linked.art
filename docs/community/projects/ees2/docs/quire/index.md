@@ -7,10 +7,8 @@ title: ""
 
 The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
 
-<!-- Include the YouTube IFrame API script -->
 <script src="https://www.youtube.com/iframe_api"></script>
 
-<!-- The iframe where the YouTube video will be embedded -->
 <div id="player"></div>
 
 <ul>
@@ -28,28 +26,24 @@ The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art
 </ul>
 
 <script>
-    // This function gets called by the YouTube API to create the player
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
             height: '315',
             width: '560',
-            videoId: 'XEzPBwicQAg', // Your YouTube video ID here
+            videoId: 'XEzPBwicQAg',
             events: {
                 'onReady': onPlayerReady
             }
         });
     }
 
-    // This function is called when the video player is ready
     function onPlayerReady(event) {
-        // You can add additional actions here if needed
     }
 
-    // This function is called when you want to jump to a specific time in the video
     function seekToTime(seconds) {
         if (player) {
-            player.seekTo(seconds, true); // This changes the time without stopping the video
+            player.seekTo(seconds, true);
         }
     }
 </script>
