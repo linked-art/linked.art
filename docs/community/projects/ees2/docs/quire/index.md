@@ -5,21 +5,23 @@ title: ""
 
 # Quire Linked Art Extension
 
+The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
+
 <div style="text-align: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/watch?v=XEzPBwicQAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-00:00 - Adding an object from a Linked Art resource
-02:30 - Adding a figure from a Linked Art resource to an existing object
-04:00 - Adding a figure from a Linked Art resource
-05:22 - Choosing what fields to retrieve
-07:00 - Processing multiple Linked Art records in a single command
-08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition
-09:30 - Choosing fields interactively and previewing entries
-10:29 - Generating a spreadsheet of all data in a Linked Art record
-11:30 - Resizing an image upon retrieval
-12:40 - Selectively importing objects from an activity record based on object type and artist name
-14:10 - Running native build, pdf, and epub commands
+00:00 - Adding an object from a Linked Art resource  
+02:30 - Adding a figure from a Linked Art resource to an existing object  
+04:00 - Adding a figure from a Linked Art resource  
+05:22 - Choosing what fields to retrieve  
+07:00 - Processing multiple Linked Art records in a single command  
+08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition  
+09:30 - Choosing fields interactively and previewing entries  
+10:29 - Generating a spreadsheet of all data in a Linked Art record  
+11:30 - Resizing an image upon retrieval  
+12:40 - Selectively importing objects from an activity record based on object type and artist name  
+14:10 - Running native build, pdf, and epub commands  
 
 ## Quire Linked Art Extension Installation
 
