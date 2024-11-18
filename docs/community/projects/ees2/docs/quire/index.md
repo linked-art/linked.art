@@ -10,18 +10,25 @@ The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art
 <iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/XEzPBwicQAg?start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <ul>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=0" target="videoPlayer">00:00 - Adding an object from a Linked Art resource</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=150" target="videoPlayer">02:30 - Adding a figure from a Linked Art resource to an existing object</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=240" target="videoPlayer">04:00 - Adding a figure from a Linked Art resource</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=322" target="videoPlayer">05:22 - Choosing what fields to retrieve</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=420" target="videoPlayer">07:00 - Processing multiple Linked Art records in a single command</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=495" target="videoPlayer">08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=570" target="videoPlayer">09:30 - Choosing fields interactively and previewing entries</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=629" target="videoPlayer">10:29 - Generating a spreadsheet of all data in a Linked Art record</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=690" target="videoPlayer">11:30 - Resizing an image upon retrieval</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=760" target="videoPlayer">12:40 - Selectively importing objects from an activity record based on object type and artist name</a></li>
-    <li><a href="https://www.youtube.com/embed/XEzPBwicQAg?start=850" target="videoPlayer">14:10 - Running native build, pdf, and epub commands</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(0)">00:00 - Adding an object from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(150)">02:30 - Adding a figure from a Linked Art resource to an existing object</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(240)">04:00 - Adding a figure from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(322)">05:22 - Choosing what fields to retrieve</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(420)">07:00 - Processing multiple Linked Art records in a single command</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(495)">08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(570)">09:30 - Choosing fields interactively and previewing entries</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(629)">10:29 - Generating a spreadsheet of all data in a Linked Art record</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(690)">11:30 - Resizing an image upon retrieval</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(760)">12:40 - Selectively importing objects from an activity record based on object type and artist name</a></li>
+    <li><a href="javascript:void(0);" onclick="updateVideoTime(850)">14:10 - Running native build, pdf, and epub commands</a></li>
 </ul>
+
+<script>
+    // Function to update iframe with the timestamp
+    function updateVideoTime(startTime) {
+        document.getElementById('videoPlayer').src = `https://www.youtube.com/embed/XEzPBwicQAg?start=${startTime}`;
+    }
+</script>
 
 ## Quire Linked Art Extension Installation
 
