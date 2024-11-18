@@ -7,7 +7,7 @@ title: ""
 
 The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y0z8u-r9UCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XEzPBwicQAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 
 00:00 - Adding an object from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg=0s))  
 02:30 - Adding a figure from a Linked Art resource to an existing object ([YouTube](https://www.youtube.com/watch?v=XEzPBwicQAg&t=150s))   
