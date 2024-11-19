@@ -17,13 +17,13 @@ We are providing the materials created for these sessions here, free-to-use and 
 Explore the links below to access the training materials.
 
 ### Resources
-- **Introductory Slides** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pdf)|[PPTX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pptx))
+- **Introductory Slides** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pdf)|[pptx](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training-slides.pptx))
 - **Installation instructions for Quire and Linked Art Extension**
     - [Download the Extension](https://linked.art/community/projects/ees2/docs/quire/)
-    - MacOS ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-macOS.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-macOS.docx))
-    - Windows ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.docx))
-- **Exercise Sheet** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.pdf)|[DOCX](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.docx))
-- **Quire Template for Exercises** ([ZIP](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
+    - MacOS ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-macOS.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-macOS.docx))
+    - Windows ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/training/installation-instructions-windows.docx))
+- **Exercise Sheet** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.docx))
+- **Quire Template for Exercises** ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
     - Run `npm install` in the template folder to install dependencies
 - **Exercise Sheet Walk-Through Video** ([YouTube](https://youtu.be/y0z8u-r9UCY))
     - 00:00 - Exercise 1: Download and preview the Quire project Template ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=0s))
