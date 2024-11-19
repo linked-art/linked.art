@@ -8,12 +8,12 @@ up_label: "Model"
 
 ## Introduction
 
-It is very unlikely that the descriptions provided in the Linked Art model are the only digital representations of the entities that they describe. It is very likely that there are digital images, web pages, and other related content that should be referenced from the descriptions of the entities. The digital object may be also be the entity of interest, such as an eBook, net art, or a digital installation. This section describes how to describe and link digital resources in the Linked Art model.
+It is very unlikely that the descriptions provided in the Linked Art model are the only digital representations of the entities that they describe. There are also digital images, web pages, and other related content that should be referenced from the descriptions of the entities. The digital object may be also be the entity of interest, such as an eBook, net art, or a digital installation. This section describes how to describe and link digital resources in the Linked Art model.
 
 Digital objects are generally treated in the same way as physical objects -- they are carriers of information, not the information itself. The information is described by a [work](/model/object/aboutness/) that is then digitally carried or shown by the digital object. This ensures that a digital facsimile and the physical object itself are both related to the same information. For example, a PDF (a `DigitalObject`) and a printed copy (a `HumanMadeObject`) of that PDF both carry exactly the same textual content (a `LinguisticObject`).
 
 
-## Core Digital Objects
+## Core Digital Object Properties
 
 All Digital Objects share some basic characteristics, regardless of their particular nature.  The [basic patterns](/model/base/) of Name, Identifier, Classification, and Statement all apply in the regular way. Beyond the baseline, digital objects can have the following descriptive features:
 
@@ -24,6 +24,10 @@ All Digital Objects share some basic characteristics, regardless of their partic
 * Creation - Digital Objects are created by `Creation` events rather than `Production` events, but otherwise have the same activity model.
 
 This allows us to consistently and coherently model both physical and digital information carriers as core items of interest. In particular, a digital image file `digitally_shows` a `VisualItem`, or `digitally_carries` a `LinguisticObject`.
+
+!!! note "Deletion / Erasure"
+	It is currently not possible within the model to delete or erase a digital object. This will be added in a future minor version, and can be discussed in the [github issue](https://github.com/linked-art/linked.art/issues/524)
+
 
 __Example:__
 
@@ -54,7 +58,7 @@ top.digitally_carries = model.LinguisticObject(ident="operation_nw_en", label="O
 
 Some digital representations are intended to be faithful reproductions of a physical object.  Especially when digitizing two dimensional works, it is useful to distinguish between a digital image that depicts the object generally, but perhaps along with other objects, people and the surroundings, compared to a digital image which shows only the same visual content as the physical object. We can be more explicit that the physical object `shows` the same intellectual content that the digital image `digitally_shows`.
 
-These images are sometimes called "Digital Surrogates", as they can stand in for the physical object. A digital surrogate might show more than just the object, such as a color strip and a ruler, however the main focus of the visual item must clearly be the object itself. The line between surrogate and depiction is left to the policies and practices of the implementing organizations.
+These images are sometimes called "Digital Surrogates", as they can stand in for the physical object. A digital surrogate might show more than just the object, such as a color strip and a ruler, however the main focus of the visual item must clearly be the object itself. The line between surrogate and depiction is left to the policies and practices of implementing organizations.
 
 __Example:__
 
