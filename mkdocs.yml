@@ -5,54 +5,55 @@ repo_url: "https://github.com/linked-art/linked.art"
 site_author: "Rob Sanderson"
 site_description: "Linked Open Usable Data for Cultural Heritage"
 theme:
-    name: null
-    custom_dir: "theme/"
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.path
 
 nav:
-    - Home: 'index.md'
-    - Model: 'model/index.md'
-    - API: 'api/1.0/index.md'
-    - About: 'about/index.md'
-    - Community: 'community/index.md'
-    - Recipes: 'cookbook/index.md'
-    - Software: 'software/index.md'
+  - Home: "index.md"
+  - Model: "model/index.md"
+  - API: "api/1.0/index.md"
+  - About: "about/index.md"
+  - Community: "community/index.md"
+  - Recipes: "cookbook/index.md"
+  - Software: "software/index.md"
 
 markdown_extensions:
-        - fenced_code
-        - def_list
-        - tables
-        - abbr
-        - attr_list
-        - admonition
-        - toc:
-            title: "Table of Contents"
-        - pymdownx.tasklist
-        - pymdownx.mark
-        - pymdownx.blocks.admonition
-        - pymdownx.superfences:
-            custom_fences:
-              - name: mermaid
-                class: mermaid
-                format: !!python/name:mermaid2.fence_mermaid        
+  - fenced_code
+  - def_list
+  - tables
+  - abbr
+  - attr_list
+  - admonition
+  - toc:
+      title: "Table of Contents"
+  - pymdownx.tasklist
+  - pymdownx.mark
+  - pymdownx.blocks.admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format:
+            !!python/name:mermaid2.fence_mermaid # Custom vars to our template
 
-# Custom vars to our template
 
 extra:
-    project:
-      install: "https://github.com/linked-art/linked.art"
-    build: production
-    ga_tracking_code: XX-XXXXXXXX-X
+  project:
+    install: "https://github.com/linked-art/linked.art"
+  build: production
+  ga_tracking_code: XX-XXXXXXXX-X
 
 plugins:
-    - search
-    - mermaid2:
-        javascript: "https://linked.art/media/vendor/mermaid.min.js"
-        #version: '10.6.1'
-        arguments:
-          theme: 'neutral'
-          logLevel: 1
-          flowchart: 
-            curve: 'basis'
-          securityLevel: 'loose'
-    - linkedart
-
+  - search
+  - mermaid2:
+      javascript: "https://linked.art/media/vendor/mermaid.min.js"
+      #version: '10.6.1'
+      arguments:
+        theme: "neutral"
+        logLevel: 1
+        flowchart:
+          curve: "basis"
+        securityLevel: "loose"
+  - linkedart

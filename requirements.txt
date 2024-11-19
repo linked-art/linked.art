@@ -6,5 +6,6 @@ pyld
 requests
 lxml
 mdx_truly_sane_lists
+mkdocs-material==9.5.43
 -e git+https://github.com/fralau/mkdocs-mermaid2-plugin#egg=mkdocs-mermaid2-plugin
 -e git+https://github.com/linked-art/mkdocs-linkedart-plugin.git#egg=mkdocs-linkedart-plugin
