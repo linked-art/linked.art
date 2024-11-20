@@ -208,7 +208,7 @@ The user has the option to preview an entry before it is added to objects.yaml o
 
 When the user runs commands that retrieve Linked Art data and figures, the data and figure hashes will be added to caches. When a URI that has been passed is passed again, the program will retrieve Linked Art data from the cache instead of making new http requests to refetch the data.
 
-The user has the ability to change the fields they wish to retrieve as they work on their project. Therefore, there could be cases where the user passes a URI they have passed before, but wishes to retrieve fields that are not in the cache. The ‘--force’ option allows the user to ignore cache and refetch Linked Art to retrieve the desired fields. The cache entry for the URI is rewritten.
+The user has the ability to change the fields they wish to retrieve as they work on their project. Therefore, there could be cases where the user passes a URI they have passed before, but wishes to retrieve fields that are not in the cache. The ‘--force’ option allows the user to ignore cache and refetch Linked Art to retrieve the desired fields. The cache and objects.yaml entries for the URI are overwritten.
 
 `quire add <thing> <uri> [id1] [id2] --force`
 
