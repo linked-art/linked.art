@@ -25,7 +25,7 @@ Explore the links below to access the training materials.
 - **Exercise Sheet** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.docx))
 - **Quire Template for Exercises** ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
     - Run `npm install` in the template folder to install dependencies
-- **Exercise Sheet Walk-Through Video**
+- **Exercise Sheet Walk-Through Video** ([.mp4](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training_video.mp4))
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <div id="player"></div>

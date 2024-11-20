@@ -35,3 +35,6 @@ The digital publication created through Quire enables visitors, researchers, and
 <div style="text-align: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/22KPwueJ9XA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+<p style="text-align: center; font-size: 14px; color: #555;">
+    (<a href="https://github.com/oerc-csi/la-quire/raw/main/docs/labyrinth/labyrinth_quire_video.mp4" download>.mp4 download</a>)
+</p>

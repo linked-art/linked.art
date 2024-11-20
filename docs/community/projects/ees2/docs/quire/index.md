@@ -9,7 +9,12 @@ The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
-<div id="player"></div>
+<div style="text-align: left;">
+    <div id="player"></div>
+    <p style="text-align: center; font-size: 14px; color: #555; margin-top: 8px;">
+        (<a href="https://github.com/oerc-csi/la-quire/raw/main/docs/quire_linked_art_extension_demo.mp4" download>.mp4 download</a>)
+    </p>
+</div>
 
 <ul>
     <li><a href="javascript:void(0);" onclick="seekToTime(0)">00:00 - Adding an object from a Linked Art resource</a></li>
