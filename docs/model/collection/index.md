@@ -149,7 +149,7 @@ top.members_exemplified_by = p
 
 ### Archives
 
-Set is used extensively in the model for [Archives](/model/archives/).
+The Set class is used extensively to model [Archives](/model/archives/).
 
 ### Auction Lots
 
