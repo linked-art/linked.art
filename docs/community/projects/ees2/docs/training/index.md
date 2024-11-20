@@ -25,12 +25,39 @@ Explore the links below to access the training materials.
 - **Exercise Sheet** ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.pdf)|[docx](https://github.com/oerc-csi/la-quire/raw/main/docs/training/exercise-sheet.docx))
 - **Quire Template for Exercises** ([Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/training/quire-template.zip))
     - Run `npm install` in the template folder to install dependencies
-- **Exercise Sheet Walk-Through Video** ([YouTube](https://youtu.be/y0z8u-r9UCY))
-    - 00:00 - Exercise 1: Download and preview the Quire project Template ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=0s))
-    - 01:50 - Exercise 2: Give your project a title and add your name ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=110s))
-    - 04:00 - Exercise 3: Write a brief introduction ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=240s))
-    - 05:09 - Exercise 4: Add a figure from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=309s))
-    - 08:25 - Exercise 5: Add an object from a Linked Art resource ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=505s))
-    - 11:08 - Exercise 6: Add a figure to an existing object ([YouTube](https://www.youtube.com/watch?v=y0z8u-r9UCY&t=668s))
+- **Exercise Sheet Walk-Through Video** ([.mp4](https://github.com/oerc-csi/la-quire/raw/main/docs/training/training_video.mp4))
+<script src="https://www.youtube.com/iframe_api"></script>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y0z8u-r9UCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div id="player"></div>
+
+<ul>
+    <li><a href="javascript:void(0);" onclick="seekToTime(0)">00:00 - Exercise 1: Download and preview the Quire project Template</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(110)">01:50 - Exercise 2: Give your project a title and add your name</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(240)">04:00 - Exercise 3: Write a brief introduction</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(309)">05:09 - Exercise 4: Add a figure from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(505)">08:25 - Exercise 5: Add an object from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(668)">11:08 - Exercise 6: Add a figure to an existing object</a></li>
+</ul>
+
+<script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '315',
+            width: '560',
+            videoId: 'y0z8u-r9UCY',
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+    }
+
+    function seekToTime(seconds) {
+        if (player) {
+            player.seekTo(seconds, true);
+        }
+    }
+</script>
