@@ -30,7 +30,10 @@ The digital publication created through Quire enables visitors, researchers, and
     - As presented at the Oxford Digital Humanities Summer School 2024 ([PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/labyrinth/labyrinth_slides.pdf)|[pptx](https://github.com/oerc-csi/la-quire/raw/main/docs/labyrinth/labyrinth_slides.pptx))
 - **Labyrinth: Knossos, Myth & Reality Quire Project**
     - [Website](https://oerc-csi.github.io/la-quire/)
+    - [Quire Project Zip](https://github.com/oerc-csi/la-quire/raw/main/docs/labyrinth/labyrinth_quire_exemplar.zip)
+        - Run `npm install` in the project folder to install dependencies
     - [PDF](https://github.com/oerc-csi/la-quire/raw/main/docs/labyrinth/labyrinth_quire_exemplar.pdf)
+        - This PDF uses in-text citations instead of endnotes to improve formatting
 
 <div style="text-align: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/22KPwueJ9XA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
