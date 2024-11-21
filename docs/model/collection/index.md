@@ -135,7 +135,7 @@ The prototypical member of the "14th Century Italians" group was a person born b
 
 ```crom
 top = model.Group(ident="14thc_italian/1", label="14th c italians")
-top.identified_by = model.PrimaryName(content="Unidentified 14th Century Italian")
+top.identified_by = vocab.PrimaryName(content="Unidentified 14th Century Italian")
 p = model.Person()
 b = model.Birth()
 ts = model.TimeSpan()
