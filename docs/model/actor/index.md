@@ -10,12 +10,11 @@ All activities are carried out by some actor, either a person (`Person`) or a gr
 
 As far as scope goes, the model currently does not consider that non-humans (such as software or animals) can perform activities, as activities require some notion of intent. Thus the productions of the [infamous monkey selfies from 2011](https://www.cnn.com/2018/04/24/us/monkey-selfie-peta-appeal/index.html) are not carried out by anyone, as the monkey cannot do it and the photographer did not intend for the photographs to be taken. A workaround for this is simply to create a `Person` record for the non-human, until the model can catch up.
 
-This model does not aim to capture all of the possible information about a Person or Group, or their relationships to other people, objects, places or activities. Instead it attempts to capture sufficient information for a human or machine to distinguish the actor from others and to understand their role in history.
+This model does not aim to capture all of the possible information about a Person or Group, or all their relationships to other people, objects, places or activities. Instead it attempts to capture sufficient information for a human or machine to distinguish the actor from others and to understand their role in history. Future versions or independent extensions might add additional features.
 
-## Types
+## Classes
 
-There are two primary types of acting agent, `Person` and `Group`. `Person` is used for humans, and `Group` is used for any collective set of humans.  Groups typically are able to take action as a coherent whole, but in some cases this is overlooked for simplicity's sake.  For example, it is useful to be able to say that "The Museum" acquired a painting or "The Workshop" produced a sculpture, when in fact it was some subset of the members of the group that actually performed the activity but we do not know exactly who. 
-
+There are two primary classes of acting agent, `Person` and `Group`. `Person` is used for humans, and `Group` is used for any collective set of humans.  Groups typically are able to take action as a coherent whole, but in some cases this is overlooked for simplicity's sake.  For example, it is reasonable to have a Group that represents 18th Century French Impressionist artists, however such a group is an artifical construct and thus could not have acted as a single entity. It is also useful to be able to say that "The Museum" acquired a painting or "The Workshop" produced a sculpture, when in fact it was some very small subset of the members of the group that actually performed the activity and we do not know exactly who. Also, it is not necessary that the Group be aware of the other members, nor take any intentional act to join the Group, members can be added after their deaths. 
 
 If it is not known whether an actor is a Person or a Group, then the safer default is Group. For example, if a sale of an object is listed as being from an art dealer called "Smith", it is unclear whether it refers to a person via their family name, or to an organization named after its owner. The rationale for using `Group` is that it could be a group consisting of a single person, or a group that is otherwise arbitrarily defined. 
 
@@ -44,8 +43,7 @@ top.identified_by = vocab.PrimaryName(content="Rembrandt Harmenzoon van Rijn")
 
 ### Parts of Names
 
-Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property. The name parts are themselves `Name`s, and are included in the `part` set in the same way as other partitioning. The type of name is given using `classified_as`, in the regular fashion. Western name division vocabulary is given below, and other name part types should be suggested.
-
+Personal names can often be broken down into parts, with different types.  The types are given using the `classified_as` property. The name parts are themselves `Name`s, and are included in the `part` set in the same way as other partitioning. The type of name is given using `classified_as`, in the regular fashion. Western name division vocabulary is used in the example below, and other name part types should be [suggested](/model/vocab/).
 
 __Example:__
 
@@ -60,9 +58,9 @@ name.part = vocab.MiddleName("Harmenzoon")
 name.part = vocab.FamilyName(content="van Rijn")
 ```
 
-### Equivalent Resources
+## Equivalent Entities
 
-There may be other identifiers for the person available in external systems, such as [ULAN](http://vocab.getty.edu/ulan/) or any of a dozen others.  If all of the information needed about the person is available from that system, then it is recommended to simply use that identifier directly as the URI for the Person.  If there is a requirement to maintain separate information about the person, then the `equivalent` property should be used to align the two. This might happen when, for example, the local data has additional information about which documents refer to the person, or more detailed biographical information.
+There may be other identifiers for the person available in external systems, such as [ULAN](http://vocab.getty.edu/ulan/) or any of a dozen others.  If all of the information needed about the person is available from that system, then it is recommended to simply use that identifier directly as the URI for the Person.  If there is a need to maintain separate information about the person, then the `equivalent` property should be used to align the two. This might happen when, for example, the local data has additional information about which documents refer to the person, or more detailed biographical information.
 
 __Example:__
 
@@ -75,9 +73,9 @@ top.equivalent = model.Person(ident="http://vocab.getty.edu/ulan/500011051", lab
 
 ## Addresses
 
-People and Organizations often have addresses, physical or online, via which they can be contacted. This includes mailing addresses, email addresses and so forth.  These are referenced separately from Names and Identifiers, as many people or groups might have the same contact point. The address is an identifier for a location or service, and is thus modeled as an Identifier. This means it does not have language information, unlike Names, but addresses are not inherently linguistic. 
+People and Organizations often have addresses, physical or online, via which they can be contacted. This includes mailing addresses, email addresses and so forth.  These are referenced in a separate property from Names and Identifiers called `contact_point`, as many people or groups might have the same contact point, and thus the person is not `identified_by` the address. The address is instead an `Identifier` for a location or service. This means it does not have language information, unlike Names. 
 
-This `Identifier` is then related to the actor via the `contact_point` property.  They can be `classified_as` different types, and use the `content` property to capture the address itself.
+This `Identifier` is related to the actor via the `contact_point` property.  They can be `classified_as` different types, and use the `content` property to capture the address itself.
 
 __Example:__
 
@@ -116,18 +114,18 @@ top.residence = res
 
 ## Life Events
 
-There are key events in a person or organization's lifespan that are often recorded as they contribute core information for determining the identity of the actor.  These include the birth or formation, death or dissolution, and the period in which they carried out the work they are known for.
+There are key events in a person or organization's existence that are often recorded as they contribute core information for determining the identity of the actor.  These include the birth or formation, death or dissolution, and the period in which they carried out the work they are known for.
 
 ### Birth and Death / Formation and Dissolution
 
-Like the production of objects or the creation of texts, people and organizations also come into and out of existence through events.  These events can take place at certain Places, and happen at certain times.  
+Like the production of objects or the creation of texts, people and organizations also come into and out of existence through events.  These events can take place at certain Places, happen at certain times, and so on.
 
-People are born in `Birth` events and die in `Death` events, related to the person by the `born` and `died` properties respectively. Groups are formed in `Formation` events, and dissolved in `Dissolution` events, referenced via the `formed_by` and `dissolved_by` properties. These classes are modeled not as Activities, but as Events that are not themselves carried out by anyone. They are the coming into existence instant of the person, not the conception of the couple, the labor of the mother, or potentially the killing by a murderer. These activities can be modeled as causes, as described below.
+People are born in `Birth` events and die in `Death` events, related to the person by the `born` and `died` properties respectively. Groups are formed in `Formation` activities, and dissolved in `Dissolution` activities, referenced via the `formed_by` and `dissolved_by` properties. `Birth` and `Death` are modeled not as Activities, but as Events that are not carried out by anyone. They are the coming into existence instant of the person, not the conception, the labor, or potentially the killing by a murderer. These activities can be modeled as causes, as described below.
 
 Birth and Death do not have any properties of their own that are used in the model, only those inherited from event, such as `timespan` and `took_place_at`.
 
 !!! "note" "Inanimate Thing or Dead Person?"
-    After death, people are still instances of `Person` which is a subclass of `Actor`, even though they can no longer carry out activities.  People in comas or otherwise completely incapacitated also cannot carry out activities, but are not temporarily non-Actors. The modeling that death is a transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any actual value. Thus a burial activity (_aat:300263485_) buries a Person, not a Thing-that-used-to-be-a-Person. However if the skeleton is then dug up and exhibited, it is exhibited as a Thing. There is, therefore, a transition at some undetermined point.
+    After death, people are still instances of `Person` which is a subclass of `Actor`, even though they can no longer carry out activities.  People in comas or otherwise completely incapacitated also cannot carry out activities, but are not temporarily non-Actors. The modeling that death is a transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any actual value. Thus a burial activity (_aat:300263485_) buries a Person, not a Thing-that-used-to-be-a-Person. However if the skeleton is later dug up, it is likely documented as a Physical Thing. There is, therefore, a transition at some undetermined point.
 
 __Example:__
 
@@ -169,7 +167,7 @@ form.timespan = fts
 
 It is often useful to know where and when the person or organization was active in their professional function. For example, an artist might have started painting when they were 20, stopped by 30, and only painted in Italy. This information can be used to help eliminate dubious attributions, for example.
 
-The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` resource must be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  
+The property for the Person or Group is `carried_out`, the inverse of the more familiar `carried_out_by` from Activities to Actors. The `Activity` must be `classified_as` _aat:300393177_, meaning the time when the actor is actively performing their primary professional function.  The other properties of activities can and should also be used.  
 
 This pattern can be used for other activities that the Person or Group was responsible for by changing the `classified_as` on the Activity to reflect the nature of that activity, however the activity must not have its own identity separate from Person or Group. If it does, then it should have its own record, and use `carried_out_by` in the regular fashion. Activities that are embedded within records in this way cannot be referred to separately from the Person.
 
@@ -199,7 +197,7 @@ Note that many such events take place in locations only identified by a civic or
 
 __Example:__
 
-Rembrandt was buried after his death in 1669 at the location of Westerkerk.
+Rembrandt was buried some time after he died in 1669 at the location of Westerkerk.
 
 ```crom
 top = model.Person(ident="rembrandt/14", label="Rembrandt")
@@ -262,7 +260,7 @@ top.classified_as = vocab.Ethnicity(ident="http://www.wikidata.org/entity/Q30071
 
 Gender is a debated and politically charged topic. The intent of this section is not to take a stand on those debates, but instead to allow the representation of data in museum and other information management systems to be made accessible.
 
-Gender is not specifically discussed in CRM, in fact it was even deleted from a previous version, and the modeling follows the same classification pattern as for nationality and culture. This allows a diverse set of gender possibilities, and does not make any specific statements about biological versus assigned versus preferred gender roles. The gender must be `classified_as` _aat:300055147_.
+Gender is not specifically discussed in the underlying ontology, in fact it was even deleted from a previous version, and the modeling follows the same classification pattern as for nationality and culture. This allows a diverse set of gender possibilities, and does not make any specific statements about biological versus assigned versus preferred gender roles. The gender must be `classified_as` _aat:300055147_.
 
 __Example:__
 

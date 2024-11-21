@@ -51,8 +51,8 @@ An index of all of the classes, properties and identities used:
 
 Following the existing standards and best practices of the community, our starting point consists of the following background standards:
 
-* [CIDOC-CRM](http://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
-    * We use a streamlined [subset](profile/) of CIDOC-CRM 7.1.3 to ensure consistency and comprehension.
+* [CIDOC-CRM](https://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
+    * We use a streamlined [subset](profile/) of [CIDOC-CRM 7.1.3](https://www.cidoc-crm.org/Version/version-7.1.3) to ensure consistency and comprehension.
 * The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity for domain-specific terminology
     * Terminology is divided into three lists: [required](vocab/required/), [recommended](vocab/recommended/) and [optional](vocab/optional/) based on whether systems will be interoperable if different choices were made.
 * The concrete expression of the profile and access to data is fully covered in the [API](/api/) documentation.

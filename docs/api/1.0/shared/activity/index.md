@@ -45,7 +45,7 @@ The activity data structure has the following properties.
 | Digital Object    | Creation      | -           | Activity    |
 | Group             | Formation     | Dissolution | Activity    |
 | Person            | Birth         | Death       | Activity    |
-| Physical Object   | Production, PartRemoval | Destruction | Encounter, Activity | 
+| Physical Object   | Production, PartRemoval | Destruction | Encounter, Modification, Activity | 
 | Set               | Creation      | -           | Activity    |
 | Textual Work      | Creation      | -           | Activity    |
 | Visual Work       | Creation      | -           | Activity    |
@@ -60,20 +60,21 @@ The activity data structure has the following properties.
 
 Activity instances are typically found as the object of the following properties.
 
-| Property Name    | Class       | Description |
-|------------------|-------------|-------------|
-| `created_by`     | Creation    | The beginning of a conceptual or digital thing |
-| `formed_by`      | Formation   | The beginning of a group |
-| `dissolved_by`   | Dissolution | The end of a group |
-| `born`           | Birth       | The beginning of a person |
-| `died`           | Death       | The end of a person |
-| `produced_by`    | Production  | The beginning of a physical thing |
-| `removed_by`     | PartRemoval | The beginning of a physical thing, when it is removed from something else |
-| `destroyed_by`   | Destruction | The ending of a physical thing |
-| `encountered_by` | Encounter   | The discovery or interaction with a physical thing |
-| `used_for`       | Activity    | The use of a thing for some activity, typically publication |
-| `participated_in`| Activity    | An activity that a Person or Group participated in |
-| `carried_out`    | Activity    | An activity that a Person or Group carried out directly |
+| Property Name    | Class        | Description |
+|------------------|--------------|-------------|
+| `created_by`     | Creation     | The beginning of a conceptual or digital thing |
+| `formed_by`      | Formation    | The beginning of a group |
+| `dissolved_by`   | Dissolution  | The end of a group |
+| `born`           | Birth        | The beginning of a person |
+| `died`           | Death        | The end of a person |
+| `produced_by`    | Production   | The beginning of a physical thing |
+| `removed_by`     | PartRemoval  | The beginning of a physical thing, when it is removed from something else |
+| `modified_by`    | Modification | The modification of a physical thing |
+| `destroyed_by`   | Destruction  | The ending of a physical thing |
+| `encountered_by` | Encounter    | The discovery or interaction with a physical thing |
+| `used_for`       | Activity     | The use of a thing for some activity, typically publication |
+| `participated_in`| Activity     | An activity that a Person or Group participated in |
+| `carried_out`    | Activity     | An activity that a Person or Group carried out directly |
 
 
 ## Example

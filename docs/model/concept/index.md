@@ -8,7 +8,8 @@ title: "Concepts"
 
 Concepts are an important aspect of Linked Art, and encompass "units of thought" from classifications of objects or other entities, to languages, materials and beyond. For the most part, Linked Art leverages the Getty's Art and Architecture Thesaurus (AAT) for concepts rather than defining our own, however the model only [requires](/model/vocab/required/) the use of AAT terms in a very limited number of situations.
 
-When it is useful or necessary to define a new concept, or to redefine an existing one in order to add new information, then we need to have a model and corresponding data for those concepts rather than just a URI. This page describes how we model concepts in Linked Art.
+When it is useful or necessary to define a new concept, or to redefine an existing one in order to add new information, then we can fully describe them using this part of the model, rather than merely reference an external URI.
+
 
 ## Concept Classes 
 
@@ -20,7 +21,7 @@ There are five core classes for concepts:
 * `Material` is a physical material type, such as wood, gold or oil paint. Instances of it are used as the value of the `made_of` property on Human-Made Objects.
 * `MeasurementUnit` is a unit that clarifies how to understand the value of a dimension, such as seconds, meters or kilograms. Instances of it are used as the value of the `unit` property on Dimensions.
 
-All of the types are used in the regular `type` property, but care should be taken to use the right class whenever possible rather than always falling back to `Type`.
+All of the classes above are used in the regular `type` property, but care should be taken to use the right class whenever possible rather than always falling back to `Type`.
 
 __Example:__
 
@@ -59,9 +60,9 @@ top.classified_as = ptg
 
 ## Partitioning versus Classification
 
-When it comes to concepts, it is easy to confuse the distinction between the concept being a part of a broader concept, and being classified as a type of concept. The broader concept is a concept that the narrower concept is part of, along with other. The broader concept is a more general concept than the narrower one. For example visual works is a more general concept than the concept of paintings, animals is a more general concept than mammals, European is a more general concept than Dutch.
+When it comes to concepts, it is easy to confuse the distinction between the concept being a part of a broader concept, and being classified as a type of concept. The broader concept is a concept that the narrower concept is part of, along with others. The broader concept is a more general concept than the narrower one. For example visual works is a broader or more general concept than the concept of paintings, animals is a more general concept than mammals, European is a more general concept than Dutch.
 
-Conversely a second concept that classifies the first would be one that categorizes it but doesn't encompass it directly. For example, type of work is the category for the concept of painting, taxonomic rank would be a category for mammals, and nationality would be a category for Dutch.
+Conversely a second concept that classifies the first would be one that categorizes it but doesn't encompass it directly. For example, type of work is the category for the concept of painting, taxonomic rank would be a category for mammals, and nationality would be a category for Dutch. These concepts that categorize other concepts are often called "meta-types" and are also discussed in the [base patterns](/model/base/#types-of-types).
 
 Concepts can, and should, have both broader terms and classifications, as demonstrated in the above examples.
 
@@ -78,7 +79,7 @@ top.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300435443", lab
 
 ## Concept Schemes and Sets
 
-Another way to group concepts is within a concept scheme (such as AAT), or within a set of concepts that have been collected together for some purpose. The set of concepts might be to collect together concepts that have a certain usage but aren't within a single hierarchical structure, such as types of statement, object or work. Concepts can be in multiple sets at once, and those sets can also be arranged hierarchically.  This grouping is a third, completely orthogonal way to arrange concepts beyond partitioning and classifying.
+Another way to group concepts is within a concept scheme (such as AAT), or within a set of concepts that have been collected together for some purpose. The set of concepts might be created to collect together concepts that have a certain usage but aren't within a single hierarchical structure, such as types of statement, object or work. Concepts can be in multiple sets at once, and those sets can also be arranged hierarchically.  This grouping is a third, completely orthogonal way to arrange concepts beyond partitioning and classifying.
 
 __Example:__
 
@@ -93,7 +94,7 @@ top.member_of = model.Set(ident="conceptScheme", label="Local Concept Scheme")
 
 Some concepts are the coordination or compilation of other concepts or entities. For example the concept "history of France" could be thought of as being the concept "history" as it relates to the place "France". Or the concept "history of France, 20th century" would be the same with an additional related period of time.
 
-As these related entities are not necessarily also concepts, they cannot be part of the narrower/broader hierarchy -- the "history of france" concept cannot have a broader relationship to France, because France is an instance of `Place`, not of `Type`.
+As these related entities are not necessarily also concepts, they cannot be part of the narrower/broader hierarchy -- the "history of France" concept cannot have a broader relationship to France, because France is an instance of `Place`, not of `Type`.
 
 In order to manage these sorts of relationships, we use the `influenced_by` property of the `Creation` of the concept, which can refer to any entity.
 
@@ -113,4 +114,4 @@ cre.influenced_by = model.Place(ident="france", label="France")
 
 This model is heavily influenced by and highly compatible with [SKOS](https://www.w3.org/TR/skos-primer/) the Simple Knowledge Organization System specification from the W3C. Concepts in Linked Art could easily be skos:Concepts, with different types of name (called labels in skos), descriptions/notes, narrower and broader concepts and other relationships. Coordinated concepts are managed through the creation influences pattern. Concept Schemes in SKOS are modeled as Sets in Linked Art. 
 
-As such, any skos described concept should be able to be transformed to Linked Art with minimal difficulty.
+As such, any SKOS described concept should be able to be transformed to Linked Art with minimal difficulty.

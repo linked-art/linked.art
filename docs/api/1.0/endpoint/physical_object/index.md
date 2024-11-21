@@ -43,6 +43,7 @@ For more information about the Physical Object data, please see the [Object mode
 | `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for a [Production](../../shared/activity) | 
 | `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for a [Destruction](../../shared/activity) | 
 | `removed_by` | array | Optional | An array of json objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for a [PartRemoval](../../shared/activity) | 
+| `modified_by` | array | Optional | An array of json objects, each of which represents a physical modification to the object, such as conservation treatment, which follows the requirements for a [Modification](../../shared/activity) |
 | `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for an [Encounter](../../shared/activity) |
 | `changed_ownership_through` | array | Optional | An array of json objects, each of which represents the Acquisition of the object by some actor from another, and follows the requirements for an `Acquisition` as given in the [Provenance Activity](../provenance_activity/) endpoint description, as also summarized below|
 
