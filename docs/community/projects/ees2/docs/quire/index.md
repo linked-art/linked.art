@@ -112,6 +112,8 @@ The `spreadsheet` arg provides a way for the user to easily browse Linked Art by
 
 The user has the ability to choose which fields are retrieved from the Linked Art record, the order in which they are displayed, and their names. Field selection and order are handled by the object_display_order section of the objects.yaml file, and field names can be changed from defaults in the objectFieldNames section of the config.yaml file.
 
+The object’s title and Linked Art URI will be retrieved regardless of their presence in the object_display_order. The extension relies on the URI for functionality such as duplicate prevention. To ensure optimal results, it is recommended to keep URIs in the objects listed in the object_list. However, the URI can be omitted from rendered content by excluding it from the object_display_order.
+
 #### **2.1 objects.yaml object_display_order**
 
 There are 21 fields currently supported by the Linked Art extension in addition to object title, which is always retrieved:

@@ -26,7 +26,8 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 ## Resources
 
 - The Quire Linked Art Extension extension fetches data from a Linked Art API and merges object records and images (via IIIF) into a Quire project. For installation instructions and comprehensive documentation, visit this [page](https://linked.art/community/projects/ees2/docs/quire/).
-- Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using Linked Art with Quire.
+- Dr. Andrew Shapland has reused materials created for his 2023 exhibition *Labyrinth: Knossos, Myth & Reality* at the Ashmolean within new Quire-generated learning resources for the permanent Aegean World gallery. Visit this [page](https://linked.art/community/projects/ees2/docs/labyrinth) for access to the the resulting resources and to learn more.
+- Explore our [Training](https://linked.art/community/projects/ees2/docs/training) page for a comprehensive tutorial on using the Quire Linked Art extension.
 - [Find out more](https://linked.art/community/projects/ees2/docs/outreach/) about our outreach trial with the Ashmolean and Rumble Museums and Cheney School, including lesson plans and accompanying teaching resources.
 - Read our May 2024 [survey](https://linked.art/community/projects/ees2/docs/quire_survey/) of existing Quire use.
 - Check out [latool.js](https://linked.art/community/projects/ees2/docs/latool), a script that fetches and processes Linked Art from a provided URL.
