@@ -13,11 +13,11 @@ Ownership is often more complicated than a single individual acquiring an object
 
 ## Rights and their Acquisition
 
-The model for acquiring an object (by purchase, gift or other means) incorporates the specific right of ownership into the properties of the `Acquisition` resource.  The acquisition transfers the title of the object between parties, but that "title" could be expanded to a more completely modeled `Right`.  For some scenarios where we have more information about the interactions and legal status, we need to explicitly model these rights.
+The model for acquiring an object (by purchase, gift or other means) incorporates the specific right of ownership into the properties of the `Acquisition` activity.  The acquisition transfers the title of the object between parties, but that "title" could be expanded to be more completely modeled as a `Right`. For some scenarios where we have more information about the interactions and legal status, we need to explicitly model these rights.
 
-Rights are conceptual things that apply to their real world subjects. They are not relative to time, but can be established and invalidated by various activities or events.  The simplest case would be that as part of the provenance event where an object is acquired, there is also the establishment of the right of ownership of that object by the new owner and the invalidation of the right of ownership of the previous owner.
+Rights are conceptual things that apply to their real world subjects. They are not relative to time, but can be established and invalidated by various activities or events.  The simplest case would be that, as part of the provenance event where an object is acquired, there is also the establishment of the right of ownership of that object by the new owner and the invalidation of the right of ownership of the previous owner.
 
-While it is possible and valid to have both the `Acquisition` and the `Right` in a single provenance entry, it is redundant as the acquisition model is simpler and more concise without losing any information. The sections below introduce scenarios in which information would be lost without the explicit modeling of the Right.
+While it is possible and valid to have both the `Acquisition` and the `Right` in a single provenance entry, it is redundant as the Acquisition model is simpler and more concise without losing any information. The sections below introduce scenarios in which information would be lost without the explicit modeling of the Right.
 
 In order to connect the `Right` to the provenance activity, we introduce a new `Activity` subclass called `RightAcquistion`.  It has two new properties: `establishes` links the `Right` that was established by this activity, and `invalidates` can optionally link to the `Right` that was rendered invalid by the activity.  
 
@@ -129,7 +129,6 @@ Many copyrights for images are owned by collective organizations rather than ind
 __Example:__
 
 A copyright management organization, the Paintings Copyright Association, acquired the copyright for a particular painting in 2014.
-
 
 ```crom
 top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Copyright acquisition by PCA")
