@@ -40,11 +40,6 @@ Development of the model for version 1.0 has finished, and the documentation is 
     * [Specific Assertions](assertion/)
 
 
-An index of all of the classes, properties and identities used:
-
-* [Index of Examples](example_index)
-
-
 ## Development of the Model
 
 ### Model Background
