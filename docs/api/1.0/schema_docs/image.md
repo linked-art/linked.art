@@ -1,6 +1,5 @@
 ---
 title: "Linked Art Schema: Image"
-template: "schema_docs.html"
 ---
 
  <div onload=anchorOnLoad(); id=root> <span class="badge badge-dark value-type">Type: object</span><br><!--
