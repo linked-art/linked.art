@@ -3,7 +3,7 @@ title: "Linked Art API: Assigned Relationship Structure"
 ---
 
 
-[TOC]
+
 
 ## Introduction
 

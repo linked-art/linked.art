@@ -2,7 +2,7 @@
 title: "Temporal Context: Periods, Events and Activities"
 ---
 
-[TOC]
+
 
 ## Introduction
 

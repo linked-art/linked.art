@@ -2,7 +2,7 @@
 title: Texts and Documents
 ---
 
-[TOC]
+
 
 ## Introduction
 

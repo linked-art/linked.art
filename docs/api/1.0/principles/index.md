@@ -4,7 +4,7 @@ up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---
 
-[TOC]
+
 
 The initial principles are derived from the [IIIF Design Patterns](https://iiif.io/api/annex/notes/design_patterns/), as a very successful approach to designing APIs in the cultural heritage domain.
 

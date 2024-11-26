@@ -2,7 +2,7 @@
 title: "Places"
 ---
 
-[TOC]
+
 
 ## Introduction
 

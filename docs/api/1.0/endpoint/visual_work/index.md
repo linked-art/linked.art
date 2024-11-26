@@ -3,7 +3,7 @@ title: "Linked Art API Visual Work"
 ---
 
 
-[TOC]
+
 
 ## Introduction
 

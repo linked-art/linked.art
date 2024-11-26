@@ -2,7 +2,7 @@
 title: "Collections and Sets"
 ---
 
-[TOC]
+
 
 ## Introduction
 

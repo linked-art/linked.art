@@ -2,7 +2,7 @@
 title: Relationships and Context for Assignment of Attributes
 ---
 
-[TOC]
+
 
 ## Introduction
 

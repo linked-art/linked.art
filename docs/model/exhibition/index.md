@@ -2,7 +2,7 @@
 title: "Exhibitions"
 ---
 
-[TOC]
+
 
 ## Introduction
 

@@ -2,7 +2,7 @@
 title: "Getty Photo Archive Mapping"
 ---
 
-[TOC]
+
 
 ## Introduction
 

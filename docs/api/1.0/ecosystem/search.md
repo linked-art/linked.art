@@ -4,7 +4,7 @@ up_href: "/api/1.0/ecosystem/"
 up_label: "Linked Art API 1.0 Ecosystem"
 ---
 
-[TOC]
+
 
 ## Introduction
 

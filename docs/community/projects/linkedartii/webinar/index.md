@@ -3,7 +3,7 @@ title: "Webinar: Linked Art in Practice using Jupyter Code Notebooks -
 Connecting Cultural Heritage Collections Data"
 ---
 
-[TOC]
+
 
 # Webinar
 The AHRC-funded Linked Art II project and Digital Scholarship at Oxford held a webinar on Tuesday 3 May 2022. 
