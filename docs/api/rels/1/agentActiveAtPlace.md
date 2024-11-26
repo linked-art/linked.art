@@ -10,7 +10,7 @@ See the related [model documentation](/model/actor/#active-dates)
 
 ### Example
 
-
+From the record for Harlem, New York, the record for A.Philip Randolph would be in the response
 
 
 ### Details

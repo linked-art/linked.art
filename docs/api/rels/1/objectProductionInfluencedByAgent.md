@@ -22,6 +22,9 @@ From the record for Albert Bierstadt, the prints of his works (which were not ne
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?objects WHERE {
+  ?objects crm:P108i_was_produced_by ?production .
+  ?production crm:P15_was_influenced_by <https://lux.collections.yale.edu/data/person/c9e738a9-e0f7-4d81-b5a8-a98ef40f18c8> .
+  }
 ```
 

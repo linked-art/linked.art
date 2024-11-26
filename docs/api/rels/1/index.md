@@ -89,7 +89,7 @@ title: Linked Art HAL Links
   * [workClassifiedAsConcept](workClassifiedAsConcept): Return the works that are classified as the concept.
   * [workCreationTechniqueConcept](workCreationTechniqueConcept): Return the works whose creation has a technique of the concept.
   * [workLanguageLanguage](workLanguageLanguage): Return the works that are written or in the language.
-  * [workRepresentsConcept](workRepresentsConcept): Return the visual works that represent or depict the concept.
+  * [workRepresentsConcept](workRepresentsConcept): Return the visual works that represent or depict the concept, or an instance of the concept
 
 ### Activity
 
@@ -112,7 +112,7 @@ title: Linked Art HAL Links
   * [agentMemberOfSet](agentMemberOfSet): Return people or groups which are members of the set.
   * [conceptInfluencedBySet](conceptInfluencedBySet): Return concepts which were influenced by the set.
   * [conceptMemberOfSet](conceptMemberOfSet): Return concepts which are members of the set.
-  * [entityMemberOfSet](entityMemberOfSet): Return any entity which is a member of the set.
+  * [entityMemberOfSet](entityMemberOfSet): Return entities which are members of the set.
   * [objectMemberOfSet](objectMemberOfSet): Return objects which are members of the set.
   * [placeMemberOfSet](placeMemberOfSet): Return places which are members of the set.
   * [setMemberOfSet](setMemberOfSet): Return the sets which are members of the set.

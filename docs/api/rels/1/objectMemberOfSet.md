@@ -10,7 +10,7 @@ See the related [model documentation](/model/collection/#features)
 
 ### Example
 
-
+From the record for the Rijksmuseum's highlight objects, the record for the Night Watch would be in the response
 
 
 ### Details

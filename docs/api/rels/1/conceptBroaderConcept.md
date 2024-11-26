@@ -10,7 +10,7 @@ See the related [model documentation](/model/concept/#partitioning-versus-classi
 
 ### Example
 
-
+From the record for the concept for Visual Art object types, the record for Paintings would be in the response
 
 
 ### Details
