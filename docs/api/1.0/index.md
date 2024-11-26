@@ -36,6 +36,7 @@ The core Linked Art API is to provide the description of the entity following th
 Linked Art defines a format for responses to search requests, but does not define a query language for defining the search at the present time. The intended use of the standardized response is that the queries can be referenced via HAL links from within the records, and the consuming application will receive a consistent format when following the link. Individual implementations might use [SPARQL](https://www.w3.org/TR/sparql11-query/), [GraphQL](https://graphql.org/) , Cypher, the Elasticsearch DSL, the Solr query language or some other syntax that can be embedded in a URL without the application needing to know how to construct it.
 
 * [Search Response Format](search/) - The response format for Linked Art searches, and how to link to them using HAL
+* [Search Links](../rels/1/) - The list of named searches for HAL links
 
 
 ### Data Discovery APIs
