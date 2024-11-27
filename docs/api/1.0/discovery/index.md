@@ -1,5 +1,5 @@
 ---
-title: "Linked Art API Discovery Ecosystem"
+title: "Linked Art Discovery API"
 up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---

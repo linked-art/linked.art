@@ -21,21 +21,21 @@ This section of the website documents the web-based API, or Application Programm
 
 ## Linked Art APIs
 
-### Core Entity API
+### Core Entity Description API
 
-The core Linked Art API is to provide the description of the entity following the model serialized as JSON-LD according to the Linked Art context document. The response also has a non-semantic block that follows the Hypertext Application Language (or HAL) specification to provide links to versions, searches, and other related information.
+The core Linked Art API is to provide records describing the entities following the model serialized as JSON-LD according to the Linked Art context document. The response also has a non-semantic block that follows the Hypertext Application Language (or HAL) specification to provide links to versions, searches, and other related information.
 
-* [Entity Descriptions](endpoint/) - Retrieving the objects, works, people, places and other entities as JSON-LD
-    * [Shared Constructs](shared/) - Shared patterns that are used by multiple descriptions
+* [Entity Description Endpoints](endpoint/) - Retrieving the objects, works, people, places and other entities as JSON-LD
+    * [Shared Data Structures](shared/) - Shared patterns that are used by multiple descriptions
     * [JSON Schema](schema_docs/) - JSON Schema definitions, with documentation, for the API
-* [Hypertext Inclusions](hal/) - Versioning, cross-format links, and other HAL links
+* [Hypertext Application Language](hal/) - Versioning, cross-format links, and other HAL links
 
 
 ### Search API
 
 Linked Art defines a format for responses to search requests, but does not define a query language for defining the search at the present time. The intended use of the standardized response is that the queries can be referenced via HAL links from within the records, and the consuming application will receive a consistent format when following the link. Individual implementations might use [SPARQL](https://www.w3.org/TR/sparql11-query/), [GraphQL](https://graphql.org/) , Cypher, the Elasticsearch DSL, the Solr query language or some other syntax that can be embedded in a URL without the application needing to know how to construct it.
 
-* [Search Response Format](search/) - The response format for Linked Art searches, and how to link to them using HAL
+* [Search API](search/) - The response format for Linked Art searches, and how to link to them using HAL
 * [Search Links](../rels/1/) - The list of named searches for HAL links
 
 
