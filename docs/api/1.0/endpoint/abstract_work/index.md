@@ -17,7 +17,7 @@ For more information about the usage of Abstract Work, please see the [Document 
 
 Dereferencing an entity via the Abstract Work endpoint would result in a JSON-LD document containing a single JSON object with the following properties.
 
-### Properties of Textual Works
+### Properties of Abstract Works
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
