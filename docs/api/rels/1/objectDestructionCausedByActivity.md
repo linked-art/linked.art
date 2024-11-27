@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/production/#cause-of-destruc
 
 ### Example
 
-
+From the record for a fire that destroyed a museum, the record for an object destroyed in the fire would be in the response
 
 
 ### Details

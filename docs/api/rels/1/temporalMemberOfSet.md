@@ -10,7 +10,7 @@ See the related [model documentation](/model/collection/#features)
 
 ### Example
 
-
+From the record for the set of Linked Art face to face meetings, the record for the second face to face meeting in Oxford would be in the response
 
 
 ### Details

@@ -10,7 +10,7 @@ title: Linked Art HAL Links
   * [activityUsedObject](activityUsedObject): Return the activities that used the object.
   * [conceptInfluencedByObject](conceptInfluencedByObject): Return the concepts that were influenced by the object.
   * [objectPartOfObject](objectPartOfObject): Return the objects that are part of the object.
-  * [objectProductionInfluencedByObject](objectProductionInfluencedByObject): Return the objects whoses production was influenced by the object.
+  * [objectProductionInfluencedByObject](objectProductionInfluencedByObject): Return the objects whose production was influenced by the object.
   * [workAboutObject](workAboutObject): Return the works that are about or have a subject of the object.
   * [workAboutOrRepresentsObject](workAboutOrRepresentsObject): Return the works that are about or represent the object.
   * [workRepresentsObject](workRepresentsObject): Return the visual works that represent or depict the object.
@@ -19,9 +19,9 @@ title: Linked Art HAL Links
 
   * [activityUsedWork](activityUsedWork): Return the activities that used the work.
   * [conceptInfluencedByWork](conceptInfluencedByWork): Return the concepts that were influenced by the work.
-  * [objectCarriesWork](objectCarriesWork): Return the objects that carry the work.
+  * [objectCarriesWork](objectCarriesWork): Return the objects that carry the linguistic work.
   * [objectProductionInfluencedByWork](objectProductionInfluencedByWork): Return the objects whose production was influenced by the work.
-  * [objectShowsWork](objectShowsWork): Return the objects that show the work.
+  * [objectShowsWork](objectShowsWork): Return the objects that show the visual work.
   * [workAboutOrRepresentsWork](workAboutOrRepresentsWork): Return the works that are either about or represent the work.
   * [workAboutWork](workAboutWork): Return the works that are about or have a subject of the work.
   * [workPartOfWork](workPartOfWork): Return the works that are part of the work.
@@ -109,7 +109,6 @@ title: Linked Art HAL Links
 ### Set
 
   * [activityUsedSet](activityUsedSet): Return activities which used the set.
-  * [agentMemberOfSet](agentMemberOfSet): Return people or groups which are members of the set.
   * [conceptInfluencedBySet](conceptInfluencedBySet): Return concepts which were influenced by the set.
   * [conceptMemberOfSet](conceptMemberOfSet): Return concepts which are members of the set.
   * [entityMemberOfSet](entityMemberOfSet): Return entities which are members of the set.

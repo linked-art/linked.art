@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/production/#cause-of-product
 
 ### Example
 
-
+From the record for a commission activity, the record for the object that was produced because of the commission would be in the response
 
 
 ### Details

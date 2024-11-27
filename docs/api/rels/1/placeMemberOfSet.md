@@ -10,7 +10,7 @@ See the related [model documentation](/model/collection/#features)
 
 ### Example
 
-
+From the record for the set of places in which Van Gogh lived, the record for Arles would be in the response
 
 
 ### Details

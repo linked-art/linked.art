@@ -10,7 +10,7 @@ See the related [model documentation]()
 
 ### Example
 
-
+From the record for a conference activity, the record for the proceedings of the conference would be in the response
 
 
 ### Details

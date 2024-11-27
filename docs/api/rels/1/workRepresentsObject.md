@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#depiction)
 
 ### Example
 
-
+From the record for the Night Watch, the record for a photograph of the Night Watch would be in the response
 
 
 ### Details

@@ -10,7 +10,7 @@ See the related [model documentation](/model/exhibition/#exhibition-activity)
 
 ### Example
 
-
+From the record for the set of objects shown in an exhibition, the record for the exhibition's activity would be in the response
 
 
 ### Details
