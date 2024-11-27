@@ -34,18 +34,18 @@ place	agentDiedOrDissolvedAtPlace	Agent	died / dissolved	Place	/model/actor/#bir
 place	agentActiveAtPlace	Agent	activeAt	Place	/model/actor/#active-dates	Return the people or groups who were active at the place.		From the record for Harlem, New York, the record for A.Philip Randolph would be in the response
 place	agentResidentAtPlace	Agent	residenceAt	Place	/model/actor/#residence-as-a-place	Return the people or groups who are or were resident at the place.		From the record for Brooklyn, New York the record for E.V. Day would be in the response
 place	placePartOfPlace	Place	partOf	Place	/model/place/#core-information	Return the places which are part of the place.		From the record for Île-de-France, the record for Paris would be in the response
-place	setCreatedAtPlace	Set	createdAt	Place	/model/collection/#features	Return the sets which were created at the place.		
+place	setCreatedAtPlace	Set	createdAt	Place	/model/collection/#features	Return the sets which were created at the place.		From the record for New Haven, the record for the set representing the Archives of O. C. Marsh would be in the response
 place	conceptInfluencedByPlace	Concept	influencedBy	Place	/model/concept/#creation-and-influences	Return the concepts whose creation was influenced by the place.		From the record for the Netherlands, the record for Dutch Golden Age Paintings would be in the response
-place	activityTookPlaceAtPlace	Event, Activity	tookPlaceAt	Place	/model/base/#events-and-activities	Return the activities that took place at the place.		
+place	activityTookPlaceAtPlace	Event, Activity	tookPlaceAt	Place	/model/base/#events-and-activities	Return the activities that took place at the place.		From the record for New Haven, the record for the exhibition activity Life, Liberty and the Pursuit of Happiness would be in the response
 place	objectProductionInfluencedByPlace	HumanMadeObject	productionInfluencedBy	Place	/model/object/production/#inspirations-studies-or-copies	Return the objects whose production was influenced by the place.		
-place	workAboutOrRepresentsPlace	Work	about / represents	Place	/model/object/aboutness/#subject	Return works that are about or depict the place.		
+place	workAboutOrRepresentsPlace	Work	about / represents	Place	/model/object/aboutness/#subject	Return works that are about or depict the place.		From the record for Paris, the records for the image carried by a painting of Notre Dame and the text of a book about the city would be in the response
 								
 concept	objectMadeOfMaterial	HumanMadeObject	madeOf	Material	/model/object/physical/#materials	Return the objects which are made of the material.		From the record for Canvas, the record for The Night Watch would be in the response
 concept	workLanguageLanguage	LinguisticObject	language	Language	/model/document/#core-features	Return the works that are written or in the language.		From the record for English, the record for the Lord of the Rings would be in the response
 concept	objectClassifiedAsConcept	HumanMadeObject	classifiedAs	Concept	/model/base/#types-and-classifications	Return the objects that are classified as the concept.		From the record for Paintings, the record for Sunflowers would be in the response
 concept	objectProductionTechniqueConcept	HumanMadeObject	productionTechnique	Concept	/model/object/production/#techniques-and-classifications	Return the objects whose production has a technique of the concept.		From the record for Bronze Casting, the record for The Thinker would be in the response 
 concept	workClassifiedAsConcept	Work	classifiedAs	Concept	/model/base/#types-and-classifications	Return the works that are classified as the concept.		From the record for Impressionism, the record for the work of Van Gogh's "Irises" would be in the response
-concept	workCreationTechniqueConcept	Work	creationTechnique	Concept		Return the works whose creation has a technique of the concept.		
+concept	workCreationTechniqueConcept	Work	creationTechnique	Concept		Return the works whose creation has a technique of the concept.		From the record for Sculpting, the record for the sculpture "Bather putting up her hair" would be in the response
 concept	workAboutConcept	Work	about	Concept	/model/object/aboutness/#subject	Return the works that are about the concept.		From the record for the concept of Democracy, the record for Diamond's work "In Search of Democracy" would be in the response
 concept	workRepresentsConcept	Work	represents	Concept	/model/object/aboutness/#depiction	Return the visual works that represent or depict the concept, or an instance of the concept		From the record for the concept of Dogs, the record for the work of the Night Watch would be in the response (as the image depicts an unidentified dog)
 concept	agentClassifiedAsConcept	Agent	classifiedAs	Concept	/model/base/#types-and-classifications	Return the people or groups that are classified as the concept.		From the record for the concept of the Dutch nationality, the record for Rembrandt would be in the response
@@ -60,43 +60,42 @@ concept	workAboutOrRepresentsConcept	Concept	about / represents	Concept	/model/o
 set	entityMemberOfSet	Entity	memberOf	Set	/model/collection/#features	Return entities which are members of the set.		From the record for the Getty's painting department's objects, the record for Spring would be in the response 
 set	objectMemberOfSet	HumanMadeObject	memberOf	Set	/model/collection/#features	Return objects which are members of the set.		From the record for the Rijksmuseum's highlight objects, the record for the Night Watch would be in the response
 set	workMemberOfSet	Work	memberOf	Set	/model/collection/#features	Return works which are members of the set.		From the record for the set of works which describe the Night Watch, the record for Bikker's "The Night Watch" would be in the response
-set	agentMemberOfSet	Agent	memberOf	Set		Return people or groups which are members of the set.		
-set	placeMemberOfSet	Place	memberOf	Set	/model/collection/#features	Return places which are members of the set.		
-set	conceptMemberOfSet	Concept	memberOf	Set	/model/collection/#features	Return concepts which are members of the set.		
-set	temporalMemberOfSet	Temporal	memberOf	Set	/model/collection/#features	Return periods, events and activities which are members of the set.		
-set	workAboutSet	Work	about	Set	/model/object/aboutness/#subject	Return works which are about the set.		
-set	workRepresentsSet	Work	represents	Set	/model/object/aboutness/#depiction	Return visual works which represent or depict the set.		
-set	activityUsedSet	Activity	used	Set	/model/exhibition/#exhibition-activity	Return activities which used the set.		
-set	setMemberOfSet	Set	memberOf	Set	/model/collection/#features	Return the sets which are members of the set.		
+set	placeMemberOfSet	Place	memberOf	Set	/model/collection/#features	Return places which are members of the set.		From the record for the set of places in which Van Gogh lived, the record for Arles would be in the response
+set	conceptMemberOfSet	Concept	memberOf	Set	/model/collection/#features	Return concepts which are members of the set.		From the record for the AAT concept scheme (a Set), the record for AAT's Primary Name concept would be in the response
+set	temporalMemberOfSet	Temporal	memberOf	Set	/model/collection/#features	Return periods, events and activities which are members of the set.		From the record for the set of Linked Art face to face meetings, the record for the second face to face meeting in Oxford would be in the response
+set	workAboutSet	Work	about	Set	/model/object/aboutness/#subject	Return works which are about the set.		From the record for the set for the Archives of O. C. Marsh, a text of an article about the archives would be in the response
+set	workRepresentsSet	Work	represents	Set	/model/object/aboutness/#depiction	Return visual works which represent or depict the set.		From the record for the set for the Archives of O. C. Marsh, an image that depicts the archive would be in the response
+set	activityUsedSet	Activity	used	Set	/model/exhibition/#exhibition-activity	Return activities which used the set.		From the record for the set of objects shown in an exhibition, the record for the exhibition's activity would be in the response
+set	setMemberOfSet	Set	memberOf	Set	/model/collection/#features	Return the sets which are members of the set.		From the record for the set for the Archives of O. C. Marsh, the record for Series 1 within that archive would be in the response
 set	conceptInfluencedBySet	Concept	influencedBy	Set	/model/concept/#creation-and-influences	Return concepts which were influenced by the set.		
-set	workAboutOrRepresentsSet	Work	about / represents	Set	/model/object/aboutness/#subject	Return the works which are about or represent the set.		
+set	workAboutOrRepresentsSet	Work	about / represents	Set	/model/object/aboutness/#subject	Return the works which are about or represent the set.		From the record for the set for the Archives of O. C. Marsh, the records for an article about the archive and an image of the archive would be in the response
 								
-activity	objectProductionCausedByActivity	HumanMadeObject	productionCausedBy	Event,Activity	/model/object/production/#cause-of-production	Return the objects whose production was caused by the event or activity.		
-activity	workCreationCausedByActivity	Work		Event,Activity		Return the works whose creation was caused by the event or activity.		
+activity	objectProductionCausedByActivity	HumanMadeObject	productionCausedBy	Event,Activity	/model/object/production/#cause-of-production	Return the objects whose production was caused by the event or activity.		From the record for a commission activity, the record for the object that was produced because of the commission would be in the response
+activity	workCreationCausedByActivity	Work		Event,Activity		Return the works whose creation was caused by the event or activity.		From the record for a conference activity, the record for the proceedings of the conference would be in the response
 activity	setCreationCausedByActivity	Set		Event,Activity		Return the sets whose creation was caused by the event or activity.		
-activity	personDeathCausedByActivity	Person		Event,Activity		Return the people whose death was caused by the event or activity.		
-activity	objectDestructionCausedByActivity	HumanMadeObject		Event,Activity	/model/object/production/#cause-of-destruction	Return the objects whose destruction was caused by the event or activity.		
+activity	personDeathCausedByActivity	Person		Event,Activity		Return the people whose death was caused by the event or activity.		From the record for the Bubonic Plague, the record for a person who died of the plague would be in the response
+activity	objectDestructionCausedByActivity	HumanMadeObject		Event,Activity	/model/object/production/#cause-of-destruction	Return the objects whose destruction was caused by the event or activity.		From the record for a fire that destroyed a museum, the record for an object destroyed in the fire would be in the response
 activity	conceptCreationCausedByActivity	Concept		Event,Activity		Return the concepts whose creation was caused by the event or activity.		
-activity	activityCausedByActivity	Event,Activity		Event,Activity		Return the activities that were caused by the event or activity.		
-activity	activityPartOfActivity	Temporal		Temporal	/model/base/#parts	Return the periods, events or activities that were part of the period, event or activity.		
-activity	workAboutActivity	Work		Temporal	/model/object/aboutness/#subject	Return the works that are about or have a subject of the period, event or activity.		
-activity	workRepresentsActivity	Work		Temporal	/model/object/aboutness/#depiction	Return the works that are represent or depict the period, event or activity.		
-activity	conceptInfluencedByActivity	Concept		Temporal	/model/concept/#creation-and-influences	Return the concepts that were influenced by the period, event or activity.		
-activity	workAboutOrRepresentsActivity	Work		Temporal	/model/object/aboutness/#subject	Return the works that are about or represent the period, event or activity.		
+activity	activityCausedByActivity	Event,Activity		Event,Activity		Return the activities that were caused by the event or activity.		From the record for a fire that damaged a statue, the record for the conservation activity to repair the statue would be in the response
+activity	activityPartOfActivity	Temporal		Temporal	/model/base/#parts	Return the periods, events or activities that were part of the period, event or activity.		From the record for the Bronze Age, the record for the Middle Bronze Age would be in the response
+activity	workAboutActivity	Work		Temporal	/model/object/aboutness/#subject	Return the works that are about or have a subject of the period, event or activity.		From the record for the Bronze Age, the record for a work about the Bronze Age would be in the response
+activity	workRepresentsActivity	Work		Temporal	/model/object/aboutness/#depiction	Return the works that are represent or depict the period, event or activity.		From the record for the activity of the Battle of Bunker Hill, the record for the image created by Trumbull of the painting of the same name would be in the response
+activity	conceptInfluencedByActivity	Concept		Temporal	/model/concept/#creation-and-influences	Return the concepts that were influenced by the period, event or activity.		From the record for the 15th Century (a Period), the record for the History of France in the 15th Century would be in the response
+activity	workAboutOrRepresentsActivity	Work		Temporal	/model/object/aboutness/#subject	Return the works that are about or represent the period, event or activity.		From the record for the activity of the Battle of Bunker Hill, the records for the text of an article about it and the image of Trumbull's painting would both be in the response
 								
-object	objectPartOfObject	HumanMadeObject	objectPartOfObject	HumanMadeObject	/model/object/physical/#parts	Return the objects that are part of the object.		
-object	conceptInfluencedByObject	Concept	influencedBy	HumanMadeObject	/model/concept/#creation-and-influences	Return the concepts that were influenced by the object.		
-object	objectProductionInfluencedByObject	HumanMadeObject	productionInfluencedBy	HumanMadeObject	/model/object/production/#inspirations-studies-or-copies	Return the objects whoses production was influenced by the object.		
-object	workAboutObject	Work	about	HumanMadeObject	/model/object/aboutness/#subject	Return the works that are about or have a subject of the object.		
-object	workRepresentsObject	Work	represents	HumanMadeObject	/model/object/aboutness/#depiction	Return the visual works that represent or depict the object.		
-object	activityUsedObject	Activity	used	HumanMadeObject		Return the activities that used the object.		
+object	objectPartOfObject	HumanMadeObject	objectPartOfObject	HumanMadeObject	/model/object/physical/#parts	Return the objects that are part of the object.		From the record for the Night Watch, the record for the frame of the Night Watch would be in the response
+object	conceptInfluencedByObject	Concept	influencedBy	HumanMadeObject	/model/concept/#creation-and-influences	Return the concepts that were influenced by the object.		From the record for the Night Watch, the concept of the Reception of the Night Watch in the 19th Century would be in the response
+object	objectProductionInfluencedByObject	HumanMadeObject	productionInfluencedBy	HumanMadeObject	/model/object/production/#inspirations-studies-or-copies	Return the objects whose production was influenced by the object.		From the record a painting that was copied, the record for the copy would be in the response
+object	workAboutObject	Work	about	HumanMadeObject	/model/object/aboutness/#subject	Return the works that are about or have a subject of the object.		From the record for the Night Watch, the record for Bikker's "The Night Watch" would be in the response
+object	workRepresentsObject	Work	represents	HumanMadeObject	/model/object/aboutness/#depiction	Return the visual works that represent or depict the object.		From the record for the Night Watch, the record for a photograph of the Night Watch would be in the response
+object	activityUsedObject	Activity	used	HumanMadeObject		Return the activities that used the object.		From the record for the Night Watch, the record for the conservation work on the painting would be in the response
 object	workAboutOrRepresentsObject	Work	about / represents	HumanMadeObject	/model/object/aboutness/#subject	Return the works that are about or represent the object.		
 								
-work	objectCarriesWork	HumanMadeObject	carries	LinguisticObject	/model/document/#physical-objects-conceptual-texts	Return the objects that carry the work.		
-work	objectShowsWork	HumanMadeObject	shows	VisualItem	/model/object/aboutness/#physical-object-and-visual-work	Return the objects that show the work.		
-work	workPartOfWork	Work	partOf	Work	/model/document/#structure	Return the works that are part of the work.		
-work	conceptInfluencedByWork	Concept	influencedBy	Work	/model/concept/#creation-and-influences	Return the concepts that were influenced by the work.		
-work	workAboutWork	Work	about	Work	/model/object/aboutness/#subject	Return the works that are about or have a subject of the work.		
+work	objectCarriesWork	HumanMadeObject	carries	LinguisticObject	/model/document/#physical-objects-conceptual-texts	Return the objects that carry the linguistic work.		From the record for the Lord of the Rings, the record for the copy in the British Library would be in the response
+work	objectShowsWork	HumanMadeObject	shows	VisualItem	/model/object/aboutness/#physical-object-and-visual-work	Return the objects that show the visual work.		From the record for the image of the Night Watch, the record for the painting would be in the response
+work	workPartOfWork	Work	partOf	Work	/model/document/#structure	Return the works that are part of the work.		From the record for The Lord of the Rings, the record for The Fellowship of the Ring would be in the response
+work	conceptInfluencedByWork	Concept	influencedBy	Work	/model/concept/#creation-and-influences	Return the concepts that were influenced by the work.		From the record for The Lord of the Rings, the record for the concept of the History of Middle-Earth would be in the response
+work	workAboutWork	Work	about	Work	/model/object/aboutness/#subject	Return the works that are about or have a subject of the work.		From the record for The Lord of the Rings, the record for an article about Tolkien's work would be in the response
 work	workRepresentsWork	Work	represents	Work	/model/object/aboutness/#depiction	Return the works that represent or depict the work.		
 work	activityUsedWork	Activity	used	Work		Return the activities that used the work.		
 work	objectProductionInfluencedByWork	HumanMadeObject	productionInfluencedBy	Work	/model/object/production/#inspirations-studies-or-copies	Return the objects whose production was influenced by the work.		
