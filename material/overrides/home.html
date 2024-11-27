@@ -6,24 +6,73 @@
     position: initial
   }
 
-  .md-main__inner {
-    margin: 0
+  .md-content__inner>h1,
+  .md-main__inner .md-sidebar--secondary,
+  .md-sidebar--primary {
+    display: none;
   }
 
-  @media screen and (min-width:60em) {
-    .md-sidebar--secondary {
-      display: none
+  /* home page styles */
+
+  p.home {
+    font-size: 125%;
+    max-width: 50em;
+  }
+
+  #where-first+ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0;
+    justify-content: space-between;
+
+  }
+
+  #where-first+ul h3 {
+    font-size: 200%;
+    margin-top: 0;
+  }
+
+  #where-first+ul>li {
+    flex-basis: 100%;
+    margin-left: 0;
+    max-width: 30%;
+    border-radius: 3px;
+    padding: 2em;
+    /* border: 1px solid var(--la-blue); */
+    color: var(--la-yellow);
+    background-color: var(--la-brown);
+  }
+
+  @media screen and (max-width: 720px) {
+    #where-first+ul {
+      flex-direction: column;
+    }
+
+    #where-first+ul>li {
+      max-width: unset;
     }
   }
 
-  @media screen and (min-width:76.25em) {
-    .md-sidebar--primary {
-      display: none
-    }
+
+  .md-typeset #where-first+ul li,
+  .md-typeset #where-first+ul li ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  #where-first+ul a {
+    color: var(--la-yellow);
+    text-decoration-color: var(--la-yellow);
+  }
+
+  #where-first+ul a:hover {
+    color: var(--la-blue);
+    text-decoration-color: transparent;
   }
 </style>
+
 {% endblock %}
-{% block content %} gub {{ super() }}
+{% block content %} {{ super() }}
 {% endblock %}
 {% block footer %}{{ super() }}
 {% endblock %}
