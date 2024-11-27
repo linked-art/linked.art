@@ -150,6 +150,17 @@ Parts which are Promises have the following additional properties.
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Activity"` |
 | `classified_as`   | array         | Required    | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/), and one entry in the array MUST have have an `id` with the value "http://vocab.getty.edu/aat/300435599", in order to distinguish this activity as a promise |
 
+#### Properties of Part: Transfer
+
+Parts which are unknown types of Transfer have the following additional properties.
+
+| Property Name     | Datatype      | Requirement | Description |
+|-------------------|---------------|-------------|-------------|
+| `type`            | string        | Required    | The class for the part, which MUST be the value `"Transfer"` |
+| `transferred`   | array | Required | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was somehow transferred |
+| `transferred_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), from whom the object was transferred |
+| `transferred_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), to whom the object was transferred |
+
 
 ### Properties of Rights
 
