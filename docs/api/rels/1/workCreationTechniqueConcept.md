@@ -10,7 +10,7 @@ See the related [model documentation]()
 
 ### Example
 
-
+From the record for Sculpting, the record for the sculpture "Bather putting up her hair" would be in the response
 
 
 ### Details

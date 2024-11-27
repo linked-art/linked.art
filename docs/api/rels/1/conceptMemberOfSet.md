@@ -10,7 +10,7 @@ See the related [model documentation](/model/collection/#features)
 
 ### Example
 
-
+From the record for the AAT concept scheme (a Set), the record for AAT's Primary Name concept would be in the response
 
 
 ### Details

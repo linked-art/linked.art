@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#subject)
 
 ### Example
 
-
+From the record for the Bronze Age, the record for a work about the Bronze Age would be in the response
 
 
 ### Details

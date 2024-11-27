@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#subject)
 
 ### Example
 
-
+From the record for the set for the Archives of O. C. Marsh, a text of an article about the archives would be in the response
 
 
 ### Details
