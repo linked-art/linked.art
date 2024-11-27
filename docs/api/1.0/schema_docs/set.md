@@ -1,5 +1,9 @@
 ---
 title: "Linked Art Schema: Set"
+template: schema_docs.html
+hid:
+  - navigation
+  - toc
 ---
 
  <div onload=anchorOnLoad(); id=root> <span class="badge badge-dark value-type">Type: object</span><br><!--
