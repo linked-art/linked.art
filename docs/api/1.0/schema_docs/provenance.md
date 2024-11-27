@@ -1,5 +1,9 @@
 ---
 title: "Linked Art Schema: Provenance"
+template: schema_docs.html
+hide:
+  - navigation
+  - toc
 ---
 
  <div onload=anchorOnLoad(); id=root> <span class="badge badge-dark value-type">Type: object</span><br><!--

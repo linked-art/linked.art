@@ -1,6 +1,9 @@
 ---
 title: Linked Art
 template: home.html
+hide:
+  - navigation
+  - toc
 ---
 
 Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on [Linked Open Usable Data](/loud/) to describe cultural heritage with a particular focus on art. We specify [APIs](/api/) that enable access to data in the model, and implement them in [Software](/software/) to provide valuable content to the world. It is approaching a first stable release and we welcome additional partners and collaborators.
