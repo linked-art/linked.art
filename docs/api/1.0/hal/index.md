@@ -1,5 +1,5 @@
 ---
-title: "HAL Links"
+title: "Linked Art API: Hypertext Application Language Links"
 up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---

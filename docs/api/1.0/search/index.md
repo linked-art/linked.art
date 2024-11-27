@@ -1,7 +1,7 @@
 ---
-title: "Linked Art Search Response Format"
-up_href: "/api/1.0/ecosystem/"
-up_label: "Linked Art API 1.0 Ecosystem"
+title: "Linked Art Search API"
+up_href: "/api/1.0/"
+up_label: "Linked Art API 1.0"
 ---
 
 [TOC]
