@@ -48,7 +48,7 @@ See the [identifier documentation](/model/base/#identifiers).
 
 ### Statement Types 
 
-These are embedded Linguistic Objects within other records. See the [statement documentation](/model/base/#statements-about-an-entity)
+These are embedded Linguistic Objects within other records. See the [statement documentation](/model/base/#statements-about-an-entity). The ["meta-type"](/model/base/#types-of-types) for these classifications is aat:300418049.
 
 
 | Name                  | URI           | Description |
@@ -73,7 +73,7 @@ These are embedded Linguistic Objects within other records. See the [statement d
 
 ### Object Types
 
-See the [object documentation](/model/object/) and base [classification documentation](/model/base/#types-and-classifications)
+See the [object documentation](/model/object/) and base [classification documentation](/model/base/#types-and-classifications). The ["meta-type"](/model/base/#types-of-types) for these classifications is aat:300435443.
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -269,6 +269,8 @@ See the [dimensions documentation](/model/object/physical/#dimensions)
 
 ### Nationalities
 
+The ["meta-type"](/model/base/#types-of-types) for these classifications is aat:300379842.
+
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
 |american               | aat:300107956 | American |
@@ -304,6 +306,8 @@ See the [dimensions documentation](/model/object/physical/#dimensions)
 
 ### Occupations
 
+The ["meta-type"](/model/base/#types-of-types) for these classifications is aat:300263369.
+
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
 |artist                 | aat:300025103 | Artist |
@@ -317,6 +321,8 @@ See the [dimensions documentation](/model/object/physical/#dimensions)
 
 
 ### Shapes
+
+The ["meta-type"](/model/base/#types-of-types) for these classifications is aat:300056273.
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
