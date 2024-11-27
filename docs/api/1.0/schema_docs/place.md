@@ -1,7 +1,7 @@
 ---
 title: "Linked Art Schema: Place"
 template: schema_docs.html
-hid:
+hide:
   - navigation
   - toc
 ---

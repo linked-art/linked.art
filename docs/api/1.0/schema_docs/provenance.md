@@ -1,7 +1,7 @@
 ---
 title: "Linked Art Schema: Provenance"
 template: schema_docs.html
-hid:
+hide:
   - navigation
   - toc
 ---
