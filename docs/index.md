@@ -1,19 +1,23 @@
 ---
 title: Linked Art
+template: home.html
 ---
 
 Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on [Linked Open Usable Data](/loud/) to describe cultural heritage with a particular focus on art. We specify [APIs](/api/) that enable access to data in the model, and implement them in [Software](/software/) to provide valuable content to the world. It is approaching a first stable release and we welcome additional partners and collaborators.
+{:.home}
 
 
 ## Where First?
 
-* [About](/about/)
+* ### [About](/about/)
     * [Community](/community/)
     * [LOUD](/loud/)
-* [Data Model](/model/)
+
+* ### [Data Model](/model/)
     * Start with the Data Model if you want to understand the semantics and how to describe things using Linked Art
     * [Modeling Cookbook](/cookbook/)
-* [APIs](/api/)
+
+* ### [APIs](/api/)
     * Start with the APIs if you want to understand how to interact with Linked Art data
     * [Software](/software/)
 

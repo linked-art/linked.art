@@ -6,14 +6,18 @@ site_author: "Rob Sanderson"
 site_description: "Linked Open Usable Data for Cultural Heritage"
 theme:
   name: material
+  custom_dir: material/overrides
   palette:
-    primary: brown
+    primary: custom
   logo: media/logo/linkedart-logo-horizontal.png
   favicon: media/logo/linkedart-favicon.png
   features:
     - navigation.tabs
     - navigation.path
     - header.autohide
+  font: false
+extra_css:
+  - stylesheets/extra.css
 
 copyright: © Linked Art Editorial Board. Published under the CC BY 4.0 license.
 
