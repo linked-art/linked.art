@@ -13,11 +13,12 @@ theme:
   favicon: media/logo/linkedart-favicon.png
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.path
     - header.autohide
   font: false
 extra_css:
-  - stylesheets/extra.css
+  - assets/css/style.css
 
 copyright: © Linked Art Editorial Board. Published under the CC BY 4.0 license.
 

@@ -1,18 +1,11 @@
 {% extends "main.html" %}
-{% block tabs %}
-{{ super() }}
-<style>
-  .md-header {
-    position: initial
-  }
 
-  .md-content__inner>h1,
-  .md-main__inner .md-sidebar--secondary,
-  .md-sidebar--primary {
+{% block extrahead %}
+<style>
+  /* home page styles */
+  .md-content__inner>h1 {
     display: none;
   }
-
-  /* home page styles */
 
   p.home {
     font-size: 125%;
@@ -38,7 +31,6 @@
     max-width: 30%;
     border-radius: 3px;
     padding: 2em;
-    /* border: 1px solid var(--la-blue); */
     color: var(--la-yellow);
     background-color: var(--la-brown);
   }
@@ -70,9 +62,4 @@
     text-decoration-color: transparent;
   }
 </style>
-
-{% endblock %}
-{% block content %} {{ super() }}
-{% endblock %}
-{% block footer %}{{ super() }}
 {% endblock %}
