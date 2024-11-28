@@ -20,10 +20,12 @@ Rounding off the week, US and UK principal investigators Dr. Rob Sanderson and D
 ## Enriching Exhibition Stories prioritised use cases
 
 **1. Internally authored using internally accessible content**  
+(Proposed implementation documented in [GitHub issue](https://github.com/oerc-csi/la-quire/issues/1))
 Rich additional content, created for an exhibition, was added during preparations to the internal Collections Management System. After the exhibition this can be repurposed for e.g. educational resources, standing gallery guides. Sometimes this will also include content from a third-party institution.
 
 **2. Publicly authored using (only) publicly accessible content**  
 An author external to the collecting institution wishes to create Quire content based upon the collection items discovered through the museum’s online collections site. Examples of users include educational professionals, charities widening access, teachers creating lesson plans, students writing term papers. Sometimes this will be prompted by a physical visit to the museum.
 
 **3. ‘Traditional’ Quire Digital Publications (internally authored with internal content)**  
+(Feature for automatically updating Quire data files requested in [GitHub issue](https://github.com/oerc-csi/la-quire/issues/2))
 The creation of e.g. exhibition catalogues is usually undertaken by an internal  curator-editor-digital-publications team. With small adaptations to their workflow, the Linked Art Quire extension can provide time and labour-saving benefits.
