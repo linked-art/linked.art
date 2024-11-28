@@ -2,7 +2,6 @@
 title: "Linked Art Schema: Digital"
 template: schema_docs.html
 hide:
-  - navigation
   - toc
 ---
 

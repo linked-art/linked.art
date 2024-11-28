@@ -4,8 +4,6 @@ up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---
 
-
-
 ## Introduction
 
 This section of the documentation provides automatically generated documentation from a series of [JSON Schema](https://json-schema.org/) files.

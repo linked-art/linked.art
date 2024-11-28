@@ -15,6 +15,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
+    - navigation.sections
     - header.autohide
   font: false
 extra_css:
@@ -23,13 +24,110 @@ extra_css:
 copyright: © Linked Art Editorial Board. Published under the CC BY 4.0 license.
 
 nav:
-  - Home: "index.md"
-  - Model: "model/index.md"
-  - API: "api/1.0/index.md"
-  - About: "about/index.md"
-  - Community: "community/index.md"
-  - Recipes: "cookbook/index.md"
-  - Software: "software/index.md"
+  - Home: index.md
+  - About:
+    - about/index.md
+    - LOUD: loud/index.md
+    - Community:
+      - Participants: community/index.md
+      - Events: community/events/index.md
+    - Projects:
+      - Linked Art I (AHRC): community/projects/researchnetwork/index.md
+      - Linked Art II (AHRC): community/projects/linkedartii/index.md
+      - Quire (AHRC): community/projects/ees2/index.md
+    - Resources:
+      - Code of Conduct: community/conduct/index.md
+      - FAQs: community/faq/index.md
+  - Model:
+    - model/index.md
+    - Introduction:
+      - How to read: model/intro/index.md
+      - Basic Patterns: model/base/index.md
+    - Main Entities:
+      - Objects:
+        - model/object/index.md
+        - Production and Destruction: model/object/production/index.md
+        - Physical Characteristics: model/object/physical/index.md
+        - Aboutness: model/object/aboutness/index.md
+        - Ownership: model/object/ownership/index.md
+        - Rights: model/object/rights/index.md
+      - Digital Content: model/digital/index.md
+      - Collections: model/collection/index.md
+      - Provenance: model/provenance/index.md
+      - Exhibitions: model/exhibition/index.md
+      - Conservation: model/conservation/index.md
+    - Related Entities:
+      - People and Organizations: model/actor/index.md
+      - Places: model/place/index.md
+      - Concepts: model/concept/index.md
+      - Events: model/event/index.md
+      - Vocabulary:
+        - model/vocab/index.md
+        - Required Terms: model/vocab/required/index.md
+        - Recommended Terms: model/vocab/recommended/index.md
+        - Optional Terms: model/vocab/optional/index.md
+    - Cultural Context:
+      - Textual Documents: model/document/index.md
+      - Archival Hierarchies: model/archives/index.md
+      - Specific Assertions: model/assertion/index.md
+  - API:
+    - api/1.0/index.md
+    - Fundamentals:
+      - Design Principles: api/1.0/principles/index.md
+      - JSON-LD: api/1.0/json-ld/index.md
+      - Protocol: api/1.0/protocol/index.md
+    - Core APIs:
+      - Entity Descriptions:
+        - api/1.0/endpoint/index.md
+        - Abstract Works: api/1.0/endpoint/abstract_work/index.md
+        - Concepts: api/1.0/endpoint/concept/index.md 
+        - Digital Objects: api/1.0/endpoint/digital_object/index.md
+        - Events: api/1.0/endpoint/event/index.md
+        - Groups: api/1.0/endpoint/group/index.md
+        - People: api/1.0/endpoint/person/index.md
+        - Physical Objects: api/1.0/endpoint/physical_object/index.md
+        - Places: api/1.0/endpoint/place/index.md
+        - Provenance Activities: api/1.0/endpoint/provenance_activity/index.md
+        - Sets: api/1.0/endpoint/set/index.md
+        - Textual Works: api/1.0/endpoint/textual_work/index.md
+        - Visual Works: api/1.0/endpoint/visual_work/index.md
+      - Shared Constructs:
+        - api/1.0/shared/index.md
+        - Activities: api/1.0/shared/activity/index.md
+        - Digital Links: api/1.0/shared/digital/index.md
+        - Dimensions: api/1.0/shared/dimension/index.md
+        - Identifiers: api/1.0/shared/identifier/index.md
+        - Monetary Amounts: api/1.0/shared/money/index.md
+        - Names: api/1.0/shared/name/index.md
+        - Rights: api/1.0/shared/right/index.md
+        - References: api/1.0/shared/reference/index.md
+        - Statements: api/1.0/shared/statement/index.md
+        - TimeSpans: api/1.0/shared/timespan/index.md
+        - Types / Concepts: api/1.0/shared/type/index.md
+        - Relationships: api/1.0/shared/assignment/index.md
+      - JSON Schema:
+        - api/1.0/schema_docs/index.md
+        - Digital Object: api/1.0/schema_docs/digital.md
+        - Event: api/1.0/schema_docs/event.md
+        - Group: api/1.0/schema_docs/group.md
+        - Person: api/1.0/schema_docs/person.md
+        - Physical Object: api/1.0/schema_docs/object.md
+        - Place: api/1.0/schema_docs/place.md
+        - Provenance Activity: api/1.0/schema_docs/provenance.md
+        - Set: api/1.0/schema_docs/set.md
+        - Textual Work: api/1.0/schema_docs/text.md
+        - Visual Work: api/1.0/schema_docs/image.md
+    - Hypermedia and Search:
+      - Hypermedia and versioning: api/1.0/hal/index.md
+      - Web Integration: api/1.0/ecosystem/index.md
+    - Cookbook:
+      - Recipes: cookbook/index.md
+    - Implementation:
+      - Software: software/index.md
+      - Mappings:
+        - CDWA: cookbook/mappings/cdwa/index.md
+        - Schema.org: cookbook/mappings/schema/index.md
+
 
 markdown_extensions:
   - fenced_code

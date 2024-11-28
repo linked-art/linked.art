@@ -2,7 +2,6 @@
 title: "Linked Art Schema: Object"
 template: schema_docs.html
 hide:
-  - navigation
   - toc
 ---
 
