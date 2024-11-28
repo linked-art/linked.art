@@ -24,7 +24,7 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 
 ## Project Activities
 
-- **EES2 at CIDOC 2024.** EES2 presented the results of its Labyrinth and Rumble Museum trials at the International Council of Museums CIDOC 2024 conference in November 2024. [Read more...](https://linked.art/community/projects/ees2/news/cidoc)
+- **Enriching Exhibition Stories (EES2) at CIDOC 2024.** EES2 presented the results of its Labyrinth and Rumble Museum trials at the International Council of Museums CIDOC 2024 conference in November 2024. [Read more...](https://linked.art/community/projects/ees2/news/cidoc)
 - **Outreach Trial.** In October 2024, the EES2 project collaborated with colleagues at the Ashmolean and Rumble Museums, and staff at Cheney School in Oxford, to trial a programme of activities in which students gathered observations and interpretations to create their own digital stories. [Read more...](https://linked.art/community/projects/ees2/news/cheney)
 - **Digital Humanities at Oxford Summer School.** EES2 was pleased to hold a ‘train-the-trainer’ workshop at the Digital Humanities at Oxford Summer School, in which we introduced the project’s Linked Art extension for Quire. [Read more...](https://linked.art/community/projects/ees2/news/dhoxss)
 - **Getty Quire Workshop.** In June 2024, Enriching Exhibition Stories ran a Quire user workshop with our partners at Getty, followed by associated activities at the Getty Villa and IIIF conference. [Read more…](https://linked.art/community/projects/ees2/news/quire_workshop)

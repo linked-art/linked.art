@@ -21,5 +21,5 @@ Then on the final day of the conference, Kevin Page (Oxford) presented [[PDF](ht
 
 <figure style="text-align: center;">
   <img src="54136059503_482d368fb0_k.jpg" style="width: 70%; height: auto;">
-  <figcaption>IDOC 2024 group photo © www.moniquekooijmans.nl</figcaption>
+  <figcaption>CIDOC 2024 group photo © www.moniquekooijmans.nl</figcaption>
 </figure>
