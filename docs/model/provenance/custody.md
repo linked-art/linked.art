@@ -10,7 +10,6 @@ up_label: "Provenance"
 
 When there is a change of who has physical possession of an object, but not who the legal owner of it is, that constitutes a change of custody rather than a change of ownership.  This pattern includes use cases such as lending an object to another party for some amount of time, the theft of an object (as the legal owner does not change), and losing track of the location of an object. 
 
-
 ## Loans
 
 The model makes a distinction between the [transfer of legal ownership](../acquisition) and the transfer of custody of an object (e.g. by losing the object or loaning it out for an exhibition). If the possession of the object is temporary, such that the object would be given back to the real owner at the end of that possession without what might be considered a sale or exchange, then it is a transfer of custody.  Note that the provenance activity here does not represent the entire duration of the change in custody, only the transfer of it.  Just like acquisitions, there would be a second provenance activity that would transfer the custody back to the original custodian or on to some other party.
@@ -21,7 +20,7 @@ In the model, these transfers of custody use a different class, `TransferOfCusto
 
 __Example:__
 
-A sculpture is lent from one person to another, and then later returned.
+Spring is lent by the Getty to the Art Institute of Chicago.
 
 ```crom
 top = vocab.ProvenanceEntry(ident="spring_aic/1", label="Loan of Spring to AIC")
@@ -73,7 +72,7 @@ cust.transferred_custody_to = dept
 
 ## Theft and Loss
 
-The theft of an object is also the (illegal) transfer of custody of the object, rather than a transfer of ownership. If  the stolen object were recovered, then it would be restored to its owner. Stolen, or looted as a special case of theft, objects and their repatriation are an interesting and important part of the provenance of a work and frequently contested. A single theft event might involve stealing multiple objects, in the same way that the purchase of an auction lot might involve the acquisition of multiple objects for a combined payment. 
+The theft of an object is also the (illegal) transfer of custody of the object, rather than a transfer of ownership. If the stolen object were recovered, then it would be restored to its owner. Stolen, or looted as a special case of theft, objects and their repatriation are an interesting and important part of the provenance of a work and frequently contested. A single theft event might involve stealing multiple objects, in the same way that the purchase of an auction lot might involve the acquisition of multiple objects for a combined payment.
 
 An object being lost (as opposed to stolen) is the transfer of custody away from its current owner, without stating a recipient.  In the future, if the object is discovered, the recipient might be able to be filled in.  If the object is then returned to the owner, there would be the reverse transfer of custody from the party that found it.  It might be that the owner simply loses track of it, and although it is still in their possession, they are not aware of it ... it has no custodian, but it has not moved and the owner still owns it.
 
@@ -98,7 +97,7 @@ top.part = xfer
 
 ### Sale of Stolen or Looted Objects
 
-If a stolen object is sold, then that purchase is actually just a transfer of custody in exchange for money (or other payment). Typically, of course, the nature of that transaction is not discovered until long after the fact. This can then have many effects on the provenance record for the object as suddenly many acquisitions would be retroactively changed to being transfers of custody. This updating of the historical record is necessary without going to great lengths to model the belief that an acquisition is legal for the vast majority of cases when it is, indeed, legal in order to allow that belief to be incorrect for the few times when it is not.
+If a stolen object is sold, then that purchase is actually just a transfer of custody in exchange for money (or other payment). Typically, of course, the nature of that transaction is not discovered until long after the fact. This can then have many effects on the provenance record for the object as suddenly many acquisitions would be retroactively changed to being transfers of custody. This updating of the historical record is necessary without going to great lengths to model the belief that an acquisition is legal for the vast majority of cases when it is, just to allow that belief to be incorrect for the few times when it is not.
 
 __Example:__
 

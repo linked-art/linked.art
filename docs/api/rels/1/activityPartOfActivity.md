@@ -10,7 +10,7 @@ See the related [model documentation](/model/base/#parts)
 
 ### Example
 
-
+From the record for the Bronze Age, the record for the Middle Bronze Age would be in the response
 
 
 ### Details

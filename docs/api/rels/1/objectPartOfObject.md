@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/physical/#parts)
 
 ### Example
 
-
+From the record for the Night Watch, the record for the frame of the Night Watch would be in the response
 
 
 ### Details

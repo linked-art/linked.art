@@ -40,19 +40,14 @@ Development of the model for version 1.0 has finished, and the documentation is 
     * [Specific Assertions](assertion/)
 
 
-An index of all of the classes, properties and identities used:
-
-* [Index of Examples](example_index)
-
-
 ## Development of the Model
 
 ### Model Background
 
 Following the existing standards and best practices of the community, our starting point consists of the following background standards:
 
-* [CIDOC-CRM](http://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
-    * We use a streamlined [subset](profile/) of CIDOC-CRM 7.1.3 to ensure consistency and comprehension.
+* [CIDOC-CRM](https://www.cidoc-crm.org/) as the core conceptual model, giving an event-based paradigm.
+    * We use a streamlined [subset](profile/) of [CIDOC-CRM 7.1.3](https://www.cidoc-crm.org/Version/version-7.1.3) to ensure consistency and comprehension.
 * The [Getty Vocabularies](http://vocab.getty.edu/) as core sources of identity for domain-specific terminology
     * Terminology is divided into three lists: [required](vocab/required/), [recommended](vocab/recommended/) and [optional](vocab/optional/) based on whether systems will be interoperable if different choices were made.
 * The concrete expression of the profile and access to data is fully covered in the [API](/api/) documentation.
@@ -83,9 +78,9 @@ For more information about how you can participate in Linked Art, please see the
 
 * Interoperability
     * The goal of the work is interoperability between systems, not to provide a comprehensive data model to describe everything that a single institution might know. This implies that management and production of the data is out of scope as a system specific concern. Similarly, the exact models used within those systems are not our concern. These would otherwise violate the technology independency principle. Open access is not a requirement, but the intent to publish beyond system boundaries is.
-* Complex Bibliography and Archival Descriptions
-    * The thorough description of bibliographic and archival resources in Linked Data is the subject of several ongoing discussions in the Library and Archives domains. We feel that the Art and Museum community should adopt whatever solution is devised by the experts in that field for complex bibliographic or archival description, however Linked Art will provide an on-ramp to those domains by defining the basic descriptions using our shared patterns.
+* Complete Bibliographic and Archival Description
+    * The thorough description of bibliographic and archival resources in Linked Data is the subject of several ongoing discussions in the Library and Archives domains. Linked Art provides an on-ramp to those domains by defining the basic descriptions using our shared patterns, but does not attempt to be complete in these domains.
 * Data Provenance 
     * Recording the individual events in which the data itself is created, modified and managed is out of scope of this work. The global Linked Open Data community has various approaches to this problem, with varying degrees of complexity and accuracy. Given the relative infancy of the work in the Art domain, we feel that adding this is an unnecessary burden at this stage at any level below the entire dataset. 
-* Quantification of Uncertainty
-    * Similarly, the degree of certainty about the data being expressed is valuable and of interest to researchers, but requires a significantly more complex environment. This would also prove an unsustainable burden, and is impractical to use even if it were provided.
+* Quantification of Uncertainty and Belief
+    * Similarly, the degree of certainty or beliefs about the data being expressed is valuable and of interest to researchers, but requires a significantly more complex environment. This would also prove an unsustainable burden, and is impractical to use even if it were provided.

@@ -22,6 +22,12 @@ From the record for John Trumbull, the visual items and texts that depict him (s
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?work WHERE {
+   {
+     ?work crm:P138_represents <https://lux.collections.yale.edu/data/person/c225d5e4-8767-4a25-802b-af054d5e8f52> .
+   }   UNION   {
+     ?work crm:P129_is_about <https://lux.collections.yale.edu/data/person/c225d5e4-8767-4a25-802b-af054d5e8f52> .
+   }
+}
 ```
 

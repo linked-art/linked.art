@@ -22,6 +22,9 @@ From the record for the Burgess Shale, the record for Anomalocaris Canadiensis w
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?object WHERE {
+     BIND(<%current%> as ?where)
+     ?object a crm:E22_Human-Made_Object ;         sci:O19i_was_object_found_by/crm:P9_consists_of*/crm:P7_took_place_at ?where .
+  }
 ```
 

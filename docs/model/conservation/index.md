@@ -8,14 +8,12 @@ up_label: "Model Overview"
 
 ## Introduction
 
-This section accommodates information about activities typically undertaken as part of the care and conservation of objects. In particular, there are condition assessments, conservation activities, and conservation projects which encapsulate the previous two.
-Condition assessments are when a curator or conservator assesses the state of an object, and the extent to which conservation intervention is needed. Conservation activities are physical modifications of the object to improve its condition.
+This section describes how to model information about activities typically undertaken as part of the care and conservation of objects. In particular, there are condition assessments, conservation activities, and conservation projects which encapsulate the previous two. Condition assessments are when a curator or conservator assesses the state of an object, and the extent to which conservation intervention is needed. Conservation activities are physical modifications of the object to improve its condition.
 
 Other sections of the Linked.Art model also relate to conservation:
 
 * [Statements](/model/base/#statements-about-an-entity) can be about the object's state or conservation related activities
-* Sampling as an activity is described under [Production by removal](/model/object/production/#production-by-removal).
-* Hazardous material can be under [Materials](/model/object/physical/#materials) by adding a classification to the Material itself.
+* Sampling as an activity is described under [Production by removal](/model/object/production/#production-by-removal)
 
 
 ## Condition Assessment

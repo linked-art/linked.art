@@ -10,7 +10,7 @@ See the related [model documentation]()
 
 ### Example
 
-
+From the record for a fire that damaged a statue, the record for the conservation activity to repair the statue would be in the response
 
 
 ### Details

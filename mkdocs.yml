@@ -17,6 +17,11 @@ nav:
     - Recipes: 'cookbook/index.md'
     - Software: 'software/index.md'
 
+validation:
+    absolute_links: ignore
+    unrecognized_links: ignore
+    anchors: ignore
+
 markdown_extensions:
         - fenced_code
         - def_list

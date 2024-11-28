@@ -33,7 +33,9 @@ Dereferencing an entity via the Event endpoint would result in a JSON-LD documen
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
 | `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Event that the current event is directly a part of. |
 | `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a broad [Period](../event/) during which this event occured | 
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a broad [Period](../event/) during which this event occured |
+| `before`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this event occured |
+| `after`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this event occured |
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to another Event that caused this event to occur. **Only usable when the `type` is `"Event"` or `"Activity"`** |
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion.  **Only usable when the `type` is `"Activity"`** | 

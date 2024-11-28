@@ -10,7 +10,7 @@ See the related [model documentation](/model/concept/#partitioning-versus-classi
 
 ### Example
 
-
+From the record for the concept of Nationalities, the record for Dutch would be in the response
 
 
 ### Details
