@@ -31,13 +31,11 @@ nav:
     - Community:
       - Participants: community/index.md
       - Events: community/events/index.md
+      - Code of Conduct: community/conduct/index.md
     - Projects:
       - Linked Art I (AHRC): community/projects/researchnetwork/index.md
       - Linked Art II (AHRC): community/projects/linkedartii/index.md
-      - Quire (AHRC): community/projects/ees2/index.md
-    - Resources:
-      - Code of Conduct: community/conduct/index.md
-      - FAQs: community/faq/index.md
+      - Enriching Quire (AHRC): community/projects/ees2/index.md
   - Model:
     - model/index.md
     - Introduction:
@@ -120,13 +118,14 @@ nav:
     - Hypermedia and Search:
       - Hypermedia and versioning: api/1.0/hal/index.md
       - Web Integration: api/1.0/ecosystem/index.md
+  - Resources:
+    - Software and tools: software/index.md
     - Cookbook:
       - Recipes: cookbook/index.md
-    - Implementation:
-      - Software: software/index.md
       - Mappings:
         - CDWA: cookbook/mappings/cdwa/index.md
         - Schema.org: cookbook/mappings/schema/index.md
+    
 
 
 markdown_extensions:
