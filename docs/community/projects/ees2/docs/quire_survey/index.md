@@ -39,7 +39,7 @@ Object-focused publications tend, almost invariably, to be catalogues. However, 
 [Minneapolis 2023](https://artsmia.org/weisberg-collection/) contains nearly all information about the object within the tombstone data, discussing only biographical details of the artist and the object’s relation to other works within the text body.
 
 <figure style="text-align: center;">
-  <img src="minneapolis_institute_of_art1.jpg" style="width: 50%; height: auto;>
+  <img src="minneapolis_institute_of_art1.jpg" style="width: 50%; height: auto;">
   <figcaption>Minneapolis Institute of Art, 2023</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ Object-focused publications tend, almost invariably, to be catalogues. However, 
 [Wildenstein 2023](https://monet-pastels.wpi.art/) is much more sparing with its tombstone use, only recalling the estimated date and unique identifiers of the object within the tombstone field. All other information about the object is contained within the text body.
 
 <figure style="text-align: center;">
-  <img src="wildenstein_plattner_institute.jpg" style="width: 50%; height: auto;>
+  <img src="wildenstein_plattner_institute.jpg" style="width: 50%; height: auto;">
   <figcaption>Wildenstein Plattner Institute, 2023</figcaption>
 </figure>
 
