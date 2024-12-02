@@ -45,9 +45,9 @@ All of the subclasses of _E41 Appellation_ can be dispensed, other than E42 Iden
 
 E41 Appellation is also added to the list of classes to ignore, as it is not also a Linguistic Object.  The number of Appellations which are not Linguistic is infinitesimal compared to the set of Linguistic Appellations, and hence we use only the `Name` mapping of `E33_E41_Linguistic_Appellation` that inherits both Appellation and Linguistic Object. This class should be used in place of E35 Title for consistency.
 
-__Entity Specialization Classes:__ E27, E31, E32, E40, E83, E84, E96, E99 
+__Entity Specialization Classes:__ E27, E29, E31, E32, E40, E83, E84, E96, E99
 
-These classes (_E27 Site, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E96 Purchase, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM. Information Carriers are only distinguished from Man Made Objects by the unknowable intent of the designer. Likewise, the distinction between E73 and E31 is that instances of E31 is that subset of E73s that make propositions about reality ... which is not a very useful or tractable distinction.  While Purchase does have a property (had_sales_price), it is quickly insufficient for any non-trivial transaction or description common in the art market, including multiple buyers or sellers, commissions, part payment/part exchange, reserve prices, and so on. Given the need for a Payment class, and the use of dimension to relate other prices, Purchase becomes unnecessary. E83 is added to the overly specific set of classes, as there's nothing to distinguish the creation of a Type from the creation of any other conceptual resource. The additional properties might be useful in a vocabulary management system, however that is not the purpose of this profile (nor of CRM generally, one might argue, compared to SKOS or other more appropriate ontologies).
+These classes (_E27 Site, E29 Design or Procedure, E31 Document, E32 Authority Document, E40 Legal Body, E84 Information Carrier, E96 Purchase, E99 Product Type_) have no useful distinguishing features beyond what could easily be conveyed with a Type on their respective parent classes.  Authority Documents and concepts should instead use the W3C's SKOS ontology rather than attempting to model knowledge organization using CRM. Information Carriers are only distinguished from Man Made Objects by the unknowable intent of the designer. Likewise, the distinction between E73 and E31 is that instances of E31 is that subset of E73s that make propositions about reality ... which is not a very useful or tractable distinction, and a similarly imperceptible difference with E29 Design or Procedure. While Purchase does have a property (had_sales_price), it is quickly insufficient for any non-trivial transaction or description common in the art market, including multiple buyers or sellers, commissions, part payment/part exchange, reserve prices, and so on. Given the need for a Payment class, and the use of dimension to relate other prices, Purchase becomes unnecessary. E83 is added to the overly specific set of classes, as there's nothing to distinguish the creation of a Type from the creation of any other conceptual resource. The additional properties might be useful in a vocabulary management system, however that is not the purpose of this profile (nor of CRM generally, one might argue, compared to SKOS or other more appropriate ontologies).
 
 __Visual Concept Classes:__ E34, E37, (E38)
 
@@ -55,7 +55,7 @@ There is a significant overlap between the classes _E34 Inscription_, _E36 Visua
 
 __Curated Holding Classes:__ E78, E87
 
-The _E78 Curated Holding_ class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are sets of objects that are not curated. In order to have a consistent approach, in the absence of a separate class to represent sets, the preferred class for all such aggregations is `Aggregation`.  Collections can be typed as such using the well established P2_has_type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.  `Aggregation` is preferred over E19 Physical Object for consistency with sets of other types of resource, and that a Collection which was never brought together stretches the limits of the definition.  It also makes it very hard to distinguish between an object with physical parts (Painting with a Frame) and a Collection with members (Paintings Collection with a Painting).
+The _E78 Curated Holding_ class, formerly called Collection, is the subject of much debate as to the requirements for which sets of objects can be considered collections (curated holdings) and which are sets of objects that are not curated. In order to have a consistent approach, in the absence of a separate class to represent sets in the main CRM Ontology, the preferred class for all such aggregations is Linked Art's `Set`.  Collections can be typed as such using the well established P2_has_type relationship to an appropriate vocabulary.  This also obviates the need for E87, as an overly specific subclass of Activity.  `Set` is preferred over E19 Physical Object for consistency with sets of other types of resource, and that a Collection which was never brought together stretches the limits of the definition.  It also makes it very hard to distinguish between an object with physical parts (Painting with a Frame) and a Collection with members (Paintings Collection with a Painting).
 
 __Condition Classes:__ E3
 
@@ -63,7 +63,7 @@ Not only is there no current use case for _E3 Condition State_, it is too comple
 
 __Incomprehensible Classes:__ E93
 
-_E93 Presence_ is simply incomprehensible. As such, it has no known use cases and is impossible to know whether it is useful or not. It is telling that there are no examples given in the documentation.
+_E93 Presence_ is basically incomprehensible. As such, it has no known use cases and is impossible to know whether it is useful or not.
 
 The definition is:
 
@@ -81,6 +81,7 @@ The remaining classes are actively used in mappings for the known datasets.
   * _E6 Destruction:_ The event of the destruction of an Object
   * _E7 Activity:_ Activities of Actors and their interactions with objects is a core feature
   * _E8 Acquisition:_ Needed for Provenance
+  * _E9 Move_ requires information that is not often tracked - the explicit activities used to move objects between locations - to be useful. In a dedicated inventory management system it could be valuable to track shipping objects between venues or moving between galleries.
   * _E10 Transfer of Custody:_ Needed for Exhibitions
   * _E11 Modification:_ A significant change to an object, that did not destroy it, is worthy of description
   * _E12 Production:_ The beginning of existence of a physical thing.
@@ -104,7 +105,7 @@ The remaining classes are actively used in mappings for the known datasets.
   * _E67 Birth:_
   * _E68 Dissolution:_
   * _E69 Death:_
-  * _E73 Information Object:_ Concepts, Schemes, Texts  
+  * _E73 Information Object:_ References to standards and external documents
   * _E74 Group:_ Married Couples, Organizations, Workshops, etc. that can take actions as a single entity
   * _E79 Part Addition:_ Similar to Modification, adding parts can substantially change an object
   * _E80 Part Removal:_ And the inverse, the removal of a Part is also important for denoting samples used for conservation research
@@ -119,16 +120,14 @@ The remaining classes are actively used in mappings for the known datasets.
 
 After analysis of the datasets available from multiple consortia and large individual organizations, the data available does not currently require using these classes. This is not to say that they will not be useful in the future, just that they are not used by any currently known instance. In particular:
 
-  * _E9 Move_ requires information that is not often tracked - the explicit activities used to move objects between locations - to be useful. In a dedicated inventory management system it could be valuable to track shipping objects between venues or moving between galleries, but this is unlikely to be made available as public Linked Open Data.
   * _E26 Physical Feature_ is useful for describing non-man-made non-objects such as arches or caves, however none of the datasets needed this and E22 is a reasonable approximation.
-  * _E29 Design or Procedure_ might be useful in a conservation-specific specific system, if carefully described procedures are being explicitly modeled and activities that follow them recorded. 
   * _E81 Transformation_ might be useful in some situations where one object is transformed into another as part of the artistic process. We typically lack the knowledge of the object prior to the documented form, however.
 
 ## Appropriated Classes
 
 _E30 Right_
 
-The definition of E30 Right in CIDOC-CRM doesn't fit any actual need that has been encountered to date. The rationale is below, but the summary is that E30 is conceptual and is not contextualized by space or time, however the legal status of objects changes all the time. This is covered in more, excruciating, detail in the note below.
+The definition of E30 Right in CIDOC-CRM doesn't fit any actual need that has been encountered to date. The summary is that E30 is conceptual and is not contextualized by space or time, however the legal status of objects changes all the time. This is covered in more, excruciating, detail in the note below.
 
 Given that the class is not useful as currently defined, the approach has been taken to attempt to fix that usage within the context of Linked Art, and then submit the necessary changes with evidence from the community back to the ontology maintenance agency for consideration of a revised model.
 
@@ -143,4 +142,3 @@ Given that the class is not useful as currently defined, the approach has been t
     Finally, E72 Legal Object is not the parent of Conceptual Object but instead of Symbolic Object. This means that Rights cannot be applied to ideas, yet patents can provide legal protection for those ideas. Thus even if all of the above were solved, Rights would still not cover the correct set of classes without multiple instantiation.
 
     In summary, CIDOC-CRM lacks the expressiveness to state what is required and the current definition of E30 Right is insufficiently clear for use as currently documented in the standard. If you're still not convinced, you can read [the email thread that starts here](http://lists.ics.forth.gr/pipermail/crm-sig/2017-August/003045.html) (if you dare).
-
