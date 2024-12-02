@@ -10,18 +10,6 @@
     </rdfs:Class>
 
 
-
-<!-- occurs_during ... if actually needed -->
-
-<!--
-<rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/AP25_occurs_during">
-  <rdfs:label xml:lang="en">occurs during</rdfs:label>
-  <rdfs:comment>This property identifies a situation in which the entire instance of the E52 Time-Span of an instance of E2 Temporal Entity is within the instance of the E52 Time-Span of another instance of E2 Temporal Entity that starts before and ends after the included temporal entity.</rdfs:comment>
-  <rdfs:domain rdf:resource="E2_Temporal_Entity"/>
-  <rdfs:range rdf:resource="E2_Temporal_Entity"/>
-</rdf:Property>
--->
-
 <!-- Causal relationship between events -->
 
     <rdf:Property rdf:about="http://www.ics.forth.gr/isl/CRMsci/O13_triggers">
@@ -104,6 +92,15 @@ Thing that has been found. e.g. The finding (S19) encountered (O19) the 18 arrow
         <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
 </rdf:Property>
 
+
+<!-- skos:notation for language codes -->
+
+<rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#notation">
+        <rdfs:label xml:lang="en">notation</rdfs:label>
+        <rdfs:comment xml:lang="en">Identifying string for the resource ; note that Linked Art does not apply a specific data type to the value and everything is just a string.</rdfs:comment>
+        <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
 
 <!-- Conformance of an object to a standard -->
 
