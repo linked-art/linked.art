@@ -168,7 +168,7 @@ See the [dimensions documentation](/model/object/physical/#dimensions)
 
 ### Languages
 
-Below is a short list of common languages. Please see the table for[languages][languages] for a more complete list.
+Below is a short list of common languages. Please see the table for [languages](languages) for a more complete list.
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
@@ -273,7 +273,7 @@ Below is a short list of common languages. Please see the table for[languages][l
 
 The ["meta-type"](/model/base/#types-of-types) for these classifications is aat:300379842.
 
-Below is a short list of common nationalities or cultures. Please see the table for[nationalities and cultures][nationalities] for a more complete list.
+Below is a short list of common nationalities or cultures. Please see the table for [nationalities and cultures](nationalities) for a more complete list.
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|
