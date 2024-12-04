@@ -26,7 +26,7 @@ copyright: © Linked Art Editorial Board. Published under the CC BY 4.0 license.
 nav:
   - Home: index.md
   - About:
-    - about/index.md
+    - About Linked Art: about/index.md
     - LOUD: loud/index.md
     - Community:
       - Participants: community/index.md
@@ -41,9 +41,12 @@ nav:
     - Introduction:
       - How to read: model/intro/index.md
       - Basic Patterns: model/base/index.md
+      - CIDOC-CRM:
+        - Profile: model/profile/index.md
+        - Classes: model/profile/class_analysis.md
     - Core Entities:
       - Objects:
-        - model/object/index.md
+        - Objects: model/object/index.md
         - Production and Destruction: model/object/production/index.md
         - Physical Characteristics: model/object/physical/index.md
         - Aboutness: model/object/aboutness/index.md
@@ -52,7 +55,7 @@ nav:
       - Digital Content: model/digital/index.md
       - Collections: model/collection/index.md
       - Provenance:
-        - model/provenance/index.md
+        - Object Provenance: model/provenance/index.md
         - Acquisitions and Loans: model/provenance/acquisition.md
         - Auctions: model/provenance/auctions.md
         - Changes of Custody: model/provenance/custody.md
@@ -69,7 +72,7 @@ nav:
       - Concepts: model/concept/index.md
       - Events: model/event/index.md
       - Vocabulary:
-        - model/vocab/index.md
+        - About Vocabulary Terms: model/vocab/index.md
         - Required Terms: model/vocab/required/index.md
         - Recommended Terms: model/vocab/recommended/index.md
         - Optional Terms: model/vocab/optional/index.md
@@ -77,9 +80,7 @@ nav:
       - Textual Documents: model/document/index.md
       - Archival Hierarchies: model/archives/index.md
       - Specific Assertions: model/assertion/index.md
-    - CIDOC-CRM:
-      - Profile: model/profile/index.md
-      - Classes: model/profile/class_analysis.md
+
   - API:
     - Linked Art API 1.0: api/1.0/index.md
     - Fundamentals:
@@ -87,8 +88,8 @@ nav:
       - JSON-LD: api/1.0/json-ld/index.md
       - Protocol: api/1.0/protocol/index.md
     - Core APIs:
-      - Entity Descriptions:
-        - api/1.0/endpoint/index.md
+      - Entity Endpoints:
+        - About Endpoints: api/1.0/endpoint/index.md
         - Abstract Works: api/1.0/endpoint/abstract_work/index.md
         - Concepts: api/1.0/endpoint/concept/index.md 
         - Digital Objects: api/1.0/endpoint/digital_object/index.md
@@ -101,8 +102,8 @@ nav:
         - Sets: api/1.0/endpoint/set/index.md
         - Textual Works: api/1.0/endpoint/textual_work/index.md
         - Visual Works: api/1.0/endpoint/visual_work/index.md
-      - Shared Constructs:
-        - api/1.0/shared/index.md
+      - Shared Structures:
+        - About Shared Structures: api/1.0/shared/index.md
         - Activities: api/1.0/shared/activity/index.md
         - Digital Links: api/1.0/shared/digital/index.md
         - Dimensions: api/1.0/shared/dimension/index.md
@@ -116,7 +117,7 @@ nav:
         - Types / Concepts: api/1.0/shared/type/index.md
         - Relationships: api/1.0/shared/assignment/index.md
       - JSON Schema:
-        - api/1.0/schema_docs/index.md
+        - About Schemas: api/1.0/schema_docs/index.md
         - Digital Object: api/1.0/schema_docs/digital.md
         - Event: api/1.0/schema_docs/event.md
         - Group: api/1.0/schema_docs/group.md
@@ -127,13 +128,8 @@ nav:
         - Set: api/1.0/schema_docs/set.md
         - Textual Work: api/1.0/schema_docs/text.md
         - Visual Work: api/1.0/schema_docs/image.md
-    - Related APIs:
-      - Web Integration: api/1.0/ecosystem/index.md
-      - Search: api/1.0/ecosystem/search.md
-    - JSON HAL:
-      - HAL Intro: api/1.0/hal/index.md
       - HAL Links:
-        - List of Links: api/rels/1/index.md
+        - About HAL: api/1.0/hal/index.md
         - Object:
           - activityUsedObject: api/rels/1/activityUsedObject.md
           - conceptInfluencedByObject: api/rels/1/conceptInfluencedByObject.md
@@ -237,6 +233,12 @@ nav:
           - workAboutSet: api/rels/1/workAboutSet.md
           - workMemberOfSet: api/rels/1/workMemberOfSet.md
           - workRepresentsSet: api/rels/1/workRepresentsSet.md
+    - Related APIs:
+      - Search:
+        - Search API: api/1.0/ecosystem/search.md
+        - Search Links: api/rels/1/index.md
+      - Discovery:
+        - Discovery API: api/1.0/ecosystem/index.md
   - Resources:
     - Software and tools: software/index.md
     - Cookbook:
