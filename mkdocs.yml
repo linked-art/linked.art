@@ -37,11 +37,11 @@ nav:
       - Linked Art II (AHRC): community/projects/linkedartii/index.md
       - Enriching Quire (AHRC): community/projects/ees2/index.md
   - Model:
-    - model/index.md
+    - Linked Art Model 1.0: model/index.md
     - Introduction:
       - How to read: model/intro/index.md
       - Basic Patterns: model/base/index.md
-    - Main Entities:
+    - Core Entities:
       - Objects:
         - model/object/index.md
         - Production and Destruction: model/object/production/index.md
@@ -51,7 +51,16 @@ nav:
         - Rights: model/object/rights/index.md
       - Digital Content: model/digital/index.md
       - Collections: model/collection/index.md
-      - Provenance: model/provenance/index.md
+      - Provenance:
+        - model/provenance/index.md
+        - Acquisitions and Loans: model/provenance/acquisition.md
+        - Auctions: model/provenance/auctions.md
+        - Changes of Custody: model/provenance/custody.md
+        - Encounters with Objects: model/provenance/encounters.md
+        - Location and Movement: model/provenance/movement.md
+        - Promised Activities: model/provenance/promises.md
+        - Transfer of Rights: model/provenance/rights.md
+        - Unknown Transfers: model/provenance/transfer.md
       - Exhibitions: model/exhibition/index.md
       - Conservation: model/conservation/index.md
     - Related Entities:
@@ -68,8 +77,11 @@ nav:
       - Textual Documents: model/document/index.md
       - Archival Hierarchies: model/archives/index.md
       - Specific Assertions: model/assertion/index.md
+    - CIDOC-CRM:
+      - Profile: model/profile/index.md
+      - Classes: model/profile/class_analysis.md
   - API:
-    - api/1.0/index.md
+    - Linked Art API 1.0: api/1.0/index.md
     - Fundamentals:
       - Design Principles: api/1.0/principles/index.md
       - JSON-LD: api/1.0/json-ld/index.md
@@ -115,9 +127,116 @@ nav:
         - Set: api/1.0/schema_docs/set.md
         - Textual Work: api/1.0/schema_docs/text.md
         - Visual Work: api/1.0/schema_docs/image.md
-    - Hypermedia and Search:
-      - Hypermedia and versioning: api/1.0/hal/index.md
+    - Related APIs:
       - Web Integration: api/1.0/ecosystem/index.md
+      - Search: api/1.0/ecosystem/search.md
+    - JSON HAL:
+      - HAL Intro: api/1.0/hal/index.md
+      - HAL Links:
+        - List of Links: api/rels/1/index.md
+        - Object:
+          - activityUsedObject: api/rels/1/activityUsedObject.md
+          - conceptInfluencedByObject: api/rels/1/conceptInfluencedByObject.md
+          - objectPartOfObject: api/rels/1/objectPartOfObject.md
+          - objectProductionInfluencedByObject: api/rels/1/objectProductionInfluencedByObject.md
+          - workAboutObject: api/rels/1/workAboutObject.md
+          - workAboutOrRepresentsObject: api/rels/1/workAboutOrRepresentsObject.md
+          - workRepresentsObject: api/rels/1/workRepresentsObject.md
+        - Work:
+          - activityUsedWork: api/rels/1/activityUsedWork.md
+          - conceptInfluencedByWork: api/rels/1/conceptInfluencedByWork.md
+          - objectCarriesWork: api/rels/1/objectCarriesWork.md
+          - objectProductionInfluencedByWork: api/rels/1/objectProductionInfluencedByWork.md
+          - objectShowsWork: api/rels/1/objectShowsWork.md
+          - workAboutOrRepresentsWork: api/rels/1/workAboutOrRepresentsWork.md
+          - workAboutWork: api/rels/1/workAboutWork.md
+          - workPartOfWork: api/rels/1/workPartOfWork.md
+          - workRepresentsWork: api/rels/1/workRepresentsWork.md
+        - Agent:
+          - activityCarriedOutByAgent: api/rels/1/activityCarriedOutByAgent.md
+          - activityParticipantAgent: api/rels/1/activityParticipantAgent.md
+          - agentMemberOfGroup: api/rels/1/agentMemberOfGroup.md
+          - conceptInfluencedByAgent: api/rels/1/conceptInfluencedByAgent.md
+          - groupFoundedByAgent: api/rels/1/groupFoundedByAgent.md
+          - objectCuratedByAgent: api/rels/1/objectCuratedByAgent.md
+          - objectEncounteredByAgent: api/rels/1/objectEncounteredByAgent.md
+          - objectOwnedByAgent: api/rels/1/objectOwnedByAgent.md
+          - objectProducedByAgent: api/rels/1/objectProducedByAgent.md
+          - objectProductionInfluencedByAgent: api/rels/1/objectProductionInfluencedByAgent.md
+          - setCreatedByAgent: api/rels/1/setCreatedByAgent.md
+          - workAboutAgent: api/rels/1/workAboutAgent.md
+          - workAboutOrRepresentsAgent: api/rels/1/workAboutOrRepresentsAgent.md
+          - workCreatedByAgent: api/rels/1/workCreatedByAgent.md
+          - workPublishedByAgent: api/rels/1/workPublishedByAgent.md
+          - workRepresentsAgent: api/rels/1/workRepresentsAgent.md
+        - Place:
+          - activityTookPlaceAtPlace: api/rels/1/activityTookPlaceAtPlace.md
+          - agentActiveAtPlace: api/rels/1/agentActiveAtPlace.md
+          - agentBornOrFormedAtPlace: api/rels/1/agentBornOrFormedAtPlace.md
+          - agentDiedOrDissolvedAtPlace: api/rels/1/agentDiedOrDissolvedAtPlace.md
+          - agentResidentAtPlace: api/rels/1/agentResidentAtPlace.md
+          - conceptInfluencedByPlace: api/rels/1/conceptInfluencedByPlace.md
+          - groupActiveAtPlace: api/rels/1/groupActiveAtPlace.md
+          - groupDissolvedAtPlace: api/rels/1/groupDissolvedAtPlace.md
+          - groupFormedAtPlace: api/rels/1/groupFormedAtPlace.md
+          - objectCurrentPlace: api/rels/1/objectCurrentPlace.md
+          - objectEncounteredAtPlace: api/rels/1/objectEncounteredAtPlace.md
+          - objectProducedAtPlace: api/rels/1/objectProducedAtPlace.md
+          - objectProductionInfluencedByPlace: api/rels/1/objectProductionInfluencedByPlace.md
+          - personActiveAtPlace: api/rels/1/personActiveAtPlace.md
+          - personBornAtPlace: api/rels/1/personBornAtPlace.md
+          - personDiedAtPlace: api/rels/1/personDiedAtPlace.md
+          - placePartOfPlace: api/rels/1/placePartOfPlace.md
+          - setCreatedAtPlace: api/rels/1/setCreatedAtPlace.md
+          - workAboutOrRepresentsPlace: api/rels/1/workAboutOrRepresentsPlace.md
+          - workAboutPlace: api/rels/1/workAboutPlace.md
+          - workCreatedAtPlace: api/rels/1/workCreatedAtPlace.md
+          - workPublishedAtPlace: api/rels/1/workPublishedAtPlace.md
+          - workRepresentsPlace: api/rels/1/workRepresentsPlace.md
+        - Concept:
+          - activityClassifiedAsConcept: api/rels/1/activityClassifiedAsConcept.md
+          - agentClassifiedAsConcept: api/rels/1/agentClassifiedAsConcept.md
+          - conceptBroaderConcept: api/rels/1/conceptBroaderConcept.md
+          - conceptClassifiedAsConcept: api/rels/1/conceptClassifiedAsConcept.md
+          - conceptInfluencedByConcept: api/rels/1/conceptInfluencedByConcept.md
+          - objectClassifiedAsConcept: api/rels/1/objectClassifiedAsConcept.md
+          - objectMadeOfMaterial: api/rels/1/objectMadeOfMaterial.md
+          - objectProductionTechniqueConcept: api/rels/1/objectProductionTechniqueConcept.md
+          - placeClassifiedAsConcept: api/rels/1/placeClassifiedAsConcept.md
+          - setClassifiedAsConcept: api/rels/1/setClassifiedAsConcept.md
+          - workAboutConcept: api/rels/1/workAboutConcept.md
+          - workAboutOrRepresentsConcept: api/rels/1/workAboutOrRepresentsConcept.md
+          - workClassifiedAsConcept: api/rels/1/workClassifiedAsConcept.md
+          - workCreationTechniqueConcept: api/rels/1/workCreationTechniqueConcept.md
+          - workLanguageLanguage: api/rels/1/workLanguageLanguage.md
+          - workRepresentsConcept: api/rels/1/workRepresentsConcept.md
+        - Activity:
+          - activityCausedByActivity: api/rels/1/activityCausedByActivity.md
+          - activityPartOfActivity: api/rels/1/activityPartOfActivity.md
+          - conceptCreationCausedByActivity: api/rels/1/conceptCreationCausedByActivity.md
+          - conceptInfluencedByActivity: api/rels/1/conceptInfluencedByActivity.md
+          - objectDestructionCausedByActivity: api/rels/1/objectDestructionCausedByActivity.md
+          - objectProductionCausedByActivity: api/rels/1/objectProductionCausedByActivity.md
+          - personDeathCausedByActivity: api/rels/1/personDeathCausedByActivity.md
+          - setCreationCausedByActivity: api/rels/1/setCreationCausedByActivity.md
+          - workAboutActivity: api/rels/1/workAboutActivity.md
+          - workAboutOrRepresentsActivity: api/rels/1/workAboutOrRepresentsActivity.md
+          - workCreationCausedByActivity: api/rels/1/workCreationCausedByActivity.md
+          - workRepresentsActivity: api/rels/1/workRepresentsActivity.md
+        - Set:
+          - activityUsedSet: api/rels/1/activityUsedSet.md
+          - agentMemberOfSet: api/rels/1/agentMemberOfSet.md
+          - conceptInfluencedBySet: api/rels/1/conceptInfluencedBySet.md
+          - conceptMemberOfSet: api/rels/1/conceptMemberOfSet.md
+          - entityMemberOfSet: api/rels/1/entityMemberOfSet.md
+          - objectMemberOfSet: api/rels/1/objectMemberOfSet.md
+          - placeMemberOfSet: api/rels/1/placeMemberOfSet.md
+          - setMemberOfSet: api/rels/1/setMemberOfSet.md
+          - temporalMemberOfSet: api/rels/1/temporalMemberOfSet.md
+          - workAboutOrRepresentsSet: api/rels/1/workAboutOrRepresentsSet.md
+          - workAboutSet: api/rels/1/workAboutSet.md
+          - workMemberOfSet: api/rels/1/workMemberOfSet.md
+          - workRepresentsSet: api/rels/1/workRepresentsSet.md
   - Resources:
     - Software and tools: software/index.md
     - Cookbook:
