@@ -85,11 +85,17 @@ pre {
 }
 
 .mermaid {
+  background-color: #FFF;
   padding: 1em;
   border: 0.1em dashed var(--la-gray);
   border-radius: 4px;
   font-size: 75%;
   overflow-x: auto;
+}
+
+.md-typeset code {
+  background: none;
+  font-size: 1em;
 }
 
 
