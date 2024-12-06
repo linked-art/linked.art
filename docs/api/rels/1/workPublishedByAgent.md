@@ -23,7 +23,7 @@ From the record for Bloomsbury Publishing, the record for Alias Grace would be i
 ### SPARQL
 ```
 SELECT DISTINCT ?work WHERE {
-    BIND(<https://lux.collections.yale.edu/data/group/ff8fd160-b5bb-460a-a6c3-3f07229023da> AS ?who)
+    BIND(<%current%> AS ?who)
      ?work crm:P16i_was_used_for ?pub .
     ?pub crm:P14_carried_out_by ?who .
  } 

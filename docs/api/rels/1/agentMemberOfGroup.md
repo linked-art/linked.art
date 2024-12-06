@@ -23,7 +23,7 @@ From the record for Societe Anonyme, Katherine Dreier and Fortunato Depero would
 ### SPARQL
 ```
 SELECT DISTINCT ?member WHERE {
-   BIND (<https://lux.collections.yale.edu/data/group/b27e0e8b-f198-48c7-9589-12fb31e65a5c> AS ?group)
+   BIND (<%current%> AS ?group)
 .   ?member crm:P107i_is_current_or_former_member_of ?group .
  }
 ```

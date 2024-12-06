@@ -23,7 +23,7 @@ From the record for New Haven Connecticut, the record for Société Anonyme woul
 ### SPARQL
 ```
 SELECT DISTINCT ?group WHERE {
-   BIND(<https://lux.collections.yale.edu/data/place/a5b17437-4725-48ec-8a9f-b014e3187b64> as ?where)
+   BIND(<%current%>as ?where)
    ?group crm:P99i_was_dissolved_by ?dissolution .
     ?dissolution crm:P7_took_place_at ?where .
  }
