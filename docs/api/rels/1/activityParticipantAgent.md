@@ -23,7 +23,6 @@ From the record for Tristan Tzara, the record for Cabaret Voltaire would be in t
 ### SPARQL
 ```
 SELECT DISTINCT ?activity WHERE {
-  ?activity crm:P11_had_participant <https://lux.collections.yale.edu/data/person/98624688-11a5-44b6-82be-118946e7655f> .
-  }
+  ?activity crm:P11_had_participant <%current%>.  }
 ```
 
