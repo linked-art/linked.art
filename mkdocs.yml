@@ -8,7 +8,9 @@ theme:
   name: material
   custom_dir: material/overrides
   palette:
+    scheme: custom
     primary: custom
+    accent: custom
   logo: media/logo/linkedart-logo-horizontal.png
   favicon: media/logo/linkedart-favicon.png
   features:
@@ -20,6 +22,9 @@ theme:
   font: false
 extra_css:
   - assets/css/style.css
+  - assets/vendor/opentip.css
+extra_javascript:
+  - assets/vendor/opentip.js
 
 copyright: © Linked Art Editorial Board. Published under the CC BY 4.0 license.
 
@@ -80,7 +85,6 @@ nav:
       - Textual Documents: model/document/index.md
       - Archival Hierarchies: model/archives/index.md
       - Specific Assertions: model/assertion/index.md
-
   - API:
     - Linked Art API 1.0: api/1.0/index.md
     - Fundamentals:

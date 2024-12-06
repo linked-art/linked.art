@@ -34,6 +34,7 @@
 	src: local("IBM Plex Mono"), local("IBMPlexMono"), url("../fonts/IBMPlexMono-Regular.woff2") format("woff2");
 }
 
+
 /* variables */
 :root {
   /* linked art color palette */
@@ -44,15 +45,21 @@
   --la-gray: #CCCCCC;
 
   /* material theme css properties */
-  --md-primary-fg-color:  var(--la-brown);
+  --md-text-font: "IBM Plex Sans";
+
+  --md-primary-fg-color:        var(--la-brown);
   --md-primary-fg-color--light: var(--la-yellow);
   --md-primary-fg-color--dark:  var(--la-brown);
-  --md-text-font: "IBM Plex Sans";
-  --md-accent-fg-color: var(--la-blue);
-  --md-default-bg-color: var(--la-yellow);
-  --md-accent-bg-color: var(--la-yellow);
-  --md-footer-bg-color:  var(--la-brown);
+  --md-primary-bg-color:        var(--la-yellow);
+  --md-primary-bg-color--light: var(--la-yellow);
+
+  --md-accent-fg-color:         var(--la-blue);
+  --md-accent-fg-color--transparent: var(--la-blue);
+  --md-accent-bg-color:         var(--la-yellow);
+  --md-accent-bg-color--light:  var(--la-yellow);
+
 }
+
 
 /* typography */
 html, body {
@@ -73,15 +80,15 @@ ul {
 }
 
 
-/* pre crom example */
+/* crom and code blocks */
 
 pre {
   background-color: #F6F0E0;
   padding: 1em;
   border: 0.1em solid var(--la-gray);
   border-radius: 4px;
-  font-size: 75%;
   overflow-x: auto;
+  font-size: .85em;
 }
 
 .mermaid {
@@ -89,13 +96,21 @@ pre {
   padding: 1em;
   border: 0.1em dashed var(--la-gray);
   border-radius: 4px;
-  font-size: 75%;
   overflow-x: auto;
+  font-size: .85em;
 }
 
-.md-typeset code {
-  background: none;
-  font-size: 1em;
+.str { color: var(--md-code-hl-keyword-color) }
+.str a { color: var(--md-code-hl-string-color) }
+.str a:hover { background-color: var(--md-code-hl-string-color) }
+.sep + .str { color: var(--md-code-hl-string-color) } /* green */
+.int { color: var(--md-code-hl-string-color); }
+.sep { color: var(--md-code-hl-name-color) }
+.asep { color: var(--md-code-hl-name-color) }
+.bsep { color: var(--md-code-hl-name-color) }
+
+.highlight code {
+  background-color: #F6F0E0;
 }
 
 
@@ -113,37 +128,42 @@ pre {
   text-decoration-color: var(--la-yellow);
 }
 
+.md-nav__link:hover,
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  color: var(--md-accent-fg-color);
+  background-color: none;
+}
+
 
 /* navigation */
 
-.md-nav--secondary {
-  background: var(--la-yellow);
+.md-nav--primary .md-nav__title,
+.md-nav--secondary .md-nav__title,
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+  background: none;
+  box-shadow: none
 }
 
-a.md-nav__link {
+.md-nav__link,
+a.md-nav__link:hover,
+a.md-nav__item--nested span.md-ellipsis {
   color: var(--la-blue);
+  background: none;
 }
 
-a:hover.label.md-nav__link {
+a.md-nav__link:hover span.md-ellipsis,
+a.md-nav__link--active span.md-ellipsis {
   color: var(--la-yellow);
-  background: var(--la-blue);
-}
-
-a:hover.md-nav__link {
-  background: var(--la-yellow);
-}
-
-a:hover.md-nav__link span.md-ellipsis {
-  color: var(--la-yellow);
-  background: var(--la-blue);
+  background-color: var(--la-blue);
 }
 
 
 /* hide github stats */
 .md-header__source {
   display: none;
-
 }
+
 
 /* hide title on desktop */
 @media screen and (min-width: 1220px) {
@@ -151,6 +171,7 @@ a:hover.md-nav__link span.md-ellipsis {
     display: none;
   }
 }
+
 
 /* google slides */
 .responsive-google-slides {
