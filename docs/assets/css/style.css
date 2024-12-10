@@ -141,8 +141,8 @@ pre {
 .md-nav--primary .md-nav__title,
 .md-nav--secondary .md-nav__title,
 .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
-  background: none;
-  box-shadow: none
+  background: var(--la-yellow);
+  box-shadow: 0 0 .4rem .4rem var(--la-yellow)
 }
 
 .md-nav__link,
