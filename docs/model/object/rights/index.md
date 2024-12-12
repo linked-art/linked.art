@@ -4,7 +4,7 @@ up_href: "/model/object/"
 up_label: "Objects"
 ---
 
-[TOC]
+
 
 ## Introduction
 

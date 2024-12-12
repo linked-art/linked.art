@@ -4,7 +4,7 @@ up_href: "/model/"
 up_label: "Model Overview"
 ---
 
-[TOC]
+
  
 It is useful to have some common, basic patterns to follow when using a very open model and ontology. The following patterns have been agreed on as useful ways to think about our cultural data, through working with objects, other entities and collections from across many different museums and organizations. They are foundational to all of Linked Art, and used extensively both to describe the core entities of interest (objects, works, people, places and so on) as well as within the descriptions (for example to give a label to a description, or a classification to a span of time).
 

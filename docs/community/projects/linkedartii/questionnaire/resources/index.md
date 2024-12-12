@@ -2,7 +2,7 @@
 title: "Linked Art II: Background Resources"
 ---
 
-[TOC]
+
 
 This page provides additional background material for the [Linked Art questionnaire](questionnaire/).
 

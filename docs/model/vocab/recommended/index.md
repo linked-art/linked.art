@@ -4,7 +4,7 @@ up_href: "/model/vocab/"
 up_label: "Vocabulary Terms"
 ---
 
-[TOC]
+
 
 ## Introduction
 

@@ -4,7 +4,7 @@ up_href: "/model/provenance/"
 up_label: "Provenance"
 ---
 
-[TOC]
+
 
 ## Introduction
 

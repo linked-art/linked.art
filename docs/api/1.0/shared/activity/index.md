@@ -3,7 +3,7 @@ title: "Linked Art API: Embedded Activity Structure"
 ---
 
 
-[TOC]
+
 
 ## Introduction
 

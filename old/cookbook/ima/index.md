@@ -2,7 +2,7 @@
 title: "Indianapolis Museum of Art (IMA) Collection Mapping"
 ---
 
-[TOC]
+
 
 ## Introduction
 

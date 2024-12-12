@@ -5,7 +5,7 @@ up_label: "Linked Art API 1.0 Endpoints"
 ---
 
 
-[TOC]
+
 
 ## Introduction
 

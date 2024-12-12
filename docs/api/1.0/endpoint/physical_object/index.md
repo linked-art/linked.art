@@ -2,7 +2,7 @@
 title: "Linked Art API: Physical Object Representation"
 ---
 
-[TOC]
+
 
 ## Introduction
 

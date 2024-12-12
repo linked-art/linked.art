@@ -2,7 +2,7 @@
 title: "The National Gallery of Art Artwork Data Record Mapping"
 ---
 
-[TOC]
+
 
 ## Introduction
 

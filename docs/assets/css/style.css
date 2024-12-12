@@ -1,0 +1,191 @@
+/* fonts */
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 450;
+	src: local("IBM Plex Sans Text"), local("IBMPlexSans-Text"), url("../fonts/IBMPlexSans-Text.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: italic;
+	font-weight: 450;
+	src: local("IBM Plex Sans Text Italic"), local("IBMPlexSans-TextItalic"), url("../fonts/IBMPlexSans-TextItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../fonts/IBMPlexSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: italic;
+	font-weight: 700;
+	src: local("IBM Plex Sans Bold Italic"), local("IBMPlexSans-BoldItalic"), url("../fonts/IBMPlexSans-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'IBM Plex Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: local("IBM Plex Mono"), local("IBMPlexMono"), url("../fonts/IBMPlexMono-Regular.woff2") format("woff2");
+}
+
+
+/* variables */
+:root {
+  /* linked art color palette */
+  --la-orange: #C53D23;
+  --la-blue: #4C93C7;
+  --la-brown: #302803;
+  --la-yellow: #FDFBF2;
+  --la-gray: #CCCCCC;
+
+  /* material theme css properties */
+  --md-text-font: "IBM Plex Sans";
+
+  --md-primary-fg-color:        var(--la-brown);
+  --md-primary-fg-color--light: var(--la-yellow);
+  --md-primary-fg-color--dark:  var(--la-brown);
+  --md-primary-bg-color:        var(--la-yellow);
+  --md-primary-bg-color--light: var(--la-yellow);
+
+  --md-accent-fg-color:         var(--la-blue);
+  --md-accent-fg-color--transparent: var(--la-blue);
+  --md-accent-bg-color:         var(--la-yellow);
+  --md-accent-bg-color--light:  var(--la-yellow);
+
+}
+
+
+/* typography */
+html, body {
+  background-color: var(--la-yellow);
+}
+
+hr {
+  border-color: var(--la-gray);
+}
+
+h1 {
+  border-bottom: 1px solid;
+  border-color: var(--la-gray);
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* crom and code blocks */
+
+pre {
+  background-color: #F6F0E0;
+  padding: 1em;
+  border: 0.1em solid var(--la-gray);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: .85em;
+}
+
+.mermaid {
+  background-color: #FFF;
+  padding: 1em;
+  border: 0.1em dashed var(--la-gray);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: .85em;
+}
+
+.str { color: var(--md-code-hl-keyword-color) }
+.str a { color: var(--md-code-hl-string-color) }
+.str a:hover { background-color: var(--md-code-hl-string-color) }
+.sep + .str { color: var(--md-code-hl-string-color) } /* green */
+.int { color: var(--md-code-hl-string-color); }
+.sep { color: var(--md-code-hl-name-color) }
+.asep { color: var(--md-code-hl-name-color) }
+.bsep { color: var(--md-code-hl-name-color) }
+
+.highlight code {
+  background-color: #F6F0E0;
+}
+
+
+/* links */
+.md-main a {
+  color: var(--la-blue);
+  text-decoration: underline;
+  text-decoration-color: var(--la-blue);
+  transition: text-decoration-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1), color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.md-main a:hover {
+  color: var(--la-yellow);
+  background-color: var(--la-blue);
+  text-decoration-color: var(--la-yellow);
+}
+
+.md-nav__link:hover,
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  color: var(--md-accent-fg-color);
+  background-color: none;
+}
+
+
+/* navigation */
+
+.md-nav--primary .md-nav__title,
+.md-nav--secondary .md-nav__title,
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+  background: var(--la-yellow);
+  box-shadow: 0 0 .4rem .4rem var(--la-yellow)
+}
+
+.md-nav__link,
+a.md-nav__link:hover,
+a.md-nav__item--nested span.md-ellipsis {
+  color: var(--la-blue);
+  background: none;
+}
+
+a.md-nav__link:hover span.md-ellipsis,
+a.md-nav__link--active span.md-ellipsis {
+  color: var(--la-yellow);
+  background-color: var(--la-blue);
+}
+
+
+/* hide github stats */
+.md-header__source {
+  display: none;
+}
+
+
+/* hide title on desktop */
+@media screen and (min-width: 1220px) {
+  .md-header__topic {
+    display: none;
+  }
+}
+
+
+/* google slides */
+.responsive-google-slides {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Ratio */
+  height: 0;
+  overflow: hidden;
+  margin: auto;
+}
+.responsive-google-slides iframe {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}

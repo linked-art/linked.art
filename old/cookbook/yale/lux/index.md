@@ -2,7 +2,7 @@
 title: "LUX Linked.Art Mapping"
 ---
 
-[TOC]
+
 
 ## Introduction
 

@@ -2,7 +2,7 @@
 title: "Linked Art API: Shared Data Structures"
 ---
 
-[TOC]
+
 
 ## Introduction
 
