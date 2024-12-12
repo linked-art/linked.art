@@ -17,10 +17,10 @@ There might be multiple encounters recorded in a provenance chain, such as when 
 
 Objects of cultural significance are often lost to all knowledge, or to the general knowledge of the prevailing culture, and then later rediscovered. This is considered to be part of the provenance of the object, rather than equivalent to its Production, especially as both may be known. There are also ownership considerations that need to be taken into account at the same time, as to whether this find also transfers the ownership of the object to the discoverer, or merely custody of it.
 
-The model uses an `Encounter` activity, which is carried out by the person or group making the rediscovery. The activity has its own relationship for the object that is rediscovered, `encountered`, to ensure that other objects that are used as part of the discovery can be separated from the "find".
+The model uses an `Encounter` activity, which is carried out by the person or group making the discovery. The activity has its own relationship for the object that is rediscovered, `encountered`, to ensure that other objects that are used as part of the discovery can be separated from the "find".
 As it is part of a Provenance Event, other parts can describe the changing ownership status of the object.  In all other ways, the `Encounter` is just like a regular `Activity` as described in the [baseline patterns](/model/base/#events-and-activities).
 
-Note that Encounters may also be included directly in the object's description without ownership implications.
+Note that Encounters may also be included directly in the object's description without ownership implications, in the same way as for simple acquistions.
 
 __Example:__
 

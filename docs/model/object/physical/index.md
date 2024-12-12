@@ -95,13 +95,13 @@ aa.part_of = model.Activity(ident="operationnightwatch", label="Operation Night 
 
 ### Measurement of Object Features
 
-It is common to measure parts of a particular object, such as the base of a statue or the image bearing part of a painting, or the object in a particular state, such as the height of the chest with the lid open rather than with the lid closed. If there is a record for the part, separate from the full object, then the dimension can be associated with that part of the object directly, but it is inconvenient to make separate records for all of the possible aspects that could be measured, and impossible to manage state in this way.
+It is common to measure parts of a particular object, such as the base of a statue or the image bearing part of a painting, or the object in a particular state, such as the height of the chest with the lid open rather than with the lid closed. If there is a record for the part, separate from the full object, then the dimension can be associated with that part of the object directly, but it is inconvenient to make separate records for all of the possible aspects that could be measured, and impossible to manage object state in this way.
 
 If there isn't a requirement to have multiple dimensions connected, and there isn't an interoperability or searchability requirement to be able to distinguish them computationally, then a display Name or a Statement is likely sufficient to explain to a human reader what was being measured.
 
 If this is a requirement, then instead we add the `technique` property on the `AttributeAssignment` discussed in the previous section as a way to reference the method in which the measurement was taken. The technique would represent, for example, "measuring the base" or "measuring while open". The same technique would be added to each of the measurements for the particular feature -- the height, width, and depth of the statue's base would all have the "measuring the base" technique as a way to connect them together.
 
-/// note | Missing Vocabulary
+/// note | Note: Missing Vocabulary
 These techniques are unlikely to exist in shared vocabularies, and implementers are thus very likely to have to create their own based on local practice.
 ///
 
@@ -148,7 +148,7 @@ top.dimension = c
 
 !!! note "Implementation Note"
 
-	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int("B35A1F", 16)`. The reverse is also true, with the equivalent being `hex(11754015)`. As such, the unobvious value of `11754015` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency with all other dimensions is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer. The string can be carried as an Identifier on the Dimension instance.
+	In order to generate an integer value from a hexadecimal value is typically very easy in most programming languages. In Python, for example, it is simply `int("B35A1F", 16)`. The reverse is also true, with the equivalent being `hex(11754015)`. As such, the unobvious value of `11754015` is not wonderful from a data-readability perspective, but the implementation is very straightforward and thus the consistency with all other dimensions is deemed to provide more usability than having a special case of `value` that takes a string instead of an integer. The string containing the hex code can be carried as an Identifier on the Dimension instance.
 
 
 ## Shapes
@@ -198,7 +198,7 @@ top.referred_to_by = vocab.MaterialStatement(content="Oil on Canvas")
 
 ## Parts
 
-As described in the [basic patterns](/model/base/), one of the main modeling paradigms used is to separate parts of resources from the whole. Physical objects are particularly amenable to this, and allows reuse of the rest of the model as needed.  The parts do not need to be physically separable without destroying the object, but do need to be objectively definable in terms of the matter that makes it up.  For example, the arm of a sculpture could have dimensions and materials, but while an arch-shaped space in a rock formation might have dimensions, it could not be removed, nor is it made of anything, and thus it is not a part.
+As described in the [basic patterns](/model/base/), one of the main modeling paradigms used is to separate parts of entities from the whole. Physical objects are particularly amenable to this, and allows reuse of the rest of the model as needed.  The parts do not need to be physically separable without destroying the object, but do need to be objectively definable in terms of the matter that makes it up.  For example, the arm of a sculpture could have dimensions and materials, but while an arch-shaped space in a rock formation might have dimensions, it could not be removed, nor is it made of anything, and thus it is not a part.
 
 Physical parts are linked to the whole using the `part_of` property, and use the same `HumanMadeObject` class. The `classified_as` property can be used to be more specific as to the sort of part, in this case the support for the painting, which is in turn made of canvas. The type of part is then further classified as _aat:300241583_ to ensure that it can be distinguished as a part-type, rather than an object-type.
 

@@ -7,6 +7,8 @@ title: ""
 
 ## Survey of Community Quire outputs
 
+By Thorsteinn Imi King
+
 As of 23 May 2024, there are fourteen distinct genres of Quire output identified by the team at Getty in the [‘Community Showcase’](https://quire.getty.edu/community/community-showcase/) section of their website.<sup>1</sup> The page lists 61 separate Quire outputs as of 19 June 2024. This consists of around 80% of extant Quire projects known to the team.<sup>2</sup> Several projects linked to on the Community Showcase page are no longer accessible. The first is a self-published 2019 research project, of which only the cover page is functional.<sup>3</sup> Three outputs by Hong Kong University have similarly perished.<sup>4</sup> The extant outputs are still a valuable resource for investigating the practices of Quire users, and seeing how these might influence future development of the EES2 Quire Linked Art module.<sup>5</sup>
 
 The genres identified by the team at Getty, examples hyperlinked, are:
@@ -37,7 +39,7 @@ Object-focused publications tend, almost invariably, to be catalogues. However, 
 [Minneapolis 2023](https://artsmia.org/weisberg-collection/) contains nearly all information about the object within the tombstone data, discussing only biographical details of the artist and the object’s relation to other works within the text body.
 
 <figure style="text-align: center;">
-  <img src="minneapolis_institute_of_art1.jpg" style="width: 50%; height: auto;>
+  <img src="minneapolis_institute_of_art1.jpg" style="width: 50%; height: auto;">
   <figcaption>Minneapolis Institute of Art, 2023</figcaption>
 </figure>
 
@@ -51,7 +53,7 @@ Object-focused publications tend, almost invariably, to be catalogues. However, 
 [Wildenstein 2023](https://monet-pastels.wpi.art/) is much more sparing with its tombstone use, only recalling the estimated date and unique identifiers of the object within the tombstone field. All other information about the object is contained within the text body.
 
 <figure style="text-align: center;">
-  <img src="wildenstein_plattner_institute.jpg" style="width: 50%; height: auto;>
+  <img src="wildenstein_plattner_institute.jpg" style="width: 50%; height: auto;">
   <figcaption>Wildenstein Plattner Institute, 2023</figcaption>
 </figure>
 

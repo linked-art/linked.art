@@ -10,7 +10,7 @@ See the related [model documentation](/model/concept/#creation-and-influences)
 
 ### Example
 
-
+From the record for the concept of History, the record for History of France would be in the response
 
 
 ### Details

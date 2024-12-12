@@ -27,7 +27,9 @@ The activity data structure has the following properties.
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the activity |
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the activity occured |
 | `timespan`        | json object   | Optional    | A json object which describes when the activity occured, and MUST follow the requirements for [timespans](../timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured | 
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured |
+| `before`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this event occured |
+| `after`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this event occured |
 | `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused this event to occur |
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which carried out the activity. **NOT usable when the `type` is `"Birth"` or `"Death"`**|
 | `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced or motivated the activity in some noticable fashion. **NOT usable when the `type` is `"Birth"` or `"Death"`** | 
@@ -45,7 +47,7 @@ The activity data structure has the following properties.
 | Digital Object    | Creation      | -           | Activity    |
 | Group             | Formation     | Dissolution | Activity    |
 | Person            | Birth         | Death       | Activity    |
-| Physical Object   | Production, PartRemoval | Destruction | Encounter, Activity | 
+| Physical Object   | Production, PartRemoval | Destruction | Encounter, Modification, Activity | 
 | Set               | Creation      | -           | Activity    |
 | Textual Work      | Creation      | -           | Activity    |
 | Visual Work       | Creation      | -           | Activity    |
@@ -60,20 +62,21 @@ The activity data structure has the following properties.
 
 Activity instances are typically found as the object of the following properties.
 
-| Property Name    | Class       | Description |
-|------------------|-------------|-------------|
-| `created_by`     | Creation    | The beginning of a conceptual or digital thing |
-| `formed_by`      | Formation   | The beginning of a group |
-| `dissolved_by`   | Dissolution | The end of a group |
-| `born`           | Birth       | The beginning of a person |
-| `died`           | Death       | The end of a person |
-| `produced_by`    | Production  | The beginning of a physical thing |
-| `removed_by`     | PartRemoval | The beginning of a physical thing, when it is removed from something else |
-| `destroyed_by`   | Destruction | The ending of a physical thing |
-| `encountered_by` | Encounter   | The discovery or interaction with a physical thing |
-| `used_for`       | Activity    | The use of a thing for some activity, typically publication |
-| `participated_in`| Activity    | An activity that a Person or Group participated in |
-| `carried_out`    | Activity    | An activity that a Person or Group carried out directly |
+| Property Name    | Class        | Description |
+|------------------|--------------|-------------|
+| `created_by`     | Creation     | The beginning of a conceptual or digital thing |
+| `formed_by`      | Formation    | The beginning of a group |
+| `dissolved_by`   | Dissolution  | The end of a group |
+| `born`           | Birth        | The beginning of a person |
+| `died`           | Death        | The end of a person |
+| `produced_by`    | Production   | The beginning of a physical thing |
+| `removed_by`     | PartRemoval  | The beginning of a physical thing, when it is removed from something else |
+| `modified_by`    | Modification | The modification of a physical thing |
+| `destroyed_by`   | Destruction  | The ending of a physical thing |
+| `encountered_by` | Encounter    | The discovery or interaction with a physical thing |
+| `used_for`       | Activity     | The use of a thing for some activity, typically publication |
+| `participated_in`| Activity     | An activity that a Person or Group participated in |
+| `carried_out`    | Activity     | An activity that a Person or Group carried out directly |
 
 
 ## Example

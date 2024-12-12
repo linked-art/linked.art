@@ -8,24 +8,16 @@ up_label: "Provenance"
 
 ## Introduction
 
-Many acquisitions are first long term loans, with a promise that ownership of the object will also be transferred after some conditions have been met. These promises are also typically enforced via a legal contract.
-
-There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, typically called a commission.
-
-!!! note "Model Subject to Change"
-	There are ongoing efforts within CIDOC to standardize how to describe social bonds between parties, activity plans that describe the conditions under which some activity would or did take place, and the management of ownership and other rights over time.  The model presented here concerning promise activities has reduced fidelity compared to these efforts, and when they have stabilized, the modeling may be revised to take them into account.
+Many acquisitions are first long term loans, with a promise that ownership of the object will also be transferred after some conditions have been met. These promises are also typically enforced via a legal contract. There might also be other promised activities, with or without a contract, that are valuable to document if known. This could include the promise to produce an artwork in exchange for money, typically called a commission.
 
 There is a necessary vocabulary term, given the lack of a more explicit class to model activity plans or social bonds, in order to distinguish a Promise from any other activity.
 
 * __Promise:__ (_aat:300435599_) A promise that some future activity will be carried out.
 
 
-!!! note "At Risk"
-	Given the Society work above, and the limited utility of the patterns, there is a proposal to exclude promises from Linked Art 1.0 and instead have them (along with other complex provenance) as an extension. Thoughts on this would be greatly appreciated.
-
 ## Promised Gift
 
-A promise of a gift (or sale, or exchange) is an Activity which is carried out by the promising party.  It is a promise to some other actor to perform some further activity (the giving or sale of the object), however we lack the ontological machinery at the moment to make this explicit. Instead we can reference the promised party and the object being promised only via the more general properties of `participant` and `used_specific_object` respectively. 
+A promise of a gift (or sale, or exchange) is an Activity which is carried out by the promising party.  It is a promise to some other actor to perform some further activity (the giving or sale of the object), however the model currently cannot describe the future planned event. Instead we can reference the promised party and the object being promised only via the more general properties of `participant` and `used_specific_object` respectively.
 
 Further details and clarification about the promise, including any description of the contract, should be given in a descriptive note on the promise activity.
 

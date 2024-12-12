@@ -22,6 +22,10 @@ From the record for Los Altos California, the record for Apple Computers would b
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?group WHERE {
+   BIND(<%current%>as ?where)
+   ?group crm:P95i_was_formed_by ?formation .
+    ?formation crm:P7_took_place_at ?where .
+ }
 ```
 

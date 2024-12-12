@@ -10,7 +10,7 @@ See the related [model documentation](/model/base/#types-and-classifications)
 
 ### Example
 
-
+From the record for the concept of the Dutch nationality, the record for Rembrandt would be in the response
 
 
 ### Details

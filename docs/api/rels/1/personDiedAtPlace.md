@@ -22,6 +22,10 @@ From the record for Amsterdam, the record for Rembrandt would be in the response
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?person WHERE {
+   BIND(<%current%>as ?where)
+   ?person crm:P100i_died_in ?death .
+    ?death crm:P7_took_place_at ?where .
+ }
 ```
 

@@ -22,6 +22,9 @@ From the record for Paris France, the record for Victor Hugo's work "Paris" woul
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?work WHERE {
+   BIND(<%current%>as ?where)
+   ?work crm:P129_is_about ?where .
+  }
 ```
 

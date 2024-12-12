@@ -23,7 +23,7 @@ From the record for Abraham Lincoln, the record for We are Lincoln Men : Abraham
 ### SPARQL
 ```
 SELECT DISTINCT ?work WHERE {
-    BIND(<https://lux.collections.yale.edu/data/person/e82e7dd0-7c4d-41f5-9ed7-496110e7e97a> AS ?who)
+    BIND(<%current%> AS ?who)
     ?work crm:P129_is_about ?who .
  } 
 ```

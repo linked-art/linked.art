@@ -8,6 +8,8 @@ title: "Exhibitions"
 
 Exhibitions are a very common activity that involves artwork owned by different organizations being displayed together, often with additional contextual information linking the pieces together.  The exhibition is often presented at different venues over time, and might be part of a series such as the World Fairs or annual exhibitions.
 
+The model divides exhibitions across two separate entities: the activity of exhibiting the objects that occured at a place and point in time, and the conceptual notion of the exhibition. This separation is important as activities are not `about` anything, and for exhibitions that were planned but cancelled (perhaps due to a war, a pandemic, or just loss of financing) the conceptual exhibition allows the description of the idea without asserting that it actually occured.
+
 
 ## Exhibition Activity
 
@@ -38,9 +40,11 @@ top.influenced_by = model.PropositionalObject(ident="exhidea", label="Idea for M
 
 The model distinguishes between the concept of the exhibition and the activity that makes that concept real.  The concept is created by the people who originally think up the exhibition, long before any of the pieces are collected together.  The exhibition concept likely has some theme that results in a coherent set of objects being presented, which could be as complex as post-industrial life or as simple as the life's work of a particular artist.
 
-The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition and separate from the activity. It can have all of the affordances of any concept, such as names, identifiers, references, relationships and more.
+The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition and separate from the activity. It can have all of basic patterns, such as names, identifiers, references, as well as rights and subjects.
 
 __Example:__
+
+The idea for the Manet and Modern Beauty exhibition is about Manet and Beauty.
 
 ```crom
 top = vocab.ExhibitionIdea(ident="exhidea/1", label="Idea for Manet and Modern Beauty")
@@ -59,7 +63,7 @@ top.created_by = cre
 
 A frequently encountered situation is that we know about a historical exhibition and which artist or artists had works that were exhibited, but do not know any of the individual works. As the artist was likely not present at the exhibition, nor was involved in planning or otherwise executing it, they cannot be a participant in the activity, nor in the conceptualization of the activity. Equally, we might know of an exhibition that was planned around an artist, but it may never have actually occured.  Finally, we may wish to link an artist to the exhibition regardless of whether we know the objects or not.
 
-The link to the artist is thus on the Exhibition Concept, rather than related to the activity. If the exhibition is about the artist specifically, then it can be `about` the artist. If the artist is just known to have had works used in the exhibition, then its `Creation` should be `influenced_by` the artist. It can also, of course, be both.
+The link to the artist is thus on the Exhibition Concept, rather than related to the activity. If the exhibition is about the artist specifically, then the concept can be `about` the artist. If the artist is just known to have had works used in the exhibition, then its `Creation` should be `influenced_by` the artist. It can also, of course, be both.
 
 __Example:__
 
@@ -80,6 +84,8 @@ Some exhibitions are shown at different locations over time, moving from one mus
 
 __Example:__
 
+The Art Institute of Chicago exhibited Manet and Modern Beauty in Chicago with a specific set of objects, and is part of the larger multi-venue exhibition.
+
 ```crom
 top = vocab.Exhibition(ident="exhb/1", label="Manet and Modern Beauty (AIC)")
 top.identified_by = vocab.PrimaryName(content="Manet and Modern Beauty")
@@ -93,6 +99,8 @@ top.used_specific_object = model.Set(ident="exhset", label="Exhibition objects")
 top.influenced_by = model.PropositionalObject(ident="exhidea", label="Idea for Manet and Modern Beauty")
 top.part_of = model.Activity(ident="exhab", label="Manet and Modern Beauty")
 ```
+
+The larger multi-venue exhibition activity.
 
 ```crom
 top = vocab.MultiExhibition(ident="exhab/1", label="Manet and Modern Beauty")
@@ -108,7 +116,7 @@ top.influenced_by = model.PropositionalObject(ident="exhidea", label="Idea for M
 
 The collection of art objects on display at exhibitions can be listed from the Exhibition with the property `used_specific_object`. The model for the set of objects that make up the content of the exhibition is the same as the model for permanent collections -- the objects are collected together into a `Set`, which is used by the Exhibition.  
 
-For travelling exhibitions described above, a different collection of objects should be referenced from each of the venues if those sets are substantially different.  Objects are typically added or removed, and each venue will likely have its own context specific information such as descriptions or labels.  The top level activity representing the overall exhibition does not have its own Set in the travelling exhibition case.
+For travelling exhibitions described above, a different collection of objects should be referenced from each of the venues if those sets are substantially different.  Objects are typically added or removed, and each venue will likely have its own context specific information such as descriptions or labels.  The top level activity representing the overall exhibition does not have its own Set in the travelling exhibition scenario.
 
 __Example:__
 

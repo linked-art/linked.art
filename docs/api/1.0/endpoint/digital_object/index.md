@@ -40,7 +40,7 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `digitally_carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
 | `digitally_shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
 | `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined below |
-| `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the digital object can be retrieved |
+| `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the actual file can be retrieved, rather than metadata about it |
 | `created_by` | json object | Optional | A json object representing the creation of the digital object, which follows the requirements for a [Creation](../../shared/activity) | 
 | `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
 

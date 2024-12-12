@@ -22,6 +22,8 @@ From the record for O.C. Marsh, the record for his archive would be in the respo
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?set WHERE {
+   ?set crm:P94i_was_created_by ?creation .
+    ?creation crm:P15_was_influenced_by <%current%>. }
 ```
 

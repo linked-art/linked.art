@@ -22,6 +22,9 @@ From the record for the National Gallery of Art, the record for the Manet exhibi
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?activity WHERE {
+  BIND (<%current%>AS ?group)
+.  ?activity crm:P14_carried_out_by ?group .
+   }
 ```
 

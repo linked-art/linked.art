@@ -12,7 +12,7 @@ This section covers the beginning and ending of objects' existence, along with t
 
 ## Base Production Activity
 
-The first activity in an object's lifecycle is its creation, or `Production`.  The relationship from the object to the activity is `produced_by`, and the `Production` activity itself follows the general [base activity model](/model/base/#events-and-activities) with the description of time, location and agents.
+The first activity in an object's lifecycle is its creation, which is described using the `Production` class.  The relationship from the object to the activity is `produced_by`, and the `Production` activity itself follows the general [base activity model](/model/base/#events-and-activities) with the description of time, location and agents.
 
 __Example:__
 
@@ -40,12 +40,12 @@ If there is a particular technique known to have been used in the creation of th
  
 __Example:__
 
-The sculpture "Bust of a Man" was created by the Studio of Francis Hardwood using the sculpting technique.
+The [sculpture "Bust of a Man"](https://collections.britishart.yale.edu/catalog/tms:54430) was created by Francis Hardwood using the sculpting technique.
 
 ```crom
 top = vocab.Sculpture(ident="bust/1", label="Bust of a Man")
 prod = model.Production()
-prod.carried_out_by = model.Group(ident="harwoodstudio", label="Studio of Francis Harwood")
+prod.carried_out_by = model.Person(ident="http://vocab.getty.edu/ulan/500015886", label="Francis Harwood")
 prod.technique = vocab.instances['sculpting']
 top.produced_by = prod
 ```
@@ -54,7 +54,7 @@ top.produced_by = prod
 
 If there are multiple artists collaborating on the same piece of artwork, then we follow the partitioning pattern of creating separate parts of the main `Production` activity. Each of these components captures the details of one particular artist's role in the production of the object. This allows us to assert different properties for each artist's contribution, including different times, techniques, roles, locations or influences.
 
-For consistency, it is recommended that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. For compatibility with other systems this is, however, not required.
+For consistency, it is RECOMMENDED that this pattern also be used for production activities when only one artist is known, such that it is easier to add further contributors to the work without restructuring the content. However this is not required, to ensure compatibility with existing systems.
 
 Note that these parts of productions can also have statements associated with them, describing the role in more detail beyond just the classification, technique or other structured data.
 
@@ -79,12 +79,12 @@ prod.part = act2
 
 ## Objects Related to the Production
 
-Other objects can play critical roles in the production of artwork, such as copying or being inspired by another artwork, or the use of the same source to create an artwork, either mechanically or manually, such as the negative used for printing a photograph.
+Other objects can play critical roles in the production of artwork, such as copying or being inspired by another artwork, or the use of the same source to create an artwork, either mechanically or manually, such as the negative used for printing a photograph or the plate used to print an etching.
 
 
 ### Inspirations, Studies or Copies
 
-Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. This includes studies done for the final version of the work.
+Some artworks are copies of, or clearly directly inspired by, others.  This relationship with another work can be captured with the `influenced_by` property of the `Production` activity. The copy could be from memory or with the copied object physically present, and it could be a faithful reproduction or merely recognizably similar. This includes studies done for the final version of the work. The exact nature of the influence is not captured in the model.
 
 __Example:__
 
@@ -101,9 +101,9 @@ prod.carried_out_by = model.Person(ident="keller", label="Deane Keller")
 
 ### Reproduction from an Identifiable Source
 
-Many objects are created from a source, such as a photograph being printed from a negative, a print created from a woodcut, or a sculpture made from a cast.  The use of the particular source can be captured as part of the description of the `Production` of the object using the `used_specific_object` property.
+Many objects are created directly from a source, such as a photograph being printed from a negative, a print created from a woodcut, or a sculpture made from a cast.  The use of the particular source object can be captured as part of the description of the `Production` of the object using the `used_specific_object` property.
 
-Note that all of the art objects created from the same source will show the same image, be it flat or three dimensional. The source also shows the same image, albiet likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects show, allowing us to group the objects together. For more information about the work, see the section on [aboutness](../aboutness/).
+Note that all of the art objects created from the same source will show the same image, be it flat or three dimensional. The source also shows the same image, albeit likely somehow reversed. The image is modeled as a `VisualItem` that all of the physical objects show, allowing us to group the objects together. For more information about the work, see the section on [aboutness](../aboutness/).
 
 Equipment or tools such as a particular camera or palette would also be modeled with the same property `used_specific_object`, however would not (of course) show the same visual item as the main work.
 
@@ -151,7 +151,7 @@ top.made_of = vocab.instances['copper']
 
 ## Cause of Production
 
-Artworks are frequently commissioned, where an artist agrees to create the artwork and the commissioner agrees to compenate the artist for his efforts. The modeling of the [commission](/model/provenance/promises/#commissions-for-artwork) is described in the Provenance section, as an exchange of promises, and potentially also Payments. The object can refer to this Activity in its Production with the `caused_by` property.
+Artworks are frequently commissioned, where an artist agrees to create the artwork and the commissioner agrees to compensate the artist for his efforts. The modeling of the [commission](/model/provenance/promises/#commissions-for-artwork) is described in the Provenance section, as an exchange of promises, and potentially also Payments. The object can refer to this Activity in its Production with the `caused_by` property.
 
 __Example:__
 
@@ -189,7 +189,7 @@ top.produced_by = prod
 
 ### Influenced By an Artist
 
-If there is some connection between the production of the object and someone who was not the artist directly, but influenced the production, then the `influenced_by` property can be used to reference that person.  These are often expressed as "after", "in the style of", or "in the manner of" attributions -- they qualify the attribution by relating the production to someone (likely as embodied by their work, rather than through a personal connection) that directly influenced it.
+If there is some connection between the production of the object and someone who was not the artist directly but influenced the production, then the `influenced_by` property can be used to reference that person.  These are often expressed as "after", "in the style of", or "in the manner of" attributions -- they qualify the attribution by relating the production to someone (likely as embodied by their work, rather than through a personal connection) that directly influenced it.
 
 __Example:__
 
@@ -205,15 +205,15 @@ top.produced_by = prod
 
 ### Attribution of a Group Related to an Artist
 
-Even if the artist's or artists' identity is not known exactly, the person or persons may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`: this does not mean that every member of the group participated, just that at least one of them did, in the same way that saying that a document was written by an organization does not imply all employees contributed to the text.
+Even if the artist's or artists' identity is not known exactly, the person or people may be known to have been part of a group, such as the workshop of a more famous "master". In this case, the `Group` that represents the workshop can be the actor that carries out the `Production`: this does not mean that every member of the group participated, just that at least one of them did, in the same way that saying that a document was written or published by an organization does not imply all employees contributed to that effort.
 
-We can use the `influenced_by` property on the `Formation` (the creation) of the group to connect it to a known person -- the "master" of the workshop in the example use case. The "master" might not have participated in the group, or even been alive when it was formed, and hence does not necessarily form the group or is even a member of it. 
+We can use the `influenced_by` property on the `Formation` (the creation) of the group to connect it to a known person -- the "master" of the workshop in the example use case. The "master" might not have participated in the group, or even been alive when it was formed, and hence does not necessarily form the group or was even a member of it. 
 
 This approach can be used for workshops, studios, the set of pupils, followers, and so forth. It is not that the entire Group created the object, but that one or more of them did. 
 
 __Example:__
 
-The "Bust of a Man" object described above was created by the Studio of Francis Harwood, a Group. The example below is the record for the Group.
+The "Bust of a Man" object described above was previously thought to have been created by the Studio of Francis Harwood, a Group. The example below is the record for the Group.
  
 ```crom
 top = vocab.Studio(ident="harwoodstudio/1", label="Studio of Francis Harwood")
@@ -229,13 +229,13 @@ A piece of information associated with historical artworks that can change as re
 
 ## Production by Removal
 
-It is also possible for an object to come into documentary existence when it is removed from a larger object.  The production of the part is simply part of the production of the whole, but until it is removed, it does not need a separate identity or existence.
+It is possible for an object to come into documentary existence when it is removed from a larger object.  The production of the part is simply part of the production of the whole, but until it is removed, it does not need a separate identity or existence.
 
-This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created _de novo_ in the present.
+This occurs reasonably frequently, for both valid and unscrupulous motivations.  In the work of conservation, it is often necessary to remove a tiny flake of an object to experiment with, before applying the method to the whole.  If there are unexpected side effects of the experiment, then the whole object is saved at the expense of an unnoticeable change. It is important to know that the sample was produced in the past and removed in the present, rather than it was created in the present.
 
 A second scenario when this occurs is unfortunately common.  If an object, such as a medieval manuscript, can be sold for a higher profit by splitting it up into parts and selling each part individually, then unscrupulous sellers will do just that. Rather than sell an innocuous book of hours to a single buyer, instead each illumination can be sold individually and then the remaining text-bearing pages either dumped or sold over time at a greatly reduced price.  This dispersal of manuscripts still occurs today.
 
-In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, other than it has a `diminished` property that refers to the whole object from which the part was removed.  It is not normally useful to have a separate `Production` for the part, if the information about the source object it was removed from is known.
+In order to model this, instead of a `Production`, the object is `removed_by` a `PartRemoval` activity.  That activity is just like all other activities, however it also has a `diminished` property that refers to the whole object from which the part was removed.  It is not normally useful to have a separate `Production` for the part, if the information about the source object it was removed from is known.
 
 
 __Example:__

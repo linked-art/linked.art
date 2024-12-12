@@ -19,7 +19,7 @@ __Example:__
 The Night Watch is on loan to the Rijksmuseum from the City of Amsterdam.
 
 ```crom
-top = vocab.Painting(ident="nightwatch/15", label="Night Watch by Rembrandt")
+top = model.HumanMadeObject(ident="nightwatch/15", label="Night Watch by Rembrandt")
 top.referred_to_by = vocab.CreditStatement(content="On loan from the City of Amsterdam")
 ```
 

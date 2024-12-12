@@ -10,7 +10,7 @@ See the related [model documentation](/model/actor/#organization-membership)
 
 ### Example
 
-From the record for Societe Anonyme, Katherine Dreier, Man Ray and Marcel Duchamps would all be in the response
+From the record for Societe Anonyme, Katherine Dreier and Fortunato Depero would all be in the response
 
 
 ### Details
@@ -22,6 +22,9 @@ From the record for Societe Anonyme, Katherine Dreier, Man Ray and Marcel Ducham
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?member WHERE {
+   BIND (<%current%> AS ?group)
+.   ?member crm:P107i_is_current_or_former_member_of ?group .
+ }
 ```
 

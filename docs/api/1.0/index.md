@@ -18,23 +18,42 @@ The model, or application profile, defines the aspects of the conceptual model, 
 
 This section of the website documents the web-based API, or Application Programming Interface, by which applications can interact with the data from a conforming publisher. This API has been designed with several design principles in mind to ensure that it is as usable as possible for software developers. The documentation is divided into several sections, separating protocol interactions over HTTP from format decisions about the structure of the JSON returned and the links between different JSON endpoints. The endpoints are split up by the core entities of the model, with shared constructs such as Names and Identifiers being described separately.
 
-## The Linked Art APIs
 
-* Fundamentals
-    * [Design Principles](principles/) - The underlying principles guiding decisions for the design of the API
-    * [JSON-LD Considerations](json-ld/) - Core JSON and JSON-LD details
-    * [Protocol](protocol/) - Making API requests over the web via HTTP(S)
-* APIs
-    * Core Descriptive APIs
-        * [Entity Descriptions](endpoint/) - The objects, people, places and other entities described in Linked Art, as JSON-LD
-        * [Shared Constructs](shared/) - Patterns that are shared between descriptions
-        * [Versioning](hal/) - Declaring API versions
-        * [JSON Schema](schema_docs/) - JSON Schemas with documentation for the APIs
-    * Hypermedia and Search
-        * [Hypermedia](hal/) - API specific affordances to convey the version of the document, and links to search endpoints
-        * [Web Integration](ecosystem/) - Functional APIs to promote discovery, harvesting and other cross-system interactions    
+## Linked Art APIs
 
-## API Versioning
+### Core Entity Description API
+
+The core Linked Art API is to provide records describing the entities following the model serialized as JSON-LD according to the Linked Art context document. The response also has a non-semantic block that follows the Hypertext Application Language (or HAL) specification to provide links to versions, searches, and other related information.
+
+* [Entity Description Endpoints](endpoint/) - Retrieving the objects, works, people, places and other entities as JSON-LD
+    * [Shared Data Structures](shared/) - Shared patterns that are used by multiple descriptions
+    * [JSON Schema](schema_docs/) - JSON Schema definitions, with documentation, for the API
+* [Hypertext Application Language](hal/) - Versioning, cross-format links, and other HAL links
+
+
+### Search API
+
+Linked Art defines a format for responses to search requests, but does not define a query language for defining the search at the present time. The intended use of the standardized response is that the queries can be referenced via HAL links from within the records, and the consuming application will receive a consistent format when following the link. Individual implementations might use [SPARQL](https://www.w3.org/TR/sparql11-query/), [GraphQL](https://graphql.org/) , Cypher, the Elasticsearch DSL, the Solr query language or some other syntax that can be embedded in a URL without the application needing to know how to construct it.
+
+* [Search API](search/) - The response format for Linked Art searches, and how to link to them using HAL
+* [Search Links](../rels/1/) - The list of named searches for HAL links
+
+
+### Data Discovery APIs
+
+In an environment where the intent is that data is openly available for use and reuse, it is important to be able to harvest the data to a local system for processing and indexing. Subsequently it is important to be able to remain synchronized with the data, knowing when records are created, changed or deleted. It is also useful for applications to know where the data is that was used in producing a web interface for in-browser applications.
+
+* [Discovery APIs](discovery/) - Making records available for easy harvesting and discover from HTML
+
+
+## API Design Fundamentals
+
+* [Design Principles](principles/) - The underlying principles guiding decisions for the design of the API
+* [JSON-LD Considerations](json-ld/) - Core JSON and JSON-LD details
+* [Protocol](protocol/) - Making API requests over the web via HTTP(S)
+
+
+### API Versioning
 
 We follow the notion of [Semantic Versioning](https://semver.org/spec/v2.0.0.html), with a structure of _Major.Minor.Patch_ in the version numbers.  All minor releases are backwards compatible with their major version, but may add new features or clarify technical aspects that were not well defined. Patch releases are only for documentation changes that do not affect functionality, and will be made in-place without a change to the documentation's URI. Major releases are reserved for backwards incompatible changes, and will be made sparingly.
 

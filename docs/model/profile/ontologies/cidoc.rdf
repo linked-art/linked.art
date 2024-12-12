@@ -4903,6 +4903,10 @@ This is part of the fully developed path that is shortcut by P7took place at (wi
 	<rdfs:range rdf:resource="E53_Place"/>
 </rdf:Property>
 
+<!--
+
+In 7.1.1 164 is "is temporally specified by (temporally specifies)"
+
 <rdf:Property rdf:about="P164_during">
 	<rdfs:label xml:lang="en">during</rdfs:label>
 	<rdfs:comment>This property relates an instance of E93 Presence with an arbitrary instance of E52 Time-Span that
@@ -4920,6 +4924,8 @@ defines the section of the spacetime volume that this instance of E93 Presence i
 	<rdfs:range rdf:resource="E93_Presence"/>
 <owl:inverseOf rdf:resource="P164_during"/>
 </rdf:Property>
+
+-->
 
 <rdf:Property rdf:about="P165_incorporates">
 	<rdfs:label xml:lang="en">incorporates</rdfs:label>

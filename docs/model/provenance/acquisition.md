@@ -12,7 +12,7 @@ The majority of recorded provenance events are when the object changes ownership
 
 ## Object Acquisition
 
-Acquisitions are used to describe the transfer of ownership of an object from one owner to the next. The first owner is typically the artist, who would then transfer it to the second owner, to the third owner and so on. The ownership chain can be expressed by repeating this same pattern with the buyer from one acquisition being the seller in the subsequent one.  If the previous owner (e.g. the seller if there is a value exchange) or the subsequent owner (e.g. the buyer) is not known for a particular acquisition, then the reference can be left out from the description.  
+Acquisitions are used to describe the transfer of ownership of an object from one owner to the next. The first owner is typically the artist, who would then transfer it to the second owner, to the third owner and so on. The ownership chain can be expressed by repeating this same pattern with the buyer from one acquisition being the seller in the subsequent one.  If the previous owner (e.g. the seller) or the subsequent owner (e.g. the buyer) is not known for a particular acquisition, then the reference can be left out from the description.
   
 The acquistion is not necessarily a purchase, it could be a gift, an inheritance or any other method of gaining the right of ownership of an object.
 
@@ -68,7 +68,7 @@ acq.transferred_title_to = model.Group(ident="ycba", label="Yale Center for Brit
 
 ### Agents
 
-In some cases, it is known that an agent other than the buyer carried out the acquisition. This can be modeled by associating a different actor from the buyer (the person who title is transferred to) carrying out the activity. 
+In some cases, it is known that an agent other than the buyer facilitated or carried out the acquisitionon the buyer's behalf. This can be modeled by associating a different person or group with the activity using `carried_out_by` as the relationship. Multiple agents can be listed in this way, but it is not possible to associate agents with the person or group they're working for -- the model does not have a notion of seller's agent as distinct from buyer's agent.
 
 __Example:__
 
@@ -89,11 +89,11 @@ acq.carried_out_by = model.Person(ident="naumann", label="Otto Naumann")
 
 ### Exchange of Objects
 
-This pattern allows for the exchange of objects between two parties by simply adding a second Acquisition.
+This pattern allows for the exchange of objects between two parties by simply adding a second Acquisition with buyer and seller reversed.
 
 __Example:__
 
-In 1962, the Yale University Art Gallery exchanged a "Nude Woman" by Beckmann for a "Personnages dans un parc" by Masson.
+In 1962, the Yale University Art Gallery exchanged "Nude Woman" by Beckmann for "Personnages dans un parc" by Masson.
 
 ```crom
 top = vocab.ProvenanceEntry(ident="yuag_stora/1", label="Exchange of Objects")
@@ -116,11 +116,10 @@ acq.transferred_title_to = feigen
 
 A purchase is a common type of acquisition in which money is exchanged for the object.  The provenance event consists of the acquisition along with one or more related payments.  This typically involves a payment from the seller to the buyer for the agreed upon price, but might include further payments to or from others such as for shared ownership, payment of debts owed, or for services rendered as part of the overall activity.
 
-
 The `Payment` activity has equivalent relationships for the actor that the money is transferred from (`paid_from`), the actor the money is transferred to (`paid_to`), and the amount of money paid (`paid_amount`).  The amount itself is a `MonetaryAmount` that has a value (`value`) and a currency (`currency`).  Each separable monetary amount is modeled as an individual instance of `Payment`, and thus if the buyer paid a commission to the agent who carried out the purchase, and paid for the object, then there would be two Payments, one from the buyer to the seller and one from the buyer to the agent. Commissions to auction houses or for consignments would use the same pattern.
 
 !!! note "Diachronic Comparison of Monetary Amounts"
-    The CIDOC-CRM SIG have clarified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. Further, it is still unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether there is something more unique than that.
+    The underlying ontology has specified that the `MonetaryAmount` refers to the face value of the combination of value and currency. This means that any comparison between `MonetaryAmount` instances should also take into account the datetimes of resources that reference it, rather than standing alone. It is unclear if the same `MonetaryAmount` can be used for all occurences of value and currency, or whether it is something more unique than that, and to be safe the model assumes that one instance will only be used in a single `Payment`.
 
 __Example:__
 
@@ -153,11 +152,11 @@ top.part = pay
  
 ### Payment for Services
 
-Beyond simply paying the previous owner for the object, there are many other reasons why money might change hands that are relevant to describe. For example, it might be known how much commission went to an auction house or for the sale of objects by consignment, particularly if this comes from the stock books or records of the company. Artists might be paid a commission in advance for the production of an object, or agents might be paid a commission for finding and purchasing objects on behalf of the new owner.
+Beyond simply paying the previous owner for the object, there are many other reasons why money might change hands that are relevant to describe. For example, it might be known how much commission went to an auction house or for the sale of objects by consignment, particularly if this comes from the stock books or records of the company. Artists might be paid a commission in advance for the production of an object, or agents might be paid a commission for finding and purchasing objects on behalf of the new owner. This is often not recorded in detail, however the pattern is provided for situations when it is known.
 
 __Example:__
 
-FIXME: Find a real example
+A sculpture is purchased with $900 going to the seller, and $100 going to the auction house.
 
 ```crom
 top = vocab.ProvenanceEntry(ident="fixme/1", label="Purchase of Sculpture with Commission")

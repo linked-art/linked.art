@@ -22,6 +22,9 @@ From the record for Paris France, the record for Pissarro's "Boulevard Montmartr
 
 ### SPARQL
 ```
-
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> SELECT DISTINCT ?work WHERE {
+   BIND(<%current%>as ?where)
+   ?work crm:P138_represents ?where .
+  }
 ```
 

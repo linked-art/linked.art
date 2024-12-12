@@ -10,7 +10,7 @@ See the related [model documentation](/model/collection/#features)
 
 ### Example
 
-
+From the record for New Haven, the record for the set representing the Archives of O. C. Marsh would be in the response
 
 
 ### Details

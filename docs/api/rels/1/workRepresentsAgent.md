@@ -23,7 +23,7 @@ From the record for Sarah Hope Harvey Trumbull, the record for Sarah Trumbull wi
 ### SPARQL
 ```
 SELECT DISTINCT ?work WHERE {
-    BIND (<https://lux.collections.yale.edu/data/person/b81ac68b-ab31-474e-ad1d-2ee95b1d26c1> AS ?who)
+    BIND (<%current%> AS ?who)
     ?work crm:P138_represents ?who .
  } 
 ```

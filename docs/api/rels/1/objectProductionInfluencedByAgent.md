@@ -22,6 +22,8 @@ From the record for Albert Bierstadt, the prints of his works (which were not ne
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?objects WHERE {
+  ?objects crm:P108i_was_produced_by ?production .
+  ?production crm:P15_was_influenced_by <%current%>.  }
 ```
 

@@ -22,6 +22,8 @@ From the record for Rembrandt, the record for the concept 'Rembrandt -- Aestheti
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?concept WHERE {
+   ?concept crm:P94i_was_created_by ?creation .
+   ?creation crm:P15_was_influenced_by <%current%>. }
 ```
 

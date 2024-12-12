@@ -22,6 +22,10 @@ From the record for Katherine Dreier, Man Ray or Marcel Duchamps, the group Soci
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?group WHERE {
+   BIND (<%current%>AS ?who)
+.   ?group crm:P95i_was_formed_by ?formation .
+   ?formation crm:P14_carried_out_by ?who .
+ }
 ```
 

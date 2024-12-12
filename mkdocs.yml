@@ -225,7 +225,6 @@ nav:
           - workRepresentsActivity: api/rels/1/workRepresentsActivity.md
         - Set:
           - activityUsedSet: api/rels/1/activityUsedSet.md
-          - agentMemberOfSet: api/rels/1/agentMemberOfSet.md
           - conceptInfluencedBySet: api/rels/1/conceptInfluencedBySet.md
           - conceptMemberOfSet: api/rels/1/conceptMemberOfSet.md
           - entityMemberOfSet: api/rels/1/entityMemberOfSet.md
@@ -239,10 +238,10 @@ nav:
           - workRepresentsSet: api/rels/1/workRepresentsSet.md
     - Related APIs:
       - Search:
-        - Search API: api/1.0/ecosystem/search.md
+        - Search API: api/1.0/search/index.md
         - Search Links: api/rels/1/index.md
       - Discovery:
-        - Discovery API: api/1.0/ecosystem/index.md
+        - Discovery API: api/1.0/discovery/index.md
   - Resources:
     - Software and tools: software/index.md
     - Cookbook:
@@ -252,6 +251,11 @@ nav:
         - Schema.org: cookbook/mappings/schema/index.md
     
 
+
+validation:
+    absolute_links: ignore
+    unrecognized_links: ignore
+    anchors: ignore
 
 markdown_extensions:
   - fenced_code

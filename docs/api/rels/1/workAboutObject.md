@@ -10,7 +10,7 @@ See the related [model documentation](/model/object/aboutness/#subject)
 
 ### Example
 
-
+From the record for the Night Watch, the record for Bikker's "The Night Watch" would be in the response
 
 
 ### Details

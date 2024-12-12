@@ -10,7 +10,7 @@ See the related [model documentation](/model/concept/#creation-and-influences)
 
 ### Example
 
-
+From the record for The Lord of the Rings, the record for the concept of the History of Middle-Earth would be in the response
 
 
 ### Details

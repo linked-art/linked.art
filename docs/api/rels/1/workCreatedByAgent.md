@@ -23,7 +23,7 @@ From the record for André Chastel, the record for The Vatican Frescoes of Miche
 ### SPARQL
 ```
 SELECT DISTINCT ?work WHERE {
-   BIND(<https://lux.collections.yale.edu/data/person/5bc822aa-1312-4ae5-8f24-1709f7ebda17> as ?who)
+   BIND(<%current%> as ?who)
      ?work crm:P94i_was_created_by ?cre .
          ?cre crm:P9_consists_of*/crm:P14_carried_out_by ?who .
  }

@@ -22,6 +22,8 @@ From the record for Getty's gallery W204, the record for Jeanne (Spring) would b
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?object WHERE {
+     BIND(<%current%> as ?where)
+     ?object a crm:E22_Human-Made_Object ;         crm:P55_has_current_location ?where }
 ```
 

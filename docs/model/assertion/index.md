@@ -14,15 +14,17 @@ The use of context specific assertions or other attribute assignments should be 
 
 ## Assigning Attributes
 
-The `AttributeAssignment` class is an `Activity`, typically carried out by curators or researchers rather than by artists or collectors, that assigns information to resources in the model. This can be used to assign any property or relationship on any resource that can be the _subject_ of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
+The `AttributeAssignment` class is an `Activity`, typically carried out by curators or researchers rather than by artists or collectors, that assigns information to entities in the model. This can be used to assign any property or relationship on any entity that can be the _subject_ of such a property.  The general Activity properties of `carried_out_by`, `timespan` and `took_place_at` are available for when and where the assignment happened, and who made it.  The `timespan` is the moment when the assignment took place, rather than the length of time that the assignment was held to be true by some audience.
 
 This pattern is useful when you do not want to assert the relationship directly, such as for a name that was previously given to the object but is no longer actively used. Or an attribution of an artist that is possibly true, but might only be an informed guess.
 
-The value of the assignment is given using `assigned`, and it can be any resource or value. The resource that the value is assigned to is given using the `attributed_by` property on that resource, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship or a `Material` to an object with the `made_of` property.  In terms of the relationship that the `AttributeAssignment` expresses, the resource with the `attributed_by` property is the subject of the relationship, the relationship itself is given in `assigned_property`, and the object of the relationship is given in `assigned`, thereby making up a regular 'triple' of subject, predicate, object.
+The value of the assignment is given using `assigned`, and it can be a reference to any entity. The entity that the value is assigned to is given using the `attributed_by` property on that entity, and the relationship between them is given using `assigned_property`. Thus an `AttributeAssignment` can assign an `Actor` to a `Production` with the `carried_out_by` relationship or a `Material` to an object with the `made_of` property.  In terms of the relationship that the `AttributeAssignment` expresses, the entity with the `attributed_by` property is the subject of the relationship, the relationship itself is given in `assigned_property`, and the object of the relationship is given in `assigned`, thereby making up a regular 'triple' of subject, predicate, object.
 
 __Example:__
 
 It is asserted in 2015 that "Spring" has a material of canvas.
+
+**NOTE WELL** This is an illustrative example only, and without further reason, the simple `made_of` property should instead be used.
 
 ```crom
 top = vocab.Painting(ident="spring/21", label="Spring")
@@ -37,11 +39,11 @@ ts.end_of_the_end = "2015-12-31T23:59:59Z"
 aa.timespan = ts
 ```
 
-### Assigned Value as Resource
+### Assigned Value as Subject Entity
 
-In other situations the assigned value is the appropriate resource with which to associate the `AttributeAssignment`. In this case we flip the `AttributeAssignment` around and use `assigned_by` on the value of the assignment (the object of the relationship), and do not specify the subject of the relationship as it's the resource which refers to the value. For example, it is very useful to be able to assert which organization created and assigned an identifier to an object of a given type in order to disambiguate that organization's identifier from another organization's identifier of the same type, such as accession numbers.  Another use case is giving further information about a particular `Dimension` associated with the object, such as who measured it, when, with which instrument, and so on.
+In other situations the appropriate entity with which to associate the `AttributeAssignment` is the one being assigned. In this case we flip the `AttributeAssignment` around and use `assigned_by` on the value of the assignment (the object of the relationship), and do not specify the subject of the relationship as it's the entity which refers to it. For example, it is very useful to be able to assert which organization created and assigned an `Identifier` to an object in order to disambiguate that organization's identifier from another organization's identifier of the same type, such as accession numbers.  Another use case is giving further information about a particular `Dimension` associated with the object, such as who measured it, when, with which instrument, and so on.
 
-In this case, the subject of the relationship is the resource which refers to the value, the predicate is that relationship, and the object is the resource with the `assigned_by` property which refers to the AttributeAssignment.
+In this case, the subject of the relationship is the entity which refers to the value, the predicate is that relationship, and the object is the entity with the `assigned_by` property which refers to the AttributeAssignment.
 
 __Example:__
 
@@ -79,6 +81,46 @@ aa1.used_specific_object = model.LinguisticObject(ident="gardner-art", label="Ar
 name.assigned_by = aa1
 top.identified_by = name
 ```
+
+### Creation Details of Embedded Statements
+
+In order to give credit for the creation of [statements](/model/base/) embedded within other records, it is possible to add a `created_by` property on to the statement as if it were a full textual work record. This allows the creator and other creation information to be recorded in the regular way using `carried_out_by`. This is especially useful for noting contributions from external or more junior participants who might not otherwise receive any acknowledgement for their participation in the knowledge creation.
+
+The use of artificial intelligence can be recorded as the `technique` of the creation, with a recommended [vocabulary term](/model/vocab/) of "aat:300456842", or if a particular AI tool is used, it can be listed with `used_specific_object` on the `Creation`. The URIs to use for specific AI tools are not recommended at the moment, however if certain tools become popular they will be added to the vocabulary section. Note that if AI is used but there is no other information about the creation of the statement, then an easier option is to use `classified_as` on the Statement directly, with a vocabulary term of "aat:300456841" for "AI Generated Content".  The technique or the classification can also be used with `AttributeAssignment` when the assignment is being made by an AI. Consumers of content that is marked in these ways as being generated using an AI system might wish to tag the content as such in a user interface, or otherwise allow filtering or sorting of such artificial content.
+
+!!! note "Scope of Description"
+    Please note that this pattern does not allow for individual relationships to be flagged as being generated by an
+    AI. For example, if software extracted the list of materials from a statement and created a series of `made_of`
+    references to actual `Material` instances, these links cannot be reified to add the creation information, just
+    as they cannot be reified to add a human who asserted the relationship. The use of `AttributeAssignment`, as above,
+    is possible but not encouraged.
+
+Another use case is to associate rights information with the statement, separate from any asserted license on the overall dataset. This follows the regular `subject_to` pattern, as described in the [rights section](/model/object/rights/). In this way the overall factual information about an object or person can have a more permissive license than text or other more custom or potentially valuable content.
+
+It must be noted that all of this functionality is available for any `LinguisticObject` record as well.
+
+__Example:__
+
+The description of The Night Watch was generated by an AI at a particular point in time, and is licensed as CC-BY.
+
+```crom
+top = model.HumanMadeObject(ident="nightwatch/70", label="Night Watch")
+stmt = vocab.Description(content="Rembrandt's The Night Watch is a dynamic 17th-century group portrait of an Amsterdam militia company ...")
+cre = model.Creation()
+ts = model.TimeSpan()
+ts.begin_of_the_begin = "2024-11-07T20:50:00Z"
+ts.end_of_the_end = "2024-11-07T20:50:00Z"
+cre.timespan = ts
+cre.technique = model.Type(ident="http://vocab.getty.edu/aat/300456842")
+stmt.created_by = cre
+stmt.classified_as = model.Type(ident="http://vocab.getty.edu/aat/300456841")
+right = model.Right()
+right.classified_as = model.Type(ident="https://creativecommons.org/licenses/by/4.0/", label="CC-BY")
+right.identified_by = model.Name(content="CC-BY 4.0")
+stmt.subject_to = right
+top.referred_to_by = stmt
+```
+
 
 ### Uncertain or Former Assignments
 

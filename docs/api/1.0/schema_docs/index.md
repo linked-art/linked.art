@@ -1,5 +1,5 @@
 ---
-title: Linked Art Schema Definitions
+title: "Linked Art API: JSON Schema Definitions"
 up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---

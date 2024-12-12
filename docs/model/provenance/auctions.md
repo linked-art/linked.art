@@ -8,7 +8,7 @@ up_label: "Provenance"
 
 ## Introduction
 
-Auctions are a very common way for art objects to change ownership.  The description of the auction itself is valuable for historical context and to provide a sense of the changing value of the object. An auction is, generally speaking, any event in which there are one or more attemps to sell one or more objects, where the price is negotiated by a bidding process of would-be buyers offering progressively more money for the set of objects.
+Auctions are a very common way for art objects to change ownership.  The description of the auction itself is valuable for historical context and to provide a sense of the changing value of the object. An auction is, generally speaking, any event in which there are one or more attempts to sell one or more objects, where the price is negotiated by a bidding process of would-be buyers offering progressively more money for the set of objects.
 
 There are various regional and temporal variations on auctions, some of which are covered below, however the overall pattern remains the same.
 

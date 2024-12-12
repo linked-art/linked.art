@@ -36,6 +36,7 @@ Dereferencing an entity via the Set endpoint would result in a JSON-LD document 
 | `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current set to another entity |
 | `dimension`       | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of members, of the current set |
 | `members_exemplified_by` | array | Optional | An array of json objects, each of which is either an embedded structure that follows the patterns of one of the Linked Art API endpoints, or a reference to any Linked Art resource | 
+| `members_contained_by` | array | Optional | An array of json objects, each of which is a reference to a [Physical Object](../physical_object/) that holds or contains (physical) members of the current set | 
 | `created_by`      | json object | Optional | A json object representing the creation of the set, which follows the requirements for a [Creation](../../shared/activity) | 
 | `used_for`        | array | Optional | An array of json objects, each of which is a Publication (or similar activity) which follows the requirements for an [Activity](../../shared/activity) |
 

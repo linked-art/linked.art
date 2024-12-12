@@ -3,7 +3,60 @@ title: ""
 ---
 [Back to EES2 Project page](https://linked.art/community/projects/ees2/)
 
-# Quire Linked Art Extension Documentation
+# Quire Linked Art Extension
+
+The Quire Linked Art Extension enables the retrieval and ingestion of Linked Art data and IIIF images via Quire’s command-line interface, seamlessly merging them into a Quire project. It interacts with Linked Art records through their URIs, streamlining processes that previously required manual data entry. The video below showcases the extension’s functionality, demonstrating its use with Linked Art records accessed via the LUX and Getty APIs.
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<div id="player"></div>
+
+[(.mp4 download)](https://github.com/oerc-csi/la-quire/raw/main/docs/quire_linked_art_extension_demo.mp4)
+
+<ul>
+    <li><a href="javascript:void(0);" onclick="seekToTime(0)">00:00 - Adding an object from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(150)">02:30 - Adding a figure from a Linked Art resource to an existing object</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(240)">04:00 - Adding a figure from a Linked Art resource</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(322)">05:22 - Choosing what fields to retrieve</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(420)">07:00 - Processing multiple Linked Art records in a single command</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(495)">08:15 - Using a Linked Art activity URI to add all objects featured in an exhibition</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(570)">09:30 - Choosing fields interactively and previewing entries</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(629)">10:29 - Generating a spreadsheet of all data in a Linked Art record</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(690)">11:30 - Resizing an image upon retrieval</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(760)">12:40 - Selectively importing objects from an activity record based on object type and artist name</a></li>
+    <li><a href="javascript:void(0);" onclick="seekToTime(850)">14:10 - Running native build, pdf, and epub commands</a></li>
+</ul>
+
+<script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '315',
+            width: '560',
+            videoId: 'XEzPBwicQAg',
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+    }
+
+    function seekToTime(seconds) {
+        if (player) {
+            player.seekTo(seconds, true);
+        }
+    }
+</script>
+
+## Quire Linked Art Extension Installation
+
+The Quire Linked Art Extension is available on the [releases](https://github.com/oerc-csi/la-quire/releases) page of the EES2 project's GitHub repository. In the 'Assets' dropdown of the latest version, click on the 'js-files.zip' link to download.
+
+Once you have downloaded the Quire Linked Art Extension, visit our [Training](https://linked.art/community/projects/ees2/docs/training) page for installation instructions.
+
+## Quire Linked Art Extension Documentation
 
 The Linked Art command class for Quire is called `add`. Information about Quire’s command classes can be accessed by running `quire help` in the terminal. `add` is listed as follows:
 
@@ -11,7 +64,7 @@ The Linked Art command class for Quire is called `add`. Information about Quire�
 
 All commands begin with `quire`. To run the `add` command, start by typing `quire add` in the terminal. The elements that follow `quire add` are arguments and options. The arguments and options included in the command determine what the software will do. Those in angled brackets are required, and those in square brackets are optional (except for `[id1]` when adding a figure to an existing object, see section 1.2)
 
-## **1 Arguments**
+### **1 Arguments**
 
 There are four arguments: `<thing>`, `<uri>`, `[id1]`, and `[id2]`.  
 `<thing>` can be `object`, `object.figure`, `figure`, or `spreadsheet`.  
@@ -19,7 +72,7 @@ There are four arguments: `<thing>`, `<uri>`, `[id1]`, and `[id2]`.
 `[id1]` and `[id2]` can be any string, or the word `accession` can be passed to use the accession number of the object as the ID.  
 The following sections explain how these arguments are used in commands to accomplish specific tasks.
 
-### **1.1 Adding an object to objects.yaml**
+#### **1.1 Adding an object to objects.yaml**
 
 To add an object to objects.yaml, run:
 
@@ -31,7 +84,7 @@ Optionally, the user can create their own ID for the object by running:
 
 If the user does not pass an ID, one will be automatically generated. The ID can be any string that is not already being used as an ID. The accession number of the object can be retrieved and used as the ID by passing the word `accession` as `[id1]`.
 
-### **1.2 Adding a figure to an existing object in objects.yaml**
+#### **1.2 Adding a figure to an existing object in objects.yaml**
 
 To add a figure to an existing object in objects.yaml, run:
 
@@ -41,7 +94,7 @@ To add a figure to an existing object in objects.yaml, run:
 
 `quire add object <uri> [id1] [id2]`
 
-### **1.3 Adding a figure to figures.yaml**
+#### **1.3 Adding a figure to figures.yaml**
 
 To add a figure to figures.yaml run:
 
@@ -49,17 +102,19 @@ To add a figure to figures.yaml run:
 
 As usual, a unique ID or the word `accession` can be passed as [id1]. If an ID is not provided, one will be generated.
 
-### **1.4 Browse all Linked Art data for an object in a spreadsheet**
+#### **1.4 Browse all Linked Art data for an object in a spreadsheet**
 
 The `spreadsheet` arg provides a way for the user to easily browse Linked Art by generating a CSV file containing all the fields of a Linked Art record and their values/contents in the project folder.
 
 `quire add spreadsheet <uri>`
 
-## **2 Choosing fields, field order, and field names**
+### **2 Choosing fields, field order, and field names**
 
 The user has the ability to choose which fields are retrieved from the Linked Art record, the order in which they are displayed, and their names. Field selection and order are handled by the object_display_order section of the objects.yaml file, and field names can be changed from defaults in the objectFieldNames section of the config.yaml file.
 
-### **2.1 objects.yaml object_display_order**
+The object’s title and Linked Art URI will be retrieved regardless of their presence in the object_display_order. The extension relies on the URI for functionality such as duplicate prevention. To ensure optimal results, it is recommended to keep URIs in the objects listed in the object_list. However, the URI can be omitted from rendered content by excluding it from the object_display_order.
+
+#### **2.1 objects.yaml object_display_order**
 
 There are 21 fields currently supported by the Linked Art extension in addition to object title, which is always retrieved:
 
@@ -89,7 +144,7 @@ To choose fields to retrieve and their order of appearance, simply include them 
 
 **IMPORTANT:** the field names in the object_display_order section of objects.yaml must match the names provided in the objectFieldNames section of config.yaml
 
-### **2.2 config.yaml objectFieldNames**
+#### **2.2 config.yaml objectFieldNames**
 
 The user can choose the names of the fields by changing the default names in config.yaml. The  following are the internal names (left) and default/chosen names (right) as they appear in config.yaml:
 
@@ -122,7 +177,7 @@ creator: creator => creator: artist name
 
 Remember to then change the field name in the object_display_order of objects.yaml as well.
 
-## **3 Processing Multiple URIs and ‘activity’ URIs**
+### **3 Processing Multiple URIs and ‘activity’ URIs**
 
 It is possible to process multiple URIs at once by passing the URIs in double quotations and separated by spaces.
 
@@ -141,25 +196,25 @@ The program will detect that the URI is an ‘activity’ URI and start an inter
 
 After a selection is made, the program will process all the objects in the ‘activity’ record and/or generate a spreadsheet of information about the objects.
 
-## **4 Options**
+### **4 Options**
 
-There are two options: `--dry-run` and `--force`.
+There are five options: `--dry-run`, `--force`, `--resize`, `--interactive`, and `--select`.
 
-### **4.1 Preview an entry before adding to objects.yaml or figures.yaml**
+#### **4.1 Preview an entry before adding to objects.yaml or figures.yaml**
 
 The user has the option to preview an entry before it is added to objects.yaml or figures.yaml by using the `--dry-run` option. When `--dry-run` is passed, an entry will not be added and an image will not be downloaded. Instead, the entry will be logged in the console for the user to see.
 
 `quire add <thing> <uri> [id1] [id2] --dry-run`
 
-### **4.2 Refetching Linked Art and overwriting cache**
+#### **4.2 Refetching Linked Art and overwriting cache**
 
 When the user runs commands that retrieve Linked Art data and figures, the data and figure hashes will be added to caches. When a URI that has been passed is passed again, the program will retrieve Linked Art data from the cache instead of making new http requests to refetch the data.
 
-The user has the ability to change the fields they wish to retrieve as they work on their project. Therefore, there could be cases where the user passes a URI they have passed before, but wishes to retrieve fields that are not in the cache. The ‘--force’ option allows the user to ignore cache and refetch Linked Art to retrieve the desired fields. The cache entry for the URI is rewritten.
+The user has the ability to change the fields they wish to retrieve as they work on their project. Therefore, there could be cases where the user passes a URI they have passed before, but wishes to retrieve fields that are not in the cache. The ‘--force’ option allows the user to ignore cache and refetch Linked Art to retrieve the desired fields. The cache and objects.yaml entries for the URI are overwritten.
 
 `quire add <thing> <uri> [id1] [id2] --force`
 
-### **4.3 Resizing images**
+#### **4.3 Resizing images**
 
 By default, full-size images of objects are retrieved. The `--resize` option allows the user to resize images if they wish to download a version with a smaller file size.
 
@@ -172,7 +227,7 @@ When ‘--resize’ is passed, an interaction will start:
 
 After entering the number or percentage of pixels for resizing, the image will be resized accordingly before being downloaded as usual.
 
-### **4.4 Selecting fields in interactive mode**
+#### **4.4 Selecting fields in interactive mode**
 
 The primary method of selecting the fields to be retrieved is by including the field names in the object_display_list at the top of the objects.yaml file. The `--interactive` option provides an alternative way of making this selection.
 
@@ -186,3 +241,13 @@ When `--interactive` is passed, an interaction will start:
 `artist, type, year, period, dimensions, materials, location, accession, credit line, set, owner, took place at, encountered by, find spot, access statement, web page, thumbnail link, description, citations, provenance`
 
 After entering a comma-separated list of fields, the module disregards the object_display_order and retrieves the fields in the list in the order they were provided.
+
+#### **4.5 Selecting objects in 'activity' record**
+
+When `--select` is passed along with an ‘activity’ URI, a list of creators of the objects included in the record and their types will be presented. This initiates an interactive selection process:
+
+`Please select the URIs you would like to process based on creators and object types (e.g., "creators: raphael, vincent van gogh AND/OR types: drawing, painting"):`
+
+After entering the selection in the required format, only the objects that meet the criteria will be processed.
+
+**Note:** A spreadsheet is generated and used to facilitate filtering URIs based on the chosen creators and object types. This option requires that ‘b’ (both spreadsheet generation and processing) is selected in the interaction explained in Section 3. The `--select` option will not work if ‘p’ (process only) is chosen, as no spreadsheet will be generated in that mode.

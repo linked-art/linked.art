@@ -6,18 +6,18 @@ up_label: "Model Overview"
 
 
  
-It is useful to have some common, basic patterns to follow when using a very open model and ontology. The following patterns have been agreed on as useful ways to think about our cultural data, through working with objects, entities and collections from across many different museums and organizations. They are foundational to all of Linked Art, and used extensively both to describe the core entities of interest (objects, works, people, places and so on) as well as within the descriptions (for example to give a label to a description, or a classification to a span of time).
+It is useful to have some common, basic patterns to follow when using a very open model and ontology. The following patterns have been agreed on as useful ways to think about our cultural data, through working with objects, other entities and collections from across many different museums and organizations. They are foundational to all of Linked Art, and used extensively both to describe the core entities of interest (objects, works, people, places and so on) as well as within the descriptions (for example to give a label to a description, or a classification to a span of time).
 
 These patterns are presented below with examples of how they are used in practice, but these are not intended to be exhaustive.  The documentation for the different entity types will include more information about how they are used in different circumstances.
 
 ## Core Properties
 
-There are a few core properties that every resource must have for it to be a useful part of the world of Linked Art and Linked Open Usable Data ([LOUD](../../loud/)):
+There are a few core properties that every entity must have for it to be a useful part of the world of Linked Art and Linked Open Usable Data ([LOUD](../../loud/)):
 
-* `@context` is a reference to the context mapping which determines how to interpret the JSON as LOUD. It is not a property of the entity being described, but of the document. It must be present.
-* `id` captures the URI that identifies the entity.  Every core entity must have exactly one URI.
-* `type` captures the class of the entity, or `rdf:type` in RDF. Every entity must have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation. Classes determine which properties or relationships may be associated with the entity.
-* `_label` captures a human readable label as a string, **intended only for developers** or other people reading the data to understand what they are looking at.  Every entity should have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
+* `@context` is a reference to the context mapping which determines how to interpret the JSON as LOUD. It is not a property of the entity being described, but of the document. It MUST be present.
+* `id` gives the URI that identifies the entity.  Every core entity MUST have exactly one URI.
+* `type` gives the class of the entity (or `rdf:type` in RDF). Every entity MUST have exactly one class. This allows software to align the data model with an internal, object oriented class based implementation. Classes determine which properties or relationships may be associated with the entity.
+* `_label` gives a human readable label as a string, **intended only for developers** or other people reading the data to understand what they are looking at.  Every entity SHOULD have exactly one label, and must not have more than one. It is just a string, and does not have a language associated with it -- if multiple languages are available for the content, then implementations can choose which is most likely to be valuable for a developer looking at the data.
 
 The classes used for the core entities we describe are summarized as below, with links to the full documentation about them:
 
@@ -51,6 +51,8 @@ CIDOC-CRM, our underlying ontology, is a framework that must be extended via add
 
 While any external vocabulary of terms can be used, the [Getty's Art and Architecture Thesaurus](http://vocab.getty.edu/aat/) is used whenever possible for consistency and that it is already widespread in the museum domain. The set of terms that have been identified as useful are listed in the [vocabulary lists](/model/vocab/) for requirements when a particular choice is essential for interoperability and recommendations for shared semantics.
 
+Core entities (those listed above) SHOULD have at least one classification, MAY have more than one or MAY have none.
+
 Use cases for this pattern are in almost every example, but include:
 
  * The object being an art object
@@ -78,14 +80,15 @@ top = vocab.City(ident="paris/1", label="Paris")
 
 ### Types of Types
 
-A common pattern is to not only classify main entities, but also to classify the types themselves in order to know what sort of type it is, without recognizing all of them individually.
-This is important when the set of first degree types is not easily enumerable, such as classifications for the type of object or work. If the set of vocabulary terms that can normally be used without further extension can be established, then this pattern is not used. This is also not needed when the relationship from the entity to the first degree type clarifies this, such as the `motivation` or `about` properties. 
+A common pattern is to not only classify main entities, but also to classify the types themselves in order to know what sort of type it is, without recognizing all of them individually. This is important when the set of first degree types is not easily enumerable, such as classifications for the type of object or work. If the set of vocabulary terms that can normally be used without further extension can be established, then this pattern is not used. This is also not needed when the relationship from the entity to the first degree type clarifies this, such as the `motivation` or `about` properties. This pattern is sometimes called a "meta-type" -- the type of a type. 
 
 Use cases for this pattern include:
 
 * The classification is the type of object or work of the physical thing (e.g. Painting)
 * The classification is the type of text of the statement (e.g. Dimensions Statement)
 * The classification is the nationality of the person (e.g. Swiss)
+
+The URIs for the second degree type (the "meta-type"), if present, MUST be drawn from the [required vocabulary](/model/vocab/required/#classification-types) if it is listed there. For example, implementations MUST use the same AAT URI for Nationality as in the example below, however it is allowed to use this pattern with types that are not listed. It is encouraged to use appropriate AAT terms, and to bring the use cases to the community to discuss their inclusion in a future version. It is always possible to not list any meta-type, even for terms which happen to be covered by existing meta-types. 
 
 
 __Example:__
@@ -103,16 +106,15 @@ top = model.Person(ident="rembrandt/1", label="Rembrandt")
 top.classified_as = vocab.instances['dutch nationality']
 ```
 
-## Names and Identifiers for a Resource
+## Names and Identifiers for an Entity
 
 ### Names
 
-As the `_label` property is intended as internal documentation for the data, it is strongly recommended that every entity that should be rendered to an end user also have at least one specific name. The name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` construct.  The value of the name is given in the `content` property of the `Name`. 
+As the `_label` property is intended only as internal documentation for the data itself, it is strongly RECOMMENDED that every entity that should be rendered to an end user also have at least one specific name. The name could be for an object, a person, a group, an event or anything else.  This pattern uses the `identified_by` property, with a `Name` construct.  The string value of the name is given in the `content` property of the `Name`. 
 
-It is somewhat unintuitive to think of a name as identifying the resource it is associated with, as names are typically not unique.  However, as the name has its own class (Name) and __could__ have an `id`, it is not just an anonymous string and thus no longer a shared label. Instead each name is the particular instance of a name which is uniquely associated with its entity. With this formulation, the name instance __does__ uniquely identify the entity.  
+It is somewhat unintuitive to think of a name as identifying the entity it is associated with, as names are typically not unique.  However, as the name has its own class (Name) and __could__ have an `id`, it is not just an anonymous string and thus no longer a shared label. Instead each name is the particular instance of a name which is uniquely associated with its entity. With this formulation, the `Name` instance __does__ uniquely identify the entity.  
 
-If there is more than one name given, then there should be one that is `classified_as` the primary name for use. This is done by adding the Primary Name _(aat:300404670)_ term to it. There should be exactly one primary name given per language. Names are also part of human communication, and can have the Linguistic features of the model associated with them, such as having a particular language.
-
+If there is more than one name given, then there should be one that is `classified_as` the primary name for use. This is done by adding the Primary Name _(aat:300404670)_ term to it. There SHOULD be exactly one primary name given per language. Names are also part of human communication, and can have the Linguistic features of the model associated with them, such as having a particular language.
 
 __Example:__
 
@@ -130,7 +132,7 @@ top.identified_by = ttl2
 
 ### Identifiers
 
-Many entities are also given external identifiers, such as accession numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
+Many entities are also given identifiers, such as accession numbers for objects, ORCIDs for people or groups, lot numbers for auctions, and so forth.  Identifiers are represented in a very similar way to names, but instead use the `Identifier` class. Identifiers will normally have a classification determining which sort of identifier it is, to distinguish between internal repository system assigned numbers from museum assigned accession numbers, for example.
 
 As `Identifier`s and `Name`s use the same `identified_by` property, the JSON will frequently have mixed classes in the array. Unlike `Name`s, `Identifier`s are not part of human language and thus cannot have a language associated with them.
 
@@ -146,9 +148,9 @@ top.identified_by = vocab.PrimaryName(content="The Night Watch")
 
 ### Equivalent Data URIs
 
-Identifiers for the same entity within the web of linked data are treated differently from string identifiers such as accession numbers or ISBNs. In order to allow systems to follow the link and potentially process the information that they discover there, we use a new property `equivalent` to link out to other organizations' data about the same entity.  For example, Rembrandt has a description in the Getty's [ULAN](http://vocab.getty.edu/ulan/500011051) vocabulary, in [Wikidata](http://www.wikidata.org/entity/Q5598), in the Library of Congress [Name Authority File](http://id.loc.gov/authorities/names/n79142935), and in OCLC's [Virtual International Authority File](http://viaf.org/viaf/64013650), amongst many others. The URI given must identify the entity itself, rather than about page the entity. For example, in ULAN there is also the website version [http://vocab.getty.edu/page/ulan/500011051](http://vocab.getty.edu/page/ulan/500011051) which must not be used with equivalent.
+Identifiers for the same entity within the web of linked data are treated differently from string identifiers such as accession numbers or ISBNs. In order to allow systems to follow the link and potentially process the information that they discover there, we use a new property called `equivalent` to link out to other organizations' data about the same entity.  For example, Rembrandt has a description in the Getty's [ULAN](http://vocab.getty.edu/ulan/500011051) vocabulary, in [Wikidata](http://www.wikidata.org/entity/Q5598), in the Library of Congress [Name Authority File](http://id.loc.gov/authorities/names/n79142935), and in OCLC's [Virtual International Authority File](http://viaf.org/viaf/64013650), amongst many others. The URI given MUST identify the entity itself, rather than about page the entity. For example, in ULAN there is also the website version [http://vocab.getty.edu/page/ulan/500011051](http://vocab.getty.edu/page/ulan/500011051) which MUST NOT be used with equivalent.
 
-Note that `equivalent` can also be included when referencing resources across records in the [API](/api/1.0/shared/reference/).
+Note also that `equivalent` can also be included when referencing entities across records in the [API](/api/1.0/shared/reference/).
 
 __Example:__
 
@@ -163,13 +165,13 @@ top.equivalent = model.HumanMadeObject(ident="https://www.wikidata.org/entity/Q2
 
 In many cases, current data does not support the level of specificity that the full ontology allows, or the information is simply best expressed in a human-readable form.  For example, instead of a completely modeled set of parts with materials, many museum collection management systems allow only a single human-readable string for the "medium" or "materials statement".  The same is true in many other situations, including rights or allowable usage statements, dimensions, edition statements and so forth.  Any time that there is a description of the entity, with or without qualification as to the type of description, then this pattern can be used to record the descriptive text.
 
-The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then refered to by any other resource.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.  If the content is not plain text, then using `format` to give the media type is recommended (e.g. "text/html" for HTML)
+The pattern makes use of the `LinguisticObject` class that is used to identify a particular piece of textual content.  These Linguistic Objects are then referred to by any other entity.  They maintain the statement's text in the `content` property, and the language of the statement (if known) in the `language` property.  If the content is not plain text, then using `format` to give the media type is recommended (e.g. "text/html" for HTML)
 
-Note that, in the [Linked Art API](/api/1.0/shared/type/), the reference to a Language from a Statement or Name can have a `notation` property which gives the commonly used two or three letter code for it, if known.
+Note that, in the [Linked Art API](/api/1.0/shared/type/), the reference to a Language from a Statement or Name can also have a `notation` property which gives the commonly used two or three letter code for it, if known.
  
 Use cases for this pattern include:
 
-* General description of the resource
+* General description of the entity
 * Materials statement for an object
 * Attribution statement for an image
 * Biography for a person
@@ -190,17 +192,20 @@ top.referred_to_by = lo
 
 ## Events and Activities
 
-Patterns are not only within a single entity, but also in the way that we manage relationships between entities.  While many systems link straight from one an object to its creator, for example, Linked Art instead uses an intermediate entity that represents the activity of the artist in creating the object. This enables us to associate time, place, actors, techniques, other objects and more with the creation activity, rather than needing many individual relationships.
+Linked Art frequently uses an intermediate entity that represents an activity to connect between other entities. For example instead of having a direct relationship between the artwork and the artist, there is an activity that represents creating the artwork, which is then carried out by the artist, but can also have many other properties. This enables us to associate time, place, actors, techniques, other objects and more with the creation activity, rather than needing many individual relationships. Combined with the classification pattern, it allows any sort of activity to be modeled without having to create many specific relationships for each case.
 
 The key participants in those different types of events are:
 
-  * the [Object](../object/) being acted upon,
+  * the [Object](../object/) being acted upon, or used to perform the activity,
   * the [Actors](../actor/) (people or organizations) that perform the activity,
   * the [Locations](../place) at which the activity occurs,
   * the Time at which it occurs, and/or the [Period](../event/) during which it occurs,
-  * and any other [Event](../event/) or activity which caused it.
+  * any other [Event](../event/) or activity which caused it,
+  * and a classification for the technique used.
 
-The general pattern is to create a construct internal to the record for the event (with the class `Event`) or activity (with the class `Activity` or a more specific class), and associate the participants with that construct. The relationships for time (`timespan` and/or `during`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the object is dependent on the type of event or activity, which are discussed in more detail in the specific sections.
+These can be thought of as What, Who, Where, When, Why and How respectively.
+
+The general pattern is to create data for the event (with the class `Event`) or activity (with the class `Activity` or a more specific class) within the "main" record for the entity that is created, destroyed or primarily affected by the event, and then to associate the participants with that embedded data construct. The relationships for time (`timespan` and/or `during`) and place (`took_place_at`) are relevant to `Event`s that happen without the direct cause being a human action, and the relationship for the actor (`carried_out_by`) is added to those for human activities.  The relationship to the object is dependent on the type of event or activity, which are discussed in more detail in the specific sections.
 
 There are both subclasses, such as `Birth`, `Production` and `Creation`, and classifications associated with them to be more specific, such as glassblowing _(aat:300053932)_ to clarify the type or technique of the activity. There are three common categories of activity which are used across the different entity types: their beginning of existence, their end of existence, and core activities that they either performed (for people or groups) or were required for (for objects and works). The table below summaries the beginning and ending of existence classes per main entity class. Note that conceptual entities cannot have an end of existence, and Places have neither.
 
@@ -236,7 +241,7 @@ prod.took_place_at = model.Place(ident="france", label="France")
 
 ### Time Span Details
 
-The minimal timespan model is given above, with just the `begin_of_the_begin` and an `end_of_the_end` properties to record the beginning of the span, and the end of the span.  The end of the span **is** included in the span, and thus if the `end_of_the_end` is `"1500-01-01T00:00:00Z"`, then the 1500 **is** included, and thus the timestamp should be "1499-12-31T23:59:59Z" for the last moment of the 1400s and not any of 1500. 
+The minimal timespan model is given above, with just the `begin_of_the_begin` and an `end_of_the_end` properties to record the beginning of the span, and the end of the span.  The end of the span **is** included in the span, and thus if the `end_of_the_end` is `"1500-01-01T00:00:00Z"`, then the very first second of 1500 **is** included, and thus the timestamp should be "1499-12-31T23:59:59Z" for the last moment of the 1400s and not any of 1500. (This is a requirement from the underlying CIDOC-CRM ontology)
 
 The datestamps must be fully qualified with year, month, day, hour, minute and second. If a timezone is not supplied it should be assumed to be "Z" (GMT) to ensure comparisons work correctly. This is the ["xsd:dateTime"](https://www.w3.org/TR/xmlschema-2/#dateTime) profile of ISO8601.
 
@@ -271,16 +276,16 @@ top.timespan = ts
 
 ## Parts
 
-Describing the hierarchy of parts of resources is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as a thing separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part_of`, from the part to the whole.
+Describing a hierarchy of parts of entities is a core pattern for having increasingly granular or specific descriptions. The advantage of partitioning is that more specific information can be provided about each part, as an aspect separate from the whole. This pattern covers the spectrum of different classes used in the model, from physical and textual, to temporal or geographic.  Parts are given using the properties `part_of`, from the part to the whole.
 
 Use cases for this pattern include:
 
- * Delineating physical components or aspects of an object, such as the frame being part of the painting, or the recto side being part of the page.
+ * Delineating physical components or aspects of an object, such as the frame being part of the painting, or the recto side being part of the page. Physical parts may be separable from the object (the frame) or not (the recto of a single page) -- they are both described using the same pattern.
  * Separating a long period or event into smaller sections, such as battles within a war, or the activities of different people during the production of an object.
- * Separating geographical locations into smaller subdivisions, such as that the neighborhood is part of the city, which is in turn part of the state.
+ * Separating geographical locations into smaller subdivisions, such as that the neighborhood is part of the city, which is in turn part of a county or district.
  * Partitioning a text into segments, such as that the paragraph is part of a chapter, which is in turn part of the entire book
 
-Note that these parts are separate records from the main entity, and the main entity does not refer to its parts. Instead the API defines a method to retrieve [all of the parts](/api/1.0/hal/#referring-records-links) of the main entity, or other incoming references.
+Note that parts are generally separate records from the main entity, and the main entity does not refer to its parts. Instead the API defines a method to retrieve [all of the parts](/api/1.0/hal/#referring-records-links) of the main entity, or other incoming references.
 
 __Example:__
 
@@ -294,17 +299,16 @@ top.part_of = model.HumanMadeObject(ident="spring", label="Jeanne (Spring) by Ma
 
 ### Membership
 
-Membership in a set is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member_of` property, instead of the corresponding `part_of`.
+Membership in a set, collection or group is treated slightly differently. A set can have no members and still be a set, whereas if you destroy the last part of an object, it no longer exists. For example, a department of an organization (a Group) might not have any members due to the retirement of the last member, but there is a still an identifiable, ongoing group that would hopefully gain members when new hires are made.  Membership is given using the `member_of` property, instead of the corresponding `part_of`.
 
 Use cases for the membership pattern include:
 
 * A curator is a member of the paintings department of the museum.
-* A painting is part of the collection of a the museum.
-* An identifier is part of the set of identifiers that collectively make up the accession numbers assigned to paintings by the museum.
+* A painting is part of the collection of a the museum, or of the collection managed by the paintings department.
 
 __Example:__
 
-Rembrandt was a member of the Guild of St Luke.
+Rembrandt was a member of the Guild of St Luke (a guild of painters).
 
 ```crom
 top = model.Person(ident="rembrandt/2", label="Rembrandt")
@@ -318,7 +322,7 @@ It is sometimes necessary to partition an activity that is embedded within anoth
 
 __Example:__
 
-A video (modeled as a Work that contains language, or a `LinguisticObject`) about Rembrandt's Night Watch was directed by Peter Greenaway and Produced by Femke Wolting.
+A video (currently modeled as a Work that contains language, or a `LinguisticObject`) about Rembrandt's Night Watch was directed by Peter Greenaway and Produced by Femke Wolting.
 
 ```crom
 top = model.LinguisticObject(ident="rembrandtjaccuse/1", label="Rembrandt's J'accuse")

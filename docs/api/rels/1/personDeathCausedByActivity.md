@@ -10,7 +10,7 @@ See the related [model documentation]()
 
 ### Example
 
-
+From the record for the Bubonic Plague, the record for a person who died of the plague would be in the response
 
 
 ### Details

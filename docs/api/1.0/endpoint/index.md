@@ -1,5 +1,5 @@
 ---
-title: "Linked Art API Endpoints"
+title: "Linked Art API: Entity Description Endpoints"
 up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---

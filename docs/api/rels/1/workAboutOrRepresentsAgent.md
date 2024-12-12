@@ -22,6 +22,10 @@ From the record for John Trumbull, the visual items and texts that depict him (s
 
 ### SPARQL
 ```
-
+SELECT DISTINCT ?work WHERE {
+   {
+     ?work crm:P138_represents <%current%>.   }   UNION   {
+     ?work crm:P129_is_about <%current%>.   }
+}
 ```
 
