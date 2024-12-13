@@ -3,8 +3,8 @@ title: "Enriching Exhibition Stories: Adding Voices to Quire"
 ---
 
 <div style="display: flex; justify-content: center;">
-    <img src="/community/projects/researchnetwork/ox_brand1_rev_rect.gif" alt="University of Oxford" height="67" style="margin-right: 20px;" />
-    <img src="/community/projects/researchnetwork/UKRI_AHR_Council-Logo_Horiz-RGB.png" alt="AHRC" height="67" style="margin-right: 20px;" />
+    <img src="/community/projects/researchnetwork/ox_brand1_rev_rect.gif" alt="University of Oxford" height="67px" style="margin-right: 20px; height: 67px" />
+    <img src="/community/projects/researchnetwork/UKRI_AHR_Council-Logo_Horiz-RGB.png" alt="AHRC" height="67px" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/edinburgh logo.png" alt="University of Edinburgh" height="67" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/yale logo.png" alt="Yale University" height="67" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/ashmolean logo.png" alt="Ashmolean Museum" height="67" style="margin-right: 20px;" />
