@@ -111,10 +111,11 @@ Some (iterative, ongoing) analysis of the CIDOC-CRM ontology that both contribut
 * Relationship Analysis to come.
 
 
-## Additional Terms
+## Additional Resources
 
 The analysis performed above, in conjunction with the use cases and data for what is required, result in the creation of some additional ontological modeling.
 
+* [Useful Visualization of CIDOC-CRM](https://remogrillo.github.io/cidoc-crm_periodic_table/?code=E1)
 * [Linked Art Ontology](/ns/terms/) of additional terms
 * [CIDOC-CRM Base](ontologies/cidoc.rdf) (with some minor fixes for domain and range)
 * [Other Ontologies](ontologies/linkedart_crm_enhancements.rdf) mapped into the CRM universe
