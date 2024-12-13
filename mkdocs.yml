@@ -37,18 +37,12 @@ nav:
       - Participants: community/index.md
       - Events: community/events/index.md
       - Code of Conduct: community/conduct/index.md
-    - Projects:
-      - Linked Art I (AHRC): community/projects/researchnetwork/index.md
-      - Linked Art II (AHRC): community/projects/linkedartii/index.md
-      - Enriching Quire (AHRC): community/projects/ees2/index.md
+      - Projects: community/projects/index.md
   - Model:
     - Linked Art Model 1.0: model/index.md
     - Introduction:
       - How to read: model/intro/index.md
       - Basic Patterns: model/base/index.md
-      - CIDOC-CRM:
-        - Profile: model/profile/index.md
-        - Classes: model/profile/class_analysis.md
     - Core Entities:
       - Objects:
         - Objects: model/object/index.md
@@ -85,12 +79,11 @@ nav:
       - Textual Documents: model/document/index.md
       - Archival Hierarchies: model/archives/index.md
       - Specific Assertions: model/assertion/index.md
+    - Ontology Analysis:
+      - Profile: model/profile/index.md
+      - Classes: model/profile/class_analysis.md
   - API:
     - Linked Art API 1.0: api/1.0/index.md
-    - Fundamentals:
-      - Design Principles: api/1.0/principles/index.md
-      - JSON-LD: api/1.0/json-ld/index.md
-      - Protocol: api/1.0/protocol/index.md
     - Core APIs:
       - Entity Endpoints:
         - About Endpoints: api/1.0/endpoint/index.md
@@ -111,6 +104,7 @@ nav:
         - Activities: api/1.0/shared/activity/index.md
         - Digital Links: api/1.0/shared/digital/index.md
         - Dimensions: api/1.0/shared/dimension/index.md
+        - Concept References: api/1.0/shared/type/index.md
         - Identifiers: api/1.0/shared/identifier/index.md
         - Monetary Amounts: api/1.0/shared/money/index.md
         - Names: api/1.0/shared/name/index.md
@@ -118,21 +112,24 @@ nav:
         - References: api/1.0/shared/reference/index.md
         - Statements: api/1.0/shared/statement/index.md
         - TimeSpans: api/1.0/shared/timespan/index.md
-        - Types / Concepts: api/1.0/shared/type/index.md
         - Relationships: api/1.0/shared/assignment/index.md
-      - JSON Schema:
+      - JSON Schemas:
         - About Schemas: api/1.0/schema_docs/index.md
-        - Digital Object: api/1.0/schema_docs/digital.md
-        - Event: api/1.0/schema_docs/event.md
-        - Group: api/1.0/schema_docs/group.md
-        - Person: api/1.0/schema_docs/person.md
-        - Physical Object: api/1.0/schema_docs/object.md
-        - Place: api/1.0/schema_docs/place.md
-        - Provenance Activity: api/1.0/schema_docs/provenance.md
-        - Set: api/1.0/schema_docs/set.md
-        - Textual Work: api/1.0/schema_docs/text.md
-        - Visual Work: api/1.0/schema_docs/image.md
-      - HAL Links:
+        - Abstract Works: api/1.0/schema_docs/index.md
+        - Concepts: api/1.0/schema_docs/index.md
+        - Digital Objects: api/1.0/schema_docs/digital.md
+        - Events: api/1.0/schema_docs/event.md
+        - Groups: api/1.0/schema_docs/group.md
+        - People: api/1.0/schema_docs/person.md
+        - Physical Objects: api/1.0/schema_docs/object.md
+        - Places: api/1.0/schema_docs/place.md
+        - Provenance Activities: api/1.0/schema_docs/provenance.md
+        - Sets: api/1.0/schema_docs/set.md
+        - Textual Works: api/1.0/schema_docs/text.md
+        - Visual Works: api/1.0/schema_docs/image.md
+    - Search API:
+      - Search API: api/1.0/search/index.md
+      - Search Links:
         - About HAL: api/1.0/hal/index.md
         - Object:
           - activityUsedObject: api/rels/1/activityUsedObject.md
@@ -236,12 +233,11 @@ nav:
           - workAboutSet: api/rels/1/workAboutSet.md
           - workMemberOfSet: api/rels/1/workMemberOfSet.md
           - workRepresentsSet: api/rels/1/workRepresentsSet.md
-    - Related APIs:
-      - Search:
-        - Search API: api/1.0/search/index.md
-        - Search Links: api/rels/1/index.md
-      - Discovery:
-        - Discovery API: api/1.0/discovery/index.md
+    - Data Discovery:  api/1.0/discovery/index.md
+    - Design Fundamentals:
+      - Design Principles: api/1.0/principles/index.md
+      - JSON-LD: api/1.0/json-ld/index.md
+      - Protocol: api/1.0/protocol/index.md
   - Resources:
     - Software and tools: software/index.md
     - Cookbook:
@@ -249,7 +245,6 @@ nav:
       - Mappings:
         - CDWA: cookbook/mappings/cdwa/index.md
         - Schema.org: cookbook/mappings/schema/index.md
-    
 
 
 validation:
@@ -275,7 +270,6 @@ markdown_extensions:
           class: mermaid
           format:
             !!python/name:mermaid2.fence_mermaid # Custom vars to our template
-
 
 extra:
   project:
