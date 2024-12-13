@@ -2,15 +2,19 @@
 title: "Enriching Exhibition Stories: Adding Voices to Quire"
 ---
 
+<!--
 <div style="display: flex; justify-content: center;">
-    <img src="/community/projects/researchnetwork/ox_brand1_rev_rect.gif" alt="University of Oxford" height="67" style="margin-right: 20px;" />
-    <img src="/community/projects/researchnetwork/UKRI_AHR_Council-Logo_Horiz-RGB.png" alt="AHRC" height="67" style="margin-right: 20px;" />
+    <img src="/community/projects/researchnetwork/ox_brand1_rev_rect.gif" alt="University of Oxford" height="67px" style="margin-right: 20px; height: 67px" />
+    <img src="/community/projects/researchnetwork/UKRI_AHR_Council-Logo_Horiz-RGB.png" alt="AHRC" height="67px" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/edinburgh logo.png" alt="University of Edinburgh" height="67" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/yale logo.png" alt="Yale University" height="67" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/ashmolean logo.png" alt="Ashmolean Museum" height="67" style="margin-right: 20px;" />
     <img src="/community/projects/ees2/YCBA logo.png" alt="Yale Center for British Art" height="67" />
 </div>
 <br>
+
+-->
+
 *Enriching Exhibition Stories: Adding Voices to Quire (project reference AH/Y006011/1) is a project funded by the UK [Arts and Humanities Research Council](https://ahrc.ukri.org/) (AHRC) and led by the [University of Oxford](https://www.ox.ac.uk/), working in partnership with the [University of Edinburgh](https://www.ed.ac.uk/), the [Ashmolean Museum](https://www.ashmolean.org/), and [Yale University](https://www.yale.edu/)*. 
 
 ## Project Outputs
