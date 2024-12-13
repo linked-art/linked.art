@@ -115,8 +115,8 @@ nav:
         - Relationships: api/1.0/shared/assignment/index.md
       - JSON Schemas:
         - About Schemas: api/1.0/schema_docs/index.md
-        - Abstract Works: api/1.0/schema_docs/index.md
-        - Concepts: api/1.0/schema_docs/index.md
+        - Abstract Works: api/1.0/schema_docs/abstract.md
+        - Concepts: api/1.0/schema_docs/concept.md
         - Digital Objects: api/1.0/schema_docs/digital.md
         - Events: api/1.0/schema_docs/event.md
         - Groups: api/1.0/schema_docs/group.md
