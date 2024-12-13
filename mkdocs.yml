@@ -79,9 +79,9 @@ nav:
       - Textual Documents: model/document/index.md
       - Archival Hierarchies: model/archives/index.md
       - Specific Assertions: model/assertion/index.md
-    - Ontology Analysis:
+    - Model Design:
       - Profile: model/profile/index.md
-      - Classes: model/profile/class_analysis.md
+      - Class Analysis: model/profile/class_analysis.md
   - API:
     - Linked Art API 1.0: api/1.0/index.md
     - Core APIs:
@@ -234,7 +234,7 @@ nav:
           - workMemberOfSet: api/rels/1/workMemberOfSet.md
           - workRepresentsSet: api/rels/1/workRepresentsSet.md
     - Data Discovery:  api/1.0/discovery/index.md
-    - Design Fundamentals:
+    - API Design:
       - Design Principles: api/1.0/principles/index.md
       - JSON-LD: api/1.0/json-ld/index.md
       - Protocol: api/1.0/protocol/index.md
