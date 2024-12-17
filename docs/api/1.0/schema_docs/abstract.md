@@ -1,15 +1,15 @@
 ---
-title: "Linked Art Schema: Event"
+title: "Linked Art Schema: Abstract"
 up_href: "/api/1.0/"
 up_label: "Linked Art API 1.0"
 ---
 
 
 
-     <h1>Event Schema</h1><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">_crm:E4\_Period_, _crm:E6\_Event_ or _crm:E7\_Activity_
-A period (a span of time at a place), event (a change that no one carried out) or activity (some human actor was responsible for it) that occured.
-See: [API](https://linked.art/api/1.0/endpoint/event/) | [Model]()</span> <span class="badge badge-info no-additional">No Additional Properties</span>
+     <h1>Abstract Work Schema</h1><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">_crm:E89\_Propositional\_Object_
+A purely conceptual work, such as the idea behind an exhibition.
+See: [API](https://linked.art/api/1.0/endpoint/abstract_work/) | [Model](https://linked.art/model/document/)</span> <span class="badge badge-info no-additional">No Additional Properties</span>
         
 
         
@@ -182,11 +182,8 @@ See: [API](https://linked.art/api/1.0/endpoint/event/) | [Model]()</span> <span 
              id="tab-pane_type_allOf_i1" role="tabpanel">
             
 
-    <h4>Specific</h4><span class="badge badge-dark value-type">Type: enum (of string)</span><br/>
-<div class="enum-value" id="type_allOf_i1_enum">
-            <h4>Must be one of:</h4>
-            <ul class="list-group"><li class="list-group-item enum-item">"Period"</li><li class="list-group-item enum-item">"Event"</li><li class="list-group-item enum-item">"Activity"</li></ul>
-            </div>
+    <h4>Specific</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="type_allOf_i1_const">Specific value: <code>"PropositionalObject"</code></span>
         
 
         
@@ -4423,7 +4420,7 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>Specific</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">List of equivalent `Activity` entities</span>
+<span class="description">List of equivalent `LinguisticObject` entities</span>
         
 
         
@@ -4434,9 +4431,152 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
         <div class="card-body items-definition" id="equivalent_allOf_i1_items">
             
 
-    <h4>crm:E7_Activity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Activity`
-See: [Schema](event.html)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1')" class="ref-link">Same definition as crm:E7_Activity</a>
+    <h4>crm:E33_Linguistic_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">Reference to a `LinguisticObject`
+See: [Schema](text.html)</span>
+
+     <span class="badge badge-info no-additional">No Additional Properties</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionequivalent_allOf_i1_items_id">
+    <div class="card">
+        <div class="card-header" id="headingequivalent_allOf_i1_items_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#equivalent_allOf_i1_items_id"
+                        aria-expanded="" aria-controls="equivalent_allOf_i1_items_id" onclick="setAnchor('#equivalent_allOf_i1_items_id')"><span class="property-name">id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="equivalent_allOf_i1_items_id"
+             class="collapse property-definition-div" aria-labelledby="headingequivalent_allOf_i1_items_id"
+             data-parent="#accordionequivalent_allOf_i1_items_id">
+            <div class="card-body pl-5">
+
+    <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionequivalent_allOf_i1_items_type">
+    <div class="card">
+        <div class="card-header" id="headingequivalent_allOf_i1_items_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#equivalent_allOf_i1_items_type"
+                        aria-expanded="" aria-controls="equivalent_allOf_i1_items_type" onclick="setAnchor('#equivalent_allOf_i1_items_type')"><span class="property-name">type</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="equivalent_allOf_i1_items_type"
+             class="collapse property-definition-div" aria-labelledby="headingequivalent_allOf_i1_items_type"
+             data-parent="#accordionequivalent_allOf_i1_items_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="equivalent_allOf_i1_items_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabsequivalent_allOf_i1_items_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="equivalent_allOf_i1_items_type_allOf_i0" data-toggle="tab" href="#tab-pane_equivalent_allOf_i1_items_type_allOf_i0" role="tab"
+               onclick="setAnchor('#equivalent_allOf_i1_items_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="equivalent_allOf_i1_items_type_allOf_i1" data-toggle="tab" href="#tab-pane_equivalent_allOf_i1_items_type_allOf_i1" role="tab"
+               onclick="setAnchor('#equivalent_allOf_i1_items_type_allOf_i1')"
+            >Requirement 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_equivalent_allOf_i1_items_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_equivalent_allOf_i1_items_type_allOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="equivalent_allOf_i1_items_type_allOf_i1_const">Specific value: <code>"LinguisticObject"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionequivalent_allOf_i1_items__label">
+    <div class="card">
+        <div class="card-header" id="headingequivalent_allOf_i1_items__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#equivalent_allOf_i1_items__label"
+                        aria-expanded="" aria-controls="equivalent_allOf_i1_items__label" onclick="setAnchor('#equivalent_allOf_i1_items__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="equivalent_allOf_i1_items__label"
+             class="collapse property-definition-div" aria-labelledby="headingequivalent_allOf_i1_items__label"
+             data-parent="#accordionequivalent_allOf_i1_items__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionequivalent_allOf_i1_items_equivalent">
+    <div class="card">
+        <div class="card-header" id="headingequivalent_allOf_i1_items_equivalent">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#equivalent_allOf_i1_items_equivalent"
+                        aria-expanded="" aria-controls="equivalent_allOf_i1_items_equivalent" onclick="setAnchor('#equivalent_allOf_i1_items_equivalent')"><span class="property-name">equivalent</span></button>
+            </h2>
+        </div>
+
+        <div id="equivalent_allOf_i1_items_equivalent"
+             class="collapse property-definition-div" aria-labelledby="headingequivalent_allOf_i1_items_equivalent"
+             data-parent="#accordionequivalent_allOf_i1_items_equivalent">
+            <div class="card-body pl-5">
+
+    <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </div>
         </div></div></div>
@@ -5555,162 +5695,22 @@ See: [Schema](set.html)</span><a href="#identified_by_items_anyOf_i1_assigned_by
         </div>
     </div>
 </div>
-<div class="accordion" id="accordiontook_place_at">
+<div class="accordion" id="accordiondimension">
     <div class="card">
-        <div class="card-header" id="headingtook_place_at">
+        <div class="card-header" id="headingdimension">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#took_place_at"
-                        aria-expanded="" aria-controls="took_place_at" onclick="setAnchor('#took_place_at')"><span class="property-name">took_place_at</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#dimension"
+                        aria-expanded="" aria-controls="dimension" onclick="setAnchor('#dimension')"><span class="property-name">dimension</span></button>
             </h2>
         </div>
 
-        <div id="took_place_at"
-             class="collapse property-definition-div" aria-labelledby="headingtook_place_at"
-             data-parent="#accordiontook_place_at">
+        <div id="dimension"
+             class="collapse property-definition-div" aria-labelledby="headingdimension"
+             data-parent="#accordiondimension">
             <div class="card-body pl-5">
 
-    <h4>crm:P7_took_place_at</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Place` at which this event occured</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_took_place_at" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_took_place_at')" class="ref-link">Same definition as took_place_at</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordiontimespan">
-    <div class="card">
-        <div class="card-header" id="headingtimespan">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#timespan"
-                        aria-expanded="" aria-controls="timespan" onclick="setAnchor('#timespan')"><span class="property-name">timespan</span></button>
-            </h2>
-        </div>
-
-        <div id="timespan"
-             class="collapse property-definition-div" aria-labelledby="headingtimespan"
-             data-parent="#accordiontimespan">
-            <div class="card-body pl-5">
-
-    <h4>crm:P4_has_time-span</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A `TimeSpan` which describes the date-time range during which this event occured</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_timespan" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_timespan')" class="ref-link">Same definition as timespan</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordionduring">
-    <div class="card">
-        <div class="card-header" id="headingduring">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#during"
-                        aria-expanded="" aria-controls="during" onclick="setAnchor('#during')"><span class="property-name">during</span></button>
-            </h2>
-        </div>
-
-        <div id="during"
-             class="collapse property-definition-div" aria-labelledby="headingduring"
-             data-parent="#accordionduring">
-            <div class="card-body pl-5">
-
-    <h4>crm:P10_falls_within</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Period that the current temporal entity occurs during</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_during" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_during')" class="ref-link">Same definition as during</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordionafter">
-    <div class="card">
-        <div class="card-header" id="headingafter">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#after"
-                        aria-expanded="" aria-controls="after" onclick="setAnchor('#after')"><span class="property-name">after</span></button>
-            </h2>
-        </div>
-
-        <div id="after"
-             class="collapse property-definition-div" aria-labelledby="headingafter"
-             data-parent="#accordionafter">
-            <div class="card-body pl-5">
-
-    <h4>crm:P183i_starts_after_the_end_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_after" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_after')" class="ref-link">Same definition as after</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordionbefore">
-    <div class="card">
-        <div class="card-header" id="headingbefore">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#before"
-                        aria-expanded="" aria-controls="before" onclick="setAnchor('#before')"><span class="property-name">before</span></button>
-            </h2>
-        </div>
-
-        <div id="before"
-             class="collapse property-definition-div" aria-labelledby="headingbefore"
-             data-parent="#accordionbefore">
-            <div class="card-body pl-5">
-
-    <h4>crm:P183_ends_before_the_start_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_before" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_before')" class="ref-link">Same definition as before</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordioncaused_by">
-    <div class="card">
-        <div class="card-header" id="headingcaused_by">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#caused_by"
-                        aria-expanded="" aria-controls="caused_by" onclick="setAnchor('#caused_by')"><span class="property-name">caused_by</span></button>
-            </h2>
-        </div>
-
-        <div id="caused_by"
-             class="collapse property-definition-div" aria-labelledby="headingcaused_by"
-             data-parent="#accordioncaused_by">
-            <div class="card-body pl-5">
-
-    <h4>sci:O13i_is_triggered_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">Another event which caused this event to occur</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_caused_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_caused_by')" class="ref-link">Same definition as caused_by</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordioncarried_out_by">
-    <div class="card">
-        <div class="card-header" id="headingcarried_out_by">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#carried_out_by"
-                        aria-expanded="" aria-controls="carried_out_by" onclick="setAnchor('#carried_out_by')"><span class="property-name">carried_out_by</span></button>
-            </h2>
-        </div>
-
-        <div id="carried_out_by"
-             class="collapse property-definition-div" aria-labelledby="headingcarried_out_by"
-             data-parent="#accordioncarried_out_by">
-            <div class="card-body pl-5">
-
-    <h4>crm:P14_carried_out_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Person or Group which carried out this activity</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_carried_out_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_carried_out_by')" class="ref-link">Same definition as carried_out_by</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion" id="accordionparticipant">
-    <div class="card">
-        <div class="card-header" id="headingparticipant">
-            <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#participant"
-                        aria-expanded="" aria-controls="participant" onclick="setAnchor('#participant')"><span class="property-name">participant</span></button>
-            </h2>
-        </div>
-
-        <div id="participant"
-             class="collapse property-definition-div" aria-labelledby="headingparticipant"
-             data-parent="#accordionparticipant">
-            <div class="card-body pl-5">
-
-    <h4>crm:P11_had_participant</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Person or Group which participated in this activity</span>
+    <h4>crm:P43_has_dimension</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">One or more `Dimension` structures that describe this entity</span>
 
     
         
@@ -5720,29 +5720,482 @@ See: [Schema](set.html)</span><a href="#identified_by_items_anyOf_i1_assigned_by
 
          <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
     <div class="card">
-        <div class="card-body items-definition" id="participant_items">
+        <div class="card-body items-definition" id="dimension_items">
             
 
-    <span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A Reference to a Person or Group</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items')" class="ref-link">Same definition as identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items</a>
+    <h4>crm:E54_Dimension</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">A measurable aspect of an entity, with a numeric value, a unit for that value, and a type relative to the entity
+See: [API](https://linked.art/api/1.0/shared/dimension/) | [Model](https://linked.art/model/object/physical/#dimensions)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_timespan_duration" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_timespan_duration')" class="ref-link">Same definition as duration</a>
         </div>
     </div>
             </div>
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionused_specific_object">
+<div class="accordion" id="accordionsubject_to">
     <div class="card">
-        <div class="card-header" id="headingused_specific_object">
+        <div class="card-header" id="headingsubject_to">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#used_specific_object"
-                        aria-expanded="" aria-controls="used_specific_object" onclick="setAnchor('#used_specific_object')"><span class="property-name">used_specific_object</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to"
+                        aria-expanded="" aria-controls="subject_to" onclick="setAnchor('#subject_to')"><span class="property-name">subject_to</span></button>
             </h2>
         </div>
 
-        <div id="used_specific_object"
-             class="collapse property-definition-div" aria-labelledby="headingused_specific_object"
-             data-parent="#accordionused_specific_object">
+        <div id="subject_to"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to"
+             data-parent="#accordionsubject_to">
+            <div class="card-body pl-5">
+
+    <h4>crm:P104i_is_subject_to</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">One or more Rights that this object is subject to</span>
+
+    
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="subject_to_items">
+            
+
+    <h4>crm:E30_Right</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">A legal right that can be held by some party over some entity</span>
+
+     <span class="badge badge-info no-additional">No Additional Properties</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionsubject_to_items__label">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items__label"
+                        aria-expanded="" aria-controls="subject_to_items__label" onclick="setAnchor('#subject_to_items__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items__label"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items__label"
+             data-parent="#accordionsubject_to_items__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_type">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_type"
+                        aria-expanded="" aria-controls="subject_to_items_type" onclick="setAnchor('#subject_to_items_type')"><span class="property-name">type</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_type"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_type"
+             data-parent="#accordionsubject_to_items_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="subject_to_items_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabssubject_to_items_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="subject_to_items_type_allOf_i0" data-toggle="tab" href="#tab-pane_subject_to_items_type_allOf_i0" role="tab"
+               onclick="setAnchor('#subject_to_items_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="subject_to_items_type_allOf_i1" data-toggle="tab" href="#tab-pane_subject_to_items_type_allOf_i1" role="tab"
+               onclick="setAnchor('#subject_to_items_type_allOf_i1')"
+            >Specific</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_subject_to_items_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_subject_to_items_type_allOf_i1" role="tabpanel">
+            
+
+    <h4>Specific</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="subject_to_items_type_allOf_i1_const">Specific value: <code>"Right"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_identified_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_identified_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_identified_by"
+                        aria-expanded="" aria-controls="subject_to_items_identified_by" onclick="setAnchor('#subject_to_items_identified_by')"><span class="property-name">identified_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_identified_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_identified_by"
+             data-parent="#accordionsubject_to_items_identified_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#identified_by" onclick="anchorLink('identified_by')" class="ref-link">Same definition as identified_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_classified_as">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_classified_as">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_classified_as"
+                        aria-expanded="" aria-controls="subject_to_items_classified_as" onclick="setAnchor('#subject_to_items_classified_as')"><span class="property-name">classified_as</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_classified_as"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_classified_as"
+             data-parent="#accordionsubject_to_items_classified_as">
+            <div class="card-body pl-5">
+
+    <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as')" class="ref-link">Same definition as classified_as</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_referred_to_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_referred_to_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_referred_to_by"
+                        aria-expanded="" aria-controls="subject_to_items_referred_to_by" onclick="setAnchor('#subject_to_items_referred_to_by')"><span class="property-name">referred_to_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_referred_to_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_referred_to_by"
+             data-parent="#accordionsubject_to_items_referred_to_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by" onclick="setAnchor('#subject_to_items_created_by')"><span class="property-name">created_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by"
+             data-parent="#accordionsubject_to_items_created_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P94i_was_created_by</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">The creation of the intellectual/conceptual entity</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionsubject_to_items_created_by_type">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_type"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_type" onclick="setAnchor('#subject_to_items_created_by_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_type"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_type"
+             data-parent="#accordionsubject_to_items_created_by_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="subject_to_items_created_by_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabssubject_to_items_created_by_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="subject_to_items_created_by_type_allOf_i0" data-toggle="tab" href="#tab-pane_subject_to_items_created_by_type_allOf_i0" role="tab"
+               onclick="setAnchor('#subject_to_items_created_by_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="subject_to_items_created_by_type_allOf_i1" data-toggle="tab" href="#tab-pane_subject_to_items_created_by_type_allOf_i1" role="tab"
+               onclick="setAnchor('#subject_to_items_created_by_type_allOf_i1')"
+            >Specific</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_subject_to_items_created_by_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_subject_to_items_created_by_type_allOf_i1" role="tabpanel">
+            
+
+    <h4>Specific</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="subject_to_items_created_by_type_allOf_i1_const">Specific value: <code>"Creation"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by__label">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by__label"
+                        aria-expanded="" aria-controls="subject_to_items_created_by__label" onclick="setAnchor('#subject_to_items_created_by__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by__label"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by__label"
+             data-parent="#accordionsubject_to_items_created_by__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_identified_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_identified_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_identified_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_identified_by" onclick="setAnchor('#subject_to_items_created_by_identified_by')"><span class="property-name">identified_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_identified_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_identified_by"
+             data-parent="#accordionsubject_to_items_created_by_identified_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#identified_by" onclick="anchorLink('identified_by')" class="ref-link">Same definition as identified_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_classified_as">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_classified_as">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_classified_as"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_classified_as" onclick="setAnchor('#subject_to_items_created_by_classified_as')"><span class="property-name">classified_as</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_classified_as"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_classified_as"
+             data-parent="#accordionsubject_to_items_created_by_classified_as">
+            <div class="card-body pl-5">
+
+    <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as')" class="ref-link">Same definition as classified_as</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_referred_to_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_referred_to_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_referred_to_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_referred_to_by" onclick="setAnchor('#subject_to_items_created_by_referred_to_by')"><span class="property-name">referred_to_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_referred_to_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_referred_to_by"
+             data-parent="#accordionsubject_to_items_created_by_referred_to_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_took_place_at">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_took_place_at">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_took_place_at"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_took_place_at" onclick="setAnchor('#subject_to_items_created_by_took_place_at')"><span class="property-name">took_place_at</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_took_place_at"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_took_place_at"
+             data-parent="#accordionsubject_to_items_created_by_took_place_at">
+            <div class="card-body pl-5">
+
+    <h4>crm:P7_took_place_at</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Place` at which this event occured</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_took_place_at" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_took_place_at')" class="ref-link">Same definition as took_place_at</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_timespan">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_timespan">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_timespan"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_timespan" onclick="setAnchor('#subject_to_items_created_by_timespan')"><span class="property-name">timespan</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_timespan"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_timespan"
+             data-parent="#accordionsubject_to_items_created_by_timespan">
+            <div class="card-body pl-5">
+
+    <h4>crm:P4_has_time-span</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">A `TimeSpan` which describes the date-time range during which this event occured</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_timespan" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_timespan')" class="ref-link">Same definition as timespan</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_caused_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_caused_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_caused_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_caused_by" onclick="setAnchor('#subject_to_items_created_by_caused_by')"><span class="property-name">caused_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_caused_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_caused_by"
+             data-parent="#accordionsubject_to_items_created_by_caused_by">
+            <div class="card-body pl-5">
+
+    <h4>sci:O13i_is_triggered_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">Another event which caused this event to occur</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_caused_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_caused_by')" class="ref-link">Same definition as caused_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_carried_out_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_carried_out_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_carried_out_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_carried_out_by" onclick="setAnchor('#subject_to_items_created_by_carried_out_by')"><span class="property-name">carried_out_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_carried_out_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_carried_out_by"
+             data-parent="#accordionsubject_to_items_created_by_carried_out_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P14_carried_out_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to a Person or Group which carried out this activity</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_carried_out_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_carried_out_by')" class="ref-link">Same definition as carried_out_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_used_specific_object">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_used_specific_object">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_used_specific_object"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_used_specific_object" onclick="setAnchor('#subject_to_items_created_by_used_specific_object')"><span class="property-name">used_specific_object</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_used_specific_object"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_used_specific_object"
+             data-parent="#accordionsubject_to_items_created_by_used_specific_object">
             <div class="card-body pl-5">
 
     <h4>crm:P16_used_specific_object</h4><span class="badge badge-dark value-type">Type: array</span><br/>
@@ -5751,18 +6204,18 @@ See: [Schema](set.html)</span><a href="#identified_by_items_anyOf_i1_assigned_by
         </div>
     </div>
 </div>
-<div class="accordion" id="accordioninfluenced_by">
+<div class="accordion" id="accordionsubject_to_items_created_by_influenced_by">
     <div class="card">
-        <div class="card-header" id="headinginfluenced_by">
+        <div class="card-header" id="headingsubject_to_items_created_by_influenced_by">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#influenced_by"
-                        aria-expanded="" aria-controls="influenced_by" onclick="setAnchor('#influenced_by')"><span class="property-name">influenced_by</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_influenced_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_influenced_by" onclick="setAnchor('#subject_to_items_created_by_influenced_by')"><span class="property-name">influenced_by</span></button>
             </h2>
         </div>
 
-        <div id="influenced_by"
-             class="collapse property-definition-div" aria-labelledby="headinginfluenced_by"
-             data-parent="#accordioninfluenced_by">
+        <div id="subject_to_items_created_by_influenced_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_influenced_by"
+             data-parent="#accordionsubject_to_items_created_by_influenced_by">
             <div class="card-body pl-5">
 
     <h4>crm:P15_was_influenced_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
@@ -5771,18 +6224,18 @@ See: [Schema](set.html)</span><a href="#identified_by_items_anyOf_i1_assigned_by
         </div>
     </div>
 </div>
-<div class="accordion" id="accordiontechnique">
+<div class="accordion" id="accordionsubject_to_items_created_by_technique">
     <div class="card">
-        <div class="card-header" id="headingtechnique">
+        <div class="card-header" id="headingsubject_to_items_created_by_technique">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#technique"
-                        aria-expanded="" aria-controls="technique" onclick="setAnchor('#technique')"><span class="property-name">technique</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_technique"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_technique" onclick="setAnchor('#subject_to_items_created_by_technique')"><span class="property-name">technique</span></button>
             </h2>
         </div>
 
-        <div id="technique"
-             class="collapse property-definition-div" aria-labelledby="headingtechnique"
-             data-parent="#accordiontechnique">
+        <div id="subject_to_items_created_by_technique"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_technique"
+             data-parent="#accordionsubject_to_items_created_by_technique">
             <div class="card-body pl-5">
 
     <h4>crm:P32_used_general_technique</h4><span class="badge badge-dark value-type">Type: array</span><br/>
@@ -5791,22 +6244,82 @@ See: [Schema](set.html)</span><a href="#identified_by_items_anyOf_i1_assigned_by
         </div>
     </div>
 </div>
-<div class="accordion" id="accordionpart_of">
+<div class="accordion" id="accordionsubject_to_items_created_by_during">
     <div class="card">
-        <div class="card-header" id="headingpart_of">
+        <div class="card-header" id="headingsubject_to_items_created_by_during">
             <h2 class="mb-0">
-                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#part_of"
-                        aria-expanded="" aria-controls="part_of" onclick="setAnchor('#part_of')"><span class="property-name">part_of</span></button>
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_during"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_during" onclick="setAnchor('#subject_to_items_created_by_during')"><span class="property-name">during</span></button>
             </h2>
         </div>
 
-        <div id="part_of"
-             class="collapse property-definition-div" aria-labelledby="headingpart_of"
-             data-parent="#accordionpart_of">
+        <div id="subject_to_items_created_by_during"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_during"
+             data-parent="#accordionsubject_to_items_created_by_during">
+            <div class="card-body pl-5">
+
+    <h4>crm:P10_falls_within</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to a Period that the current temporal entity occurs during</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_during" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_during')" class="ref-link">Same definition as during</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_after">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_after">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_after"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_after" onclick="setAnchor('#subject_to_items_created_by_after')"><span class="property-name">after</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_after"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_after"
+             data-parent="#accordionsubject_to_items_created_by_after">
+            <div class="card-body pl-5">
+
+    <h4>crm:P183i_starts_after_the_end_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_after" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_after')" class="ref-link">Same definition as after</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_before">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_before">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_before"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_before" onclick="setAnchor('#subject_to_items_created_by_before')"><span class="property-name">before</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_before"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_before"
+             data-parent="#accordionsubject_to_items_created_by_before">
+            <div class="card-body pl-5">
+
+    <h4>crm:P183_ends_before_the_start_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_before" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_before')" class="ref-link">Same definition as before</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_part_of">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_part_of">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_part_of"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_part_of" onclick="setAnchor('#subject_to_items_created_by_part_of')"><span class="property-name">part_of</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_part_of"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_part_of"
+             data-parent="#accordionsubject_to_items_created_by_part_of">
             <div class="card-body pl-5">
 
     <h4>crm:P9i_forms_part_of</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An identified event or activity which this one is part of</span>
+<span class="description">An identified event or activity which this creation is part of</span>
 
     <div class="any-of-value" id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf"><h2 class="handle">
   <label>Any of</label>
@@ -6128,6 +6641,991 @@ See: [Schema](event.html)</span>
         
 
         
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_possessed_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_possessed_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_possessed_by"
+                        aria-expanded="" aria-controls="subject_to_items_possessed_by" onclick="setAnchor('#subject_to_items_possessed_by')"><span class="property-name">possessed_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_possessed_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_possessed_by"
+             data-parent="#accordionsubject_to_items_possessed_by">
+            <div class="card-body pl-5">
+
+    <span class="badge badge-dark value-type">Type: array</span><br/>
+
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="subject_to_items_possessed_by_items">
+            
+
+    <span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">A Reference to a Person or Group</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items')" class="ref-link">Same definition as identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items</a>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionabout">
+    <div class="card">
+        <div class="card-header" id="headingabout">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#about"
+                        aria-expanded="" aria-controls="about" onclick="setAnchor('#about')"><span class="property-name">about</span></button>
+            </h2>
+        </div>
+
+        <div id="about"
+             class="collapse property-definition-div" aria-labelledby="headingabout"
+             data-parent="#accordionabout">
+            <div class="card-body pl-5">
+
+    <h4>crm:P129_is_about</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">The main topic(s) of the content</span>
+
+    
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="about_items">
+            
+
+    <h4>*</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">Reference to another primary entity
+See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent_items" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent_items')" class="ref-link">Same definition as *</a>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionconceptually_part_of">
+    <div class="card">
+        <div class="card-header" id="headingconceptually_part_of">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#conceptually_part_of"
+                        aria-expanded="" aria-controls="conceptually_part_of" onclick="setAnchor('#conceptually_part_of')"><span class="property-name">conceptually_part_of</span></button>
+            </h2>
+        </div>
+
+        <div id="conceptually_part_of"
+             class="collapse property-definition-div" aria-labelledby="headingconceptually_part_of"
+             data-parent="#accordionconceptually_part_of">
+            <div class="card-body pl-5">
+
+    <h4>crm:P148i_is_component_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">An Abstract Work that the current work is conceptually part of</span>
+
+    
+        
+
+        
+        
+
+         <span class="badge badge-info no-additional">No Additional Items</span><h4>Each item of this array must be:</h4>
+    <div class="card">
+        <div class="card-body items-definition" id="conceptually_part_of_items">
+            
+
+    <h4>crm:E89_Propositional_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">Reference to a `PropositionalObject`
+See: [Schema](abstract.html)</span>
+
+     <span class="badge badge-info no-additional">No Additional Properties</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionconceptually_part_of_items_id">
+    <div class="card">
+        <div class="card-header" id="headingconceptually_part_of_items_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#conceptually_part_of_items_id"
+                        aria-expanded="" aria-controls="conceptually_part_of_items_id" onclick="setAnchor('#conceptually_part_of_items_id')"><span class="property-name">id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="conceptually_part_of_items_id"
+             class="collapse property-definition-div" aria-labelledby="headingconceptually_part_of_items_id"
+             data-parent="#accordionconceptually_part_of_items_id">
+            <div class="card-body pl-5">
+
+    <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionconceptually_part_of_items_type">
+    <div class="card">
+        <div class="card-header" id="headingconceptually_part_of_items_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#conceptually_part_of_items_type"
+                        aria-expanded="" aria-controls="conceptually_part_of_items_type" onclick="setAnchor('#conceptually_part_of_items_type')"><span class="property-name">type</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="conceptually_part_of_items_type"
+             class="collapse property-definition-div" aria-labelledby="headingconceptually_part_of_items_type"
+             data-parent="#accordionconceptually_part_of_items_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="conceptually_part_of_items_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabsconceptually_part_of_items_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="conceptually_part_of_items_type_allOf_i0" data-toggle="tab" href="#tab-pane_conceptually_part_of_items_type_allOf_i0" role="tab"
+               onclick="setAnchor('#conceptually_part_of_items_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="conceptually_part_of_items_type_allOf_i1" data-toggle="tab" href="#tab-pane_conceptually_part_of_items_type_allOf_i1" role="tab"
+               onclick="setAnchor('#conceptually_part_of_items_type_allOf_i1')"
+            >Requirement 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_conceptually_part_of_items_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_conceptually_part_of_items_type_allOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="conceptually_part_of_items_type_allOf_i1_const">Specific value: <code>"PropositionalObject"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionconceptually_part_of_items__label">
+    <div class="card">
+        <div class="card-header" id="headingconceptually_part_of_items__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#conceptually_part_of_items__label"
+                        aria-expanded="" aria-controls="conceptually_part_of_items__label" onclick="setAnchor('#conceptually_part_of_items__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="conceptually_part_of_items__label"
+             class="collapse property-definition-div" aria-labelledby="headingconceptually_part_of_items__label"
+             data-parent="#accordionconceptually_part_of_items__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionconceptually_part_of_items_equivalent">
+    <div class="card">
+        <div class="card-header" id="headingconceptually_part_of_items_equivalent">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#conceptually_part_of_items_equivalent"
+                        aria-expanded="" aria-controls="conceptually_part_of_items_equivalent" onclick="setAnchor('#conceptually_part_of_items_equivalent')"><span class="property-name">equivalent</span></button>
+            </h2>
+        </div>
+
+        <div id="conceptually_part_of_items_equivalent"
+             class="collapse property-definition-div" aria-labelledby="headingconceptually_part_of_items_equivalent"
+             data-parent="#accordionconceptually_part_of_items_equivalent">
+            <div class="card-body pl-5">
+
+    <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordioncreated_by">
+    <div class="card">
+        <div class="card-header" id="headingcreated_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#created_by"
+                        aria-expanded="" aria-controls="created_by" onclick="setAnchor('#created_by')"><span class="property-name">created_by</span></button>
+            </h2>
+        </div>
+
+        <div id="created_by"
+             class="collapse property-definition-div" aria-labelledby="headingcreated_by"
+             data-parent="#accordioncreated_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P94i_was_created_by</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">The creation of the intellectual/conceptual entity</span>
+
+    
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionsubject_to_items_created_by_type">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_type"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_type" onclick="setAnchor('#subject_to_items_created_by_type')"><span class="property-name">type</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_type"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_type"
+             data-parent="#accordionsubject_to_items_created_by_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="subject_to_items_created_by_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabssubject_to_items_created_by_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="subject_to_items_created_by_type_allOf_i0" data-toggle="tab" href="#tab-pane_subject_to_items_created_by_type_allOf_i0" role="tab"
+               onclick="setAnchor('#subject_to_items_created_by_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="subject_to_items_created_by_type_allOf_i1" data-toggle="tab" href="#tab-pane_subject_to_items_created_by_type_allOf_i1" role="tab"
+               onclick="setAnchor('#subject_to_items_created_by_type_allOf_i1')"
+            >Specific</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_subject_to_items_created_by_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_subject_to_items_created_by_type_allOf_i1" role="tabpanel">
+            
+
+    <h4>Specific</h4><span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="subject_to_items_created_by_type_allOf_i1_const">Specific value: <code>"Creation"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by__label">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by__label"
+                        aria-expanded="" aria-controls="subject_to_items_created_by__label" onclick="setAnchor('#subject_to_items_created_by__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by__label"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by__label"
+             data-parent="#accordionsubject_to_items_created_by__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_identified_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_identified_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_identified_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_identified_by" onclick="setAnchor('#subject_to_items_created_by_identified_by')"><span class="property-name">identified_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_identified_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_identified_by"
+             data-parent="#accordionsubject_to_items_created_by_identified_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#identified_by" onclick="anchorLink('identified_by')" class="ref-link">Same definition as identified_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_classified_as">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_classified_as">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_classified_as"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_classified_as" onclick="setAnchor('#subject_to_items_created_by_classified_as')"><span class="property-name">classified_as</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_classified_as"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_classified_as"
+             data-parent="#accordionsubject_to_items_created_by_classified_as">
+            <div class="card-body pl-5">
+
+    <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as')" class="ref-link">Same definition as classified_as</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_referred_to_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_referred_to_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_referred_to_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_referred_to_by" onclick="setAnchor('#subject_to_items_created_by_referred_to_by')"><span class="property-name">referred_to_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_referred_to_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_referred_to_by"
+             data-parent="#accordionsubject_to_items_created_by_referred_to_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_took_place_at">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_took_place_at">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_took_place_at"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_took_place_at" onclick="setAnchor('#subject_to_items_created_by_took_place_at')"><span class="property-name">took_place_at</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_took_place_at"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_took_place_at"
+             data-parent="#accordionsubject_to_items_created_by_took_place_at">
+            <div class="card-body pl-5">
+
+    <h4>crm:P7_took_place_at</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A `Place` at which this event occured</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_took_place_at" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_took_place_at')" class="ref-link">Same definition as took_place_at</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_timespan">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_timespan">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_timespan"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_timespan" onclick="setAnchor('#subject_to_items_created_by_timespan')"><span class="property-name">timespan</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_timespan"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_timespan"
+             data-parent="#accordionsubject_to_items_created_by_timespan">
+            <div class="card-body pl-5">
+
+    <h4>crm:P4_has_time-span</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">A `TimeSpan` which describes the date-time range during which this event occured</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_timespan" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_timespan')" class="ref-link">Same definition as timespan</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_caused_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_caused_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_caused_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_caused_by" onclick="setAnchor('#subject_to_items_created_by_caused_by')"><span class="property-name">caused_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_caused_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_caused_by"
+             data-parent="#accordionsubject_to_items_created_by_caused_by">
+            <div class="card-body pl-5">
+
+    <h4>sci:O13i_is_triggered_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">Another event which caused this event to occur</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_caused_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_caused_by')" class="ref-link">Same definition as caused_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_carried_out_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_carried_out_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_carried_out_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_carried_out_by" onclick="setAnchor('#subject_to_items_created_by_carried_out_by')"><span class="property-name">carried_out_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_carried_out_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_carried_out_by"
+             data-parent="#accordionsubject_to_items_created_by_carried_out_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P14_carried_out_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to a Person or Group which carried out this activity</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_carried_out_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_carried_out_by')" class="ref-link">Same definition as carried_out_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_used_specific_object">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_used_specific_object">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_used_specific_object"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_used_specific_object" onclick="setAnchor('#subject_to_items_created_by_used_specific_object')"><span class="property-name">used_specific_object</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_used_specific_object"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_used_specific_object"
+             data-parent="#accordionsubject_to_items_created_by_used_specific_object">
+            <div class="card-body pl-5">
+
+    <h4>crm:P16_used_specific_object</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">An object or set of things which was used to carry out this activity</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_used_specific_object" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_used_specific_object')" class="ref-link">Same definition as used_specific_object</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_influenced_by">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_influenced_by">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_influenced_by"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_influenced_by" onclick="setAnchor('#subject_to_items_created_by_influenced_by')"><span class="property-name">influenced_by</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_influenced_by"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_influenced_by"
+             data-parent="#accordionsubject_to_items_created_by_influenced_by">
+            <div class="card-body pl-5">
+
+    <h4>crm:P15_was_influenced_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">An entity that influenced the activity in some way</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_influenced_by" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_influenced_by')" class="ref-link">Same definition as influenced_by</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_technique">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_technique">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_technique"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_technique" onclick="setAnchor('#subject_to_items_created_by_technique')"><span class="property-name">technique</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_technique"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_technique"
+             data-parent="#accordionsubject_to_items_created_by_technique">
+            <div class="card-body pl-5">
+
+    <h4>crm:P32_used_general_technique</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A general technique that was employed to carry out this activity</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_technique" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_technique')" class="ref-link">Same definition as technique</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_during">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_during">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_during"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_during" onclick="setAnchor('#subject_to_items_created_by_during')"><span class="property-name">during</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_during"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_during"
+             data-parent="#accordionsubject_to_items_created_by_during">
+            <div class="card-body pl-5">
+
+    <h4>crm:P10_falls_within</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to a Period that the current temporal entity occurs during</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_during" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_during')" class="ref-link">Same definition as during</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_after">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_after">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_after"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_after" onclick="setAnchor('#subject_to_items_created_by_after')"><span class="property-name">after</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_after"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_after"
+             data-parent="#accordionsubject_to_items_created_by_after">
+            <div class="card-body pl-5">
+
+    <h4>crm:P183i_starts_after_the_end_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_after" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_after')" class="ref-link">Same definition as after</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_before">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_before">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_before"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_before" onclick="setAnchor('#subject_to_items_created_by_before')"><span class="property-name">before</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_before"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_before"
+             data-parent="#accordionsubject_to_items_created_by_before">
+            <div class="card-body pl-5">
+
+    <h4>crm:P183_ends_before_the_start_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</span><a href="#identified_by_items_anyOf_i1_assigned_by_items_before" onclick="anchorLink('identified_by_items_anyOf_i1_assigned_by_items_before')" class="ref-link">Same definition as before</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionsubject_to_items_created_by_part_of">
+    <div class="card">
+        <div class="card-header" id="headingsubject_to_items_created_by_part_of">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#subject_to_items_created_by_part_of"
+                        aria-expanded="" aria-controls="subject_to_items_created_by_part_of" onclick="setAnchor('#subject_to_items_created_by_part_of')"><span class="property-name">part_of</span></button>
+            </h2>
+        </div>
+
+        <div id="subject_to_items_created_by_part_of"
+             class="collapse property-definition-div" aria-labelledby="headingsubject_to_items_created_by_part_of"
+             data-parent="#accordionsubject_to_items_created_by_part_of">
+            <div class="card-body pl-5">
+
+    <h4>crm:P9i_forms_part_of</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">An identified event or activity which this creation is part of</span>
+
+    <div class="any-of-value" id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf"><h2 class="handle">
+  <label>Any of</label>
+</h2><ul class="nav nav-tabs" id="tabsidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_anyOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active anyOf-option"
+               id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0" data-toggle="tab" href="#tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0" role="tab"
+               onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0')"
+            >crm:E6_Event</a>
+        </li><li class="nav-item">
+            <a class="nav-link anyOf-option"
+               id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1" data-toggle="tab" href="#tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1" role="tab"
+               onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1')"
+            >crm:E7_Activity</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0" role="tabpanel">
+            
+
+    <h4>crm:E6_Event</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">Reference to an `Event`
+See: [Schema](event.html)</span>
+
+     <span class="badge badge-info no-additional">No Additional Properties</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id')"><span class="property-name">id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_id">
+            <div class="card-body pl-5">
+
+    <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type')"><span class="property-name">type</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabsidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i0" data-toggle="tab" href="#tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i0" role="tab"
+               onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i1" data-toggle="tab" href="#tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i1" role="tab"
+               onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i1')"
+            >Requirement 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_type_allOf_i1_const">Specific value: <code>"Event"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent')"><span class="property-name">equivalent</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0_equivalent">
+            <div class="card-body pl-5">
+
+    <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+            </div>
+        </div>
+    </div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1" role="tabpanel">
+            
+
+    <h4>crm:E7_Activity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
+<span class="description">Reference to an `Activity`
+See: [Schema](event.html)</span>
+
+     <span class="badge badge-info no-additional">No Additional Properties</span>
+        
+
+        
+        
+
+        
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id')"><span class="property-name">id</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_id">
+            <div class="card-body pl-5">
+
+    <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type')"><span class="property-name">type</span> <span class="badge badge-warning required-property">Required</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type">
+            <div class="card-body pl-5">
+
+    <br/>
+<div class="all-of-value" id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf"><h2 class="handle">
+  <label>All of</label>
+</h2><ul class="nav nav-tabs" id="tabsidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_allOf" role="tablist"><li class="nav-item">
+            <a class="nav-link active allOf-option"
+               id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i0" data-toggle="tab" href="#tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i0" role="tab"
+               onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i0')"
+            >General</a>
+        </li><li class="nav-item">
+            <a class="nav-link allOf-option"
+               id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i1" data-toggle="tab" href="#tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i1" role="tab"
+               onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i1')"
+            >Requirement 2</a>
+        </li></ul>
+<div class="tab-content card"><div class="tab-pane fade card-body active show"
+             id="tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i0" role="tabpanel">
+            
+
+    <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">The class of the entity</span>
+
+    
+        
+
+        
+        
+
+        <br/>
+<div class="badge badge-secondary">Examples:</div>
+<br/><div id="type_allOf_i0_ex1" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Person&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex2" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Place&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex3" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;Type&quot;</span>
+</pre></div>
+</div><div id="type_allOf_i0_ex4" class="jumbotron examples"><div class="highlight"><pre><span></span><span class="s2">&quot;HumanMadeObject&quot;</span>
+</pre></div>
+</div>
+        </div><div class="tab-pane fade card-body "
+             id="tab-pane_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i1" role="tabpanel">
+            
+
+    <span class="badge badge-dark value-type">Type: const</span><br/>
+<span class="const-value" id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_type_allOf_i1_const">Specific value: <code>"Activity"</code></span>
+        
+
+        
+        
+
+        
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label')"><span class="property-name">_label</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1__label">
+            <div class="card-body pl-5">
+
+    <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
+<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="accordion" id="accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent">
+    <div class="card">
+        <div class="card-header" id="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent">
+            <h2 class="mb-0">
+                <button class="btn btn-link property-name-button" type="button" data-toggle="collapse" data-target="#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent"
+                        aria-expanded="" aria-controls="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent" onclick="setAnchor('#identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent')"><span class="property-name">equivalent</span></button>
+            </h2>
+        </div>
+
+        <div id="identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent"
+             class="collapse property-definition-div" aria-labelledby="headingidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent"
+             data-parent="#accordionidentified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1_equivalent">
+            <div class="card-body pl-5">
+
+    <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
+<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent" onclick="anchorLink('identified_by_items_anyOf_i0_referred_to_by_items_classified_as_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+            </div>
+        </div>
+    </div>
+</div>
+        </div></div></div>
+        
+
+        
+        
+
+        
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
