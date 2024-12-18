@@ -1,41 +1,29 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://linked.art/api/1.0/schema/set.json",
-	"title": "Collection Schema",
-	"description": "_la:Set_\nA collection of other resources, such as a set of objects or places.\n[API](https://linked.art/api/1.0/endpoint/set/) | [Model](https://linked.art/model/collection/)",
+	"$id": "https://linked.art/api/1.0/schema/text.json",
+	"title": "Abstract Work Schema",
+	"description": "_crm:E89\\_Propositional\\_Object_\nA purely conceptual work, such as the idea behind an exhibition.\nSee: [API](https://linked.art/api/1.0/endpoint/abstract_work/) | [Model](https://linked.art/model/document/)",
 	"type": "object",
 	"properties": {
 		"@context": {"$ref": "core.json#/$defs/ContextStringOrArray"},
 		"id": {"$ref": "core.json#/$defs/idProp"},
 		"type": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/typeProp"},
-			{"title": "Specific", "type": "string", "const": "Set"}]},
+			{"title": "Specific", "type": "string", "const": "PropositionalObject"}]},
 		"_label": {"$ref": "core.json#/$defs/labelProp"},
 		"identified_by": {"$ref": "core.json#/$defs/identified_byProp"},
 		"classified_as": {"$ref": "core.json#/$defs/classified_asProp"},
 		"referred_to_by": {"$ref": "core.json#/$defs/referred_to_byProp"},
 		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/equivalentProp"},
-			{"title": "Specific", "description": "List of equivalent `Set` entities", "type": "array", "items": {"$ref": "core.json#/$defs/SetRef"}}]},
+			{"title": "Specific", "description": "List of equivalent `LinguisticObject` entities", "type": "array", "items": {"$ref": "core.json#/$defs/LinguisticObjectRef"}}]},
 		"representation": {"$ref": "core.json#/$defs/representationProp"},
 		"member_of": {"$ref": "core.json#/$defs/member_ofSetProp"},
 		"subject_of": {"$ref": "core.json#/$defs/subject_ofProp"},
 		"attributed_by": {"$ref": "core.json#/$defs/attributed_byRelProp"},
 		"dimension": {"$ref": "core.json#/$defs/dimensionProp"},
+		"subject_to": {"$ref": "core.json#/$defs/subject_toProp"},
 		"about": {"$ref": "core.json#/$defs/aboutProp"},
-		"members_contained_by": {"$ref": "core.json#/$defs/members_contained_byProp"},
-		"members_exemplified_by": {
-			"title": "la:members_exemplified_by",
-			"description": "Note Well: Nothing below this is validated! Exemplar templates for members of the set",
-			"type":"array",
-			"items": {"type": "object"}
-		},
-		"used_for": {
-			"title": "crm:P16i_was_used_for", 
-			"description": "", 
-			"type": "array", 
-			"items": {"$ref": "core.json#/$defs/Activity"}},
-
+		"conceptually_part_of": {"$ref": "core.json#/$defs/conceptually_part_ofProp"},
 		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "core.json#/$defs/Creation"}
-
 	},
 	"required": ["@context", "id", "type", "_label"],
 	"additionalProperties": false
