@@ -6,10 +6,20 @@ up_label: "Linked Art API 1.0"
 
 
 
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/api/1.0/schema_docs/schema_doc.css">
+<script src="https://use.fontawesome.com/facf9fa52c.js"></script>
+<script src="/api/1.0/schema_docs/schema_doc.min.js"></script><div onload="anchorOnLoad();" id="root">
+    
+
      <h1>Concept Schema</h1><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">_crm:E55\_Type_
-Concepts, Subjects and other categorizations.
-See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.art/model/)</span> <span class="badge badge-info no-additional">No Additional Properties</span>
+<span class="description"><p><em>crm:E55_Type</em><br />
+Concepts, Subjects and other categorizations.<br />
+See: <a href="https://linked.art/api/1.0/endpoint/place/">API</a> | <a href="https://linked.art/model/">Model</a></p>
+</span> <span class="badge badge-info no-additional">No Additional Properties</span>
         
 
         
@@ -31,7 +41,8 @@ See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.
             <div class="card-body pl-5">
 
     <h4>JSON-LD Context</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Either an array of contexts, or a string containing the Linked Art context URI</span>
+<span class="description"><p>Either an array of contexts, or a string containing the Linked Art context URI</p>
+</span>
 
     <div class="any-of-value" id="@context_anyOf"><h2 class="handle">
   <label>Any of</label>
@@ -113,7 +124,8 @@ See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span>
+<span class="description"><p>The URI of the entity</p>
+</span>
 
     
         
@@ -159,7 +171,8 @@ See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -219,7 +232,8 @@ See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span>
 
     
         
@@ -255,7 +269,8 @@ See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span>
 
     
         
@@ -269,8 +284,9 @@ See: [API](https://linked.art/api/1.0/endpoint/place/) | [Model](https://linked.
             
 
     <h4>crm:E55_Type</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A concept or 'Type' in the taxonomic sense
-See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art/model/base/#types-and-classifications)</span>
+<span class="description"><p>A concept or 'Type' in the taxonomic sense<br />
+See: <a href="https://linked.art/api/1.0/shared/type/">API</a> | <a href="https://linked.art/model/base/#types-and-classifications">Model</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -294,7 +310,8 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -314,7 +331,8 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -352,7 +370,8 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -409,7 +428,8 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span>
 
     
         
@@ -423,7 +443,8 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A Name or an Identifier</span>
+<span class="description"><p>A Name or an Identifier</p>
+</span>
 
     <div class="any-of-value" id="classified_as_items_identified_by_items_anyOf"><h2 class="handle">
   <label>Any of</label>
@@ -443,8 +464,9 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             
 
     <h4>crm:E33_E41_Linguistic_Appellation</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A name of an entity
-See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art/model/base/#names)</span>
+<span class="description"><p>A name of an entity<br />
+See: <a href="https://linked.art/api/1.0/shared/name/">API</a> | <a href="https://linked.art/model/base/#names">Model</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -494,7 +516,8 @@ See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -532,7 +555,8 @@ See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -589,7 +613,8 @@ See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -609,7 +634,8 @@ See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span>
 
     
         
@@ -623,8 +649,9 @@ See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art
             
 
     <h4>crm:E33_Linguistic_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An embedded, relatively short piece of textual content
-See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linked.art/model/base/#statements-about-a-resource)</span>
+<span class="description"><p>An embedded, relatively short piece of textual content<br />
+See: <a href="https://linked.art/api/1.0/shared/statement/">API</a> | <a href="https://linked.art/model/base/#statements-about-a-resource">Model</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -648,7 +675,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -686,7 +714,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -743,7 +772,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -763,7 +793,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -783,7 +814,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -803,7 +835,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>crm:P190_has_symbolic_content</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The string representation of a `Name`, `Identifier`, `Statement` or other text</span>
+<span class="description"><p>The string representation of a <code>Name</code>, <code>Identifier</code>, <code>Statement</code> or other text</p>
+</span>
 
     
         
@@ -831,7 +864,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>crm:P72_has_language</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more `Language` entities in which the `content` of this text is written</span>
+<span class="description"><p>A reference to one or more <code>Language</code> entities in which the <code>content</code> of this text is written</p>
+</span>
 
     
         
@@ -845,7 +879,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             
 
     <h4>crm:E56_Language</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Language`</span>
+<span class="description"><p>Reference to a <code>Language</code></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -869,7 +904,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -907,7 +943,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -964,7 +1001,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -984,7 +1022,8 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span>
 
     
         
@@ -998,8 +1037,9 @@ See: [API](https://linked.art/api/1.0/shared/statement/) | [Model](https://linke
             
 
     <h4>*</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to another primary entity
-See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
+<span class="description"><p>Reference to another primary entity<br />
+See: <a href="https://linked.art/api/1.0/shared/reference/">API</a> | <a href="#">Model</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -1023,7 +1063,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -1061,7 +1102,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -1121,7 +1163,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -1141,7 +1184,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -1173,7 +1217,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>dc:format</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The media type of the content of the embedded text, e.g. text/plain</span>
+<span class="description"><p>The media type of the content of the embedded text, e.g. text/plain</p>
+</span>
 
     
         
@@ -1213,7 +1258,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -1233,7 +1279,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P190_has_symbolic_content</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The string representation of a `Name`, `Identifier`, `Statement` or other text</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content')" class="ref-link">Same definition as content</a>
+<span class="description"><p>The string representation of a <code>Name</code>, <code>Identifier</code>, <code>Statement</code> or other text</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content')" class="ref-link">Same definition as content</a>
             </div>
         </div>
     </div>
@@ -1253,7 +1300,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P72_has_language</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more `Language` entities in which the `content` of this text is written</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language')" class="ref-link">Same definition as language</a>
+<span class="description"><p>A reference to one or more <code>Language</code> entities in which the <code>content</code> of this text is written</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language')" class="ref-link">Same definition as language</a>
             </div>
         </div>
     </div>
@@ -1273,7 +1321,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A list of one or more `Name` structures, which are parts of this `Name`</span>
+<span class="description"><p>A list of one or more <code>Name</code> structures, which are parts of this <code>Name</code></p>
+</span>
         
 
         
@@ -1285,8 +1334,9 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>crm:E33_E41_Linguistic_Appellation</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A name of an entity
-See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art/model/base/#names)</span><a href="#classified_as_items_identified_by_items_anyOf_i0" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0')" class="ref-link">Same definition as crm:E33_E41_Linguistic_Appellation</a>
+<span class="description"><p>A name of an entity<br />
+See: <a href="https://linked.art/api/1.0/shared/name/">API</a> | <a href="https://linked.art/model/base/#names">Model</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0')" class="ref-link">Same definition as crm:E33_E41_Linguistic_Appellation</a>
         </div>
     </div>
             </div>
@@ -1298,8 +1348,9 @@ See: [API](https://linked.art/api/1.0/shared/name/) | [Model](https://linked.art
             
 
     <h4>crm:E42_Identifier</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An identifier for an entity
-See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://linked.art/model/base/#identifiers)</span>
+<span class="description"><p>An identifier for an entity<br />
+See: <a href="https://linked.art/api/1.0/shared/identifier/">API</a> | <a href="https://linked.art/model/base/#identifiers">Model</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -1323,7 +1374,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -1361,7 +1413,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -1418,7 +1471,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -1438,7 +1492,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -1458,7 +1513,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -1478,7 +1534,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P190_has_symbolic_content</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The string representation of a `Name`, `Identifier`, `Statement` or other text</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content')" class="ref-link">Same definition as content</a>
+<span class="description"><p>The string representation of a <code>Name</code>, <code>Identifier</code>, <code>Statement</code> or other text</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_content')" class="ref-link">Same definition as content</a>
             </div>
         </div>
     </div>
@@ -1498,7 +1555,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A list of one or more `Identifier` structures, which are parts of this `Identifier`</span>
+<span class="description"><p>A list of one or more <code>Identifier</code> structures, which are parts of this <code>Identifier</code></p>
+</span>
         
 
         
@@ -1510,8 +1568,9 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             
 
     <h4>crm:E42_Identifier</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An identifier for an entity
-See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://linked.art/model/base/#identifiers)</span><a href="#classified_as_items_identified_by_items_anyOf_i1" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1')" class="ref-link">Same definition as crm:E42_Identifier</a>
+<span class="description"><p>An identifier for an entity<br />
+See: <a href="https://linked.art/api/1.0/shared/identifier/">API</a> | <a href="https://linked.art/model/base/#identifiers">Model</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1')" class="ref-link">Same definition as crm:E42_Identifier</a>
         </div>
     </div>
             </div>
@@ -1533,7 +1592,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">The activity through which this `Identifier` was assigned to the entity</span>
+<span class="description"><p>The activity through which this <code>Identifier</code> was assigned to the entity</p>
+</span>
         
 
         
@@ -1545,7 +1605,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             
 
     <h4>crm:E13_Attribute_Assignment</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity</span>
+<span class="description"><p>An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity</p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -1587,7 +1648,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -1644,7 +1706,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -1664,7 +1727,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -1684,7 +1748,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -1704,7 +1769,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -1724,7 +1790,8 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             <div class="card-body pl-5">
 
     <h4>crm:P7_took_place_at</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Place` at which this event occured</span>
+<span class="description"><p>A <code>Place</code> at which this event occured</p>
+</span>
 
     
         
@@ -1738,8 +1805,9 @@ See: [API](https://linked.art/api/1.0/shared/identifier/) | [Model](https://link
             
 
     <h4>crm:E53_Place</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Place` entity
-See: [Schema](place.html)</span>
+<span class="description"><p>Reference to a <code>Place</code> entity<br />
+See: <a href="place.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -1763,7 +1831,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -1801,7 +1870,8 @@ See: [Schema](place.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -1858,7 +1928,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -1878,7 +1949,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -1904,7 +1976,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P4_has_time-span</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A `TimeSpan` which describes the date-time range during which this event occured</span>
+<span class="description"><p>A <code>TimeSpan</code> which describes the date-time range during which this event occured</p>
+</span>
 
     
 
@@ -1930,7 +2003,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -1968,7 +2042,8 @@ See: [Schema](place.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -2025,7 +2100,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -2045,7 +2121,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -2065,7 +2142,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P82a_begin_of_the_begin</h4><span class="badge badge-dark value-type">Type: string</span><span class="badge badge-info value-type">Format: date-time</span><br/>
-<span class="description">The earliest possible date-time at which the timespan could have started</span>
+<span class="description"><p>The earliest possible date-time at which the timespan could have started</p>
+</span>
         
 
         
@@ -2091,7 +2169,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P81a_end_of_the_begin</h4><span class="badge badge-dark value-type">Type: string</span><span class="badge badge-info value-type">Format: date-time</span><br/>
-<span class="description">The latest possible date-time at which the timespan could have started</span>
+<span class="description"><p>The latest possible date-time at which the timespan could have started</p>
+</span>
         
 
         
@@ -2117,7 +2196,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P81b_begin_of_the_end</h4><span class="badge badge-dark value-type">Type: string</span><span class="badge badge-info value-type">Format: date-time</span><br/>
-<span class="description">The earliest possible date-time at which the timespan could have ended</span>
+<span class="description"><p>The earliest possible date-time at which the timespan could have ended</p>
+</span>
         
 
         
@@ -2143,7 +2223,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P82b_end_of_the_end</h4><span class="badge badge-dark value-type">Type: string</span><span class="badge badge-info value-type">Format: date-time</span><br/>
-<span class="description">The latest possible date-time at which the timespan could have ended</span>
+<span class="description"><p>The latest possible date-time at which the timespan could have ended</p>
+</span>
         
 
         
@@ -2169,7 +2250,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P191_had_duration</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A `Dimension` that describes the duration of the timespan within any given date-times</span>
+<span class="description"><p>A <code>Dimension</code> that describes the duration of the timespan within any given date-times</p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -2193,7 +2275,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -2231,7 +2314,8 @@ See: [Schema](place.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -2288,7 +2372,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -2308,7 +2393,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -2328,7 +2414,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P90_has_value</h4><span class="badge badge-dark value-type">Type: number</span><br/>
-<span class="description">The numeric value of a `Dimension` or `MonetaryAmount`</span>
+<span class="description"><p>The numeric value of a <code>Dimension</code> or <code>MonetaryAmount</code></p>
+</span>
 
     
         
@@ -2364,7 +2451,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P90a_has_lower_value_limit</h4><span class="badge badge-dark value-type">Type: number</span><br/>
-<span class="description">The lowest possible value for the `Dimension` or `MonetaryAmount`</span>
+<span class="description"><p>The lowest possible value for the <code>Dimension</code> or <code>MonetaryAmount</code></p>
+</span>
 
     
         
@@ -2396,7 +2484,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P90a_has_upper_value_limit</h4><span class="badge badge-dark value-type">Type: number</span><br/>
-<span class="description">The highest possible value for the `Dimension` or `MonetaryAmount`</span>
+<span class="description"><p>The highest possible value for the <code>Dimension</code> or <code>MonetaryAmount</code></p>
+</span>
 
     
         
@@ -2428,7 +2517,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P91_has_unit</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to the MeasurementUnit for this dimension</span>
+<span class="description"><p>Reference to the MeasurementUnit for this dimension</p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -2452,7 +2542,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -2490,7 +2581,8 @@ See: [Schema](place.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -2547,7 +2639,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -2567,7 +2660,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -2591,7 +2685,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P141i_was_assigned_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">The Measurement(s) that led to the assigning of this dimension</span>
+<span class="description"><p>The Measurement(s) that led to the assigning of this dimension</p>
+</span>
         
 
         
@@ -2603,7 +2698,8 @@ See: [Schema](place.html)</span>
             
 
     <h4>crm:E13_Attribute_Assignment</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items')" class="ref-link">Same definition as crm:E13_Attribute_Assignment</a>
+<span class="description"><p>An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items')" class="ref-link">Same definition as crm:E13_Attribute_Assignment</a>
         </div>
     </div>
             </div>
@@ -2633,7 +2729,8 @@ See: [Schema](place.html)</span>
             <div class="card-body pl-5">
 
     <h4>sci:O13i_is_triggered_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">Another event which caused this event to occur</span>
+<span class="description"><p>Another event which caused this event to occur</p>
+</span>
 
     
         
@@ -2667,8 +2764,9 @@ See: [Schema](place.html)</span>
             
 
     <h4>crm:E6_Event</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Event`
-See: [Schema](event.html)</span>
+<span class="description"><p>Reference to an <code>Event</code><br />
+See: <a href="event.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -2692,7 +2790,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -2730,7 +2829,8 @@ See: [Schema](event.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -2787,7 +2887,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -2807,7 +2908,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -2817,8 +2919,9 @@ See: [Schema](event.html)</span>
             
 
     <h4>crm:E7_Activity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Activity`
-See: [Schema](event.html)</span>
+<span class="description"><p>Reference to an <code>Activity</code><br />
+See: <a href="event.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -2842,7 +2945,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -2880,7 +2984,8 @@ See: [Schema](event.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -2937,7 +3042,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -2957,7 +3063,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -2990,7 +3097,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P14_carried_out_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Person or Group which carried out this activity</span>
+<span class="description"><p>A reference to a Person or Group which carried out this activity</p>
+</span>
 
     
         
@@ -3004,7 +3112,8 @@ See: [Schema](event.html)</span>
             
 
     <span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A Reference to a Person or Group</span>
+<span class="description"><p>A Reference to a Person or Group</p>
+</span>
 
     <div class="any-of-value" id="classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items_anyOf"><h2 class="handle">
   <label>Any of</label>
@@ -3024,8 +3133,9 @@ See: [Schema](event.html)</span>
             
 
     <h4>E21_Person</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Person`
-See: [Schema](person.html)</span>
+<span class="description"><p>Reference to a <code>Person</code><br />
+See: <a href="person.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -3049,7 +3159,8 @@ See: [Schema](person.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -3087,7 +3198,8 @@ See: [Schema](person.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -3144,7 +3256,8 @@ See: [Schema](person.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -3164,7 +3277,8 @@ See: [Schema](person.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -3174,8 +3288,9 @@ See: [Schema](person.html)</span>
             
 
     <h4>crm:E74_Group</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Group`
-See: [Schema](group.html)</span>
+<span class="description"><p>Reference to a <code>Group</code><br />
+See: <a href="group.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -3199,7 +3314,8 @@ See: [Schema](group.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -3237,7 +3353,8 @@ See: [Schema](group.html)</span>
             
 
     <h4>rdf:type</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span><a href="#type_allOf_i0" onclick="anchorLink('type_allOf_i0')" class="ref-link">Same definition as rdf:type</a>
+<span class="description"><p>The class of the entity</p>
+</span><a href="#type_allOf_i0" onclick="anchorLink('type_allOf_i0')" class="ref-link">Same definition as rdf:type</a>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_carried_out_by_items_anyOf_i1_type_allOf_i1" role="tabpanel">
             
@@ -3276,7 +3393,8 @@ See: [Schema](group.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -3296,7 +3414,8 @@ See: [Schema](group.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -3329,7 +3448,8 @@ See: [Schema](group.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P16_used_specific_object</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An object or set of things which was used to carry out this activity</span>
+<span class="description"><p>An object or set of things which was used to carry out this activity</p>
+</span>
 
     
         
@@ -3363,8 +3483,9 @@ See: [Schema](group.html)</span>
             
 
     <h4>crm:E22_Human-Made_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `HumanMadeObject`
-See: [Schema](object.html)</span>
+<span class="description"><p>Reference to a <code>HumanMadeObject</code><br />
+See: <a href="object.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -3388,7 +3509,8 @@ See: [Schema](object.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -3426,7 +3548,8 @@ See: [Schema](object.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -3483,7 +3606,8 @@ See: [Schema](object.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -3503,7 +3627,8 @@ See: [Schema](object.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -3513,8 +3638,9 @@ See: [Schema](object.html)</span>
             
 
     <h4>la:Set</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Set`
-See: [Schema](set.html)</span>
+<span class="description"><p>Reference to a <code>Set</code><br />
+See: <a href="set.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -3538,7 +3664,8 @@ See: [Schema](set.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -3576,7 +3703,8 @@ See: [Schema](set.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -3633,7 +3761,8 @@ See: [Schema](set.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -3653,7 +3782,8 @@ See: [Schema](set.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -3686,7 +3816,8 @@ See: [Schema](set.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P15_was_influenced_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An entity that influenced the activity in some way</span>
+<span class="description"><p>An entity that influenced the activity in some way</p>
+</span>
 
     
         
@@ -3700,8 +3831,9 @@ See: [Schema](set.html)</span>
             
 
     <h4>*</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to another primary entity
-See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent_items')" class="ref-link">Same definition as *</a>
+<span class="description"><p>Reference to another primary entity<br />
+See: <a href="https://linked.art/api/1.0/shared/reference/">API</a> | <a href="#">Model</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent_items')" class="ref-link">Same definition as *</a>
         </div>
     </div>
             </div>
@@ -3723,7 +3855,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span><a hr
             <div class="card-body pl-5">
 
     <h4>crm:P32_used_general_technique</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A general technique that was employed to carry out this activity</span>
+<span class="description"><p>A general technique that was employed to carry out this activity</p>
+</span>
 
     
         
@@ -3737,8 +3870,9 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span><a hr
             
 
     <h4>crm:E55_Type</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A concept or 'Type' in the taxonomic sense
-See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art/model/base/#types-and-classifications)</span><a href="#classified_as_items" onclick="anchorLink('classified_as_items')" class="ref-link">Same definition as crm:E55_Type</a>
+<span class="description"><p>A concept or 'Type' in the taxonomic sense<br />
+See: <a href="https://linked.art/api/1.0/shared/type/">API</a> | <a href="https://linked.art/model/base/#types-and-classifications">Model</a></p>
+</span><a href="#classified_as_items" onclick="anchorLink('classified_as_items')" class="ref-link">Same definition as crm:E55_Type</a>
         </div>
     </div>
             </div>
@@ -3760,7 +3894,8 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             <div class="card-body pl-5">
 
     <h4>crm:P10_falls_within</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Period that the current temporal entity occurs during</span>
+<span class="description"><p>A reference to a Period that the current temporal entity occurs during</p>
+</span>
 
     
         
@@ -3774,8 +3909,9 @@ See: [API](https://linked.art/api/1.0/shared/type/) | [Model](https://linked.art
             
 
     <h4>crm:E4_Period</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Period`
-See: [Schema](event.html)</span>
+<span class="description"><p>Reference to a <code>Period</code><br />
+See: <a href="event.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -3799,7 +3935,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -3837,7 +3974,8 @@ See: [Schema](event.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -3894,7 +4032,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -3914,7 +4053,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -3940,7 +4080,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>crm:P183i_starts_after_the_end_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</span>
+<span class="description"><p>A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</p>
+</span>
 
     
         
@@ -3979,22 +4120,25 @@ See: [Schema](event.html)</span>
             
 
     <h4>crm:E4_Period</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Period`
-See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during_items')" class="ref-link">Same definition as crm:E4_Period</a>
+<span class="description"><p>Reference to a <code>Period</code><br />
+See: <a href="event.html">Schema</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during_items')" class="ref-link">Same definition as crm:E4_Period</a>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_after_items_anyOf_i1" role="tabpanel">
             
 
     <h4>crm:E6_Event</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Event`
-See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0')" class="ref-link">Same definition as crm:E6_Event</a>
+<span class="description"><p>Reference to an <code>Event</code><br />
+See: <a href="event.html">Schema</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i0')" class="ref-link">Same definition as crm:E6_Event</a>
         </div><div class="tab-pane fade card-body "
              id="tab-pane_classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_after_items_anyOf_i2" role="tabpanel">
             
 
     <h4>crm:E7_Activity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Activity`
-See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1')" class="ref-link">Same definition as crm:E7_Activity</a>
+<span class="description"><p>Reference to an <code>Activity</code><br />
+See: <a href="event.html">Schema</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf_i1')" class="ref-link">Same definition as crm:E7_Activity</a>
         </div></div></div>
         
 
@@ -4023,7 +4167,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>crm:P183_ends_before_the_start_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</span>
+<span class="description"><p>A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</p>
+</span>
 
     
         
@@ -4079,7 +4224,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>*</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Attribute Assignments can assign any entity, structure or value</span>
+<span class="description"><p>Attribute Assignments can assign any entity, structure or value</p>
+</span>
         
 
         
@@ -4105,7 +4251,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>crm:P177_assigned_property_type</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The relationship from the attributed entity to the assigned entity, given as a string which resolves to a relationship in the context definition</span>
+<span class="description"><p>The relationship from the attributed entity to the assigned entity, given as a string which resolves to a relationship in the context definition</p>
+</span>
         
 
         
@@ -4150,7 +4297,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -4170,7 +4318,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -4196,7 +4345,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -4216,7 +4366,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -4254,7 +4405,8 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span>
 
     
         
@@ -4268,8 +4420,9 @@ See: [Schema](event.html)</span><a href="#classified_as_items_identified_by_item
             
 
     <h4>*</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to another primary entity
-See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
+<span class="description"><p>Reference to another primary entity<br />
+See: <a href="https://linked.art/api/1.0/shared/reference/">API</a> | <a href="#">Model</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -4293,7 +4446,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -4331,7 +4485,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -4391,7 +4546,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -4411,7 +4567,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -4423,7 +4580,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>Specific</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">List of concept entities</span>
+<span class="description"><p>List of concept entities</p>
+</span>
         
 
         
@@ -4435,7 +4593,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>crm:E55_Type, or subclass</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a Type or any subclass (Language, Material, Currency, MeasurementUnit)</span>
+<span class="description"><p>Reference to a Type or any subclass (Language, Material, Currency, MeasurementUnit)</p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -4459,7 +4618,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -4497,7 +4657,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -4557,7 +4718,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -4577,7 +4739,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -4610,7 +4773,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P138i_has_representation</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded link through a VisualItem to a Digital Object</span>
+<span class="description"><p>An embedded link through a VisualItem to a Digital Object</p>
+</span>
 
     
         
@@ -4624,7 +4788,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>crm:E36_Visual_Item</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An embedded Visual Item, such as the content of a digital image</span>
+<span class="description"><p>An embedded Visual Item, such as the content of a digital image</p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -4666,7 +4831,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -4723,7 +4889,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -4743,7 +4910,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -4763,7 +4931,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -4783,7 +4952,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -4803,7 +4973,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>la:digitally_shown_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A digital object that shows the current visual item</span>
+<span class="description"><p>A digital object that shows the current visual item</p>
+</span>
 
     
         
@@ -4817,7 +4988,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>dig:D1_Digital_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An embedded Digital Object, such as a home page reference</span>
+<span class="description"><p>An embedded Digital Object, such as a home page reference</p>
+</span>
 
     
         
@@ -4859,7 +5031,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -4916,7 +5089,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -4936,7 +5110,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -4956,7 +5131,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -4976,7 +5152,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -4996,7 +5173,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
             <div class="card-body pl-5">
 
     <h4>la:access_point</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A URL from which the digital object is able to be retrieved</span>
+<span class="description"><p>A URL from which the digital object is able to be retrieved</p>
+</span>
 
     
         
@@ -5011,7 +5189,8 @@ See: [API](https://linked.art/api/1.0/shared/reference/) | [Model]()</span>
 
     <h4>dig:D1_Digital_Object
 See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `DigitalObject`</span>
+<span class="description"><p>Reference to a <code>DigitalObject</code></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -5035,7 +5214,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -5073,7 +5253,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -5130,7 +5311,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -5150,7 +5332,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -5176,7 +5359,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>dc:format</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The media type of the content of the embedded text, e.g. text/plain</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_format" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_format')" class="ref-link">Same definition as format</a>
+<span class="description"><p>The media type of the content of the embedded text, e.g. text/plain</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_format" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_format')" class="ref-link">Same definition as format</a>
             </div>
         </div>
     </div>
@@ -5196,7 +5380,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>dcterms:conformsTo</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A standard or specification that this entity conforms to or embodies</span>
+<span class="description"><p>A standard or specification that this entity conforms to or embodies</p>
+</span>
 
     
         
@@ -5210,7 +5395,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             
 
     <h4>crm:E73_Information_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `InformationObject`</span>
+<span class="description"><p>Reference to an <code>InformationObject</code></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -5234,7 +5420,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -5272,7 +5459,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -5329,7 +5517,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -5349,7 +5538,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -5387,7 +5577,8 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             <div class="card-body pl-5">
 
     <h4>la:member_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more `Set` entities of which this entity is a member</span>
+<span class="description"><p>A reference to one or more <code>Set</code> entities of which this entity is a member</p>
+</span>
 
     
         
@@ -5401,8 +5592,9 @@ See: [Schema](digital.html)</h4><span class="badge badge-dark value-type">Type: 
             
 
     <h4>la:Set</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a `Set`
-See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object_items_anyOf_i1" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object_items_anyOf_i1')" class="ref-link">Same definition as la:Set</a>
+<span class="description"><p>Reference to a <code>Set</code><br />
+See: <a href="set.html">Schema</a></p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object_items_anyOf_i1" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object_items_anyOf_i1')" class="ref-link">Same definition as la:Set</a>
         </div>
     </div>
             </div>
@@ -5424,7 +5616,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P129i_is_subject_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">One or more human-readable web pages or other digital objects where the focus of the content is this entity</span>
+<span class="description"><p>One or more human-readable web pages or other digital objects where the focus of the content is this entity</p>
+</span>
 
     
         
@@ -5438,7 +5631,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             
 
     <h4>crm:E33_Linguistic_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An embedded Linguistic Object, such as the content of a web page</span>
+<span class="description"><p>An embedded Linguistic Object, such as the content of a web page</p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -5480,7 +5674,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -5537,7 +5732,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -5557,7 +5753,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -5577,7 +5774,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -5597,7 +5795,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -5617,7 +5816,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P72_has_language</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more `Language` entities in which the `content` of this text is written</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language')" class="ref-link">Same definition as language</a>
+<span class="description"><p>A reference to one or more <code>Language</code> entities in which the <code>content</code> of this text is written</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language')" class="ref-link">Same definition as language</a>
             </div>
         </div>
     </div>
@@ -5637,7 +5837,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>la:digitally_carried_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A digital object that carries the current linguistic object</span>
+<span class="description"><p>A digital object that carries the current linguistic object</p>
+</span>
 
     
         
@@ -5651,7 +5852,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             
 
     <h4>dig:D1_Digital_Object</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An embedded Digital Object, such as a home page reference</span><a href="#representation_items_digitally_shown_by_items" onclick="anchorLink('representation_items_digitally_shown_by_items')" class="ref-link">Same definition as dig:D1_Digital_Object</a>
+<span class="description"><p>An embedded Digital Object, such as a home page reference</p>
+</span><a href="#representation_items_digitally_shown_by_items" onclick="anchorLink('representation_items_digitally_shown_by_items')" class="ref-link">Same definition as dig:D1_Digital_Object</a>
         </div>
     </div>
             </div>
@@ -5679,7 +5881,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P140i_was_attributed_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">One or more AttributeAssignments that relate some other entity to this one</span>
+<span class="description"><p>One or more AttributeAssignments that relate some other entity to this one</p>
+</span>
 
     
         
@@ -5693,7 +5896,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             
 
     <h4>crm:E13_Attribute_Assignment</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items')" class="ref-link">Same definition as crm:E13_Attribute_Assignment</a>
+<span class="description"><p>An activity which involves the assignment of some value to some entity, often with an explicit relationship between value and entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items')" class="ref-link">Same definition as crm:E13_Attribute_Assignment</a>
         </div>
     </div>
             </div>
@@ -5715,7 +5919,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P94i_was_created_by</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">The creation of the intellectual/conceptual entity</span>
+<span class="description"><p>The creation of the intellectual/conceptual entity</p>
+</span>
 
     
         
@@ -5757,7 +5962,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -5814,7 +6020,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -5834,7 +6041,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P1_is_identified_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Name` or `Identifier` that identifies the entity</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
+<span class="description"><p>A <code>Name</code> or <code>Identifier</code> that identifies the entity</p>
+</span><a href="#classified_as_items_identified_by" onclick="anchorLink('classified_as_items_identified_by')" class="ref-link">Same definition as identified_by</a>
             </div>
         </div>
     </div>
@@ -5854,7 +6062,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P2_has_type</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Type` which classifies this entity beyond the class given in the `type` property</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
+<span class="description"><p>A <code>Type</code> which classifies this entity beyond the class given in the <code>type</code> property</p>
+</span><a href="#classified_as" onclick="anchorLink('classified_as')" class="ref-link">Same definition as classified_as</a>
             </div>
         </div>
     </div>
@@ -5874,7 +6083,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P67i_is_referred_to_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An embedded statement about this entity, or a reference to a text that refers to the entity</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
+<span class="description"><p>An embedded statement about this entity, or a reference to a text that refers to the entity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by')" class="ref-link">Same definition as referred_to_by</a>
             </div>
         </div>
     </div>
@@ -5894,7 +6104,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P7_took_place_at</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A `Place` at which this event occured</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_took_place_at" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_took_place_at')" class="ref-link">Same definition as took_place_at</a>
+<span class="description"><p>A <code>Place</code> at which this event occured</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_took_place_at" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_took_place_at')" class="ref-link">Same definition as took_place_at</a>
             </div>
         </div>
     </div>
@@ -5914,7 +6125,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P4_has_time-span</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">A `TimeSpan` which describes the date-time range during which this event occured</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_timespan" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_timespan')" class="ref-link">Same definition as timespan</a>
+<span class="description"><p>A <code>TimeSpan</code> which describes the date-time range during which this event occured</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_timespan" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_timespan')" class="ref-link">Same definition as timespan</a>
             </div>
         </div>
     </div>
@@ -5934,7 +6146,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>sci:O13i_is_triggered_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">Another event which caused this event to occur</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by')" class="ref-link">Same definition as caused_by</a>
+<span class="description"><p>Another event which caused this event to occur</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by')" class="ref-link">Same definition as caused_by</a>
             </div>
         </div>
     </div>
@@ -5954,7 +6167,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P14_carried_out_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Person or Group which carried out this activity</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_carried_out_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_carried_out_by')" class="ref-link">Same definition as carried_out_by</a>
+<span class="description"><p>A reference to a Person or Group which carried out this activity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_carried_out_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_carried_out_by')" class="ref-link">Same definition as carried_out_by</a>
             </div>
         </div>
     </div>
@@ -5974,7 +6188,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P16_used_specific_object</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An object or set of things which was used to carry out this activity</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object')" class="ref-link">Same definition as used_specific_object</a>
+<span class="description"><p>An object or set of things which was used to carry out this activity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_used_specific_object')" class="ref-link">Same definition as used_specific_object</a>
             </div>
         </div>
     </div>
@@ -5994,7 +6209,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P15_was_influenced_by</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">An entity that influenced the activity in some way</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_influenced_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_influenced_by')" class="ref-link">Same definition as influenced_by</a>
+<span class="description"><p>An entity that influenced the activity in some way</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_influenced_by" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_influenced_by')" class="ref-link">Same definition as influenced_by</a>
             </div>
         </div>
     </div>
@@ -6014,7 +6230,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P32_used_general_technique</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A general technique that was employed to carry out this activity</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_technique" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_technique')" class="ref-link">Same definition as technique</a>
+<span class="description"><p>A general technique that was employed to carry out this activity</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_technique" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_technique')" class="ref-link">Same definition as technique</a>
             </div>
         </div>
     </div>
@@ -6034,7 +6251,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P10_falls_within</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to a Period that the current temporal entity occurs during</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during')" class="ref-link">Same definition as during</a>
+<span class="description"><p>A reference to a Period that the current temporal entity occurs during</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_during')" class="ref-link">Same definition as during</a>
             </div>
         </div>
     </div>
@@ -6054,7 +6272,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P183i_starts_after_the_end_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_after" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_after')" class="ref-link">Same definition as after</a>
+<span class="description"><p>A Period, Event or Activity that the current Period, Event or Activity is after. (e.g. the referenced temporal entity is before the current one)</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_after" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_after')" class="ref-link">Same definition as after</a>
             </div>
         </div>
     </div>
@@ -6074,7 +6293,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P183_ends_before_the_start_of</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_before" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_before')" class="ref-link">Same definition as before</a>
+<span class="description"><p>A Period, Event or Activity that the current Period, Event or Activity is before. (e.g. the referenced temporal entity is after the current one)</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_before" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_before')" class="ref-link">Same definition as before</a>
             </div>
         </div>
     </div>
@@ -6094,7 +6314,8 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             <div class="card-body pl-5">
 
     <h4>crm:P9i_forms_part_of</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">An identified event or activity which this creation is part of</span>
+<span class="description"><p>An identified event or activity which this creation is part of</p>
+</span>
 
     <div class="any-of-value" id="classified_as_items_identified_by_items_anyOf_i1_assigned_by_items_caused_by_items_anyOf"><h2 class="handle">
   <label>Any of</label>
@@ -6114,8 +6335,9 @@ See: [Schema](set.html)</span><a href="#classified_as_items_identified_by_items_
             
 
     <h4>crm:E6_Event</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Event`
-See: [Schema](event.html)</span>
+<span class="description"><p>Reference to an <code>Event</code><br />
+See: <a href="event.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -6139,7 +6361,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -6177,7 +6400,8 @@ See: [Schema](event.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -6234,7 +6458,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -6254,7 +6479,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -6264,8 +6490,9 @@ See: [Schema](event.html)</span>
             
 
     <h4>crm:E7_Activity</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to an `Activity`
-See: [Schema](event.html)</span>
+<span class="description"><p>Reference to an <code>Activity</code><br />
+See: <a href="event.html">Schema</a></p>
+</span>
 
      <span class="badge badge-info no-additional">No Additional Properties</span>
         
@@ -6289,7 +6516,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>the subject uri</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The URI of the entity</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
+<span class="description"><p>The URI of the entity</p>
+</span><a href="#id" onclick="anchorLink('id')" class="ref-link">Same definition as id</a>
             </div>
         </div>
     </div>
@@ -6327,7 +6555,8 @@ See: [Schema](event.html)</span>
             
 
     <h4>General</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">The class of the entity</span>
+<span class="description"><p>The class of the entity</p>
+</span>
 
     
         
@@ -6384,7 +6613,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>rdfs:label</h4><span class="badge badge-dark value-type">Type: string</span><br/>
-<span class="description">A human readable name or label for the entity, intended for developers</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
+<span class="description"><p>A human readable name or label for the entity, intended for developers</p>
+</span><a href="#label" onclick="anchorLink('label')" class="ref-link">Same definition as _label</a>
             </div>
         </div>
     </div>
@@ -6404,7 +6634,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>la:equivalent</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">A reference to one or more other identities for this entity, such as in external vocabularies or systems</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
+<span class="description"><p>A reference to one or more other identities for this entity, such as in external vocabularies or systems</p>
+</span><a href="#classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent" onclick="anchorLink('classified_as_items_identified_by_items_anyOf_i0_referred_to_by_items_language_items_equivalent')" class="ref-link">Same definition as equivalent</a>
             </div>
         </div>
     </div>
@@ -6439,7 +6670,8 @@ See: [Schema](event.html)</span>
             <div class="card-body pl-5">
 
     <h4>skos:broader</h4><span class="badge badge-dark value-type">Type: array</span><br/>
-<span class="description">This concept is contained within one or more larger/broader concept entities</span>
+<span class="description"><p>This concept is contained within one or more larger/broader concept entities</p>
+</span>
         
 
         
@@ -6451,14 +6683,12 @@ See: [Schema](event.html)</span>
             
 
     <h4>crm:E55_Type, or subclass</h4><span class="badge badge-dark value-type">Type: object</span><br/>
-<span class="description">Reference to a Type or any subclass (Language, Material, Currency, MeasurementUnit)</span><a href="#equivalent_allOf_i1_items" onclick="anchorLink('equivalent_allOf_i1_items')" class="ref-link">Same definition as crm:E55_Type, or subclass</a>
+<span class="description"><p>Reference to a Type or any subclass (Language, Material, Currency, MeasurementUnit)</p>
+</span><a href="#equivalent_allOf_i1_items" onclick="anchorLink('equivalent_allOf_i1_items')" class="ref-link">Same definition as crm:E55_Type, or subclass</a>
         </div>
     </div>
             </div>
         </div>
     </div>
 </div>
-
-    <footer>
-        <p class="generated-by-footer">Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a> on 2024-12-17 at 15:54:06 -0500</p>
-    </footer>
+</div>

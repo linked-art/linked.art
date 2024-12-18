@@ -1,8 +1,18 @@
-body {
+#root {
   font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
   color: #333;
   font-weight: 300;
   padding: 40px;
+}
+
+.md-typeset h2 {
+    padding: 0px;
+    margin: 0px;
+    line-height: 1;
+}
+
+.card-header {
+    padding: 3px;
 }
 
 .btn.btn-link {
