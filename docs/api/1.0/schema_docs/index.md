@@ -6,18 +6,18 @@ up_label: "Linked Art API 1.0"
 
 ## Introduction
 
-Here you can find HTML documentation generated from the JSON schemas.
+Here you can find JSON schemas definitions of the API, and HTML documentation generated from them.
 
-* [Abstract Work](abstract/)
-* [Concept](concept/)
-* [Digital Object](digital/)
-* [Event/Activity](event/)
-* [Group](group/)
-* [Person](person/)
-* [Physical Object](object/)
-* [Place](place/)
-* [Provenance Activity](provenance/)
-* [Set](set/)
-* [Textual Work](text/)
-* [Visual Work](image/)
+* [Abstract Work](abstract/) | [schema](../schema/abstract.json)
+* [Concept](concept/)  | [schema](../schema/concept.json)
+* [Digital Object](digital/)  | [schema](../schema/digital.json)
+* [Event/Activity](event/)  | [schema](../schema/event.json)
+* [Group](group/)  | [schema](../schema/group.json)
+* [Person](person/)  | [schema](../schema/person.json)
+* [Physical Object](object/)  | [schema](../schema/object.json)
+* [Place](place/)  | [schema](../schema/place.json)
+* [Provenance Activity](provenance/)  | [schema](../schema/provenance.json)
+* [Set](set/)  | [schema](../schema/set.json)
+* [Textual Work](text/)  | [schema](../schema/text.json)
+* [Visual Work](image/)  | [schema](../schema/image.json)
 
