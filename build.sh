@@ -15,5 +15,5 @@ rm -rf .site/*
 mkdocs build --clean
 
 # Once more incrementally to catch new files
-# mkdocs build
+mkdocs build
 
