@@ -4,5 +4,5 @@
 /api/index.html /api/1.0/index.html
 /api/rels/ /api/rels/1/
 /api/rels/index.html /api/rels/1/index.html
-/example/:directory/:term /example/:directory/:term.json
 /example/:directory/:instance/:term /example/:directory/:instance/:term.json
+/example/:directory/:term /example/:directory/:term.json
