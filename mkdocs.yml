@@ -240,6 +240,7 @@ nav:
       - Protocol: api/1.0/protocol/index.md
   - Resources:
     - Software and tools: software/index.md
+      - Validators: software/validator/index.md
     - Cookbook:
       - Recipes: cookbook/index.md
       - Mappings:
