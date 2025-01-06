@@ -13,6 +13,13 @@ This is a page with references to software that lets you implement all of this.
 * [LUX](https://github.com/project-lux/)
 > Open source implementation of [LUX](https://lux.collections.yale.edu/), Yale's Linked Art based cross-collection discovery platform
 
+
+
+## Validators
+
+* [JSON Validator](validator/)
+> An online validation service using the JSON schemas
+
 ## Other Resources
 
 ### Data Model Visualisation
