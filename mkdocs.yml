@@ -239,7 +239,8 @@ nav:
       - JSON-LD: api/1.0/json-ld/index.md
       - Protocol: api/1.0/protocol/index.md
   - Resources:
-    - Software and tools: software/index.md
+    - Software:
+      - Code and Tools: software/index.md
       - Validators: software/validator/index.md
     - Cookbook:
       - Recipes: cookbook/index.md
