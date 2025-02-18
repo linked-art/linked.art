@@ -6,8 +6,12 @@ hide:
   - toc
 ---
 
-Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on [Linked Open Usable Data](/loud/) to describe cultural heritage, with a focus on artwork but including also archives and bibliographic material. We specify [APIs](/api/) that enable access to data in the model, and implement them in [Software](/software/) to provide valuable content to the world. It is approaching a first stable release and we welcome additional partners and collaborators.
+Linked Art is a [Community](/community/) working together to create a shared [Model](/model/) based on [Linked Open Usable Data](/loud/) to describe cultural heritage, with a focus on artwork but including also archives and bibliographic material. We specify [APIs](/api/) that enable access to data in the model, and implement them in [Software](/software/) to provide valuable content to the world.
 {:.home}
+
+## Version 1.0 Released!
+
+On February 19th, 2025 we released Version 1.0 of the model and API. Please see and share the [1.0 announcement](/about/1.0/).
 
 
 ## Where First?
