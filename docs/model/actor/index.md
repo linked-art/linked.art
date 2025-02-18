@@ -193,7 +193,7 @@ top.carried_out = active
 
 Other core life events are not carried out by the Person or Group, but are still potentially important to capture such as baptisms and burials. As marriages are not unique to the person, they should instead have their own record to capture both parties.
 
-Note that many such events take place in locations only identified by a civic or religious building, however activities take place at a Place, not at a building, which is a Human Made Object. See [documenation](../model/place/#buildings-and-immovable-objects) about "immovable" objects and places.
+Note that many such events take place in locations only identified by a civic or religious building, however activities take place at a Place, not at a building, which is a Human Made Object. See [documenation](/model/place/#buildings-and-immovable-objects) about "immovable" objects and places.
 
 __Example:__
 

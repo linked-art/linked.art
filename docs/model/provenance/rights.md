@@ -54,7 +54,7 @@ top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Purchase of Pai
 d1 = model.Group(label="Dealer 1")
 d2 = model.Group(label="Dealer 2")
 what = vocab.Painting(label="Painting")
-unit = model.MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+unit = model.MeasurementUnit(ident="http://qudt.org/3.0.0/vocab/unit/Percent", label="Percent")
 right = vocab.OwnershipRight(label="Total Right of Ownership")
 
 rxfer = model.RightAcquisition()
@@ -94,7 +94,7 @@ top = vocab.ProvenanceEntry(ident="auto int-per-segment", label="Trading Shares 
 d1 = model.Group(label="Dealer 1")
 d2 = model.Group(label="Dealer 2")
 what = vocab.Painting(label="Painting")
-unit = model.MeasurementUnit(ident="http://qudt.org/1.1/vocab/unit/Percent", label="Percent")
+unit = model.MeasurementUnit(ident="http://qudt.org/3.0.0/vocab/unit/Percent", label="Percent")
 
 rx1 = model.RightAcquisition()
 top.part = rx1

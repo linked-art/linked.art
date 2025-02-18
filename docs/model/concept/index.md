@@ -16,7 +16,7 @@ When it is useful or necessary to define a new concept, or to redefine an existi
 There are five core classes for concepts:
 
 * `Type` is the catch-all, general concept class. The following classes are sub-classes of it.
-* `Currency` is a financial currency. Instances of it are used as the value of the `currency` property for monetary amounts. This is typically only needed for detailed [provenance](/model/provenance/acquisitions/) information.
+* `Currency` is a financial currency. Instances of it are used as the value of the `currency` property for monetary amounts. This is typically only needed for detailed [provenance](/model/provenance/acquisition/) information.
 * `Language` is a language understood natively by humans, including via speech, writing or gesture. Instances of it are used as the value of the `language` property on Linguistic Objects.
 * `Material` is a physical material type, such as wood, gold or oil paint. Instances of it are used as the value of the `made_of` property on Human-Made Objects.
 * `MeasurementUnit` is a unit that clarifies how to understand the value of a dimension, such as seconds, meters or kilograms. Instances of it are used as the value of the `unit` property on Dimensions.

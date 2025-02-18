@@ -84,7 +84,7 @@ Implications:
 
 ### 6. Design for JSON-LD First
 
-The specifications are designed for JSON-LD as the primary serialization. This is comprised of publishing and maintaining a JSON-LD context document, and providing JSON-LD Frames. Further design principles for JSON-LD are [documented with the context](/api/1.0/jsonld/#context-design).
+The specifications are designed for JSON-LD as the primary serialization. This is comprised of publishing and maintaining a JSON-LD context document, and providing JSON-LD Frames. Further design principles for JSON-LD are [documented with the context](/api/1.0/json-ld/#context-design).
 
 The intent of adopting this pattern is to ensure that the representation of the Linked Data is as easy to use as possible without the need for a full RDF development suite.  Developers must be able to treat the representation as plain JSON, with a predictable structure.  This ease of understanding increases the likelihood of wide spread adoption.
 

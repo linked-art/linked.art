@@ -42,9 +42,11 @@ The model distinguishes between the concept of the exhibition and the activity t
 
 The concept is modeled as a `PropositionalObject`, and `classified_as` _aat:300417531_ to ensure that it's clearly tagged as an exhibition and separate from the activity. It can have all of basic patterns, such as names, identifiers, references, as well as rights and subjects.
 
+Note that this "abstract work" pattern can be used for other modeling scenarios as well, including performance art, theatre or other performing arts, the "work" notion from bibliographic modeling as described in the [document model](/model/document/). If the entity can be "about" something but is not directly a Linguistic or Visual work, then `PropositionalObject` is the most likely class.
+
 __Example:__
 
-The idea for the Manet and Modern Beauty exhibition is about Manet and Beauty.
+The idea (or abstract work) for the Manet and Modern Beauty exhibition is about Manet and Beauty.
 
 ```crom
 top = vocab.ExhibitionIdea(ident="exhidea/1", label="Idea for Manet and Modern Beauty")

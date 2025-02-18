@@ -116,7 +116,7 @@ There are six classifications that stand as categories when it is otherwise diff
 
 The URI for the Statement type is: [http://vocab.getty.edu/aat/300418049](http://vocab.getty.edu/aat/300418049)
 
-There are many types of [Statements](model/base/#statements-about-an-entity), and it is impossible to enumerate all of those different types in a way that could be implemented successfully and usably. Instead, the type of the statement (e.g. materials statement) is given a meta-type of "brief text" so that they can be recognized as the type of statement.
+There are many types of [Statements](/model/base/#statements-about-an-entity), and it is impossible to enumerate all of those different types in a way that could be implemented successfully and usably. Instead, the type of the statement (e.g. materials statement) is given a meta-type of "brief text" so that they can be recognized as the type of statement.
 
 ```crom
 top = model.HumanMadeObject(ident="nightwatch/44", label="Night Watch by Rembrandt")

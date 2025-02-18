@@ -12,7 +12,7 @@ The intended audience for the data model documents is people interested in under
 
 Given this audience and intended use, the documentation is divided up by the primary entities that make up object descriptions and information systems, such as the artwork itself and the visual or textual content that it shows, the people and organizations that participate in activities (sometimes called "constituents" or "agents" in information systems), places and integration points with digital content. The descriptions are then oriented around progressively more complex use cases for those areas, such that it is hopefully easy to find the easy patterns and possible to find the less common or more complex ones.
 
-There are always limitations to documentation, and not all use cases can be explicitly described.  This limitation currently includes the lack of search functionality across the documentation, but the [example index](/model/example_index) can serve as a useful browsing point for the terms in the models. Additional examples and walkthroughs will be documented as recipes in the [cookbook](/cookbook/). 
+There are always limitations to documentation, and not all use cases can be explicitly described. Additional examples and walkthroughs will be documented as recipes in the [cookbook](/cookbook/).
 
 ## Concrete Examples
 

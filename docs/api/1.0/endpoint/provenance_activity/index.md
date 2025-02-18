@@ -67,7 +67,7 @@ Each of the activities in the `part` property can have the properties in the tab
 | `_label`          | string        | Recommended | A human readable label for the provenance part, intended for developers |
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the provenance part and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the part and MUST follow the requirements for [Identifier](../../shared/identifier/) |
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the provenance part and MUST follow the requirements for [Type](../../shared/type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the part |
+| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../../shared/statement/) about the part |
 | `timespan`        | json object   | Recommended | A json object recording when the part occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
 | `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the part activity occured | 
 | `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the part activity occured |
@@ -83,7 +83,7 @@ Parts which are Acquisitions have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
-| `transferred_title_of`   | array | Required | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) of which the ownership is transferred |
+| `transferred_title_of`   | array | Required | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../physical_object/) of which the ownership is transferred |
 | `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred |
 | `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred |
 
@@ -106,7 +106,7 @@ Parts which are Transfers of Custody have the following additional properties.
 | Property Name     | Datatype       | Requirement | Description | 
 |-------------------|----------------|-------------|-------------|
 | `type`            | string         | Required    | The class for the part, which MUST be the value `"TransferOfCustody"` |
-| `transferred_custody_of`   | array | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) of which the custody is transferred |
+| `transferred_custody_of`   | array | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../physical_object/) of which the custody is transferred |
 | `transferred_custody_from` | array | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
 | `transferred_custody_to`   | array | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
 

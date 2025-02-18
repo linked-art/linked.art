@@ -22,21 +22,21 @@ The activity data structure has the following properties.
 | `type`            | string        | Required    | The class for the activity, the value for which MUST be taken from the table below |
 | `_label`          | string        | Recommended | Non-Semantic. A human readable label for the activity, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the activity available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the activity and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the activity and MUST follow the requirements for [Identifier](../../shared/identifier/)|
+| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the activity and MUST follow the requirements for [Name](../name/), or an identifier for the activity and MUST follow the requirements for [Identifier](../identifier/)|
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the activity and MUST follow the requirements for [Type](../type/) |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the activity |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the activity occured |
+| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Place](../../endpoint/place/) where the activity occured |
 | `timespan`        | json object   | Optional    | A json object which describes when the activity occured, and MUST follow the requirements for [timespans](../timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the activity occured |
-| `before`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this event occured |
-| `after`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused this event to occur |
+| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../reference) to a [Period](../../endpoint/event/) during which the activity occured |
+| `before`          | array         | Optional    | An array of json objects, each of which is a [reference](../reference) to a Period, Event or Activity before which this event occured |
+| `after`          | array         | Optional    | An array of json objects, each of which is a [reference](../reference) to a Period, Event or Activity after which this event occured |
+| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to an [Event](../../endpoint/event/) that caused this event to occur |
 | `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which carried out the activity. **NOT usable when the `type` is `"Birth"` or `"Death"`**|
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced or motivated the activity in some noticable fashion. **NOT usable when the `type` is `"Birth"` or `"Death"`** | 
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../reference/) to an entity that was instrumental in the carrying out of this activity. **NOT usable when the `type` is `"Birth"` or `"Death"`** |
-| `technique` | array | Optional | An array of json objects, each of which is a technique used in the activity and MUST follow the requirements for [Type](../../shared/type). **NOT usable when the `type` is `"Birth"` or `"Death"`** |
+| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to an entity that influenced or motivated the activity in some noticable fashion. **NOT usable when the `type` is `"Birth"` or `"Death"`** |
+| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../reference/) to an entity that was instrumental in the carrying out of this activity. **NOT usable when the `type` is `"Birth"` or `"Death"`** |
+| `technique` | array | Optional | An array of json objects, each of which is a technique used in the activity and MUST follow the requirements for [Type](../type). **NOT usable when the `type` is `"Birth"` or `"Death"`** |
 | `part` | array | Optional | An array of json objects, each of which is another instance of this same event type. **NOT usable when the `type` is `"Birth"` or `"Death"`** | 
-| `diminished` | json object | Optional | A json objects which is a [reference](../../shared/reference/) to another Physical Object that this object was removed from by this event. **Only usable when the `type` is `"PartRemoval"`**|
+| `diminished` | json object | Optional | A json objects which is a [reference](../reference/) to another Physical Object that this object was removed from by this event. **Only usable when the `type` is `"PartRemoval"`**|
 
 ### Activity Classes Available
 
@@ -81,7 +81,7 @@ Activity instances are typically found as the object of the following properties
 
 ## Example
 
-The [Mona Lisa](../../endpoint/physical_thing/):
+The [Mona Lisa](../../endpoint/physical_object/):
 
   * ... was produced by Leonardo da Vinci
   * ... between 1503 and 1506
