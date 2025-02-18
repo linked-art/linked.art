@@ -12,7 +12,7 @@ By adopting Linked Art, cultural institutions will enhance the discoverability a
 
 Dr Robert Sanderson, Senior Director for Digital Cultural Heritage at Yale University and co-chair of the Linked Art Editorial Board, describes the release of 1.0 as “a pivotal moment for the cultural heritage standards world. Where the International Image Interoperability Framework (IIIF) has revolutionized the way in which we engage with image-based digital content, Linked Art is poised to fundamentally shift how we work with the knowledge we manage about the objects depicted in those images. Our success at Yale in building LUX, a cross-collection discovery environment for our libraries, archives and museums, would not have been possible without the hard work of the Linked Art community over the past seven years.”
 
-<image src="https://images.collections.yale.edu/iiif/2/ycba:4f227f08-7842-46cc-b05a-e3c6a4614cc1/full/800,/0/default.jpg">
+<image src="https://images.collections.yale.edu/iiif/2/ycba:4f227f08-7842-46cc-b05a-e3c6a4614cc1/full/800,/0/default.jpg"><br/>
 <i><a href="https://lux.collections.yale.edu/view/object/047181f4-2fdf-43fd-abbe-f16d7f9edc10">Dort or Dordrecht: The Dort Packet-Boat from Rotterdam Beclamed</a>, by J. M. W. Turner, at the Yale Center for British Art</i>
 
 Linked Art 1.0 reflects the experience of dozens of organizations experimenting with describing their own collections, then building and deploying systems, such as Yale’s LUX and Getty’s Research Collections Viewer, which provide developer-friendly, interoperable and cross-domain solutions. “Our software engineers were quickly able to understand the requirements given the consistent and clearly described standard, even though they did not have a heritage background.” says Sanderson, of the development experience.
@@ -20,8 +20,8 @@ Linked Art 1.0 reflects the experience of dozens of organizations experimenting 
 > “Getty has adopted Linked Art as its standard data model and API across its archival and museum collections, empowering both the public and our technical and collections staff by providing a consistent way to understand how cultural objects move through space and time. We are also excited that Linked Art uses the Getty’s Art and Architecture Thesaurus (AAT) vocabulary as a core component to enable interoperability across organizations, helping to fulfil our mission and demonstrating the value of our investment in standards for more than twenty years.” says David Newbury, Senior Director for Public Technologies at the J. Paul Getty Trust.
 
 
-<image src="https://media.getty.edu/iiif/image/8094f61e-e458-42bd-90cf-a0ed0dcc90b9/full/,800/0/default.jpg">
-    <i><a href="https://www.getty.edu/art/collection/object/103QTZ">Jeanne (Spring)</a> by Édouard Manet, at the J. Paul Getty Museum</i>
+<image src="https://media.getty.edu/iiif/image/8094f61e-e458-42bd-90cf-a0ed0dcc90b9/full/,800/0/default.jpg"><br/>
+<i><a href="https://www.getty.edu/art/collection/object/103QTZ">Jeanne (Spring)</a> by Édouard Manet, at the J. Paul Getty Museum</i>
 
 Per Newbury, Linked Art provides both a standard model for describing cultural heritage knowledge, ensuring consistency of meaning, as well as a standard web application programming interface (API) which allows digital systems to interact with that knowledge in an intuitive way. This first stable release marks a significant step forward for the heritage sector in facilitating interoperability and knowledge sharing across institutions and around the world. Linked Art is ready to be widely adopted, using existing free and open source software or with the assistance of vendors ready to help. And Getty isn’t the only museum that has implemented it, the National Gallery of Art in Washington D.C. and the Rijksmuseum in Amsterdam are both deeply engaged.
 

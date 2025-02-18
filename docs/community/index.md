@@ -4,6 +4,12 @@ title: Linked Art Community
 
 Linked.Art is a community project in which all interested parties are welcome to participate, according to the [code of conduct](conduct/). 
 
+
+## Event: Webinar and Q&A
+
+Please join us for a discussion about Linked Art 1.0 on March 5th, 2025 at 8am (Los Angeles), 11am (New York), 4pm (London), 5pm (Amsterdam). There is no need to register. Please join the [zoom](https://yale.zoom.us/j/94797105587).
+
+
 ## Get Involved
 
 There are many ways to get involved:

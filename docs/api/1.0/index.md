@@ -4,11 +4,9 @@ title: Linked Art API 1.0
 
 ## Status of this Document
 
-**This version:** 0.9
+**This version:** 1.0.0
 
-**Latest Stable Version:** TBA
-
-Versions before 1.0 are considered to be **unstable**. This means that any changes may be made at any time, without concern for compatibility. Version 0.9 is reserved for implementation feedback, and is considered as a release candidate for 1.0. Version 1.0 is expected by the end of calendar year 2024 (delayed due to COVID and other related circumstances).
+**Latest Stable Version:** 1.0.0
 
 The Linked Art API is published and maintained by the [Editorial Board](../../community/index.md#editorial-board) under the [CC BY 4.0 license](http://creativecommons.org/licenses/by/4.0/).
 
