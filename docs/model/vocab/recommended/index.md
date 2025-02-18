@@ -142,7 +142,7 @@ See the [digital objects documentation](/model/digital/)
 
 ### Set Types
 
-See the [collection documentation](model/collection/)
+See the [collection documentation](/model/collection/)
 
 | Name                  | URI           | Description |
 |-----------------------|---------------|-------------|

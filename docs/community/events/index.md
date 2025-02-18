@@ -8,6 +8,10 @@ All interactions in the Linked Art community, in person or online, are covered b
 
 Below is a list of editorial in-person and outreach events organized to develop the Linked Art initiative.
 
+## 2025
+
+* [Linked Art 1.0 Q&A](/about/1.0/) online event. [Details here](/community/)
+
 ## 2024
 
 * [Linked Art Workshop and Outreach Event](https://www.vernetzt.museum/calendar/event/14-linked-art-workshop-mit-rob-sanderson/) at the University of Basel (November 18th, Basel, Switzerland)

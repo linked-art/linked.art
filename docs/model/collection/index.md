@@ -68,7 +68,7 @@ The information about any particular member of a set might not be available, how
 
 The description of prototype member is embedded within the set as the value of the `members_exemplified_by` property. 
 
-This is not the 'highlight' members of the set, such as the famous pieces in a collection of objects. For that, use the [Related Objects](/model/assertions/) pattern. Using this approach does not imply that *every* member of the set has all of the features of the prototypical member, however care should be taken to not include information that is not generally true.
+This is not the 'highlight' members of the set, such as the famous pieces in a collection of objects. For that, use the [Related Objects](/model/assertion/) pattern. Using this approach does not imply that *every* member of the set has all of the features of the prototypical member, however care should be taken to not include information that is not generally true.
 
 __Example:__
 
