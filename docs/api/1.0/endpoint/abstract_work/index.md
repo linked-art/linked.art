@@ -10,7 +10,7 @@ up_label: "Linked Art API 1.0 Endpoints"
 
 The Abstract Work API is a method of getting access to descriptions of abstract or conceptual works and especially when those works are instantiated by activities rather than physical or digital objects. Examples are the "idea" behind an exhibition, the general concept of a piece of performance art rather than the activity which enacts that idea, or the most general form of a work without specifically being composed of image or language. Abstract works are thus not frequently used but are necessary to connect instances of the work, such as a travelling exhibition or different performances of the same idea.
 
-For more information about the usage of Abstract Work, please see the [Document model](/model/abstract/) description.
+For more information about the usage of Abstract Work, please see the [Exhibition Concept](/model/exhibition/) description.
 
 
 ## Property Definitions
