@@ -90,7 +90,7 @@ Starting in January 2019, the Linked Art initiative is managed by an editorial b
 * Samantha Norling (Indianapolis Museum of Art at Newfields)
 * Kevin Page [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-1668-6540) (Oxford University)
 * Richard Palmer (Victoria and Albert Museum)
-* Julien A. Raemy [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-4711-5759) (Swiss Federal Archives)
+* Julien A. Raemy [![ORCID](https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png)](https://orcid.org/0000-0002-4711-5759) (University of Bern; Swiss Federal Archives)
 * Daniel Sissman (J. Paul Getty Trust)
 
 The make-up of the editorial board will change over time, however every effort will continue to be made to ensure diversity of representation in the organizations participating in the work. The factors to be represented include geographic location, type and size of institution, gender, and career path.
