@@ -43,7 +43,7 @@ title: Language Terms
 | Czech                    | aat:300388191 | cs   | Czech |
 | Danish                   | aat:300388204 | da   | Danish |
 | Divehi                   | aat:300388791 | dv   | Divehi; Dhivehi; Maldivian; |
-| Dutch                    | aat:300388301 | nl   | Dutch |
+| Dutch                    | aat:300388256 | nl   | Dutch |
 | Dzongkha                 | aat:300388260 | dz   | Dzongkha |
 | English                  | aat:300388277 | en   | English |
 | Esperanto                | aat:300388282 | eo   | Esperanto |
