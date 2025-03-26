@@ -2,7 +2,7 @@
   "@context": {
     "@version": 1.1,
     "crm": "http://www.cidoc-crm.org/cidoc-crm/",
-    "sci": "http://www.ics.forth.gr/isl/CRMsci/",
+    "sci": "http://www.cidoc-crm.org/extensions/crmsci/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dc": "http://purl.org/dc/elements/1.1/",
@@ -11,9 +11,9 @@
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "dig": "http://www.ics.forth.gr/isl/CRMdig/",
+    "dig": "http://www.cidoc-crm.org/extensions/crmdig/",
     "la": "https://linked.art/ns/terms/",
-    "archaeo": "http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/",
+    "archaeo": "http://www.cidoc-crm.org/extensions/crmarchaeo/",
     "id": "@id",
     "type": "@type",
     "CRMEntity": {
