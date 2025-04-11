@@ -35,6 +35,7 @@
 			"description": "Reference to another Linguistic Object or Visual Item of which this is part", 
 			"type": "array",
 			"items": {"$ref": "core.json#/$defs/LingObjOrVisualItemRef"}},
+		"conceptually_part_of": {"$ref": "core.json#/$defs/conceptually_part_ofProp"},
         "content": {"$ref": "core.json#/$defs/contentProp"}
 	},
 	"required": ["@context", "id", "type", "_label"],
