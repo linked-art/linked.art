@@ -55,7 +55,7 @@ nav:
       - Collections: model/collection/index.md
       - Provenance:
         - Object Provenance: model/provenance/index.md
-        - Acquisitions and Loans: model/provenance/acquisition.md
+        - Acquisitions: model/provenance/acquisition.md
         - Auctions: model/provenance/auctions.md
         - Changes of Custody: model/provenance/custody.md
         - Encounters with Objects: model/provenance/encounters.md
