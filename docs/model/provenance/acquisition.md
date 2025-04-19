@@ -1,5 +1,5 @@
 ---
-title: Object Acquisition and Loan
+title: Object Acquisition
 up_href: "/model/provenance/"
 up_label: "Provenance"
 ---
