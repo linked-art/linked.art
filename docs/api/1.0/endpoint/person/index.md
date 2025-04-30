@@ -127,7 +127,7 @@ act.timespan = ts
 act.took_place_at = p2
 top.carried_out = act
 
-top.residence = model.Place(label="Nieuwe Doelenstraat")
+top.residence = model.Place(ident="auto int-per-segment", label="Nieuwe Doelenstraat")
 top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011NK Amsterdam")
 top.equivalent = model.Person(ident="http://vocab.getty.edu/ulan/500011051", label="Rembrandt")
 
