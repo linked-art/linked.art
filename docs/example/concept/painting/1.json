@@ -1,6 +1,0 @@
-{
-  "@context": "https://linked.art/ns/v1/linked-art.json",
-  "id": "https://linked.art/example/concept/painting/1",
-  "type": "Type",
-  "_label": "Painting"
-}
