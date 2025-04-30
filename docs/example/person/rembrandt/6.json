@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/6",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "equivalent": [
+    {
+      "id": "http://vocab.getty.edu/ulan/500011051",
+      "type": "Person",
+      "_label": "Rembrandt"
+    }
+  ]
+}

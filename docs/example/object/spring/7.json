@@ -1,0 +1,11 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/7",
+  "type": "HumanMadeObject",
+  "_label": "Jeanne (Spring) by Manet",
+  "current_location": {
+    "id": "https://linked.art/example/place/W204",
+    "type": "Place",
+    "_label": "Gallery W204"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/12",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "contact_point": [
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300386983",
+          "type": "Type",
+          "_label": "Street Address"
+        }
+      ],
+      "content": "Jodenbreestraat 4, 1011 NK Amsterdam"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/ccp/1",
+  "type": "HumanMadeObject",
+  "_label": "Chaucer's Canterbury Pilgrims",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300041273",
+      "type": "Type",
+      "_label": "Print",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "_label": "Printing from Plate",
+    "used_specific_object": [
+      {
+        "id": "https://linked.art/example/object/ccp-plate",
+        "type": "HumanMadeObject",
+        "_label": "Plate for CCP"
+      }
+    ]
+  }
+}

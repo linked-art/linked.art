@@ -1,0 +1,35 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/wiley_move/1",
+  "type": "Activity",
+  "_label": "Movement of Wiley Painting",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "Move",
+      "moved": [
+        {
+          "id": "https://linked.art/example/object/yiadom-boakye",
+          "type": "HumanMadeObject",
+          "_label": "Portrait of Lynette Yiadom-Boakye"
+        }
+      ],
+      "moved_from": {
+        "id": "https://linked.art/example/place/ycba_gallery",
+        "type": "Place",
+        "_label": "YCBA Gallery"
+      },
+      "moved_to": {
+        "id": "https://linked.art/example/place/yuag_gallery",
+        "type": "Place",
+        "_label": "YUAG Gallery"
+      }
+    }
+  ]
+}

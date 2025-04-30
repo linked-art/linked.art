@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/activity/exha/40",
+  "type": "Activity",
+  "_label": "Manet and Modern Beauty (Getty)",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300054766",
+      "type": "Type",
+      "_label": "Exhibiting"
+    }
+  ]
+}

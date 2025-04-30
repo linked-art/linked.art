@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/wiley/1",
+  "type": "Person",
+  "_label": "Kehinde Wiley",
+  "classified_as": [
+    {
+      "id": "http://www.wikidata.org/entity/Q3007177",
+      "type": "Type",
+      "_label": "African-American",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300250435",
+          "type": "Type",
+          "_label": "Ethnicity"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/place/new_zealand/1",
+  "type": "Place",
+  "_label": "New Zealand",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300128207",
+      "type": "Type",
+      "_label": "Nation"
+    }
+  ],
+  "defined_by": "POLYGON((165.74 -33.55, -179.96 -33.55, -179.96 -47.8, 165.74 -47.8, 165.74 -33.55))"
+}

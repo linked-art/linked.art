@@ -1,0 +1,26 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/coffin_promise/40",
+  "type": "Activity",
+  "_label": "Promised Gift of Painting",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "Activity",
+      "_label": "Promise of Gift",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435599",
+          "type": "Type",
+          "_label": "Promise"
+        }
+      ]
+    }
+  ]
+}

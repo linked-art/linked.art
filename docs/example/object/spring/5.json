@@ -1,0 +1,33 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/5",
+  "type": "HumanMadeObject",
+  "_label": "Jeanne (Spring) by Manet",
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "A chic young woman in a day dress with floral accents holds a parasol against a background of exuberant foliage."
+    }
+  ],
+  "shows": [
+    {
+      "id": "https://linked.art/example/visual/spring",
+      "type": "VisualItem",
+      "_label": "Visual Content of Spring"
+    }
+  ]
+}

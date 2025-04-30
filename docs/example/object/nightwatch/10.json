@@ -1,0 +1,50 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/10",
+  "type": "HumanMadeObject",
+  "_label": "Night Watch by Rembrandt",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "_label": "brown",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300080438",
+          "type": "Type",
+          "_label": "Color"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300127490",
+          "type": "Type",
+          "_label": "Brown"
+        }
+      ],
+      "value": 11754015.0,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300266239",
+        "type": "MeasurementUnit",
+        "_label": "rgb"
+      },
+      "identified_by": [
+        {
+          "type": "Identifier",
+          "content": "#B35A1F"
+        }
+      ]
+    }
+  ]
+}

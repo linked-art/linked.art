@@ -1,0 +1,47 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/support",
+  "type": "HumanMadeObject",
+  "_label": "Support of Spring",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300014844",
+      "type": "Type",
+      "_label": "Support",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300241583",
+          "type": "Type",
+          "_label": "Part Type"
+        }
+      ]
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435429",
+          "type": "Type",
+          "_label": "Material Statement",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "Canvas"
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://linked.art/example/object/spring",
+      "type": "HumanMadeObject",
+      "_label": "Jeanne (Spring) by Manet"
+    }
+  ]
+}

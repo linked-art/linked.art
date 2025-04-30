@@ -1,0 +1,51 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/concept/1",
+  "type": "Type",
+  "_label": "History of France",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "History of France"
+    }
+  ],
+  "member_of": [
+    {
+      "type": "Set",
+      "_label": "Useful History Concepts"
+    }
+  ],
+  "broader": [
+    {
+      "type": "Type",
+      "_label": "History of Europe"
+    }
+  ],
+  "equivalent": [
+    {
+      "id": "http://id.loc.gov/authorities/subjects/sh85051256",
+      "type": "Type"
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "_label": "Concept Creation",
+    "influenced_by": [
+      {
+        "type": "Type",
+        "_label": "History"
+      },
+      {
+        "type": "Place",
+        "_label": "France"
+      }
+    ]
+  }
+}

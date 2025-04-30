@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/6",
+  "type": "HumanMadeObject",
+  "_label": "Jeanne (Spring) by Manet",
+  "current_owner": [
+    {
+      "id": "http://vocab.getty.edu/ulan/500115988",
+      "type": "Group",
+      "_label": "Getty Museum"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/run/1",
+  "type": "HumanMadeObject",
+  "_label": "RUN",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "part": [
+      {
+        "type": "Production",
+        "technique": [
+          {
+            "id": "http://vocab.getty.edu/aat/300054216",
+            "type": "Type",
+            "_label": "Painting"
+          }
+        ],
+        "carried_out_by": [
+          {
+            "id": "https://linked.art/example/person/barrow",
+            "type": "Person",
+            "_label": "Mark Barrow"
+          }
+        ]
+      },
+      {
+        "type": "Production",
+        "technique": [
+          {
+            "id": "http://vocab.getty.edu/aat/300053643",
+            "type": "Type",
+            "_label": "hand weaving"
+          }
+        ],
+        "carried_out_by": [
+          {
+            "id": "https://linked.art/example/person/parke",
+            "type": "Person",
+            "_label": "Sarah Parke"
+          }
+        ]
+      }
+    ]
+  }
+}

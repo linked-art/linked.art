@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/digital/spring/1",
+  "type": "DigitalObject",
+  "_label": "Jeanne (Spring) (Digital)",
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Jeanne (Spring)"
+    }
+  ],
+  "digitally_shows": [
+    {
+      "id": "https://linked.art/example/visual/spring",
+      "type": "VisualItem",
+      "_label": "Visual Content of Spring"
+    }
+  ]
+}

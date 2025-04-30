@@ -1,0 +1,29 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/coppa/1",
+  "type": "HumanMadeObject",
+  "_label": "Coppa Amatoria",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Coppa Amatoria"
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "carried_out_by": [
+      {
+        "id": "https://linked.art/example/group/unknown_italian",
+        "type": "Group",
+        "_label": "Unidentified Italian"
+      }
+    ]
+  }
+}

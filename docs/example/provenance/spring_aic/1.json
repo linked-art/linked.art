@@ -1,0 +1,46 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/spring_aic/1",
+  "type": "Activity",
+  "_label": "Loan of Spring to AIC",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "TransferOfCustody",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417645",
+          "type": "Type",
+          "_label": "Loan"
+        }
+      ],
+      "transferred_custody_of": [
+        {
+          "id": "https://linked.art/example/object/spring",
+          "type": "HumanMadeObject",
+          "_label": "Spring"
+        }
+      ],
+      "transferred_custody_from": [
+        {
+          "id": "https://linked.art/example/group/getty",
+          "type": "Group",
+          "_label": "Getty Museum"
+        }
+      ],
+      "transferred_custody_to": [
+        {
+          "id": "https://linked.art/example/group/aic",
+          "type": "Group",
+          "_label": "Art Institute of Chicago"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/harpers/1",
+  "type": "HumanMadeObject",
+  "_label": "Poster Item",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300041273",
+      "type": "Type",
+      "_label": "Print",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "shows": [
+    {
+      "id": "https://linked.art/example/visual/harpers",
+      "type": "VisualItem",
+      "_label": "Visual Content of Harpers"
+    }
+  ]
+}

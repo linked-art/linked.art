@@ -1,0 +1,65 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/payneheirs_getty/2",
+  "type": "Activity",
+  "_label": "Purchase of Spring",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "Acquisition",
+      "_label": "Acquisition of Painting",
+      "transferred_title_of": [
+        {
+          "id": "https://linked.art/example/object/spring",
+          "type": "HumanMadeObject",
+          "_label": "Spring"
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "https://linked.art/example/group/payne_heirs",
+          "type": "Group",
+          "_label": "Family of Oliver Payne"
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://linked.art/example/group/getty",
+          "type": "Group",
+          "_label": "J. Paul Getty Museum"
+        }
+      ]
+    },
+    {
+      "type": "TransferOfCustody",
+      "_label": "Custody by Department",
+      "transferred_custody_of": [
+        {
+          "id": "https://linked.art/example/object/spring",
+          "type": "HumanMadeObject",
+          "_label": "Spring"
+        }
+      ],
+      "transferred_custody_from": [
+        {
+          "id": "https://linked.art/example/group/payne_heirs",
+          "type": "Group",
+          "_label": "Family of Oliver Payne"
+        }
+      ],
+      "transferred_custody_to": [
+        {
+          "id": "https://linked.art/example/group/getty_ptgs",
+          "type": "Group",
+          "_label": "Paintings Department"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/exhab/1",
+  "type": "Activity",
+  "_label": "Manet and Modern Beauty",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300054773",
+      "type": "Type",
+      "_label": "Exhibiting in multiple locations"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Manet and Modern Beauty"
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "begin_of_the_begin": "2019-05-26T00:00:00Z",
+    "end_of_the_end": "2020-01-12T23:59:59Z"
+  },
+  "influenced_by": [
+    {
+      "id": "https://linked.art/example/concept/exhidea",
+      "type": "PropositionalObject",
+      "_label": "Idea for Manet and Modern Beauty"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/fixme/1",
+  "type": "Activity",
+  "_label": "Purchase of Sculpture with Commission",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "Payment",
+      "paid_amount": {
+        "type": "MonetaryAmount",
+        "value": 900,
+        "currency": {
+          "id": "http://vocab.getty.edu/aat/300411994",
+          "type": "Currency",
+          "_label": "US Dollars",
+          "notation": "USD"
+        }
+      },
+      "paid_from": [
+        {
+          "type": "Person",
+          "_label": "Buyer"
+        }
+      ],
+      "paid_to": [
+        {
+          "type": "Person",
+          "_label": "Seller"
+        }
+      ]
+    },
+    {
+      "type": "Payment",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300393199",
+          "type": "Type",
+          "_label": "Commission"
+        }
+      ],
+      "paid_amount": {
+        "type": "MonetaryAmount",
+        "value": 100,
+        "currency": {
+          "id": "http://vocab.getty.edu/aat/300411994",
+          "type": "Currency",
+          "_label": "US Dollars"
+        }
+      },
+      "paid_from": [
+        {
+          "type": "Person",
+          "_label": "Buyer"
+        }
+      ],
+      "paid_to": [
+        {
+          "type": "Group",
+          "_label": "Auction House",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300417515",
+              "type": "Type",
+              "_label": "Auction House (organization)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/18",
+  "type": "HumanMadeObject",
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300028705",
+          "type": "Type",
+          "_label": "Signature",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "signature and date: ‘Rembrandt f 1642’"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/pompeii-buildings/1",
+  "type": "HumanMadeObject",
+  "_label": "Buildings making up the city of Pompeii",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "City of Pompeii"
+    }
+  ],
+  "destroyed_by": {
+    "type": "Destruction",
+    "caused_by": [
+      {
+        "id": "https://linked.art/example/event/vesuvius",
+        "type": "Event"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/1",
+  "type": "Activity",
+  "timespan": {
+    "type": "TimeSpan",
+    "_label": "1 day, c. 1750",
+    "identified_by": [
+      {
+        "type": "Name",
+        "content": "1 day, during circa 1750"
+      }
+    ],
+    "referred_to_by": [
+      {
+        "type": "LinguisticObject",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300435416",
+            "type": "Type",
+            "_label": "Description",
+            "classified_as": [
+              {
+                "id": "http://vocab.getty.edu/aat/300418049",
+                "type": "Type",
+                "_label": "Brief Text"
+              }
+            ]
+          }
+        ],
+        "content": "About 1750, as estimated by C. U. Rata"
+      }
+    ],
+    "begin_of_the_begin": "1720-01-01T00:00:00Z",
+    "end_of_the_begin": "1751-01-01T00:00:00Z",
+    "begin_of_the_end": "1749-01-01T00:00:00Z",
+    "end_of_the_end": "1780-01-01T00:00:00Z",
+    "duration": {
+      "type": "Dimension",
+      "value": 1,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379242",
+        "type": "MeasurementUnit",
+        "_label": "days"
+      }
+    }
+  }
+}

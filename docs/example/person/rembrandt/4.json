@@ -1,0 +1,54 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/4",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Rembrandt Harmenzoon van Rijn",
+      "part": [
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404651",
+              "type": "Type",
+              "_label": "Given Name"
+            }
+          ],
+          "content": "Rembrandt"
+        },
+        {
+          "id": "https://linked.art/example/Name/Harmenzoon",
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404654",
+              "type": "Type",
+              "_label": "Middle Name"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404652",
+              "type": "Type",
+              "_label": "Family Name"
+            }
+          ],
+          "content": "van Rijn"
+        }
+      ]
+    }
+  ]
+}

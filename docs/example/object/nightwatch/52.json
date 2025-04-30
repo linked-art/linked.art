@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/52",
+  "type": "HumanMadeObject",
+  "_label": "Night Watch by Rembrandt",
+  "classified_as": [
+    {
+      "id": "https://linked.art/example/concept/painting",
+      "type": "Type",
+      "_label": "Local Copy of Painting",
+      "equivalent": [
+        {
+          "id": "http://vocab.getty.edu/aat/300033618",
+          "type": "Type",
+          "_label": "painting (visual art)"
+        }
+      ]
+    }
+  ]
+}

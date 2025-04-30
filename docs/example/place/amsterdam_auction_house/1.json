@@ -1,0 +1,19 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/place/amsterdam_auction_house/1",
+  "type": "Place",
+  "_label": "Christie's AMS",
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Christie's Amsterdam Location"
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://linked.art/example/place/amsterdam",
+      "type": "Place",
+      "_label": "Amsterdam"
+    }
+  ]
+}

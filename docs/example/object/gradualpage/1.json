@@ -1,0 +1,30 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/gradualpage/1",
+  "type": "HumanMadeObject",
+  "_label": "Page from a Gradual",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300194222",
+      "type": "Type",
+      "_label": "Page",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "removed_by": [
+    {
+      "type": "PartRemoval",
+      "diminished": {
+        "id": "https://linked.art/example/object/gradual",
+        "type": "HumanMadeObject",
+        "_label": "Gradual"
+      }
+    }
+  ]
+}

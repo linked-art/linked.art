@@ -1,0 +1,85 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/manet_proust/1",
+  "type": "Activity",
+  "_label": "Purchase of Spring by Proust",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Purchase of Spring by Proust from Manet"
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "begin_of_the_begin": "1881-01-01T00:00:00Z",
+    "end_of_the_end": "1883-12-31T23:59:59Z"
+  },
+  "part": [
+    {
+      "type": "Acquisition",
+      "_label": "Ownership of Spring to Proust",
+      "transferred_title_of": [
+        {
+          "id": "https://linked.art/example/object/spring",
+          "type": "HumanMadeObject",
+          "_label": "Spring"
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "https://linked.art/example/person/manet",
+          "type": "Person",
+          "_label": "Manet"
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://linked.art/example/person/proust",
+          "type": "Person",
+          "_label": "Proust"
+        }
+      ]
+    },
+    {
+      "type": "Payment",
+      "_label": "3000 Francs to Manet",
+      "paid_amount": {
+        "type": "MonetaryAmount",
+        "value": 3000,
+        "currency": {
+          "id": "http://vocab.getty.edu/aat/300412016",
+          "type": "Currency",
+          "_label": "French Francs"
+        }
+      },
+      "paid_from": [
+        {
+          "id": "https://linked.art/example/person/proust",
+          "type": "Person",
+          "_label": "Proust"
+        }
+      ],
+      "paid_to": [
+        {
+          "id": "https://linked.art/example/person/manet",
+          "type": "Person",
+          "_label": "Manet"
+        }
+      ]
+    }
+  ]
+}

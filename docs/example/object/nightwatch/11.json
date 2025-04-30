@@ -1,0 +1,32 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/11",
+  "type": "HumanMadeObject",
+  "_label": "Night Watch by Rembrandt",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300311843",
+      "type": "Type",
+      "_label": "Oblong",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300056273",
+          "type": "Type",
+          "_label": "Shape"
+        }
+      ]
+    }
+  ]
+}

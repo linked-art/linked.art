@@ -1,0 +1,27 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/text/koot_nightwatch/3",
+  "type": "LinguisticObject",
+  "_label": "Content of Koot's Night Watch",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300060417",
+      "type": "Type",
+      "_label": "Monograph",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "about": [
+    {
+      "id": "https://linked.art/example/object/nightwatch",
+      "type": "HumanMadeObject",
+      "_label": "The Night Watch"
+    }
+  ]
+}

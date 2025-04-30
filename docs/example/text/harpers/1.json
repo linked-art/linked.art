@@ -1,0 +1,14 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/text/harpers/1",
+  "type": "LinguisticObject",
+  "_label": "Textual component of Harpers",
+  "content": "Harper's. January contains Roden's corner. A Novel by Henry Seton Merriman [...]",
+  "part_of": [
+    {
+      "id": "https://linked.art/example/visual/harpers",
+      "type": "VisualItem",
+      "_label": "Visual Content of Harpers"
+    }
+  ]
+}

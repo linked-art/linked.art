@@ -1,0 +1,23 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/torosaurus/1",
+  "type": "HumanMadeObject",
+  "_label": "Torosaurus Gladius",
+  "encountered_by": [
+    {
+      "type": "Encounter",
+      "timespan": {
+        "type": "TimeSpan",
+        "begin_of_the_begin": "1891-01-01T00:00:00Z",
+        "end_of_the_end": "1891-12-31T23:59:59Z"
+      },
+      "carried_out_by": [
+        {
+          "id": "https://linked.art/example/person/hatcher",
+          "type": "Person",
+          "_label": "John Bell Hatcher"
+        }
+      ]
+    }
+  ]
+}

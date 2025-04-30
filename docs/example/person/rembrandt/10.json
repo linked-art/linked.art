@@ -1,0 +1,24 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/10",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Rembrandt van Rijn",
+      "assigned_by": [
+        {
+          "type": "AttributeAssignment",
+          "used_specific_object": [
+            {
+              "id": "https://linked.art/example/text/gardner-art",
+              "type": "LinguisticObject",
+              "_label": "Art through the Ages"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

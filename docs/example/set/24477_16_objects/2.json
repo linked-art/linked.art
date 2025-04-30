@@ -1,0 +1,32 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/24477_16_objects/2",
+  "type": "Set",
+  "_label": "Set of Objects for Lot 16",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300411307",
+      "type": "Type",
+      "_label": "Auction Lot"
+    }
+  ],
+  "dimension": [
+    {
+      "type": "MonetaryAmount",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417244",
+          "type": "Type",
+          "_label": "Estimated Price"
+        }
+      ],
+      "value": 25000000,
+      "currency": {
+        "id": "http://vocab.getty.edu/aat/300411994",
+        "type": "Currency",
+        "_label": "US Dollars",
+        "notation": "USD"
+      }
+    }
+  ]
+}

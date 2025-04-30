@@ -1,0 +1,26 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/rijks_objects/1",
+  "type": "Set",
+  "_label": "Collection of the Rijksmuseum",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300025976",
+      "type": "Type",
+      "_label": "Collection"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Collection of the Rijksmuseum"
+    }
+  ]
+}

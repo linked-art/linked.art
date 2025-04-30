@@ -1,0 +1,62 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/70",
+  "type": "HumanMadeObject",
+  "_label": "Night Watch",
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300456841",
+          "type": "Type"
+        }
+      ],
+      "content": "Rembrandt's The Night Watch is a dynamic 17th-century group portrait of an Amsterdam militia company ...",
+      "created_by": {
+        "type": "Creation",
+        "technique": [
+          {
+            "id": "http://vocab.getty.edu/aat/300456842",
+            "type": "Type"
+          }
+        ],
+        "timespan": {
+          "type": "TimeSpan",
+          "begin_of_the_begin": "2024-11-07T20:50:00Z",
+          "end_of_the_end": "2024-11-07T20:50:00Z"
+        }
+      },
+      "subject_to": [
+        {
+          "type": "Right",
+          "classified_as": [
+            {
+              "id": "https://creativecommons.org/licenses/by/4.0/",
+              "type": "Type",
+              "_label": "CC-BY"
+            }
+          ],
+          "identified_by": [
+            {
+              "type": "Name",
+              "content": "CC-BY 4.0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

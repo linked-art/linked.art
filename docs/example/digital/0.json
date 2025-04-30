@@ -1,0 +1,126 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/digital/0",
+  "type": "DigitalObject",
+  "_label": "Digital Image of Self-Portrait of Van Gogh",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300215302",
+      "type": "Type",
+      "_label": "Digital Image"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Self-Portrait Dedicated to Paul Gauguin"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404621",
+          "type": "Type",
+          "_label": "Owner-Assigned Number"
+        }
+      ],
+      "content": "47174896"
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055644",
+          "type": "Type",
+          "_label": "Height"
+        }
+      ],
+      "value": 2550,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300266190",
+        "type": "MeasurementUnit",
+        "_label": "pixels"
+      }
+    },
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055647",
+          "type": "Type",
+          "_label": "Width"
+        }
+      ],
+      "value": 2087,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300266190",
+        "type": "MeasurementUnit",
+        "_label": "pixels"
+      }
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843",
+      "type": "DigitalObject",
+      "_label": "IIIF Manifest"
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://linked.art/example/set/0",
+      "type": "Set",
+      "_label": "Images of Self-Portraits of Van Gogh"
+    }
+  ],
+  "access_point": [
+    {
+      "id": "https://ids.lib.harvard.edu/ids/iiif/47174896/full/full/0/default.jpg",
+      "type": "DigitalObject"
+    }
+  ],
+  "digitally_shows": [
+    {
+      "type": "VisualItem",
+      "_label": "Visual Content of Self-Portrait of Van Gogh"
+    }
+  ],
+  "format": "image/jpeg",
+  "digitally_available_via": [
+    {
+      "type": "DigitalService",
+      "_label": "IIIF Service",
+      "access_point": [
+        {
+          "id": "https://ids.lib.harvard.edu/ids/iiif/47174896",
+          "type": "DigitalObject"
+        }
+      ],
+      "conforms_to": [
+        {
+          "id": "https://iiif.io/api/image/2/context.json",
+          "type": "InformationObject"
+        }
+      ]
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "carried_out_by": [
+      {
+        "id": "https://linked.art/example/group/harvardartmuseums.org",
+        "type": "Group",
+        "_label": "Harvard Art Museums"
+      }
+    ],
+    "used_specific_object": [
+      {
+        "id": "https://harvardartmuseums.org/collections/object/299843",
+        "type": "HumanMadeObject",
+        "_label": "Self-Portrait of Van Gogh"
+      }
+    ]
+  }
+}

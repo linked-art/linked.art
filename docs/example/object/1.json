@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/1",
+  "type": "HumanMadeObject",
+  "_label": "Van Gogh Painting",
+  "current_location": {
+    "type": "Place",
+    "_label": "Rijksmuseum Gallery"
+  },
+  "produced_by": {
+    "type": "Production",
+    "_label": "Production of Painting",
+    "took_place_at": [
+      {
+        "type": "Place",
+        "_label": "Amsterdam"
+      }
+    ]
+  }
+}

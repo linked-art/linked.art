@@ -1,0 +1,52 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/rijks_paintings/1",
+  "type": "Set",
+  "_label": "Paintings of the Rijksmuseum",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300025976",
+      "type": "Type",
+      "_label": "Collection"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Paintings of the Rijksmuseum"
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://linked.art/example/set/rijks_objects",
+      "type": "Set",
+      "_label": "Collection of the Rijksmuseum"
+    }
+  ],
+  "used_for": [
+    {
+      "type": "Activity",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300054277",
+          "type": "Type",
+          "_label": "Curating"
+        }
+      ],
+      "carried_out_by": [
+        {
+          "id": "https://linked.art/example/group/rijks_paintings_dept",
+          "type": "Group",
+          "_label": "Paintings Department"
+        }
+      ]
+    }
+  ]
+}

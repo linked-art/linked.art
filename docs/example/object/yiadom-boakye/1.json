@@ -1,0 +1,82 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/yiadom-boakye/1",
+  "type": "HumanMadeObject",
+  "_label": "Portrait of Lynette Yiadom-Boakye",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "Accession Number"
+        }
+      ],
+      "content": "2021.25.1",
+      "assigned_by": [
+        {
+          "type": "AttributeAssignment",
+          "carried_out_by": [
+            {
+              "id": "https://linked.art/example/group/yuag",
+              "type": "Group",
+              "_label": "Yale University Art Gallery",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300312281",
+                  "type": "Type",
+                  "_label": "Museum"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "Accession Number"
+        }
+      ],
+      "content": "B2021.5",
+      "assigned_by": [
+        {
+          "type": "AttributeAssignment",
+          "carried_out_by": [
+            {
+              "id": "https://linked.art/example/group/ycba",
+              "type": "Group",
+              "_label": "Yale Center for British Art",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300312281",
+                  "type": "Type",
+                  "_label": "Museum"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

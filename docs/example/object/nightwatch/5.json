@@ -1,0 +1,29 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/5",
+  "type": "HumanMadeObject",
+  "_label": "Night Watch by Rembrandt",
+  "produced_by": {
+    "type": "Production",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "1642",
+      "begin_of_the_begin": "1642-01-01T00:00:00Z",
+      "end_of_the_end": "1642-12-31T23:59:59Z"
+    },
+    "took_place_at": [
+      {
+        "id": "https://linked.art/example/place/amsterdam",
+        "type": "Place",
+        "_label": "Amsterdam"
+      }
+    ],
+    "carried_out_by": [
+      {
+        "id": "https://linked.art/example/person/rembrandt",
+        "type": "Person",
+        "_label": "Rembrandt"
+      }
+    ]
+  }
+}

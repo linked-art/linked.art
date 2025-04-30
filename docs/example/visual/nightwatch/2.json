@@ -1,0 +1,25 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/visual/nightwatch/2",
+  "type": "VisualItem",
+  "_label": "Visual Content of Night Watch",
+  "subject_to": [
+    {
+      "type": "Right",
+      "_label": "Night Watch's Public Domain status",
+      "classified_as": [
+        {
+          "id": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "type": "Type",
+          "_label": "Public Domain"
+        }
+      ],
+      "identified_by": [
+        {
+          "type": "Name",
+          "content": "Public Domain"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/4",
+  "type": "HumanMadeObject",
+  "_label": "Mona Lisa",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "technique": [
+      {
+        "id": "http://vocab.getty.edu/aat/300054216",
+        "type": "Type",
+        "_label": "Painting Technique"
+      }
+    ],
+    "timespan": {
+      "type": "TimeSpan",
+      "identified_by": [
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404669",
+              "type": "Type",
+              "_label": "Display Title"
+            }
+          ],
+          "content": "1503-1506"
+        }
+      ],
+      "begin_of_the_begin": "1503-01-01T00:00:00Z",
+      "end_of_the_end": "1506-12-31T23:59:59Z"
+    },
+    "took_place_at": [
+      {
+        "id": "http://vocab.getty.edu/tgn/7000457",
+        "type": "Place",
+        "_label": "Florence, Italy"
+      }
+    ],
+    "carried_out_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500010879",
+        "type": "Person",
+        "_label": "Leonardo da Vinci"
+      }
+    ],
+    "influenced_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500341678",
+        "type": "Person",
+        "_label": "Lisa del Giocondo"
+      }
+    ]
+  }
+}

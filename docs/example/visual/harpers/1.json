@@ -1,0 +1,33 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/visual/harpers/1",
+  "type": "VisualItem",
+  "_label": "Visual Content of Harpers",
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "The text and image are primarily red and black"
+    }
+  ],
+  "represents": [
+    {
+      "id": "http://vocab.getty.edu/aat/300025943",
+      "type": "Type",
+      "_label": "Woman"
+    }
+  ]
+}

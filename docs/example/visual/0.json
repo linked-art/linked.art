@@ -1,0 +1,83 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/visual/0",
+  "type": "VisualItem",
+  "_label": "Appearance of Miro's The Farm",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300021495",
+      "type": "Type",
+      "_label": "Cubist",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300015646",
+          "type": "Type",
+          "_label": "Style"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Appearance of The Farm"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "A brilliant amalgamation of an intense, even primitive, realism with the formal vocabulary of cubism."
+    }
+  ],
+  "represents": [
+    {
+      "id": "http://vocab.getty.edu/tgn/7300934",
+      "type": "Place",
+      "_label": "Mont-roig del Camp"
+    }
+  ],
+  "represents_instance_of_type": [
+    {
+      "id": "http://vocab.getty.edu/aat/300132410",
+      "type": "Type",
+      "_label": "Tree"
+    }
+  ],
+  "shown_by": [
+    {
+      "id": "https://www.nga.gov/collection/art-object-69660",
+      "type": "HumanMadeObject",
+      "_label": "The Farm"
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "1921-1922",
+      "begin_of_the_begin": "1921-01-01T00:00:00Z",
+      "end_of_the_end": "1922-12-31T23:59:59Z"
+    },
+    "carried_out_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500014094",
+        "type": "Person",
+        "_label": "Miro"
+      }
+    ]
+  }
+}

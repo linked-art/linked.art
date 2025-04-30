@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/9",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300111175",
+      "type": "Type",
+      "_label": "Dutch",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300379842",
+          "type": "Type",
+          "_label": "Nationality"
+        }
+      ]
+    }
+  ]
+}

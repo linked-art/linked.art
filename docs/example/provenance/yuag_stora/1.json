@@ -1,0 +1,59 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/yuag_stora/1",
+  "type": "Activity",
+  "_label": "Exchange of Objects",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "Acquisition",
+      "_label": "Acquisition of Personnages",
+      "transferred_title_of": [
+        {
+          "id": "https://linked.art/example/object/masson_personnages",
+          "type": "HumanMadeObject",
+          "_label": "Personnages dans un parc"
+        },
+        {
+          "id": "https://linked.art/example/object/beckmann_nude",
+          "type": "HumanMadeObject",
+          "_label": "Nude Woman by Beckmann"
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "https://linked.art/example/group/feigen",
+          "type": "Group",
+          "_label": "Richard Feigen Gallery"
+        },
+        {
+          "id": "https://linked.art/example/group/yuag",
+          "type": "Group",
+          "_label": "Yale University Art Gallery"
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://linked.art/example/group/yuag",
+          "type": "Group",
+          "_label": "Yale University Art Gallery"
+        },
+        {
+          "id": "https://linked.art/example/group/feigen",
+          "type": "Group",
+          "_label": "Richard Feigen Gallery"
+        }
+      ]
+    },
+    {
+      "type": "Acquisition",
+      "_label": "Acquisition of Nude"
+    }
+  ]
+}

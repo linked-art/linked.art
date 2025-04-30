@@ -1,0 +1,28 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/7",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "carried_out": [
+    {
+      "type": "Activity",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300393177",
+          "type": "Type",
+          "_label": "Professional Activities"
+        },
+        {
+          "id": "http://vocab.getty.edu/aat/300025136",
+          "type": "Type",
+          "_label": "Painter"
+        }
+      ],
+      "timespan": {
+        "type": "TimeSpan",
+        "begin_of_the_begin": "1631-01-01T00:00:00Z",
+        "end_of_the_end": "1669-10-04T23:59:59Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/archive_asc/1",
+  "type": "Set",
+  "_label": "Alfred Stiegliz Correspondence",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300404022",
+      "type": "Type",
+      "_label": "Archival Grouping"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Alfred Stiegliz Correspondence"
+    }
+  ]
+}

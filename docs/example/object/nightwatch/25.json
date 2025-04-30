@@ -1,0 +1,79 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/25",
+  "type": "HumanMadeObject",
+  "_label": "The Night Watch",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "attributed_by": [
+    {
+      "type": "AttributeAssignment",
+      "_label": "Condition Assessment of Night Watch",
+      "identified_by": [
+        {
+          "type": "Name",
+          "content": "Thorough Condition Assessment"
+        }
+      ],
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300435416",
+              "type": "Type",
+              "_label": "Description",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ]
+            }
+          ],
+          "content": "Very fine cracks throughout the painted surface"
+        }
+      ],
+      "timespan": {
+        "type": "TimeSpan",
+        "begin_of_the_begin": "2019-05-01T00:00:00Z",
+        "end_of_the_end": "2019-09-30T23:59:59Z"
+      },
+      "carried_out_by": [
+        {
+          "id": "https://linked.art/example/group/rijksmuseum",
+          "type": "Group",
+          "_label": "Rijksmuseum"
+        }
+      ],
+      "part_of": [
+        {
+          "id": "https://linked.art/example/event/operation_nightwatch",
+          "type": "Activity",
+          "_label": "Operation Night Watch"
+        }
+      ],
+      "assigned_property": "classified_as",
+      "assigned": [
+        {
+          "id": "http://vocab.getty.edu/aat/300387447",
+          "type": "Type",
+          "_label": "Microcracks"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/letter/3",
+  "type": "HumanMadeObject",
+  "_label": "Obermeyer 1920",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Obermeyer, Bertha (1920)"
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://linked.art/example/set/archive_sfl",
+      "type": "Set",
+      "_label": "Stieglitz Family Letters"
+    }
+  ],
+  "held_or_supported_by": [
+    {
+      "id": "https://linked.art/example/object/box55",
+      "type": "HumanMadeObject",
+      "_label": "Archival Box 55"
+    }
+  ]
+}

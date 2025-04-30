@@ -1,0 +1,33 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/archive_sfl/1",
+  "type": "Set",
+  "_label": "Stieglitz Family Letters",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300404023",
+      "type": "Type",
+      "_label": "Archival SubGrouping"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Stieglitz Family Letters"
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://linked.art/example/set/archive_asc",
+      "type": "Set",
+      "_label": "Alfred Stiegliz Correspondence"
+    }
+  ]
+}

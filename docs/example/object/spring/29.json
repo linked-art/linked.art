@@ -1,0 +1,80 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/29",
+  "type": "HumanMadeObject",
+  "_label": "Spring",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055644",
+          "type": "Type",
+          "_label": "Height"
+        }
+      ],
+      "value": 74,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "_label": "centimeters"
+      },
+      "assigned_by": [
+        {
+          "type": "AttributeAssignment",
+          "_label": "Unframed Measuring",
+          "technique": [
+            {
+              "id": "https://linked.art/example/concept/measuring_unframed",
+              "type": "Type",
+              "_label": "Unframed Measuring"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055647",
+          "type": "Type",
+          "_label": "Width"
+        }
+      ],
+      "value": 51.5,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300379098",
+        "type": "MeasurementUnit",
+        "_label": "centimeters"
+      },
+      "assigned_by": [
+        {
+          "type": "AttributeAssignment",
+          "_label": "Unframed Measuring",
+          "technique": [
+            {
+              "id": "https://linked.art/example/concept/measuring_unframed",
+              "type": "Type",
+              "_label": "Unframed Measuring"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

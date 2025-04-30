@@ -1,0 +1,68 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/15",
+  "type": "HumanMadeObject",
+  "_label": "Jeanne (Spring) by Manet",
+  "changed_ownership_through": [
+    {
+      "type": "Acquisition",
+      "_label": "Ownership of Spring to Proust",
+      "timespan": {
+        "type": "TimeSpan",
+        "begin_of_the_begin": "1881-01-01T00:00:00Z",
+        "end_of_the_end": "1883-12-31T23:59:59Z"
+      },
+      "part_of": [
+        {
+          "id": "https://linked.art/example/event/manet_proust",
+          "type": "Activity",
+          "_label": "Full Provenance Activity"
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "https://linked.art/example/person/manet",
+          "type": "Person",
+          "_label": "Manet"
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://linked.art/example/person/proust",
+          "type": "Person",
+          "_label": "Proust"
+        }
+      ]
+    },
+    {
+      "type": "Acquisition",
+      "_label": "Ownership of Spring to Payne",
+      "timespan": {
+        "type": "TimeSpan",
+        "begin_of_the_begin": "1909-01-01T00:00:00Z",
+        "end_of_the_end": "1909-12-31T23:59:59Z"
+      },
+      "part_of": [
+        {
+          "id": "https://linked.art/example/event/durand_payne",
+          "type": "Activity",
+          "_label": "Full Provenance Activity"
+        }
+      ],
+      "transferred_title_from": [
+        {
+          "id": "https://linked.art/example/person/durand",
+          "type": "Person",
+          "_label": "Durand-Ruel Gallery"
+        }
+      ],
+      "transferred_title_to": [
+        {
+          "id": "https://linked.art/example/person/payne",
+          "type": "Person",
+          "_label": "Oliver Payne"
+        }
+      ]
+    }
+  ]
+}

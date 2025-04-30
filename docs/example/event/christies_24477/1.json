@@ -1,0 +1,60 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/christies_24477/1",
+  "type": "Activity",
+  "_label": "Impressionist Sale",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300054751",
+      "type": "Type",
+      "_label": "Auction Event"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Impressionist & Modern Evening Sale"
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "_label": "Nov 5, 2014",
+    "begin_of_the_begin": "2014-11-05T17:00:00Z",
+    "end_of_the_end": "2014-11-05T23:59:59Z"
+  },
+  "took_place_at": [
+    {
+      "id": "https://linked.art/example/place/christies_nyc",
+      "type": "Place",
+      "_label": "Christie's, New York",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300005234",
+          "type": "Type",
+          "_label": "Auction House (place)"
+        }
+      ]
+    }
+  ],
+  "carried_out_by": [
+    {
+      "id": "https://linked.art/example/group/christies",
+      "type": "Group",
+      "_label": "Christie's",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300417515",
+          "type": "Type",
+          "_label": "Auction House (organization)"
+        }
+      ]
+    }
+  ]
+}

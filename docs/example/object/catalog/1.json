@@ -1,0 +1,39 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/catalog/1",
+  "type": "HumanMadeObject",
+  "_label": "Copy of Exhibition Catalog",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300026096",
+      "type": "Type",
+      "_label": "Exhibition Catalog",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "shows": [
+    {
+      "id": "https://linked.art/example/visual/spring",
+      "type": "VisualItem",
+      "_label": "Visual Content of Spring"
+    },
+    {
+      "id": "https://linked.art/example/visual/houses",
+      "type": "VisualItem",
+      "_label": "Visual Content of Houses in Provence"
+    }
+  ],
+  "carries": [
+    {
+      "id": "https://linked.art/example/text/catalogtext",
+      "type": "LinguisticObject",
+      "_label": "Exhibition Catalog Text"
+    }
+  ]
+}

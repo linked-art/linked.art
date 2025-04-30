@@ -1,0 +1,59 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/2",
+  "type": "HumanMadeObject",
+  "_label": "Example Painting",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300133025",
+      "type": "Type",
+      "_label": "Artwork"
+    }
+  ],
+  "made_of": [
+    {
+      "id": "http://vocab.getty.edu/aat/300015045",
+      "type": "Material",
+      "_label": "watercolors"
+    }
+  ],
+  "part": [
+    {
+      "type": "HumanMadeObject",
+      "_label": "Canvas Support",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300014844",
+          "type": "Type",
+          "_label": "Support",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300241583",
+              "type": "Type",
+              "_label": "Part Type"
+            }
+          ]
+        }
+      ],
+      "made_of": [
+        {
+          "id": "http://vocab.getty.edu/aat/300014078",
+          "type": "Material",
+          "_label": "canvas"
+        }
+      ]
+    }
+  ]
+}

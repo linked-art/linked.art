@@ -1,0 +1,44 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/bol/1",
+  "type": "Person",
+  "_label": "Ferdinand Bol",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Ferdinand Bol"
+    }
+  ],
+  "attributed_by": [
+    {
+      "type": "AttributeAssignment",
+      "identified_by": [
+        {
+          "type": "Name",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300404669",
+              "type": "Type",
+              "_label": "Display Title"
+            }
+          ],
+          "content": "Student Of"
+        }
+      ],
+      "assigned": [
+        {
+          "id": "https://linked.art/example/person/rembrandt",
+          "type": "Person",
+          "_label": "Rembrandt"
+        }
+      ]
+    }
+  ]
+}

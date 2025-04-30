@@ -1,0 +1,39 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/unknown_faure/1",
+  "type": "Activity",
+  "_label": "Unknown Acquisition of Spring by Faure",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "after": [
+    {
+      "id": "https://linked.art/example/provenance/manet_proust",
+      "type": "Activity",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055863",
+          "type": "Type",
+          "_label": "Provenance Activity"
+        }
+      ]
+    }
+  ],
+  "before": [
+    {
+      "type": "Activity",
+      "_label": "foure_durand",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055863",
+          "type": "Type",
+          "_label": "Provenance Activity"
+        }
+      ]
+    }
+  ]
+}

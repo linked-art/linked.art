@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/place/paris/1",
+  "type": "Place",
+  "_label": "Paris",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300008389",
+      "type": "Type",
+      "_label": "City"
+    }
+  ]
+}

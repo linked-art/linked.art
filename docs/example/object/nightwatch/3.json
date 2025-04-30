@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/3",
+  "type": "HumanMadeObject",
+  "_label": "Night Watch by Rembrandt",
+  "equivalent": [
+    {
+      "id": "https://www.wikidata.org/entity/Q219831",
+      "type": "HumanMadeObject",
+      "_label": "Night Watch"
+    }
+  ]
+}

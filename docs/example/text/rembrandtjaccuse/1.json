@@ -1,0 +1,51 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/text/rembrandtjaccuse/1",
+  "type": "LinguisticObject",
+  "_label": "Rembrandt's J'accuse",
+  "created_by": {
+    "type": "Creation",
+    "timespan": {
+      "type": "TimeSpan",
+      "_label": "2008",
+      "begin_of_the_begin": "2008-01-01T00:00:00Z",
+      "end_of_the_end": "2008-12-31T23:59:59Z"
+    },
+    "part": [
+      {
+        "type": "Creation",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300025654",
+            "type": "Type",
+            "_label": "Director"
+          }
+        ],
+        "carried_out_by": [
+          {
+            "id": "https://linked.art/example/person/greenaway",
+            "type": "Person",
+            "_label": "Peter Greenaway"
+          }
+        ]
+      },
+      {
+        "type": "Creation",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300197742",
+            "type": "Type",
+            "_label": "Producer"
+          }
+        ],
+        "carried_out_by": [
+          {
+            "id": "https://linked.art/example/person/wolting",
+            "type": "Person",
+            "_label": "Femke Wolting"
+          }
+        ]
+      }
+    ]
+  }
+}

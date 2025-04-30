@@ -1,0 +1,40 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/text/koot_nightwatch_ch1/1",
+  "type": "LinguisticObject",
+  "_label": "Chapter 1 of Koot",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300311699",
+      "type": "Type",
+      "_label": "Chapter",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Introduction"
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://linked.art/example/text/koot_nightwatch",
+      "type": "LinguisticObject",
+      "_label": "Koot's Night Watch"
+    }
+  ]
+}

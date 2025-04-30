@@ -1,0 +1,103 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/nuveen_commission/1",
+  "type": "Activity",
+  "_label": "Commission of Painting",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    },
+    {
+      "id": "http://vocab.getty.edu/aat/300393199",
+      "type": "Type",
+      "_label": "Commissioning"
+    }
+  ],
+  "part": [
+    {
+      "type": "Activity",
+      "_label": "Obligation to Pay Artist",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435599",
+          "type": "Type",
+          "_label": "Promise"
+        }
+      ],
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300435416",
+              "type": "Type",
+              "_label": "Description",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300418049",
+                  "type": "Type",
+                  "_label": "Brief Text"
+                }
+              ]
+            }
+          ],
+          "content": "Promise to pay for a painting to be created by the artist"
+        }
+      ],
+      "carried_out_by": [
+        {
+          "id": "https://linked.art/example/person/franke",
+          "type": "Person",
+          "_label": "Richard Franke"
+        }
+      ],
+      "participant": [
+        {
+          "id": "https://linked.art/example/person/dine",
+          "type": "Person",
+          "_label": "Jim Dine"
+        }
+      ]
+    },
+    {
+      "type": "Activity",
+      "_label": "Obligation to Produce Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435599",
+          "type": "Type",
+          "_label": "Promise"
+        }
+      ],
+      "referred_to_by": [
+        {
+          "type": "LinguisticObject",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300435416",
+              "type": "Type",
+              "_label": "Description"
+            }
+          ],
+          "content": "Promise to produce a painting for the commissioning party"
+        }
+      ],
+      "carried_out_by": [
+        {
+          "id": "https://linked.art/example/person/dine",
+          "type": "Person",
+          "_label": "Jim Dine"
+        }
+      ],
+      "participant": [
+        {
+          "id": "https://linked.art/example/person/franke",
+          "type": "Person",
+          "_label": "Richard Franke"
+        }
+      ]
+    }
+  ]
+}

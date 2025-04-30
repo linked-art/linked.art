@@ -1,0 +1,32 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/spring/13",
+  "type": "HumanMadeObject",
+  "_label": "Jeanne (Spring) by Manet",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Jeanne (Spring)"
+    }
+  ],
+  "member_of": [
+    {
+      "id": "https://linked.art/example/set/exhset",
+      "type": "Set"
+    }
+  ]
+}

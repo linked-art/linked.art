@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/11",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "residence": [
+    {
+      "id": "https://linked.art/example/place/rembrandthuis",
+      "type": "Place",
+      "_label": "Rembrandt's House Place"
+    }
+  ]
+}

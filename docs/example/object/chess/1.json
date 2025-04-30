@@ -1,0 +1,37 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/chess/1",
+  "type": "HumanMadeObject",
+  "_label": "Miniature Chess",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Vessel with miniature chess set"
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404433",
+          "type": "Type",
+          "_label": "Count"
+        }
+      ],
+      "value": 36,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300241583",
+        "type": "MeasurementUnit",
+        "_label": "Components"
+      }
+    }
+  ]
+}

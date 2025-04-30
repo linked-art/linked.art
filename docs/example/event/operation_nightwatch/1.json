@@ -1,0 +1,63 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/operation_nightwatch/1",
+  "type": "Activity",
+  "_label": "Conservation Project",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300404519",
+      "type": "Type",
+      "_label": "Conservation Activity"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Operation Night Watch"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "Operation Night Watch is the biggest and most wide-ranging ever study of Rembrandt’s most famous painting."
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "begin_of_the_begin": "2019-01-01T00:00:00Z",
+    "end_of_the_end": "2023-12-31T23:59:59Z"
+  },
+  "carried_out_by": [
+    {
+      "id": "https://linked.art/example/group/rijksmuseum",
+      "type": "Group",
+      "_label": "Rijksmuseum"
+    },
+    {
+      "id": "https://linked.art/example/group/akzonobel",
+      "type": "Group",
+      "_label": "AkzoNobel"
+    }
+  ]
+}

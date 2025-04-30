@@ -1,0 +1,24 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/flw_house/1",
+  "type": "HumanMadeObject",
+  "_label": "Frank Lloyd Wright House",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300004792",
+      "type": "Type",
+      "_label": "Building"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Frank Lloyd Wright House"
+    }
+  ],
+  "current_location": {
+    "id": "https://linked.art/example/place/crystal_bridges",
+    "type": "Place",
+    "_label": "Crystal Bridges"
+  }
+}

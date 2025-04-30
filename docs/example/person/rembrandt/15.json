@@ -1,0 +1,31 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/person/rembrandt/15",
+  "type": "Person",
+  "_label": "Rembrandt",
+  "representation": [
+    {
+      "type": "VisualItem",
+      "digitally_shown_by": [
+        {
+          "type": "DigitalObject",
+          "_label": "Image of Rembrandt",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300215302",
+              "type": "Type",
+              "_label": "Digital Image"
+            }
+          ],
+          "format": "image/jpeg",
+          "access_point": [
+            {
+              "id": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg",
+              "type": "DigitalObject"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

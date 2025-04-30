@@ -1,0 +1,23 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/group/harwoodstudio/1",
+  "type": "Group",
+  "_label": "Studio of Francis Harwood",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300404275",
+      "type": "Type",
+      "_label": "Studio"
+    }
+  ],
+  "formed_by": {
+    "type": "Formation",
+    "influenced_by": [
+      {
+        "id": "http://vocab.getty.edu/ulan/500015886",
+        "type": "Person",
+        "_label": "Francis Harwood"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/okeeffe-gok/1",
+  "type": "HumanMadeObject",
+  "_label": "GOK 1918, GOKM",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300046300",
+      "type": "Type",
+      "_label": "Photograph",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300312355",
+          "type": "Type",
+          "_label": "Accession Number"
+        }
+      ],
+      "content": "2014.3.78"
+    }
+  ],
+  "shows": [
+    {
+      "id": "https://linked.art/example/visual/okeeffe",
+      "type": "VisualItem",
+      "_label": "Visual Content of GOK 1918"
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "_label": "Printing of Photograph",
+    "used_specific_object": [
+      {
+        "id": "https://linked.art/example/object/okeeffe-negative",
+        "type": "HumanMadeObject",
+        "_label": "Negative of GOK 1918"
+      }
+    ]
+  }
+}

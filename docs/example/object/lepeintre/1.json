@@ -1,0 +1,29 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/lepeintre/1",
+  "type": "HumanMadeObject",
+  "_label": "Le Peintre by Picasso",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "destroyed_by": {
+    "type": "Destruction",
+    "_label": "Destruction of Le Peintre",
+    "timespan": {
+      "type": "TimeSpan",
+      "begin_of_the_begin": "1998-09-02T22:20:00Z",
+      "end_of_the_end": "1998-09-02T22:40:00Z"
+    }
+  }
+}

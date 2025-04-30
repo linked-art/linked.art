@@ -1,0 +1,102 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/0",
+  "type": "Activity",
+  "_label": "Foster Auction of March 1820",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300054751",
+      "type": "Type",
+      "_label": "Auction Event"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Edward Foster Auction of March 1820"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404621",
+          "type": "Type",
+          "_label": "Owner-Assigned Number"
+        }
+      ],
+      "content": "Br1908"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "Besides paintings, this sale included a few lots with musical instruments and watches. The owners were a number of dealers who regularly consigned their wares to this auctioneer, despite the fact that the title page names \"A Gentleman\" as the owner."
+    }
+  ],
+  "timespan": {
+    "type": "TimeSpan",
+    "identified_by": [
+      {
+        "type": "Name",
+        "classified_as": [
+          {
+            "id": "http://vocab.getty.edu/aat/300404669",
+            "type": "Type",
+            "_label": "Display Title"
+          }
+        ],
+        "content": "1820 Mar 09"
+      }
+    ],
+    "begin_of_the_begin": "1820-03-09T00:00:00Z",
+    "end_of_the_end": "1820-03-09T23:59:59Z"
+  },
+  "took_place_at": [
+    {
+      "id": "http://vocab.getty.edu/tgn/7011781",
+      "type": "Place",
+      "_label": "London"
+    }
+  ],
+  "carried_out_by": [
+    {
+      "id": "http://vocab.getty.edu/ulan/500451765",
+      "type": "Group",
+      "_label": "Edward Foster & Son"
+    }
+  ],
+  "used_specific_object": [
+    {
+      "id": "http://example.org/sets/Br1908",
+      "type": "Set",
+      "_label": "All Auction Lots of Br1908"
+    }
+  ],
+  "equivalent": [
+    {
+      "id": "http://example.auction/past/foster/1820/03/1",
+      "type": "Activity"
+    }
+  ],
+  "subject_of": [
+    {
+      "id": "http://example.org/catalog/Br1908",
+      "type": "LinguisticObject",
+      "_label": "Sales Catalog of Br-1908"
+    }
+  ]
+}

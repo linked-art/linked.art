@@ -1,0 +1,73 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/digital/operation_nw/1",
+  "type": "DigitalObject",
+  "_label": "Operation Night Watch Publication",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300264578",
+      "type": "Type",
+      "_label": "Web Page"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Operation Night Watch"
+    }
+  ],
+  "dimension": [
+    {
+      "type": "Dimension",
+      "_label": "220 kb",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300265863",
+          "type": "Type",
+          "_label": "File Size"
+        }
+      ],
+      "value": 220,
+      "unit": {
+        "id": "http://vocab.getty.edu/aat/300265870",
+        "type": "MeasurementUnit",
+        "_label": "kilobytes"
+      }
+    }
+  ],
+  "access_point": [
+    {
+      "id": "https://www.rijksmuseum.nl/en/stories/operation-night-watch",
+      "type": "DigitalObject"
+    }
+  ],
+  "format": "text/html",
+  "conforms_to": [
+    {
+      "id": "http://w3.org/TR/html",
+      "type": "InformationObject"
+    }
+  ],
+  "created_by": {
+    "type": "Creation",
+    "timespan": {
+      "type": "TimeSpan",
+      "begin_of_the_begin": "2019-07-19T00:00:00Z",
+      "end_of_the_end": "2019-07-21T00:00:00Z"
+    },
+    "carried_out_by": [
+      {
+        "id": "https://linked.art/example/group/rijksmuseum",
+        "type": "Group",
+        "_label": "Rijksmuseum"
+      }
+    ]
+  },
+  "digitally_carries": [
+    {
+      "id": "https://linked.art/example/text/operation_nw_en",
+      "type": "LinguisticObject",
+      "_label": "Operation Night Watch in English"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/nightwatch/support",
+  "type": "HumanMadeObject",
+  "_label": "Support of Night Watch",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300014844",
+      "type": "Type",
+      "_label": "Support",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300241583",
+          "type": "Type",
+          "_label": "Part Type"
+        }
+      ]
+    }
+  ],
+  "made_of": [
+    {
+      "id": "http://vocab.getty.edu/aat/300014078",
+      "type": "Material",
+      "_label": "canvas"
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://linked.art/example/object/nightwatch",
+      "type": "HumanMadeObject",
+      "_label": "Night Watch by Rembrandt"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/yul_10801219/1",
+  "type": "HumanMadeObject",
+  "_label": "Yale's copy of Koot's Night Watch",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300028051",
+      "type": "Type",
+      "_label": "Book",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Rembrandt's Night Watch. A Fascinating Story"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435704",
+          "type": "Type",
+          "_label": "System-Assigned Number"
+        }
+      ],
+      "content": "mfhd:10801219"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435452",
+          "type": "Type",
+          "_label": "Physical Statement",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "92 p. with illus."
+    }
+  ],
+  "carries": [
+    {
+      "id": "https://linked.art/example/text/koot_nightwatch",
+      "type": "LinguisticObject",
+      "_label": "Content of Koot's Night Watch"
+    }
+  ]
+}

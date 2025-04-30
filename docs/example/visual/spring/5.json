@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/visual/spring/5",
+  "type": "VisualItem",
+  "_label": "Visual Content of Spring",
+  "represents_instance_of_type": [
+    {
+      "id": "http://vocab.getty.edu/aat/300046218",
+      "type": "Type",
+      "_label": "Parasol"
+    }
+  ]
+}

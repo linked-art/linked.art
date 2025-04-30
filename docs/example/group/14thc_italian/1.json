@@ -1,0 +1,39 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/group/14thc_italian/1",
+  "type": "Group",
+  "_label": "14th c italians",
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Unidentified 14th Century Italian"
+    }
+  ],
+  "members_exemplified_by": [
+    {
+      "type": "Person",
+      "born": {
+        "type": "Birth",
+        "timespan": {
+          "type": "TimeSpan",
+          "begin_of_the_begin": "1300-01-01T00:00:00Z",
+          "end_of_the_end": "1399-12-31T00:00:00Z"
+        },
+        "took_place_at": [
+          {
+            "id": "https://vocab.getty.edu/tgn/1000080",
+            "type": "Place",
+            "_label": "Italy"
+          }
+        ]
+      }
+    }
+  ]
+}

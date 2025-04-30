@@ -1,0 +1,46 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/mona_lisa_theft/1",
+  "type": "Activity",
+  "_label": "Theft of Mona Lisa",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "TransferOfCustody",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300055292",
+          "type": "Type",
+          "_label": "Theft"
+        }
+      ],
+      "transferred_custody_of": [
+        {
+          "id": "https://linked.art/example/object/monalisa",
+          "type": "HumanMadeObject",
+          "_label": "Mona Lisa"
+        }
+      ],
+      "transferred_custody_from": [
+        {
+          "id": "https://linked.art/example/group/louvre",
+          "type": "Group",
+          "_label": "Louvre"
+        }
+      ],
+      "transferred_custody_to": [
+        {
+          "id": "https://linked.art/example/person/peruggia",
+          "type": "Person",
+          "_label": "Vincenzo Peruggia"
+        }
+      ]
+    }
+  ]
+}

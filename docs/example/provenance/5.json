@@ -1,0 +1,61 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/provenance/5",
+  "type": "Activity",
+  "_label": "Copyright acquisition by PCA",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300055863",
+      "type": "Type",
+      "_label": "Provenance Activity"
+    }
+  ],
+  "part": [
+    {
+      "type": "RightAcquisition",
+      "establishes": [
+        {
+          "type": "Right",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300055598",
+              "type": "Type",
+              "_label": "Copyright"
+            }
+          ],
+          "possessed_by": [
+            {
+              "type": "Group",
+              "_label": "Paintings Copyright Association"
+            }
+          ],
+          "applies_to": [
+            {
+              "type": "HumanMadeObject",
+              "_label": "Painting",
+              "classified_as": [
+                {
+                  "id": "http://vocab.getty.edu/aat/300033618",
+                  "type": "Type",
+                  "_label": "Painting",
+                  "classified_as": [
+                    {
+                      "id": "http://vocab.getty.edu/aat/300435443",
+                      "type": "Type",
+                      "_label": "Type of Work"
+                    }
+                  ]
+                },
+                {
+                  "id": "http://vocab.getty.edu/aat/300133025",
+                  "type": "Type",
+                  "_label": "Artwork"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

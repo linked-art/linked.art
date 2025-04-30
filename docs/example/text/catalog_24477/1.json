@@ -1,0 +1,40 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/text/catalog_24477/1",
+  "type": "LinguisticObject",
+  "_label": "Auction Catalog",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300026068",
+      "type": "Type",
+      "_label": "Auction Catalog",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Impressionist & Modern Evening Sale Catalog"
+    }
+  ],
+  "about": [
+    {
+      "id": "https://linked.art/example/event/christies_24477",
+      "type": "Activity",
+      "_label": "Impressionist Sale"
+    }
+  ]
+}

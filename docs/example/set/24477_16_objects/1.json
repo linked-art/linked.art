@@ -1,0 +1,37 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/set/24477_16_objects/1",
+  "type": "Set",
+  "_label": "Set of Objects for Lot 16",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300411307",
+      "type": "Type",
+      "_label": "Auction Lot"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Lot 16: Le Printemps"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404628",
+          "type": "Type",
+          "_label": "Lot Number"
+        }
+      ],
+      "content": "16"
+    }
+  ]
+}

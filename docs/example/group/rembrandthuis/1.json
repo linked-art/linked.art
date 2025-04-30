@@ -1,0 +1,41 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/group/rembrandthuis/1",
+  "type": "Group",
+  "_label": "Rembrandt House Museum",
+  "contact_point": [
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300386983",
+          "type": "Type",
+          "_label": "Street Address"
+        }
+      ],
+      "content": "Jodenbreestraat 4, 1011 NK Amsterdam"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435688",
+          "type": "Type",
+          "_label": "Telephone Number"
+        }
+      ],
+      "content": "+31-20-520-0400"
+    },
+    {
+      "type": "Identifier",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435686",
+          "type": "Type",
+          "_label": "Email Address"
+        }
+      ],
+      "content": "museum@rembrandthuis.nl"
+    }
+  ]
+}

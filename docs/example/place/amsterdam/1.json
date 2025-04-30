@@ -1,0 +1,53 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/place/amsterdam/1",
+  "type": "Place",
+  "_label": "Amsterdam",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300008389",
+      "type": "Type",
+      "_label": "City"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "content": "Amsterdam"
+    }
+  ],
+  "referred_to_by": [
+    {
+      "type": "LinguisticObject",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435416",
+          "type": "Type",
+          "_label": "Description",
+          "classified_as": [
+            {
+              "id": "http://vocab.getty.edu/aat/300418049",
+              "type": "Type",
+              "_label": "Brief Text"
+            }
+          ]
+        }
+      ],
+      "content": "Amsterdam is a city in the Netherlands"
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://linked.art/example/place/netherlands",
+      "type": "Place",
+      "_label": "Netherlands",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300128207",
+          "type": "Type",
+          "_label": "Nation"
+        }
+      ]
+    }
+  ]
+}

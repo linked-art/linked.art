@@ -1,0 +1,39 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/event/christies_24477_16/1",
+  "type": "Activity",
+  "_label": "Auction of Lot 16",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300420001",
+      "type": "Type",
+      "_label": "Auction of Lot"
+    }
+  ],
+  "identified_by": [
+    {
+      "type": "Name",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300404670",
+          "type": "Type",
+          "_label": "Primary Name"
+        }
+      ],
+      "content": "Auction of Lot 16"
+    }
+  ],
+  "used_specific_object": [
+    {
+      "id": "https://linked.art/example/set/24477_16_objects",
+      "type": "Set",
+      "_label": "Lot 16"
+    }
+  ],
+  "part_of": [
+    {
+      "id": "https://linked.art/example/event/christies_24477",
+      "type": "Activity"
+    }
+  ]
+}

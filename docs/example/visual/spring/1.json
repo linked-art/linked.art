@@ -1,0 +1,13 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/visual/spring/1",
+  "type": "VisualItem",
+  "_label": "Visual Content of Spring",
+  "represents": [
+    {
+      "id": "https://linked.art/example/person/jeanne",
+      "type": "Person",
+      "_label": "Jeanne Demarsy"
+    }
+  ]
+}

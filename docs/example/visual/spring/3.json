@@ -1,0 +1,20 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/visual/spring/3",
+  "type": "VisualItem",
+  "_label": "Visual Content of Spring",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300021503",
+      "type": "Type",
+      "_label": "Impressionism",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300015646",
+          "type": "Type",
+          "_label": "Style"
+        }
+      ]
+    }
+  ]
+}

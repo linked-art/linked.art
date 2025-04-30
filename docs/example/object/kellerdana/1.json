@@ -1,0 +1,37 @@
+{
+  "@context": "https://linked.art/ns/v1/linked-art.json",
+  "id": "https://linked.art/example/object/kellerdana/1",
+  "type": "HumanMadeObject",
+  "_label": "Copy of Huntington Portrait",
+  "classified_as": [
+    {
+      "id": "http://vocab.getty.edu/aat/300033618",
+      "type": "Type",
+      "_label": "Painting",
+      "classified_as": [
+        {
+          "id": "http://vocab.getty.edu/aat/300435443",
+          "type": "Type",
+          "_label": "Type of Work"
+        }
+      ]
+    }
+  ],
+  "produced_by": {
+    "type": "Production",
+    "carried_out_by": [
+      {
+        "id": "https://linked.art/example/person/keller",
+        "type": "Person",
+        "_label": "Deane Keller"
+      }
+    ],
+    "influenced_by": [
+      {
+        "id": "https://linked.art/example/object/huntingtondana",
+        "type": "HumanMadeObject",
+        "_label": "Huntington Portrait of Dana"
+      }
+    ]
+  }
+}
