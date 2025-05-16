@@ -242,6 +242,8 @@ nav:
     - Software:
       - Code and Tools: software/index.md
       - Validators: software/validator/index.md
+    - References:
+      - Bibliography: bibliography/index.md
     - Cookbook:
       - Recipes: cookbook/index.md
       - Mappings:
