@@ -18,8 +18,6 @@ Delmas-Glass, E. (2021). Lessons learned from digital collaborations: Standards 
 
 Delmas-Glass, E., & Sanderson, R. (2020). Fostering a community of PHAROS scholars through the adoption of open standards. *Art Libraries Journal, 45*(1), 19–23. [https://doi.org/10.1017/alj.2019.32](https://doi.org/10.1017/alj.2019.32)
 
-Delmas-Glass, Emmanuelle. (2020). Linked Data and Open Data in Cultural Heritage - from panel "Linked Art: Networking Digital Collections and Scholarship." [https://doi.org/10.17613/3XTD-2A28](https://doi.org/10.17613/3XTD-2A28)
-
 Dressen, A. (2025). Cultural Heritage Data for Research – An Introduction. *Open Library of Humanities, 11*(1), Article 1. [https://doi.org/10.16995/olh.18710](https://doi.org/10.16995/olh.18710)
 
 Felsing, U., Fornaro, P., Frischknecht, M., & Raemy, J. A. (2023). Community and Interoperability at the Core of Sustaining Image Archives. *Digital Humanities in the Nordic and Baltic Countries Publications, 5*(1), 40–54. [https://doi.org/10.5617/dhnbpub.10649](https://doi.org/10.5617/dhnbpub.10649)
