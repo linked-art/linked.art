@@ -14,6 +14,8 @@ Alexiev, V. (2018). Museum Linked Open Data: Ontologies, Datasets, Projects. *Di
 
 Cornut, M., Raemy, J. A., & Spiess, F. (2023). Annotations as Knowledge Practices in Image Archives: Application of Linked Open Usable Data and Machine Learning. *Journal on Computing and Cultural Heritage, 16*(4), 1–19. [https://doi.org/10.1145/3625301](https://doi.org/10.1145/3625301)
 
+Daquino, M. (2024). Photo Archives and Linked Open Data. The Added Value. *Open Library of Humanities, 10*(2). [https://doi.org/10.16995/olh.15232](https://doi.org/10.16995/olh.15232)
+
 Delmas-Glass, E. (2021). Lessons learned from digital collaborations: Standards and descriptive practices. In L. A. Stuart, T. F. R. Clareson, & J. Ray (Eds.), *Economic Considerations for Libraries, Archives and Museums* (pp. 61–76). Routledge. ISBN 978-1-003-03710-1.
 
 Delmas-Glass, E., & Sanderson, R. (2020). Fostering a community of PHAROS scholars through the adoption of open standards. *Art Libraries Journal, 45*(1), 19–23. [https://doi.org/10.1017/alj.2019.32](https://doi.org/10.1017/alj.2019.32)
@@ -31,6 +33,8 @@ Hou, Y., & Kenderdine, S. (2024). Ontology-based knowledge representation for tr
 Kotis, K., Angelis, S., Chondrogianni, M., & Marini, E. (2021). Children's art museum collections as Linked Open Data. *International Journal of Metadata, Semantics and Ontologies*. [https://www.inderscienceonline.com/doi/10.1504/IJMSO.2021.117107](https://www.inderscienceonline.com/doi/10.1504/IJMSO.2021.117107)
 
 Manz, M. C., Raemy, J. A., & Fornaro, P. (2023). Recommended 3D Workflow for Digital Heritage Practices. *Archiving Conference, 20*, 23–28. [https://doi.org/10.2352/issn.2168-3204.2023.20.1.5](https://doi.org/10.2352/issn.2168-3204.2023.20.1.5)
+  
+McInerney, P., & O’Neill, B. (2024). The Art of Memory: Archiving Street Art using the CIDOC Conceptual Reference Model. *IFAC-PapersOnLine, 58*(3), 357–362. [https://doi.org/10.1016/j.ifacol.2024.07.177](https://doi.org/10.1016/j.ifacol.2024.07.177)
 
 Middle, S., Aristeidou, M., Barker, E., Pett, D., & Alcock, S. (2025). Discovering Object Stories: Linking Unstructured Museum Data Through Semantic Annotation. *Journal of Open Humanities Data, 11*(1). [https://doi.org/10.5334/johd.273](https://doi.org/10.5334/johd.273)
 
@@ -51,6 +55,8 @@ Raemy, J. A. (2024). *Linked Open Usable Data for Cultural Heritage: Perspective
 Raemy, J. A., Gray, T., Collinson, A., & Page, K. R. (2023). Enabling Participatory Data Perspectives for Image Archives through a Linked Art Workflow. In A. Baillot, W. Scholger, T. Tasovac, & G. Vogeler (Eds.), *Digital Humanities 2023 Book of Abstracts* (Vol. 2023, pp. 515–516). Alliance of Digital Humanities Organizations (ADHO). [https://doi.org/10.5451/unibas-ep95099](https://doi.org/10.5451/unibas-ep95099)
 
 Raemy, J. A., & Sanderson, R. (2024). Analysis of the Usability of Automatically Enriched Cultural Heritage Data. In F. Moral-Andrés, E. Merino-Gómez, & P. Reviriego (Eds.), *Decoding Cultural Heritage: A Critical Dissection and Taxonomy of Human Creativity through Digital Tools* (pp. 69–93). Springer Nature Switzerland. [https://doi.org/10.1007/978-3-031-57675-1_4](https://doi.org/10.1007/978-3-031-57675-1_4)
+
+Roberts, R., Abdul Jabbar, J., Dykes, N., Jones, H., Peszko, M., Madella, M., Orengo, H., & Petrie, C. (2024). *Historical maps as a multifaceted LOUD resource*. Apollo - University of Cambridge Repository. [https://doi.org/10.17863/CAM.108595](https://doi.org/10.17863/CAM.108595)
 
 Rother, L., Koss, M., & Mariani, F. (2022). Taking Care of History: Toward a Politics of Provenance Linked Open Data in Museums. *Perspectives on Data*. [https://www.artic.edu/digital-publications/37/perspectives-on-data/25/taking-care-of-history](https://www.artic.edu/digital-publications/37/perspectives-on-data/25/taking-care-of-history)
 
