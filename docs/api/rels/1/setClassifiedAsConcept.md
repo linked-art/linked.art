@@ -21,7 +21,18 @@ From the record for the concept of Auction Lots, the record for Lot 14 would be 
 
 
 ### SPARQL
-```
 
-```
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX la: <https://linked.art/ns/terms/> .
 
+SELECT DISTINCT ?set
+WHERE {
+  {
+    ?set crm:P2_has_type $current .
+  } UNION {
+    $current crm:P2i_is_type_of ?set .
+  }
+  ?set a la:Set .
+}
+```

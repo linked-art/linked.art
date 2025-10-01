@@ -12,20 +12,23 @@ See the related [model documentation](/model/object/production/#base-production-
 
 From the record for Rembrandt, the record for The Night Watch would be in the response
 
-
 ### Details
 
 * Class Given: Agent
 * Returns Class: HumanMadeObject
 * Relationship: producedBy
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?object WHERE {
-   BIND(<%current%> as ?who)
-   ?object a crm:E22_Human-Made_Object ; crm:P108i_was_produced_by ?prod .
-   ?prod crm:P9_consists_of*/crm:P14_carried_out_by ?who .
-  }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+SELECT DISTINCT ?object
+WHERE {
+  {
+    ?object crm:P108i_was_produced_by/(crm:P9_consists_of|crm:P9i_forms_part_of)*/crm:P14_carried_out_by $current .
+  } UNION {
+    $current crm:P14i_performed/(crm:P9_consists_of|crm:P9i_forms_part_of)*/crm:P108_has_produced ?object .
+  }
+}
+```

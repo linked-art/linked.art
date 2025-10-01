@@ -12,16 +12,24 @@ See the related [model documentation](/model/collection/#features)
 
 From the record for the set for the Archives of O. C. Marsh, the record for Series 1 within that archive would be in the response
 
-
 ### Details
 
 * Class Given: Set
 * Returns Class: Set
 * Relationship: memberOf
 
-
 ### SPARQL
-```
 
-```
+```sparql
+PREFIX la: <https://linked.art/ns/terms/> .
 
+SELECT DISTINCT ?set
+WHERE {
+  {
+    ?set la:member_of $current .
+  } UNION {
+    $current la:has_member ?set .
+  }
+  $current a la:Set .
+}
+```

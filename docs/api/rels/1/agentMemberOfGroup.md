@@ -12,19 +12,23 @@ See the related [model documentation](/model/actor/#organization-membership)
 
 From the record for Societe Anonyme, Katherine Dreier and Fortunato Depero would all be in the response
 
-
 ### Details
 
 * Class Given: Group
 * Returns Class: Agent
 * Relationship: memberOf
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?member WHERE {
-   BIND (<%current%> AS ?group)
-.   ?member crm:P107i_is_current_or_former_member_of ?group .
- }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+SELECT DISTINCT ?agent
+WHERE {
+  {
+    ?agent crm:P107i_is_current_or_former_member_of $current .
+  } UNION {
+    $current crm:P107_has_current_or_former_member ?agent .
+  }
+}
+```

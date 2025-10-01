@@ -12,16 +12,24 @@ See the related [model documentation](/model/collection/#features)
 
 From the record for the Getty's painting department's objects, the record for Spring would be in the response 
 
-
 ### Details
 
 * Class Given: Set
 * Returns Class: Entity
 * Relationship: memberOf
 
-
 ### SPARQL
-```
 
-```
+```sparql
+PREFIX la: <https://linked.art/ns/terms/> .
 
+SELECT DISTINCT ?entity
+WHERE {
+  {
+    ?entity la:member_of $current .
+  } UNION {
+    $current la:has_member ?entity .
+  }
+  $current a la:Set .
+}
+```

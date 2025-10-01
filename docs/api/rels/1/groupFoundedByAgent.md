@@ -12,20 +12,33 @@ See the related [model documentation](/model/actor/#birth-and-death-formation-an
 
 From the record for Katherine Dreier, Man Ray or Marcel Duchamps, the group Societe Anonyme would be in the response
 
-
 ### Details
 
 * Class Given: Agent
 * Returns Class: Group
 * Relationship: foundedBy
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?group WHERE {
-   BIND (<%current%>AS ?who)
-.   ?group crm:P95i_was_formed_by ?formation .
-   ?formation crm:P14_carried_out_by ?who .
- }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+SELECT DISTINCT ?group
+WHERE {
+  {
+    ?group crm:P95i_was_formed_by ?activity .
+  } UNION {
+    ?activity crm:P95_has_formed ?group .
+  }
+  {
+    ?activity ccrm:P14_carried_out_by $current .
+  } UNION {
+    $current crm:P14i_performed ?activity .
+  }
+  {
+    $current a crm:E22_Person .
+  } UNION {
+    $current a crm:E74_Group .
+  }
+}
+```

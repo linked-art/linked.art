@@ -12,25 +12,39 @@ See the related [model documentation](/model/object/ownership/#custody)
 
 From the record for the Paintings Department of the Rijksmuseum, the record for The Night Watch would be in the response.
 
-
 ### Details
 
 * Class Given: Agent
 * Returns Class: HumanMadeObject
 * Relationship: curatedBy
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?object WHERE {
-   BIND(<%current%> as ?who)
-   {
-     ?object a crm:E22_Human-Made_Object ; la:member_of ?coll .
-     ?coll crm:P16i_was_used_for ?curating .
-     ?curating crm:P14_carried_out_by ?who .
-    } UNION {
-     ?object crm:P50_has_current_keeper ?who .
-   }
+
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+SELECT DISTINCT ?object
+WHERE {
+  {
+    ?object la:member_of ?set .
+  } UNION {
+    ?set la:has_member ?object .
+  }
+  {
+    ?object crm:P50_has_current_keeper $current .
+  } UNION {
+    $current crm:P50i_is_current_keeper_of ?object .
+  }
+  {
+    ?set crm:P16i_was_used_for ?activity .
+  } UNION {
+    ?activity crm:P16_used_specific_object ?set .
+  }
+  {
+    ?activity crm:P14_was_carried_out_by $current .
+  } UNION {
+    $current crm:P14i_performed ?activity .
+  }
+  ?object a crm:E22_Human-Made_Object .
 }
 ```
-

@@ -12,19 +12,23 @@ See the related [model documentation](/model/base/#events-and-activities /model/
 
 From the record for the National Gallery of Art, the record for the Manet exhibition activity would be in the response
 
-
 ### Details
 
 * Class Given: Agent
 * Returns Class: Activity
 * Relationship: carriedOutBy
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?activity WHERE {
-  BIND (<%current%>AS ?group)
-.  ?activity crm:P14_carried_out_by ?group .
-   }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+SELECT DISTINCT ?activity
+WHERE {
+  {
+    ?activity crm:P14_carried_out_by $current .
+  } UNION {
+    $current crm:P14i_performed ?activity .
+  }
+}
+```

@@ -12,18 +12,25 @@ See the related [model documentation](/model/object/ownership/#location)
 
 From the record for Getty's gallery W204, the record for Jeanne (Spring) would be in the response
 
-
 ### Details
 
 * Class Given: Place
 * Returns Class: HumanMadeObject
 * Relationship: current
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?object WHERE {
-     BIND(<%current%> as ?where)
-     ?object a crm:E22_Human-Made_Object ;         crm:P55_has_current_location ?where }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+SELECT DISTINCT ?object
+WHERE {
+  {
+    ?object crm:P55_has_current_location $current .
+  } UNION {
+    $current crm:P55i_currently_holds ?object .
+  }
+  ?object a crm:E22_Human-Made_Object .
+  $current a crm:E53_Place .
+}
+```
