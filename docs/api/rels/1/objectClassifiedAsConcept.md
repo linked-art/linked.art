@@ -28,7 +28,7 @@ WHERE {
   {
     $current crm:P2_has_type ?concept .
   } UNION {
-    ?concept crm:P2_is_type_of $current .
+    ?concept crm:P2i_is_type_of $current .
   }
   $current a crm:E22_Human-Made_Object .
 }

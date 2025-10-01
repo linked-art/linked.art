@@ -28,7 +28,7 @@ WHERE {
   {
     ?agent crm:P2_has_type $current .
   } UNION {
-    $current crm:P2_is_type_of ?agent .
+    $current crm:P2i_is_type_of ?agent .
   }
 }
 ```
