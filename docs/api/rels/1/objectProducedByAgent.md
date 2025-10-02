@@ -21,7 +21,7 @@ From the record for Rembrandt, the record for The Night Watch would be in the re
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?object
 WHERE {

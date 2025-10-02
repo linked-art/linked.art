@@ -21,7 +21,7 @@ From the record for the National Gallery of Art, the record for the Manet exhibi
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?activity
 WHERE {

@@ -21,7 +21,7 @@ From the record for the Getty's painting department's objects, the record for Sp
 ### SPARQL
 
 ```sparql
-PREFIX la: <https://linked.art/ns/terms/> .
+PREFIX la: <https://linked.art/ns/terms/>
 
 SELECT DISTINCT ?entity
 WHERE {

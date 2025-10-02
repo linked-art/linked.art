@@ -21,8 +21,8 @@ From the record for the set of places in which Van Gogh lived, the record for Ar
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX la: <https://linked.art/ns/terms/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX la: <https://linked.art/ns/terms/>
 
 SELECT DISTINCT ?place
 WHERE {

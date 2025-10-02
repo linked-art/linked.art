@@ -21,7 +21,7 @@ From the record for the Burgess Shale, the record for Anomalocaris Canadiensis w
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?object
 WHERE {

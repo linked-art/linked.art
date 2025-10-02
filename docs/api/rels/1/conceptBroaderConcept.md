@@ -21,7 +21,7 @@ From the record for the concept for Visual Art object types, the record for Pain
 ### SPARQL
 
 ```sparql
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#> .
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?concept
 WHERE {

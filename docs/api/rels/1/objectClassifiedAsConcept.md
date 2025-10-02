@@ -21,7 +21,7 @@ From the record for Paintings, the record for Sunflowers would be in the respons
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?object
 WHERE {

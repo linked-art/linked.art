@@ -21,8 +21,8 @@ From the record for the set of Linked Art face to face meetings, the record for 
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX la: <https://linked.art/ns/terms/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX la: <https://linked.art/ns/terms/>
 
 SELECT DISTINCT ?temporal
 WHERE {

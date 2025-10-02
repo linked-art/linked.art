@@ -21,7 +21,7 @@ From the record for the Bubonic Plague, the record for a person who died of the 
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?person
 WHERE {

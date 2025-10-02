@@ -21,8 +21,8 @@ From the record for the AAT concept scheme (a Set), the record for AAT's Primary
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX la: <https://linked.art/ns/terms/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX la: <https://linked.art/ns/terms/>
 
 SELECT DISTINCT ?concept
 WHERE {

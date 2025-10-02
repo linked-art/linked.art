@@ -21,8 +21,8 @@ From the record for Impressionism, the record for the work of Van Gogh's "Irises
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX la: <https://linked.art/ns/terms/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX la: <https://linked.art/ns/terms/>
 
 SELECT DISTINCT ?work
 WHERE {

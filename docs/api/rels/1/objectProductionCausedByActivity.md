@@ -21,8 +21,8 @@ From the record for a commission activity, the record for the object that was pr
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?object
 WHERE {

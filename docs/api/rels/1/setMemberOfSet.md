@@ -21,7 +21,7 @@ From the record for the set for the Archives of O. C. Marsh, the record for Seri
 ### SPARQL
 
 ```sparql
-PREFIX la: <https://linked.art/ns/terms/> .
+PREFIX la: <https://linked.art/ns/terms/>
 
 SELECT DISTINCT ?set
 WHERE {

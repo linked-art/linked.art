@@ -21,7 +21,7 @@ From the record for The Lord of the Rings, the record for the concept of the His
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?concept
 WHERE {

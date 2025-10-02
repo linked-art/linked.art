@@ -21,7 +21,7 @@ From the record for Arles France, the record for Vincent Van Gogh would be in th
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?person
 WHERE {

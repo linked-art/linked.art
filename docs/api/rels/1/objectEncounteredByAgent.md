@@ -21,7 +21,7 @@ From the record for O.C. Marsh, the record for the Torosaurus holotype would be 
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?object
 WHERE {

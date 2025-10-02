@@ -21,7 +21,7 @@ From the record for Los Altos California, the record for Apple Computers would b
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?group
 WHERE {

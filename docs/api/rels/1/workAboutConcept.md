@@ -21,7 +21,7 @@ From the record for the concept of Democracy, the record for Diamond's work "In 
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?work
 WHERE {

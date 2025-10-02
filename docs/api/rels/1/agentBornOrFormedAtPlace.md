@@ -21,7 +21,7 @@ From the record for Harlem, New York, the record for Ayize Jama-Everett would be
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?agent
 WHERE {

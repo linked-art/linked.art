@@ -21,8 +21,8 @@ From the record for Albert Bierstadt, the prints of his works (which were not ne
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?object
 WHERE {

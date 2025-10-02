@@ -21,7 +21,7 @@ From the record for Canvas, the record for The Night Watch would be in the respo
 ### SPARQL
 
 ```
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?object
 WHERE {

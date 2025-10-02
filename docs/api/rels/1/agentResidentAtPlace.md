@@ -21,7 +21,7 @@ From the record for Brooklyn, New York the record for E.V. Day would be in the r
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?agent
 WHERE {

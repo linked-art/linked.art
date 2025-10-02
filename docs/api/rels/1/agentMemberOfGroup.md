@@ -21,7 +21,7 @@ From the record for Societe Anonyme, Katherine Dreier and Fortunato Depero would
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?agent
 WHERE {

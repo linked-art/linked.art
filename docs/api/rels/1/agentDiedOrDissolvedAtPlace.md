@@ -21,7 +21,7 @@ From the record for Harlem, New York, the record for Howard Johnson-1941-2021 wo
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?agent
 WHERE {

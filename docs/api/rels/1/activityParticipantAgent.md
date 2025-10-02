@@ -21,7 +21,7 @@ From the record for Tristan Tzara, the record for Cabaret Voltaire would be in t
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?activity
 WHERE {

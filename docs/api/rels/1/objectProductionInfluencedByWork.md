@@ -22,8 +22,8 @@ See the related [model documentation](/model/object/production/#inspirations-stu
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?object
 WHERE {

@@ -21,7 +21,7 @@ From the record for the concept of the Dutch nationality, the record for Rembran
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?agent
 WHERE {

@@ -22,7 +22,7 @@ From the record for Leiden, the record for Rembrandt would be in the response
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?person
 WHERE {

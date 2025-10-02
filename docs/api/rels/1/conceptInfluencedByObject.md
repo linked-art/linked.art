@@ -23,7 +23,7 @@ From the record for the Night Watch, the concept of the Reception of the Night W
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?concept
 WHERE {

@@ -21,7 +21,7 @@ From the record for the 15th Century (a Period), the record for the History of F
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?concept
 WHERE {

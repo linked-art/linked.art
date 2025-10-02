@@ -21,7 +21,7 @@ From the record for the concept of Cities, the record for Amsterdam would be in 
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?place
 WHERE {

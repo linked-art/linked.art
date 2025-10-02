@@ -21,7 +21,7 @@ From the record for the set of objects shown in an exhibition, the record for th
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?activity
 WHERE {

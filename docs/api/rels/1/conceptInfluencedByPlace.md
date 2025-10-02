@@ -21,7 +21,7 @@ From the record for the Netherlands, the record for Dutch Golden Age Paintings w
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?concept
 WHERE {

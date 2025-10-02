@@ -22,7 +22,7 @@ From the record for Paris, the records for the image carried by a painting of No
 ### SPARQL
 
 ```sparql
-PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
 SELECT DISTINCT ?work
 WHERE {

@@ -21,7 +21,7 @@ From the record for a fire that damaged a statue, the record for the conservatio
 ### SPARQL
 
 ```sparql
-PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/> .
+PREFIX sci: <http://www.ics.forth.gr/isl/CRMsci/>
 
 SELECT DISTINCT ?activity
 WHERE {
