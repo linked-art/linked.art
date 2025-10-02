@@ -38,7 +38,7 @@ WHERE {
     $current crm:P15i_influenced ?activity .
   }
   {
-    $current a crm:E22_Person .
+    $current a crm:E21_Person .
   } UNION {
     $current a crm:E76_Group .
   }

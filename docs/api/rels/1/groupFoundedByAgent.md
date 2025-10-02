@@ -36,7 +36,7 @@ WHERE {
     $current crm:P14i_performed ?activity .
   }
   {
-    $current a crm:E22_Person .
+    $current a crm:E21_Person .
   } UNION {
     $current a crm:E74_Group .
   }

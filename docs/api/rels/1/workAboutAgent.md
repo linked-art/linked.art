@@ -38,7 +38,7 @@ WHERE {
     ?work a crm:E36_Visual_Item .
   }
   {
-    $current a crm:E22_Person .
+    $current a crm:E21_Person .
   } UNION {
     $current a crm:E76_Group .
   }

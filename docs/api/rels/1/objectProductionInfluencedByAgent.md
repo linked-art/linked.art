@@ -32,7 +32,7 @@ WHERE {
     $current crm:P15i_influenced/(crm:P9_consists_of|crm:P9i_forms_part_of)*/crm:P108_has_produced ?object .
   }
   {
-    $current a crm:E22_Person .
+    $current a crm:E21_Person .
   } UNION {
     $current a crm:E74_Group .
   }

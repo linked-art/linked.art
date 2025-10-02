@@ -35,6 +35,6 @@ WHERE {
   } UNION {
     ?work a crm:E36_Visual_Item .
   }
-  $current a crm:E21_Human-Made_Object .
+  $current a crm:E22_Human-Made_Object .
 }
 ```

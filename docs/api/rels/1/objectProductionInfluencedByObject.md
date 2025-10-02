@@ -31,6 +31,6 @@ WHERE {
   } UNION {
     $current crm:P15i_influenced/(crm:P9_consists_of|crm:P9i_forms_part_of)*/crm:P108_has_produced ?object .
   }
-  $current a crm:E21_Human-Made_Object .
+  $current a crm:E22_Human-Made_Object .
 }
 ```
