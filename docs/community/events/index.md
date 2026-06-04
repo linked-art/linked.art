@@ -8,9 +8,13 @@ All interactions in the Linked Art community, in person or online, are covered b
 
 Below is a list of editorial in-person and outreach events organized to develop the Linked Art initiative.
 
+## 2026
+
+* **Datawerkplaats Linked.art Kickoff** (June 5th, Rijksmuseum, Amsterdam, The Netherlands): Launching a Dutch collaborative initiative between the Rijksmuseum, the Netwerk Digitaal Erfgoed (NDE) and Dutch national collecting institutions to advance Linked.art in the Netherlands
+
 ## 2025
 
-* [Linked Art 1.0 Q&A](/about/1.0/) online event. [Details here](/community/)
+* [Linked Art 1.0 Q&A](/about/1.0/) online event.
 
 ## 2024
 
