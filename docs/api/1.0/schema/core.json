@@ -438,9 +438,6 @@
                 "language": {
                     "$ref": "#/$defs/languageProp"
                 },
-                "referred_to_by": {
-                    "$ref": "#/$defs/referred_to_byProp"
-                },
                 "part": {
                     "description": "A list of one or more `Name` structures, which are parts of this `Name`",
                     "type": "array",
@@ -1372,12 +1369,10 @@
                 {
                     "title": "Linked Art with Extensions",
                     "type": "array",
-                    "items": [
-                        {
-                            "type": "string",
-                            "format": "uri"
-                        }
-                    ]
+                    "items": {
+                        "type": "string",
+                        "format": "uri"
+                    }
                 }
             ]
         },
