@@ -26,6 +26,7 @@ For brevity in the table, the AAT URI is compacted with a namespace, however the
 | Shape                 | aat:300056273 | Type       | A shape |
 | Occupation            | aat:300263369 | Type       | An occupation |
 | Nationality           | aat:300379842 | Type       | A nationality |
+| Part Type             | aat:300241583 | Type       | A type of part |
 | Color                 | aat:300080438 | Dimension  | A color |
 | Exhibition Activity   | aat:300054766 | Activity   | An exhibition | 
 | Provenance Activity   | aat:300055863 | Activity   | A provenance activity | 
