@@ -178,6 +178,18 @@ top = model.Person(ident="rembrandt/43", label="Rembrandt")
 top.classified_as = vocab.instances['artist occupation']
 ```
 
+### Part Type
+
+The URI for Part Type is: [http://vocab.getty.edu/aat/300241583](http://vocab.getty.edu/aat/300241583)
+
+There are many features of a physical object that can be considered component parts (support, frame, drawer, ...). As with [Type of Work](#type-of-work), we do not specify a vocabulary of terms for these parts and instead require that any classification is itself classified with the Part Type meta-type.
+
+```crom
+top = vocab.SupportPart(ident="nightwatch/support", label="Support of Night Watch")
+top.made_of = vocab.instances['canvas']
+top.part_of = model.HumanMadeObject(ident="nightwatch", label="Night Watch by Rembrandt")
+```
+
 ### Color
 
 The URI for Color is: [http://vocab.getty.edu/aat/300080438](http://vocab.getty.edu/aat/300080438)
