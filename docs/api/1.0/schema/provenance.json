@@ -158,8 +158,8 @@
 				"after": {"$ref": "core.json#/$defs/afterProp"},
 				"before": {"$ref": "core.json#/$defs/beforeProp"},
 
-				"establishes": {"title": "la:establishes", "description": "", "type": "array", "items": {"$ref": "core.json#/$defs/LegalRight"}},
-				"invalidates": {"title": "la:invalidates", "description": "", "type": "array", "items": {"$ref": "core.json#/$defs/LegalRight"}}
+				"establishes": {"title": "la:establishes", "description": "", "type": "array", "items": {"$ref": "core.json#/$defs/Right"}},
+				"invalidates": {"title": "la:invalidates", "description": "", "type": "array", "items": {"$ref": "core.json#/$defs/Right"}}
 			},
 			"required": ["type", "establishes"],
 			"additionalProperties": false	
