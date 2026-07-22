@@ -64,6 +64,7 @@ nav:
         - Transfer of Rights: model/provenance/rights.md
         - Unknown Transfers: model/provenance/transfer.md
       - Exhibitions: model/exhibition/index.md
+      - Performing Arts: model/performance/index.md
       - Conservation: model/conservation/index.md
     - Related Entities:
       - People and Organizations: model/actor/index.md
@@ -88,7 +89,7 @@ nav:
       - Entity Endpoints:
         - About Endpoints: api/1.0/endpoint/index.md
         - Abstract Works: api/1.0/endpoint/abstract_work/index.md
-        - Concepts: api/1.0/endpoint/concept/index.md 
+        - Concepts: api/1.0/endpoint/concept/index.md
         - Digital Objects: api/1.0/endpoint/digital_object/index.md
         - Events: api/1.0/endpoint/event/index.md
         - Groups: api/1.0/endpoint/group/index.md
