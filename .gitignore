@@ -1,5 +1,6 @@
 .site
 .venv/
+docs/example/
 scripts/*.pyc
 extensions/*.pyc
 **/.DS_Store
