@@ -26,6 +26,7 @@ For brevity in the table, the AAT URI is compacted with a namespace, however the
 | Shape                 | aat:300056273 | Type       | A shape |
 | Occupation            | aat:300263369 | Type       | An occupation |
 | Nationality           | aat:300379842 | Type       | A nationality |
+| Part Type             | aat:300241583 | Type       | A type of part |
 | Color                 | aat:300080438 | Dimension  | A color |
 | Exhibition Activity   | aat:300054766 | Activity   | An exhibition | 
 | Provenance Activity   | aat:300055863 | Activity   | A provenance activity | 
@@ -175,6 +176,18 @@ People can also be categorized by their occupation.
 ```crom
 top = model.Person(ident="rembrandt/43", label="Rembrandt")
 top.classified_as = vocab.instances['artist occupation']
+```
+
+### Part Type
+
+The URI for Part Type is: [http://vocab.getty.edu/aat/300241583](http://vocab.getty.edu/aat/300241583)
+
+There are many features of a physical object that can be considered component parts (support, frame, drawer, ...). As with [Type of Work](#type-of-work), we do not specify a vocabulary of terms for these parts and instead require that any classification is itself classified with the Part Type meta-type.
+
+```crom
+top = vocab.SupportPart(ident="nightwatch/support", label="Support of Night Watch")
+top.made_of = vocab.instances['canvas']
+top.part_of = model.HumanMadeObject(ident="nightwatch", label="Night Watch by Rembrandt")
 ```
 
 ### Color
