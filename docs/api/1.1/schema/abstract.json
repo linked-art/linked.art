@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://linked.art/api/1.0/schema/abstract.json",
+	"title": "Abstract Work Schema",
+	"description": "_crm:E89\\_Propositional\\_Object_\nA purely conceptual work, such as the idea behind an exhibition.\nSee: [API](https://linked.art/api/1.0/endpoint/abstract_work/) | [Model](https://linked.art/model/document/)",
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/$defs/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/$defs/idProp"},
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/typeProp"},
+			{"title": "Specific", "type": "string", "const": "PropositionalObject"}]},
+		"_label": {"$ref": "core.json#/$defs/labelProp"},
+		"identified_by": {"$ref": "core.json#/$defs/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/$defs/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/$defs/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/equivalentProp"},
+			{"title": "Specific", "description": "List of equivalent `LinguisticObject` entities", "type": "array", "items": {"$ref": "core.json#/$defs/LinguisticObjectRef"}}]},
+		"representation": {"$ref": "core.json#/$defs/representationProp"},
+		"member_of": {"$ref": "core.json#/$defs/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/$defs/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/$defs/attributed_byRelProp"},
+		"dimension": {"$ref": "core.json#/$defs/dimensionProp"},
+		"subject_to": {"$ref": "core.json#/$defs/subject_toProp"},
+		"about": {"$ref": "core.json#/$defs/aboutProp"},
+		"conceptually_part_of": {"$ref": "core.json#/$defs/conceptually_part_ofProp"},
+		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "core.json#/$defs/Creation"}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

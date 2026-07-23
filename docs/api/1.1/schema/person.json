@@ -1,0 +1,81 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://linked.art/api/1.0/schema/person.json",
+	"title": "Person",
+	"description": "_crm:E21\\_Person_\nA human.\nSee: [API](https://linked.art/api/1.0/endpoint/person/) | [Model](https://linked.art/model/actor/)",	
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/$defs/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/$defs/idProp"},
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/typeProp"},
+			{"title": "Specific", "type": "string", "const": "Person"}]},
+		"_label": {"$ref": "core.json#/$defs/labelProp"},
+		"identified_by": {"$ref": "core.json#/$defs/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/$defs/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/$defs/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/equivalentProp"},
+			{"title": "Specific", "description": "List of `Person` entities", "type": "array", "items": {"$ref": "core.json#/$defs/PersonRef"}}]},
+		"representation": {"$ref": "core.json#/$defs/representationProp"},
+		"member_of": {"$ref": "core.json#/$defs/member_ofGroupProp"},
+		"subject_of": {"$ref": "core.json#/$defs/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/$defs/attributed_byRelProp"},
+
+		"carried_out": {"$ref": "core.json#/$defs/carried_outProp"},
+		"participated_in": {"$ref": "core.json#/$defs/participated_inProp"},
+		"contact_point": {"$ref": "core.json#/$defs/contact_pointProp"},
+		"residence": {"$ref": "core.json#/$defs/residenceProp"},
+
+		"born": {
+			"title": "crm:P98i_was_born",
+			"description": "The event in which this Person was born", 
+			"$ref": "#/$defs/Birth"
+		},
+		"died": {
+			"title": "crm:P100i_died_in",
+			"description": "The event in which this Person died",
+			"$ref": "#/$defs/Death"
+		}
+	},
+	"$defs": {
+		"Birth": {
+			"title": "crm:E67_Birth",
+			"description": "The birth event of a person",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/typeProp"},
+					{"title": "Specific", "type": "string", "const": "Birth"}]},
+				"_label": {"$ref": "core.json#/$defs/labelProp"},
+				"identified_by": {"$ref": "core.json#/$defs/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/$defs/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/$defs/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/$defs/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/$defs/timespanProp"},
+				"during": {"$ref": "core.json#/$defs/duringProp"},
+				"after": {"$ref": "core.json#/$defs/afterProp"},
+				"before": {"$ref": "core.json#/$defs/beforeProp"},
+				"caused_by": {"$ref": "core.json#/$defs/caused_byProp"}
+			}
+		},
+		"Death": {
+			"title": "crm:E69_Death", 
+			"description": "The death event of a person",
+			"type": "object",
+			"properties": {
+				"type": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/typeProp"},
+					{"title": "Specific", "type": "string", "const": "Death"}]},
+				"_label": {"$ref": "core.json#/$defs/labelProp"},
+				"identified_by": {"$ref": "core.json#/$defs/identified_byProp"},
+				"classified_as": {"$ref": "core.json#/$defs/classified_asProp"},
+				"referred_to_by": {"$ref": "core.json#/$defs/referred_to_byProp"},
+				"took_place_at": {"$ref": "core.json#/$defs/took_place_atProp"},
+				"timespan": {"$ref": "core.json#/$defs/timespanProp"},
+				"during": {"$ref": "core.json#/$defs/duringProp"},
+				"after": {"$ref": "core.json#/$defs/afterProp"},
+				"before": {"$ref": "core.json#/$defs/beforeProp"},
+				"caused_by": {"$ref": "core.json#/$defs/caused_byProp"}
+			}
+		}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}

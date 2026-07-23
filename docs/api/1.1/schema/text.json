@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://linked.art/api/1.0/schema/text.json",
+	"title": "Text Schema",
+	"description": "_crm:E33\\_Linguistic\\_Object_\nTextual content expressed in one or more human languages, which might or might not be written down on any physical carrier.\nSee: [API](https://linked.art/api/1.0/endpoint/textual_work/) | [Model](https://linked.art/model/document/)",
+	"type": "object",
+	"properties": {
+		"@context": {"$ref": "core.json#/$defs/ContextStringOrArray"},
+		"id": {"$ref": "core.json#/$defs/idProp"},
+		"type": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/typeProp"},
+			{"title": "Specific", "type": "string", "const": "LinguisticObject"}]},
+		"_label": {"$ref": "core.json#/$defs/labelProp"},
+		"identified_by": {"$ref": "core.json#/$defs/identified_byProp"},
+		"classified_as": {"$ref": "core.json#/$defs/classified_asProp"},
+		"referred_to_by": {"$ref": "core.json#/$defs/referred_to_byProp"},
+		"equivalent": {"allOf": [{"title": "General", "$ref": "core.json#/$defs/equivalentProp"},
+			{"title": "Specific", "description": "List of equivalent `LinguisticObject` entities", "type": "array", "items": {"$ref": "core.json#/$defs/LinguisticObjectRef"}}]},
+		"representation": {"$ref": "core.json#/$defs/representationProp"},
+		"member_of": {"$ref": "core.json#/$defs/member_ofSetProp"},
+		"subject_of": {"$ref": "core.json#/$defs/subject_ofProp"},
+		"attributed_by": {"$ref": "core.json#/$defs/attributed_byRelProp"},
+		"dimension": {"$ref": "core.json#/$defs/dimensionProp"},
+		"subject_to": {"$ref": "core.json#/$defs/subject_toProp"},
+        "format": {"$ref": "core.json#/$defs/formatProp"},
+		"language": {"$ref": "core.json#/$defs/languageProp"},
+		"about": {"$ref": "core.json#/$defs/aboutProp"},
+		"created_by": {"title": "crm:P94i_was_created_by", "$ref": "core.json#/$defs/Creation"},
+		"used_for": {
+			"title": "crm:P16i_was_used_for", 
+			"description": "", 
+			"type": "array", 
+			"items": {"$ref": "core.json#/$defs/Activity"}},
+		"part_of": {
+			"title": "crm:P106i_forms_part_of",
+			"description": "Reference to another Linguistic Object or Visual Item of which this is part", 
+			"type": "array",
+			"items": {"$ref": "core.json#/$defs/LingObjOrVisualItemRef"}},
+		"conceptually_part_of": {"$ref": "core.json#/$defs/conceptually_part_ofProp"},
+        "content": {"$ref": "core.json#/$defs/contentProp"}
+	},
+	"required": ["@context", "id", "type", "_label"],
+	"additionalProperties": false
+}
