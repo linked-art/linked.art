@@ -100,8 +100,8 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "1606-07-15T00:00:00Z"
 ts.end_of_the_end = "1606-07-16T00:00:00Z"
 b.timespan = ts
-p = model.Place(label="Leiden")
-b.took_place_at = p
+p1 = model.Place(ident="auto int-per-segment", label="Leiden")
+b.took_place_at = p1
 top.born = b
 
 d = model.Death(label="Death of Rembrandt")
@@ -109,8 +109,8 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "1669-10-04T00:00:00Z"
 ts.end_of_the_end = "1669-10-05T00:00:00Z"
 d.timespan = ts
-p = model.Place(label="Amsterdam")
-d.took_place_at = p
+p2 = model.Place(ident="auto int-per-segment", label="Amsterdam")
+d.took_place_at = p2
 top.died = d
 
 top.referred_to_by = vocab.BiographyStatement(
@@ -124,10 +124,10 @@ ts = model.TimeSpan()
 ts.begin_of_the_begin = "1631-01-01T00:00:00Z"
 ts.end_of_the_end = "1669-10-05T00:00:00Z"
 act.timespan = ts
-act.took_place_at = p
+act.took_place_at = p2
 top.carried_out = act
 
-top.residence = model.Place(label="Nieuwe Doelenstraat")
+top.residence = model.Place(ident="auto int-per-segment", label="Nieuwe Doelenstraat")
 top.contact_point = vocab.StreetAddress(content="Jodenbreestraat 4, 1011NK Amsterdam")
 top.equivalent = model.Person(ident="http://vocab.getty.edu/ulan/500011051", label="Rembrandt")
 
