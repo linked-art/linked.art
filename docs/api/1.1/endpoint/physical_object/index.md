@@ -1,5 +1,7 @@
 ---
 title: "Linked Art API: Physical Object Representation"
+up_href: "/api/1.1/endpoint/"
+up_label: "Linked Art API 1.1 Endpoints"
 ---
 
 
@@ -155,4 +157,3 @@ prod.timespan = ts
 prod.took_place_at = model.Place(ident="http://vocab.getty.edu/tgn/7000457", label="Florence, Italy")
 top.produced_by = prod
 ```
-

@@ -1,7 +1,7 @@
 ---
 title: "Linked Art API: Concept"
-up_href: "/api/1.0/endpoint/"
-up_label: "Linked Art API 1.0 Endpoints"
+up_href: "/api/1.1/endpoint/"
+up_label: "Linked Art API 1.1 Endpoints"
 ---
 
 
@@ -92,6 +92,3 @@ top.created_by = cre
 cre.influenced_by = model.Type(label="History")
 cre.influenced_by = model.Place(label="France")
 ```
-
-
-

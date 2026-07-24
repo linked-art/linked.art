@@ -1,8 +1,8 @@
 ---
 title: "Linked Art API Visual Work"
+up_href: "/api/1.1/endpoint/"
+up_label: "Linked Art API 1.1 Endpoints"
 ---
-
-
 
 
 ## Introduction

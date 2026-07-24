@@ -54,7 +54,7 @@ top = model.Person(ident="rembrandt/4", label="Rembrandt")
 name = vocab.PrimaryName(content="Rembrandt Harmenzoon van Rijn")
 top.identified_by = name 
 name.part = vocab.GivenName(content="Rembrandt")
-name.part = vocab.MiddleName("Harmenzoon")
+name.part = vocab.MiddleName(content="Harmenzoon")
 name.part = vocab.FamilyName(content="van Rijn")
 ```
 
@@ -124,7 +124,7 @@ People are born in `Birth` events and die in `Death` events, related to the pers
 
 Birth and Death do not have any properties of their own that are used in the model, only those inherited from event, such as `timespan` and `took_place_at`.
 
-!!! "note" "Inanimate Thing or Dead Person?"
+!!! note "Inanimate Thing or Dead Person?"
     After death, people are still instances of `Person` which is a subclass of `Actor`, even though they can no longer carry out activities.  People in comas or otherwise completely incapacitated also cannot carry out activities, but are not temporarily non-Actors. The modeling that death is a transformation from an instance of Person to an instance of Thing adds complexity for the sake of purity, but does not add any actual value. Thus a burial activity (_aat:300263485_) buries a Person, not a Thing-that-used-to-be-a-Person. However if the skeleton is later dug up, it is likely documented as a Physical Thing. There is, therefore, a transition at some undetermined point.
 
 __Example:__

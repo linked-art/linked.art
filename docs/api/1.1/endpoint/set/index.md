@@ -1,7 +1,7 @@
 ---
 title: "Linked Art API: Set"
-up_href: "/api/1.0/endpoint/"
-up_label: "Linked Art API 1.0 Endpoints"
+up_href: "/api/1.1/endpoint/"
+up_label: "Linked Art API 1.1 Endpoints"
 ---
 
 
@@ -93,4 +93,3 @@ ts.end_of_the_end = "1870-04-13T23:59:59Z"
 cre.timespan = ts
 top.created_by = cre
 ```
-

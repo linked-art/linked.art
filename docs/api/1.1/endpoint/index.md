@@ -1,7 +1,7 @@
 ---
 title: "Linked Art API: Entity Description Endpoints"
-up_href: "/api/1.0/"
-up_label: "Linked Art API 1.0"
+up_href: "/api/1.1/"
+up_label: "Linked Art API 1.1"
 ---
 
 
@@ -24,4 +24,3 @@ The Linked Art API is made up of different endpoints, each of which has a define
 * [Sets](set/) - Sets, including Collections and sets of objects used for exhibitions
 * [Textual Works](textual_work/) - Texts worthy of description as distinct entities, such as the content carried by a book or journal article
 * [Visual Works](visual_work/) - Image content worthy of description as distinct entities, such as the image shown by a painting or drawing
-

@@ -269,7 +269,7 @@ dim.value = 3
 dim.unit = vocab.instances['days']
 ts.duration = dim
 n = model.Name()
-n.content = "40 days in August and September, 1848"
+n.content = "3 days in August and September, 1848"
 ts.identified_by = n
 top.timespan = ts 
 ```

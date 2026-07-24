@@ -1,7 +1,7 @@
 ---
 title: "Linked Art API: Place"
-up_href: "/api/1.0/endpoint/"
-up_label: "Linked Art API 1.0 Endpoints"
+up_href: "/api/1.1/endpoint/"
+up_label: "Linked Art API 1.1 Endpoints"
 ---
 
 

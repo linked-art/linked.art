@@ -35,24 +35,25 @@ There are two additional properties that MAY be used on references to ensure tha
 
 Note that references do **not** have `_complete` -- they are inherently *not* complete, otherwise they wouldn't be references.
 
+They also cannot have `classified_as` unless the reference is a [Concept Reference](../type/) to a `Type` instance, which uses a separate API construction. 
+
 There are too many incoming properties to try to list them all, as it amounts to the list of all properties for all classes.
 
 ## Example
 
-A Painting, which has several references to other entities:
+An object which has several references to other entities:
 
-* It is `classified_as` a reference to a type, which is in turn `classified_as` a meta-type
-* It is `referred_to_by` the textual content of a referenced article
+* It is the `subject_of` the textual content of a referenced article
 * It is a `member_of` a referenced museum collection set
 * It `shows` a particular referenced visual work
 * It has a `current_owner` of a particular referenced person
 * It has a `current_location` of a referenced gallery
 
 ```crom
-top = vocab.Painting(ident="auto int-per-segment", label="Example Painting")
+top = model.HumanMadeObject(ident="auto int-per-segment", label="Example Painting")
 top.current_owner = model.Person(label="Owner")
 top.current_location = model.Place(label="Gallery")
 top.shows = model.VisualItem(label="Visual Work of Example Painting")
-top.referred_to_by = model.LinguisticObject(label="Article about Painting")
+top.subject_of = model.LinguisticObject(label="Article about Painting")
 top.member_of = model.Set(label="Museum Collection")
 ```
