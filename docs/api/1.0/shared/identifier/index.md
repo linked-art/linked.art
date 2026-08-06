@@ -28,6 +28,7 @@ Identifiers have the following properties.
 | `content`         | string        | Required    | The string content of the identifier | 
 | `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the identifier and MUST follow the requirements for [Type](../type/) | 
 | `identified_by`   | array         | Recommended | An array of json objects, each of which is a name to be displayed for the identifier, and MUST follow the requirements for [Name](../name/) |
+| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current identifier, and MUST follow these requirements for Identifiers |
 | `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the identifier, or an embedded [statement](../statement/) about the identifier. |
 | `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the identifier, and MUST follow the requirements for [Assignments](../assignment/) |
 
