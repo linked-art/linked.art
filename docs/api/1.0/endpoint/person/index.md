@@ -26,20 +26,20 @@ Dereferencing an entity via the Person endpoint would result in a JSON-LD docume
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the person's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the person, which MUST be the value `"Person"` |
 | `_label`          | string        | Recommended | A human readable label for the person, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the person and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the person and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the person and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the person and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current Person |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current Person, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Group that the current Person is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a **[Group](../group/)** |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Person, and MUST follow the requirements for a [reference](../../shared/reference) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Person to another entity |
-| `contact_point` | array | Optional | An array of json objects, each of which is an address at which the person is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the person and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name of the person and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the person and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the person and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current Person |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current Person, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Group that the current Person is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a **[Group](../group/)** |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Person, and MUST follow the requirements for a [reference](../../shared/reference) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Person to another entity |
+| `contact_point` | array | Optional | An array of JSON objects, each of which is an address at which the person is reachable and MUST follow the requirements for an [Identifier](../../shared/identifier) |
 | `residence` | array | Optional | A place that the person was associated with, and MUST follow the requirements for a [reference](../../shared/reference/) to a [Place](../place/) |
-| `carried_out` | array | Optional | An array of json objects, each of which represents professional activities of the person and follows the requirements for [Activities](../../shared/activity) |
-| `participated_in` | array | Optional | An array of json objects, each of which represents an activity or event in which the person participated, but was not responsible, and follows the requirements for [Activities](../../shared/activity) |
-| `born` | json object | Optional | A json object representing the birth of the person, which follows the requirements for a [Birth](../../shared/activity) | 
-| `died` | json object | Optional | A json object representing the death of the person, which follows the requirements for a [Death](../../shared/activity) |
+| `carried_out` | array | Optional | An array of JSON objects, each of which represents professional activities of the person and follows the requirements for [Activities](../../shared/activity) |
+| `participated_in` | array | Optional | An array of JSON objects, each of which represents an activity or event in which the person participated, but was not responsible, and follows the requirements for [Activities](../../shared/activity) |
+| `born` | JSON object | Optional | A JSON object representing the birth of the person, which follows the requirements for a [Birth](../../shared/activity) | 
+| `died` | JSON object | Optional | A JSON object representing the death of the person, which follows the requirements for a [Death](../../shared/activity) |
 
 ### Property Diagram
 

@@ -33,7 +33,7 @@ For full records that describe a Type, please see the [Concept Endpoint](../../e
 | `_label`          | string        | Recommended | A human readable label for the concept, intended for developers |
 | `equivalent`      | array         | Optional    | An array of references to external resources which are equivalent to the referenced resource |
 | `notation`        | array         | Optional    | An array of strings, each of which is a commonly used notation or identifier for the resource. This is typically used when the `type` of the reference is `Language` and gives the [language tag](https://www.w3.org/International/articles/language-tags/). |
-| `classified_as`   | array         | Optional    | An array of json objects, each of which is a further classification of the concept and MUST follow these requirements for Type |
+| `classified_as`   | array         | Optional    | An array of JSON objects, each of which is a further classification of the concept and MUST follow these requirements for Type |
 
 ### Property Diagram
 
