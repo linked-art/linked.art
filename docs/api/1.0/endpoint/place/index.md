@@ -25,15 +25,15 @@ Dereferencing an entity via the Place endpoint would result in a JSON-LD documen
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the place's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the place, which MUST be the value `"Place"` |
 | `_label`          | string        | Recommended | A human readable label for the place, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the Place and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the Place and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Place and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the Place and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current Place |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current Place, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a reference to a [Set](../set/) that the current Place is a member of and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Place, and MUST follow the requirements for a [reference](../../shared/reference) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Place to another entity |
-| `part_of`         | array         | Optional    | An array of json objects, each of which is a Place that the current Place falls within and MUST follow the requirements for a [reference](../../shared/reference/) to a Place |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the Place and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name of the Place and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the Place and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the Place and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current Place |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current Place, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a reference to a [Set](../set/) that the current Place is a member of and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current Place, and MUST follow the requirements for a [reference](../../shared/reference) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current Place to another entity |
+| `part_of`         | array         | Optional    | An array of JSON objects, each of which is a Place that the current Place falls within and MUST follow the requirements for a [reference](../../shared/reference/) to a Place |
 | `defined_by`      | string        | Optional    | A string containing the [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) representation of the geometry of the Place |
 
 

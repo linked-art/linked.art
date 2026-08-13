@@ -24,22 +24,22 @@ Dereferencing an entity via the Visual Work endpoint would result in a JSON-LD d
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the visual work's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the visual work, which MUST be the value `"VisualItem"` |
 | `_label`          | string        | Recommended | A human readable label for the visual work, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the visual work and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the visual work and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the visual work and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the visual work and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current visual work |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current visual work is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current visual work, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current visual work to another entity |
-| `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as abstract height or width, of the current visual work |
-| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Visual Work or a [Textual Work](../textual_work/) that the current visual work is a part of |
-| `conceptually_part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Abstract Work](../abstract_work/) that the current work is conceptually part of |
-| `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
-| `represents` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
-| `represents_instance_of_type` | array | Optional | An array of json objects, each of which is a type of another entity that this visual work represents or depicts, but where the individual is not known and MUST follow the requirements for [Type](../../shared/type/) |
-| `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../../shared/right) that is held over the intellectual work |
-| `created_by` | json object | Optional | A json object representing the creation of the image, which follows the requirements for a [Creation](../../shared/activity) | 
-| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the visual work and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name/title of the visual work and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the visual work and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the visual work and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current visual work |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current visual work is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current visual work, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current visual work to another entity |
+| `dimension` | array | Optional | An array of JSON objects, each of which is a [Dimension](../../shared/dimension), such as abstract height or width, of the current visual work |
+| `part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another Visual Work or a [Textual Work](../textual_work/) that the current visual work is a part of |
+| `conceptually_part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an [Abstract Work](../abstract_work/) that the current work is conceptually part of |
+| `about` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
+| `represents` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this visual work represents or depicts |
+| `represents_instance_of_type` | array | Optional | An array of JSON objects, each of which is a type of another entity that this visual work represents or depicts, but where the individual is not known and MUST follow the requirements for [Type](../../shared/type/) |
+| `subject_to` | array | Optional | An array of JSON objects, each of which is a [Right](../../shared/right) that is held over the intellectual work |
+| `created_by` | JSON object | Optional | A JSON object representing the creation of the image, which follows the requirements for a [Creation](../../shared/activity) | 
+| `used_for` | array | Optional | An array of JSON objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
 
 ### Property Diagram
 

@@ -12,17 +12,23 @@ See the related [model documentation]()
 
 From the record for Tristan Tzara, the record for Cabaret Voltaire would be in the response. 
 
-
 ### Details
 
 * Class Given: Agent
 * Returns Class: Event, Activity
 * Relationship: participant
 
-
 ### SPARQL
-```
-SELECT DISTINCT ?activity WHERE {
-  ?activity crm:P11_had_participant <%current%>.  }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+SELECT DISTINCT ?activity
+WHERE {
+  {
+    ?activity crm:P11_had_participant $current .
+  } UNION {
+    $current crm:P11i_participated_in ?activity .
+  }
+}
+```

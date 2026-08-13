@@ -12,7 +12,6 @@ See the related [model documentation](/model/actor/#birth-and-death-formation-an
 
 From the record for Leiden, the record for Rembrandt would be in the response
 
-
 ### Details
 
 * Class Given: Place
@@ -21,11 +20,21 @@ From the record for Leiden, the record for Rembrandt would be in the response
 
 
 ### SPARQL
-```
-SELECT DISTINCT ?agent WHERE {
-   BIND(<%current%>as ?where)
-   ?agent crm:P98i_was_born ?birth .
-    ?birth crm:P7_took_place_at ?where .
- }
-```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+SELECT DISTINCT ?person
+WHERE {
+  {
+    ?person crm:P98i_was_born ?birth .
+  } UNION {
+    ?birth crm:P98_brought_into_life ?person .
+  }
+  {
+   ?birth crm:P7_took_place_at $current .
+  } UNION {
+   $current crm:P7i_witnessed ?birth .
+  }
+}
+```
