@@ -26,24 +26,24 @@ Dereferencing an entity via the Textual Work endpoint would result in a JSON-LD 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the text's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the text, which MUST be the value `"LinguisticObject"` |
 | `_label`          | string        | Recommended | A human readable label for the text, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the text and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the text and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the text and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the text and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current text |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a Textual Work, the content of which is about the current work, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current text, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current text is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current text to another entity |
-| `language` | array | Optional | An array of json objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
-| `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of words, of the current text |
-| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Textual Work or a [Visual Work](../visual_work/) that the current text is a part of. |
-| `conceptually_part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Abstract Work](../abstract_work/) that the current work is conceptually part of |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the text and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name/title of the text and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the text and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the text and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current text |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a Textual Work, the content of which is about the current work, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current text, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current text is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current text to another entity |
+| `language` | array | Optional | An array of JSON objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
+| `dimension` | array | Optional | An array of JSON objects, each of which is a [Dimension](../../shared/dimension), such as total number of words, of the current text |
+| `part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another Textual Work or a [Visual Work](../visual_work/) that the current text is a part of. |
+| `conceptually_part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an [Abstract Work](../abstract_work/) that the current work is conceptually part of |
 | `content` | string | Optional | The string representation of the textual content of the work |
 | `format` | string | Optional | The media type of the encoding of the string representation given in the `content` property |
-| `about` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
-| `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../../shared/right) that is held over the intellectual work |
-| `created_by` | json object | Optional | A json object representing the creation of the text, which follows the requirements for a [Creation](../../shared/activity) | 
-| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
+| `about` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another entity of any type, that this text is primarily about | 
+| `subject_to` | array | Optional | An array of JSON objects, each of which is a [Right](../../shared/right) that is held over the intellectual work |
+| `created_by` | JSON object | Optional | A JSON object representing the creation of the text, which follows the requirements for a [Creation](../../shared/activity) | 
+| `used_for` | array | Optional | An array of JSON objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
 
 ### Property Diagram
 
