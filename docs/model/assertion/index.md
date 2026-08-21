@@ -206,6 +206,7 @@ top = model.Person(ident="bol/1", label="Ferdinand Bol")
 top.identified_by = vocab.PrimaryName(content="Ferdinand Bol")
 aa = model.AttributeAssignment()
 aa.assigned = model.Person(ident="rembrandt", label="Rembrandt")
+aa.assigned_property = "http://vocab.getty.edu/ontology#ulan1102_student_of"
 aa.identified_by = vocab.DisplayName(content="Student Of")
 top.attributed_by = aa
 ```
