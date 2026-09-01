@@ -24,12 +24,12 @@ Names are described in the [base patterns](/model/base/#types-and-classification
 | `_label`          | string        | Optional    | A human readable label, intended for developers | <!-- LAF.4 -->
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the name available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `content`         | string        | Required    | The string form of the Name | <!-- LAF.6 -->
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) | <!-- LAF.5 -->
-| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)| <!-- LAF.7 -->
-| `part`            | array         | Optional    | An array of json objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
-| `identified_by`   | array         | Optional    | An array of json objects, each of which is a name for this Name and follows the Name pattern |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the Name. | <!-- -->
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the Name, and MUST follow the requirements for [Assignments](../assignment/) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the name and MUST follow the requirements for [Type](../type/) | <!-- LAF.5 -->
+| `language`        | array         | Recommended | An array of JSON objects, each of which is a language present in the content of the name and MUST follow the requirements for [Language](../type/)| <!-- LAF.7 -->
+| `part`            | array         | Optional    | An array of JSON objects, each of which is a part of the current name, and MUST follow these requirements for Names| <!-- -->
+| `identified_by`   | array         | Optional    | An array of JSON objects, each of which is a name for this Name and follows the Name pattern |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to the name, or an embedded [statement](../statement/) about the Name. | <!-- -->
+| `assigned_by`     | array         | Optional    | An array of JSON objects, each of which is an assignment of the Name, and MUST follow the requirements for [Assignments](../assignment/) |
 
 ### Property Diagram
 
