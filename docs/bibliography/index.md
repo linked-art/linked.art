@@ -12,11 +12,29 @@ To suggest additions to this bibliography, please submit a pull request or open 
 
 ---
 
+### 2026
+
+Cao, J. & School of Art and Design, Jiangxi Institute of Technology, Nanchang 330098, Jiangxi, China. (2026). Multimodal AI-Based Semantic Annotation and Knowledge Graph Construction for the Motif of Withered Trees, Bamboo, and Rocks in Literati Painting. _Ingegneria Sismica, 42_(4), 1–18. [https://doi.org/10.65102/is2026766](https://doi.org/10.65102/is2026766)
+
+Chun, D., Lyu, X., Gao, K., & Warne, Z. (2026). _Toward a Unified Art ID: Reviewing International Standards for Art Identification and Provenance Management in the New Digital Age_. 143–155. [https://doi.org/10.22492/issn.2760-5698.2026.10](https://doi.org/10.22492/issn.2760-5698.2026.10)
+
+Mariani, F. (2026). _Vague, Incomplete, Subjective, and Uncertain Information in Digital History_ [Medien- und Informationszentrum, Leuphana Universität Lüneburg]. [https://doi.org/10.48548/PUBDATA-3038](https://doi.org/10.48548/PUBDATA-3038)
+
+Rossetti, V. (2026). _Tracing the Art Market. Data, Models and Visualizations_. [https://doi.org/10.5281/ZENODO.19632271](https://doi.org/10.5281/ZENODO.19632271)
+
+Rother, L., Koss, M., & Mariani, F. (2026). Provenance as accountability: Transparent and verifiable cataloguing for the digital age. In S. Vigneron, J. Ulph, & A. M. Dominicé (Eds.), _Research Handbook on Art, Culture and Heritage Law_ (pp. 444–461). Edward Elgar Publishing. [https://doi.org/10.4337/9781800374225.00035](https://doi.org/10.4337/9781800374225.00035)
+
+
 ### 2025
+
+Carrasco, L. B., & Vidotti, S. A. B. G. (2025). Linked Art Data Model: Perfil de aplicação para descrever recursos artístico-culturais. _Anais Do VIII Workshop de Informação, Dados e Tecnologia (WIDaT)_. VIII Workshop de Informação, Dados e Tecnologia (WIDaT). [https://doi.org/10.22477/viii.widat.255](https://doi.org/10.22477/viii.widat.255)
 
 Dressen, A. (2025). Cultural Heritage Data for Research – An Introduction. *Open Library of Humanities, 11*(1), Article 1. [https://doi.org/10.16995/olh.18710](https://doi.org/10.16995/olh.18710)
 
 Middle, S., Aristeidou, M., Barker, E., Pett, D., & Alcock, S. (2025). Discovering Object Stories: Linking Unstructured Museum Data Through Semantic Annotation. *Journal of Open Humanities Data, 11*(1). [https://doi.org/10.5334/johd.273](https://doi.org/10.5334/johd.273)
+
+Raemy, J. A. (2025). _Linked Open Usable Data for Cultural Heritage: Community Building and Semantic Interoperability in Practice_. 17th Semantic Web in Libraries Conference (SWIB25). [https://doi.org/10.48620/92261](https://doi.org/10.48620/92261)
+
 
 ### 2024
 
@@ -82,4 +100,4 @@ Alexiev, V. (2018). Museum Linked Open Data: Ontologies, Datasets, Projects. *Di
 
 Fink, E. E. (2018). *American Art Collaborative (AAC) Linked Open Data (LOD) Initiative* (p. 81) [Overview and Recommendations for Good Practices]. American Art Collaborative. [https://hdl.handle.net/10088/106410](https://hdl.handle.net/10088/106410)
 
-Newbury, D. (2018). LOUD: Linked Open Usable Data and linked.art. *2018 CIDOC Conference*, 1–11. [https://cidoc.mini.icom.museum/wp-content/uploads/sites/6/2021/03/CIDOC2018_paper_153.pdf](https://cidoc.mini.icom.museum/wp-content/uploads/sites/6/2021/03/CIDOC2018_paper_153.pdf)
+Newbury, D. (2018). LOUD: Linked Open Usable Data and linked.art. *2018 CIDOC Conference*, 1–11. [https://icom-documentation.mini.icom.museum/wp-content/uploads/sites/87/2021/03/CIDOC2018_paper_153.pdf](https://icom-documentation.mini.icom.museum/wp-content/uploads/sites/87/2021/03/CIDOC2018_paper_153.pdf)
