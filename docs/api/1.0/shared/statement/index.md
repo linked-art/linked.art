@@ -24,14 +24,14 @@ Statements are described in the [base patterns](/model/base/) of the model docum
 | `_label`          | string        | Optional    | A human readable label, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the statement available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `content`         | string        | Required    | The string value of the statement |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the statement and MUST follow the requirements for [Type](../type/) |
-| `language`        | array         | Recommended | An array of json objects, each of which is a language present in the content of the statement and MUST follow the requirements for [Language](../type/)|
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a label or name for the statement, and MUST follow the requirements for [Name](../name/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to this statement, or an embedded statement about this statement | 
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the statement and MUST follow the requirements for [Type](../type/) |
+| `language`        | array         | Recommended | An array of JSON objects, each of which is a language present in the content of the statement and MUST follow the requirements for [Language](../type/)|
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a label or name for the statement, and MUST follow the requirements for [Name](../name/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is either a reference to a [textual work](../../endpoint/textual_work/) that refers to this statement, or an embedded statement about this statement | 
 | `format`          | string        | Optional    | If the string in content is not plain text, then format can be used to specify the media type of the string |
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is an assignment of the statement, and MUST follow the requirements for [Assignments](../assignment/) |
-| `subject_to` | array | Optional | An array of json objects, each of which is a [Right](../right) that is held over the statement |
-| `created_by` | json object | Optional | A json object representing the creation of the statement, which follows the requirements for a [Creation](../../shared/activity) |
+| `assigned_by`     | array         | Optional    | An array of JSON objects, each of which is an assignment of the statement, and MUST follow the requirements for [Assignments](../assignment/) |
+| `subject_to` | array | Optional | An array of JSON objects, each of which is a [Right](../right) that is held over the statement |
+| `created_by` | JSON object | Optional | A JSON object representing the creation of the statement, which follows the requirements for a [Creation](../../shared/activity) |
 
 
 ### Property Diagram

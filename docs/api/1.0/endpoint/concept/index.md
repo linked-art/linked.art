@@ -24,16 +24,16 @@ Dereferencing an entity via the Concept endpoint would result in a JSON-LD docum
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the concept's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the concept, which MUST be one of `"Type"`, `"Material"`, `"Language"`, `"Currency"` or `"MeasurementUnit"` |
 | `_label`          | string        | Recommended | A human readable label for the concept, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the concept and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the concept and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the concept and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the concept and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the concept |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current concept, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current concept is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current concept, and MUST follow the requirements for a [reference](../../shared/reference) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current concept to another entity |
-| `broader`         | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to another concept which is broader than the current concept |    
-| `created_by` | json object | Optional | A json object representing the creation of the concept, which follows the requirements for a [Creation](../../shared/activity) | 
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the concept and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name of the concept and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the concept and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the concept and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the concept |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current concept, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current concept is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current concept, and MUST follow the requirements for a [reference](../../shared/reference) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current concept to another entity |
+| `broader`         | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to another concept which is broader than the current concept |    
+| `created_by` | JSON object | Optional | A JSON object representing the creation of the concept, which follows the requirements for a [Creation](../../shared/activity) | 
 
 
 ### Property Diagram
