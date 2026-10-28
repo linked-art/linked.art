@@ -25,10 +25,10 @@ The rights data structure has the following properties.
 | `type`            | string        | Required    | The class for the right, which MUST be the value `"Right"` |
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the identifier available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the right, and MUST follow the requirements for [Name](../name/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the right |
-| `possessed_by`    | array         | Optional    | An array of json objects, each of which is a reference to a [Person](../../endpoint/person) or [Group](../../endpoint/group) that holds the right |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name for the right, and MUST follow the requirements for [Name](../name/) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../type/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is an embedded [statement](../statement/) about the right |
+| `possessed_by`    | array         | Optional    | An array of JSON objects, each of which is a reference to a [Person](../../endpoint/person) or [Group](../../endpoint/group) that holds the right |
 
 ### Property Diagram
 

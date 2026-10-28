@@ -2996,7 +2996,8 @@
       "@container": "@set"
     },
     "notation": {
-      "@id": "skos:notation"
+      "@id": "skos:notation",
+      "@container": "@set"
     },
     "conforms_to": {
       "@id": "dcterms:conformsTo",

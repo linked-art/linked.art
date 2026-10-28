@@ -20,32 +20,32 @@ For more information about the Physical Object data, please see the [Object mode
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the object's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the object, which MUST be the value `"HumanMadeObject"` |
 | `_label`          | string        | Recommended | A human readable label for the object, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the object and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the object and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the object and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is an [reference](../../shared/reference) to an external identity and description of the current object |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current object is a member of and MUST follow the requirements for an [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current object to another entity |
-| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Physical Object that the current object is a part of. |
-| `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height or width, of the current object |
-| `made_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a material that the object is made_of and MUST follow the requirements for [Material](../../shared/type) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the object and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name/title of the object and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the object and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is an [reference](../../shared/reference) to an external identity and description of the current object |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current object is a member of and MUST follow the requirements for an [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current object to another entity |
+| `part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another Physical Object that the current object is a part of. |
+| `dimension` | array | Optional | An array of JSON objects, each of which is a [Dimension](../../shared/dimension), such as height or width, of the current object |
+| `made_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a material that the object is made_of and MUST follow the requirements for [Material](../../shared/type) |
 | `current_owner` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that currently owns the object |
 | `current_custodian` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that currently has custody of the object|
 | `current_permanent_custodian` | array | Optional | An array of json, objects each of which a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that normally has custody of the object, but might not at the present time |
-| `current_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is currently located |
-| `current_permanent_location` | json object | Optional | A json object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is normally located, but might not be at the present time |
-| `held_or_supported_by` | json object | Optional | A json object which is a [reference](../../shared/reference) to another Physical Object that holds, contains or supports the current object |
-| `carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that this object carries the text of |
-| `shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that this object shows a rendition of |
-| `used_for`    | array | Optional | An array of json objects, each of which represents an activity that the object was instumental in, but does not have its own identity, and follows the requirements for an [Activity](../../shared/activity) |
-| `produced_by` | json object | Optional | A json object representing the production of the object, which follows the requirements for a [Production](../../shared/activity) | 
-| `destroyed_by` | json object | Optional | A json object representing the destruction of the object, which follows the requirements for a [Destruction](../../shared/activity) | 
-| `removed_by` | array | Optional | An array of json objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for a [PartRemoval](../../shared/activity) | 
-| `modified_by` | array | Optional | An array of json objects, each of which represents a physical modification to the object, such as conservation treatment, which follows the requirements for a [Modification](../../shared/activity) |
-| `encountered_by` | array | Optional | An array of json objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for an [Encounter](../../shared/activity) |
-| `changed_ownership_through` | array | Optional | An array of json objects, each of which represents the Acquisition of the object by some actor from another, and follows the requirements for an `Acquisition` as given in the [Provenance Activity](../provenance_activity/) endpoint description, as also summarized below|
+| `current_location` | JSON object | Optional | A JSON object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is currently located |
+| `current_permanent_location` | JSON object | Optional | A JSON object which is a [reference](../../shared/reference/) to the [Place](../place/) where the object is normally located, but might not be at the present time |
+| `held_or_supported_by` | JSON object | Optional | A JSON object which is a [reference](../../shared/reference) to another Physical Object that holds, contains or supports the current object |
+| `carries` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that this object carries the text of |
+| `shows` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that this object shows a rendition of |
+| `used_for`    | array | Optional | An array of JSON objects, each of which represents an activity that the object was instumental in, but does not have its own identity, and follows the requirements for an [Activity](../../shared/activity) |
+| `produced_by` | JSON object | Optional | A JSON object representing the production of the object, which follows the requirements for a [Production](../../shared/activity) | 
+| `destroyed_by` | JSON object | Optional | A JSON object representing the destruction of the object, which follows the requirements for a [Destruction](../../shared/activity) | 
+| `removed_by` | array | Optional | An array of JSON objects, each of which represents the removal of the current object from a larger one it was previously part of, which follows the requirements for a [PartRemoval](../../shared/activity) | 
+| `modified_by` | array | Optional | An array of JSON objects, each of which represents a physical modification to the object, such as conservation treatment, which follows the requirements for a [Modification](../../shared/activity) |
+| `encountered_by` | array | Optional | An array of JSON objects, each of which represents an encounter by some actor with the current object, typically when a collector "discovered" the object, which follow the requirements for an [Encounter](../../shared/activity) |
+| `changed_ownership_through` | array | Optional | An array of JSON objects, each of which represents the Acquisition of the object by some actor from another, and follows the requirements for an `Acquisition` as given in the [Provenance Activity](../provenance_activity/) endpoint description, as also summarized below|
 
 
 ### Additional Properties of Acquisitions
@@ -54,8 +54,8 @@ The properties of [Activities](../../shared/activity) are available for Acquisti
 
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
-| `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
-| `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
+| `transferred_title_from` | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
+| `transferred_title_to`   | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred. **Only usable when the `type` is `"Acquisition"`** |
 
 ### Property Diagram
 

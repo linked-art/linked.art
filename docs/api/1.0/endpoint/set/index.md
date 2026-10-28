@@ -26,20 +26,20 @@ Dereferencing an entity via the Set endpoint would result in a JSON-LD document 
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the set's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the set, which MUST be the value `"Set"` |
 | `_label`          | string        | Recommended | A human readable label for the set, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the set and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the set and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the set and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the set and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current set |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current set, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current set is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current set, and MUST follow the requirements for a [reference](../../shared/reference) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current set to another entity |
-| `dimension`       | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as total number of members, of the current set |
-| `about`           | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to another entity of any type, that this Set is primarily about or has as a subject |
-| `members_exemplified_by` | array | Optional | An array of json objects, each of which is either an embedded structure that follows the patterns of one of the Linked Art API endpoints, or a reference to any Linked Art resource | 
-| `members_contained_by` | array | Optional | An array of json objects, each of which is a reference to a [Physical Object](../physical_object/) that holds or contains (physical) members of the current set | 
-| `created_by`      | json object | Optional | A json object representing the creation of the set, which follows the requirements for a [Creation](../../shared/activity) | 
-| `used_for`        | array | Optional | An array of json objects, each of which is a Publication (or similar activity) which follows the requirements for an [Activity](../../shared/activity) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the set and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name of the set and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the set and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the set and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current set |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current set, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current set is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current set, and MUST follow the requirements for a [reference](../../shared/reference) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current set to another entity |
+| `dimension`       | array | Optional | An array of JSON objects, each of which is a [Dimension](../../shared/dimension), such as total number of members, of the current set |
+| `about`           | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to another entity of any type, that this Set is primarily about or has as a subject |
+| `members_exemplified_by` | array | Optional | An array of JSON objects, each of which is either an embedded structure that follows the patterns of one of the Linked Art API endpoints, or a reference to any Linked Art resource | 
+| `members_contained_by` | array | Optional | An array of JSON objects, each of which is a reference to a [Physical Object](../physical_object/) that holds or contains (physical) members of the current set | 
+| `created_by`      | JSON object | Optional | A JSON object representing the creation of the set, which follows the requirements for a [Creation](../../shared/activity) | 
+| `used_for`        | array | Optional | An array of JSON objects, each of which is a Publication (or similar activity) which follows the requirements for an [Activity](../../shared/activity) |
 
 
 ### Property Diagram

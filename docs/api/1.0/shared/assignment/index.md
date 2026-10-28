@@ -21,19 +21,19 @@ The relationship assignment data structure has the following properties.
 | `type`            | string        | Required    | The class for the assignment, which MUST be the value `"AttributeAssignment"` |
 | `_label`          | string        | Recommended | A human readable label for the assignment, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the attribute assignment available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name of the assignment and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the assignment and MUST follow the requirements for [Identifier](../../shared/identifier/)|
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the assignment and MUST follow the requirements for [Type](../type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the assignment |
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which made the assignment|
-| `timespan`        | json object   | Optional    | A json object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the Assignment occured |
-| `before`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this Assignment occured |
-| `after`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this Assignment occured |
-| `influenced_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../reference/) to another entity which influenced or motivated the assignment |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the assignment to occur |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../reference/) to another endpoint that was instrumental in the assignment |
-| `technique` | array | Optional | An array of json objects, each of which is a technique used in the assignment and MUST follow the requirements for [Type](../../shared/type) |
-| `assigned`        | array         | Required    | An array of json objects, each of which is a [reference](../reference/) to another entity that is related to the current one (SHOULD NOT be used with Dimension or Identifier assignments) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name of the assignment and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the assignment and MUST follow the requirements for [Identifier](../../shared/identifier/)|
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the assignment and MUST follow the requirements for [Type](../type/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is an embedded [statement](../statement/) about the assignment |
+| `carried_out_by`  | array         | Optional    | An array of JSON objects, each of which is a [reference](../reference/) to a [Person](../../endpoint/person) or [Group](../../endpoint/group) which made the assignment|
+| `timespan`        | JSON object   | Optional    | A JSON object which describes when the relationship was assigned, and MUST follow the requirements for [timespans](../timespan/)|
+| `during`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the Assignment occured |
+| `before`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this Assignment occured |
+| `after`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this Assignment occured |
+| `influenced_by`    | array         | Optional    | An array of JSON objects, each of which is a [reference](../reference/) to another entity which influenced or motivated the assignment |
+| `caused_by`       | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the assignment to occur |
+| `used_specific_object` | array    | Optional    | An array of JSON objects, each of which is a [reference](../reference/) to another endpoint that was instrumental in the assignment |
+| `technique` | array | Optional | An array of JSON objects, each of which is a technique used in the assignment and MUST follow the requirements for [Type](../../shared/type) |
+| `assigned`        | array         | Required    | An array of JSON objects, each of which is a [reference](../reference/) to another entity that is related to the current one (SHOULD NOT be used with Dimension or Identifier assignments) |
 | `assigned_property` | string      | Optional    | A string which is either a URI, or resolves to a URI via a context document, for the specific relationship between the main entity and the entity referenced in `assigned` |
 
 
