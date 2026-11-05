@@ -24,13 +24,13 @@ The dimension data structure has the following properties.
 | `_label`          | string        | Recommended | A human readable label, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the identifier available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
 | `value`           | number        | Required    | The numeric value of the dimension |
-| `unit`            | json object   | Required    | The unit for the dimension, which MUST follow the requirements for a [MeasurementUnit](../type/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the dimension and MUST follow the requirements for [Type](../type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a textual representation of the structured data in the dimension, and MUST follow the requirements for [Name](../name/) |
+| `unit`            | JSON object   | Required    | The unit for the dimension, which MUST follow the requirements for a [MeasurementUnit](../type/) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the dimension and MUST follow the requirements for [Type](../type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a textual representation of the structured data in the dimension, and MUST follow the requirements for [Name](../name/) |
 | `upper_value_limit` | number      | Optional    | A number, which represents the highest possible value for the dimension|
 | `lower_value_limit` | number      | Optional    | A number, which represents the lowest possible value for the dimension |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the dimension, or an embedded [statement](../statement/) about the dimension. |
-| `assigned_by`     | array         | Optional    | An array of json objects, each of which is a measurement activity for the dimension, and follows the [AttributeAssignment](../assignment/) pattern |  
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is either a [reference](../reference/) to a [textual work](../../endpoint/textual_work/) that refers to the dimension, or an embedded [statement](../statement/) about the dimension. |
+| `assigned_by`     | array         | Optional    | An array of JSON objects, each of which is a measurement activity for the dimension, and follows the [AttributeAssignment](../assignment/) pattern |  
 
 ### Property Diagram
 

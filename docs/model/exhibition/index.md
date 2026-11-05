@@ -147,16 +147,15 @@ top.member_of = model.Set(ident="exhset")
 
 ## Integration with Other Parts of the Model
 
-### Provenance Events for Exhibitions
+### Provenance Activities for Exhibitions
 
-As objects used for exhibitions frequently come from many different organizations, it is useful and interesting to track the custody of the object as well as the ownership.  This event is modeled in the same way as other [Custody](/model/provenance/custody/) changes.  
+As objects used for exhibitions frequently come from many different organizations, it is useful and interesting to track the custody of the object as well as the ownership. This activity is modeled in the same way as other [Custody](/model/provenance/custody/) changes.  
 
-For each exhibition, the custody of the object is transferred from the previous custodian to the next. In the simple case of a single venue for the exhibition, the first transfer is likely to be from the owner to the organization responsible for the exhibition, and then at the end of the exhibition, the custody is transferred back again.  In a more complex scenario with multiple venues, each organization hosting the exhibition will likely transfer custody to the next in the sequence.  
+For each exhibition, the custody of the object is transferred from the previous custodian to the next. In the simple case of a single venue for the exhibition, the first transfer is likely to be from the owner to the organization responsible for the exhibition, and then at the end of the exhibition, the custody is transferred back again. In a more complex scenario with multiple venues, each organization hosting the exhibition will likely transfer custody to the next in the sequence.
 
-However, when the object being exhibited at the location is owned by the same organization, there is no transfer of custody. The equivalent activity is likely to be simply moving the object from its regular location to the exhibition space. This is described in the same way as other [Movement](/model/provenance/movement/) events.
+However, when the object being exhibited at the location is owned by the same organization, there is no transfer of custody. The equivalent activity is likely to be simply moving the object from its regular location to the exhibition space. This is described in the same way as other [Movement](/model/provenance/movement/) activities.
 
 The provenance activities can be linked to the Exhibition by asserting that they are `part_of` the Exhibition activity.
-
 
 ### Exhibition Specific Titles
 

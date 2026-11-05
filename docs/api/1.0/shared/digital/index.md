@@ -24,12 +24,12 @@ This is a complex shared structure in that it involves nested JSON objects rathe
 | `type`            | string        | Required    | The class for the work, which MUST be the value `"VisualItem"` or `"LinguisticObject"`| 
 | `_label`          | string        | Optional    | A human readable label, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the work available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
-| `classified_as`   | array         | Optional | An array of json objects, each of which is a further classification of the work and MUST follow the requirements for [Type](../type/) |
-| `identified_by`   | array         | Optional    | An array of json objects, each of which is a name for the work and follows the [Name](../name/) pattern |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the work |
-| `digitally_shown_by` | array | Required * | Used only when `type` is `"VisualItem"`. An array of json objects, each of which is a DigitalObject as described below |
-| `digitally_carried_by` | array | Required * | Used only when `type` is `"LinguisticObject"`. An array of json objects, each of which is a DigitalObject as described below |
-| `language` | array | Optional | Used only when `type` is `"LinguisticObject"`. An array of json objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
+| `classified_as`   | array         | Optional | An array of JSON objects, each of which is a further classification of the work and MUST follow the requirements for [Type](../type/) |
+| `identified_by`   | array         | Optional    | An array of JSON objects, each of which is a name for the work and follows the [Name](../name/) pattern |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is an embedded [statement](../statement/) about the work |
+| `digitally_shown_by` | array | Required * | Used only when `type` is `"VisualItem"`. An array of JSON objects, each of which is a DigitalObject as described below |
+| `digitally_carried_by` | array | Required * | Used only when `type` is `"LinguisticObject"`. An array of JSON objects, each of which is a DigitalObject as described below |
+| `language` | array | Optional | Used only when `type` is `"LinguisticObject"`. An array of JSON objects, each of which is a language the text is expressed in, and MUST follow the requirements for [Language](../../shared/type) |
 
 * \* Note Well that exactly one of `digitally_shown_by` and `digitally_carried_by`, as appropriate for the class of the Work, MUST be present
 
@@ -42,13 +42,13 @@ This is a complex shared structure in that it involves nested JSON objects rathe
 | `type`            | string        | Required    | The class for the work, which MUST be the value `"DigitalObject"` | 
 | `_label`          | string        | Optional    | A human readable label, intended for developers |
 | `_complete`       | boolean       | Optional    | Non-Semantic. If there is an `id` property with a URI, and there is more information about the digital object available from the representation at that URI, then `_complete` MUST be present with a value of `false` to inform the consuming application that it might want to retrieve it |
-| `classified_as`   | array         | Optional | An array of json objects, each of which is a further classification of the digital object and MUST follow the requirements for [Type](../type/) |
-| `identified_by`   | array         | Optional    | An array of json objects, each of which is a name for the digital object and follows the [Name](../name/) pattern |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the digital object |
-| `access_point` | array | Optional | An array of json objects, each of which has only two properties: `id` which contains the URI where the representation of the described digital object can be retrieved, and `type` which has the value `"DigitalObject"`. Both are required |
-| `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined in the [Digital Object](../../endpoint/digital_object) documentation |
+| `classified_as`   | array         | Optional | An array of JSON objects, each of which is a further classification of the digital object and MUST follow the requirements for [Type](../type/) |
+| `identified_by`   | array         | Optional    | An array of JSON objects, each of which is a name for the digital object and follows the [Name](../name/) pattern |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is an embedded [statement](../statement/) about the digital object |
+| `access_point` | array | Optional | An array of JSON objects, each of which has only two properties: `id` which contains the URI where the representation of the described digital object can be retrieved, and `type` which has the value `"DigitalObject"`. Both are required |
+| `digitally_available_via` | array | Optional| An array of JSON objects, each of which is a Digital Service structure, defined in the [Digital Object](../../endpoint/digital_object) documentation |
 | `format` | string | Optional | The media type of the described digital object, for example "image/jpeg" |
-| `conforms_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an external specification that the current digital object conforms to. The `type` value of the reference MUST be `"InformationObject"` |
+| `conforms_to` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an external specification that the current digital object conforms to. The `type` value of the reference MUST be `"InformationObject"` |
 
 
 ### Property Diagram

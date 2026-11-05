@@ -28,3 +28,26 @@ SELECT DISTINCT ?work WHERE {
  } 
 ```
 
+```sparql
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+SELECT DISTINCT ?work
+WHERE {
+  {
+    ?work crm:P138_represents $current .
+  } UNION {
+    $current crm:P138i_has_representation ?work .
+  }
+  {
+    $current a crm:E21_Person .
+  } UNION {
+    $current a crm:E76_Group .
+  }
+  {
+    ?work a crm:E33_Linguistic_Object .
+  } UNION {
+    ?work a crm:E36_Visual_Item .
+  }
+  FILTER(isIRI(?work))
+}
+```

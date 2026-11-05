@@ -25,25 +25,25 @@ The top level Activity has the following properties.
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the event's representation can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the event, which MUST be the value `"Event"` or the value `"Activity"` |
 | `_label`          | string        | Recommended | A human readable label for the event, intended for developers |
-| `classified_as`   | array         | Required    | An array of json objects, each of which is a classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the event and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current event |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current event is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
-| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another event that the current event is a part of. |
-| `timespan`        | json object   | Recommended | A json object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the provenance activity occured |
-| `before`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this event occured |
-| `after`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this event occured |
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
-| `caused_by`       | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity |
-| `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the activity but did not carry it out. |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
+| `classified_as`   | array         | Required    | An array of JSON objects, each of which is a classification of the event and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name/title of the event and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the event and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the event and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity and description of the current event |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current event is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current event, and MUST follow the requirements for a [reference](../../shared/reference/) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current event to another entity |
+| `part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another event that the current event is a part of. |
+| `timespan`        | JSON object   | Recommended | A JSON object recording when the event occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the provenance activity occured |
+| `before`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity before which this event occured |
+| `after`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a Period, Event or Activity after which this event occured |
+| `took_place_at`   | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the event occured |
+| `caused_by`       | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an [Event](../event/) that caused the event to occur |
+| `influenced_by`   | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the event in some noticable fashion | 
+| `carried_out_by`  | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the activity |
+| `participant`  | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the activity but did not carry it out. |
+| `used_specific_object` | array    | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the activity |
 | `part` | array | Required | The more detailed changes that the activity consists of, described below|
 
 
@@ -65,16 +65,16 @@ Each of the activities in the `part` property can have the properties in the tab
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the provenance part activity  |  
 | `type`            | string        | Required    | The class for the part, which MUST be the value given in the subsections below |
 | `_label`          | string        | Recommended | A human readable label for the provenance part, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the provenance part and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the part and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the provenance part and MUST follow the requirements for [Type](../../shared/type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../../shared/statement/) about the part |
-| `timespan`        | json object   | Recommended | A json object recording when the part occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
-| `during`          | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the part activity occured | 
-| `took_place_at`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the part activity occured |
-| `influenced_by`   | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the part activity in some noticable fashion, but did not carry it out | 
-| `carried_out_by`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the part activity |
-| `participant`  | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the part activity but did not carry it out |
-| `used_specific_object` | array    | Optional    | An array of json objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the part activity |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name for the provenance part and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the part and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the provenance part and MUST follow the requirements for [Type](../../shared/type/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is an embedded [statement](../../shared/statement/) about the part |
+| `timespan`        | JSON object   | Recommended | A JSON object recording when the part occured, which MUST follow the requirements for [timespans](../../shared/timespan/)|
+| `during`          | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Period](../event/) during which the part activity occured | 
+| `took_place_at`   | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Place](../place/) where the part activity occured |
+| `influenced_by`   | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an entity that influenced the part activity in some noticable fashion, but did not carry it out | 
+| `carried_out_by`  | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that carried out the part activity |
+| `participant`  | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Person](../person/) or [Group](../group/) that participated in the part activity but did not carry it out |
+| `used_specific_object` | array    | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference)] to an entity that was instrumental in the carrying out of the part activity |
 
 #### Properties of Part: Acquisition
 
@@ -83,9 +83,9 @@ Parts which are Acquisitions have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Acquisition"` |
-| `transferred_title_of`   | array | Required | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../physical_object/) of which the ownership is transferred |
-| `transferred_title_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred |
-| `transferred_title_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred |
+| `transferred_title_of`   | array | Required | An array of JSON objects, each of which is a [reference](../../shared/reference) to the [Object](../physical_object/) of which the ownership is transferred |
+| `transferred_title_from` | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous owner of the object, and from whom the object's ownership was transferred |
+| `transferred_title_to`   | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which is one of the new owners to whom the object's ownership was transferred |
 
 
 #### Properties of Part: Payment
@@ -95,9 +95,9 @@ Parts which are Payments have the following additional properties.
 | Property Name     | Datatype    | Requirement | Description | 
 |-------------------|-------------|-------------|-------------|
 | `type`            | string      | Required | The class for the part, which MUST be the value `"Payment"` |
-| `paid_amount`     | json object | Optional | A [Monetary Amount](../../shared/money/) structure encoding the amount that was transferred |
-| `paid_from`       | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which provided some part of the monetary amount |
-| `paid_to`         | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which received some part of the monetary amount |
+| `paid_amount`     | JSON object | Optional | A [Monetary Amount](../../shared/money/) structure encoding the amount that was transferred |
+| `paid_from`       | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which provided some part of the monetary amount |
+| `paid_to`         | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which received some part of the monetary amount |
 
 #### Properties of Part: Transfer of Custody
 
@@ -106,9 +106,9 @@ Parts which are Transfers of Custody have the following additional properties.
 | Property Name     | Datatype       | Requirement | Description | 
 |-------------------|----------------|-------------|-------------|
 | `type`            | string         | Required    | The class for the part, which MUST be the value `"TransferOfCustody"` |
-| `transferred_custody_of`   | array | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../physical_object/) of which the custody is transferred |
-| `transferred_custody_from` | array | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
-| `transferred_custody_to`   | array | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
+| `transferred_custody_of`   | array | Required    | An array of JSON objects, each of which is a [reference](../../shared/reference) to the [Object](../physical_object/) of which the custody is transferred |
+| `transferred_custody_from` | array | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
+| `transferred_custody_to`   | array | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), each of which was a previous custodian of the object, and from whom the object's custody was transferred|
 
 #### Properties of Part: Encounter 
 
@@ -117,7 +117,7 @@ Parts which are Encounters have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Encounter"` |
-| `encountered`     | array         | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was encountered |
+| `encountered`     | array         | Required    | An array of JSON objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was encountered |
 
 #### Properties of Part: Right Acquisition
 
@@ -126,8 +126,8 @@ Parts which are Right Acquisitions have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"RightAcquisition"` |
-| `establishes`     | array         | Required    | An array of json objects, each of which is a `Right` structure, described below |
-| `invalidates`     | array         | Optional    | An array of json objects, each of which is a `Right` structure, described below |
+| `establishes`     | array         | Required    | An array of JSON objects, each of which is a `Right` structure, described below |
+| `invalidates`     | array         | Optional    | An array of JSON objects, each of which is a `Right` structure, described below |
 
 #### Properties of Part: Move
 
@@ -136,9 +136,9 @@ Parts which are Moves have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Move"` |
-| `moved`           | array         | Required    | An array of json objects, each of which is a [reference](../../shared/reference) to an [Object](../object) that was moved by this activity |
-| `moved_from`      | json object   | Optional    | An [reference](../../shared/reference/) to a [Place](../place/) where all of the objects were moved from |
-| `moved_to`        | json object   | Optional    | An [reference](../../shared/reference/) to a [Place](../place/) where all of the objects where moved to |
+| `moved`           | array         | Required    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an [Object](../object) that was moved by this activity |
+| `moved_from`      | JSON object   | Optional    | An [reference](../../shared/reference/) to a [Place](../place/) where all of the objects were moved from |
+| `moved_to`        | JSON object   | Optional    | An [reference](../../shared/reference/) to a [Place](../place/) where all of the objects where moved to |
 
 
 #### Properties of Part: Promise
@@ -148,7 +148,7 @@ Parts which are Promises have the following additional properties.
 | Property Name     | Datatype      | Requirement | Description | 
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Activity"` |
-| `classified_as`   | array         | Required    | An array of json objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/), and one entry in the array MUST have have an `id` with the value "http://vocab.getty.edu/aat/300435599", in order to distinguish this activity as a promise |
+| `classified_as`   | array         | Required    | An array of JSON objects, each of which is a further classification of the creation or publication and MUST follow the requirements for [Type](../../shared/type/), and one entry in the array MUST have have an `id` with the value "http://vocab.getty.edu/aat/300435599", in order to distinguish this activity as a promise |
 
 #### Properties of Part: Transfer
 
@@ -157,9 +157,9 @@ Parts which are unknown types of Transfer have the following additional properti
 | Property Name     | Datatype      | Requirement | Description |
 |-------------------|---------------|-------------|-------------|
 | `type`            | string        | Required    | The class for the part, which MUST be the value `"Transfer"` |
-| `transferred`   | array | Required | An array of json objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was somehow transferred |
-| `transferred_from` | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), from whom the object was transferred |
-| `transferred_to`   | array       | Optional | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), to whom the object was transferred |
+| `transferred`   | array | Required | An array of JSON objects, each of which is a [reference](../../shared/reference) to the [Object](../object/) which was somehow transferred |
+| `transferred_from` | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), from whom the object was transferred |
+| `transferred_to`   | array       | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/), to whom the object was transferred |
 
 
 ### Properties of Rights
@@ -169,13 +169,13 @@ Parts which are unknown types of Transfer have the following additional properti
 | `id`              | string        | Optional    | If present, the value MUST be a URI identifying the right  |  
 | `type`            | string        | Required    | The class for the right, which MUST be the value `"Right"` |
 | `_label`          | string        | Recommended | A human readable label for the right, intended for developers |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name for the right and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the right and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../../shared/type/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is an embedded [statement](../statement/) about the right |
-| `dimension`       | array         | Optional    | An array of json objects, each of which is [Dimension](../../shared/dimension/) structure |
-| `possessed_by`    | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/) that possessed the right |
-| `applies_to`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an [Object](../object) that the right pertains to |
-| `part`            | array         | Optional    | An array of json objects, each of which is a right, and MUST follow the requirements of this definition of rights |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name for the right and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the right and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a further classification of the right and MUST follow the requirements for [Type](../../shared/type/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is an embedded [statement](../statement/) about the right |
+| `dimension`       | array         | Optional    | An array of JSON objects, each of which is [Dimension](../../shared/dimension/) structure |
+| `possessed_by`    | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to a [Person](../person/) or [Group](../group/) that possessed the right |
+| `applies_to`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an [Object](../object) that the right pertains to |
+| `part`            | array         | Optional    | An array of JSON objects, each of which is a right, and MUST follow the requirements of this definition of rights |
 
 
 ### Property Diagram

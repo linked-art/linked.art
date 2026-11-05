@@ -10,7 +10,7 @@ up_label: "Linked Art API 1.0"
 
 JSON-LD is a Linked Open Data serialization using the popular JSON (Javascript Object Notation) format that is convenient for both backend and browser based development.  It is specified by the [W3C](https://www.w3.org/TR/json-ld11/) as an official serialization. Continued development work happens in the JSON for Linking Data W3C [Community Group](https://www.w3.org/community/json-ld/).
 
-The serialization for JSON-LD is friendly to developers through the use of context documents that specify the mapping between the key used in the json object and the RDF predicate used in the model.  This abstraction allows the developer to work with existing patterns and frameworks, while the data is still managed as a graph underneath.  This document describes the context used for CIDOC-CRM and other ontologies.
+The serialization for JSON-LD is friendly to developers through the use of context documents that specify the mapping between the key used in the JSON object and the RDF predicate used in the model.  This abstraction allows the developer to work with existing patterns and frameworks, while the data is still managed as a graph underneath.  This document describes the context used for CIDOC-CRM and other ontologies.
 
 The context that provides the mapping of the terms used in the model is published as:
 > `https://linked.art/ns/v1/linked-art.json`

@@ -12,16 +12,23 @@ See the related [model documentation](/model/concept/#partitioning-versus-classi
 
 From the record for the concept for Visual Art object types, the record for Paintings would be in the response
 
-
 ### Details
 
 * Class Given: Concept
 * Returns Class: Concept
 * Relationship: broader
 
-
 ### SPARQL
-```
 
-```
+```sparql
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
+SELECT DISTINCT ?concept
+WHERE {
+  {
+    $current skos:broader ?concept .
+  } UNION {
+    ?concept skos:narrower $current .
+  }
+}
+```

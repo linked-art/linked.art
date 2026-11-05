@@ -25,24 +25,24 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the digital object's description can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the digital object, which MUST be the value `"DigitalObject"` |
 | `_label`          | string        | Recommended | A human readable label for the digital object, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `equivalent`      | array         | Optional    | An array of json objects, each of which is a [reference](../../shared/reference) to an external identity of the current digital object |
-| `member_of`       | array         | Optional    | An array of json objects, each of which is a Set that the current digital object is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
-| `subject_of`      | array         | Optional    | An array of json objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
-| `representation`  | array         | Optional    | An array of json objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
-| `attributed_by`   | array         | Optional    | An array of json objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current digital object to another entity |
-| `dimension` | array | Optional | An array of json objects, each of which is a [Dimension](../../shared/dimension), such as height, width or total number of bytes, of the described digital object |
-| `part_of` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `equivalent`      | array         | Optional    | An array of JSON objects, each of which is a [reference](../../shared/reference) to an external identity of the current digital object |
+| `member_of`       | array         | Optional    | An array of JSON objects, each of which is a Set that the current digital object is a member of and MUST follow the requirements for a [reference](../../shared/reference/) to a Set |
+| `subject_of`      | array         | Optional    | An array of JSON objects, each of which is a reference to a [Textual Work](../textual_work/), the content of which focuses on the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `representation`  | array         | Optional    | An array of JSON objects, each of which is a reference to a [Visual Work](../visual_work) that represents the current object, and MUST follow the requirements for an [reference](../../shared/reference/) |
+| `attributed_by`   | array         | Optional    | An array of JSON objects, each of which is a [Relationship Assignment](../../shared/assignment/) that relates the current digital object to another entity |
+| `dimension` | array | Optional | An array of JSON objects, each of which is a [Dimension](../../shared/dimension), such as height, width or total number of bytes, of the described digital object |
+| `part_of` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to another Digital Object that the current digital object is a part of. |
 | `format` | string | Optional | The media type of the described digital object, for example "image/jpeg" |
-| `conforms_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an external specification that the current digital object conforms to. The `type` value of the reference MUST be `"InformationObject"` |
-| `digitally_carries` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
-| `digitally_shows` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
-| `digitally_available_via` | array | Optional| An array of json objects, each of which is a Digital Service structure, defined below |
-| `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the actual file can be retrieved, rather than metadata about it |
-| `created_by` | json object | Optional | A json object representing the creation of the digital object, which follows the requirements for a [Creation](../../shared/activity) | 
-| `used_for` | array | Optional | An array of json objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
+| `conforms_to` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an external specification that the current digital object conforms to. The `type` value of the reference MUST be `"InformationObject"` |
+| `digitally_carries` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Textual Work](../textual_work/) that is carried by this digital object |
+| `digitally_shows` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a [Visual Work](../visual_work/) that is shown by this digital object |
+| `digitally_available_via` | array | Optional| An array of JSON objects, each of which is a Digital Service structure, defined below |
+| `access_point` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a URI from which a representation of the actual file can be retrieved, rather than metadata about it |
+| `created_by` | JSON object | Optional | A JSON object representing the creation of the digital object, which follows the requirements for a [Creation](../../shared/activity) | 
+| `used_for` | array | Optional | An array of JSON objects, each of which is a Publication Activity, which follows the requirements for an [Activity](../../shared/activity) |
 
 ### Properties of Digital Services
 
@@ -52,11 +52,11 @@ Dereferencing an entity via the Digital Object endpoint would result in a JSON-L
 | `id`              | string        | Required    | The value MUST be the HTTP(S) URI at which the digital object's description can be [dereferenced](../../protocol/) |  
 | `type`            | string        | Required    | The class for the digital object, which MUST be the value `"DigitalService"` |
 | `_label`          | string        | Recommended | A human readable label for the digital object, intended for developers |
-| `classified_as`   | array         | Recommended | An array of json objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
-| `identified_by`   | array         | Recommended | An array of json objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
-| `referred_to_by`  | array         | Optional    | An array of json objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
-| `access_point` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to a URI at which the service can be interacted with |
-| `conforms_to` | array | Optional | An array of json objects, each of which is a [reference](../../shared/reference/) to an external specification that the digital service conforms to. The `type` value of the reference MUST be `"InformationObject"` |
+| `classified_as`   | array         | Recommended | An array of JSON objects, each of which is a classification of the digital object and MUST follow the requirements for [Type](../../shared/type/) |
+| `identified_by`   | array         | Recommended | An array of JSON objects, each of which is a name/title of the digital and MUST follow the requirements for [Name](../../shared/name/), or an identifier for the digital object and MUST follow the requirements for [Identifier](../../shared/identifier/) |
+| `referred_to_by`  | array         | Optional    | An array of JSON objects, each of which is a human readable statement about the digital object and MUST follow the requirements for [Statement](../../shared/statement/) |
+| `access_point` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to a URI at which the service can be interacted with |
+| `conforms_to` | array | Optional | An array of JSON objects, each of which is a [reference](../../shared/reference/) to an external specification that the digital service conforms to. The `type` value of the reference MUST be `"InformationObject"` |
 
 ### Property Diagram
 
